@@ -1,0 +1,6 @@
+framework module Pods_caocapTests {
+  umbrella header "Pods-caocapTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
