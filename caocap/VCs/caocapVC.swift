@@ -80,12 +80,12 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
     
     
-    //this is the more info function, when the moreBTN in the opendCaocapVC is pressed it will display Alert controller with more functions
+    //this is the more info function, when the moreBTN in the opendCaocapCell is pressed it will display Alert controller with more functions
     func moreBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton) {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let visitOwnerACT = UIAlertAction(title: openedCaocap?.name, style: .destructive ) { (buttonTapped) in
             do {
-                //TODO: عند اختيار هذا الخيار يجب ارسال المستخدم الى صفحت صاحب الكوكب
+                //FIXME: عند اختيار هذا الخيار يجب ارسال المستخدم الى صفحت صاحب الكوكب
                 print("visitOwnerACT")
             } catch {
                 self.displayAlertMessage(messageToDisplay: error as! String)

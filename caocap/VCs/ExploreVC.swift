@@ -55,6 +55,7 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
     }
     
     
+    //FIXME: fix searchTF and show the search bar 
     @objc func  textFieldDidChange() {
             if searchTF.text == "" {
                 DataService.instance.getAllCaocaps(handler: { (returnedExploreArray) in
@@ -70,16 +71,16 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
     }
     
     
-    
+    //FIXME: fix scanner func and show the scanner icon in the search bar
     @IBAction func scannerBTN(_ sender: Any) {
         let scannerVC = storyboard?.instantiateViewController(withIdentifier: "scanner")
+        scannerVC!.modalPresentationStyle = .fullScreen
         present(scannerVC!, animated: true, completion: nil)
     }
     
-    @IBAction func optionsBTN(_ sender: Any) {
-        let notificationOptionsVC = storyboard?.instantiateViewController(withIdentifier: "notificationOptions")
-        present(notificationOptionsVC!, animated: true, completion: nil)
-    }
+    //FIXME: fix filter func and show the filter icon in the search bar
+    
+    
     
     
 }

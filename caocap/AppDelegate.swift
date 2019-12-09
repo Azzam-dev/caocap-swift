@@ -15,8 +15,7 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -26,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enableAutoToolbar = false
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 40
         
-
         // this is used to make the keyboard Appearance dark
         UITextField.appearance().keyboardAppearance = .dark
         
@@ -36,19 +34,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Firebase configuration
         FirebaseApp.configure()
-        //check if the user is logged in or not if not send them to the login/ register VC
-        if Auth.auth().currentUser == nil {
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let authVC = storyboard.instantiateViewController(withIdentifier: "auth")
-            window?.makeKeyAndVisible()
-            window?.rootViewController?.present(authVC, animated: true , completion: nil)
-            
-        }
+        checkCurrentUserStatus()
+        checkMinimumVersionStatus()
+        checkRepairStatus()
         
-        
-        
+        return true
+    }
+    
+    fileprivate func checkRepairStatus() {
+        //this checks if the app is in repair mode and if it is , it will present the repairsVC and if the repair is finished it will dismiss repairsVC
+        DataService.instance.REF_REPAIRING.observe(DataEventType.value, with: { snap in
+            var repairing = Bool()
+            repairing = snap.value! as! Bool
+            if repairing {
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let repairsVC = storyboard.instantiateViewController(withIdentifier: "repairs")
+                repairsVC.modalPresentationStyle = .fullScreen
+                self.window?.makeKeyAndVisible()
+                self.window?.rootViewController?.present(repairsVC, animated: true, completion: nil)
+            }
+        })
+    }
+    
+    fileprivate func checkMinimumVersionStatus() {
         //check app version and if it is smaller than the minimum version from Firebase datab base, request the user to update the app by showing the update
-
         let versionObject: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject?
         let version = Double(versionObject as! String)!
         // get the minimum version from Firebase
@@ -61,31 +70,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("this is not a valid version")
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 let updateVC = storyboard.instantiateViewController(withIdentifier: "update")
+                updateVC.modalPresentationStyle = .fullScreen
                 self.window?.makeKeyAndVisible()
                 self.window?.rootViewController?.present(updateVC, animated: true , completion: nil)
             }
         })
-        
-
-        //this checks if the app in repair mode and if it is , it will present the repair VC
-        DataService.instance.REF_REPAIRING.observe(DataEventType.value, with: { snap in
-            print(snap.value!)
-            var repairing = Bool()
-            repairing = snap.value! as! Bool
-            // compare the versions
-            if repairing {
-                print("The app is under repair")
-                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                let repairsVC = storyboard.instantiateViewController(withIdentifier: "repairs")
-                self.window?.makeKeyAndVisible()
-                self.window?.rootViewController?.present(repairsVC, animated: true , completion: nil)
-            }
-        })
-        
-        
-        
-        
-        return true
+    }
+    
+    fileprivate func checkCurrentUserStatus() {
+        //check if the user is logged in or not if not send them to the login/ register VC
+        if Auth.auth().currentUser == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let authVC = storyboard.instantiateViewController(withIdentifier: "auth")
+            authVC.modalPresentationStyle = .fullScreen
+            window?.makeKeyAndVisible()
+            window?.rootViewController?.present(authVC, animated: true , completion: nil)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -30,6 +30,7 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
             do {
                 try Auth.auth().signOut()
                 let authVC = self.storyboard?.instantiateViewController(withIdentifier: "auth") as? authVC
+                authVC!.modalPresentationStyle = .fullScreen
                 self.present(authVC!, animated: true, completion: nil)
             } catch {
                 self.displayAlertMessage(messageToDisplay: error as! String)
