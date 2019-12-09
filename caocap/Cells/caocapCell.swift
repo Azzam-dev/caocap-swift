@@ -24,7 +24,7 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
     func configureCell(caocap: Caocap ,released: Bool) {
         
         let caocapURL = URL(string: caocap.website)
-        let defaultValue = URL(string: "https://caocap.app")!
+        let defaultValue = URL(string: "https://ficruty.wixsite.com/caocap")!
         var urlRequest = URLRequest(url: caocapURL ?? defaultValue)
         urlRequest.cachePolicy = .returnCacheDataElseLoad
         

@@ -27,13 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.keyboardDistanceFromTextField = 40
         
 
-        // more IQKeyboardManagerSwift code
-//        IQKeyboardManager.shared.toolbarTintColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
-//        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "CAOCAP"
-//        IQKeyboardManager.shared.toolbarDoneBarButtonItemImage = #imageLiteral(resourceName: "icons8-paper_plane_filled")
-        
-        
-
         // this is used to make the keyboard Appearance dark
         UITextField.appearance().keyboardAppearance = .dark
         

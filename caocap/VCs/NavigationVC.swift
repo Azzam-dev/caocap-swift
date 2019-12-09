@@ -15,7 +15,7 @@ var chatSubVC: UINavigationController!
 var myPageSubVC: UINavigationController!
 
 var navigationControllers: [UINavigationController]!
-var navSelectedIndex: Int = 0
+var navSelectedIndex: Int = 2
 
 
 class NavigationVC: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
