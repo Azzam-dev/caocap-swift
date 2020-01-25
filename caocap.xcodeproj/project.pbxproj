@@ -23,6 +23,7 @@
 		EC2F25072169C47F00D14733 /* editProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F25062169C47F00D14733 /* editProfileVC.swift */; };
 		EC339BE322520D1F00FDC14A /* caocapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE222520D1F00FDC14A /* caocapLayout.swift */; };
 		EC339BE62253D75200FDC14A /* UrlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE52253D75200FDC14A /* UrlService.swift */; };
+		EC361D1F239FEFED00857536 /* parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC361D1E239FEFED00857536 /* parser.swift */; };
 		EC368421225AFE8C00ABC9C6 /* caocapCellAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368420225AFE8C00ABC9C6 /* caocapCellAnimation.swift */; };
 		EC3F6D93234F81DF007DD028 /* GroupChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */; };
 		EC501674234E121900021D70 /* caocapRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501673234E121900021D70 /* caocapRoomVC.swift */; };
@@ -109,6 +110,7 @@
 		EC2F25062169C47F00D14733 /* editProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileVC.swift; sourceTree = "<group>"; };
 		EC339BE222520D1F00FDC14A /* caocapLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapLayout.swift; sourceTree = "<group>"; };
 		EC339BE52253D75200FDC14A /* UrlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlService.swift; sourceTree = "<group>"; };
+		EC361D1E239FEFED00857536 /* parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parser.swift; sourceTree = "<group>"; };
 		EC368420225AFE8C00ABC9C6 /* caocapCellAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapCellAnimation.swift; sourceTree = "<group>"; };
 		EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatVC.swift; sourceTree = "<group>"; };
 		EC501673234E121900021D70 /* caocapRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapRoomVC.swift; sourceTree = "<group>"; };
@@ -242,20 +244,19 @@
 				EC2B26B622692B2C00779486 /* openedCaocapCell.swift */,
 				ECF63E8321BD6C6D00E491FE /* caocapCell.swift */,
 				ECF63E8421BD6C6D00E491FE /* caocapCell.xib */,
-				EC8A4C652274C654004D43B6 /* cosmosCell.swift */,
-				EC8A4C672274C6FF004D43B6 /* cosmosCaocapCell.swift */,
 				EC6EE2832323D3180069F488 /* menuCell.swift */,
-				EC8A4C632274C1CB004D43B6 /* oldCells */,
 				EC501675234E610200021D70 /* sentMessageCell.swift */,
 				EC501678234E62B900021D70 /* arrivedMessageCell.swift */,
+				EC8A4C632274C1CB004D43B6 /* oldCells */,
+				EC8A4C652274C654004D43B6 /* cosmosCell.swift */,
+				EC8A4C672274C6FF004D43B6 /* cosmosCaocapCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		EC70ACEA215D6918004C16D2 /* VCs */ = {
+		EC70ACEA215D6918004C16D2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EC7DBC99239E8DE9007CFD5F /* BuilderVC.swift */,
 				ECF205482160ED6D00C48F2A /* authVC.swift */,
 				EC8E19472159E02A000E4EE6 /* NavigationVC.swift */,
 				EC70ACEB215D6954004C16D2 /* ExploreVC.swift */,
@@ -269,8 +270,9 @@
 				EC2F25062169C47F00D14733 /* editProfileVC.swift */,
 				EC70ACF1215D69B5004C16D2 /* cosmosVC.swift */,
 				EC70ACED215D6994004C16D2 /* orbitVC.swift */,
+				EC7DBC99239E8DE9007CFD5F /* BuilderVC.swift */,
 			);
-			path = VCs;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		EC70ACF5215D87F9004C16D2 /* Model */ = {
@@ -282,13 +284,6 @@
 				ECAD479C21CA97C4000E16DC /* Message.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		EC70ACF6215D881A004C16D2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		EC70ACF7215D8856004C16D2 /* Services */ = {
@@ -306,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				EC7DBC9C239EC4B6007CFD5F /* tokenizer.swift */,
+				EC361D1E239FEFED00857536 /* parser.swift */,
 			);
 			path = compiler;
 			sourceTree = "<group>";
@@ -352,9 +348,8 @@
 				EC70ACF7215D8856004C16D2 /* Services */,
 				EC8E1976215A00A8000E4EE6 /* Extensions */,
 				EC70ACF5215D87F9004C16D2 /* Model */,
-				EC70ACF6215D881A004C16D2 /* View */,
 				EC5C0DDF216F88E600ED508F /* Cells */,
-				EC70ACEA215D6918004C16D2 /* VCs */,
+				EC70ACEA215D6918004C16D2 /* ViewControllers */,
 				EC2B26C6226B444700779486 /* NavigationControllers */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
 				EC8E19492159E02A000E4EE6 /* Main.storyboard */,
@@ -656,6 +651,7 @@
 				EC0CA6DB224EA31700CD2142 /* topColCell.swift in Sources */,
 				EC2F25072169C47F00D14733 /* editProfileVC.swift in Sources */,
 				EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */,
+				EC361D1F239FEFED00857536 /* parser.swift in Sources */,
 				EC339BE62253D75200FDC14A /* UrlService.swift in Sources */,
 				EC8A4C682274C6FF004D43B6 /* cosmosCaocapCell.swift in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,
@@ -839,7 +835,7 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;
@@ -865,7 +861,7 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;

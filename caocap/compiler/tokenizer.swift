@@ -1,13 +1,12 @@
 //
-//  tokenizer.swift
-//  caocap
+//  Tokenizer.swift
+//  swift compiler
 //
-//  Created by Azzam AL-Rashed on 09/12/2019.
-//  Copyright © 2019 Ficruty. All rights reserved.
+//  Created by Azzam AL-Rashed on 11/12/2019.
+//  Copyright © 2019 ficruty. All rights reserved.
 //
 
 import Foundation
-
 
 class Token {
     var tid: String = ""
@@ -28,41 +27,47 @@ class Token {
 class Tokenizer {
     var position = -1
     var line_number = 1
-    let step_keywords = ["def",
+    var ignore_whitespace: Bool = false
+    var source_code: String = ""
+    var length: Int = 0
+    let o_keywords = ["func",
                          "var",
+                         "let",
                          "int",
                          "float",
                          "string",
                          "boolean",
+                         "print",
                          "if",
                          "else",
                          "for",
                          "while",
-                         "end"]
+                         "end",
+                         "return"]
     
     let punctuations = ["(" : "left_paren",
                         ")" : "right_paren",
                         "[" : "left_square",
                         "]" : "right_square",
                         ";" : "semicolon",
+                        ":" : "colon",
                         "," : "comma",
-                        "{" : "left_curly",
+                        "{\n" : "left_curly",
                         "}" : "right_curly",]
     
-    var source_code: String = ""
-    var length: Int = 0
-    
-    func configureToken(source_code: String) {
+    init(source_code: String, ignore_whitespace: Bool) {
         self.source_code = source_code
         self.length = source_code.count
+        self.ignore_whitespace = ignore_whitespace
     }
     
-    func is_EOF() -> Bool { return self.position < self.length }
+    func is_EOF() -> Bool { return !(self.position < self.length) }
     
     func is_peekable() -> Bool { return (self.position + 1) < self.length }
     
     func peek() -> Character {
-        if self.is_peekable() { return self.source_code.character(at: self.position + 1)! } else { return "\0"}
+        if self.is_peekable() { return self.source_code.character(at: self.position + 1)! }
+        return "\0"
     }
     
     func number_tokenizer() -> Token {
@@ -97,7 +102,7 @@ class Tokenizer {
             }
         }
         
-        if self.step_keywords.contains(token.value) {
+        if self.o_keywords.contains(token.value) {
             token.category = "keyword"
             token.tid = token.value + "_keyword"
             return token
@@ -125,8 +130,7 @@ class Tokenizer {
     func whitespace_tokenizer() -> Token {
         var character = self.source_code.character(at: self.position)!
         let token = Token(tid: "whitespace", value: String(character), category: "whitespace", position: self.position, line_number: self.line_number)
-        
-        if !character.isNewline { self.line_number += 1 }
+        if character.isNewline { self.line_number += 1 }
         self.position += 1
         while !is_EOF() {
             character = self.source_code.character(at: self.position)!
@@ -142,6 +146,41 @@ class Tokenizer {
         return token
     }
     
+
+    func greaterThen_tokenizer() -> Token {
+        let character = self.source_code.character(at: self.position)!
+        let token = Token(tid: "greaterThen", value: String(character), category: "operator", position: self.position, line_number: self.line_number)
+        let peek_value = self.peek()
+        if peek_value == "=" {
+            self.position += 1
+            token.tid += "_equals"
+            token.value += self.source_code[self.position]
+        }
+        return token
+    }
+    
+    func lessThan_tokenizer() -> Token {
+        let character = self.source_code.character(at: self.position)!
+        let token = Token(tid: "lessThan", value: String(character), category: "operator", position: self.position, line_number: self.line_number)
+        let peek_value = self.peek()
+        if peek_value == "=" {
+            self.position += 1
+            token.tid += "_equals"
+            token.value += self.source_code[self.position]
+        }
+        return token
+    }
+    
+    func not_tokenizer() -> Token {
+        let character = self.source_code.character(at: self.position)!
+        let token = Token(tid: "not", value: String(character), category: "operator", position: self.position, line_number: self.line_number)
+        if self.peek() == "=" {
+            self.position += 1
+            token.tid += "_equal"
+            token.value += self.source_code[self.position]
+        }
+        return token
+    }
     
     func plus_tokenizer() -> Token {
         let character = self.source_code.character(at: self.position)!
@@ -175,6 +214,38 @@ class Tokenizer {
         return token
     }
     
+    func multiplication_tokenizer() -> Token {
+        let character = self.source_code.character(at: self.position)!
+        let token = Token(tid: "multiplication", value: String(character), category: "operator", position: self.position, line_number: self.line_number)
+        let peek_value = self.peek()
+        if peek_value == "*" {
+            self.position += 1
+            token.tid = "exponent"
+            token.value += self.source_code[self.position]
+        } else if peek_value == "=" {
+            self.position += 1
+            token.tid += "_equals"
+            token.value += self.source_code[self.position]
+        }
+        return token
+    }
+    
+    func division_tokenizer() -> Token {
+        let character = self.source_code.character(at: self.position)!
+        let token = Token(tid: "division", value: String(character), category: "operator", position: self.position, line_number: self.line_number)
+        let peek_value = self.peek()
+        if peek_value == "/" {
+            self.position += 1
+            token.tid += "_floor"
+            token.value += self.source_code[self.position]
+        } else if peek_value == "=" {
+            self.position += 1
+            token.tid += "_equals"
+            token.value += self.source_code[self.position]
+        }
+        return token
+    }
+    
     func equal_tokenizer() -> Token {
         let character = self.source_code.character(at: self.position)!
         let token = Token(tid: "assignment", value: String(character), category: "operator", position: self.position, line_number: self.line_number)
@@ -188,41 +259,52 @@ class Tokenizer {
     
     func punctuation_tokenizer() -> Token {
         let character = self.source_code.character(at: self.position)!
-        let token = Token(tid: self.punctuations[String(character)]! , value: String(character), category: "punctuation", position: self.position, line_number: self.line_number)
-        if self.peek() == "=" {
-            self.position += 1
-            token.tid = "equal_equal"
-            token.value += self.source_code[self.position]
-        }
+        let tid = self.punctuations[String(character)]!
+        let token = Token(tid: tid, value: String(character), category: "punctuation", position: self.position, line_number: self.line_number)
         return token
     }
     
     func tokenize() -> Token {
         self.position += 1
         while !self.is_EOF(){
-            var character = self.source_code.character(at: self.position)!
+            let character = self.source_code.character(at: self.position)!
             if character.isNumber {
                 return self.number_tokenizer()
             } else if character.isLetter || character == "_" {
                 return self.identifier_tokenizer()
             } else if character.isWhitespace {
-                return self.whitespace_tokenizer()
+                let token = self.whitespace_tokenizer()
+                if !self.ignore_whitespace { return token }
             } else if character == "#" {
                 return self.comment_tokenizer()
             } else if character == "+" {
                 return self.plus_tokenizer()
             } else if character == "-" {
                 return self.minus_tokenizer()
+            } else if character == "*" {
+                return self.multiplication_tokenizer()
+            } else if character == "/" {
+                return self.division_tokenizer()
             } else if character == "=" {
                 return self.equal_tokenizer()
+            } else if character == ">" {
+                return self.greaterThen_tokenizer()
+            } else if character == "<" {
+                return self.lessThan_tokenizer()
+            } else if character == "!" {
+                return self.not_tokenizer()
             } else if punctuations.keys.contains(String(character)) {
                 return self.comment_tokenizer()
             } else {
                 return Token(tid: "error", value: String(character), category: "error", position: self.position, line_number: self.line_number)
             }
+            self.position += 1
         }
-        self.position += 1
         return Token(tid: "EOF",value: "EOF", category: "EOF", position: self.position, line_number: self.line_number)
     }
     
 }
+
+
+
+

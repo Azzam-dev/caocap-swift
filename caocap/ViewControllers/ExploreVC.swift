@@ -30,6 +30,9 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
         
         caocapsCollectionView.register(UINib.init(nibName: "caocapCell", bundle: nil), forCellWithReuseIdentifier: "caocapCell")
         
+        if let layout = caocapsCollectionView?.collectionViewLayout as? caocapLayout {
+          layout.delegate = self
+        }
         
     }
     
@@ -104,16 +107,19 @@ extension ExploreVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
     }
     
+    //this is the old layout
+/*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberOfColumns: CGFloat = 2
         let width = collectionView.frame.size.width
         let height = collectionView.frame.size.height
         let xInsets: CGFloat = 10
         let cellspacing: CGFloat = 5
-        
+
         return CGSize(width: (width / numberOfColumns) - (xInsets + cellspacing ) , height: height / 1.8 )
-        
+
     }
+*/
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -133,3 +139,9 @@ extension ExploreVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 }
 
 
+extension ExploreVC: caocapLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView,heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
+        let randomHeight = [350 , 450 , 500].shuffled()
+        return CGFloat(randomHeight[0])
+    }
+}

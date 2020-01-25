@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vph-EF-1TF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -2240,12 +2240,8 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rn4-Er-6cs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qO9-ft-64e">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="45" maxX="10" maxY="10"/>
-                                </collectionViewFlowLayout>
+                                <inset key="scrollIndicatorInsets" minX="5" minY="40" maxX="5" maxY="0.0"/>
+                                <collectionViewLayout key="collectionViewLayout" id="CXA-ah-zaP" customClass="caocapLayout" customModule="caocap" customModuleProvider="target"/>
                                 <cells/>
                             </collectionView>
                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2U-hm-gZU" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
@@ -4740,17 +4736,30 @@ Please visit the app tomorrow and everything will be done
                                 <rect key="frame" x="10" y="60" width="394" height="836"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="100" maxX="0.0" maxY="0.0"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiV-wL-jcs">
+                                <rect key="frame" x="10" y="772" width="394" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hrG-px-Hyn"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="compileBTN:" destination="Vph-EF-1TF" eventType="touchUpInside" id="yV3-al-O7m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16860964894294739" green="0.16863921284675598" blue="0.16860029101371765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dwc-6N-3lW" firstAttribute="top" secondItem="3nt-6L-3Bp" secondAttribute="top" constant="60" id="SZy-Bi-CWU"/>
+                            <constraint firstItem="85l-4P-O4c" firstAttribute="trailing" secondItem="fiV-wL-jcs" secondAttribute="trailing" constant="10" id="TTI-EM-1OG"/>
                             <constraint firstItem="Dwc-6N-3lW" firstAttribute="trailing" secondItem="85l-4P-O4c" secondAttribute="trailing" constant="-10" id="Uhc-Ba-v5B"/>
                             <constraint firstItem="Dwc-6N-3lW" firstAttribute="leading" secondItem="85l-4P-O4c" secondAttribute="leading" constant="10" id="cTD-T8-9v0"/>
                             <constraint firstAttribute="bottom" secondItem="Dwc-6N-3lW" secondAttribute="bottom" id="dAS-Rc-EsN"/>
+                            <constraint firstItem="85l-4P-O4c" firstAttribute="bottom" secondItem="fiV-wL-jcs" secondAttribute="bottom" constant="50" id="e0J-g8-yfr"/>
+                            <constraint firstItem="fiV-wL-jcs" firstAttribute="leading" secondItem="85l-4P-O4c" secondAttribute="leading" constant="10" id="xg5-ZI-Vg1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="85l-4P-O4c"/>
                     </view>

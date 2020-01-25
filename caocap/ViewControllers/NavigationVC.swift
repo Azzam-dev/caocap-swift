@@ -18,7 +18,7 @@ var navigationControllers: [UINavigationController]!
 var navSelectedIndex: Int = 2
 
 
-class NavigationVC: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class NavigationVC: UIViewController , UINavigationControllerDelegate {
 
     //this is used for the revealing splash animtion
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named : "caocap app icon" )!, iconInitialSize: CGSize(width: 120, height: 120) , backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) )
