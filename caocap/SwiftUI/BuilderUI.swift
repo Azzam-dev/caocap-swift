@@ -21,8 +21,8 @@ struct BuilderUI: View {
     @State public var colorBlue = 1.0
     
     @State public var showShadow = false
-    @State public var heightCounter: CGFloat = 200
-    @State public var widthCounter: CGFloat = 200
+    @State public var heightCounter: CGFloat = 500
+    @State public var widthCounter: CGFloat = 250
     
     var body: some View {
         ZStack {
@@ -57,6 +57,8 @@ struct BuilderUI: View {
                 }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height).background(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
                 
             } else if selectedView == 2 {
+                ChartUI()
+            } else if selectedView == 3 {
                 ChartUI()
             } else {
                 ChartUI()
@@ -101,7 +103,7 @@ struct CustomActionSheet: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            HStack(spacing: 30) {
+            HStack(spacing: 20) {
                 Button(action: {
                     print("undo was clicked")
                 }) {
@@ -119,25 +121,32 @@ struct CustomActionSheet: View {
                 
                 Button(action: {
                     self.selectedView = 1
-                    print("mindMap button was clicked")
+                    print("UIBuilder button was clicked")
                 }) {
-                    Image("w-up-and-down" ).resizable().frame(width: 25 , height: 25).scaledToFit()
+                    Image("W-uncheck_all_filled").resizable().frame(width: 25 , height: 25).scaledToFit()
                 }.foregroundColor(Color(self.selectedView == 1 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
-                
                 
                 Button(action: {
                     self.selectedView = 2
-                    print("analytics was clicked")
+                    print("mindMap button was clicked")
                 }) {
-                    Image("W-sorting_options").resizable().frame(width: 25 , height: 25).scaledToFit()
+                    Image("w-up-and-down" ).resizable().frame(width: 25 , height: 25).scaledToFit()
                 }.foregroundColor(Color(self.selectedView == 2 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                
                 
                 Button(action: {
                     self.selectedView = 3
+                    print("analytics was clicked")
+                }) {
+                    Image("W-sorting_options").resizable().frame(width: 25 , height: 25).scaledToFit()
+                }.foregroundColor(Color(self.selectedView == 3 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                
+                Button(action: {
+                    self.selectedView = 4
                     print("undo was clicked")
                 }) {
                     Image("w-launched_rocket").resizable().frame(width: 25 , height: 25).scaledToFit()
-                }.foregroundColor(Color(self.selectedView == 3 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                }.foregroundColor(Color(self.selectedView == 4 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                 
                 Spacer()
                 

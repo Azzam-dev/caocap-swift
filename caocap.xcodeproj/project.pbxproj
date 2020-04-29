@@ -67,6 +67,7 @@
 		ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479A21C79156000E16DC /* ContactChatVC.swift */; };
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
 		ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */; };
+		ECF00E69245979AF00414D45 /* MindMapUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF00E68245979AF00414D45 /* MindMapUI.swift */; };
 		ECF205492160ED6D00C48F2A /* authVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF205482160ED6D00C48F2A /* authVC.swift */; };
 		ECF2054B216102C200C48F2A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2054A216102C200C48F2A /* AuthService.swift */; };
 		ECF2055121624C9400C48F2A /* menuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2055021624C9400C48F2A /* menuVC.swift */; };
@@ -168,6 +169,7 @@
 		ECAD479C21CA97C4000E16DC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapIconCell.swift; sourceTree = "<group>"; };
 		ECDABBF2238348170029B026 /* caocap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = caocap.entitlements; sourceTree = "<group>"; };
+		ECF00E68245979AF00414D45 /* MindMapUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindMapUI.swift; sourceTree = "<group>"; };
 		ECF205482160ED6D00C48F2A /* authVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authVC.swift; sourceTree = "<group>"; };
 		ECF2054A216102C200C48F2A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		ECF2055021624C9400C48F2A /* menuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuVC.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			children = (
 				ECA5D9C5244F6D4000C3C021 /* ExploreUI.swift */,
 				EC9333D5244AB7540086055D /* BuilderUI.swift */,
+				ECF00E68245979AF00414D45 /* MindMapUI.swift */,
 				EC308532244E003300D534DF /* CircleImage.swift */,
 				EC7095E0244ED319001F88A5 /* Shapes.swift */,
 				EC03B1D52450614600274B1D /* ChartUI.swift */,
@@ -690,6 +693,7 @@
 				EC501679234E62B900021D70 /* arrivedMessageCell.swift in Sources */,
 				EC0CA6DB224EA31700CD2142 /* topColCell.swift in Sources */,
 				EC308533244E003300D534DF /* CircleImage.swift in Sources */,
+				ECF00E69245979AF00414D45 /* MindMapUI.swift in Sources */,
 				EC2F25072169C47F00D14733 /* editProfileVC.swift in Sources */,
 				EC03B1D8245063F800274B1D /* fullScreenChartUI.swift in Sources */,
 				4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */,
