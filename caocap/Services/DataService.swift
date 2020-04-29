@@ -200,7 +200,6 @@ class DataService {
         REF_CAOCAPS.observe(.value) { (caocapsSnapshot) in
             guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
             for caocap in caocapsSnapshot {
-                
                 let caocapname = caocap.childSnapshot(forPath: "name").value as! String
                 let currentUserUID = (Auth.auth().currentUser?.uid)!
                 let ownersArray = caocap.childSnapshot(forPath: "owners").value as? [String] ?? [""]
@@ -232,7 +231,6 @@ class DataService {
     }
     
     func getCaocapsQuery(forSearchQuery query: String, handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
-        
         // This goes over all the caocaps and gets the query
         var caocapsArray = [Caocap]()
         REF_CAOCAPS.observe(.value) { (caocapsSnapshot) in
@@ -270,7 +268,6 @@ class DataService {
         REF_CHATS.child(key).child("messages").observe(.value) { (messagesSnapshot) in
             guard let messagesSnapshot = messagesSnapshot.children.allObjects as? [DataSnapshot] else { return }
             for theMessage in messagesSnapshot {
-                
                 let messageDict = theMessage.value
                 let message = Message(key: theMessage.key, dictionary: messageDict as! [String : Any])
                 messagesArray.append(message)

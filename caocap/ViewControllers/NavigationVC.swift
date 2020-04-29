@@ -17,12 +17,10 @@ var myPageSubVC: UINavigationController!
 var navigationControllers: [UINavigationController]!
 var navSelectedIndex: Int = 0
 
-
 class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
     //this is used for the revealing splash animtion
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named : "caocap app icon" )!, iconInitialSize: CGSize(width: 120, height: 120) , backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) )
-    
     
     
     override func viewDidLoad() {
@@ -66,14 +64,11 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         //this is the revealing splash animation
         self.view.addSubview(revealingSplashView)
         revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
-        revealingSplashView.startAnimation() {
-            print("Completed")
-        }
+        revealingSplashView.startAnimation()
     }
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet var navBTNs: [UIButton]!
-    
     
     @IBOutlet weak var exploreICON: UIImageView!
     @IBOutlet weak var orbitICON: UIImageView!
@@ -84,8 +79,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
     @IBOutlet weak var navCircleView: DesignableView!
     @IBOutlet weak var navCircleBTN: UIButton!
-    
-    
     
     @objc func navNormalTap(_ sender: UIGestureRecognizer){
         navCircleButtonAnimation()
@@ -120,11 +113,8 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
                 circleViewScaleUpAnimation()
                 blurredViewShowAnimation()
             }
-            //Do Whatever You want on Began of Gesture
         }
     }
-    
-    
     
     @IBOutlet weak var exploreIconView: UIView!
     @IBOutlet weak var chatIconView: UIView!
@@ -173,10 +163,11 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
     func blurredViewHideAnimation() {
         if blurredView.isHidden == false {
-            blurredView.isHidden = true
             UIView.animate(withDuration: 0.2 , animations: {
                 self.blurredView.alpha = 0
                 self.view.layoutIfNeeded()
+            }, completion: { finished in
+                self.blurredView.isHidden = true
             })
         }
     }
@@ -186,7 +177,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         UIView.animate(withDuration: 0.2 , animations: {
             self.navCircleButtonHeightConstraint.constant = 62
             self.view.layoutIfNeeded()
-        }, completion: {(finished:Bool) in
+        }, completion: { finished in
             UIView.animate(withDuration: 0.1 , animations: {
                 self.navCircleButtonHeightConstraint.constant = 65
                 self.view.layoutIfNeeded()
@@ -199,12 +190,11 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
             navCircleButtonAnimation()
             UIView.animate(withDuration: 0.2 , animations: {
                 self.navCircleViewHeightConstraint.constant = 240
-            }, completion: {(finished:Bool) in
+            }, completion: { finished in
                 UIView.animate(withDuration: 0.1 , animations: {
                     self.navCircleViewHeightConstraint.constant = 220
                 })
             })
-            
         }
     }
     
@@ -213,7 +203,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
             UIView.animate(withDuration: 0.1 , animations: {
                 self.navCircleViewHeightConstraint.constant = 240
                 self.view.layoutIfNeeded()
-            }, completion: {(finished:Bool) in
+            }, completion: { finished in
                 UIView.animate(withDuration: 0.2 , animations: {
                     self.navCircleViewHeightConstraint.constant = 65
                     self.view.layoutIfNeeded()
@@ -284,11 +274,8 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "حسناً", style: .default) { (action:UIAlertAction!) in
-            // Code in this block will trigger when OK button tapped.
-            print("Ok button tapped")
-        }
-        alertController.addAction(OKAction)
+        let okAction = UIAlertAction(title: "حسناً", style: .default)
+        alertController.addAction(okAction)
         self.present(alertController, animated: true, completion:nil)
     }
     

@@ -150,7 +150,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         UIView.animate(withDuration: 0.3, delay: 0.3, animations: {
             self.popupView.alpha = 0
             self.view.layoutIfNeeded()
-        }, completion: {(finished:Bool) in
+        }, completion: { finished in
             self.cancelPopupsBTN.isHidden = true
             self.popupView.isHidden = true
         })
@@ -189,7 +189,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
                 storageRef.downloadURL(completion: { url, error in
                     if error != nil { print(error!) } else {
                         // Here you can get the download URL
-                        let caocapData = ["imageURL": url?.absoluteString,
+                        let caocapData = ["imageURL": url?.absoluteString ?? "",
                                           "name" : self.caocapNameTF.text!,
                                           "website" : self.caocapWebsiteTF.text!,
                                           "owners": [currentUserUID],
@@ -219,11 +219,9 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "حسناً", style: .default) { (action:UIAlertAction!) in
-            print("Ok button tapped")
-        }
+        let OKAction = UIAlertAction(title: "حسناً", style: .default)
         alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion:nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func blurredViewShowAnimation() {
@@ -238,10 +236,11 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     
     func blurredViewHideAnimation() {
         if blurredView.isHidden == false {
-            blurredView.isHidden = true
             UIView.animate(withDuration: 0.2 , animations: {
                 self.blurredView.alpha = 0
                 self.view.layoutIfNeeded()
+            }, completion: { finished in
+                self.blurredView.isHidden = true
             })
         }
     }

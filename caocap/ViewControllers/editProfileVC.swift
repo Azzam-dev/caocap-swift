@@ -39,10 +39,7 @@ class editProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
             selectedConstraint.constant = 20
             self.userIMGview.borderColor = self.colorArray[self.colorSelectedIndex]
             self.view.layoutIfNeeded()
-        }, completion: {(finished:Bool) in
-            
         })
-        
     }
     
     override func viewDidLoad() {
@@ -50,7 +47,6 @@ class editProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
         
         getUserData()
         userIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeImage)))
-        
         
         saveBTN.isEnabled = true
         saveBTN.setTitle("save",for: .normal)
@@ -95,6 +91,7 @@ class editProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
         picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
     }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var selectedImageFromPicker: UIImage?
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
@@ -107,6 +104,7 @@ class editProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
         }
         dismiss(animated: true, completion: nil)
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -125,7 +123,6 @@ class editProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
         saveBTN.alpha = 0.5
 
         if let currentUser = Auth.auth().currentUser?.uid {
-            
             if usernameTF.text != "" {
                 let isEmailAddressValid = isValidEmailAddress(emailAddressString: emailTF.text!)
                 if isEmailAddressValid {
@@ -174,21 +171,12 @@ class editProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
     
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        
-        let OKAction = UIAlertAction(title: "حسناً", style: .default) { (action:UIAlertAction!) in
-            
-            // Code in this block will trigger when OK button tapped.
-            print("Ok button tapped")
-            
-        }
-        
+        let OKAction = UIAlertAction(title: "حسناً", style: .default)
         alertController.addAction(OKAction)
-        
         self.present(alertController, animated: true, completion:nil)
     }
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {
-        
         var returnValue = true
         let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
         

@@ -117,7 +117,7 @@ class authVC: UIViewController {
             self.switchLBL.alpha = 0
             self.rocketLaunchView.frame.origin.y = ( 200 - self.view.frame.size.height )
             self.view.layoutIfNeeded()
-        }, completion: {(finished:Bool) in
+        }, completion: { finished in
             self.dismissVC()
             self.signBTN.alpha = 1
             self.signSwitchBTN.alpha = 1
@@ -129,7 +129,6 @@ class authVC: UIViewController {
     @IBOutlet weak var switchLBL: UILabel!
     @IBOutlet weak var signSwitchBTN: UIButton!
     @IBAction func signSwitchBTN(_ sender: Any) {
-        
         if usernameView.isHidden {
             usernameView.isHidden = false
             signBTN.setTitle("sign up", for: .normal)

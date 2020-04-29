@@ -34,7 +34,7 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                 self.present(authVC!, animated: true, completion: nil)
             } catch {
                 self.displayAlertMessage(messageToDisplay: error as! String)
-          
+                
             }
         }
         let cancel = UIAlertAction(title: "لا", style: .default, handler: nil)
@@ -55,16 +55,8 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        
-        let OKAction = UIAlertAction(title: "حسناً", style: .default) { (action:UIAlertAction!) in
-            
-            // Code in this block will trigger when OK button tapped.
-            print("Ok button tapped")
-            
-        }
-        
+        let OKAction = UIAlertAction(title: "حسناً", style: .default)
         alertController.addAction(OKAction)
-        
         self.present(alertController, animated: true, completion:nil)
     }
     
@@ -89,15 +81,14 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
             //edit profile VC
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
             let editProfile = storyboard.instantiateViewController(withIdentifier: "editProfile") as! editProfileVC
             navigationController?.pushViewController(editProfile, animated: true)
             
-            } else if indexPath.row == 1 {
-                //settings VC
-            } else if indexPath.row == 2 {
+        } else if indexPath.row == 1 {
+            //settings VC
+        } else if indexPath.row == 2 {
             logoutAct()
-            }
+        }
     }
     
 }

@@ -11,7 +11,6 @@ import Firebase
 
 class ExploreVC: UIViewController, UITextFieldDelegate {
     
-    
     @IBOutlet weak var caocapsCollectionView: UICollectionView!
     var caocapsArray = [Caocap]()
     
@@ -52,7 +51,7 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
     }
     
     //FIXME: fix searchTF and show the search bar 
-    @objc func  textFieldDidChange() {
+    @objc func textFieldDidChange() {
         if searchTF.text == "" {
             DataService.instance.getAllCaocaps(handler: { (returnedExploreArray) in
                 self.caocapsArray = returnedExploreArray
@@ -75,9 +74,6 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
     }
     
     //FIXME: fix filter func and show the filter icon in the search bar
-    
-    
-    
     
 }
 
