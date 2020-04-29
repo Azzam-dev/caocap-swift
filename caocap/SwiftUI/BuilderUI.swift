@@ -12,7 +12,7 @@ struct BuilderUI: View {
     
     @State var show = false
     
-    @State public var selectedView = 0
+    @State public var selectedView = "builder"
     
     @State public var topTitle = "Text..."
     
@@ -26,7 +26,7 @@ struct BuilderUI: View {
     
     var body: some View {
         ZStack {
-            if selectedView == 0 {
+            if selectedView == "builder" {
                 ScrollView([.vertical, .horizontal], showsIndicators: false) {
                     ZStack {
                         Button(action: {
@@ -41,7 +41,7 @@ struct BuilderUI: View {
                     }
                 }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height).background(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
                 
-            } else if selectedView == 1 {
+            } else if selectedView == "style" {
                 ScrollView([.vertical, .horizontal], showsIndicators: false) {
                     ZStack {
                         Button(action: {
@@ -56,9 +56,21 @@ struct BuilderUI: View {
                     }
                 }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height).background(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
                 
-            } else if selectedView == 2 {
-                ChartUI()
-            } else if selectedView == 3 {
+            } else if selectedView == "mindMap" {
+                ScrollView([.vertical, .horizontal], showsIndicators: false) {
+                    ZStack {
+                        Button(action: {
+                            self.show.toggle()
+                        }) {
+                            RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                .fill(Color(#colorLiteral(red: 0.4343011975, green: 0.6282382011, blue: 0.310678184, alpha: 1)))
+                                .frame(width: 100 , height: 30)
+                                .shadow(radius: showShadow ? 5 : 0)
+                        }
+                        
+                    }
+                }.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height).background(Color(#colorLiteral(red: 0.0901845172, green: 0.090203695, blue: 0.09017842263, alpha: 1)))
+            } else if selectedView == "analytics" {
                 ChartUI()
             } else {
                 ChartUI()
@@ -88,7 +100,7 @@ struct CustomActionSheet: View {
     @State var show2 = false
     @State var show3 = false
     
-    @Binding var selectedView: Int
+    @Binding var selectedView: String
     
     @Binding var topTitle: String
     
@@ -113,40 +125,40 @@ struct CustomActionSheet: View {
                 Spacer()
                 
                 Button(action: {
-                    self.selectedView = 0
+                    self.selectedView = "builder"
                     print("UIBuilder button was clicked")
                 }) {
                     Image("W-uncheck_all_filled").resizable().frame(width: 25 , height: 25).scaledToFit()
-                }.foregroundColor(Color(self.selectedView == 0 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                }.foregroundColor(Color(self.selectedView == "Builder" ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                 
                 Button(action: {
-                    self.selectedView = 1
+                    self.selectedView = "style"
                     print("UIBuilder button was clicked")
                 }) {
                     Image("W-uncheck_all_filled").resizable().frame(width: 25 , height: 25).scaledToFit()
-                }.foregroundColor(Color(self.selectedView == 1 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                }.foregroundColor(Color(self.selectedView == "style" ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                 
                 Button(action: {
-                    self.selectedView = 2
+                    self.selectedView = "mindMap"
                     print("mindMap button was clicked")
                 }) {
                     Image("w-up-and-down" ).resizable().frame(width: 25 , height: 25).scaledToFit()
-                }.foregroundColor(Color(self.selectedView == 2 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                }.foregroundColor(Color(self.selectedView == "mindMap" ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                 
                 
                 Button(action: {
-                    self.selectedView = 3
-                    print("analytics was clicked")
+                    self.selectedView = "analytics"
+                    print("analytics button was clicked")
                 }) {
                     Image("W-sorting_options").resizable().frame(width: 25 , height: 25).scaledToFit()
-                }.foregroundColor(Color(self.selectedView == 3 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                }.foregroundColor(Color(self.selectedView == "analytics" ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                 
                 Button(action: {
-                    self.selectedView = 4
-                    print("undo was clicked")
+                    self.selectedView = "launchPad"
+                    print("launchPad button was clicked")
                 }) {
                     Image("w-launched_rocket").resizable().frame(width: 25 , height: 25).scaledToFit()
-                }.foregroundColor(Color(self.selectedView == 4 ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
+                }.foregroundColor(Color(self.selectedView == "launchPad" ? #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1) : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                 
                 Spacer()
                 
@@ -162,7 +174,7 @@ struct CustomActionSheet: View {
                 
             }
             
-            if self.selectedView == 0 {
+            if self.selectedView == "style" {
                 TextField("Text...", text: $topTitle)
                 
                 Slider(value: self.$colorRed, in: 0...1 , step: 0.0001){
@@ -211,7 +223,7 @@ struct CustomActionSheet: View {
                         Text("\(self.widthCounter)").foregroundColor(.white)
                     }
                 }.foregroundColor(.white)
-            } else {
+            } else if selectedView == "mindMap" {
                 HStack(spacing: 10) {
                     VStack(spacing: 10) {
                         Button(action: {
