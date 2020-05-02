@@ -30,6 +30,9 @@
 		EC339BE62253D75200FDC14A /* UrlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE52253D75200FDC14A /* UrlService.swift */; };
 		EC361D1F239FEFED00857536 /* parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC361D1E239FEFED00857536 /* parser.swift */; };
 		EC368421225AFE8C00ABC9C6 /* caocapCellAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368420225AFE8C00ABC9C6 /* caocapCellAnimation.swift */; };
+		EC368E57245C90A100390500 /* designCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368E56245C90A000390500 /* designCollectionViewCell.swift */; };
+		EC368E5B245CD43E00390500 /* SurfaceBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368E59245CD43E00390500 /* SurfaceBlock.swift */; };
+		EC368E5C245CD43E00390500 /* SurfaceBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC368E5A245CD43E00390500 /* SurfaceBlock.xib */; };
 		EC3F6D93234F81DF007DD028 /* GroupChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */; };
 		EC501674234E121900021D70 /* caocapRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501673234E121900021D70 /* caocapRoomVC.swift */; };
 		EC501676234E610200021D70 /* sentMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501675234E610200021D70 /* sentMessageCell.swift */; };
@@ -125,6 +128,9 @@
 		EC339BE52253D75200FDC14A /* UrlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlService.swift; sourceTree = "<group>"; };
 		EC361D1E239FEFED00857536 /* parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parser.swift; sourceTree = "<group>"; };
 		EC368420225AFE8C00ABC9C6 /* caocapCellAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapCellAnimation.swift; sourceTree = "<group>"; };
+		EC368E56245C90A000390500 /* designCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC368E59245CD43E00390500 /* SurfaceBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfaceBlock.swift; sourceTree = "<group>"; };
+		EC368E5A245CD43E00390500 /* SurfaceBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurfaceBlock.xib; sourceTree = "<group>"; };
 		EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatVC.swift; sourceTree = "<group>"; };
 		EC501673234E121900021D70 /* caocapRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapRoomVC.swift; sourceTree = "<group>"; };
 		EC501675234E610200021D70 /* sentMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sentMessageCell.swift; sourceTree = "<group>"; };
@@ -264,6 +270,15 @@
 			path = SwiftUI;
 			sourceTree = "<group>";
 		};
+		EC368E58245CD39300390500 /* BuilderBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				EC368E59245CD43E00390500 /* SurfaceBlock.swift */,
+				EC368E5A245CD43E00390500 /* SurfaceBlock.xib */,
+			);
+			path = BuilderBlocks;
+			sourceTree = "<group>";
+		};
 		EC5C0DDF216F88E600ED508F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +286,7 @@
 				EC5238E121916E3A00D966F3 /* contactUserCell.swift */,
 				EC5238DB2190834200D966F3 /* contactChatCell.swift */,
 				EC5238D9219082F100D966F3 /* chatGroupCell.swift */,
+				EC368E56245C90A000390500 /* designCollectionViewCell.swift */,
 				EC5238DD2190836200D966F3 /* caocapGroupCell.swift */,
 				ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */,
 				EC2B26B622692B2C00779486 /* openedCaocapCell.swift */,
@@ -385,6 +401,7 @@
 				EC2B26C6226B444700779486 /* NavigationControllers */,
 				EC308531244E000400D534DF /* SwiftUI */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
+				EC368E58245CD39300390500 /* BuilderBlocks */,
 				EC8E19492159E02A000E4EE6 /* Main.storyboard */,
 				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
@@ -548,6 +565,7 @@
 				EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */,
 				ECF63E8E21BD914B00E491FE /* caocapRoomCell.xib in Resources */,
 				EC0CA6DC224EA31700CD2142 /* topColCell.xib in Resources */,
+				EC368E5C245CD43E00390500 /* SurfaceBlock.xib in Resources */,
 				ECF63E8621BD6C6D00E491FE /* caocapCell.xib in Resources */,
 				EC8E19502159E02C000E4EE6 /* Assets.xcassets in Resources */,
 				EC2F25022168FFE800D14733 /* earthorbiter.ttf in Resources */,
@@ -676,6 +694,7 @@
 				EC7DBC9D239EC4B6007CFD5F /* tokenizer.swift in Sources */,
 				ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */,
 				EC70ACEE215D6994004C16D2 /* orbitVC.swift in Sources */,
+				EC368E5B245CD43E00390500 /* SurfaceBlock.swift in Sources */,
 				EC2B26C1226A12DC00779486 /* caocapVC.swift in Sources */,
 				ECF63E6C21BA33E900E491FE /* ImageService.swift in Sources */,
 				EC368421225AFE8C00ABC9C6 /* caocapCellAnimation.swift in Sources */,
@@ -692,6 +711,7 @@
 				EC8A4C662274C654004D43B6 /* cosmosCell.swift in Sources */,
 				EC501679234E62B900021D70 /* arrivedMessageCell.swift in Sources */,
 				EC0CA6DB224EA31700CD2142 /* topColCell.swift in Sources */,
+				EC368E57245C90A100390500 /* designCollectionViewCell.swift in Sources */,
 				EC308533244E003300D534DF /* CircleImage.swift in Sources */,
 				ECF00E69245979AF00414D45 /* MindMapUI.swift in Sources */,
 				EC2F25072169C47F00D14733 /* editProfileVC.swift in Sources */,
