@@ -32,8 +32,6 @@ class BuilderVC: UIViewController {
         designScrollView.addSubview(surfaceBlock)
         surfaceBlock.frame.origin = CGPoint(x: viewWidth / 2 , y: viewHeight / 2 )
         
-        designCollectionView.delegate = self
-        designCollectionView.dataSource = self
     }
 }
 

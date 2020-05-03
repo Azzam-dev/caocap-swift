@@ -19,21 +19,14 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chatsTableView.delegate = self
-        chatsTableView.dataSource = self
         
         let tableViewtopCellNib = UINib(nibName: "topTableCell", bundle: nil)
         self.chatsTableView.register(tableViewtopCellNib, forCellReuseIdentifier: "topTableCell")
         
-        groupMembersTableView.delegate = self
-        groupMembersTableView.dataSource = self
-        groupMembersSearchTF.delegate = self
         groupMembersSearchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         groupIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeGroupImage)))
         
-        contactTableView.delegate = self
-        contactTableView.dataSource = self
-        contactSearchTF.delegate = self
+    
         contactSearchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     

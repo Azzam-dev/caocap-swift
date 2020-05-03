@@ -41,8 +41,6 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         
         getUserData()
         getMyCaocapsData()
-        profileCollectionView.delegate = self
-        profileCollectionView.dataSource = self
         
         profileCollectionView.register(UINib.init(nibName: "caocapCell", bundle: nil), forCellWithReuseIdentifier: "caocapCell")
         caocapIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeImage)))

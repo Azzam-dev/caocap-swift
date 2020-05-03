@@ -22,8 +22,7 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
         getCaocapsData()
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
-        caocapsCollectionView.delegate = self
-        caocapsCollectionView.dataSource = self
+        
         caocapsCollectionView.register(UINib.init(nibName: "caocapCell", bundle: nil), forCellWithReuseIdentifier: "caocapCell")
         
         if let layout = caocapsCollectionView?.collectionViewLayout as? caocapLayout {

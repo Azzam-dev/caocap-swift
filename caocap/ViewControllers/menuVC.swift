@@ -19,8 +19,6 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuTableView.delegate = self
-        menuTableView.dataSource = self
         
     }
     
