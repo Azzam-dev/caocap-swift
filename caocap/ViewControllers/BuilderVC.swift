@@ -14,7 +14,10 @@ class BuilderVC: UIViewController {
     @IBOutlet weak var designScrollView: UIScrollView!
     @IBOutlet weak var designCollectionView: UICollectionView!
     
+    @IBOutlet weak var designSVContant: UIView!
     @IBOutlet var surfaceBlock: UIStackView!
+    @IBOutlet var surfaceBlock2: UIStackView!
+    @IBOutlet var surfaceBlock3: UIStackView!
     
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
@@ -24,13 +27,21 @@ class BuilderVC: UIViewController {
         
         designScrollView.contentSize = CGSize(width: viewWidth * 2, height: viewHeight * 2)
         designScrollView.contentOffset = CGPoint(x: viewWidth / 2 , y: viewHeight / 2 )
+        designSVContant.frame.size = designScrollView.contentSize
         
 //        if let surface1 = Bundle.main.loadNibNamed("SurfaceBlock", owner: self, options: nil)?.first as? SurfaceBlock {
 //            designScrollView.addSubview(surface1)
 //        }
         
-        designScrollView.addSubview(surfaceBlock)
-        surfaceBlock.frame.origin = CGPoint(x: viewWidth / 2 , y: viewHeight / 2 )
+        designSVContant.addSubview(surfaceBlock)
+        surfaceBlock.frame.origin = CGPoint(x: viewWidth * 0.75, y: viewHeight * 0.6)
+        
+        designSVContant.addSubview(surfaceBlock2)
+        surfaceBlock2.frame.origin = CGPoint(x: surfaceBlock.frame.origin.x + 120 , y: surfaceBlock.frame.origin.y + 300)
+        
+        
+        designSVContant.addSubview(surfaceBlock3)
+        surfaceBlock3.frame.origin = CGPoint(x: surfaceBlock.frame.origin.x - 120 , y: surfaceBlock.frame.origin.y + 300)
         
     }
 }
@@ -50,14 +61,21 @@ extension BuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-            guard let cell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as? designCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.configureCell(icon: #imageLiteral(resourceName: "icons8-check"))
-            
-            return cell
+        guard let cell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as? designCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.configureCell(icon: #imageLiteral(resourceName: "icons8-check"))
+        
+        return cell
         
     }
     
+}
 
-    
+extension BuilderVC: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return designSVContant
+    }
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        
+    }
 }
