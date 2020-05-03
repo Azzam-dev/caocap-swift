@@ -27,6 +27,7 @@ class BuilderVC: UIViewController {
         
         designScrollView.contentSize = CGSize(width: viewWidth * 2, height: viewHeight * 2)
         designScrollView.contentOffset = CGPoint(x: viewWidth / 2 , y: viewHeight / 2 )
+        designScrollView.addSubview(designSVContant)
         designSVContant.frame.size = designScrollView.contentSize
         
 //        if let surface1 = Bundle.main.loadNibNamed("SurfaceBlock", owner: self, options: nil)?.first as? SurfaceBlock {
