@@ -14,6 +14,7 @@ class BuilderVC: UIViewController {
     @IBOutlet weak var designScrollView: UIScrollView!
     @IBOutlet weak var designCollectionView: UICollectionView!
     
+    @IBOutlet weak var blockCollectionView: UICollectionView!
     @IBOutlet weak var designSVContant: UIView!
     @IBOutlet var surfaceBlock: UIStackView!
     @IBOutlet var surfaceBlock2: UIStackView!
@@ -55,18 +56,26 @@ extension BuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
         if collectionView == designCollectionView {
             return 10
         } else {
-            return 10
+            return 20
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
-        guard let cell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as? designCollectionViewCell else { return UICollectionViewCell() }
-        
-        cell.configureCell(icon: #imageLiteral(resourceName: "icons8-check"))
-        
-        return cell
+        if collectionView == designCollectionView {
+            guard let cell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as? designCollectionViewCell else { return UICollectionViewCell() }
+            
+            cell.configureCell(icon: #imageLiteral(resourceName: "W-sorting_options"))
+            
+            return cell
+            
+        } else {
+            guard let cell = blockCollectionView.dequeueReusableCell(withReuseIdentifier: "blockCell", for: indexPath) as? blockCollectionViewCell else { return UICollectionViewCell() }
+            
+            cell.configureCell(icon: #imageLiteral(resourceName: "icons8-audio_wave0"))
+            
+            return cell
+        }
         
     }
     
@@ -80,3 +89,5 @@ extension BuilderVC: UIScrollViewDelegate {
         
     }
 }
+
+
