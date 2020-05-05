@@ -10,9 +10,9 @@ import UIKit
 
 class BuilderVC: UIViewController {
     
+    var blocksArray = [ #imageLiteral(resourceName: "icons8-accounting0"), #imageLiteral(resourceName: "icons8-trash0"), #imageLiteral(resourceName: "icons8-lightning_bolt0"), #imageLiteral(resourceName: "icons8-location_off_filled0"), #imageLiteral(resourceName: "icons8-geo_fence0"), #imageLiteral(resourceName: "W-search_filled"), #imageLiteral(resourceName: "icons8-menu0"), #imageLiteral(resourceName: "W-full_screen_filled"), #imageLiteral(resourceName: "W-uncheck_all_filled"), #imageLiteral(resourceName: "icons8-paper_plane_filled0"), #imageLiteral(resourceName: "icons8-no_microphone0"), #imageLiteral(resourceName: "icons8-galaxy0"), #imageLiteral(resourceName: "W-network"), #imageLiteral(resourceName: "icons8-astronaut_helmet0"), #imageLiteral(resourceName: "w-share"), #imageLiteral(resourceName: "W-full_screen_filled"), #imageLiteral(resourceName: "W-uncheck_all_filled"), #imageLiteral(resourceName: "icons8-paper_plane_filled0"), #imageLiteral(resourceName: "icons8-no_microphone0"), #imageLiteral(resourceName: "icons8-galaxy0")]
     
     @IBOutlet weak var designScrollView: UIScrollView!
-    @IBOutlet weak var designCollectionView: UICollectionView!
     
     @IBOutlet weak var blockCollectionView: UICollectionView!
     @IBOutlet weak var designSVContant: UIView!
@@ -53,30 +53,16 @@ extension BuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == designCollectionView {
-            return 10
-        } else {
-            return 20
-        }
+            return blocksArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        guard let cell = blockCollectionView.dequeueReusableCell(withReuseIdentifier: "blockCell", for: indexPath) as? blockCollectionViewCell else { return UICollectionViewCell() }
         
-        if collectionView == designCollectionView {
-            guard let cell = designCollectionView.dequeueReusableCell(withReuseIdentifier: "designCell", for: indexPath) as? designCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.configureCell(icon: #imageLiteral(resourceName: "W-sorting_options"))
-            
-            return cell
-            
-        } else {
-            guard let cell = blockCollectionView.dequeueReusableCell(withReuseIdentifier: "blockCell", for: indexPath) as? blockCollectionViewCell else { return UICollectionViewCell() }
-            
-            cell.configureCell(icon: #imageLiteral(resourceName: "icons8-audio_wave0"))
-            
-            return cell
-        }
+        cell.configureCell(icon: blocksArray[indexPath.row])
         
+        return cell
     }
     
 }
