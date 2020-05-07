@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -639,6 +639,10 @@
                                             </view>
                                             <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rg-5e-OQE">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                            </button>
+                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkW-34-gze">
+                                                <rect key="frame" x="9.3333333333333428" y="10" width="65" height="65"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.16860964894294739" green="0.16863921284675598" blue="0.16860029101371765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2179,7 +2183,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hn4-2z-rB8">
-                                        <rect key="frame" x="45" y="12" width="224" height="21"/>
+                                        <rect key="frame" x="45" y="10.666666666666671" width="224" height="24"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2998,16 +3002,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gxX-Kq-Wd6">
-                                        <rect key="frame" x="64.000000000000014" y="10.666666666666664" width="130.33333333333337" height="34"/>
+                                        <rect key="frame" x="64" y="10.666666666666664" width="135" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="theRoomName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="lNk-0E-X5V">
-                                                <rect key="frame" x="0.0" y="0.0" width="130.33333333333334" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="23.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="405 orbiting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxb-eS-6OT" userLabel="orbits">
-                                                <rect key="frame" x="0.0" y="22.333333333333336" width="66" height="11.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="25.333333333333336" width="64.333333333333329" height="8.6666666666666643"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="12"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -3015,7 +3019,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jS3-cQ-fvk">
-                                        <rect key="frame" x="20" y="10.666666666666664" width="174.33333333333334" height="34"/>
+                                        <rect key="frame" x="20" y="10.666666666666664" width="179" height="34"/>
                                         <connections>
                                             <action selector="caocapBTN:" destination="xdE-5a-8Np" eventType="touchUpInside" id="xNC-1i-wjb"/>
                                         </connections>
@@ -3110,10 +3114,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5QV-KV-0jq" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                                            <rect key="frame" x="41.666666666666657" y="5" width="313.33333333333337" height="55"/>
+                                                            <rect key="frame" x="37" y="5" width="318" height="55"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:09am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ni7-Tx-uek">
-                                                                    <rect key="frame" x="10" y="5.0000000000000009" width="60" height="12.333333333333336"/>
+                                                                    <rect key="frame" x="10" y="5" width="60" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="7ac-ow-q3P"/>
                                                                     </constraints>
@@ -3122,7 +3126,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ui9-fE-qPx">
-                                                                    <rect key="frame" x="238.33333333333337" y="5.0000000000000009" width="65" height="15.333333333333336"/>
+                                                                    <rect key="frame" x="241.33333333333329" y="5" width="66.666666666666657" height="17.666666666666668"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Vg3-YZ-4gi"/>
                                                                     </constraints>
@@ -3131,7 +3135,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a Message sent from you and it is the 1st" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlU-rJ-aV0">
-                                                                    <rect key="frame" x="10" y="30.333333333333332" width="293.33333333333331" height="14.333333333333332"/>
+                                                                    <rect key="frame" x="10" y="32.666666666666664" width="298" height="16.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -3237,10 +3241,10 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbw-x9-2MC" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                                            <rect key="frame" x="59" y="5" width="313.33333333333331" height="55"/>
+                                                            <rect key="frame" x="59" y="5" width="318" height="55"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:09am" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="yiL-F0-W2Q">
-                                                                    <rect key="frame" x="243.33333333333331" y="5.0000000000000009" width="60" height="12.333333333333336"/>
+                                                                    <rect key="frame" x="248" y="5" width="60" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="YvT-2B-2Gl"/>
                                                                     </constraints>
@@ -3249,7 +3253,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ZMo-VJ-w6g">
-                                                                    <rect key="frame" x="10" y="5.0000000000000009" width="65" height="15.333333333333336"/>
+                                                                    <rect key="frame" x="10" y="5" width="66.666666666666671" height="17.666666666666668"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="e8N-cv-Hyb"/>
                                                                     </constraints>
@@ -3258,7 +3262,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a Message sent from you and it is the 1st" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgZ-OK-lht">
-                                                                    <rect key="frame" x="10" y="30.333333333333332" width="293.33333333333331" height="14.333333333333332"/>
+                                                                    <rect key="frame" x="10" y="32.666666666666664" width="298" height="16.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -4154,7 +4158,7 @@ Please visit the app tomorrow and everything will be done
                                 <rect key="frame" x="0.0" y="94" width="414" height="285"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtq-W6-N0L" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="50" width="70" height="70"/>
+                                        <rect key="frame" x="40" y="48" width="70" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_2235" translatesAutoresizingMaskIntoConstraints="NO" id="df9-vi-ipY" customClass="DesignableImage" customModule="caocap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -4194,22 +4198,22 @@ Please visit the app tomorrow and everything will be done
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rqK-ae-k7o">
-                                        <rect key="frame" x="140" y="60" width="254" height="50"/>
+                                        <rect key="frame" x="140" y="58" width="254" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6oK-DL-qDV">
                                                 <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mlD-X7-O2J">
-                                                        <rect key="frame" x="18.333333333333343" y="3.6666666666666572" width="48" height="42.333333333333336"/>
+                                                        <rect key="frame" x="18.666666666666654" y="2" width="47.666666666666657" height="45.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdt-q7-4aT">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="22.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="47.666666666666664" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="orbiting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osr-ah-Exi">
-                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="48" height="15"/>
+                                                                <rect key="frame" x="0.0" y="30.666666666666657" width="47.666666666666664" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="aUj-x4-KK2"/>
                                                                 </constraints>
@@ -4241,16 +4245,16 @@ Please visit the app tomorrow and everything will be done
                                                 <rect key="frame" x="84.666666666666657" y="0.0" width="84.666666666666657" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="B29-e1-nye">
-                                                        <rect key="frame" x="18" y="3.6666666666666572" width="49" height="42.333333333333336"/>
+                                                        <rect key="frame" x="15.666666666666682" y="2" width="53.666666666666657" height="45.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lz9-gs-2IO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="49" height="22.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caocaps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6e-jI-jFm">
-                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="49" height="15"/>
+                                                                <rect key="frame" x="0.0" y="30.666666666666657" width="53.666666666666664" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="5DA-X1-2th"/>
                                                                 </constraints>
@@ -4282,16 +4286,16 @@ Please visit the app tomorrow and everything will be done
                                                 <rect key="frame" x="169.33333333333331" y="0.0" width="84.666666666666686" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ayO-RX-lHG">
-                                                        <rect key="frame" x="20.666666666666689" y="3.6666666666666572" width="43.333333333333343" height="42.333333333333336"/>
+                                                        <rect key="frame" x="20.999999999999996" y="2" width="42.666666666666657" height="45.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0be-lo-7Ae">
-                                                                <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="22.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="42.666666666666664" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z06-GK-fd3">
-                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="43.333333333333336" height="15"/>
+                                                                <rect key="frame" x="0.0" y="30.666666666666657" width="42.666666666666664" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="t2c-T0-Tus"/>
                                                                 </constraints>
@@ -4325,20 +4329,20 @@ Please visit the app tomorrow and everything will be done
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="xhc-TT-klq">
-                                        <rect key="frame" x="40" y="140" width="334" height="25.333333333333343"/>
+                                        <rect key="frame" x="40" y="138" width="334" height="29.333333333333343"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="25"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="cka-YU-1OT">
-                                        <rect key="frame" x="40" y="175.33333333333331" width="334" height="57"/>
+                                        <rect key="frame" x="40" y="177.33333333333331" width="334" height="57"/>
                                         <string key="text">CAOCAP is a galaxy filled with ideas in which you can navigate your way through a wide range of worlds that shares your interest ,passion and ambition.</string>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="79Q-fP-tMF">
-                                        <rect key="frame" x="40" y="242.33333333333331" width="334" height="35"/>
+                                        <rect key="frame" x="40" y="244.33333333333331" width="334" height="35"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ohV-cJ-Id2" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="35"/>
@@ -4351,7 +4355,7 @@ Please visit the app tomorrow and everything will be done
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jeu-AW-uQy">
-                                                        <rect key="frame" x="124.66666666666664" y="10.333333333333371" width="12.333333333333329" height="20"/>
+                                                        <rect key="frame" x="124.66666666666666" y="10.333333333333371" width="12" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Khj-S9-oCS"/>
                                                         </constraints>
@@ -4584,27 +4588,40 @@ Please visit the app tomorrow and everything will be done
                                                                     <constraint firstAttribute="width" constant="30" id="mWX-jV-MLk"/>
                                                                 </constraints>
                                                                 <state key="normal" image="icons8-cloud_database"/>
+                                                                <connections>
+                                                                    <action selector="navBTNpressed:" destination="Vph-EF-1TF" eventType="touchUpInside" id="Din-qp-mhY"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSA-KA-fCa">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DSA-KA-fCa">
                                                                 <rect key="frame" x="50" y="0.0" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="aqf-bM-npr"/>
                                                                 </constraints>
                                                                 <state key="normal" image="icons8-source_code"/>
+                                                                <connections>
+                                                                    <action selector="navBTNpressed:" destination="Vph-EF-1TF" eventType="touchUpInside" id="8ax-3F-xVW"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byR-vZ-GjK">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byR-vZ-GjK">
                                                                 <rect key="frame" x="100" y="0.0" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="QDo-7f-tdi"/>
                                                                 </constraints>
                                                                 <state key="normal" image="icons8-design"/>
+                                                                <connections>
+                                                                    <action selector="navBTNpressed:" destination="Vph-EF-1TF" eventType="touchUpInside" id="RSi-it-BMl"/>
+                                                                    <segue destination="Veo-wC-3HG" kind="show" id="w8Z-Jc-3Zk"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imo-82-nhZ">
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imo-82-nhZ">
                                                                 <rect key="frame" x="150" y="0.0" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="30" id="9vR-bX-RRA"/>
                                                                 </constraints>
                                                                 <state key="normal" image="icons8-test_tube"/>
+                                                                <connections>
+                                                                    <action selector="navBTNpressed:" destination="Vph-EF-1TF" eventType="touchUpInside" id="YLc-Sg-VP8"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -4660,6 +4677,12 @@ Please visit the app tomorrow and everything will be done
                         <viewLayoutGuide key="safeArea" id="85l-4P-O4c"/>
                     </view>
                     <navigationItem key="navigationItem" id="Odm-Ux-R2m"/>
+                    <connections>
+                        <outlet property="navBTNs" destination="6B1-ef-q8a" id="zvF-jn-bwZ"/>
+                        <outletCollection property="navBTNs" destination="DSA-KA-fCa" collectionClass="NSMutableArray" id="ruY-gd-Ph6"/>
+                        <outletCollection property="navBTNs" destination="byR-vZ-GjK" collectionClass="NSMutableArray" id="edO-ud-C3U"/>
+                        <outletCollection property="navBTNs" destination="imo-82-nhZ" collectionClass="NSMutableArray" id="4hj-IV-BAn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGK-NV-oAf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4677,7 +4700,7 @@ Please visit the app tomorrow and everything will be done
                                 <rect key="frame" x="0.0" y="94" width="414" height="285"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTf-lD-cX3" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="50" width="70" height="70"/>
+                                        <rect key="frame" x="40" y="48" width="70" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_2235" translatesAutoresizingMaskIntoConstraints="NO" id="0Z8-6M-tMt" customClass="DesignableImage" customModule="caocap" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -4717,22 +4740,22 @@ Please visit the app tomorrow and everything will be done
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="atT-f9-c5r">
-                                        <rect key="frame" x="140" y="60" width="254" height="50"/>
+                                        <rect key="frame" x="140" y="58" width="254" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grf-tr-deQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LUK-xv-SWR">
-                                                        <rect key="frame" x="18.333333333333343" y="3.6666666666666572" width="48" height="42.333333333333336"/>
+                                                        <rect key="frame" x="18.666666666666654" y="2" width="47.666666666666657" height="45.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-ba-OSX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="22.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="47.666666666666664" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="orbiting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-w5-7fC">
-                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="48" height="15"/>
+                                                                <rect key="frame" x="0.0" y="30.666666666666657" width="47.666666666666664" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="2MM-mZ-J5y"/>
                                                                 </constraints>
@@ -4764,16 +4787,16 @@ Please visit the app tomorrow and everything will be done
                                                 <rect key="frame" x="84.666666666666657" y="0.0" width="84.666666666666657" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hss-kC-FtB">
-                                                        <rect key="frame" x="18" y="3.6666666666666572" width="49" height="42.333333333333336"/>
+                                                        <rect key="frame" x="15.666666666666682" y="2" width="53.666666666666657" height="45.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMY-1s-1f4">
-                                                                <rect key="frame" x="0.0" y="0.0" width="49" height="22.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caocaps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-I1-vKi">
-                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="49" height="15"/>
+                                                                <rect key="frame" x="0.0" y="30.666666666666657" width="53.666666666666664" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="lCA-qJ-w4R"/>
                                                                 </constraints>
@@ -4805,16 +4828,16 @@ Please visit the app tomorrow and everything will be done
                                                 <rect key="frame" x="169.33333333333331" y="0.0" width="84.666666666666686" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zp4-kl-Yfi">
-                                                        <rect key="frame" x="20.666666666666689" y="3.6666666666666572" width="43.333333333333343" height="42.333333333333336"/>
+                                                        <rect key="frame" x="20.999999999999996" y="2" width="42.666666666666657" height="45.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB1-Es-Ffz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="22.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="42.666666666666664" height="25.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4l-3v-13K">
-                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="43.333333333333336" height="15"/>
+                                                                <rect key="frame" x="0.0" y="30.666666666666657" width="42.666666666666664" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="gKZ-hd-wLX"/>
                                                                 </constraints>
@@ -4848,13 +4871,13 @@ Please visit the app tomorrow and everything will be done
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="J9F-mF-dDM">
-                                        <rect key="frame" x="40" y="140" width="334" height="25.333333333333343"/>
+                                        <rect key="frame" x="40" y="138" width="334" height="29.333333333333343"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="25"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="jjh-FY-632">
-                                        <rect key="frame" x="40" y="175.33333333333331" width="334" height="57"/>
+                                        <rect key="frame" x="40" y="177.33333333333331" width="334" height="57"/>
                                         <string key="text">CAOCAP is a galaxy filled with ideas in which you can navigate your way through a wide range of worlds that shares your interest ,passion and ambition.</string>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
@@ -5009,7 +5032,7 @@ Please visit the app tomorrow and everything will be done
                                 <rect key="frame" x="-493" y="0.0" width="1400" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lm-lZ-79c">
-                                        <rect key="frame" x="636.33333333333337" y="44" width="127.66666666666663" height="50"/>
+                                        <rect key="frame" x="634.66666666666663" y="44" width="131" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="QzP-X4-rrn"/>
                                         </constraints>
@@ -5303,16 +5326,16 @@ Please visit the app tomorrow and everything will be done
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="fBg-Xt-9Iy">
-                                        <rect key="frame" x="64" y="10.666666666666664" width="86.666666666666686" height="34"/>
+                                        <rect key="frame" x="64" y="10.666666666666664" width="88.666666666666686" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="QzG-pb-1wv">
-                                                <rect key="frame" x="0.0" y="0.0" width="86.666666666666671" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="88.666666666666671" height="23.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="online" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asL-4p-eux" userLabel="orbits">
-                                                <rect key="frame" x="0.0" y="22.333333333333336" width="32.333333333333336" height="11.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="25.333333333333336" width="32.333333333333336" height="8.6666666666666643"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="12"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -5320,7 +5343,7 @@ Please visit the app tomorrow and everything will be done
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnx-pr-mMy">
-                                        <rect key="frame" x="20" y="10.666666666666664" width="130.66666666666666" height="34"/>
+                                        <rect key="frame" x="20" y="10.666666666666664" width="132.66666666666666" height="34"/>
                                         <connections>
                                             <action selector="contactPageBTN:" destination="omP-kb-t9W" eventType="touchUpInside" id="tdY-J9-Dmz"/>
                                         </connections>
@@ -5415,10 +5438,10 @@ Please visit the app tomorrow and everything will be done
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okk-PW-rKq" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                                            <rect key="frame" x="41.666666666666657" y="5" width="313.33333333333337" height="55"/>
+                                                            <rect key="frame" x="37" y="5" width="318" height="55"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:09am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Yoh-ro-rdK">
-                                                                    <rect key="frame" x="10" y="5.0000000000000009" width="60" height="12.333333333333336"/>
+                                                                    <rect key="frame" x="10" y="5" width="60" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="Q7t-MV-5sC"/>
                                                                     </constraints>
@@ -5427,7 +5450,7 @@ Please visit the app tomorrow and everything will be done
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="k4i-qZ-FWQ">
-                                                                    <rect key="frame" x="238.33333333333337" y="5.0000000000000009" width="65" height="15.333333333333336"/>
+                                                                    <rect key="frame" x="241.33333333333329" y="5" width="66.666666666666657" height="17.666666666666668"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="wM2-9i-wug"/>
                                                                     </constraints>
@@ -5436,7 +5459,7 @@ Please visit the app tomorrow and everything will be done
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a Message sent from you and it is the 1st" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-7m-CQr">
-                                                                    <rect key="frame" x="10" y="30.333333333333332" width="293.33333333333331" height="14.333333333333332"/>
+                                                                    <rect key="frame" x="10" y="32.666666666666664" width="298" height="16.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -5542,10 +5565,10 @@ Please visit the app tomorrow and everything will be done
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52c-HP-KUc" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                                            <rect key="frame" x="59" y="5" width="313.33333333333331" height="55"/>
+                                                            <rect key="frame" x="59" y="5" width="318" height="55"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:09am" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="OE4-KB-Z75">
-                                                                    <rect key="frame" x="243.33333333333331" y="5.0000000000000009" width="60" height="12.333333333333336"/>
+                                                                    <rect key="frame" x="248" y="5" width="60" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="3fV-Be-S25"/>
                                                                     </constraints>
@@ -5554,7 +5577,7 @@ Please visit the app tomorrow and everything will be done
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="lRc-NC-ynj">
-                                                                    <rect key="frame" x="10" y="5.0000000000000009" width="65" height="15.333333333333336"/>
+                                                                    <rect key="frame" x="10" y="5" width="66.666666666666671" height="17.666666666666668"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="jWi-rY-sgT"/>
                                                                     </constraints>
@@ -5563,7 +5586,7 @@ Please visit the app tomorrow and everything will be done
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a Message sent from you and it is the 1st" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v3-VG-z4I">
-                                                                    <rect key="frame" x="10" y="30.333333333333332" width="293.33333333333331" height="14.333333333333332"/>
+                                                                    <rect key="frame" x="10" y="32.666666666666664" width="298" height="16.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -5869,16 +5892,16 @@ Please visit the app tomorrow and everything will be done
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="iws-HR-rdk">
-                                        <rect key="frame" x="63.999999999999993" y="10.666666666666664" width="102.33333333333331" height="34"/>
+                                        <rect key="frame" x="64" y="10.666666666666664" width="109" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="GroupName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="kf7-tp-Ucn">
-                                                <rect key="frame" x="0.0" y="0.0" width="102.33333333333333" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="23.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 online" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLc-MR-K7c" userLabel="orbits">
-                                                <rect key="frame" x="0.0" y="22.333333333333336" width="42.666666666666664" height="11.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="25.333333333333336" width="42.333333333333336" height="8.6666666666666643"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="12"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -5886,7 +5909,7 @@ Please visit the app tomorrow and everything will be done
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9b-0r-R7I">
-                                        <rect key="frame" x="20" y="10.666666666666664" width="146.33333333333334" height="34"/>
+                                        <rect key="frame" x="20" y="10.666666666666664" width="153" height="34"/>
                                         <connections>
                                             <action selector="groupPageBTN:" destination="h0n-hd-RaU" eventType="touchUpInside" id="efe-iI-lcy"/>
                                         </connections>
@@ -5981,10 +6004,10 @@ Please visit the app tomorrow and everything will be done
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qS7-SE-N0b" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                                            <rect key="frame" x="41.666666666666657" y="5" width="313.33333333333337" height="55"/>
+                                                            <rect key="frame" x="37" y="5" width="318" height="55"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:09am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="uZq-DZ-DJ8">
-                                                                    <rect key="frame" x="10" y="5.0000000000000009" width="60" height="12.333333333333336"/>
+                                                                    <rect key="frame" x="10" y="5" width="60" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="an5-GQ-jij"/>
                                                                     </constraints>
@@ -5993,7 +6016,7 @@ Please visit the app tomorrow and everything will be done
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="7yZ-vO-3Ky">
-                                                                    <rect key="frame" x="238.33333333333337" y="5.0000000000000009" width="65" height="15.333333333333336"/>
+                                                                    <rect key="frame" x="241.33333333333329" y="5" width="66.666666666666657" height="17.666666666666668"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="j7Q-yP-Fld"/>
                                                                     </constraints>
@@ -6002,7 +6025,7 @@ Please visit the app tomorrow and everything will be done
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a Message sent from you and it is the 1st" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FL-qM-Khz">
-                                                                    <rect key="frame" x="10" y="30.333333333333332" width="293.33333333333331" height="14.333333333333332"/>
+                                                                    <rect key="frame" x="10" y="32.666666666666664" width="298" height="16.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -6108,10 +6131,10 @@ Please visit the app tomorrow and everything will be done
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4Y-Ap-FDh" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                                            <rect key="frame" x="59" y="5" width="313.33333333333331" height="55"/>
+                                                            <rect key="frame" x="59" y="5" width="318" height="55"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:09am" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kaq-Xr-VX8">
-                                                                    <rect key="frame" x="243.33333333333331" y="5.0000000000000009" width="60" height="12.333333333333336"/>
+                                                                    <rect key="frame" x="248" y="5" width="60" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="QzV-lH-Z3W"/>
                                                                     </constraints>
@@ -6120,7 +6143,7 @@ Please visit the app tomorrow and everything will be done
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="rhE-3a-YD1">
-                                                                    <rect key="frame" x="10" y="5.0000000000000009" width="65" height="15.333333333333336"/>
+                                                                    <rect key="frame" x="10" y="5" width="66.666666666666671" height="17.666666666666668"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="cgR-sD-qD2"/>
                                                                     </constraints>
@@ -6129,7 +6152,7 @@ Please visit the app tomorrow and everything will be done
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is a Message sent from you and it is the 1st" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwJ-IM-Qd3">
-                                                                    <rect key="frame" x="10" y="30.333333333333332" width="293.33333333333331" height="14.333333333333332"/>
+                                                                    <rect key="frame" x="10" y="32.666666666666664" width="298" height="16.333333333333336"/>
                                                                     <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -6388,7 +6411,7 @@ Please visit the app tomorrow and everything will be done
             <objects>
                 <viewController storyboardIdentifier="artBuilder" id="Veo-wC-3HG" customClass="ArtBuilderVC" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xd8-9x-TDe">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="10" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="5HJ-tO-gkb">
@@ -6401,7 +6424,7 @@ Please visit the app tomorrow and everything will be done
                                 </connections>
                             </scrollView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dr1-uG-1l5" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                <rect key="frame" x="20" y="562" width="374" height="300"/>
+                                <rect key="frame" x="20" y="508" width="374" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gR-zs-fc5">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
@@ -6594,106 +6617,15 @@ Please visit the app tomorrow and everything will be done
                                             <constraint firstAttribute="trailing" secondItem="wFw-pi-JzZ" secondAttribute="trailing" constant="50" id="mVb-M0-ylr"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="th6-MR-F0n">
-                                        <rect key="frame" x="0.0" y="240" width="374" height="60"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4Q-pS-QgL" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                                <rect key="frame" x="187" y="12.666666666666629" width="50" height="35"/>
-                                                <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="gna-EU-NH8"/>
-                                                    <constraint firstAttribute="height" constant="35" id="tFn-kx-ykY"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Mdz-1q-skl">
-                                                <rect key="frame" x="15" y="5" width="344" height="50"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undo" translatesAutoresizingMaskIntoConstraints="NO" id="a31-Qt-FmJ">
-                                                        <rect key="frame" x="0.0" y="7.6666666666666288" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="cN9-MD-iM6"/>
-                                                            <constraint firstAttribute="width" secondItem="a31-Qt-FmJ" secondAttribute="height" multiplier="1:1" id="zqt-rs-qwm"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uCm-A4-95o">
-                                                        <rect key="frame" x="82" y="10" width="180" height="30"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1F-B8-wAn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="IGL-MA-UK4"/>
-                                                                    <constraint firstAttribute="width" secondItem="d1F-B8-wAn" secondAttribute="height" multiplier="1:1" id="iNh-z0-Gx0"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-cloud_database"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DV-2x-5cV">
-                                                                <rect key="frame" x="50" y="0.0" width="30" height="30"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="OLv-CF-U7X"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-source_code"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jG-VX-Wde">
-                                                                <rect key="frame" x="100" y="0.0" width="30" height="30"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="JAA-Aq-6h5"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-design"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSQ-ib-X32">
-                                                                <rect key="frame" x="150" y="0.0" width="30" height="30"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="30" id="wtP-fF-yD8"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-test_tube"/>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="gSQ-ib-X32" firstAttribute="width" secondItem="gSQ-ib-X32" secondAttribute="height" multiplier="1:1" id="0M3-vi-NTA"/>
-                                                            <constraint firstItem="9DV-2x-5cV" firstAttribute="width" secondItem="9DV-2x-5cV" secondAttribute="height" multiplier="1:1" id="AAr-L7-fye"/>
-                                                            <constraint firstItem="7jG-VX-Wde" firstAttribute="width" secondItem="7jG-VX-Wde" secondAttribute="height" multiplier="1:1" id="Tqq-Ms-YfA"/>
-                                                        </constraints>
-                                                    </stackView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redo" translatesAutoresizingMaskIntoConstraints="NO" id="SGw-sj-vLM">
-                                                        <rect key="frame" x="309" y="7.6666666666666288" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="uKM-Lv-mbY"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="SGw-sj-vLM" firstAttribute="width" secondItem="SGw-sj-vLM" secondAttribute="height" multiplier="1:1" id="s37-aU-cAK"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.1771191359" green="0.19340655209999999" blue="0.58437001710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstItem="Mdz-1q-skl" firstAttribute="centerX" secondItem="th6-MR-F0n" secondAttribute="centerX" id="Bn7-Ln-FyX"/>
-                                            <constraint firstItem="Mdz-1q-skl" firstAttribute="top" secondItem="th6-MR-F0n" secondAttribute="top" constant="5" id="X3Q-rB-PCK"/>
-                                            <constraint firstAttribute="trailing" secondItem="Mdz-1q-skl" secondAttribute="trailing" constant="15" id="gnE-BU-nQN"/>
-                                            <constraint firstItem="d4Q-pS-QgL" firstAttribute="centerY" secondItem="th6-MR-F0n" secondAttribute="centerY" id="k2S-Jw-f4n"/>
-                                            <constraint firstItem="Mdz-1q-skl" firstAttribute="centerY" secondItem="th6-MR-F0n" secondAttribute="centerY" id="nXZ-t8-6sg"/>
-                                            <constraint firstItem="d4Q-pS-QgL" firstAttribute="centerX" secondItem="7jG-VX-Wde" secondAttribute="centerX" id="qII-9y-h4D"/>
-                                            <constraint firstAttribute="height" constant="60" id="svb-x8-bu3"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8Kt-st-d2t" secondAttribute="bottom" constant="60" id="5gy-iz-T5i"/>
                                     <constraint firstItem="4gR-zs-fc5" firstAttribute="leading" secondItem="Dr1-uG-1l5" secondAttribute="leading" id="AId-Ub-kxm"/>
-                                    <constraint firstItem="th6-MR-F0n" firstAttribute="leading" secondItem="Dr1-uG-1l5" secondAttribute="leading" id="Ett-1d-Jxb"/>
                                     <constraint firstItem="8Kt-st-d2t" firstAttribute="leading" secondItem="Dr1-uG-1l5" secondAttribute="leading" id="HUC-yk-nRp"/>
-                                    <constraint firstAttribute="trailing" secondItem="th6-MR-F0n" secondAttribute="trailing" id="UPC-2K-gEb"/>
                                     <constraint firstAttribute="trailing" secondItem="8Kt-st-d2t" secondAttribute="trailing" id="UuX-MB-CCg"/>
                                     <constraint firstAttribute="trailing" secondItem="vfV-cj-gpk" secondAttribute="trailing" id="VEv-gi-LyU"/>
                                     <constraint firstItem="8Kt-st-d2t" firstAttribute="top" secondItem="vfV-cj-gpk" secondAttribute="bottom" id="XFp-pl-dg9"/>
-                                    <constraint firstItem="th6-MR-F0n" firstAttribute="top" secondItem="8Kt-st-d2t" secondAttribute="bottom" id="Z9F-kC-9y6"/>
-                                    <constraint firstAttribute="bottom" secondItem="th6-MR-F0n" secondAttribute="bottom" id="ad1-E0-1Z5"/>
                                     <constraint firstAttribute="trailing" secondItem="4gR-zs-fc5" secondAttribute="trailing" id="neL-I3-nHH"/>
                                     <constraint firstItem="4gR-zs-fc5" firstAttribute="top" secondItem="Dr1-uG-1l5" secondAttribute="top" id="xcs-tk-b5R"/>
                                     <constraint firstAttribute="height" constant="300" id="yP5-D9-ZXD"/>
@@ -6721,7 +6653,11 @@ Please visit the app tomorrow and everything will be done
                     <navigationItem key="navigationItem" id="wOG-rK-DPM"/>
                     <connections>
                         <outlet property="blockCollectionView" destination="fAl-li-mu0" id="eAZ-sD-OeN"/>
+                        <outlet property="designSVContant" destination="TfA-2L-ZpZ" id="Pzx-ph-JQO"/>
                         <outlet property="designScrollView" destination="5HJ-tO-gkb" id="7rx-IM-2VP"/>
+                        <outlet property="surfaceBlock" destination="dbV-AW-SeH" id="SFR-uT-HiE"/>
+                        <outlet property="surfaceBlock2" destination="XHc-bz-g0v" id="YuA-CL-sjn"/>
+                        <outlet property="surfaceBlock3" destination="e65-7J-9Qb" id="l9i-z0-ikz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95y-rK-bCW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -6858,7 +6794,7 @@ Please visit the app tomorrow and everything will be done
                     <viewLayoutGuide key="safeArea" id="D99-qV-gKC"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="2623" y="2388"/>
+            <point key="canvasLocation" x="1980" y="2693"/>
         </scene>
     </scenes>
     <resources>
