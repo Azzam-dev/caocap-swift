@@ -10,13 +10,15 @@ import UIKit
 
 class BuilderVC: UIViewController {
     
-    var artVC: UINavigationController!
-    var logicVC: UINavigationController!
-    var cosmosVC: UINavigationController!
-    var labVC: UINavigationController!
-
+    var artNAV: UINavigationController!
+    var logicNAV: UINavigationController!
+    var cosmosNAV: UINavigationController!
+    var testLabNAV: UINavigationController!
+    
+    @IBOutlet weak var contentView: UIView!
+    
     var navigationControllers: [UINavigationController]!
-    var navSelectedIndex: Int = 0
+    var navSelectedIndex: Int = 2
     
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
@@ -25,17 +27,20 @@ class BuilderVC: UIViewController {
         super.viewDidLoad()
         
         setupSubNavigationControllers()
-        
+    }
+    
+    @IBAction func exitBuilder(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
      func setupSubNavigationControllers() {
-//        TODO: fix withIdentifier
+        
            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-           artVC = storyboard.instantiateViewController(withIdentifier: "exploreNAV") as? UINavigationController
-           logicVC = storyboard.instantiateViewController(withIdentifier: "myPageNAV") as? UINavigationController
-           cosmosVC = storyboard.instantiateViewController(withIdentifier: "chatNAV") as? UINavigationController
-        labVC = storyboard.instantiateViewController(withIdentifier: "chatNAV") as? UINavigationController
-           navigationControllers = [artVC, logicVC, cosmosVC, labVC]
+           artNAV = storyboard.instantiateViewController(withIdentifier: "artBuilderNAV") as? UINavigationController
+           logicNAV = storyboard.instantiateViewController(withIdentifier: "logicMindMapNAV") as? UINavigationController
+           cosmosNAV = storyboard.instantiateViewController(withIdentifier: "cosmosBaseNAV") as? UINavigationController
+        testLabNAV = storyboard.instantiateViewController(withIdentifier: "testLapNAV") as? UINavigationController
+           navigationControllers = [cosmosNAV, logicNAV,artNAV, testLabNAV]
            navBTNpressed(navBTNs[navSelectedIndex])
        }
     
@@ -59,7 +64,7 @@ class BuilderVC: UIViewController {
             //            TODO: move the blue view
             print("ligicMindMap")
         case 2:
-            //            TODO: move the blue view
+             //            TODO: move the blue view
             print("artBuilderVC")
         default:
             //            TODO: move the blue view
@@ -67,11 +72,9 @@ class BuilderVC: UIViewController {
         }
         let vc = navigationControllers[navSelectedIndex]
         addChild(vc)
-        
-//       TODO: add vc and contentView
-//        vc.view.frame = contentView.bounds
-//        contentView.addSubview(vc.view)
-//        vc.didMove(toParent: self)
+        vc.view.frame = contentView.bounds
+        contentView.addSubview(vc.view)
+        vc.didMove(toParent: self)
         
     }
     
