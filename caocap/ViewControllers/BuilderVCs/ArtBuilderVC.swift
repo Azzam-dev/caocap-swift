@@ -10,8 +10,7 @@ import UIKit
 
 class ArtBuilderVC: UIViewController {
 
-    var blocksArray = [ #imageLiteral(resourceName: "icons8-accounting0"), #imageLiteral(resourceName: "icons8-trash0"), #imageLiteral(resourceName: "icons8-lightning_bolt0"), #imageLiteral(resourceName: "icons8-location_off_filled0"), #imageLiteral(resourceName: "icons8-geo_fence0"), #imageLiteral(resourceName: "W-search_filled"), #imageLiteral(resourceName: "icons8-menu0"), #imageLiteral(resourceName: "W-full_screen_filled"), #imageLiteral(resourceName: "W-uncheck_all_filled"), #imageLiteral(resourceName: "icons8-paper_plane_filled0"), #imageLiteral(resourceName: "icons8-no_microphone0"), #imageLiteral(resourceName: "icons8-galaxy0"), #imageLiteral(resourceName: "W-network"), #imageLiteral(resourceName: "icons8-astronaut_helmet0"), #imageLiteral(resourceName: "w-share"), #imageLiteral(resourceName: "W-full_screen_filled"), #imageLiteral(resourceName: "W-uncheck_all_filled"), #imageLiteral(resourceName: "icons8-paper_plane_filled0"), #imageLiteral(resourceName: "icons8-no_microphone0"), #imageLiteral(resourceName: "icons8-galaxy0")]
-    
+    var blocksArray = [#imageLiteral(resourceName: "icons8-text"), #imageLiteral(resourceName: "icons8-button"), #imageLiteral(resourceName: "icons8-square.png"), #imageLiteral(resourceName: "icons8-circled_menu"), #imageLiteral(resourceName: "icons8-content"), #imageLiteral(resourceName: "icons8-descending_sorting.png"), #imageLiteral(resourceName: "icons8-medium_icons"), #imageLiteral(resourceName: "icons8-play_button"), #imageLiteral(resourceName: "icons8-map.png"), #imageLiteral(resourceName: "icons8-progress_indicator"), #imageLiteral(resourceName: "icons8-favorite_window"), #imageLiteral(resourceName: "icons8-promotion_window"), #imageLiteral(resourceName: "icons8-adjust"), #imageLiteral(resourceName: "icons8-toggle_on")]
     @IBOutlet weak var designScrollView: UIScrollView!
     
     @IBOutlet weak var blockCollectionView: UICollectionView!
