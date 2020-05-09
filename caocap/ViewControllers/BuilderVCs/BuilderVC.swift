@@ -44,8 +44,9 @@ class BuilderVC: UIViewController {
            navBTNpressed(navBTNs[navSelectedIndex])
        }
     
-    @IBOutlet var navBTNs: [UIButton]!
     
+    @IBOutlet weak var SelectorView: DesignableView!
+    @IBOutlet var navBTNs: [UIButton]!
     @IBAction func navBTNpressed(_ sender: UIButton) {
         
         let previousNavIndex = navSelectedIndex
@@ -56,20 +57,11 @@ class BuilderVC: UIViewController {
         previousVC.view.removeFromSuperview()
         previousVC.removeFromParent()
         
-        switch navSelectedIndex {
-        case 0:
-            //            TODO: move the blue view
-            print("cosmosBase")
-        case 1:
-            //            TODO: move the blue view
-            print("ligicMindMap")
-        case 2:
-             //            TODO: move the blue view
-            print("artBuilderVC")
-        default:
-            //            TODO: move the blue view
-            print("labVC")
-        }
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+            self.SelectorView.frame.origin.x = self.navBTNs[self.navSelectedIndex].frame.origin.x - 10
+        })
+        
+        
         let vc = navigationControllers[navSelectedIndex]
         addChild(vc)
         vc.view.frame = contentView.bounds
