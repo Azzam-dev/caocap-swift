@@ -35,7 +35,7 @@ class BuilderVC: UIViewController {
     
      func setupSubNavigationControllers() {
         
-           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+           let storyboard = UIStoryboard(name: "Builder", bundle: nil)
            artNAV = storyboard.instantiateViewController(withIdentifier: "artBuilderNAV") as? UINavigationController
            logicNAV = storyboard.instantiateViewController(withIdentifier: "logicMindMapNAV") as? UINavigationController
            cosmosNAV = storyboard.instantiateViewController(withIdentifier: "cosmosBaseNAV") as? UINavigationController

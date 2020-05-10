@@ -62,8 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(snap.value!)
             minimumVersion = snap.value! as! Double
             // compare the versions
-            if minimumVersion > version{
-                print("this is not a valid version")
+            if minimumVersion > version {
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 let updateVC = storyboard.instantiateViewController(withIdentifier: "update")
                 updateVC.modalPresentationStyle = .fullScreen

@@ -463,21 +463,15 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == chatsTableView {
             if indexPath.row != 0 {
                 let chat = chatsArray[indexPath.row - 1]
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 if chat.type == "contact" {
-                    
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
                     contactChatVC.opendChat = chat
                     navigationController?.pushViewController(contactChatVC, animated: true)
-                    
-                    
                 } else if chat.type == "group" {
-                    
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let groupChatVC = storyboard.instantiateViewController(withIdentifier: "GroupChatVC") as! GroupChatVC
                     groupChatVC.opendChat = chat
                     navigationController?.pushViewController(groupChatVC, animated: true)
-                    
                 } else {
                     
                 }

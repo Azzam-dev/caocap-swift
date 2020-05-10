@@ -54,6 +54,7 @@
 		EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */; };
 		EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */; };
 		EC7DBC9D239EC4B6007CFD5F /* tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7DBC9C239EC4B6007CFD5F /* tokenizer.swift */; };
+		EC84070624680C2200223FB1 /* Builder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC84070524680C2200223FB1 /* Builder.storyboard */; };
 		EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E19452159E02A000E4EE6 /* AppDelegate.swift */; };
 		EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E19472159E02A000E4EE6 /* NavigationVC.swift */; };
 		EC8E194B2159E02A000E4EE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8E19492159E02A000E4EE6 /* Main.storyboard */; };
@@ -152,6 +153,7 @@
 		EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC7DBC9C239EC4B6007CFD5F /* tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tokenizer.swift; sourceTree = "<group>"; };
+		EC84070524680C2200223FB1 /* Builder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Builder.storyboard; sourceTree = "<group>"; };
 		EC8E19422159E02A000E4EE6 /* caocap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caocap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8E19452159E02A000E4EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC8E19472159E02A000E4EE6 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
@@ -340,6 +342,15 @@
 			path = compiler;
 			sourceTree = "<group>";
 		};
+		EC84070424680A4F00223FB1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				EC84070524680C2200223FB1 /* Builder.storyboard */,
+				EC8E19492159E02A000E4EE6 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		EC8A4C632274C1CB004D43B6 /* oldCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,7 +399,7 @@
 				EC308531244E000400D534DF /* SwiftUI */,
 				EC368E58245CD39300390500 /* BuilderBlocks */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
-				EC8E19492159E02A000E4EE6 /* Main.storyboard */,
+				EC84070424680A4F00223FB1 /* Storyboard */,
 				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
 				EC8E19542159E02C000E4EE6 /* Info.plist */,
@@ -600,6 +611,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC84070624680C2200223FB1 /* Builder.storyboard in Resources */,
 				EC0CA6E02251E49B00CD2142 /* topTableCell.xib in Resources */,
 				EC8E19532159E02C000E4EE6 /* LaunchScreen.storyboard in Resources */,
 				EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */,
