@@ -271,7 +271,7 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Explore", bundle: nil)
         let caocap = storyboard.instantiateViewController(withIdentifier: "caocap") as! caocapVC
         caocap.openedCaocap = caocapsArray[indexPath.row]
         navigationController?.pushViewController(caocap, animated: true)

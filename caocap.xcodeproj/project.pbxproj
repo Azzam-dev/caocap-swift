@@ -55,6 +55,9 @@
 		EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */; };
 		EC7DBC9D239EC4B6007CFD5F /* tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7DBC9C239EC4B6007CFD5F /* tokenizer.swift */; };
 		EC84070624680C2200223FB1 /* Builder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC84070524680C2200223FB1 /* Builder.storyboard */; };
+		EC8407082468134600223FB1 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8407072468134600223FB1 /* Explore.storyboard */; };
+		EC84070A2468147800223FB1 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8407092468147800223FB1 /* Chat.storyboard */; };
+		EC84070C24681A0800223FB1 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC84070B24681A0800223FB1 /* UserProfile.storyboard */; };
 		EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E19452159E02A000E4EE6 /* AppDelegate.swift */; };
 		EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E19472159E02A000E4EE6 /* NavigationVC.swift */; };
 		EC8E194B2159E02A000E4EE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8E19492159E02A000E4EE6 /* Main.storyboard */; };
@@ -154,6 +157,9 @@
 		EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC7DBC9C239EC4B6007CFD5F /* tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tokenizer.swift; sourceTree = "<group>"; };
 		EC84070524680C2200223FB1 /* Builder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Builder.storyboard; sourceTree = "<group>"; };
+		EC8407072468134600223FB1 /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
+		EC8407092468147800223FB1 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		EC84070B24681A0800223FB1 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		EC8E19422159E02A000E4EE6 /* caocap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caocap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8E19452159E02A000E4EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC8E19472159E02A000E4EE6 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
@@ -345,6 +351,9 @@
 		EC84070424680A4F00223FB1 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				EC84070B24681A0800223FB1 /* UserProfile.storyboard */,
+				EC8407092468147800223FB1 /* Chat.storyboard */,
+				EC8407072468134600223FB1 /* Explore.storyboard */,
 				EC84070524680C2200223FB1 /* Builder.storyboard */,
 				EC8E19492159E02A000E4EE6 /* Main.storyboard */,
 			);
@@ -398,8 +407,8 @@
 				EC2B26C6226B444700779486 /* NavigationControllers */,
 				EC308531244E000400D534DF /* SwiftUI */,
 				EC368E58245CD39300390500 /* BuilderBlocks */,
-				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
 				EC84070424680A4F00223FB1 /* Storyboard */,
+				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
 				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
 				EC8E19542159E02C000E4EE6 /* Info.plist */,
@@ -614,10 +623,13 @@
 				EC84070624680C2200223FB1 /* Builder.storyboard in Resources */,
 				EC0CA6E02251E49B00CD2142 /* topTableCell.xib in Resources */,
 				EC8E19532159E02C000E4EE6 /* LaunchScreen.storyboard in Resources */,
+				EC8407082468134600223FB1 /* Explore.storyboard in Resources */,
 				EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */,
 				ECF63E8E21BD914B00E491FE /* caocapRoomCell.xib in Resources */,
 				EC0CA6DC224EA31700CD2142 /* topColCell.xib in Resources */,
+				EC84070A2468147800223FB1 /* Chat.storyboard in Resources */,
 				EC368E5C245CD43E00390500 /* SurfaceBlock.xib in Resources */,
+				EC84070C24681A0800223FB1 /* UserProfile.storyboard in Resources */,
 				ECF63E8621BD6C6D00E491FE /* caocapCell.xib in Resources */,
 				EC8E19502159E02C000E4EE6 /* Assets.xcassets in Resources */,
 				EC2F25022168FFE800D14733 /* earthorbiter.ttf in Resources */,

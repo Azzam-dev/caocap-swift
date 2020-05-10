@@ -101,7 +101,7 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     //this is the room function, when the roomBTN in the opendCaocapVC is pressed it will
     func roomBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Chat", bundle: nil)
         let caocapRoomVC = storyboard.instantiateViewController(withIdentifier: "caocapRoomVC") as! caocapRoomVC
         caocapRoomVC.openedCaocap = openedCaocap
         navigationController?.pushViewController(caocapRoomVC, animated: true)
@@ -164,7 +164,7 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row != 0 {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Explore", bundle: nil)
             let caocap = storyboard.instantiateViewController(withIdentifier: "caocap") as! caocapVC
             caocap.openedCaocap = caocapsArray[indexPath.row - 1]
             navigationController?.pushViewController(caocap, animated: true)

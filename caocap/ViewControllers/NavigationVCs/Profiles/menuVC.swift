@@ -27,7 +27,8 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         let logoutAction = UIAlertAction(title: "نعم", style: .destructive ) { (buttonTapped) in
             do {
                 try Auth.auth().signOut()
-                let authVC = self.storyboard?.instantiateViewController(withIdentifier: "auth") as? authVC
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let authVC = storyboard.instantiateViewController(withIdentifier: "auth") as? authVC
                 authVC!.modalPresentationStyle = .fullScreen
                 self.present(authVC!, animated: true, completion: nil)
             } catch {
@@ -78,7 +79,7 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             //edit profile VC
             
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "UserProfile", bundle: nil)
             let editProfile = storyboard.instantiateViewController(withIdentifier: "editProfile") as! editProfileVC
             navigationController?.pushViewController(editProfile, animated: true)
             
