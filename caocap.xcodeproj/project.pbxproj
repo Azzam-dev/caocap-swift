@@ -32,7 +32,6 @@
 		EC308533244E003300D534DF /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC308532244E003300D534DF /* CircleImage.swift */; };
 		EC339BE322520D1F00FDC14A /* caocapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE222520D1F00FDC14A /* caocapLayout.swift */; };
 		EC339BE62253D75200FDC14A /* UrlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE52253D75200FDC14A /* UrlService.swift */; };
-		EC361D1F239FEFED00857536 /* parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC361D1E239FEFED00857536 /* parser.swift */; };
 		EC368421225AFE8C00ABC9C6 /* caocapCellAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368420225AFE8C00ABC9C6 /* caocapCellAnimation.swift */; };
 		EC368E5B245CD43E00390500 /* SurfaceBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368E59245CD43E00390500 /* SurfaceBlock.swift */; };
 		EC368E5C245CD43E00390500 /* SurfaceBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC368E5A245CD43E00390500 /* SurfaceBlock.xib */; };
@@ -53,7 +52,6 @@
 		EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACEF215D69A6004C16D2 /* ChatVC.swift */; };
 		EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */; };
 		EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */; };
-		EC7DBC9D239EC4B6007CFD5F /* tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7DBC9C239EC4B6007CFD5F /* tokenizer.swift */; };
 		EC84070624680C2200223FB1 /* Builder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC84070524680C2200223FB1 /* Builder.storyboard */; };
 		EC8407082468134600223FB1 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8407072468134600223FB1 /* Explore.storyboard */; };
 		EC84070A2468147800223FB1 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8407092468147800223FB1 /* Chat.storyboard */; };
@@ -134,7 +132,6 @@
 		EC308532244E003300D534DF /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		EC339BE222520D1F00FDC14A /* caocapLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapLayout.swift; sourceTree = "<group>"; };
 		EC339BE52253D75200FDC14A /* UrlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlService.swift; sourceTree = "<group>"; };
-		EC361D1E239FEFED00857536 /* parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parser.swift; sourceTree = "<group>"; };
 		EC368420225AFE8C00ABC9C6 /* caocapCellAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapCellAnimation.swift; sourceTree = "<group>"; };
 		EC368E59245CD43E00390500 /* SurfaceBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfaceBlock.swift; sourceTree = "<group>"; };
 		EC368E5A245CD43E00390500 /* SurfaceBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SurfaceBlock.xib; sourceTree = "<group>"; };
@@ -155,7 +152,6 @@
 		EC70ACEF215D69A6004C16D2 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EC7DBC9C239EC4B6007CFD5F /* tokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tokenizer.swift; sourceTree = "<group>"; };
 		EC84070524680C2200223FB1 /* Builder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Builder.storyboard; sourceTree = "<group>"; };
 		EC8407072468134600223FB1 /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		EC8407092468147800223FB1 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
@@ -339,15 +335,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		EC7DBC9B239EC465007CFD5F /* compiler */ = {
-			isa = PBXGroup;
-			children = (
-				EC7DBC9C239EC4B6007CFD5F /* tokenizer.swift */,
-				EC361D1E239FEFED00857536 /* parser.swift */,
-			);
-			path = compiler;
-			sourceTree = "<group>";
-		};
 		EC84070424680A4F00223FB1 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,21 +386,20 @@
 			isa = PBXGroup;
 			children = (
 				ECDABBF2238348170029B026 /* caocap.entitlements */,
-				EC70ACF7215D8856004C16D2 /* Services */,
 				EC8E1976215A00A8000E4EE6 /* Extensions */,
+				EC70ACF7215D8856004C16D2 /* Services */,
 				EC70ACF5215D87F9004C16D2 /* Model */,
 				EC5C0DDF216F88E600ED508F /* Cells */,
-				EC70ACEA215D6918004C16D2 /* ViewControllers */,
-				EC2B26C6226B444700779486 /* NavigationControllers */,
-				EC308531244E000400D534DF /* SwiftUI */,
 				EC368E58245CD39300390500 /* BuilderBlocks */,
+				EC2B26C6226B444700779486 /* NavigationControllers */,
+				EC70ACEA215D6918004C16D2 /* ViewControllers */,
 				EC84070424680A4F00223FB1 /* Storyboard */,
+				EC308531244E000400D534DF /* SwiftUI */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
 				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
-				EC8E19542159E02C000E4EE6 /* Info.plist */,
-				EC7DBC9B239EC465007CFD5F /* compiler */,
 				EC2F25002168FFD400D14733 /* fonts */,
+				EC8E19542159E02C000E4EE6 /* Info.plist */,
 				EC8E194C2159E02A000E4EE6 /* caocap.xcdatamodeld */,
 				EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */,
 			);
@@ -756,7 +742,6 @@
 				EC7095E1244ED319001F88A5 /* Shapes.swift in Sources */,
 				EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */,
 				EC5238DA219082F100D966F3 /* chatGroupCell.swift in Sources */,
-				EC7DBC9D239EC4B6007CFD5F /* tokenizer.swift in Sources */,
 				ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */,
 				EC368E5B245CD43E00390500 /* SurfaceBlock.swift in Sources */,
 				EC8FFC0A2463C2B8004F37F0 /* ArtBuilderVC.swift in Sources */,
@@ -784,7 +769,6 @@
 				4E0E42D524651F9A00522B2F /* TestLapVC.swift in Sources */,
 				ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */,
 				EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */,
-				EC361D1F239FEFED00857536 /* parser.swift in Sources */,
 				EC339BE62253D75200FDC14A /* UrlService.swift in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,
 				ECF2055121624C9400C48F2A /* menuVC.swift in Sources */,
