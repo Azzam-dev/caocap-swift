@@ -28,10 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // this is used to make the keyboard Appearance dark
         UITextField.appearance().keyboardAppearance = .dark
         
-        //this is used to make the status bar style app
-        UIApplication.shared.statusBarStyle = .lightContent
-        
-
         // Firebase configuration
         FirebaseApp.configure()
         checkCurrentUserStatus()
