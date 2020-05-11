@@ -9,23 +9,27 @@
 import UIKit
 
 class ArtBuilderVC: UIViewController {
-
+    
     var blocksArray = [#imageLiteral(resourceName: "icons8-text"), #imageLiteral(resourceName: "icons8-button"), #imageLiteral(resourceName: "icons8-square.png"), #imageLiteral(resourceName: "icons8-circled_menu"), #imageLiteral(resourceName: "icons8-content"), #imageLiteral(resourceName: "icons8-descending_sorting.png"), #imageLiteral(resourceName: "icons8-medium_icons"), #imageLiteral(resourceName: "icons8-play_button"), #imageLiteral(resourceName: "icons8-map.png"), #imageLiteral(resourceName: "icons8-progress_indicator"), #imageLiteral(resourceName: "icons8-favorite_window"), #imageLiteral(resourceName: "icons8-promotion_window"), #imageLiteral(resourceName: "icons8-adjust"), #imageLiteral(resourceName: "icons8-toggle_on")]
     @IBOutlet weak var designScrollView: UIScrollView!
-    
-    @IBOutlet weak var blockCollectionView: UICollectionView!
     @IBOutlet weak var designSVContant: UIView!
     @IBOutlet var surfaceBlock: UIStackView!
     @IBOutlet var surfaceBlock2: UIStackView!
     @IBOutlet var surfaceBlock3: UIStackView!
+    
+    
+    @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var gestureRecognizerView: DesignableView!
+    @IBOutlet weak var blockCollectionView: UICollectionView!
     
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       setupViews()
+        
+        setupViews()
+        gestureRecognizerSetuo()
     }
     
     func setupViews() {
@@ -45,6 +49,52 @@ class ArtBuilderVC: UIViewController {
         designSVContant.addSubview(surfaceBlock3)
         surfaceBlock3.frame.origin = CGPoint(x: surfaceBlock.frame.origin.x - 120 , y: surfaceBlock.frame.origin.y + 300)
     }
+    
+    func gestureRecognizerSetuo() {
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        upSwipe.direction = .up
+        
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        downSwipe.direction = .down
+        
+        gestureRecognizerView.addGestureRecognizer(upSwipe)
+        gestureRecognizerView.addGestureRecognizer(downSwipe)
+        
+    }
+    
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
+        if sender.state == .ended {
+            switch sender.direction {
+            case .up:
+                print("وش وضع امه")
+                if self.toolsViewHeightConstraint.constant == 80 {
+                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                        self.toolsViewHeightConstraint.constant = 120
+                        self.view.layoutIfNeeded()
+                    })
+                } else {
+                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                        self.toolsViewHeightConstraint.constant = 300
+                        self.view.layoutIfNeeded()
+                    })
+                }
+            case .down:
+                if self.toolsViewHeightConstraint.constant == 120 {
+                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                        self.toolsViewHeightConstraint.constant = 80
+                        self.view.layoutIfNeeded()
+                    })
+                } else {
+                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                        self.toolsViewHeightConstraint.constant = 120
+                        self.view.layoutIfNeeded()
+                    })
+                }
+            default:
+                break
+            }
+        }
+    }
 }
 
 
@@ -53,11 +103,11 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return blocksArray.count
+        return blocksArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         guard let cell = blockCollectionView.dequeueReusableCell(withReuseIdentifier: "blockCell", for: indexPath) as? blockCollectionViewCell else { return UICollectionViewCell() }
         
         cell.configureCell(icon: blocksArray[indexPath.row])

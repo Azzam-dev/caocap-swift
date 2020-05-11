@@ -22,10 +22,10 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZf-FC-uod" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                <rect key="frame" x="20" y="787" width="374" height="75"/>
+                                <rect key="frame" x="20" y="789" width="374" height="73"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WVh-i3-Hke">
-                                        <rect key="frame" x="0.0" y="15" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="13" width="374" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="J21-SV-6IR">
                                                 <rect key="frame" x="20" y="5" width="334" height="50"/>
@@ -145,7 +145,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="WVh-i3-Hke" secondAttribute="trailing" id="3pq-He-Gh0"/>
-                                    <constraint firstAttribute="height" constant="75" id="CNn-DT-uem"/>
+                                    <constraint firstAttribute="height" constant="73" id="CNn-DT-uem"/>
                                     <constraint firstAttribute="bottom" secondItem="WVh-i3-Hke" secondAttribute="bottom" id="a0Q-GD-EvW"/>
                                     <constraint firstItem="WVh-i3-Hke" firstAttribute="leading" secondItem="zZf-FC-uod" secondAttribute="leading" id="tA1-qW-oQ2"/>
                                 </constraints>
@@ -257,7 +257,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.30675452949999998" green="0.32925778630000002" blue="0.63142281769999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.30588235294117649" green="0.32941176470588235" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="0Sd-ki-KMY" firstAttribute="centerY" secondItem="4gR-zs-fc5" secondAttribute="centerY" id="Mfu-8d-mug"/>
                                             <constraint firstAttribute="trailing" secondItem="0Sd-ki-KMY" secondAttribute="trailing" constant="20" id="Q8y-Vk-poT"/>
@@ -325,7 +325,7 @@
                                         <rect key="frame" x="0.0" y="180" width="374" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hWY-Yu-lgw">
-                                                <rect key="frame" x="40" y="17.5" width="294" height="25"/>
+                                                <rect key="frame" x="40" y="14.5" width="294" height="25"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t49-lx-pjz">
                                                         <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -378,7 +378,7 @@
                                         <color key="backgroundColor" red="0.22246903179999999" green="0.2435536683" blue="0.60005450250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="hWY-Yu-lgw" firstAttribute="leading" secondItem="8Kt-st-d2t" secondAttribute="leading" constant="40" id="DFf-u5-S3r"/>
-                                            <constraint firstItem="hWY-Yu-lgw" firstAttribute="centerY" secondItem="8Kt-st-d2t" secondAttribute="centerY" id="Ngf-KW-SKk"/>
+                                            <constraint firstItem="hWY-Yu-lgw" firstAttribute="centerY" secondItem="8Kt-st-d2t" secondAttribute="centerY" constant="-3" id="Ngf-KW-SKk"/>
                                             <constraint firstAttribute="height" constant="60" id="QTm-LP-HL5"/>
                                             <constraint firstItem="hWY-Yu-lgw" firstAttribute="centerX" secondItem="8Kt-st-d2t" secondAttribute="centerX" id="SX8-Kf-E3N"/>
                                         </constraints>
@@ -397,7 +397,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.30588235294117649" green="0.32941176470588235" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="8Kt-st-d2t" secondAttribute="bottom" constant="60" id="5gy-iz-T5i"/>
                                     <constraint firstItem="4gR-zs-fc5" firstAttribute="leading" secondItem="Dr1-uG-1l5" secondAttribute="leading" id="AId-Ub-kxm"/>
@@ -436,9 +436,11 @@
                         <outlet property="blockCollectionView" destination="fAl-li-mu0" id="eAZ-sD-OeN"/>
                         <outlet property="designSVContant" destination="TfA-2L-ZpZ" id="Pzx-ph-JQO"/>
                         <outlet property="designScrollView" destination="5HJ-tO-gkb" id="7rx-IM-2VP"/>
+                        <outlet property="gestureRecognizerView" destination="b3z-CR-pgn" id="NpC-ZO-ceA"/>
                         <outlet property="surfaceBlock" destination="dbV-AW-SeH" id="SFR-uT-HiE"/>
                         <outlet property="surfaceBlock2" destination="XHc-bz-g0v" id="YuA-CL-sjn"/>
                         <outlet property="surfaceBlock3" destination="e65-7J-9Qb" id="l9i-z0-ikz"/>
+                        <outlet property="toolsViewHeightConstraint" destination="yP5-D9-ZXD" id="9Dw-w4-rgY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95y-rK-bCW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -754,16 +756,16 @@
                                             <constraint firstItem="yho-rR-ctu" firstAttribute="centerY" secondItem="9m8-If-LSp" secondAttribute="centerY" id="vVm-UV-PDS"/>
                                         </constraints>
                                     </view>
-                                    <view alpha="0.5" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xy1-Bs-zze" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                                        <rect key="frame" x="137" y="148" width="100" height="3"/>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pe3-vN-KMF" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                        <rect key="frame" x="147" y="5" width="80" height="4"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="3" id="OKa-Po-ePE"/>
-                                            <constraint firstAttribute="width" constant="100" id="wN7-bi-e2d"/>
+                                            <constraint firstAttribute="height" constant="4" id="BFV-of-iqu"/>
+                                            <constraint firstAttribute="width" constant="80" id="WDF-mJ-nyS"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="1"/>
+                                                <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -772,7 +774,6 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="oce-4c-rCI" secondAttribute="trailing" id="2ir-2y-no2"/>
                                     <constraint firstItem="9m8-If-LSp" firstAttribute="leading" secondItem="Zzw-Qg-cGD" secondAttribute="leading" id="74d-4E-AAX"/>
-                                    <constraint firstItem="xy1-Bs-zze" firstAttribute="centerX" secondItem="Zzw-Qg-cGD" secondAttribute="centerX" id="Ajx-D3-mLx"/>
                                     <constraint firstItem="oce-4c-rCI" firstAttribute="leading" secondItem="Zzw-Qg-cGD" secondAttribute="leading" id="BwZ-mj-O0Y"/>
                                     <constraint firstAttribute="height" constant="300" id="Gnm-dA-C6t"/>
                                     <constraint firstItem="9m8-If-LSp" firstAttribute="top" secondItem="oce-4c-rCI" secondAttribute="bottom" id="P48-J8-l6C"/>
@@ -780,7 +781,9 @@
                                     <constraint firstAttribute="trailing" secondItem="9m8-If-LSp" secondAttribute="trailing" id="YYg-Fs-GJ9"/>
                                     <constraint firstItem="QBg-s6-MiH" firstAttribute="top" secondItem="Zzw-Qg-cGD" secondAttribute="top" id="biM-zB-FaN"/>
                                     <constraint firstAttribute="trailing" secondItem="QBg-s6-MiH" secondAttribute="trailing" id="cFE-Cf-xx4"/>
+                                    <constraint firstItem="pe3-vN-KMF" firstAttribute="top" secondItem="Zzw-Qg-cGD" secondAttribute="top" constant="5" id="cmx-e1-wVo"/>
                                     <constraint firstItem="QBg-s6-MiH" firstAttribute="leading" secondItem="Zzw-Qg-cGD" secondAttribute="leading" id="h7X-5Z-mEx"/>
+                                    <constraint firstItem="pe3-vN-KMF" firstAttribute="centerX" secondItem="Zzw-Qg-cGD" secondAttribute="centerX" id="m8Y-N6-Ii7"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1138,6 +1141,19 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
                                             <constraint firstAttribute="height" constant="60" id="cbU-E0-QUw"/>
                                         </constraints>
                                     </view>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRx-Zd-tbq" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                        <rect key="frame" x="147" y="5" width="80" height="4"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Gw4-oA-P7x"/>
+                                            <constraint firstAttribute="height" constant="4" id="PbI-HN-5Qi"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -1145,6 +1161,8 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
                                     <constraint firstItem="Ips-Dq-df7" firstAttribute="leading" secondItem="xuj-Sf-2h2" secondAttribute="leading" id="5f2-Zq-NvR"/>
                                     <constraint firstItem="Ips-Dq-df7" firstAttribute="top" secondItem="XlI-lg-yXl" secondAttribute="bottom" id="7bw-eL-igO"/>
                                     <constraint firstAttribute="trailing" secondItem="xHn-hf-Kzy" secondAttribute="trailing" id="Bgi-nF-mur"/>
+                                    <constraint firstItem="gRx-Zd-tbq" firstAttribute="centerX" secondItem="xuj-Sf-2h2" secondAttribute="centerX" id="IWg-Vj-56m"/>
+                                    <constraint firstItem="gRx-Zd-tbq" firstAttribute="top" secondItem="xuj-Sf-2h2" secondAttribute="top" constant="5" id="OWd-D0-MyL"/>
                                     <constraint firstAttribute="height" constant="300" id="REy-fC-V64"/>
                                     <constraint firstItem="xHn-hf-Kzy" firstAttribute="top" secondItem="xuj-Sf-2h2" secondAttribute="top" id="WRt-OP-XYc"/>
                                     <constraint firstItem="xHn-hf-Kzy" firstAttribute="leading" secondItem="xuj-Sf-2h2" secondAttribute="leading" id="d1I-TD-d7S"/>
@@ -1311,13 +1329,28 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
                                             <constraint firstItem="898-lB-Kkc" firstAttribute="centerX" secondItem="BBq-1n-OZS" secondAttribute="centerX" id="mWU-XR-D20"/>
                                         </constraints>
                                     </view>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZn-wQ-dCN" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                        <rect key="frame" x="147" y="5" width="80" height="4"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="Ddw-mZ-WhC"/>
+                                            <constraint firstAttribute="width" constant="80" id="IVV-VA-0WD"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="BBq-1n-OZS" secondAttribute="trailing" id="63l-VF-irr"/>
                                     <constraint firstAttribute="height" constant="120" id="ML5-f4-NG4"/>
+                                    <constraint firstItem="YZn-wQ-dCN" firstAttribute="top" secondItem="6pf-pw-ghR" secondAttribute="top" constant="5" id="Mrh-MN-WUO"/>
                                     <constraint firstAttribute="bottom" secondItem="BBq-1n-OZS" secondAttribute="bottom" constant="60" id="RvE-01-PKL"/>
                                     <constraint firstItem="BBq-1n-OZS" firstAttribute="leading" secondItem="6pf-pw-ghR" secondAttribute="leading" id="Xmu-5s-w0z"/>
+                                    <constraint firstItem="YZn-wQ-dCN" firstAttribute="centerX" secondItem="6pf-pw-ghR" secondAttribute="centerX" id="omo-a9-obT"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
