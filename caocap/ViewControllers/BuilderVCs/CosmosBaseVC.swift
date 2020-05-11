@@ -15,6 +15,9 @@ class CosmosBaseVC: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var gestureRecognizerView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +26,54 @@ class CosmosBaseVC: UIViewController {
         contentView.addSubview(chartView.view)
         chartView.didMove(toParent: self)
         self.navigationController?.isNavigationBarHidden = true
+        
+        gestureRecognizerSetup()
     }
     
+    func gestureRecognizerSetup() {
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        upSwipe.direction = .up
+        
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        downSwipe.direction = .down
+        
+        gestureRecognizerView.addGestureRecognizer(upSwipe)
+        gestureRecognizerView.addGestureRecognizer(downSwipe)
+        
+        
+    }
+    
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
+        if sender.state == .ended {
+            switch sender.direction {
+            case .up:
+                if self.toolsViewHeightConstraint.constant == 75 {
+                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                        self.toolsViewHeightConstraint.constant = 120
+                        self.view.layoutIfNeeded()
+                    })
+                } else {
+                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                        self.toolsViewHeightConstraint.constant = 300
+                        self.view.layoutIfNeeded()
+                    })
+                }
+            case .down:
+                if self.toolsViewHeightConstraint.constant == 120 {
+                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                        self.toolsViewHeightConstraint.constant = 75
+                        self.view.layoutIfNeeded()
+                    })
+                } else {
+                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                        self.toolsViewHeightConstraint.constant = 120
+                        self.view.layoutIfNeeded()
+                    })
+                }
+            default:
+                break
+            }
+        }
+    }
 
 }
