@@ -19,7 +19,8 @@ class ArtBuilderVC: UIViewController {
     
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var gestureRecognizerView: DesignableView!
+    @IBOutlet weak var gestureRecognizerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var gestureRecognizerView: UIView!
     @IBOutlet weak var blockCollectionView: UICollectionView!
     
     lazy var viewWidth = self.view.frame.width
@@ -60,33 +61,37 @@ class ArtBuilderVC: UIViewController {
         gestureRecognizerView.addGestureRecognizer(upSwipe)
         gestureRecognizerView.addGestureRecognizer(downSwipe)
         
+        
     }
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
         if sender.state == .ended {
             switch sender.direction {
             case .up:
-                print("وش وضع امه")
-                if self.toolsViewHeightConstraint.constant == 80 {
+                if self.toolsViewHeightConstraint.constant == 75 {
                     UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
                         self.toolsViewHeightConstraint.constant = 120
+                        self.gestureRecognizerViewHeightConstraint.constant = 130
                         self.view.layoutIfNeeded()
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
                         self.toolsViewHeightConstraint.constant = 300
+                        self.gestureRecognizerViewHeightConstraint.constant = 310
                         self.view.layoutIfNeeded()
                     })
                 }
             case .down:
                 if self.toolsViewHeightConstraint.constant == 120 {
                     UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-                        self.toolsViewHeightConstraint.constant = 80
+                        self.toolsViewHeightConstraint.constant = 75
+                        self.gestureRecognizerViewHeightConstraint.constant = 85
                         self.view.layoutIfNeeded()
                     })
                 } else {
                     UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
                         self.toolsViewHeightConstraint.constant = 120
+                        self.gestureRecognizerViewHeightConstraint.constant = 130
                         self.view.layoutIfNeeded()
                     })
                 }
