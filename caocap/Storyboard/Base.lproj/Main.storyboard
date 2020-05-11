@@ -125,7 +125,7 @@
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-password" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-Zt-YWS">
-                                                        <rect key="frame" x="0.0" y="7.3333333333332575" width="20" height="20.000000000000028"/>
+                                                        <rect key="frame" x="0.0" y="7.3333333333332575" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="KRC-aJ-bt6"/>
                                                             <constraint firstAttribute="height" constant="20" id="VW5-IP-Be4"/>
@@ -269,16 +269,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hiE-uO-Nha">
-                                        <rect key="frame" x="104.66666666666667" y="33" width="204.66666666666663" height="27"/>
+                                        <rect key="frame" x="101.33333333333333" y="31" width="211.33333333333337" height="29"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlL-II-jEr">
-                                                <rect key="frame" x="0.0" y="6.3333333333333721" width="155.66666666666666" height="14.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="6.3333333333333712" width="162.33333333333334" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                 <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1Y-bB-ySX">
-                                                <rect key="frame" x="163.66666666666663" y="0.0" width="41" height="27"/>
+                                                <rect key="frame" x="170.33333333333337" y="0.0" width="41" height="29"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                 <state key="normal" title="sign in">
                                                     <color key="titleColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
