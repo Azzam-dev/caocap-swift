@@ -38,32 +38,26 @@ class TestLapVC: UIViewController {
             switch sender.direction {
             case .up:
                 if self.toolsViewHeightConstraint.constant == 75 {
-                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-                        self.toolsViewHeightConstraint.constant = 120
-                        self.view.layoutIfNeeded()
-                    })
+                    toolsViewAnimation(120)
                 } else {
-                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-                        self.toolsViewHeightConstraint.constant = 300
-                        self.view.layoutIfNeeded()
-                    })
+                    toolsViewAnimation(300)
                 }
             case .down:
                 if self.toolsViewHeightConstraint.constant == 120 {
-                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-                        self.toolsViewHeightConstraint.constant = 75
-                        self.view.layoutIfNeeded()
-                    })
+                    toolsViewAnimation(75)
                 } else {
-                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-                        self.toolsViewHeightConstraint.constant = 120
-                        self.view.layoutIfNeeded()
-                    })
+                    toolsViewAnimation(120)
                 }
             default:
                 break
             }
         }
     }
+    func toolsViewAnimation(_ hight: Int) {
+           UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+               self.toolsViewHeightConstraint.constant = CGFloat(hight)
+               self.view.layoutIfNeeded()
+           })
+       }
     
 }

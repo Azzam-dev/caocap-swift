@@ -45,35 +45,30 @@ class CosmosBaseVC: UIViewController {
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
         if sender.state == .ended {
-            switch sender.direction {
-            case .up:
-                if self.toolsViewHeightConstraint.constant == 75 {
-                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-                        self.toolsViewHeightConstraint.constant = 120
-                        self.view.layoutIfNeeded()
-                    })
-                } else {
-                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-                        self.toolsViewHeightConstraint.constant = 300
-                        self.view.layoutIfNeeded()
-                    })
+                switch sender.direction {
+                case .up:
+                    if self.toolsViewHeightConstraint.constant == 75 {
+                        toolsViewAnimation(120)
+                    } else {
+                        toolsViewAnimation(300)
+                    }
+                case .down:
+                    if self.toolsViewHeightConstraint.constant == 120 {
+                        toolsViewAnimation(75)
+                    } else {
+                        toolsViewAnimation(120)
+                    }
+                default:
+                    break
                 }
-            case .down:
-                if self.toolsViewHeightConstraint.constant == 120 {
-                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-                        self.toolsViewHeightConstraint.constant = 75
-                        self.view.layoutIfNeeded()
-                    })
-                } else {
-                    UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-                        self.toolsViewHeightConstraint.constant = 120
-                        self.view.layoutIfNeeded()
-                    })
-                }
-            default:
-                break
             }
         }
-    }
+    
+    func toolsViewAnimation(_ hight: Int) {
+           UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+               self.toolsViewHeightConstraint.constant = CGFloat(hight)
+               self.view.layoutIfNeeded()
+           })
+       }
 
 }
