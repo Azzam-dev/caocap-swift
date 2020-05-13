@@ -1039,7 +1039,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1w-ke-EVv" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
                                 <rect key="frame" x="18" y="84" width="378" height="540"/>
                                 <subviews>
-                                    <view hidden="YES" clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-SC-9EV" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                    <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eay-SC-9EV" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="378" height="540"/>
                                         <subviews>
                                             <wkWebView tag="2" contentMode="scaleAspectFit" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spA-Ki-ysH">
@@ -1285,52 +1285,12 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
                     <navigationItem key="navigationItem" id="keo-SB-2Eh"/>
                     <connections>
                         <outlet property="gestureRecognizerView" destination="coo-Xb-Lhg" id="tR5-2j-2JD"/>
+                        <outlet property="theView" destination="Eay-SC-9EV" id="MeZ-50-beJ"/>
                         <outlet property="toolsViewHeightConstraint" destination="ev0-zY-Bky" id="fv5-Nk-sWe"/>
+                        <outlet property="webView" destination="spA-Ki-ysH" id="nhq-w4-i9n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2o-sy-9dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <stackView opaque="NO" contentMode="scaleToFill" restorationIdentifier="caocapView" axis="vertical" spacing="10" id="eqO-B6-rAp">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="280"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HK9-66-Y19" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VC 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXn-g6-1AP">
-                                    <rect key="frame" x="82" y="1.5" width="36.5" height="17.5"/>
-                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
-                                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstItem="lXn-g6-1AP" firstAttribute="centerY" secondItem="HK9-66-Y19" secondAttribute="centerY" id="ML8-jm-jeV"/>
-                                <constraint firstAttribute="height" constant="20" id="dre-M5-CP0"/>
-                                <constraint firstItem="lXn-g6-1AP" firstAttribute="centerX" secondItem="HK9-66-Y19" secondAttribute="centerX" id="zfb-1S-4JX"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcA-I1-k4J" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="30" width="200" height="250"/>
-                            <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="VcA-I1-k4J" secondAttribute="height" multiplier="4:5" id="02R-kS-X4X"/>
-                                <constraint firstAttribute="width" constant="200" id="rWf-GP-jwL"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="10"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                    </subviews>
-                    <viewLayoutGuide key="safeArea" id="iMB-MW-e0Z"/>
-                </stackView>
             </objects>
             <point key="canvasLocation" x="6564" y="2421"/>
         </scene>

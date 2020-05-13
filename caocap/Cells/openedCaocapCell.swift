@@ -20,6 +20,7 @@ protocol openedCaocapCellDelegate: class {
 class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     
     //Define delegate variable
+    
     weak var cellDelegate: openedCaocapCellDelegate?
     
     @IBOutlet weak var webView: WKWebView!
