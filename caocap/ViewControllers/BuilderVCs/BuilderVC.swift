@@ -45,7 +45,7 @@ class BuilderVC: UIViewController {
        }
     
     
-    @IBOutlet weak var SelectorView: DesignableView!
+    @IBOutlet weak var selectorView: DesignableView!
     @IBOutlet var navBTNs: [UIButton]!
     @IBAction func navBTNpressed(_ sender: UIButton) {
         
@@ -58,7 +58,7 @@ class BuilderVC: UIViewController {
         previousVC.removeFromParent()
         
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-            self.SelectorView.frame.origin.x = self.navBTNs[self.navSelectedIndex].frame.origin.x - 10
+            self.selectorView.frame.origin.x = self.navBTNs[self.navSelectedIndex].frame.origin.x - 10
         })
         
         

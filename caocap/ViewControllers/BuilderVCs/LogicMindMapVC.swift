@@ -10,11 +10,35 @@ import UIKit
 
 class LogicMindMapVC: UIViewController {
 
+ 
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
+    var topToolBarSelectedIndex: Int = 2
+    
+    @IBOutlet weak var selectorView: DesignableView!
+    @IBOutlet var topToolBarBTNs: [UIButton]!
+    @IBAction func topToolBarBTNs(_ sender: UIButton) {
+        
+        topToolBarSelectedIndex = sender.tag
+        
+        UIView.animate(withDuration: 0.1,animations: {
+            self.selectorView.shadowOpacity = 0
+            
+        }, completion: { (finished) in
+            self.selectorView.frame.origin.x = self.topToolBarBTNs[self.topToolBarSelectedIndex].frame.origin.x + 12
+            UIView.animate(withDuration: 0.1) {
+                self.selectorView.shadowOpacity = 0.2
+            }
+            
+        })
+        
+       
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
 
         gestureRecognizerSetup()
     }

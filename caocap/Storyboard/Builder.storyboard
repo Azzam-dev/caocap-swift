@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vph-EF-1TF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vph-EF-1TF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -170,8 +170,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Odm-Ux-R2m"/>
                     <connections>
-                        <outlet property="SelectorView" destination="e1L-hB-wve" id="kJF-VD-lCL"/>
                         <outlet property="contentView" destination="7M0-oj-KUh" id="3go-fC-u5A"/>
+                        <outlet property="selectorView" destination="e1L-hB-wve" id="kJF-VD-lCL"/>
                         <outletCollection property="navBTNs" destination="6B1-ef-q8a" collectionClass="NSMutableArray" id="R7r-b6-f77"/>
                         <outletCollection property="navBTNs" destination="DSA-KA-fCa" collectionClass="NSMutableArray" id="6D9-ah-I9P"/>
                         <outletCollection property="navBTNs" destination="byR-vZ-GjK" collectionClass="NSMutableArray" id="Zo3-VT-1TV"/>
@@ -706,25 +706,40 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="23" height="23"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" image="icons8-mesh"/>
+                                                                <connections>
+                                                                    <action selector="topToolBarBTNs:" destination="tW5-12-Z1s" eventType="touchUpInside" id="d1h-BH-JZT"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edq-Jb-P34">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edq-Jb-P34">
                                                                 <rect key="frame" x="78" y="0.0" width="23" height="23"/>
                                                                 <state key="normal" image="HTML"/>
+                                                                <connections>
+                                                                    <action selector="topToolBarBTNs:" destination="tW5-12-Z1s" eventType="touchUpInside" id="Jau-AS-web"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-rq-DRO">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-rq-DRO">
                                                                 <rect key="frame" x="155.5" y="0.0" width="23" height="23"/>
-                                                                <state key="normal" image="JS"/>
+                                                                <state key="normal" image="js"/>
+                                                                <connections>
+                                                                    <action selector="topToolBarBTNs:" destination="tW5-12-Z1s" eventType="touchUpInside" id="0b9-Yq-wJI"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6F-98-u1W">
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6F-98-u1W">
                                                                 <rect key="frame" x="233.5" y="0.0" width="23" height="23"/>
                                                                 <state key="normal" image="CSS"/>
+                                                                <connections>
+                                                                    <action selector="topToolBarBTNs:" destination="tW5-12-Z1s" eventType="touchUpInside" id="SrH-39-eMa"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8v-qd-tDD">
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8v-qd-tDD">
                                                                 <rect key="frame" x="311" y="0.0" width="23" height="23"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="q8v-qd-tDD" secondAttribute="height" multiplier="1:1" id="FO9-QV-l0n"/>
                                                                 </constraints>
                                                                 <state key="normal" image="icons8-module"/>
+                                                                <connections>
+                                                                    <action selector="topToolBarBTNs:" destination="tW5-12-Z1s" eventType="touchUpInside" id="gOX-4v-1ic"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -936,7 +951,13 @@
                     <navigationItem key="navigationItem" id="zT8-TY-9gR"/>
                     <connections>
                         <outlet property="gestureRecognizerView" destination="PMu-9b-4pC" id="6tk-ic-HoZ"/>
+                        <outlet property="selectorView" destination="Xpa-W2-vaS" id="tR8-ef-Axo"/>
                         <outlet property="toolsViewHeightConstraint" destination="ENT-1O-QGt" id="tlt-Qc-4d0"/>
+                        <outletCollection property="topToolBarBTNs" destination="5mW-mq-FaL" collectionClass="NSMutableArray" id="52d-5R-RRt"/>
+                        <outletCollection property="topToolBarBTNs" destination="Edq-Jb-P34" collectionClass="NSMutableArray" id="yzN-hb-uaB"/>
+                        <outletCollection property="topToolBarBTNs" destination="3kZ-rq-DRO" collectionClass="NSMutableArray" id="aJ6-B8-PFa"/>
+                        <outletCollection property="topToolBarBTNs" destination="h6F-98-u1W" collectionClass="NSMutableArray" id="10B-KE-Znw"/>
+                        <outletCollection property="topToolBarBTNs" destination="q8v-qd-tDD" collectionClass="NSMutableArray" id="hzv-Dm-1de"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPr-db-938" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1640,7 +1661,6 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
     <resources>
         <image name="CSS" width="340" height="380"/>
         <image name="HTML" width="340" height="380"/>
-        <image name="JS" width="412" height="460"/>
         <image name="icons8-chat0" width="84" height="78"/>
         <image name="icons8-cloud_database" width="96" height="96"/>
         <image name="icons8-connected" width="96" height="96"/>
@@ -1667,6 +1687,7 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
         <image name="icons8-trash" width="96" height="96"/>
         <image name="icons8-upload" width="96" height="96"/>
         <image name="icons8-user_account" width="96" height="96"/>
+        <image name="js" width="412" height="460"/>
         <image name="power" catalog="system" width="64" height="62"/>
         <image name="redo" width="100" height="100"/>
         <image name="undo" width="100" height="100"/>
