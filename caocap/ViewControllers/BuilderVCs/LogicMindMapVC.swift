@@ -12,9 +12,16 @@ class LogicMindMapVC: UIViewController {
     
     
     @IBOutlet weak var optionsContentView: UIView!
-    @IBOutlet var optionsStackViews: [UIStackView]!
+    
+    @IBOutlet var optionsStackView1: UIStackView!
+    @IBOutlet var optionsStackView2: UIStackView!
+    @IBOutlet var optionsStackView3: UIStackView!
+    @IBOutlet var optionsStackView4: UIStackView!
+    @IBOutlet var optionsStackView5: UIStackView!
+    
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
+    
     var toolsSelectedIndex: Int = 2
     var toolsPreviousIndex: Int?
     
@@ -27,11 +34,15 @@ class LogicMindMapVC: UIViewController {
     @IBOutlet var classBlock2: UIStackView!
     @IBOutlet var classBlock3: UIStackView!
     
+    var optionsStackViews = [UIStackView]()
+    
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         optionsStackViews = [optionsStackView1, optionsStackView2, optionsStackView3, optionsStackView4, optionsStackView5]
         
         setupViews()
         setupStackViews()
@@ -64,17 +75,23 @@ class LogicMindMapVC: UIViewController {
 
         let previousSV = optionsStackViews[toolsPreviousIndex!]
         let selectedSV = optionsStackViews[toolsSelectedIndex]
-        if toolsPreviousIndex! < toolsSelectedIndex {
+        if toolsPreviousIndex! > toolsSelectedIndex {
 //            move right
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 previousSV.frame.origin.x = self.optionsContentView.frame.origin.x + self.optionsContentView.frame.size.width
+                
+            })
+            UIView.animate(withDuration: 0.5, delay: 0.05, animations: {
                 selectedSV.frame.origin.x = self.optionsContentView.frame.origin.x
             })
             
         } else {
 //            move left
-            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+           UIView.animate(withDuration: 0.5, animations: {
                 previousSV.frame.origin.x = self.optionsContentView.frame.origin.x - self.optionsContentView.frame.size.width
+                
+            })
+            UIView.animate(withDuration: 0.5, delay: 0.05, animations: {
                 selectedSV.frame.origin.x = self.optionsContentView.frame.origin.x
             })
         }
@@ -105,23 +122,23 @@ class LogicMindMapVC: UIViewController {
         let originX = optionsContentView.frame.origin.x
     
             
-        optionsContentView.addSubview(optionsStackViews[0])
+        optionsContentView.addSubview(optionsStackView1)
         optionsStackViews[0].frame.size = size
         optionsStackViews[0].frame.origin.x = originX + size.width
         
-        optionsContentView.addSubview(optionsStackViews[1])
+        optionsContentView.addSubview(optionsStackView2)
         optionsStackViews[1].frame.size = size
         optionsStackViews[1].frame.origin.x = originX + size.width
         
-        optionsContentView.addSubview(optionsStackViews[2])
+        optionsContentView.addSubview(optionsStackView3)
         optionsStackViews[2].frame.size = size
-        optionsStackViews[2].frame.origin.x = originX 
+        optionsStackViews[2].frame.origin.x = originX
         
-        optionsContentView.addSubview(optionsStackViews[3])
+        optionsContentView.addSubview(optionsStackView4)
         optionsStackViews[3].frame.size = size
         optionsStackViews[3].frame.origin.x = originX - size.width
         
-        optionsContentView.addSubview(optionsStackViews[4])
+        optionsContentView.addSubview(optionsStackView5)
         optionsStackViews[4].frame.size = size
         optionsStackViews[4].frame.origin.x = originX - size.width
     }
