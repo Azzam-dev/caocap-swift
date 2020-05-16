@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vph-EF-1TF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vph-EF-1TF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -766,152 +766,9 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aie-gb-yxg">
                                                 <rect key="frame" x="0.0" y="60" width="374" height="120"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="HuE-73-Sz3">
-                                                        <rect key="frame" x="10" y="10" width="354" height="100"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B8C-OI-8nD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE9-pq-nkY" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Comments">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjI-qz-sT1" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
-                                                                        <rect key="frame" x="121.5" y="0.0" width="111" height="30"/>
-                                                                        <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Conditions">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmn-eV-uzg" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
-                                                                        <rect key="frame" x="242.5" y="0.0" width="111.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Variables">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gBF-PD-QvF">
-                                                                <rect key="frame" x="0.0" y="35" width="354" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77x-zw-o6k" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Datatypes">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRL-RA-j52" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
-                                                                        <rect key="frame" x="121.5" y="0.0" width="111" height="30"/>
-                                                                        <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Loops">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urZ-zl-0Ea" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
-                                                                        <rect key="frame" x="242.5" y="0.0" width="111.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Identifiers">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="maC-OL-f9p">
-                                                                <rect key="frame" x="0.0" y="70" width="354" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NV1-XL-92k" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Operators">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDI-2w-vCU" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
-                                                                        <rect key="frame" x="121.5" y="0.0" width="111" height="30"/>
-                                                                        <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Functions">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjN-lx-DsX" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
-                                                                        <rect key="frame" x="242.5" y="0.0" width="111.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Objects">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
                                                 <color key="backgroundColor" red="0.26451683040000001" green="0.28867769240000002" blue="0.61573868990000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstItem="HuE-73-Sz3" firstAttribute="leading" secondItem="XDi-dJ-6mf" secondAttribute="leading" constant="10" id="3Me-hy-h8L"/>
-                                                    <constraint firstItem="HuE-73-Sz3" firstAttribute="centerY" secondItem="aie-gb-yxg" secondAttribute="centerY" id="4Dc-m3-vuP"/>
                                                     <constraint firstAttribute="height" constant="120" id="ZQO-nr-3qo"/>
-                                                    <constraint firstItem="HuE-73-Sz3" firstAttribute="top" secondItem="aie-gb-yxg" secondAttribute="top" constant="10" id="bWU-xx-5x4"/>
-                                                    <constraint firstItem="HuE-73-Sz3" firstAttribute="centerX" secondItem="aie-gb-yxg" secondAttribute="centerX" id="iPf-RJ-bNM"/>
                                                 </constraints>
                                                 <viewLayoutGuide key="safeArea" id="XDi-dJ-6mf"/>
                                             </view>
@@ -1040,6 +897,7 @@
                         <outlet property="gestureRecognizerView" destination="PMu-9b-4pC" id="6tk-ic-HoZ"/>
                         <outlet property="logicSVContant" destination="83R-Zc-RHF" id="64F-om-6dY"/>
                         <outlet property="logicScrollView" destination="bDz-nG-ciH" id="YPC-w4-1Hu"/>
+                        <outlet property="optionsContentView" destination="aie-gb-yxg" id="kP4-0r-Dww"/>
                         <outlet property="selectorView" destination="Xpa-W2-vaS" id="tR8-ef-Axo"/>
                         <outlet property="toolsViewHeightConstraint" destination="ENT-1O-QGt" id="tlt-Qc-4d0"/>
                         <outletCollection property="topToolBarBTNs" destination="5mW-mq-FaL" collectionClass="NSMutableArray" id="52d-5R-RRt"/>
@@ -1047,6 +905,11 @@
                         <outletCollection property="topToolBarBTNs" destination="3kZ-rq-DRO" collectionClass="NSMutableArray" id="aJ6-B8-PFa"/>
                         <outletCollection property="topToolBarBTNs" destination="h6F-98-u1W" collectionClass="NSMutableArray" id="10B-KE-Znw"/>
                         <outletCollection property="topToolBarBTNs" destination="q8v-qd-tDD" collectionClass="NSMutableArray" id="hzv-Dm-1de"/>
+                        <outletCollection property="optionsStackViews" destination="HuE-73-Sz3" collectionClass="NSMutableArray" id="2gQ-Vx-V3B"/>
+                        <outletCollection property="optionsStackViews" destination="I9W-F7-EuU" collectionClass="NSMutableArray" id="SwL-Bt-ggD"/>
+                        <outletCollection property="optionsStackViews" destination="H4x-J8-MRK" collectionClass="NSMutableArray" id="hgS-Px-Ceq"/>
+                        <outletCollection property="optionsStackViews" destination="WIh-3F-h7O" collectionClass="NSMutableArray" id="MrO-1k-wSr"/>
+                        <outletCollection property="optionsStackViews" destination="tnt-3i-R1j" collectionClass="NSMutableArray" id="0Ad-At-v4N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KPr-db-938" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1181,6 +1044,701 @@
                         </view>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="10H-FC-dXq"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" id="HuE-73-Sz3">
+                    <rect key="frame" x="0.0" y="0.0" width="354" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="B8C-OI-8nD">
+                            <rect key="frame" x="0.0" y="0.0" width="354" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE9-pq-nkY" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Comments">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjI-qz-sT1" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="121.5" y="0.0" width="111" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Conditions">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmn-eV-uzg" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="242.5" y="0.0" width="111.5" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Variables">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gBF-PD-QvF">
+                            <rect key="frame" x="0.0" y="35" width="354" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77x-zw-o6k" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Datatypes">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRL-RA-j52" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="121.5" y="0.0" width="111" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="cosmos">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urZ-zl-0Ea" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="242.5" y="0.0" width="111.5" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Identifiers">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="maC-OL-f9p">
+                            <rect key="frame" x="0.0" y="70" width="354" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NV1-XL-92k" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="111.5" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Operators">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDI-2w-vCU" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="121.5" y="0.0" width="111" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Functions">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjN-lx-DsX" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="242.5" y="0.0" width="111.5" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Objects">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="lQb-n0-SfP"/>
+                </stackView>
+                <stackView opaque="NO" tag="1" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" id="I9W-F7-EuU">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="us7-kT-PfP">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0N-4Z-7bl" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="&lt;img&gt;">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qlc-ow-oMN" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="&lt;div&gt;">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8U-N5-SJJ" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="&lt;li&gt;">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jVC-Qd-rgK">
+                            <rect key="frame" x="0.0" y="35" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpN-v2-IjS" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="&lt;input&gt;">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1l-Ea-NV3" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="&lt;option&gt;">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pv5-ja-W4L" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="&lt;ul&gt;">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wjP-cw-2ct">
+                            <rect key="frame" x="0.0" y="70" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fza-LB-V7j" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="&lt;h&gt;">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLp-ob-t9u" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="&lt;form&gt;">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA4-Kw-04h" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="&lt;p&gt;">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="ere-9N-whS"/>
+                </stackView>
+                <stackView opaque="NO" tag="2" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" id="H4x-J8-MRK">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EiE-b5-alo">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcE-Ml-7bV" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Comments">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfr-MK-heA" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Conditions">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YT5-Sz-A0A" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Variables">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="O75-Hp-HpY">
+                            <rect key="frame" x="0.0" y="35" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCX-ph-YZH" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Datatypes">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWd-is-i9S" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Loops">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Be-57-uB5" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Identifiers">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9Pr-D3-ITM">
+                            <rect key="frame" x="0.0" y="70" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su4-kt-hJg" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Operators">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gY-ul-0cQ" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Functions">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4a-Tm-sp8" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Objects">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="yDM-wa-lJc"/>
+                </stackView>
+                <stackView opaque="NO" tag="3" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" id="WIh-3F-h7O">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e69-JZ-kDB">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5C-Xk-aKE" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="size">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l4N-xe-kne" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="color">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WvB-Mw-iPU" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="font">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tLD-di-VrD">
+                            <rect key="frame" x="0.0" y="35" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6K-h4-8j7" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="hight">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiI-Ih-Ypl" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="align">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxm-Y5-YKF" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="wight">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9vr-5t-xUF">
+                            <rect key="frame" x="0.0" y="70" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hT8-lh-7OT" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="desplay">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPx-FG-Wpe" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="animation">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kT-Mw-qhM" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="border">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="8lF-HJ-jDt"/>
+                </stackView>
+                <stackView opaque="NO" tag="4" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" id="tnt-3i-R1j">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1tC-Ha-2Vr">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9r-jM-Nwa" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Comments">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rks-Eh-4XN" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Conditions">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CCU-Nq-EhD" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Variables">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D4e-bz-51J">
+                            <rect key="frame" x="0.0" y="35" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vlj-xF-Uxx" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Datatypes">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z4-za-fcO" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="art">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8B-AY-DdA" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Identifiers">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tpU-Ep-ubR">
+                            <rect key="frame" x="0.0" y="70" width="320" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qen-8l-1Qg" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Operators">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20G-pT-Vor" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="110" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Functions">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCu-Cz-Sgk" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <rect key="frame" x="220" y="0.0" width="100" height="30"/>
+                                    <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
+                                    <state key="normal" title="Objects">
+                                        <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="7"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="cyA-C2-TrW"/>
                 </stackView>
             </objects>
             <point key="canvasLocation" x="4651" y="2421"/>

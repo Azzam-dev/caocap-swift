@@ -11,9 +11,12 @@ import UIKit
 class LogicMindMapVC: UIViewController {
     
     
+    @IBOutlet weak var optionsContentView: UIView!
+    @IBOutlet var optionsStackViews: [UIStackView]!
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
-    var topToolBarSelectedIndex: Int = 2
+    var toolsSelectedIndex: Int = 2
+    var toolsPreviousIndex: Int?
     
     @IBOutlet weak var selectorView: DesignableView!
     @IBOutlet var topToolBarBTNs: [UIButton]!
@@ -31,23 +34,51 @@ class LogicMindMapVC: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        setupStackViews()
         gestureRecognizerSetup()
+        
     }
     
     
     @IBAction func topToolBarBTNs(_ sender: UIButton) {
         
-        topToolBarSelectedIndex = sender.tag
-        
+        toolsPreviousIndex = toolsSelectedIndex
+        toolsSelectedIndex = sender.tag
+        optionsSVAnimation()
+        topToolBarAnimation()
+    }
+    
+    func topToolBarAnimation() {
         UIView.animate(withDuration: 0.1,animations: {
-            self.selectorView.shadowOpacity = 0
+                  self.selectorView.shadowOpacity = 0
+                  
+              }, completion: { (finished) in
+                  self.selectorView.frame.origin.x = self.topToolBarBTNs[self.toolsSelectedIndex].frame.origin.x + 12
+                  UIView.animate(withDuration: 0.1) {
+                      self.selectorView.shadowOpacity = 0.2
+                  }
+              })
+    }
+    
+    func optionsSVAnimation() {
+
+        let previousSV = optionsStackViews[toolsPreviousIndex!]
+        let selectedSV = optionsStackViews[toolsSelectedIndex]
+        if toolsPreviousIndex! < toolsSelectedIndex {
+//            move right
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                previousSV.frame.origin.x = self.optionsContentView.frame.origin.x + self.optionsContentView.frame.size.width
+                selectedSV.frame.origin.x = self.optionsContentView.frame.origin.x
+            })
             
-        }, completion: { (finished) in
-            self.selectorView.frame.origin.x = self.topToolBarBTNs[self.topToolBarSelectedIndex].frame.origin.x + 12
-            UIView.animate(withDuration: 0.1) {
-                self.selectorView.shadowOpacity = 0.2
-            }
-        })
+        } else {
+//            move left
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+                previousSV.frame.origin.x = self.optionsContentView.frame.origin.x - self.optionsContentView.frame.size.width
+                selectedSV.frame.origin.x = self.optionsContentView.frame.origin.x
+            })
+        }
+        
     }
     
     func setupViews() {
@@ -66,6 +97,33 @@ class LogicMindMapVC: UIViewController {
         
         logicSVContant.addSubview(classBlock3)
         classBlock3.frame.origin = CGPoint(x: classBlock.frame.origin.x - 220 , y: viewHeight * 0.55)
+    }
+    
+    func setupStackViews() {
+        
+        let size = optionsContentView.frame.size
+        let originX = optionsContentView.frame.origin.x
+    
+            
+        optionsContentView.addSubview(optionsStackViews[0])
+        optionsStackViews[0].frame.size = size
+        optionsStackViews[0].frame.origin.x = originX + size.width
+        
+        optionsContentView.addSubview(optionsStackViews[1])
+        optionsStackViews[1].frame.size = size
+        optionsStackViews[1].frame.origin.x = originX + size.width
+        
+        optionsContentView.addSubview(optionsStackViews[2])
+        optionsStackViews[2].frame.size = size
+        optionsStackViews[2].frame.origin.x = originX 
+        
+        optionsContentView.addSubview(optionsStackViews[3])
+        optionsStackViews[3].frame.size = size
+        optionsStackViews[3].frame.origin.x = originX - size.width
+        
+        optionsContentView.addSubview(optionsStackViews[4])
+        optionsStackViews[4].frame.size = size
+        optionsStackViews[4].frame.origin.x = originX - size.width
     }
     
     func gestureRecognizerSetup() {
