@@ -654,6 +654,9 @@
                                 <color key="backgroundColor" red="0.098039215686274508" green="0.15686274509803921" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="6dN-y1-AAZ"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="cmJ-nv-Ufx"/>
+                                <connections>
+                                    <outlet property="delegate" destination="tW5-12-Z1s" id="HgZ-dY-xFu"/>
+                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMu-9b-4pC">
                                 <rect key="frame" x="20" y="552" width="374" height="310"/>
@@ -1031,7 +1034,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="zT8-TY-9gR"/>
                     <connections>
+                        <outlet property="classBlock" destination="kOG-BO-R5b" id="8u3-Kx-7c2"/>
+                        <outlet property="classBlock2" destination="9fs-rK-toy" id="JTs-Nl-TY1"/>
+                        <outlet property="classBlock3" destination="oYk-LT-vhf" id="dYx-SQ-l7X"/>
                         <outlet property="gestureRecognizerView" destination="PMu-9b-4pC" id="6tk-ic-HoZ"/>
+                        <outlet property="logicSVContant" destination="83R-Zc-RHF" id="64F-om-6dY"/>
+                        <outlet property="logicScrollView" destination="bDz-nG-ciH" id="YPC-w4-1Hu"/>
                         <outlet property="selectorView" destination="Xpa-W2-vaS" id="tR8-ef-Axo"/>
                         <outlet property="toolsViewHeightConstraint" destination="ENT-1O-QGt" id="tlt-Qc-4d0"/>
                         <outletCollection property="topToolBarBTNs" destination="5mW-mq-FaL" collectionClass="NSMutableArray" id="52d-5R-RRt"/>
@@ -1048,105 +1056,21 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <viewLayoutGuide key="safeArea" id="oxY-vZ-I8P"/>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" restorationIdentifier="caocapView" axis="vertical" spacing="10" id="oYk-LT-vhf">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="280"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HX-Bp-Hl5" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VC 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ8-XK-gIU">
-                                    <rect key="frame" x="82" y="1.5" width="36.5" height="17.5"/>
-                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
-                                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="20" id="FdK-KM-PNR"/>
-                                <constraint firstItem="jZ8-XK-gIU" firstAttribute="centerX" secondItem="3HX-Bp-Hl5" secondAttribute="centerX" id="dcG-Mq-gsK"/>
-                                <constraint firstItem="jZ8-XK-gIU" firstAttribute="centerY" secondItem="3HX-Bp-Hl5" secondAttribute="centerY" id="wdw-X5-fks"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHz-EN-Cuj" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="30" width="200" height="250"/>
-                            <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="200" id="OtH-A0-E8Y"/>
-                                <constraint firstAttribute="width" secondItem="eHz-EN-Cuj" secondAttribute="height" multiplier="4:5" id="caK-eP-vb0"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="10"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                    </subviews>
-                    <viewLayoutGuide key="safeArea" id="10H-FC-dXq"/>
-                </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" restorationIdentifier="caocapView" axis="vertical" spacing="10" id="9fs-rK-toy">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="280"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Bi-mU-Em4" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VC 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU4-l3-0K0">
-                                    <rect key="frame" x="82" y="1.5" width="36.5" height="17.5"/>
-                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
-                                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstItem="FU4-l3-0K0" firstAttribute="centerX" secondItem="8Bi-mU-Em4" secondAttribute="centerX" id="0Bk-BF-Nsk"/>
-                                <constraint firstItem="FU4-l3-0K0" firstAttribute="centerY" secondItem="8Bi-mU-Em4" secondAttribute="centerY" id="VFI-RK-ltw"/>
-                                <constraint firstAttribute="height" constant="20" id="bmO-gm-TQK"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGq-Gq-EXD" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="30" width="200" height="250"/>
-                            <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="200" id="QG5-Si-hdY"/>
-                                <constraint firstAttribute="width" secondItem="gGq-Gq-EXD" secondAttribute="height" multiplier="4:5" id="vwl-WM-BoR"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="10"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                    </subviews>
-                    <viewLayoutGuide key="safeArea" id="OJX-H6-8fE"/>
-                </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" restorationIdentifier="caocapView" axis="vertical" spacing="10" id="kOG-BO-R5b">
-                    <rect key="frame" x="0.0" y="0.0" width="200" height="280"/>
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="130"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5PA-0Y-ToV" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VC 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nau-6t-QrR">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VC 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nau-6t-QrR">
                                     <rect key="frame" x="82" y="1.5" width="36.5" height="17.5"/>
                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                     <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="Nau-6t-QrR" firstAttribute="centerY" secondItem="5PA-0Y-ToV" secondAttribute="centerY" id="BOn-tW-Kr9"/>
                                 <constraint firstItem="Nau-6t-QrR" firstAttribute="centerX" secondItem="5PA-0Y-ToV" secondAttribute="centerX" id="M4b-eB-Uuk"/>
@@ -1159,10 +1083,10 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cOF-cq-hVv" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="30" width="200" height="250"/>
+                            <rect key="frame" x="0.0" y="30" width="200" height="100"/>
                             <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="cOF-cq-hVv" secondAttribute="height" multiplier="4:5" id="Wgq-8I-2qn"/>
+                                <constraint firstAttribute="width" secondItem="cOF-cq-hVv" secondAttribute="height" multiplier="4:2" id="Wgq-8I-2qn"/>
                                 <constraint firstAttribute="width" constant="200" id="wHR-Py-58s"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
@@ -1173,6 +1097,90 @@
                         </view>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="DMw-G9-q2b"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" restorationIdentifier="caocapView" axis="vertical" spacing="10" id="9fs-rK-toy">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="130"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Bi-mU-Em4" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VC 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FU4-l3-0K0">
+                                    <rect key="frame" x="82" y="1.5" width="36.5" height="17.5"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="FU4-l3-0K0" firstAttribute="centerX" secondItem="8Bi-mU-Em4" secondAttribute="centerX" id="0Bk-BF-Nsk"/>
+                                <constraint firstItem="FU4-l3-0K0" firstAttribute="centerY" secondItem="8Bi-mU-Em4" secondAttribute="centerY" id="VFI-RK-ltw"/>
+                                <constraint firstAttribute="height" constant="20" id="bmO-gm-TQK"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gGq-Gq-EXD" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="30" width="200" height="100"/>
+                            <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="QG5-Si-hdY"/>
+                                <constraint firstAttribute="width" secondItem="gGq-Gq-EXD" secondAttribute="height" multiplier="4:2" id="vwl-WM-BoR"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="OJX-H6-8fE"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" restorationIdentifier="caocapView" axis="vertical" spacing="10" id="oYk-LT-vhf">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="130"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3HX-Bp-Hl5" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="20"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VC 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ8-XK-gIU">
+                                    <rect key="frame" x="82" y="1.5" width="36.5" height="17.5"/>
+                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
+                                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="FdK-KM-PNR"/>
+                                <constraint firstItem="jZ8-XK-gIU" firstAttribute="centerX" secondItem="3HX-Bp-Hl5" secondAttribute="centerX" id="dcG-Mq-gsK"/>
+                                <constraint firstItem="jZ8-XK-gIU" firstAttribute="centerY" secondItem="3HX-Bp-Hl5" secondAttribute="centerY" id="wdw-X5-fks"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHz-EN-Cuj" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="30" width="200" height="100"/>
+                            <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="OtH-A0-E8Y"/>
+                                <constraint firstAttribute="width" secondItem="eHz-EN-Cuj" secondAttribute="height" multiplier="4:2" id="caK-eP-vb0"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="10H-FC-dXq"/>
                 </stackView>
             </objects>
             <point key="canvasLocation" x="4651" y="2421"/>
