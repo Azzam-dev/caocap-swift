@@ -34,10 +34,7 @@ class TestLapVC: UIViewController, WKNavigationDelegate {
     }
     
     @IBAction func startTestBTN(_ sender: Any) {
-        guard let path = Bundle.main.path(forResource: "Style", ofType: "css") else { return }
-        let cssString = try! String(contentsOfFile: path).trimmingCharacters(in: .whitespacesAndNewlines)
-        let jsString = "var style = document.createElement('style'); style.innerHTML = '\(cssString)'; document.head.appendChild(style);"
-        self.webView.evaluateJavaScript(<#T##javaScriptString: String##String#>, completionHandler: <#T##((Any?, Error?) -> Void)?##((Any?, Error?) -> Void)?##(Any?, Error?) -> Void#>)
+        self.webView.loadHTMLString(terminalTextView.text, baseURL: nil)
     }
     
     @IBAction func hotReloudBTN(_ sender: Any) {
