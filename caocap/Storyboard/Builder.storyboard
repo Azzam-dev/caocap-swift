@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vph-EF-1TF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vph-EF-1TF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1776,8 +1776,8 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="378" height="540"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
-                                                    <wkPreferences key="preferences"/>
+                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                    <wkPreferences key="preferences" minimumFontSize="14"/>
                                                 </wkWebViewConfiguration>
                                             </wkWebView>
                                         </subviews>
@@ -1886,16 +1886,6 @@
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rRl-oS-igi">
                                                         <rect key="frame" x="10" y="5" width="354" height="110"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <string key="text"> src/style.css            |  69 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- 11 files changed, 280 insertions(+), 49 deletions(-)
- create mode 100644 src/Builder.js
- create mode 100644 src/Chat.js
- create mode 100644 src/Explore.js
- create mode 100644 src/MyProfile.js
- create mode 100644 src/Nav.js
- create mode 100644 src/components/Caocap.js
- create mode 100644 src/style.css
-azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1920,10 +1910,16 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdd-hb-pql">
                                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                 <state key="normal" image="icons8-play"/>
+                                                                <connections>
+                                                                    <action selector="startTestBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="XZ2-aH-FRC"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqo-1h-S27">
                                                                 <rect key="frame" x="62.5" y="0.0" width="25" height="25"/>
                                                                 <state key="normal" image="icons8-gas"/>
+                                                                <connections>
+                                                                    <action selector="hotReloudBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="d0X-uZ-12f"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlY-MI-Bmg">
                                                                 <rect key="frame" x="124.5" y="0.0" width="25" height="25"/>
@@ -1931,14 +1927,23 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
                                                                     <constraint firstAttribute="width" secondItem="hlY-MI-Bmg" secondAttribute="height" multiplier="1:1" id="BCK-Xc-KEJ"/>
                                                                 </constraints>
                                                                 <state key="normal" image="icons8-stop"/>
+                                                                <connections>
+                                                                    <action selector="stopTestBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="pDX-Bz-9Lf"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faC-2F-Aaw">
                                                                 <rect key="frame" x="187" y="0.0" width="25" height="25"/>
                                                                 <state key="normal" image="icons8-save"/>
+                                                                <connections>
+                                                                    <action selector="saveTextBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="bSt-Pw-aIc"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrD-VK-uFz">
                                                                 <rect key="frame" x="249" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-refresh"/>
+                                                                <state key="normal" image="icons8-launch"/>
+                                                                <connections>
+                                                                    <action selector="launchCaocapBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="mUE-tH-ieV"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -2015,6 +2020,7 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
                     <navigationItem key="navigationItem" id="keo-SB-2Eh"/>
                     <connections>
                         <outlet property="gestureRecognizerView" destination="coo-Xb-Lhg" id="tR5-2j-2JD"/>
+                        <outlet property="terminalTextView" destination="rRl-oS-igi" id="iBV-Me-2ma"/>
                         <outlet property="theView" destination="Eay-SC-9EV" id="MeZ-50-beJ"/>
                         <outlet property="toolsViewHeightConstraint" destination="ev0-zY-Bky" id="fv5-Nk-sWe"/>
                         <outlet property="webView" destination="spA-Ki-ysH" id="nhq-w4-i9n"/>
@@ -2317,6 +2323,7 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
         <image name="icons8-download" width="96" height="96"/>
         <image name="icons8-flow_chart" width="100" height="100"/>
         <image name="icons8-gas" width="100" height="100"/>
+        <image name="icons8-launch" width="104" height="104"/>
         <image name="icons8-layers" width="100" height="100"/>
         <image name="icons8-list_view" width="100" height="100"/>
         <image name="icons8-mesh" width="100" height="100"/>
@@ -2325,7 +2332,6 @@ azzam.rar@Azzams-MacBook-Pro caocap-react % </string>
         <image name="icons8-pen" width="100" height="100"/>
         <image name="icons8-pictures_folder" width="100" height="100"/>
         <image name="icons8-play" width="100" height="100"/>
-        <image name="icons8-refresh" width="96" height="96"/>
         <image name="icons8-ruler" width="100" height="100"/>
         <image name="icons8-save" width="96" height="96"/>
         <image name="icons8-source_code" width="100" height="100"/>

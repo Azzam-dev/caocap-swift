@@ -13,6 +13,7 @@ class TestLapVC: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var theView: DesignableView!
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var terminalTextView: UITextView!
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
@@ -25,12 +26,34 @@ class TestLapVC: UIViewController, WKNavigationDelegate {
         let defaultValue = URL(string: "https://ficruty.wixsite.com/caocap")!
         var urlRequest = URLRequest(url: testLabURL ?? defaultValue)
         urlRequest.cachePolicy = .returnCacheDataElseLoad
-        self.webView.load(urlRequest)
+        
         
         addPulse()
         
         gestureRecognizerSetup()
     }
+    
+    @IBAction func startTestBTN(_ sender: Any) {
+        guard let path = Bundle.main.path(forResource: "Style", ofType: "css") else { return }
+        let cssString = try! String(contentsOfFile: path).trimmingCharacters(in: .whitespacesAndNewlines)
+        let jsString = "var style = document.createElement('style'); style.innerHTML = '\(cssString)'; document.head.appendChild(style);"
+        self.webView.evaluateJavaScript(<#T##javaScriptString: String##String#>, completionHandler: <#T##((Any?, Error?) -> Void)?##((Any?, Error?) -> Void)?##(Any?, Error?) -> Void#>)
+    }
+    
+    @IBAction func hotReloudBTN(_ sender: Any) {
+        
+    }
+    
+    @IBAction func stopTestBTN(_ sender: Any) {
+    }
+    
+    @IBAction func saveTextBTN(_ sender: Any) {
+    }
+    
+    @IBAction func launchCaocapBTN(_ sender: Any) {
+        
+    }
+    
     
     func gestureRecognizerSetup() {
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
