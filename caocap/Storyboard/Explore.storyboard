@@ -418,12 +418,12 @@
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thB-Ze-TUj">
                                                             <rect key="frame" x="0.0" y="0.0" width="358" height="40"/>
+                                                            <color key="tintColor" red="0.090222068130970001" green="0.6435362696647644" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <connections>
                                                                 <action selector="orbitBTN:" destination="5RM-wD-ssu" eventType="touchUpInside" id="s8f-Xq-MbV"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="9N1-YT-ekY" firstAttribute="centerY" secondItem="AkM-gP-9sH" secondAttribute="centerY" id="0jv-gR-UXb"/>
                                                         <constraint firstItem="thB-Ze-TUj" firstAttribute="top" secondItem="AkM-gP-9sH" secondAttribute="top" id="0st-Yv-rs6"/>

@@ -154,11 +154,13 @@ class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
             caocapIsOrbited = false
             orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 0)
             DataService.instance.addAndReomveFromOrbit(caocapKey: caocapKey, remove: true)
+            orbitsNum.text = "ADD TO ORBIT"
         } else {
             caocapIsOrbited = true
             print(caocapKey)
             orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
             DataService.instance.addAndReomveFromOrbit(caocapKey: caocapKey, remove: false)
+            orbitsNum.text = "Added"
         }
     }
     

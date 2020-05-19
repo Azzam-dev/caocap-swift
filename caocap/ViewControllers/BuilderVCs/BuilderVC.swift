@@ -10,18 +10,12 @@ import UIKit
 
 class BuilderVC: UIViewController {
     
-    var artNAV: UINavigationController!
-    var logicNAV: UINavigationController!
-    var cosmosNAV: UINavigationController!
     var testLabNAV: UINavigationController!
     
     @IBOutlet weak var contentView: UIView!
     
     var navigationControllers: [UINavigationController]!
-    var navSelectedIndex: Int = 2
-    
-    lazy var viewWidth = self.view.frame.width
-    lazy var viewHeight = self.view.frame.height
+    var navSelectedIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,39 +30,14 @@ class BuilderVC: UIViewController {
      func setupSubNavigationControllers() {
         
            let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-           artNAV = storyboard.instantiateViewController(withIdentifier: "artBuilderNAV") as? UINavigationController
-           logicNAV = storyboard.instantiateViewController(withIdentifier: "logicMindMapNAV") as? UINavigationController
-           cosmosNAV = storyboard.instantiateViewController(withIdentifier: "cosmosBaseNAV") as? UINavigationController
         testLabNAV = storyboard.instantiateViewController(withIdentifier: "testLapNAV") as? UINavigationController
-           navigationControllers = [cosmosNAV, logicNAV,artNAV, testLabNAV]
-           navBTNpressed(navBTNs[navSelectedIndex])
+           navigationControllers = [testLabNAV]
+        let vc = navigationControllers[0]
+            addChild(vc)
+            vc.view.frame = contentView.bounds
+            contentView.addSubview(vc.view)
+            vc.didMove(toParent: self)
        }
-    
-    
-    @IBOutlet weak var selectorView: DesignableView!
-    @IBOutlet var navBTNs: [UIButton]!
-    @IBAction func navBTNpressed(_ sender: UIButton) {
-        
-        let previousNavIndex = navSelectedIndex
-        navSelectedIndex = sender.tag
-        
-        let previousVC = navigationControllers[previousNavIndex]
-        previousVC.willMove(toParent: nil)
-        previousVC.view.removeFromSuperview()
-        previousVC.removeFromParent()
-        
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-            self.selectorView.frame.origin.x = self.navBTNs[self.navSelectedIndex].frame.origin.x - 10
-        })
-        
-        
-        let vc = navigationControllers[navSelectedIndex]
-        addChild(vc)
-        vc.view.frame = contentView.bounds
-        contentView.addSubview(vc.view)
-        vc.didMove(toParent: self)
-        
-    }
     
 }
 
