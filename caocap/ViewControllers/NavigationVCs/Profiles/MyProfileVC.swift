@@ -23,7 +23,6 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     @IBOutlet weak var caocapIMG: DesignableImage!
     @IBOutlet weak var caocapIMGview: DesignableView!
     @IBOutlet weak var caocapNameTF: UITextField!
-    @IBOutlet weak var caocapWebsiteTF: UITextField!
     
     @IBOutlet weak var userIMG: DesignableImage!
     @IBOutlet weak var userIMGview: DesignableView!
@@ -124,9 +123,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
 
     
     @IBAction func popupACT(_ sender: Any) {
-        let builderView = UIHostingController(rootView: BuilderUI())
-        self.present(builderView, animated: true, completion:nil)
-        //presentAddCaocapWithUrlView()
+        presentAddCaocapWithUrlView()
     }
     
     @IBAction func cancelPopupBTN(_ sender: Any) {
@@ -156,23 +153,13 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     
     @IBOutlet weak var createBTN: DesignableButton!
     @IBAction func createBTN(_ sender: Any) {
-        
         createButtonSetup(withTitle: "loading...", andAlpha: 0.5, isEnabled: false)
         // create caocap
-        if caocapWebsiteTF.text == "" ||
-            caocapWebsiteTF.text == "https://" ||
-            caocapWebsiteTF.text == "https:\\" ||
-            caocapWebsiteTF.text == "https:/" {
-            displayAlertMessage(messageToDisplay: "please enter a URL in the text field")
-            caocapWebsiteTF.text = "https://"
+        if caocapNameTF.text == "" {
+            displayAlertMessage(messageToDisplay: "please enter the caocap's name")
             createButtonSetup(withTitle: "create")
         } else {
-            if caocapNameTF.text == "" {
-                displayAlertMessage(messageToDisplay: "please enter the caocap's name")
-                createButtonSetup(withTitle: "create")
-            } else {
-                uploudCaocap()
-            }
+            uploudCaocap()
         }
     }
     
@@ -189,7 +176,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
                         // Here you can get the download URL
                         let caocapData = ["imageURL": url?.absoluteString ?? "",
                                           "name" : self.caocapNameTF.text!,
-                                          "website" : self.caocapWebsiteTF.text!,
+                                          "code": "<h1> write your code here </h1>",
                                           "owners": [currentUserUID],
                             ] as [String : Any]
                         
@@ -198,8 +185,8 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
                                 self.profileCollectionView.reloadData()
                                 self.caocapNameTF.text = ""
                                 self.caocapIMG.image = #imageLiteral(resourceName: "caocap app icon old")
-                                self.caocapWebsiteTF.text = "https://"
                                 self.createButtonSetup(withTitle: "create")
+                                self.openBuilder()
                                 self.hideAddCaocapWithUrlView()
                             }
                         })
@@ -213,6 +200,13 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         createBTN.isEnabled = isEnabled
         createBTN.setTitle(title ,for: .normal)
         createBTN.alpha = alphaLevel
+    }
+    
+    func openBuilder() {
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        let builderVC = storyboard.instantiateViewController(withIdentifier: "builder")
+        builderVC.modalPresentationStyle = .fullScreen
+        self.present(builderVC, animated: true)
     }
     
     func displayAlertMessage(messageToDisplay: String) {

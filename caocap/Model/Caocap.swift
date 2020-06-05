@@ -15,6 +15,7 @@ class Caocap {
     private var _name: String
     private var _bio: String
     private var _website: String
+    private var _code: String
     private var _owners: [String]
     
     var key: String {
@@ -35,6 +36,9 @@ class Caocap {
     var website: String {
         return _website
     }
+    var code: String {
+        return _code
+    }
     var owners: [String] {
         return _owners
     }
@@ -46,6 +50,7 @@ class Caocap {
         self._name = dictionary["name"] as? String ?? "loading..."
         self._bio = dictionary["bio"] as? String ?? ""
         self._website = dictionary["website"] as? String ?? ""
+        self._code = dictionary["code"] as? String ?? "<h1> failed to load.. </h1>"
         self._owners = dictionary["owners"] as? [String] ?? [""]
     }
     

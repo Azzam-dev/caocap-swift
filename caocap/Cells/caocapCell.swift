@@ -22,19 +22,13 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
     }
     
     func configureCell(caocap: Caocap ,released: Bool) {
-        
-        let caocapURL = URL(string: caocap.website)
-        let defaultValue = URL(string: "https://ficruty.wixsite.com/caocap")!
-        var urlRequest = URLRequest(url: caocapURL ?? defaultValue)
-        urlRequest.cachePolicy = .returnCacheDataElseLoad
+
+        let caocapCode = caocap.code
+        print(caocapCode)
+        self.webView.loadHTMLString(caocapCode , baseURL: nil)
         
         //this stops the image and the Url from duplicating
         self.caocapIMG.image = nil
-        self.webView.stopLoading()
-        
-        
-        //This hides the webView until the download finishes
-        self.webView.isHidden = true
         
         //start the Circle Animation
         addPulse()
@@ -47,7 +41,7 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
             self.theView.isHidden = false
             self.caocapIMG.isHidden = true
             self.caocapIMG.image = nil
-            self.webView.load(urlRequest)
+            //self.webView.load(urlRequest)
         } else {
             self.theView.isHidden = true
             self.caocapIMG.isHidden = false
