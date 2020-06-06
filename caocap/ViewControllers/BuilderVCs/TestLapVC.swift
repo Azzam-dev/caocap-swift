@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import Firebase
 
 class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
@@ -22,20 +23,34 @@ class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     @IBOutlet weak var gestureRecognizerView: UIView!
     
     var caocapCode = ""
+    var openedCaocap: Caocap?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getMyLastCaocapData()
+        
         //This hides the webView until the download finishes
         self.webView.isHidden = true
         self.webView.navigationDelegate = self
         
-        caocapCode = """
-        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style type="text/css">\(cssTextView.text!)</style></head><body>\(htmlTextView.text!)<script>\(jsTextView.text!)</script></body></html>
-        """
-        
         addPulse()
         
         gestureRecognizerSetup()
+    }
+    
+    
+    func getMyLastCaocapData() {
+        DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
+            self.openedCaocap = returnedCaocapsArray.last
+            self.htmlTextView.text = self.openedCaocap!.code["html"]
+            self.jsTextView.text = self.openedCaocap!.code["js"]
+            self.cssTextView.text = self.openedCaocap!.code["css"]
+            self.caocapCode = """
+            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style>\(self.cssTextView.text!)</style></head><body>\(self.htmlTextView.text!)<script>\(self.jsTextView.text!)</script></body></html>
+            """
+            self.startTestBTN(nil)
+        }
     }
     
     @IBOutlet var topNavBTNs: [UIButton]!
@@ -56,7 +71,6 @@ class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         default:
             print("some bad shit happened 😅")
         }
-        
         sender.setTitleColor(#colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), for: .normal)
     }
     
@@ -66,7 +80,7 @@ class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         cssTextView.isHidden = !css
     }
     
-    @IBAction func startTestBTN(_ sender: Any) {
+    @IBAction func startTestBTN(_ sender: Any?) {
         self.webView.loadHTMLString(caocapCode, baseURL: nil)
     }
     
@@ -78,11 +92,12 @@ class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     }
     
     @IBAction func saveBTN(_ sender: Any) {
-        
+        // save the code in /caocap-x/commit/[UID]/[virsionNum]
     }
     
     @IBAction func launchCaocapBTN(_ sender: Any) {
-        
+        // save the code in /caocap-x/caocap/[UID]/code
+        DataService.instance.launchCaocap(caocapKey: openedCaocap!.key, code: ["html": htmlTextView.text , "js": jsTextView.text, "css": cssTextView.text])
     }
     
     
@@ -143,7 +158,8 @@ class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
             caocapCode = """
-            <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>CAOCAP</title><style>\(cssTextView.text!)</style></head><body>\(htmlTextView.text!)<script>\(jsTextView.text!)</script></body></html>
+            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style>\(cssTextView.text!)</style></head><body>\(htmlTextView.text!)<script>\(jsTextView.text!)</script></body></html>
             """
     }
     

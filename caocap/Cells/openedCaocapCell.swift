@@ -53,25 +53,18 @@ class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     var caocapIsOrbited = false
     func configureCell(caocap: Caocap ,released: Bool) {
         caocapKey = caocap.key
-        isReleased = released
-        let caocapURL = URL(string: caocap.website)
-        let defaultValue = URL(string: "https://ficruty.wixsite.com/caocap")!
-        var urlRequest = URLRequest(url: caocapURL ?? defaultValue)
-        urlRequest.cachePolicy = .returnCacheDataElseLoad
+        let caocapCode = """
+        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style>\(caocap.code["css"] ?? "")</style></head><body>\(caocap.code["html"] ?? "" )<script>\(caocap.code["js"] ?? "")</script></body></html>
+        """
         
-        
+        self.webView.loadHTMLString(caocapCode , baseURL: nil)
         
         //this stops the image and the Url from duplicating
         self.caocapIMG.image = nil
-        self.webView.stopLoading()
-        
-        
-        //This hides the webView until the download finishes
-        self.webView.isHidden = true
         
         //start the Circle Animation
         addPulse()
-        
         
         checkOrbiteStatus()
         
@@ -90,7 +83,6 @@ class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
             self.theView.isHidden = false
             self.caocapBackgroundIMG.isHidden = true
             self.caocapBackgroundIMG.image = nil
-            self.webView.load(urlRequest)
         } else {
             self.theView.isHidden = true
             self.caocapBackgroundIMG.isHidden = false
@@ -115,8 +107,7 @@ class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     }
     
     func checkOrbiteStatus() {
-        if let userUID = Auth.auth().currentUser?.uid {
-            DataService.instance.REF_USERS.child(userUID).child("orbiting").child(caocapKey).child("key").observeSingleEvent(of: .value) { (key) in
+        if let userUID = Auth.auth().currentUser?.uid { DataService.instance.REF_USERS.child(userUID).child("orbiting").child(caocapKey).child("key").observeSingleEvent(of: .value) { (key) in
                 if key.exists() {
                     self.caocapIsOrbited = true
                     self.orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)

@@ -62,7 +62,7 @@ class DataService {
     var REF_GROUP_IMAGES: StorageReference { return _REF_GROUP_IMAGES }
     
     
-    func updateUserData(uid:String, userData: Dictionary<String, Any>) {
+    func updateUserData(uid: String, userData: Dictionary<String, Any>) {
         REF_USERS.child(uid).updateChildValues(userData)
     }
     
@@ -81,8 +81,12 @@ class DataService {
         handler(true)
     }
     
+    func launchCaocap(caocapKey: String,code: [String: String]) {
+        REF_CAOCAPS.child(caocapKey).child("code").updateChildValues(code)
+    }
+    
     // this function adds and removes caocaps from the user's orbit
-    func addAndReomveFromOrbit(caocapKey:String , remove: Bool) {
+    func addAndReomveFromOrbit(caocapKey: String , remove: Bool) {
         if let userUID = Auth.auth().currentUser?.uid {
             if remove {
                 REF_USERS.child(userUID).child("orbiting").child(caocapKey).removeValue()

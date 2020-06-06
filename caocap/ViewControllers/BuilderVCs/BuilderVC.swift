@@ -20,6 +20,7 @@ class BuilderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
         setupSubNavigationControllers()
     }
     

@@ -176,7 +176,9 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
                         // Here you can get the download URL
                         let caocapData = ["imageURL": url?.absoluteString ?? "",
                                           "name" : self.caocapNameTF.text!,
-                                          "code": "<h1> write your code here </h1>",
+                                          "code": ["html":"<h1> write your code here </h1>",
+                                                   "js": "//write your JS code here",
+                                                   "css": "h1 { color: blue; }"],
                                           "owners": [currentUserUID],
                             ] as [String : Any]
                         

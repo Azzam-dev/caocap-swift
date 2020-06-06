@@ -23,8 +23,11 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
     
     func configureCell(caocap: Caocap ,released: Bool) {
 
-        let caocapCode = caocap.code
-        print(caocapCode)
+        let caocapCode = """
+        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style>\(caocap.code["css"] ?? "")</style></head><body>\(caocap.code["html"] ?? "" )<script>\(caocap.code["js"] ?? "")</script></body></html>
+        """
+        
         self.webView.loadHTMLString(caocapCode , baseURL: nil)
         
         //this stops the image and the Url from duplicating
@@ -41,7 +44,6 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
             self.theView.isHidden = false
             self.caocapIMG.isHidden = true
             self.caocapIMG.image = nil
-            //self.webView.load(urlRequest)
         } else {
             self.theView.isHidden = true
             self.caocapIMG.isHidden = false

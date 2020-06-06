@@ -25,7 +25,6 @@ class caocapVC: UIViewController, UITextFieldDelegate {
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
-        
         caocapsCollectionView.register(UINib.init(nibName: "caocapCell", bundle: nil), forCellWithReuseIdentifier: "caocapCell")
     }
     
