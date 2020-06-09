@@ -175,11 +175,12 @@ class DataService {
         }
     }
     
-    
+//TODO: Refacter this function
     func getCurrentUserCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
             var caocapsArray = [Caocap]()
             self.REF_CAOCAPS.observe(.value) { (caocapsSnapshot) in
+                caocapsArray.removeAll()
                 guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
                 for caocap in caocapsSnapshot {
                     let currentUserUID = (Auth.auth().currentUser?.uid)!
