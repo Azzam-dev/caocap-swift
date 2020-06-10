@@ -110,12 +110,11 @@ class DataService {
     }
     
     func getCurrentUserChats(handler: @escaping (_ chatsArray: [Chat]) -> ()) {
-        var chatsArray = [Chat]()
+        let currentUserUID = (Auth.auth().currentUser?.uid)!
         REF_CHATS.observe(.value) { (chatSnapshot) in
             guard let chatSnapshot = chatSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            var chatsArray = [Chat]()
             for chat in chatSnapshot {
-                
-                let currentUserUID = (Auth.auth().currentUser?.uid)!
                 let membersArray = chat.childSnapshot(forPath: "members").value as! [String]
                 if membersArray.contains(currentUserUID) {
                     let dictionary = chat.value
@@ -128,21 +127,18 @@ class DataService {
     }
     
     func getCurrentUserChatsQuery(forSearchQuery query: String, handler: @escaping (_ chatsArray: [Chat]) -> ()) {
-        var chatsArray = [Chat]()
         REF_CHATS.observe(.value) { (chatSnapshot) in
             guard let chatSnapshot = chatSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            var chatsArray = [Chat]()
             for chat in chatSnapshot {
-                
                 let currentUserUID = (Auth.auth().currentUser?.uid)!
                 switch chat.childSnapshot(forPath: "type").value as! String {
                 case "contact":
-                    
                     let membersArray = chat.childSnapshot(forPath: "members").value as! [String]
                     let contactUID = membersArray.filter({ $0 != currentUserUID })
                     self.REF_USERS.observe(.value) { (userSnapshot) in
                         guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
                         for user in userSnapshot {
-                            
                             let username = user.childSnapshot(forPath: "username").value as! String
                             if username.contains(query) && user.key != currentUserUID && membersArray.contains(currentUserUID) {
                                 let dictionary = chat.value
@@ -152,7 +148,6 @@ class DataService {
                         }
                     }
                 case "group":
-                    
                     let membersArray = chat.childSnapshot(forPath: "members").value as! [String]
                     let chatname = chat.childSnapshot(forPath: "name").value as! String
                     if membersArray.contains(currentUserUID) && chatname.contains(query) {
@@ -161,7 +156,6 @@ class DataService {
                         chatsArray.append(chat)
                     }
                 default:
-                    
                     let membersArray = chat.childSnapshot(forPath: "members").value as! [String]
                     let chatname = chat.childSnapshot(forPath: "name").value as! String
                     if membersArray.contains(currentUserUID) && chatname.contains(query) {
@@ -178,9 +172,8 @@ class DataService {
 //TODO: Refacter this function
     func getCurrentUserCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
-            var caocapsArray = [Caocap]()
             self.REF_CAOCAPS.observe(.value) { (caocapsSnapshot) in
-                caocapsArray.removeAll()
+                var caocapsArray = [Caocap]()
                 guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
                 for caocap in caocapsSnapshot {
                     let currentUserUID = (Auth.auth().currentUser?.uid)!
@@ -199,11 +192,10 @@ class DataService {
     }
     
     func getCurrentUserCaocapsQuery(forSearchQuery query: String, handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
-        
         // This goes over all the caocaps and gets the query
-        var caocapsArray = [Caocap]()
         REF_CAOCAPS.observe(.value) { (caocapsSnapshot) in
             guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            var caocapsArray = [Caocap]()
             for caocap in caocapsSnapshot {
                 let caocapname = caocap.childSnapshot(forPath: "name").value as! String
                 let currentUserUID = (Auth.auth().currentUser?.uid)!
@@ -220,9 +212,9 @@ class DataService {
     
     func getAllCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
-            var caocapsArray = [Caocap]()
             self.REF_CAOCAPS.observeSingleEvent(of: .value) { (caocapsSnapshot) in
                 guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
+                var caocapsArray = [Caocap]()
                 for caocap in caocapsSnapshot {
                     let dictionary = caocap.value
                     let caocap = Caocap(key: caocap.key, dictionary: dictionary as! [String : Any] )
@@ -237,9 +229,9 @@ class DataService {
     
     func getCaocapsQuery(forSearchQuery query: String, handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         // This goes over all the caocaps and gets the query
-        var caocapsArray = [Caocap]()
         REF_CAOCAPS.observe(.value) { (caocapsSnapshot) in
             guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            var caocapsArray = [Caocap]()
             for caocap in caocapsSnapshot {
                 let caocapname = caocap.childSnapshot(forPath: "name").value as! String
                 if caocapname.contains(query) {
@@ -254,11 +246,10 @@ class DataService {
     
     //this gets all the caocap room messages, You must provide the caocap key and you will get the messages array
     func getCaocapRoomMessages(forCaocapKey key: String, handler: @escaping (_ messagesArray: [Message]) -> ()) {
-        var messagesArray = [Message]()
         REF_CAOCAPS.child(key).child("room").observe(.value) { (messagesSnapshot) in
             guard let messagesSnapshot = messagesSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            var messagesArray = [Message]()
             for theMessage in messagesSnapshot {
-                
                 let messageDict = theMessage.value
                 let message = Message(key: theMessage.key, dictionary: messageDict as! [String : Any])
                 messagesArray.append(message)
@@ -269,9 +260,9 @@ class DataService {
     
     //this gets all the chat messages, You must provide the chat key and you will get the messages array
     func getChatMessages(forChatKey key: String, handler: @escaping (_ messagesArray: [Message]) -> ()) {
-        var messagesArray = [Message]()
         REF_CHATS.child(key).child("messages").observe(.value) { (messagesSnapshot) in
             guard let messagesSnapshot = messagesSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            var messagesArray = [Message]()
             for theMessage in messagesSnapshot {
                 let messageDict = theMessage.value
                 let message = Message(key: theMessage.key, dictionary: messageDict as! [String : Any])
@@ -290,15 +281,12 @@ class DataService {
     }
     
     func getAllUsernames( handler: @escaping (_ usernameArray: [Users]) -> ()) {
-        
         let currentUserID = Auth.auth().currentUser?.uid
-        
         // This goes over all the usernames and gets the query without the currentUser username
-        var userArray = [Users]()
         REF_USERS.observe(.value) { (userSnapshot) in
             guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            var userArray = [Users]()
             for user in userSnapshot {
-                
                 if user.key != currentUserID {
                     let userDict = user.value as? [String : AnyObject] ?? [:]
                     let thisUser = Users(uid: user.key, dictionary: userDict)
@@ -310,15 +298,12 @@ class DataService {
     }
     
     func getUsernameQuery(forSearchQuery query: String, handler: @escaping (_ usernameArray: [Users]) -> ()) {
-        
         let currentUserID = Auth.auth().currentUser?.uid
-        
         // This goes over all the usernames and gets the query without the currentUser username
-        var userArray = [Users]()
         REF_USERS.observe(.value) { (userSnapshot) in
             guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            var userArray = [Users]()
             for user in userSnapshot {
-                
                 let username = user.childSnapshot(forPath: "username").value as! String
                 if username.contains(query) && user.key != currentUserID {
                     let userDict = user.value as? [String : AnyObject] ?? [:]

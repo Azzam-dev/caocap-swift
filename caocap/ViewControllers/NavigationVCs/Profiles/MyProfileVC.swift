@@ -123,14 +123,14 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
 
     
     @IBAction func popupACT(_ sender: Any) {
-        presentAddCaocapWithUrlView()
+        presentAddCaocapView()
     }
     
     @IBAction func cancelPopupBTN(_ sender: Any) {
-        hideAddCaocapWithUrlView()
+        hideAddCaocapView()
     }
     
-    func presentAddCaocapWithUrlView() {
+    func presentAddCaocapView() {
         cancelPopupsBTN.isHidden = false
         popupView.isHidden = false
         blurredViewShowAnimation()
@@ -140,7 +140,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         })
     }
     
-    func hideAddCaocapWithUrlView() {
+    func hideAddCaocapView() {
         blurredViewHideAnimation()
         UIView.animate(withDuration: 0.3, delay: 0.3, animations: {
             self.popupView.alpha = 0
@@ -188,13 +188,19 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
                                 self.caocapNameTF.text = ""
                                 self.caocapIMG.image = #imageLiteral(resourceName: "caocap app icon old")
                                 self.createButtonSetup(withTitle: "create")
-                                self.openBuilder()
-                                self.hideAddCaocapWithUrlView()
+                                self.getMyLastCaocapData()
+                                self.hideAddCaocapView()
                             }
                         })
                     }
                 })
             })
+        }
+    }
+    
+    func getMyLastCaocapData() {
+        DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
+            self.openBuilder(with: returnedCaocapsArray.last!)
         }
     }
     
@@ -204,9 +210,10 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         createBTN.alpha = alphaLevel
     }
     
-    func openBuilder() {
+    func openBuilder(with caocap: Caocap) {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        let builderVC = storyboard.instantiateViewController(withIdentifier: "builder")
+        let builderVC = storyboard.instantiateViewController(withIdentifier: "builder") as! BuilderVC
+        builderVC.openedCaocap = caocap
         builderVC.modalPresentationStyle = .fullScreen
         self.present(builderVC, animated: true)
     }
@@ -267,11 +274,6 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Explore", bundle: nil)
-        let caocap = storyboard.instantiateViewController(withIdentifier: "caocap") as! caocapVC
-        caocap.openedCaocap = caocapsArray[indexPath.row]
-        navigationController?.pushViewController(caocap, animated: true)
-        let cell = collectionView.cellForItem(at: indexPath)
-        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 2, options: .curveEaseInOut, animations: { cell?.alpha = 0})
+        openBuilder(with: caocapsArray[indexPath.row])
     }
 }

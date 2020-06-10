@@ -10,35 +10,35 @@ import UIKit
 
 class BuilderVC: UIViewController {
     
-    var testLabNAV: UINavigationController!
     
     @IBOutlet weak var contentView: UIView!
+    var openedCaocap = Caocap(key: "", dictionary: ["":""])
     
-    var navigationControllers: [UINavigationController]!
+    var viewControllers: [UIViewController]!
     var navSelectedIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-        setupSubNavigationControllers()
+        setupSubViewControllers()
     }
     
     @IBAction func exitBuilder(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-     func setupSubNavigationControllers() {
-        
-           let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        testLabNAV = storyboard.instantiateViewController(withIdentifier: "testLapNAV") as? UINavigationController
-           navigationControllers = [testLabNAV]
-        let vc = navigationControllers[0]
-            addChild(vc)
-            vc.view.frame = contentView.bounds
-            contentView.addSubview(vc.view)
-            vc.didMove(toParent: self)
-       }
+    func setupSubViewControllers() {
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        let testLabVC = storyboard.instantiateViewController(withIdentifier: "testLab") as? TestLabVC
+        testLabVC?.openedCaocap = openedCaocap
+        viewControllers = [testLabVC!]
+        let vc = viewControllers[0]
+        addChild(vc)
+        vc.view.frame = contentView.bounds
+        contentView.addSubview(vc.view)
+        vc.didMove(toParent: self)
+    }
     
 }
 

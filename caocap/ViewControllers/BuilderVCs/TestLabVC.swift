@@ -1,5 +1,5 @@
 //
-//  TestLapVC.swift
+//  TestLabVC.swift
 //  caocap
 //
 //  Created by omar alzhrani on 15/09/1441 AH.
@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import Firebase
 
-class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
+class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     @IBOutlet weak var theView: DesignableView!
     @IBOutlet weak var webView: WKWebView!
@@ -23,11 +23,11 @@ class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     @IBOutlet weak var gestureRecognizerView: UIView!
     
     var caocapCode = ""
-    var openedCaocap: Caocap?
+    var openedCaocap = Caocap(key: "", dictionary: ["":""])
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getMyLastCaocapData()
+        getCaocapData()
         
         //This hides the webView until the download finishes
         self.webView.isHidden = true
@@ -39,18 +39,16 @@ class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     }
     
     
-    func getMyLastCaocapData() {
-        DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
-            self.openedCaocap = returnedCaocapsArray.last
-            self.htmlTextView.text = self.openedCaocap!.code["html"]
-            self.jsTextView.text = self.openedCaocap!.code["js"]
-            self.cssTextView.text = self.openedCaocap!.code["css"]
-            self.caocapCode = """
-            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style>\(self.cssTextView.text!)</style></head><body>\(self.htmlTextView.text!)<script>\(self.jsTextView.text!)</script></body></html>
-            """
-            self.startTestBTN(nil)
-        }
+    func getCaocapData() {
+        htmlTextView.text = openedCaocap.code["html"]
+        jsTextView.text = openedCaocap.code["js"]
+        cssTextView.text = openedCaocap.code["css"]
+        caocapCode = """
+        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style>\(self.cssTextView.text!)</style></head><body>\(self.htmlTextView.text!)<script>\(self.jsTextView.text!)</script></body></html>
+        """
+        self.startTestBTN(nil)
+        
     }
     
     @IBOutlet var topNavBTNs: [UIButton]!
@@ -97,7 +95,7 @@ class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     @IBAction func launchCaocapBTN(_ sender: Any) {
         // save the code in /caocap-x/caocap/[UID]/code
-        DataService.instance.launchCaocap(caocapKey: openedCaocap!.key, code: ["html": htmlTextView.text , "js": jsTextView.text, "css": cssTextView.text])
+        DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: ["html": htmlTextView.text , "js": jsTextView.text, "css": cssTextView.text])
     }
     
     
@@ -157,10 +155,10 @@ class TestLapVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
-            caocapCode = """
-            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style>\(cssTextView.text!)</style></head><body>\(htmlTextView.text!)<script>\(jsTextView.text!)</script></body></html>
-            """
+        caocapCode = """
+        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style>\(cssTextView.text!)</style></head><body>\(htmlTextView.text!)<script>\(jsTextView.text!)</script></body></html>
+        """
     }
     
 }

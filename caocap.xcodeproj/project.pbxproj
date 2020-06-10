@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16290DFCDF33CCE321A3DCA9 /* Pods_caocap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E37161B259C040EE5C0FA9 /* Pods_caocap.framework */; };
-		4E0E42D524651F9A00522B2F /* TestLapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E42D424651F9A00522B2F /* TestLapVC.swift */; };
+		4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E42D424651F9A00522B2F /* TestLabVC.swift */; };
 		4E272DB424612C21005718EF /* blockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E272DB324612C21005718EF /* blockCollectionViewCell.swift */; };
 		4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AEF8A2404FA92004B4F37 /* Reachability.swift */; };
 		7FCE5A9124FDF3CB7984E1DA /* Pods_caocapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E7F4AE818B44B5884B4A27 /* Pods_caocapTests.framework */; };
@@ -103,7 +103,7 @@
 		1AEA2C73F244E205E9533BB8 /* Pods-caocapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-caocapTests/Pods-caocapTests.debug.xcconfig"; sourceTree = "<group>"; };
 		22022B945CCAD5D75ED8F168 /* Pods_caocapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_caocapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E37161B259C040EE5C0FA9 /* Pods_caocap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_caocap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E0E42D424651F9A00522B2F /* TestLapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLapVC.swift; sourceTree = "<group>"; };
+		4E0E42D424651F9A00522B2F /* TestLabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabVC.swift; sourceTree = "<group>"; };
 		4E272DB324612C21005718EF /* blockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blockCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E8AEF8A2404FA92004B4F37 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		81DD89228B8151C0A4A3C914 /* Pods-caocap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocap.release.xcconfig"; path = "Pods/Target Support Files/Pods-caocap/Pods-caocap.release.xcconfig"; sourceTree = "<group>"; };
@@ -433,7 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */,
-				4E0E42D424651F9A00522B2F /* TestLapVC.swift */,
+				4E0E42D424651F9A00522B2F /* TestLabVC.swift */,
 			);
 			path = BuilderVCs;
 			sourceTree = "<group>";
@@ -754,7 +754,7 @@
 				EC2F25072169C47F00D14733 /* editProfileVC.swift in Sources */,
 				EC03B1D8245063F800274B1D /* fullScreenChartUI.swift in Sources */,
 				4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */,
-				4E0E42D524651F9A00522B2F /* TestLapVC.swift in Sources */,
+				4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */,
 				ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */,
 				EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */,
 				EC339BE62253D75200FDC14A /* UrlService.swift in Sources */,

@@ -82,25 +82,10 @@
             </objects>
             <point key="canvasLocation" x="5145" y="743"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zZk-Yc-EsH">
-            <objects>
-                <navigationController storyboardIdentifier="testLapNAV" navigationBarHidden="YES" id="YMs-gR-g9B" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V4A-Io-Lqc">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="iEU-Q6-Fgf" kind="relationship" relationship="rootViewController" id="cVc-gh-n1W"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="peb-Ot-B5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5145" y="1493"/>
-        </scene>
-        <!--Test LapVC-->
+        <!--Test LabVC-->
         <scene sceneID="zTd-BG-ks3">
             <objects>
-                <viewController id="iEU-Q6-Fgf" customClass="TestLapVC" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="testLab" id="iEU-Q6-Fgf" customClass="TestLabVC" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uWQ-aj-BeJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -406,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2o-sy-9dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5145" y="2444"/>
+            <point key="canvasLocation" x="5145" y="1566"/>
         </scene>
     </scenes>
     <resources>
