@@ -70,7 +70,11 @@ class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
         
         self.webView.navigationDelegate = self
         self.caocapName.text = caocap.name
-        self.caocapIMGview.borderColor = colorArray[caocap.color]
+        if case 0...5 = caocap.color {
+            self.caocapIMGview.borderColor = colorArray[caocap.color]
+        } else {
+            self.caocapIMGview.borderColor = colorArray[3]
+        }
         
         //this gets the caocap UIimage from the url
         if let imageURL = URL(string: caocap.imageURL ?? "" ) {

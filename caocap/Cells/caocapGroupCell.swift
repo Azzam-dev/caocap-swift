@@ -23,7 +23,11 @@ class caocapGroupCell: UITableViewCell {
     func configureCell(chatIMG image: UIImage, chatColor color: Int, chatName name: String, lastSender username: String, lastMessage message: String, numberOfMessages number: Int, lastMessageTime time: String) {
         
         self.caocapIMG.image = image
-        self.caocapIMGview.borderColor = colorArray[color]
+        if case 0...5 = color {
+            self.caocapIMGview.borderColor = colorArray[color]
+        } else {
+            self.caocapIMGview.borderColor = colorArray[3]
+        }
         self.caocapnameLBL.text = name
         self.lastSenderLBL.text = username + " :"
         self.lastMessageLBL.text = message

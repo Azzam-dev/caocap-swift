@@ -19,6 +19,11 @@ class caocapIconCell: UICollectionViewCell {
     func configureCell(caocapIMG image: UIImage, caocapColor color: Int, caocapName name: String) {
         
         self.caocapIMG.image = image
+        if case 0...5 = color {
+            self.caocapIMGview.borderColor = colorArray[color]
+        } else {
+            self.caocapIMGview.borderColor = colorArray[3]
+        }
         self.caocapIMGview.borderColor = colorArray[color]
         self.caocapnameLBL.text = name
         

@@ -26,8 +26,11 @@ class sentMessageCell: UITableViewCell {
                 self.profileIMG.image = returnedImage
             }
         }
-        
-        self.pofileIMGview.borderColor = colorArray[message.color]
+        if case 0...5 = message.color {
+            self.pofileIMGview.borderColor = colorArray[message.color]
+        } else {
+            self.pofileIMGview.borderColor = colorArray[3]
+        }
         self.usernameLBL.text = message.username
         //This is not important because it is from the sender himself
         //self.usernameLBL.textColor = colorArray[message.color]

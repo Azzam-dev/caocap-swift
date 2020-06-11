@@ -27,8 +27,11 @@ class arrivedMessageCell: UITableViewCell {
                 self.profileIMG.image = returnedImage
             }
         }
-        
-        self.pofileIMGview.borderColor = colorArray[message.color]
+        if case 0...5 = message.color {
+            self.pofileIMGview.borderColor = colorArray[message.color]
+        } else {
+            self.pofileIMGview.borderColor = colorArray[3]
+        }
         self.usernameLBL.text = message.username
         self.usernameLBL.textColor = colorArray[message.color]
         self.timeLBL.text = message.time

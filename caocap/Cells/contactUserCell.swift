@@ -21,7 +21,11 @@ class contactUserCell: UITableViewCell {
     
     func configureCell(profileIMG image: UIImage , profileColor: Int , username: String , name: String ) {
         self.profileIMG.image = image
-        self.pofileIMGview.borderColor = colorArray[profileColor]
+        if case 0...5 = profileColor {
+            self.pofileIMGview.borderColor = colorArray[profileColor]
+        } else {
+            self.pofileIMGview.borderColor = colorArray[3]
+        }
         self.usernameLBL.text = username
         self.nameLBL.text = name
         
