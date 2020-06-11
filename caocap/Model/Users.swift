@@ -70,9 +70,9 @@ class Users {
         self._website = dictionary["website"] as? String ?? ""
         self._email = dictionary["email"] as? String ?? ""
         self._phoneNumber = dictionary["phoneNumber"] as? String ?? ""
-        self._orbiting = dictionary["orbiting"] as? [String: Any] ?? ["" : ""]
-        self._caocaps = dictionary["caocaps"] as? [String] ?? [""]
-        self._followers = dictionary["followers"] as? [String] ?? [""]
+        self._orbiting = dictionary["orbiting"] as? [String: Any] ?? [String: String]()
+        self._caocaps = dictionary["caocaps"] as? [String] ?? [String]()
+        self._followers = dictionary["followers"] as? [String] ?? [String]()
     }
     
 }

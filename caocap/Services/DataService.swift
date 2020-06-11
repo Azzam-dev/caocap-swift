@@ -298,14 +298,14 @@ class DataService {
     }
     
     func getUsernameQuery(forSearchQuery query: String, handler: @escaping (_ usernameArray: [Users]) -> ()) {
-        let currentUserID = Auth.auth().currentUser?.uid
+        let currentUserUID = Auth.auth().currentUser?.uid
         // This goes over all the usernames and gets the query without the currentUser username
-        REF_USERS.observe(.value) { (userSnapshot) in
+        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
             guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
             var userArray = [Users]()
             for user in userSnapshot {
                 let username = user.childSnapshot(forPath: "username").value as! String
-                if username.contains(query) && user.key != currentUserID {
+                if username.contains(query) && user.key != currentUserUID {
                     let userDict = user.value as? [String : AnyObject] ?? [:]
                     let thisUser = Users(uid: user.key, dictionary: userDict)
                     userArray.append(thisUser)

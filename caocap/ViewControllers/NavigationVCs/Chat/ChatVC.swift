@@ -26,7 +26,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         groupMembersSearchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         groupIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeGroupImage)))
         
-    
+        
         contactSearchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
@@ -45,7 +45,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     }
     
     
-     //this uses the textfield to search
+    //this uses the textfield to search
     @objc func  textFieldDidChange() {
         // search current user chats
         if searchTF.text == "" {
@@ -88,7 +88,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         }
         
     }
- 
+    
     
     @IBAction func addChatBTN(_ sender: Any) {
         let createNewPopup = UIAlertController(title: "create", message: "What do you want to create?", preferredStyle: .actionSheet)
@@ -250,7 +250,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
                                 
                                 DataService.instance.createChat(chatData: groupData , handler: { (chatCreated) in
                                     if chatCreated {
-                                        self.dismiss(animated: true, completion: nil)
+                                        self.groupPopupViewACTs(self)
                                         //send the user to the new chat
                                     }
                                 })
@@ -264,7 +264,6 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     
     
     //this code is for changing the group image
-    
     @objc func changeGroupImage() {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -280,7 +279,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
             selectedImageFromPicker = originalImage
         }
         if let selectedImage = selectedImageFromPicker {
-           groupIMG.image = selectedImage
+            groupIMG.image = selectedImage
         }
         dismiss(animated: true, completion: nil)
     }
@@ -293,18 +292,13 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     
     //this is a function to display alert messages , you have to provide the message
     func displayAlertMessage(messageToDisplay: String) {
-    let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-    
-    let OKAction = UIAlertAction(title: "حسناً", style: .default) { (action:UIAlertAction!) in
-    
-    // Code in this block will trigger when OK button tapped.
-    print("Ok button tapped")
-    
-    }
-    
-    alertController.addAction(OKAction)
-    
-    self.present(alertController, animated: true, completion:nil)
+        let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "حسناً", style: .default) { (action:UIAlertAction!) in
+            // Code in this block will trigger when OK button tapped.
+            print("Ok button tapped")
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion:nil)
     }
     
     
@@ -313,18 +307,17 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
 extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        
+        return 1
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == chatsTableView {
-        return chatsArray.count + 1
+            return chatsArray.count + 1
         } else if tableView == groupMembersTableView {
-           return  groupMembersSearchArray.count
+            return  groupMembersSearchArray.count - 1
         } else {
-            return contactSearchArray.count
+            return contactSearchArray.count - 1
         }
     }
     
@@ -460,9 +453,9 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chat = chatsArray[indexPath.row - 1]
         if tableView == chatsTableView {
             if indexPath.row != 0 {
-                let chat = chatsArray[indexPath.row - 1]
                 let storyboard = UIStoryboard(name: "Chat", bundle: nil)
                 if chat.type == "contact" {
                     let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
@@ -499,10 +492,12 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                 userIds.append((Auth.auth().currentUser?.uid)!)
                 DataService.instance.createNewContact(withUserIDs: userIds, andChatType: "contact", handler: { (newContactCreated) in
                     if newContactCreated {
-                        self.dismiss(animated: true, completion: nil)
+                        self.contactPopupViewACTs(self)
                         //send the user to the new chat
-                    } else {
-                        print("GRoup could not be created , Please try again.")
+                        let storyboard = UIStoryboard(name: "Chat", bundle: nil)
+                        let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
+                        contactChatVC.opendChat = chat
+                        self.navigationController?.pushViewController(contactChatVC, animated: true)
                     }
                 })
             }
@@ -517,5 +512,5 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
             return 60
         }
     }
-
+    
 }
