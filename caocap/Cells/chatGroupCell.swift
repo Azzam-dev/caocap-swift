@@ -27,7 +27,6 @@ class chatGroupCell: UITableViewCell {
         } else {
             self.groupIMGview.borderColor = colorArray[3]
         }
-        self.groupIMGview.borderColor = colorArray[color]
         self.groupNameLBL.text = name
         self.lastSenderLBL.text = username + " :"
         self.lastMessageLBL.text = message

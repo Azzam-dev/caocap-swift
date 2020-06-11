@@ -24,7 +24,6 @@ class caocapIconCell: UICollectionViewCell {
         } else {
             self.caocapIMGview.borderColor = colorArray[3]
         }
-        self.caocapIMGview.borderColor = colorArray[color]
         self.caocapnameLBL.text = name
         
         
