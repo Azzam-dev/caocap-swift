@@ -315,9 +315,9 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == chatsTableView {
             return chatsArray.count + 1
         } else if tableView == groupMembersTableView {
-            return  groupMembersSearchArray.count - 1
+            return  groupMembersSearchArray.count
         } else {
-            return contactSearchArray.count - 1
+            return contactSearchArray.count
         }
     }
     
@@ -453,9 +453,9 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let chat = chatsArray[indexPath.row - 1]
         if tableView == chatsTableView {
             if indexPath.row != 0 {
+                let chat = chatsArray[indexPath.row - 1]
                 let storyboard = UIStoryboard(name: "Chat", bundle: nil)
                 if chat.type == "contact" {
                     let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
@@ -494,10 +494,6 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                     if newContactCreated {
                         self.contactPopupViewACTs(self)
                         //send the user to the new chat
-                        let storyboard = UIStoryboard(name: "Chat", bundle: nil)
-                        let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
-                        contactChatVC.opendChat = chat
-                        self.navigationController?.pushViewController(contactChatVC, animated: true)
                     }
                 })
             }
