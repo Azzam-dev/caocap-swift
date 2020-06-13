@@ -45,6 +45,8 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         caocapIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeImage)))
         
         createButtonSetup(withTitle: "create")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadMyProfile), name: Notification.Name("reloadMyProfile"), object: nil)
     }
     
     
@@ -86,6 +88,11 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
                 }
             }
         }
+    }
+    
+    @objc func reloadMyProfile() {
+        getMyCaocapsData()
+        getUserData()
     }
     
     

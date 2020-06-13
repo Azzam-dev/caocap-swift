@@ -10,9 +10,9 @@ import UIKit
 import Firebase
 import RevealingSplashView
 
-var exploreSubVC: UINavigationController!
-var chatSubVC: UINavigationController!
-var myPageSubVC: UINavigationController!
+var exploreSubNAV: UINavigationController!
+var chatSubNAV: UINavigationController!
+var myPageSubNAV: UINavigationController!
 
 var navigationControllers: [UINavigationController]!
 var navSelectedIndex: Int = 0
@@ -31,6 +31,8 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         addGesturesToNavCircleBTN()
         setupSubNavigationControllers()
         showSplashAnimation()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(openExplore), name: Notification.Name("openExplore"), object: nil)
         
     }
     
@@ -53,10 +55,10 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
     func setupSubNavigationControllers() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        exploreSubVC = storyboard.instantiateViewController(withIdentifier: "exploreNAV") as? UINavigationController
-        myPageSubVC = storyboard.instantiateViewController(withIdentifier: "myPageNAV") as? UINavigationController
-        chatSubVC = storyboard.instantiateViewController(withIdentifier: "chatNAV") as? UINavigationController
-        navigationControllers = [exploreSubVC, myPageSubVC, chatSubVC]
+        exploreSubNAV = storyboard.instantiateViewController(withIdentifier: "exploreNAV") as? UINavigationController
+        myPageSubNAV = storyboard.instantiateViewController(withIdentifier: "myPageNAV") as? UINavigationController
+        chatSubNAV = storyboard.instantiateViewController(withIdentifier: "chatNAV") as? UINavigationController
+        navigationControllers = [exploreSubNAV, myPageSubNAV, chatSubNAV]
         navBTNpressed(navBTNs[navSelectedIndex])
     }
     
@@ -88,11 +90,21 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         } else if self.navCircleViewHeightConstraint.constant == 65 && blurredView.isHidden {
             switch navSelectedIndex {
             case 0:
-                exploreSubVC?.popViewController(animated: true)
+                if exploreSubNAV.viewControllers.count == 1 {
+                    //this calls the reload explore function 
+                    NotificationCenter.default.post(name: Notification.Name("reloadExplore"), object: nil)
+                } else {
+                exploreSubNAV?.popViewController(animated: true)
+                }
             case 1:
-                myPageSubVC?.popViewController(animated: true)
+                if myPageSubNAV.viewControllers.count == 1 {
+                    //this calls the reload myProfile function
+                    NotificationCenter.default.post(name: Notification.Name("reloadMyProfile"), object: nil)
+                } else {
+                myPageSubNAV?.popViewController(animated: true)
+                }
             case 2:
-                chatSubVC?.popViewController(animated: true)
+                chatSubNAV?.popViewController(animated: true)
             default:
                 break
             }
@@ -212,7 +224,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         }
     }
     
-    
+    @objc func openExplore() { navBTNpressed(navBTNs[0]) }
     @IBAction func navBTNpressed(_ sender: UIButton) {
         circleViewScaleDownAnimation()
         blurredViewHideAnimation()

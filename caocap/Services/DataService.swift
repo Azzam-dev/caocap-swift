@@ -18,7 +18,7 @@ class DataService {
     // DB references
     private var _REF_DB_BASE = DB_BASE
     private var _REF_APPDATA = DB_BASE.child("appData")
-    private var _REF_MINIMUM_VERSION = DB_BASE.child("appData").child("minimumVersion")
+    private var _REF_MINIMUM_VERSION = DB_BASE.child("appData").child("minimumVersion-ios")
     private var _REF_REPAIRING = DB_BASE.child("appData").child("repairing")
     private var _REF_RELEASED = DB_BASE.child("appData").child("released")
     

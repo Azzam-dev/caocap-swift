@@ -29,6 +29,8 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
             layout.delegate = self
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadExplore), name: Notification.Name("reloadExplore"), object: nil)
+        
     }
     
     var isReleased = Bool()
@@ -47,6 +49,10 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
             self.caocapsArray = returnedExploreArray.shuffled()
             self.caocapsCollectionView.reloadData()
         })
+    }
+    
+    @objc func reloadExplore() {
+        getCaocapsData()
     }
     
     //FIXME: fix searchTF and show the search bar 
