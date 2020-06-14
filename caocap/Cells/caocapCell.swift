@@ -16,6 +16,8 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
     @IBOutlet weak var caocapName: UILabel!
     @IBOutlet weak var caocapIMG: UIImageView!
     
+    var caocapKey = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -23,6 +25,7 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
     
     func configureCell(caocap: Caocap ,released: Bool) {
 
+        caocapKey = caocap.key
         let caocapCode = """
         <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><style>\(caocap.code["css"] ?? "")</style></head><body>\(caocap.code["html"] ?? "" )<script>\(caocap.code["js"] ?? "")</script></body></html>
@@ -57,6 +60,8 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
         }
     }
     
+    
+    
     //This shows the webView after the download finishes
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.webView.isHidden = false
@@ -70,6 +75,10 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
         
         self.theView.layer.insertSublayer(pulse, at:  0)
         
+    }
+    
+    @IBAction func moreBTN(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("moreBTNpressed"), object: nil)
     }
     
 }

@@ -18,9 +18,9 @@ class Users {
     private var _website: String
     private var _email: String
     private var _phoneNumber: String
-    private var _orbiting: [String: Any]
-    private var _caocaps: [String]
-    private var _followers: [String]
+    private var _orbiting: [String: String]
+    private var _caocaps: [String : String]
+    private var _followers: [String : String]
     
     var uid: String {
         return _uid
@@ -49,13 +49,13 @@ class Users {
     var phoneNumber: String {
         return _phoneNumber
     }
-    var orbiting: [String : Any] {
+    var orbiting: [String : String] {
         return _orbiting
     }
-    var caocaps: [String] {
+    var caocaps: [String : String] {
         return _caocaps
     }
-    var followers: [String] {
+    var followers: [String : String] {
         return _followers
     }
     
@@ -70,9 +70,9 @@ class Users {
         self._website = dictionary["website"] as? String ?? ""
         self._email = dictionary["email"] as? String ?? ""
         self._phoneNumber = dictionary["phoneNumber"] as? String ?? ""
-        self._orbiting = dictionary["orbiting"] as? [String: Any] ?? [String: String]()
-        self._caocaps = dictionary["caocaps"] as? [String] ?? [String]()
-        self._followers = dictionary["followers"] as? [String] ?? [String]()
+        self._orbiting = dictionary["orbiting"] as? [String: String] ?? [String: String]()
+        self._caocaps = dictionary["caocaps"] as? [String: String] ?? [String: String]()
+        self._followers = dictionary["followers"] as? [String: String] ?? [String: String]()
     }
     
 }

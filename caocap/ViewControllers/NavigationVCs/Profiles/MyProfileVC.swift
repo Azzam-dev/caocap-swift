@@ -10,6 +10,7 @@ import UIKit
 import SwiftUI
 import Firebase
 
+
 class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
     @IBOutlet weak var profileCollectionView: UICollectionView!
@@ -34,7 +35,8 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     @IBOutlet weak var usernameLBL: UILabel!
     @IBOutlet weak var nameLBL: UILabel!
     @IBOutlet weak var bioLBL: UILabel!
-    
+  
+    var cellCaocapKey = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +49,8 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         createButtonSetup(withTitle: "create")
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadMyProfile), name: Notification.Name("reloadMyProfile"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(moreBTNpressed), name: Notification.Name("moreBTNpressed"), object: nil)
     }
     
     
@@ -225,6 +229,24 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         self.present(builderVC, animated: true)
     }
     
+    @objc func moreBTNpressed() {
+        print("ياربي لك الحمدلله")
+        let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let visitOwnerACT = UIAlertAction(title: "delete",style: .destructive ) { (buttonTapped) in
+            DataService.instance.removeCaocap(self.cellCaocapKey)
+        }
+        let cancel = UIAlertAction(title: "cancel", style: .default, handler: nil)
+        moreInfoPopup.addAction(visitOwnerACT)
+        moreInfoPopup.addAction(cancel)
+        
+        if let popoverController = moreInfoPopup.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        
+        self.present(moreInfoPopup, animated: true , completion: nil)
+    }
+    
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "حسناً", style: .default)
@@ -258,7 +280,6 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
 
 
 extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return caocapsArray.count

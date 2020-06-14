@@ -77,8 +77,25 @@ class DataService {
     }
     
     func createCaocap(caocapData: Dictionary<String, Any> , handler: @escaping (_ caocapCreated: Bool) -> ()) {
-        REF_CAOCAPS.childByAutoId().updateChildValues(caocapData)
-        handler(true)
+        if let userUID = Auth.auth().currentUser?.uid {
+            let caocapKey = REF_CAOCAPS.childByAutoId().key
+            REF_CAOCAPS.child(caocapKey).updateChildValues(caocapData)
+            REF_USERS.child(userUID).child("caocaps").updateChildValues([caocapKey : caocapKey])
+            handler(true)
+        }
+    }
+    
+    func removeCaocap(_ key: String) {
+        getUserData { (theUser) in
+            guard let user = theUser else { return }
+            if user.caocaps.values.contains(key) {
+                // this removes the caocap from user data
+                self.REF_USERS.child(user.uid).child("caocaps").child(key).removeValue()
+                // this removes the caocap entirely
+                self.REF_CAOCAPS.child(key).removeValue()
+            }
+        }
+        
     }
     
     func launchCaocap(caocapKey: String,code: [String: String]) {
@@ -91,7 +108,7 @@ class DataService {
             if remove {
                 REF_USERS.child(userUID).child("orbiting").child(caocapKey).removeValue()
             } else {
-                REF_USERS.child(userUID).child("orbiting").child(caocapKey).updateChildValues(["key": caocapKey])
+                REF_USERS.child(userUID).child("orbiting").updateChildValues([caocapKey : caocapKey])
             }
         }
     }
@@ -330,16 +347,13 @@ class DataService {
     }
     
     func getUserData(handler: @escaping (_ theUser: Users?) -> ()) {
-        if Auth.auth().currentUser != nil {
-            guard let currentUserUID = Auth.auth().currentUser?.uid else { return }
-            DataService.instance.REF_USERS.child(currentUserUID).observe(.value) { (userDataSnapshot) in
-                if let userData = userDataSnapshot.value as? [String : Any] {
-                    let user = Users(uid: currentUserUID , dictionary: userData)
-                    handler(user)
-                }
+        guard let currentUserUID = Auth.auth().currentUser?.uid else { return }
+        DataService.instance.REF_USERS.child(currentUserUID).observe(.value) { (userDataSnapshot) in
+            if let userData = userDataSnapshot.value as? [String : Any] {
+                let user = Users(uid: currentUserUID , dictionary: userData)
+                handler(user)
             }
         }
     }
-    
-    
 }
+
