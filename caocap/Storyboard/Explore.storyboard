@@ -15,7 +15,7 @@
         <!--ExploreVC-->
         <scene sceneID="DC5-o3-ra1">
             <objects>
-                <viewController storyboardIdentifier="explore" id="saw-FO-J6K" customClass="ExploreVC" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="explore" id="saw-FO-J6K" customClass="ExploreVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J4T-ed-cKm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,14 +24,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="5" minY="40" maxX="5" maxY="0.0"/>
-                                <collectionViewLayout key="collectionViewLayout" id="CXA-ah-zaP" customClass="caocapLayout" customModule="caocap" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="CXA-ah-zaP" customClass="caocapLayout" customModule="CAOCAPx" customModuleProvider="target"/>
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="saw-FO-J6K" id="fYi-of-rWO"/>
                                     <outlet property="delegate" destination="saw-FO-J6K" id="2Db-Vj-ho4"/>
                                 </connections>
                             </collectionView>
-                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2U-hm-gZU" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2U-hm-gZU" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="50" y="99" width="314" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g75-LS-XJL">
@@ -104,7 +104,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mor-4g-h5j" userLabel="topNAV" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mor-4g-h5j" userLabel="topNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="-493" y="0.0" width="1400" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTi-Vx-aEV">
@@ -162,7 +162,7 @@
         <!--CaocapVC-->
         <scene sceneID="qNP-Tt-zDz">
             <objects>
-                <viewController storyboardIdentifier="caocap" id="CAC-ib-zLD" customClass="caocapVC" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="caocap" id="CAC-ib-zLD" customClass="caocapVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uJc-vn-jKT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -177,14 +177,14 @@
                                     <inset key="sectionInset" minX="10" minY="40" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="openedCaocapCell" id="5RM-wD-ssu" customClass="openedCaocapCell" customModule="caocap" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="openedCaocapCell" id="5RM-wD-ssu" customClass="openedCaocapCell" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="10" y="40" width="394" height="700"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="700"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxi-QP-QPj" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxi-QP-QPj" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="378" height="540"/>
                                                     <subviews>
                                                         <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XNV-2r-9br">
@@ -195,7 +195,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <view hidden="YES" clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWR-ag-3aS" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                                        <view hidden="YES" clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWR-ag-3aS" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="378" height="540"/>
                                                             <subviews>
                                                                 <wkWebView tag="2" contentMode="scaleAspectFit" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwa-gg-2mg">
@@ -355,10 +355,10 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASz-na-8fL" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASz-na-8fL" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                     <rect key="frame" x="18" y="558" width="34" height="34"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap app icon 2" translatesAutoresizingMaskIntoConstraints="NO" id="qYe-uA-82c" customClass="DesignableImage" customModule="caocap" customModuleProvider="target">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap app icon 2" translatesAutoresizingMaskIntoConstraints="NO" id="qYe-uA-82c" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
                                                         </imageView>
                                                     </subviews>
@@ -395,7 +395,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkM-gP-9sH" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AkM-gP-9sH" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                     <rect key="frame" x="18" y="602" width="358" height="40"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-YT-ekY">
@@ -498,7 +498,7 @@
                                     <outlet property="delegate" destination="CAC-ib-zLD" id="UVV-Cf-a7b"/>
                                 </connections>
                             </collectionView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b4-VF-9ff" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1b4-VF-9ff" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="50" y="99" width="314" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSY-GS-G2q">

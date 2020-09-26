@@ -14,8 +14,6 @@
 		7FCE5A9124FDF3CB7984E1DA /* Pods_caocapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E7F4AE818B44B5884B4A27 /* Pods_caocapTests.framework */; };
 		DD4B6A04445A93D97079AFF5 /* Pods_caocapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22022B945CCAD5D75ED8F168 /* Pods_caocapUITests.framework */; };
 		EC03B1D42450610C00274B1D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = EC03B1D32450610C00274B1D /* SwiftUICharts */; };
-		EC03B1D62450614600274B1D /* ChartUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B1D52450614600274B1D /* ChartUI.swift */; };
-		EC03B1D8245063F800274B1D /* fullScreenChartUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC03B1D7245063F800274B1D /* fullScreenChartUI.swift */; };
 		EC0CA6DB224EA31700CD2142 /* topColCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA6D9224EA31700CD2142 /* topColCell.swift */; };
 		EC0CA6DC224EA31700CD2142 /* topColCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC0CA6DA224EA31700CD2142 /* topColCell.xib */; };
 		EC0CA6DF2251E49B00CD2142 /* topTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0CA6DD2251E49B00CD2142 /* topTableCell.swift */; };
@@ -27,7 +25,6 @@
 		EC2F25022168FFE800D14733 /* earthorbiter.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC2F25012168FFE800D14733 /* earthorbiter.ttf */; };
 		EC2F25042169000B00D14733 /* www.Brushez.com-NeoSansArabic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC2F25032169000B00D14733 /* www.Brushez.com-NeoSansArabic.ttf */; };
 		EC2F25072169C47F00D14733 /* editProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F25062169C47F00D14733 /* editProfileVC.swift */; };
-		EC308533244E003300D534DF /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC308532244E003300D534DF /* CircleImage.swift */; };
 		EC339BE322520D1F00FDC14A /* caocapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE222520D1F00FDC14A /* caocapLayout.swift */; };
 		EC339BE62253D75200FDC14A /* UrlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE52253D75200FDC14A /* UrlService.swift */; };
 		EC368421225AFE8C00ABC9C6 /* caocapCellAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368420225AFE8C00ABC9C6 /* caocapCellAnimation.swift */; };
@@ -45,7 +42,6 @@
 		EC5C0DE1216F895100ED508F /* addUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5C0DE0216F895100ED508F /* addUserCell.swift */; };
 		EC6AB852215D8F4B00C276E3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AB851215D8F4B00C276E3 /* DataService.swift */; };
 		EC6EE2842323D3180069F488 /* menuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6EE2832323D3180069F488 /* menuCell.swift */; };
-		EC7095E1244ED319001F88A5 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC7095E0244ED319001F88A5 /* Shapes.swift */; };
 		EC70ACEC215D6954004C16D2 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACEB215D6954004C16D2 /* ExploreVC.swift */; };
 		EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACEF215D69A6004C16D2 /* ChatVC.swift */; };
 		EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */; };
@@ -63,13 +59,10 @@
 		EC8E195E2159E02C000E4EE6 /* caocapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E195D2159E02C000E4EE6 /* caocapTests.swift */; };
 		EC8E19692159E02C000E4EE6 /* caocapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E19682159E02C000E4EE6 /* caocapUITests.swift */; };
 		EC8E1978215A00D5000E4EE6 /* myExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E1977215A00D5000E4EE6 /* myExtensions.swift */; };
-		EC9333D6244AB7540086055D /* BuilderUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9333D5244AB7540086055D /* BuilderUI.swift */; };
 		ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */; };
-		ECA5D9C6244F6D4000C3C021 /* ExploreUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA5D9C5244F6D4000C3C021 /* ExploreUI.swift */; };
 		ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479A21C79156000E16DC /* ContactChatVC.swift */; };
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
 		ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */; };
-		ECF00E69245979AF00414D45 /* MindMapUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF00E68245979AF00414D45 /* MindMapUI.swift */; };
 		ECF205492160ED6D00C48F2A /* authVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF205482160ED6D00C48F2A /* authVC.swift */; };
 		ECF2054B216102C200C48F2A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2054A216102C200C48F2A /* AuthService.swift */; };
 		ECF2055121624C9400C48F2A /* menuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2055021624C9400C48F2A /* menuVC.swift */; };
@@ -111,8 +104,6 @@
 		B8E7F4AE818B44B5884B4A27 /* Pods_caocapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_caocapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1808BFFAF766882BD21C196 /* Pods-caocap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-caocap/Pods-caocap.debug.xcconfig"; sourceTree = "<group>"; };
 		E33433C91972EAC63C3991AD /* Pods-caocapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-caocapTests/Pods-caocapTests.release.xcconfig"; sourceTree = "<group>"; };
-		EC03B1D52450614600274B1D /* ChartUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUI.swift; sourceTree = "<group>"; };
-		EC03B1D7245063F800274B1D /* fullScreenChartUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fullScreenChartUI.swift; sourceTree = "<group>"; };
 		EC0CA6D9224EA31700CD2142 /* topColCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topColCell.swift; sourceTree = "<group>"; };
 		EC0CA6DA224EA31700CD2142 /* topColCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = topColCell.xib; sourceTree = "<group>"; };
 		EC0CA6DD2251E49B00CD2142 /* topTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = topTableCell.swift; sourceTree = "<group>"; };
@@ -124,7 +115,6 @@
 		EC2F25012168FFE800D14733 /* earthorbiter.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = earthorbiter.ttf; sourceTree = "<group>"; };
 		EC2F25032169000B00D14733 /* www.Brushez.com-NeoSansArabic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.Brushez.com-NeoSansArabic.ttf"; sourceTree = "<group>"; };
 		EC2F25062169C47F00D14733 /* editProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileVC.swift; sourceTree = "<group>"; };
-		EC308532244E003300D534DF /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		EC339BE222520D1F00FDC14A /* caocapLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapLayout.swift; sourceTree = "<group>"; };
 		EC339BE52253D75200FDC14A /* UrlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlService.swift; sourceTree = "<group>"; };
 		EC368420225AFE8C00ABC9C6 /* caocapCellAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapCellAnimation.swift; sourceTree = "<group>"; };
@@ -142,7 +132,6 @@
 		EC5C0DE0216F895100ED508F /* addUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addUserCell.swift; sourceTree = "<group>"; };
 		EC6AB851215D8F4B00C276E3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		EC6EE2832323D3180069F488 /* menuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuCell.swift; sourceTree = "<group>"; };
-		EC7095E0244ED319001F88A5 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		EC70ACEB215D6954004C16D2 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
 		EC70ACEF215D69A6004C16D2 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
@@ -151,7 +140,7 @@
 		EC8407072468134600223FB1 /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
 		EC8407092468147800223FB1 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		EC84070B24681A0800223FB1 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
-		EC8E19422159E02A000E4EE6 /* caocap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = caocap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC8E19422159E02A000E4EE6 /* CAOCAPx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAOCAPx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8E19452159E02A000E4EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC8E19472159E02A000E4EE6 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
 		EC8E194A2159E02A000E4EE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,14 +155,11 @@
 		EC8E19682159E02C000E4EE6 /* caocapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapUITests.swift; sourceTree = "<group>"; };
 		EC8E196A2159E02C000E4EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC8E1977215A00D5000E4EE6 /* myExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myExtensions.swift; sourceTree = "<group>"; };
-		EC9333D5244AB7540086055D /* BuilderUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderUI.swift; sourceTree = "<group>"; };
 		ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderVC.swift; sourceTree = "<group>"; };
-		ECA5D9C5244F6D4000C3C021 /* ExploreUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUI.swift; sourceTree = "<group>"; };
 		ECAD479A21C79156000E16DC /* ContactChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactChatVC.swift; sourceTree = "<group>"; };
 		ECAD479C21CA97C4000E16DC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapIconCell.swift; sourceTree = "<group>"; };
 		ECDABBF2238348170029B026 /* caocap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = caocap.entitlements; sourceTree = "<group>"; };
-		ECF00E68245979AF00414D45 /* MindMapUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindMapUI.swift; sourceTree = "<group>"; };
 		ECF205482160ED6D00C48F2A /* authVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authVC.swift; sourceTree = "<group>"; };
 		ECF2054A216102C200C48F2A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		ECF2055021624C9400C48F2A /* menuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuVC.swift; sourceTree = "<group>"; };
@@ -252,20 +238,6 @@
 				EC2F25032169000B00D14733 /* www.Brushez.com-NeoSansArabic.ttf */,
 			);
 			path = fonts;
-			sourceTree = "<group>";
-		};
-		EC308531244E000400D534DF /* SwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				ECA5D9C5244F6D4000C3C021 /* ExploreUI.swift */,
-				EC9333D5244AB7540086055D /* BuilderUI.swift */,
-				ECF00E68245979AF00414D45 /* MindMapUI.swift */,
-				EC308532244E003300D534DF /* CircleImage.swift */,
-				EC7095E0244ED319001F88A5 /* Shapes.swift */,
-				EC03B1D52450614600274B1D /* ChartUI.swift */,
-				EC03B1D7245063F800274B1D /* fullScreenChartUI.swift */,
-			);
-			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		EC368E58245CD39300390500 /* BuilderBlocks */ = {
@@ -369,7 +341,7 @@
 		EC8E19432159E02A000E4EE6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC8E19422159E02A000E4EE6 /* caocap.app */,
+				EC8E19422159E02A000E4EE6 /* CAOCAPx.app */,
 				EC8E19592159E02C000E4EE6 /* caocapTests.xctest */,
 				EC8E19642159E02C000E4EE6 /* caocapUITests.xctest */,
 			);
@@ -388,7 +360,6 @@
 				EC2B26C6226B444700779486 /* NavigationControllers */,
 				EC70ACEA215D6918004C16D2 /* ViewControllers */,
 				EC84070424680A4F00223FB1 /* Storyboard */,
-				EC308531244E000400D534DF /* SwiftUI */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
 				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
@@ -502,7 +473,7 @@
 				EC03B1D32450610C00274B1D /* SwiftUICharts */,
 			);
 			productName = caocap;
-			productReference = EC8E19422159E02A000E4EE6 /* caocap.app */;
+			productReference = EC8E19422159E02A000E4EE6 /* CAOCAPx.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EC8E19582159E02C000E4EE6 /* caocapTests */ = {
@@ -714,7 +685,6 @@
 				EC70ACEC215D6954004C16D2 /* ExploreVC.swift in Sources */,
 				EC501674234E121900021D70 /* caocapRoomVC.swift in Sources */,
 				EC501676234E610200021D70 /* sentMessageCell.swift in Sources */,
-				EC03B1D62450614600274B1D /* ChartUI.swift in Sources */,
 				ECF63E8D21BD914B00E491FE /* caocapRoomCell.swift in Sources */,
 				EC6EE2842323D3180069F488 /* menuCell.swift in Sources */,
 				EC8E194E2159E02A000E4EE6 /* caocap.xcdatamodeld in Sources */,
@@ -726,9 +696,7 @@
 				EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */,
 				ECF63E9221C0D9DF00E491FE /* Caocap.swift in Sources */,
 				EC16EE7A21A5AE1F009A46B8 /* Users.swift in Sources */,
-				EC9333D6244AB7540086055D /* BuilderUI.swift in Sources */,
 				EC5C0DE1216F895100ED508F /* addUserCell.swift in Sources */,
-				EC7095E1244ED319001F88A5 /* Shapes.swift in Sources */,
 				EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */,
 				EC5238DA219082F100D966F3 /* chatGroupCell.swift in Sources */,
 				ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */,
@@ -745,14 +713,10 @@
 				EC2B26B722692B2C00779486 /* openedCaocapCell.swift in Sources */,
 				EC3F6D93234F81DF007DD028 /* GroupChatVC.swift in Sources */,
 				EC5238E02190B4CD00D966F3 /* Chat.swift in Sources */,
-				ECA5D9C6244F6D4000C3C021 /* ExploreUI.swift in Sources */,
 				EC0CA6DF2251E49B00CD2142 /* topTableCell.swift in Sources */,
 				EC501679234E62B900021D70 /* arrivedMessageCell.swift in Sources */,
 				EC0CA6DB224EA31700CD2142 /* topColCell.swift in Sources */,
-				EC308533244E003300D534DF /* CircleImage.swift in Sources */,
-				ECF00E69245979AF00414D45 /* MindMapUI.swift in Sources */,
 				EC2F25072169C47F00D14733 /* editProfileVC.swift in Sources */,
-				EC03B1D8245063F800274B1D /* fullScreenChartUI.swift in Sources */,
 				4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */,
 				4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */,
 				ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */,
@@ -939,18 +903,18 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ficruty.caocap;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CAOCAPx;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -965,18 +929,18 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ficruty.caocap;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CAOCAPx;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -185,6 +185,7 @@ class authVC: UIViewController {
         self.view.window!.layer.add(transition, forKey: nil)
         self.dismiss(animated: false, completion: nil)
         NotificationCenter.default.post(name: Notification.Name("reloadMyProfile"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("reloadExplore"), object: nil)
         NotificationCenter.default.post(name: Notification.Name("openExplore"), object: nil)
         myPageSubNAV?.popViewController(animated: false)
     }
