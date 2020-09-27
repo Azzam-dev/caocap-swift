@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // this is used to make the keyboard Appearance dark
         UITextField.appearance().keyboardAppearance = .dark
         
+        window?.overrideUserInterfaceStyle = .light
+        
         // Firebase configuration
         FirebaseApp.configure()
         checkCurrentUserStatus()

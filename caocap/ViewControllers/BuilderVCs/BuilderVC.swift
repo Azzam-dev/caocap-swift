@@ -20,7 +20,7 @@ class BuilderVC: UIViewController {
     var openedCaocap = Caocap(key: "", dictionary: ["":""])
     
     var viewControllers: [UIViewController]!
-    var navSelectedIndex: Int = 3
+    var navSelectedIndex: Int = 2
     
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
