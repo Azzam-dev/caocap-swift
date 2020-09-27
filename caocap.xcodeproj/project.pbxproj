@@ -66,6 +66,13 @@
 		ECE29FD82520852B00EFF8B4 /* ArtBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */; };
 		ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */; };
 		ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */; };
+		ECE29FFD25208E2100EFF8B4 /* MindMapUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF625208E2100EFF8B4 /* MindMapUI.swift */; };
+		ECE29FFE25208E2100EFF8B4 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF725208E2100EFF8B4 /* CircleImage.swift */; };
+		ECE29FFF25208E2100EFF8B4 /* ExploreUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF825208E2100EFF8B4 /* ExploreUI.swift */; };
+		ECE2A00025208E2100EFF8B4 /* ChartUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF925208E2100EFF8B4 /* ChartUI.swift */; };
+		ECE2A00125208E2100EFF8B4 /* BuilderUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FFA25208E2100EFF8B4 /* BuilderUI.swift */; };
+		ECE2A00225208E2100EFF8B4 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FFB25208E2100EFF8B4 /* Shapes.swift */; };
+		ECE2A00325208E2100EFF8B4 /* fullScreenChartUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FFC25208E2100EFF8B4 /* fullScreenChartUI.swift */; };
 		ECF205492160ED6D00C48F2A /* authVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF205482160ED6D00C48F2A /* authVC.swift */; };
 		ECF2054B216102C200C48F2A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2054A216102C200C48F2A /* AuthService.swift */; };
 		ECF2055121624C9400C48F2A /* menuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2055021624C9400C48F2A /* menuVC.swift */; };
@@ -166,6 +173,13 @@
 		ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBuilderVC.swift; sourceTree = "<group>"; };
 		ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicMindMapVC.swift; sourceTree = "<group>"; };
 		ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosBaseVC.swift; sourceTree = "<group>"; };
+		ECE29FF625208E2100EFF8B4 /* MindMapUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindMapUI.swift; sourceTree = "<group>"; };
+		ECE29FF725208E2100EFF8B4 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		ECE29FF825208E2100EFF8B4 /* ExploreUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreUI.swift; sourceTree = "<group>"; };
+		ECE29FF925208E2100EFF8B4 /* ChartUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartUI.swift; sourceTree = "<group>"; };
+		ECE29FFA25208E2100EFF8B4 /* BuilderUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuilderUI.swift; sourceTree = "<group>"; };
+		ECE29FFB25208E2100EFF8B4 /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		ECE29FFC25208E2100EFF8B4 /* fullScreenChartUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fullScreenChartUI.swift; sourceTree = "<group>"; };
 		ECF205482160ED6D00C48F2A /* authVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authVC.swift; sourceTree = "<group>"; };
 		ECF2054A216102C200C48F2A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		ECF2055021624C9400C48F2A /* menuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuVC.swift; sourceTree = "<group>"; };
@@ -366,6 +380,7 @@
 				EC2B26C6226B444700779486 /* NavigationControllers */,
 				EC70ACEA215D6918004C16D2 /* ViewControllers */,
 				EC84070424680A4F00223FB1 /* Storyboard */,
+				ECE29FF525208E2100EFF8B4 /* SwiftUI */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
 				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
@@ -458,6 +473,20 @@
 				EC2F25062169C47F00D14733 /* editProfileVC.swift */,
 			);
 			path = Profiles;
+			sourceTree = "<group>";
+		};
+		ECE29FF525208E2100EFF8B4 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				ECE29FF625208E2100EFF8B4 /* MindMapUI.swift */,
+				ECE29FF725208E2100EFF8B4 /* CircleImage.swift */,
+				ECE29FF825208E2100EFF8B4 /* ExploreUI.swift */,
+				ECE29FF925208E2100EFF8B4 /* ChartUI.swift */,
+				ECE29FFA25208E2100EFF8B4 /* BuilderUI.swift */,
+				ECE29FFB25208E2100EFF8B4 /* Shapes.swift */,
+				ECE29FFC25208E2100EFF8B4 /* fullScreenChartUI.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -701,12 +730,15 @@
 				ECF205492160ED6D00C48F2A /* authVC.swift in Sources */,
 				ECF2054B216102C200C48F2A /* AuthService.swift in Sources */,
 				EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */,
+				ECE2A00125208E2100EFF8B4 /* BuilderUI.swift in Sources */,
 				EC5238DC2190834200D966F3 /* contactChatCell.swift in Sources */,
 				EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */,
 				ECF63E9221C0D9DF00E491FE /* Caocap.swift in Sources */,
 				EC16EE7A21A5AE1F009A46B8 /* Users.swift in Sources */,
 				EC5C0DE1216F895100ED508F /* addUserCell.swift in Sources */,
 				EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */,
+				ECE29FFF25208E2100EFF8B4 /* ExploreUI.swift in Sources */,
+				ECE2A00025208E2100EFF8B4 /* ChartUI.swift in Sources */,
 				ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */,
 				EC5238DA219082F100D966F3 /* chatGroupCell.swift in Sources */,
 				ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */,
@@ -714,12 +746,15 @@
 				EC368E5B245CD43E00390500 /* SurfaceBlock.swift in Sources */,
 				EC2B26C1226A12DC00779486 /* caocapVC.swift in Sources */,
 				4E272DB424612C21005718EF /* blockCollectionViewCell.swift in Sources */,
+				ECE2A00225208E2100EFF8B4 /* Shapes.swift in Sources */,
 				ECF63E6C21BA33E900E491FE /* ImageService.swift in Sources */,
 				EC368421225AFE8C00ABC9C6 /* caocapCellAnimation.swift in Sources */,
 				EC8E1978215A00D5000E4EE6 /* myExtensions.swift in Sources */,
 				EC339BE322520D1F00FDC14A /* caocapLayout.swift in Sources */,
 				EC5238DE2190836200D966F3 /* caocapGroupCell.swift in Sources */,
+				ECE2A00325208E2100EFF8B4 /* fullScreenChartUI.swift in Sources */,
 				EC5238E221916E3A00D966F3 /* contactUserCell.swift in Sources */,
+				ECE29FFD25208E2100EFF8B4 /* MindMapUI.swift in Sources */,
 				ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */,
 				EC2B26B722692B2C00779486 /* openedCaocapCell.swift in Sources */,
 				EC3F6D93234F81DF007DD028 /* GroupChatVC.swift in Sources */,
@@ -727,6 +762,7 @@
 				EC0CA6DF2251E49B00CD2142 /* topTableCell.swift in Sources */,
 				EC501679234E62B900021D70 /* arrivedMessageCell.swift in Sources */,
 				ECE29FD82520852B00EFF8B4 /* ArtBuilderVC.swift in Sources */,
+				ECE29FFE25208E2100EFF8B4 /* CircleImage.swift in Sources */,
 				EC0CA6DB224EA31700CD2142 /* topColCell.swift in Sources */,
 				EC2F25072169C47F00D14733 /* editProfileVC.swift in Sources */,
 				4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */,
