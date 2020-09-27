@@ -63,6 +63,9 @@
 		ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479A21C79156000E16DC /* ContactChatVC.swift */; };
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
 		ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */; };
+		ECE29FD82520852B00EFF8B4 /* ArtBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */; };
+		ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */; };
+		ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */; };
 		ECF205492160ED6D00C48F2A /* authVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF205482160ED6D00C48F2A /* authVC.swift */; };
 		ECF2054B216102C200C48F2A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2054A216102C200C48F2A /* AuthService.swift */; };
 		ECF2055121624C9400C48F2A /* menuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2055021624C9400C48F2A /* menuVC.swift */; };
@@ -160,6 +163,9 @@
 		ECAD479C21CA97C4000E16DC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapIconCell.swift; sourceTree = "<group>"; };
 		ECDABBF2238348170029B026 /* caocap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = caocap.entitlements; sourceTree = "<group>"; };
+		ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBuilderVC.swift; sourceTree = "<group>"; };
+		ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicMindMapVC.swift; sourceTree = "<group>"; };
+		ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosBaseVC.swift; sourceTree = "<group>"; };
 		ECF205482160ED6D00C48F2A /* authVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = authVC.swift; sourceTree = "<group>"; };
 		ECF2054A216102C200C48F2A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		ECF2055021624C9400C48F2A /* menuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menuVC.swift; sourceTree = "<group>"; };
@@ -404,7 +410,10 @@
 			isa = PBXGroup;
 			children = (
 				ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */,
+				ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */,
+				ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */,
 				4E0E42D424651F9A00522B2F /* TestLabVC.swift */,
+				ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */,
 			);
 			path = BuilderVCs;
 			sourceTree = "<group>";
@@ -698,7 +707,9 @@
 				EC16EE7A21A5AE1F009A46B8 /* Users.swift in Sources */,
 				EC5C0DE1216F895100ED508F /* addUserCell.swift in Sources */,
 				EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */,
+				ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */,
 				EC5238DA219082F100D966F3 /* chatGroupCell.swift in Sources */,
+				ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */,
 				ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */,
 				EC368E5B245CD43E00390500 /* SurfaceBlock.swift in Sources */,
 				EC2B26C1226A12DC00779486 /* caocapVC.swift in Sources */,
@@ -715,6 +726,7 @@
 				EC5238E02190B4CD00D966F3 /* Chat.swift in Sources */,
 				EC0CA6DF2251E49B00CD2142 /* topTableCell.swift in Sources */,
 				EC501679234E62B900021D70 /* arrivedMessageCell.swift in Sources */,
+				ECE29FD82520852B00EFF8B4 /* ArtBuilderVC.swift in Sources */,
 				EC0CA6DB224EA31700CD2142 /* topColCell.swift in Sources */,
 				EC2F25072169C47F00D14733 /* editProfileVC.swift in Sources */,
 				4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */,
