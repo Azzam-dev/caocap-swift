@@ -20,10 +20,21 @@ class ArtBuilderVC: UIViewController {
     @IBOutlet var surfaceBlock3: UIStackView!
     
     
+    @IBOutlet weak var blockHierarchyTableView: UITableView!
+    @IBOutlet weak var attributesInspectorTableView: UITableView!
+    @IBOutlet weak var blockCollectionView: UICollectionView!
+    @IBOutlet weak var dimensionsInspectorTableView: UITableView!
+    @IBOutlet weak var connectionsInspectorTableView: UITableView!
+    
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
-    @IBOutlet weak var blockCollectionView: UICollectionView!
+    var toolsSelectedIndex: Int = 2
+    var toolsPreviousIndex: Int?
+    
+    @IBOutlet weak var selectorView: DesignableView!
+    @IBOutlet var topToolBarBTNs: [UIButton]!
+    
     
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
@@ -34,6 +45,68 @@ class ArtBuilderVC: UIViewController {
         setupViews()
         gestureRecognizerSetup()
     }
+    
+    @IBAction func topToolBarBTNs(_ sender: UIButton) {
+        
+        toolsPreviousIndex = toolsSelectedIndex
+        toolsSelectedIndex = sender.tag
+        optionsViewAnimation(sender.tag)
+        topToolBarAnimation()
+    }
+    
+    func topToolBarAnimation() {
+        UIView.animate(withDuration: 0.1,animations: {
+                  self.selectorView.shadowOpacity = 0
+                  
+              }, completion: { (finished) in
+                  self.selectorView.frame.origin.x = self.topToolBarBTNs[self.toolsSelectedIndex].frame.origin.x + 12
+                  UIView.animate(withDuration: 0.1) {
+                      self.selectorView.shadowOpacity = 0.2
+                  }
+              })
+    }
+    
+    func optionsViewAnimation(_ senderTag: Int) {
+        switch senderTag {
+        case 0:
+            blockHierarchyTableView.isHidden = false
+            attributesInspectorTableView.isHidden = true
+            blockCollectionView.isHidden = true
+            dimensionsInspectorTableView.isHidden = true
+            connectionsInspectorTableView.isHidden = true
+        case 1:
+            blockHierarchyTableView.isHidden = true
+            attributesInspectorTableView.isHidden = false
+            blockCollectionView.isHidden = true
+            dimensionsInspectorTableView.isHidden = true
+            connectionsInspectorTableView.isHidden = true
+        case 2:
+            blockHierarchyTableView.isHidden = true
+            attributesInspectorTableView.isHidden = true
+            blockCollectionView.isHidden = false
+            dimensionsInspectorTableView.isHidden = true
+            connectionsInspectorTableView.isHidden = true
+        case 3:
+            blockHierarchyTableView.isHidden = true
+            attributesInspectorTableView.isHidden = true
+            blockCollectionView.isHidden = true
+            dimensionsInspectorTableView.isHidden = false
+            connectionsInspectorTableView.isHidden = true
+        case 4:
+            blockHierarchyTableView.isHidden = true
+            attributesInspectorTableView.isHidden = true
+            blockCollectionView.isHidden = true
+            dimensionsInspectorTableView.isHidden = true
+            connectionsInspectorTableView.isHidden = false
+        default:
+            blockHierarchyTableView.isHidden = true
+            attributesInspectorTableView.isHidden = true
+            blockCollectionView.isHidden = false
+            dimensionsInspectorTableView.isHidden = true
+            connectionsInspectorTableView.isHidden = true
+        }
+    }
+    
     
     func setupViews() {
         designScrollView.contentSize = CGSize(width: viewWidth * 2, height: viewHeight * 2)
@@ -71,15 +144,15 @@ class ArtBuilderVC: UIViewController {
             switch sender.direction {
             case .up:
                 if self.toolsViewHeightConstraint.constant == 75 {
-                    toolsViewAnimation(120)
+                    optionsViewAnimation(120)
                 } else {
-                    toolsViewAnimation(300)
+                    optionsViewAnimation(300)
                 }
             case .down:
                 if self.toolsViewHeightConstraint.constant == 120 {
-                    toolsViewAnimation(75)
+                    optionsViewAnimation(75)
                 } else {
-                    toolsViewAnimation(120)
+                    optionsViewAnimation(120)
                 }
             default:
                 break

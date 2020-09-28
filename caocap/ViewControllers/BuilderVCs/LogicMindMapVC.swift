@@ -10,14 +10,11 @@ import UIKit
 
 class LogicMindMapVC: UIViewController {
     
-    
-    @IBOutlet weak var optionsContentView: UIView!
-    
+    @IBOutlet var optionsStackView0: UIStackView!
     @IBOutlet var optionsStackView1: UIStackView!
     @IBOutlet var optionsStackView2: UIStackView!
     @IBOutlet var optionsStackView3: UIStackView!
     @IBOutlet var optionsStackView4: UIStackView!
-    @IBOutlet var optionsStackView5: UIStackView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
@@ -34,7 +31,6 @@ class LogicMindMapVC: UIViewController {
     @IBOutlet var classBlock2: UIStackView!
     @IBOutlet var classBlock3: UIStackView!
     
-    var optionsStackViews = [UIStackView]()
     
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
@@ -42,10 +38,7 @@ class LogicMindMapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         optionsStackViews = [optionsStackView1, optionsStackView2, optionsStackView3, optionsStackView4, optionsStackView5]
-        
         setupViews()
-        setupStackViews()
         gestureRecognizerSetup()
         
     }
@@ -55,7 +48,7 @@ class LogicMindMapVC: UIViewController {
         
         toolsPreviousIndex = toolsSelectedIndex
         toolsSelectedIndex = sender.tag
-        optionsSVAnimation()
+        optionsViewAnimation(sender.tag)
         topToolBarAnimation()
     }
     
@@ -71,31 +64,45 @@ class LogicMindMapVC: UIViewController {
               })
     }
     
-    func optionsSVAnimation() {
-
-        let previousSV = optionsStackViews[toolsPreviousIndex!]
-        let selectedSV = optionsStackViews[toolsSelectedIndex]
-        if toolsPreviousIndex! > toolsSelectedIndex {
-//            move right
-            UIView.animate(withDuration: 0.5, animations: {
-                previousSV.frame.origin.x = self.optionsContentView.frame.origin.x + self.optionsContentView.frame.size.width
-                
-            })
-            UIView.animate(withDuration: 0.5, delay: 0.05, animations: {
-                selectedSV.frame.origin.x = self.optionsContentView.frame.origin.x
-            })
-            
-        } else {
-//            move left
-           UIView.animate(withDuration: 0.5, animations: {
-                previousSV.frame.origin.x = self.optionsContentView.frame.origin.x - self.optionsContentView.frame.size.width
-                
-            })
-            UIView.animate(withDuration: 0.5, delay: 0.05, animations: {
-                selectedSV.frame.origin.x = self.optionsContentView.frame.origin.x
-            })
+    func optionsViewAnimation(_ senderTag: Int) {
+        switch senderTag {
+        case 0:
+            optionsStackView0.isHidden = false
+            optionsStackView1.isHidden = true
+            optionsStackView2.isHidden = true
+            optionsStackView3.isHidden = true
+            optionsStackView4.isHidden = true
+        case 1:
+            optionsStackView0.isHidden = true
+            optionsStackView1.isHidden = false
+            optionsStackView2.isHidden = true
+            optionsStackView3.isHidden = true
+            optionsStackView4.isHidden = true
+        case 2:
+            optionsStackView0.isHidden = true
+            optionsStackView1.isHidden = true
+            optionsStackView2.isHidden = false
+            optionsStackView3.isHidden = true
+            optionsStackView4.isHidden = true
+        case 3:
+            optionsStackView0.isHidden = true
+            optionsStackView1.isHidden = true
+            optionsStackView2.isHidden = true
+            optionsStackView3.isHidden = false
+            optionsStackView4.isHidden = true
+        case 4:
+            optionsStackView0.isHidden = true
+            optionsStackView1.isHidden = true
+            optionsStackView2.isHidden = true
+            optionsStackView3.isHidden = true
+            optionsStackView4.isHidden = false
+        default:
+            optionsStackView0.isHidden = true
+            optionsStackView1.isHidden = true
+            optionsStackView2.isHidden = false
+            optionsStackView3.isHidden = true
+            optionsStackView4.isHidden = true
         }
-        
     }
     
     func setupViews() {
@@ -114,33 +121,6 @@ class LogicMindMapVC: UIViewController {
         
         logicSVContant.addSubview(classBlock3)
         classBlock3.frame.origin = CGPoint(x: classBlock.frame.origin.x - 220 , y: viewHeight * 0.55)
-    }
-    
-    func setupStackViews() {
-        
-        let size = optionsContentView.frame.size
-        let originX = optionsContentView.frame.origin.x
-    
-            
-        optionsContentView.addSubview(optionsStackView1)
-        optionsStackViews[0].frame.size = size
-        optionsStackViews[0].frame.origin.x = originX + size.width
-        
-        optionsContentView.addSubview(optionsStackView2)
-        optionsStackViews[1].frame.size = size
-        optionsStackViews[1].frame.origin.x = originX + size.width
-        
-        optionsContentView.addSubview(optionsStackView3)
-        optionsStackViews[2].frame.size = size
-        optionsStackViews[2].frame.origin.x = originX
-        
-        optionsContentView.addSubview(optionsStackView4)
-        optionsStackViews[3].frame.size = size
-        optionsStackViews[3].frame.origin.x = originX - size.width
-        
-        optionsContentView.addSubview(optionsStackView5)
-        optionsStackViews[4].frame.size = size
-        optionsStackViews[4].frame.origin.x = originX - size.width
     }
     
     func gestureRecognizerSetup() {
