@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
         <!--AuthVC-->
         <scene sceneID="V7Z-mk-FsB">
             <objects>
-                <viewController storyboardIdentifier="auth" id="mNu-3p-QYD" customClass="authVC" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="auth" id="mNu-3p-QYD" customClass="authVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="azy-Db-lFm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,7 +46,7 @@
                                                             <constraint firstAttribute="width" constant="20" id="Ll8-gr-n4h"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmc-o6-V0j" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmc-o6-V0j" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="31.666666666666629" width="294" height="3"/>
                                                         <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -88,7 +89,7 @@
                                                             <constraint firstAttribute="width" constant="20" id="aTd-Ff-Oei"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-b3-y11" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-b3-y11" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="31.666666666666742" width="294" height="3"/>
                                                         <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -131,7 +132,7 @@
                                                             <constraint firstAttribute="height" constant="20" id="VW5-IP-Be4"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRz-CS-V6n" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRz-CS-V6n" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="31.666666666666629" width="294" height="3"/>
                                                         <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -169,7 +170,7 @@
                                     <constraint firstItem="Ypd-zb-tMA" firstAttribute="centerY" secondItem="ydA-f3-9H2" secondAttribute="centerY" id="96U-Hq-xnC"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="YI8-5v-pW8" customClass="DesignableImage" customModule="caocap" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="YI8-5v-pW8" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="-30" y="-104" width="474" height="474"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YI8-5v-pW8" secondAttribute="height" multiplier="1:1" id="wqg-n1-ll4"/>
@@ -186,7 +187,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9t-GU-HcH" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9t-GU-HcH" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="792" width="414" height="70"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-Ew-VSZ">
@@ -214,7 +215,7 @@
                                             <constraint firstItem="WTx-E0-OzD" firstAttribute="leading" secondItem="HlO-Ew-VSZ" secondAttribute="leading" id="vO7-eQ-4O3"/>
                                         </constraints>
                                     </view>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0q-zz-2Z5" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0q-zz-2Z5" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="107" y="-10" width="200" height="40"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -258,7 +259,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RG-B7-n3A">
                                 <rect key="frame" x="0.0" y="792" width="414" height="70"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xu4-hs-qgV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xu4-hs-qgV">
                                         <rect key="frame" x="107" y="-10" width="200" height="40"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="23"/>
                                         <state key="normal" title="sign up">
@@ -277,7 +278,7 @@
                                                 <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1Y-bB-ySX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1Y-bB-ySX">
                                                 <rect key="frame" x="170.33333333333337" y="0.0" width="41" height="29"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                 <state key="normal" title="sign in">
@@ -298,6 +299,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="wKy-RN-JhW"/>
                         <color key="backgroundColor" red="0.92550897600000004" green="0.92548894879999999" blue="0.92549288269999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="ydA-f3-9H2" firstAttribute="top" secondItem="YI8-5v-pW8" secondAttribute="bottom" id="4uV-kZ-vjg"/>
@@ -324,7 +326,6 @@
                             <constraint firstItem="YI8-5v-pW8" firstAttribute="centerX" secondItem="wKy-RN-JhW" secondAttribute="centerX" id="pLK-Us-Ldx"/>
                             <constraint firstItem="1RG-B7-n3A" firstAttribute="leading" secondItem="z9t-GU-HcH" secondAttribute="leading" id="sib-ia-pMq"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wKy-RN-JhW"/>
                     </view>
                     <connections>
                         <outlet property="emailTF" destination="UeS-ig-Xu4" id="MO3-Se-wae"/>
@@ -344,12 +345,12 @@
         <!--NavigationVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="navigation" id="BYZ-38-t0r" customClass="NavigationVC" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="navigation" id="BYZ-38-t0r" customClass="NavigationVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jF-Is-xmu" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jF-Is-xmu" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -370,7 +371,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdl-mY-shQ">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdl-mY-shQ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                             <connections>
                                                 <action selector="popupACT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y54-sD-oOR"/>
@@ -386,7 +387,7 @@
                                 </view>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDl-TK-izB" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDl-TK-izB" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="97" y="728.66666666666663" width="220" height="220"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFF-CG-94N" userLabel="Search">
@@ -398,7 +399,7 @@
                                                     <constraint firstAttribute="width" secondItem="MDm-UG-O8w" secondAttribute="height" multiplier="1:1" id="S89-Im-76J"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6Y-R0-fzC">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6Y-R0-fzC">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                             </button>
                                         </subviews>
@@ -422,7 +423,7 @@
                                                     <constraint firstAttribute="width" secondItem="NM4-UV-Gki" secondAttribute="height" multiplier="1:1" id="Uw5-g4-8aT"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZQ-UO-bQ6">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZQ-UO-bQ6">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                             </button>
                                         </subviews>
@@ -447,7 +448,7 @@
                                                     <constraint firstAttribute="width" secondItem="oR6-Gw-xRQ" secondAttribute="height" multiplier="1:1" id="Fz8-tV-z58"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7c-aX-7ne">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7c-aX-7ne">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <connections>
                                                     <action selector="navBTNpressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZt-vy-bIL"/>
@@ -476,7 +477,7 @@
                                                     <constraint firstAttribute="width" secondItem="caS-FX-zLz" secondAttribute="height" multiplier="1:1" id="0DQ-Ys-b6M"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-4R-776">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-4R-776">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <connections>
                                                     <action selector="navBTNpressed:" destination="BYZ-38-t0r" eventType="touchDragInside" id="2h9-9B-Y7i"/>
@@ -505,7 +506,7 @@
                                                     <constraint firstAttribute="width" secondItem="C4e-ii-pH7" secondAttribute="height" multiplier="1:1" id="LZ0-3m-tgU"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od2-iV-hng" customClass="DesignableButton" customModule="caocap">
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od2-iV-hng" customClass="DesignableButton" customModule="caocap">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -531,7 +532,7 @@
                                             <constraint firstItem="od2-iV-hng" firstAttribute="top" secondItem="SDp-Ih-1WN" secondAttribute="top" id="zFd-sX-mFy"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-2f-eT5" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-2f-eT5" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="85" y="85" width="50" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.65446996688842773" blue="1" alpha="0.51963682432432434" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -589,16 +590,16 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-Dl-d8S" userLabel="bottomNAV" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-Dl-d8S" userLabel="bottomNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="174.66666666666666" y="806" width="65" height="65"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMv-GT-7uj" userLabel="bottomNAV" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMv-GT-7uj" userLabel="bottomNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                         <subviews>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-ap-Ey6" userLabel="bottomNAV" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Rx-ap-Ey6" userLabel="bottomNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="5" width="55" height="55"/>
                                                 <subviews>
-                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bau-8J-Y2p" userLabel="bottomNAV" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bau-8J-Y2p" userLabel="bottomNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="6" y="6" width="43" height="43"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -636,10 +637,10 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rg-5e-OQE">
+                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rg-5e-OQE">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
                                             </button>
-                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkW-34-gze">
+                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkW-34-gze">
                                                 <rect key="frame" x="9.3333333333333428" y="10" width="65" height="65"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </button>
@@ -677,6 +678,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="eUh-Ax-qHN"/>
                         <color key="backgroundColor" red="0.19215686274509802" green="0.22352941176470587" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="fDl-TK-izB" firstAttribute="centerX" secondItem="Y7k-Dl-d8S" secondAttribute="centerX" id="4FD-VF-NF2"/>
@@ -693,7 +695,6 @@
                             <constraint firstItem="2Su-lZ-W2C" firstAttribute="top" secondItem="2jF-Is-xmu" secondAttribute="top" id="rMj-nN-U6F"/>
                             <constraint firstAttribute="bottom" secondItem="Y7k-Dl-d8S" secondAttribute="bottom" priority="750" constant="25" id="zfM-hz-huK"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eUh-Ax-qHN"/>
                     </view>
                     <navigationItem key="navigationItem" id="HwG-ch-Gke"/>
                     <connections>
@@ -733,7 +734,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-Xf-ia8" customClass="DesignableImage" customModule="caocap" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-Xf-ia8" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="-30" y="-104" width="474" height="474"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1hi-Xf-ia8" secondAttribute="height" multiplier="1:1" id="k0f-69-WYP"/>
@@ -757,6 +758,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="mhJ-Jb-f8Y"/>
                         <color key="backgroundColor" red="0.16860964894294739" green="0.16863921284675598" blue="0.16860029101371765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2C1-cy-zTB" firstAttribute="leading" secondItem="mhJ-Jb-f8Y" secondAttribute="leading" id="9YD-mZ-Zst"/>
@@ -770,7 +772,6 @@
                             <constraint firstItem="u8I-ED-lj1" firstAttribute="top" secondItem="1hi-Xf-ia8" secondAttribute="bottom" constant="20" id="kZn-1e-MJU"/>
                             <constraint firstItem="mhJ-Jb-f8Y" firstAttribute="trailing" secondItem="1hi-Xf-ia8" secondAttribute="trailing" constant="-30" id="sO8-dp-ebV"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mhJ-Jb-f8Y"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4UT-ar-S37" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -796,7 +797,7 @@ Please visit the app tomorrow and everything will be done
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="3sl-Jd-nnK" customClass="DesignableImage" customModule="caocap" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="3sl-Jd-nnK" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="-30" y="-104" width="474" height="474"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3sl-Jd-nnK" secondAttribute="height" multiplier="1:1" id="nhW-Uf-VVg"/>
@@ -820,6 +821,7 @@ Please visit the app tomorrow and everything will be done
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="8Lo-R8-Rm3"/>
                         <color key="backgroundColor" red="0.16860964894294739" green="0.16863921284675598" blue="0.16860029101371765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="zVR-8k-Z6v" secondAttribute="bottom" id="2tt-15-Fhc"/>
@@ -833,7 +835,6 @@ Please visit the app tomorrow and everything will be done
                             <constraint firstItem="erZ-Sb-9NF" firstAttribute="top" secondItem="3sl-Jd-nnK" secondAttribute="bottom" constant="20" id="vbS-Z9-ToK"/>
                             <constraint firstItem="zVR-8k-Z6v" firstAttribute="trailing" secondItem="8Lo-R8-Rm3" secondAttribute="trailing" id="zRG-fG-chT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="8Lo-R8-Rm3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBk-3a-iwm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -843,7 +844,7 @@ Please visit the app tomorrow and everything will be done
         <!--Swipe Navigation Controller-->
         <scene sceneID="qg5-GA-HLA">
             <objects>
-                <navigationController storyboardIdentifier="exploreNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pNd-CF-0cT" customClass="SwipeNavigationController" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="exploreNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pNd-CF-0cT" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uv3-2I-4nM">
                         <autoresizingMask key="autoresizingMask"/>
@@ -860,7 +861,7 @@ Please visit the app tomorrow and everything will be done
         <!--Swipe Navigation Controller-->
         <scene sceneID="H2M-sa-aPG">
             <objects>
-                <navigationController storyboardIdentifier="chatNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mWk-r7-rDp" customClass="SwipeNavigationController" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="chatNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mWk-r7-rDp" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mIc-Na-kmU">
                         <autoresizingMask key="autoresizingMask"/>
@@ -877,7 +878,7 @@ Please visit the app tomorrow and everything will be done
         <!--Swipe Navigation Controller-->
         <scene sceneID="e4H-4L-y4B">
             <objects>
-                <navigationController storyboardIdentifier="myPageNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Zfg-gz-7oy" customClass="SwipeNavigationController" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="myPageNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Zfg-gz-7oy" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="9uw-k3-Z3k">
@@ -940,6 +941,23 @@ Please visit the app tomorrow and everything will be done
             <point key="canvasLocation" x="791" y="451"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1hi-Xf-ia8">
+            <size key="intrinsicContentSize" width="1000" height="1000"/>
+        </designable>
+        <designable name="3sl-Jd-nnK">
+            <size key="intrinsicContentSize" width="1000" height="1000"/>
+        </designable>
+        <designable name="YI8-5v-pW8">
+            <size key="intrinsicContentSize" width="1000" height="1000"/>
+        </designable>
+        <designable name="od2-iV-hng">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="upi-2f-eT5">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="W-chat" width="106" height="100"/>
         <image name="W-full_screen_filled" width="100" height="106"/>

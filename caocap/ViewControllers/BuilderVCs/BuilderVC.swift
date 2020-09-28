@@ -19,11 +19,11 @@ class BuilderVC: UIViewController {
     
     var openedCaocap = Caocap(key: "", dictionary: ["":""])
     
-    var viewControllers: [UIViewController]!
+    var navigationControllers: [UINavigationController]!
     var navSelectedIndex: Int = 2
     
-    lazy var viewWidth = self.view.frame.width
-    lazy var viewHeight = self.view.frame.height
+//    lazy var viewWidth = self.view.frame.width
+//    lazy var viewHeight = self.view.frame.height
     
     override func viewDidLoad() {
         super.viewDidLoad()

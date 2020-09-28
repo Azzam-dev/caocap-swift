@@ -187,7 +187,7 @@ class authVC: UIViewController {
         NotificationCenter.default.post(name: Notification.Name("reloadMyProfile"), object: nil)
         NotificationCenter.default.post(name: Notification.Name("reloadExplore"), object: nil)
         NotificationCenter.default.post(name: Notification.Name("openExplore"), object: nil)
-        myPageSubNAV?.popViewController(animated: false)
+        NavigationVC().myPageSubNAV?.popViewController(animated: false)
     }
     
 }
