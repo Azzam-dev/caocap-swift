@@ -10,41 +10,39 @@ import UIKit
 
 class BuilderVC: UIViewController {
     
-    var artNAV: UINavigationController!
-    var logicNAV: UINavigationController!
-    var cosmosNAV: UINavigationController!
-    var testLabNAV: UINavigationController!
-    
     @IBOutlet weak var contentView: UIView!
     
     var openedCaocap = Caocap(key: "", dictionary: ["":""])
     
-    var navigationControllers: [UINavigationController]!
+    var viewControllers: [UIViewController]!
     var navSelectedIndex: Int = 2
-    
-//    lazy var viewWidth = self.view.frame.width
-//    lazy var viewHeight = self.view.frame.height
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideKeyboardWhenTappedAround()
-        setupSubNavigationControllers()
+        setupSubViewControllers()
     }
     
     @IBAction func exitBuilder(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func setupSubNavigationControllers() {
-        
+    
+    func setupSubViewControllers() {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        artNAV = storyboard.instantiateViewController(withIdentifier: "artBuilderNAV") as? UINavigationController
-        logicNAV = storyboard.instantiateViewController(withIdentifier: "logicMindMapNAV") as? UINavigationController
-        cosmosNAV = storyboard.instantiateViewController(withIdentifier: "cosmosBaseNAV") as? UINavigationController
-        testLabNAV = storyboard.instantiateViewController(withIdentifier: "testLapNAV") as? UINavigationController
-        navigationControllers = [cosmosNAV, logicNAV,artNAV, testLabNAV]
-        navBTNpressed(navBTNs[navSelectedIndex])
+        let cosmosBaseVC = storyboard.instantiateViewController(withIdentifier: "cosmosBase") as? CosmosBaseVC
+        let logicMindMapVC = storyboard.instantiateViewController(withIdentifier: "logicMindMap") as? LogicMindMapVC
+        let artBuilderVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as? ArtBuilderVC
+        let testLabVC = storyboard.instantiateViewController(withIdentifier: "testLab") as? TestLabVC
+        
+        testLabVC?.openedCaocap = openedCaocap
+        viewControllers = [cosmosBaseVC!, logicMindMapVC!, artBuilderVC!, testLabVC!]
+        let vc = viewControllers[navSelectedIndex]
+        addChild(vc)
+        vc.view.frame = contentView.bounds
+        contentView.addSubview(vc.view)
+        vc.didMove(toParent: self)
     }
     
     @IBOutlet weak var selectorView: DesignableView!
@@ -54,7 +52,7 @@ class BuilderVC: UIViewController {
         let previousNavIndex = navSelectedIndex
         navSelectedIndex = sender.tag
         
-        let previousVC = navigationControllers[previousNavIndex]
+        let previousVC = viewControllers[previousNavIndex]
         previousVC.willMove(toParent: nil)
         previousVC.view.removeFromSuperview()
         previousVC.removeFromParent()
@@ -64,7 +62,7 @@ class BuilderVC: UIViewController {
         })
         
         
-        let vc = navigationControllers[navSelectedIndex]
+        let vc = viewControllers[navSelectedIndex]
         addChild(vc)
         vc.view.frame = contentView.bounds
         contentView.addSubview(vc.view)

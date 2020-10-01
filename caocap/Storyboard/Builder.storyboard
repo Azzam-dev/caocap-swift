@@ -320,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2o-sy-9dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6961" y="2388"/>
+            <point key="canvasLocation" x="6954" y="1460"/>
         </scene>
         <!--BuilderVC-->
         <scene sceneID="NVE-Uy-78f">
@@ -495,25 +495,10 @@
             </objects>
             <point key="canvasLocation" x="5543" y="710"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="1TC-yB-n3f">
-            <objects>
-                <navigationController storyboardIdentifier="artBuilderNAV" navigationBarHidden="YES" id="wld-9s-erZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZVJ-YO-wWx">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="8ie-uo-scn" kind="relationship" relationship="rootViewController" id="IDw-7c-DaF"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nHS-AP-kvD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6030" y="1447"/>
-        </scene>
         <!--Art BuilderVC-->
         <scene sceneID="KkT-dC-24r">
             <objects>
-                <viewController id="8ie-uo-scn" customClass="ArtBuilderVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="artBuilder" id="8ie-uo-scn" customClass="ArtBuilderVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="24R-9k-pxr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1018,27 +1003,12 @@
                     <viewLayoutGuide key="safeArea" id="vNJ-90-rYV"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="6028.985507246377" y="2387.9464285714284"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bKp-Pn-adT">
-            <objects>
-                <navigationController storyboardIdentifier="logicMindMapNAV" navigationBarHidden="YES" id="VYA-m3-T1M" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1iN-MM-Omw">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Bhe-V6-Jw1" kind="relationship" relationship="rootViewController" id="d6A-n0-sxa"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ube-Ry-1ut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5049" y="1447"/>
+            <point key="canvasLocation" x="6022" y="1460"/>
         </scene>
         <!--Logic Mind MapVC-->
         <scene sceneID="fwy-Um-DEb">
             <objects>
-                <viewController id="Bhe-V6-Jw1" customClass="LogicMindMapVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logicMindMap" id="Bhe-V6-Jw1" customClass="LogicMindMapVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pzi-yO-sDG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2146,43 +2116,12 @@
                     <viewLayoutGuide key="safeArea" id="nHz-1O-muq"/>
                 </stackView>
             </objects>
-            <point key="canvasLocation" x="5049" y="2388"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="RMW-pW-eMm">
-            <objects>
-                <navigationController storyboardIdentifier="testLapNAV" navigationBarHidden="YES" id="Ml8-M6-pco" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="phK-3j-qyd">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="iEU-Q6-Fgf" kind="relationship" relationship="rootViewController" id="1Qs-Jh-L82"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MNO-KR-7cg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6962" y="1447"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="fzz-et-Tus">
-            <objects>
-                <navigationController storyboardIdentifier="cosmosBaseNAV" navigationBarHidden="YES" id="7hw-Yj-Jbg" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kyh-57-UTU">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="sUo-fa-ko8" kind="relationship" relationship="rootViewController" id="Ldd-Dg-GoG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4DP-d4-7ss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4139" y="1447"/>
+            <point key="canvasLocation" x="5041" y="1460"/>
         </scene>
         <!--Cosmos BaseVC-->
         <scene sceneID="vdH-a1-wVJ">
             <objects>
-                <viewController id="sUo-fa-ko8" customClass="CosmosBaseVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="cosmosBase" id="sUo-fa-ko8" customClass="CosmosBaseVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Taz-H7-KSX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2441,7 +2380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f0a-c1-2fJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4138" y="2388"/>
+            <point key="canvasLocation" x="4130" y="1460"/>
         </scene>
     </scenes>
     <designables>
