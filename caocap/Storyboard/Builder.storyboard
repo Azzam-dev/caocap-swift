@@ -194,40 +194,23 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="HWT-AC-I1p">
                                                         <rect key="frame" x="50" y="17.5" width="274" height="25"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdd-hb-pql">
-                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-play"/>
-                                                                <connections>
-                                                                    <action selector="startTestBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="XZ2-aH-FRC"/>
-                                                                </connections>
-                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqo-1h-S27">
-                                                                <rect key="frame" x="62.5" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-gas"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                                <state key="normal" image="icons8-hot_reload-1"/>
                                                                 <connections>
                                                                     <action selector="hotReloudBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="d0X-uZ-12f"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlY-MI-Bmg">
-                                                                <rect key="frame" x="124.5" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="hlY-MI-Bmg" secondAttribute="height" multiplier="1:1" id="BCK-Xc-KEJ"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-stop"/>
-                                                                <connections>
-                                                                    <action selector="stopTestBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="pDX-Bz-9Lf"/>
-                                                                </connections>
-                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faC-2F-Aaw">
-                                                                <rect key="frame" x="187" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-save"/>
+                                                                <rect key="frame" x="124.5" y="0.0" width="25" height="25"/>
+                                                                <state key="normal" image="icons8-save-1"/>
                                                                 <connections>
                                                                     <action selector="saveBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="bSt-Pw-aIc"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrD-VK-uFz">
                                                                 <rect key="frame" x="249" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-launch"/>
+                                                                <state key="normal" image="icons8-launch-1"/>
                                                                 <connections>
                                                                     <action selector="launchCaocapBTN:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="mUE-tH-ieV"/>
                                                                 </connections>
@@ -235,7 +218,6 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="faC-2F-Aaw" firstAttribute="width" secondItem="faC-2F-Aaw" secondAttribute="height" multiplier="1:1" id="5XO-5S-YKL"/>
-                                                            <constraint firstItem="Xdd-hb-pql" firstAttribute="width" secondItem="Xdd-hb-pql" secondAttribute="height" multiplier="1:1" id="Lny-1z-4LU"/>
                                                             <constraint firstItem="wqo-1h-S27" firstAttribute="width" secondItem="wqo-1h-S27" secondAttribute="height" multiplier="1:1" id="QTu-Qm-gxo"/>
                                                             <constraint firstItem="VrD-VK-uFz" firstAttribute="width" secondItem="VrD-VK-uFz" secondAttribute="height" multiplier="1:1" id="meN-kw-mqy"/>
                                                             <constraint firstAttribute="height" constant="25" id="pea-9p-mMV"/>
@@ -308,8 +290,10 @@
                     <connections>
                         <outlet property="cssTextView" destination="P5E-ax-Erd" id="1sP-oJ-HoH"/>
                         <outlet property="gestureRecognizerView" destination="coo-Xb-Lhg" id="tR5-2j-2JD"/>
+                        <outlet property="hotReloudBTN" destination="wqo-1h-S27" id="Tig-pt-xLu"/>
                         <outlet property="htmlTextView" destination="3Wl-Xd-ZRN" id="Ycr-1E-8To"/>
                         <outlet property="jsTextView" destination="rRl-oS-igi" id="iBV-Me-2ma"/>
+                        <outlet property="launchCaocapBTN" destination="VrD-VK-uFz" id="vvr-hL-CJp"/>
                         <outlet property="theView" destination="Eay-SC-9EV" id="MeZ-50-beJ"/>
                         <outlet property="toolsViewHeightConstraint" destination="ev0-zY-Bky" id="fv5-Nk-sWe"/>
                         <outlet property="webView" destination="spA-Ki-ysH" id="nhq-w4-i9n"/>
@@ -557,7 +541,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="OL5-tf-JPQ">
-                                                        <rect key="frame" x="20" y="17.5" width="334" height="25"/>
+                                                        <rect key="frame" x="50" y="17.5" width="274" height="25"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WG7-kz-3Kt">
                                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -569,42 +553,25 @@
                                                                     <action selector="topToolBarBTNs:" destination="8ie-uo-scn" eventType="touchUpInside" id="ADz-1E-d8L"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyN-89-7xX">
-                                                                <rect key="frame" x="77.5" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-list_view"/>
-                                                                <connections>
-                                                                    <action selector="topToolBarBTNs:" destination="8ie-uo-scn" eventType="touchUpInside" id="ca1-rT-W5N"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YB5-Ed-RSu">
-                                                                <rect key="frame" x="154.5" y="0.0" width="25" height="25"/>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YB5-Ed-RSu">
+                                                                <rect key="frame" x="124.5" y="0.0" width="25" height="25"/>
                                                                 <state key="normal" image="icons8-pen"/>
                                                                 <connections>
                                                                     <action selector="topToolBarBTNs:" destination="8ie-uo-scn" eventType="touchUpInside" id="a5V-xA-G2s"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWc-B9-aYo">
-                                                                <rect key="frame" x="232" y="0.0" width="25" height="25"/>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWc-B9-aYo">
+                                                                <rect key="frame" x="249" y="0.0" width="25" height="25"/>
                                                                 <state key="normal" image="icons8-ruler"/>
                                                                 <connections>
                                                                     <action selector="topToolBarBTNs:" destination="8ie-uo-scn" eventType="touchUpInside" id="ugP-Cx-4zb"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCe-Li-X5J">
-                                                                <rect key="frame" x="309" y="0.0" width="25" height="25"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="icons8-connected"/>
-                                                                <connections>
-                                                                    <action selector="topToolBarBTNs:" destination="8ie-uo-scn" eventType="touchUpInside" id="sxZ-p2-MTt"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="YB5-Ed-RSu" firstAttribute="width" secondItem="YB5-Ed-RSu" secondAttribute="height" multiplier="1:1" id="5Im-bE-ksH"/>
-                                                            <constraint firstItem="xCe-Li-X5J" firstAttribute="width" secondItem="xCe-Li-X5J" secondAttribute="height" multiplier="1:1" id="Dmx-Xc-Ubm"/>
                                                             <constraint firstItem="RWc-B9-aYo" firstAttribute="width" secondItem="RWc-B9-aYo" secondAttribute="height" multiplier="1:1" id="NMH-ne-git"/>
                                                             <constraint firstAttribute="height" constant="25" id="Y4T-vB-vSz"/>
-                                                            <constraint firstItem="FyN-89-7xX" firstAttribute="width" secondItem="FyN-89-7xX" secondAttribute="height" multiplier="1:1" id="oxH-GH-uiv"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
@@ -614,7 +581,7 @@
                                                     <constraint firstItem="OL5-tf-JPQ" firstAttribute="centerY" secondItem="hGL-0o-oJM" secondAttribute="centerY" id="7H6-pC-1cA"/>
                                                     <constraint firstItem="Loa-5B-ayC" firstAttribute="centerY" secondItem="hGL-0o-oJM" secondAttribute="centerY" id="Gb2-0z-Obe"/>
                                                     <constraint firstItem="OL5-tf-JPQ" firstAttribute="centerX" secondItem="hGL-0o-oJM" secondAttribute="centerX" id="H7K-iY-jcp"/>
-                                                    <constraint firstAttribute="trailing" secondItem="OL5-tf-JPQ" secondAttribute="trailing" constant="20" id="P0k-Th-UE0"/>
+                                                    <constraint firstAttribute="trailing" secondItem="OL5-tf-JPQ" secondAttribute="trailing" constant="50" id="P0k-Th-UE0"/>
                                                     <constraint firstAttribute="height" constant="60" id="UGd-ym-NgA"/>
                                                 </constraints>
                                             </view>
@@ -648,11 +615,6 @@
                                                                 </tableViewCellContentView>
                                                             </tableViewCell>
                                                         </prototypes>
-                                                    </tableView>
-                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="egO-cy-XpM">
-                                                        <rect key="frame" x="5" y="0.0" width="364" height="120"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableView>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Msg-PT-zkt">
                                                         <rect key="frame" x="5" y="10" width="364" height="100"/>
@@ -702,31 +664,18 @@
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableView>
-                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r8a-Fb-ama">
-                                                        <rect key="frame" x="5" y="0.0" width="364" height="120"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <color key="sectionIndexBackgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </tableView>
                                                 </subviews>
                                                 <viewLayoutGuide key="safeArea" id="nwY-KI-2vd"/>
                                                 <color key="backgroundColor" red="0.26451683040000001" green="0.28867769240000002" blue="0.61573868990000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="120" id="22X-6v-jbA"/>
                                                     <constraint firstItem="nwY-KI-2vd" firstAttribute="trailing" secondItem="fRn-Pe-45W" secondAttribute="trailing" constant="5" id="3nW-Ur-SJJ"/>
-                                                    <constraint firstItem="egO-cy-XpM" firstAttribute="top" secondItem="727-JF-7Vw" secondAttribute="top" id="5Zu-jr-904"/>
                                                     <constraint firstItem="fRn-Pe-45W" firstAttribute="centerY" secondItem="727-JF-7Vw" secondAttribute="centerY" id="8AZ-nE-rhg"/>
                                                     <constraint firstItem="b72-jo-tCh" firstAttribute="centerY" secondItem="727-JF-7Vw" secondAttribute="centerY" id="8p4-Tw-shu"/>
                                                     <constraint firstItem="fRn-Pe-45W" firstAttribute="top" secondItem="nwY-KI-2vd" secondAttribute="top" id="Djg-oe-lxE"/>
-                                                    <constraint firstItem="r8a-Fb-ama" firstAttribute="top" secondItem="727-JF-7Vw" secondAttribute="top" id="NTv-bo-hAJ"/>
-                                                    <constraint firstItem="egO-cy-XpM" firstAttribute="centerY" secondItem="727-JF-7Vw" secondAttribute="centerY" id="Onw-8i-xlN"/>
                                                     <constraint firstItem="nwY-KI-2vd" firstAttribute="trailing" secondItem="b72-jo-tCh" secondAttribute="trailing" constant="5" id="SRd-Ss-iwv"/>
                                                     <constraint firstItem="fRn-Pe-45W" firstAttribute="centerX" secondItem="727-JF-7Vw" secondAttribute="centerX" id="U0d-X4-kRY"/>
-                                                    <constraint firstItem="nwY-KI-2vd" firstAttribute="trailing" secondItem="egO-cy-XpM" secondAttribute="trailing" constant="5" id="dQ5-kR-84r"/>
-                                                    <constraint firstItem="r8a-Fb-ama" firstAttribute="centerY" secondItem="727-JF-7Vw" secondAttribute="centerY" id="eue-qm-UP6"/>
                                                     <constraint firstItem="b72-jo-tCh" firstAttribute="centerX" secondItem="727-JF-7Vw" secondAttribute="centerX" id="i95-sp-tdm"/>
-                                                    <constraint firstItem="r8a-Fb-ama" firstAttribute="centerX" secondItem="727-JF-7Vw" secondAttribute="centerX" id="naH-fs-6J6"/>
-                                                    <constraint firstItem="nwY-KI-2vd" firstAttribute="trailing" secondItem="r8a-Fb-ama" secondAttribute="trailing" constant="5" id="oIq-50-jUp"/>
-                                                    <constraint firstItem="egO-cy-XpM" firstAttribute="centerX" secondItem="727-JF-7Vw" secondAttribute="centerX" id="psS-Ad-QSg"/>
                                                     <constraint firstItem="b72-jo-tCh" firstAttribute="top" secondItem="nwY-KI-2vd" secondAttribute="top" id="ttW-d1-v4R"/>
                                                 </constraints>
                                             </view>
@@ -744,28 +693,14 @@
                                                                 <state key="normal" image="undo"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HT-KA-bn3">
-                                                                <rect key="frame" x="54" y="0.0" width="25" height="25"/>
+                                                                <rect key="frame" x="89.5" y="0.0" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="3HT-KA-bn3" secondAttribute="height" multiplier="1:1" id="jC4-LP-2Iw"/>
                                                                 </constraints>
                                                                 <state key="normal" image="icons8-copy"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6cD-oM-9bq">
-                                                                <rect key="frame" x="107.5" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="6cD-oM-9bq" secondAttribute="height" multiplier="1:1" id="iBH-wb-hFt"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-upload"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfZ-Nk-mLw">
-                                                                <rect key="frame" x="161.5" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="PfZ-Nk-mLw" secondAttribute="height" multiplier="1:1" id="j9n-RJ-n4f"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-download"/>
-                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9K7-Jl-Fub">
-                                                                <rect key="frame" x="215" y="0.0" width="25" height="25"/>
+                                                                <rect key="frame" x="179.5" y="0.0" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="9K7-Jl-Fub" secondAttribute="height" multiplier="1:1" id="9Mq-7t-89b"/>
                                                                 </constraints>
@@ -849,10 +784,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="kD0-X9-era"/>
                     <connections>
-                        <outlet property="attributesInspectorTableView" destination="egO-cy-XpM" id="Ymd-un-15p"/>
                         <outlet property="blockCollectionView" destination="Msg-PT-zkt" id="ajR-UL-emS"/>
                         <outlet property="blockHierarchyTableView" destination="fRn-Pe-45W" id="Bke-iS-cki"/>
-                        <outlet property="connectionsInspectorTableView" destination="r8a-Fb-ama" id="6AY-d2-y16"/>
                         <outlet property="designSVContant" destination="Jsf-kG-An5" id="EgA-oT-dPQ"/>
                         <outlet property="designScrollView" destination="FsA-f2-set" id="2cg-wA-tWP"/>
                         <outlet property="dimensionsInspectorTableView" destination="b72-jo-tCh" id="jEy-fI-j9v"/>
@@ -863,10 +796,8 @@
                         <outlet property="surfaceBlock3" destination="BiO-Cs-UKf" id="cry-NH-bu5"/>
                         <outlet property="toolsViewHeightConstraint" destination="0Zl-Jn-V3b" id="685-UW-J25"/>
                         <outletCollection property="topToolBarBTNs" destination="WG7-kz-3Kt" collectionClass="NSMutableArray" id="Umb-AL-XAm"/>
-                        <outletCollection property="topToolBarBTNs" destination="FyN-89-7xX" collectionClass="NSMutableArray" id="6B8-6M-pbC"/>
                         <outletCollection property="topToolBarBTNs" destination="YB5-Ed-RSu" collectionClass="NSMutableArray" id="GRX-ZV-vGw"/>
                         <outletCollection property="topToolBarBTNs" destination="RWc-B9-aYo" collectionClass="NSMutableArray" id="e2M-te-qPv"/>
-                        <outletCollection property="topToolBarBTNs" destination="xCe-Li-X5J" collectionClass="NSMutableArray" id="Tc6-Qy-YW2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WyX-nQ-Qj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1067,7 +998,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="SJt-tD-DRu">
-                                                        <rect key="frame" x="20" y="18.5" width="334" height="23"/>
+                                                        <rect key="frame" x="50" y="18.5" width="274" height="23"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4j-P1-Vxr">
                                                                 <rect key="frame" x="0.0" y="0.0" width="23" height="23"/>
@@ -1078,28 +1009,28 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhF-46-SiZ">
-                                                                <rect key="frame" x="78" y="0.0" width="23" height="23"/>
+                                                                <rect key="frame" x="63" y="0.0" width="23" height="23"/>
                                                                 <state key="normal" image="HTML"/>
                                                                 <connections>
                                                                     <action selector="topToolBarBTNs:" destination="Bhe-V6-Jw1" eventType="touchUpInside" id="FS8-ex-fCC"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ss-YX-R9s">
-                                                                <rect key="frame" x="155.5" y="0.0" width="23" height="23"/>
+                                                                <rect key="frame" x="125.5" y="0.0" width="23" height="23"/>
                                                                 <state key="normal" image="JS"/>
                                                                 <connections>
                                                                     <action selector="topToolBarBTNs:" destination="Bhe-V6-Jw1" eventType="touchUpInside" id="TZR-oL-YtP"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpo-7d-TPq">
-                                                                <rect key="frame" x="233.5" y="0.0" width="23" height="23"/>
+                                                                <rect key="frame" x="188.5" y="0.0" width="23" height="23"/>
                                                                 <state key="normal" image="CSS"/>
                                                                 <connections>
                                                                     <action selector="topToolBarBTNs:" destination="Bhe-V6-Jw1" eventType="touchUpInside" id="p5F-4F-rSO"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMd-Qr-sWO">
-                                                                <rect key="frame" x="311" y="0.0" width="23" height="23"/>
+                                                                <rect key="frame" x="251" y="0.0" width="23" height="23"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="cMd-Qr-sWO" secondAttribute="height" multiplier="1:1" id="htp-Kl-4pY"/>
                                                                 </constraints>
@@ -1125,7 +1056,7 @@
                                                     <constraint firstItem="eQ9-vK-ZGC" firstAttribute="centerX" secondItem="7Ss-YX-R9s" secondAttribute="centerX" id="K45-th-dAS"/>
                                                     <constraint firstItem="SJt-tD-DRu" firstAttribute="centerX" secondItem="u5u-xE-iQh" secondAttribute="centerX" id="icj-Dl-R5Y"/>
                                                     <constraint firstItem="eQ9-vK-ZGC" firstAttribute="centerY" secondItem="u5u-xE-iQh" secondAttribute="centerY" id="jHz-Zx-XrL"/>
-                                                    <constraint firstAttribute="trailing" secondItem="SJt-tD-DRu" secondAttribute="trailing" constant="20" id="jTE-J0-gDO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SJt-tD-DRu" secondAttribute="trailing" constant="50" id="jTE-J0-gDO"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaF-hU-hjU">
@@ -1857,28 +1788,14 @@
                                                                 <state key="normal" image="undo"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxx-wt-fPr">
-                                                                <rect key="frame" x="54" y="0.0" width="25" height="25"/>
+                                                                <rect key="frame" x="89.5" y="0.0" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="oxx-wt-fPr" secondAttribute="height" multiplier="1:1" id="Ihy-gZ-bOR"/>
                                                                 </constraints>
                                                                 <state key="normal" image="icons8-copy"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNo-2C-BQ6">
-                                                                <rect key="frame" x="107.5" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="BNo-2C-BQ6" secondAttribute="height" multiplier="1:1" id="G4M-2G-Jy2"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-upload"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgr-Fv-xRE">
-                                                                <rect key="frame" x="161.5" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="jgr-Fv-xRE" secondAttribute="height" multiplier="1:1" id="Yz9-b8-tE7"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-download"/>
-                                                            </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deR-8m-5RN">
-                                                                <rect key="frame" x="215" y="0.0" width="25" height="25"/>
+                                                                <rect key="frame" x="179.5" y="0.0" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="deR-8m-5RN" secondAttribute="height" multiplier="1:1" id="iAv-j0-tuh"/>
                                                                 </constraints>
@@ -2529,10 +2446,9 @@
         <image name="icons8-connected" width="96" height="96"/>
         <image name="icons8-copy" width="100" height="100"/>
         <image name="icons8-design" width="96" height="96"/>
-        <image name="icons8-download" width="96" height="96"/>
         <image name="icons8-flow_chart" width="100" height="100"/>
-        <image name="icons8-gas" width="100" height="100"/>
-        <image name="icons8-launch" width="104" height="104"/>
+        <image name="icons8-hot_reload-1" width="100" height="100"/>
+        <image name="icons8-launch-1" width="104" height="104"/>
         <image name="icons8-layers" width="100" height="100"/>
         <image name="icons8-list_view" width="100" height="100"/>
         <image name="icons8-mesh" width="100" height="100"/>
@@ -2540,15 +2456,12 @@
         <image name="icons8-paper-attach" width="100" height="100"/>
         <image name="icons8-pen" width="100" height="100"/>
         <image name="icons8-pictures_folder" width="100" height="100"/>
-        <image name="icons8-play" width="100" height="100"/>
         <image name="icons8-ruler" width="100" height="100"/>
-        <image name="icons8-save" width="96" height="96"/>
+        <image name="icons8-save-1" width="96" height="96"/>
         <image name="icons8-source_code" width="100" height="100"/>
-        <image name="icons8-stop" width="100" height="100"/>
         <image name="icons8-test_tube" width="96" height="96"/>
         <image name="icons8-text" width="100" height="100"/>
         <image name="icons8-trash" width="96" height="96"/>
-        <image name="icons8-upload" width="96" height="96"/>
         <image name="icons8-user_account" width="96" height="96"/>
         <image name="power" catalog="system" width="128" height="124"/>
         <image name="redo" width="100" height="100"/>

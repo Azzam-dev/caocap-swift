@@ -12,6 +12,13 @@ class ArtBuilderVC: UIViewController {
     
     var blocksArray = [#imageLiteral(resourceName: "icons8-text"),  #imageLiteral(resourceName: "icons8-button"),  #imageLiteral(resourceName: "icons8-square.png"),  #imageLiteral(resourceName: "icons8-circled_menu"),  #imageLiteral(resourceName: "icons8-content"),  #imageLiteral(resourceName: "icons8-descending_sorting.png"),  #imageLiteral(resourceName: "icons8-medium_icons"),  #imageLiteral(resourceName: "icons8-play_button"),  #imageLiteral(resourceName: "icons8-map.png"),  #imageLiteral(resourceName: "icons8-progress_indicator"),  #imageLiteral(resourceName: "icons8-favorite_window"),  #imageLiteral(resourceName: "icons8-promotion_window"),  #imageLiteral(resourceName: "icons8-adjust"),  #imageLiteral(resourceName: "icons8-toggle_on")]
     
+    var blocks = [
+        Block(name: "h1", image: #imageLiteral(resourceName: "icons8-text"), bio: "title text", htmlCode: ["<h1>", #"***"#, "</h1>"]),
+        Block(name: "li", image: #imageLiteral(resourceName: "icons8-square.png"), bio: "list item", htmlCode: ["<li>", #"***"#, "</li>"]),
+        Block(name: "ul", image: #imageLiteral(resourceName: "icons8-content"), bio: "unordered list", htmlCode: ["<ul>", #"***"#, "</ul>"]),
+        Block(name: "ol", image: #imageLiteral(resourceName: "icons8-descending_sorting.png"), bio: "ordered list", htmlCode: ["<ol>", #"***"#, "</ol>"]),
+        Block(name: "img", image: #imageLiteral(resourceName: "icons8-medium_icons"), bio: "image", htmlCode: ["<img src=", #" "***" "#, ">"]),
+    ]
     
     @IBOutlet weak var designScrollView: UIScrollView!
     @IBOutlet weak var designSVContant: UIView!
@@ -21,15 +28,13 @@ class ArtBuilderVC: UIViewController {
     
     
     @IBOutlet weak var blockHierarchyTableView: UITableView!
-    @IBOutlet weak var attributesInspectorTableView: UITableView!
     @IBOutlet weak var blockCollectionView: UICollectionView!
     @IBOutlet weak var dimensionsInspectorTableView: UITableView!
-    @IBOutlet weak var connectionsInspectorTableView: UITableView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
-    var toolsSelectedIndex: Int = 2
+    var toolsSelectedIndex: Int = 1
     var toolsPreviousIndex: Int?
     
     @IBOutlet weak var selectorView: DesignableView!
@@ -39,6 +44,7 @@ class ArtBuilderVC: UIViewController {
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
     
+    var openedCaocap = Caocap(key: "", dictionary: ["":""])
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -70,41 +76,20 @@ class ArtBuilderVC: UIViewController {
         switch senderTag {
         case 0:
             blockHierarchyTableView.isHidden = false
-            attributesInspectorTableView.isHidden = true
             blockCollectionView.isHidden = true
             dimensionsInspectorTableView.isHidden = true
-            connectionsInspectorTableView.isHidden = true
         case 1:
             blockHierarchyTableView.isHidden = true
-            attributesInspectorTableView.isHidden = false
-            blockCollectionView.isHidden = true
+            blockCollectionView.isHidden = false
             dimensionsInspectorTableView.isHidden = true
-            connectionsInspectorTableView.isHidden = true
         case 2:
             blockHierarchyTableView.isHidden = true
-            attributesInspectorTableView.isHidden = true
-            blockCollectionView.isHidden = false
-            dimensionsInspectorTableView.isHidden = true
-            connectionsInspectorTableView.isHidden = true
-        case 3:
-            blockHierarchyTableView.isHidden = true
-            attributesInspectorTableView.isHidden = true
             blockCollectionView.isHidden = true
             dimensionsInspectorTableView.isHidden = false
-            connectionsInspectorTableView.isHidden = true
-        case 4:
-            blockHierarchyTableView.isHidden = true
-            attributesInspectorTableView.isHidden = true
-            blockCollectionView.isHidden = true
-            dimensionsInspectorTableView.isHidden = true
-            connectionsInspectorTableView.isHidden = false
         default:
             blockHierarchyTableView.isHidden = true
-            attributesInspectorTableView.isHidden = true
             blockCollectionView.isHidden = false
-            dimensionsInspectorTableView.isHidden = true
-            connectionsInspectorTableView.isHidden = true
-        }
+            dimensionsInspectorTableView.isHidden = true        }
     }
     
     
@@ -174,16 +159,26 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return blocksArray.count
+        return blocks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = blockCollectionView.dequeueReusableCell(withReuseIdentifier: "blockCell", for: indexPath) as? blockCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.configureCell(icon: blocksArray[indexPath.row])
+        cell.configureCell(icon: blocks[indexPath.row].image)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let blockIndexPath = blocks[indexPath.row]
+        let htmlBlockCode = blockIndexPath.htmlCode[0] + "testing" + blockIndexPath.htmlCode[2]
+        let caocapHtmlCode = openedCaocap.code["html"]! + htmlBlockCode
+        
+        DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: ["html": caocapHtmlCode])
+        
+        
     }
     
 }

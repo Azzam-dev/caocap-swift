@@ -36,6 +36,8 @@ class BuilderVC: UIViewController {
         let artBuilderVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as? ArtBuilderVC
         let testLabVC = storyboard.instantiateViewController(withIdentifier: "testLab") as? TestLabVC
         
+       
+        artBuilderVC?.openedCaocap = openedCaocap
         testLabVC?.openedCaocap = openedCaocap
         viewControllers = [cosmosBaseVC!, logicMindMapVC!, artBuilderVC!, testLabVC!]
         let vc = viewControllers[navSelectedIndex]

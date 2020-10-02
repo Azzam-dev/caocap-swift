@@ -62,6 +62,7 @@
 		ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */; };
 		ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479A21C79156000E16DC /* ContactChatVC.swift */; };
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
+		ECB96C242527423A00901E35 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB96C232527423A00901E35 /* Block.swift */; };
 		ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */; };
 		ECE29FD82520852B00EFF8B4 /* ArtBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */; };
 		ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */; };
@@ -168,6 +169,7 @@
 		ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderVC.swift; sourceTree = "<group>"; };
 		ECAD479A21C79156000E16DC /* ContactChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactChatVC.swift; sourceTree = "<group>"; };
 		ECAD479C21CA97C4000E16DC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		ECB96C232527423A00901E35 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapIconCell.swift; sourceTree = "<group>"; };
 		ECDABBF2238348170029B026 /* caocap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = caocap.entitlements; sourceTree = "<group>"; };
 		ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBuilderVC.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				EC16EE7921A5AE1F009A46B8 /* Users.swift */,
 				ECF63E9121C0D9DF00E491FE /* Caocap.swift */,
+				ECB96C232527423A00901E35 /* Block.swift */,
 				EC5238DF2190B4CD00D966F3 /* Chat.swift */,
 				ECAD479C21CA97C4000E16DC /* Message.swift */,
 			);
@@ -731,6 +734,7 @@
 				ECF2054B216102C200C48F2A /* AuthService.swift in Sources */,
 				EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */,
 				ECE2A00125208E2100EFF8B4 /* BuilderUI.swift in Sources */,
+				ECB96C242527423A00901E35 /* Block.swift in Sources */,
 				EC5238DC2190834200D966F3 /* contactChatCell.swift in Sources */,
 				EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */,
 				ECF63E9221C0D9DF00E491FE /* Caocap.swift in Sources */,
@@ -951,7 +955,7 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;
@@ -977,7 +981,7 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;

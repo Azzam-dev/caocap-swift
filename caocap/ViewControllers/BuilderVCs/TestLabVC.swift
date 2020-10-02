@@ -47,7 +47,8 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(self.cssTextView.text!)</style></head><body>\(self.htmlTextView.text!)<script>\(self.jsTextView.text!)</script></body></html>
         """
-        self.startTestBTN(nil)
+        
+        loudCaocap()
         
     }
     
@@ -78,24 +79,34 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         cssTextView.isHidden = !css
     }
     
-    @IBAction func startTestBTN(_ sender: Any?) {
+    func loudCaocap() {
         self.webView.loadHTMLString(caocapCode, baseURL: nil)
     }
     
+    var startTest = true
+    
+    @IBOutlet weak var hotReloudBTN: UIButton!
     @IBAction func hotReloudBTN(_ sender: Any) {
-        
+        loudCaocap()
+        startTest.toggle()
+        if startTest {
+            hotReloudBTN.setImage(#imageLiteral(resourceName: "icons8-hot_reload-1"), for: .normal)
+        } else {
+            hotReloudBTN.setImage(#imageLiteral(resourceName: "icons8-hot_reload"), for: .normal)
+        }
     }
     
-    @IBAction func stopTestBTN(_ sender: Any) {
-    }
     
     @IBAction func saveBTN(_ sender: Any) {
         // save the code in /caocap-x/commit/[UID]/[virsionNum]
     }
     
+    @IBOutlet weak var launchCaocapBTN: UIButton!
     @IBAction func launchCaocapBTN(_ sender: Any) {
         // save the code in /caocap-x/caocap/[UID]/code
+        
         DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: ["html": htmlTextView.text , "js": jsTextView.text, "css": cssTextView.text])
+            launchCaocapBTN.setImage(#imageLiteral(resourceName: "icons8-launch-1"), for: .normal)
     }
     
     
@@ -155,10 +166,13 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     }
     
     func textViewDidChange(_ textView: UITextView) {
+        launchCaocapBTN.setImage(#imageLiteral(resourceName: "icons8-launch"), for: .normal)
         caocapCode = """
         <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(cssTextView.text!)</style></head><body>\(htmlTextView.text!)<script>\(jsTextView.text!)</script></body></html>
         """
+        if startTest { loudCaocap() }
+        
     }
     
 }
