@@ -174,6 +174,11 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         }
     }
     
+    let caocapCode = """
+    <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style></style></head><body><script></script></body></html>
+    """
+    
     func uploudCaocap() {
         guard let currentUserUID = Auth.auth().currentUser?.uid else { return }
         let imageNameUID = NSUUID().uuidString
@@ -187,9 +192,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
                         // Here you can get the download URL
                         let caocapData = ["imageURL": url?.absoluteString ?? "",
                                           "name" : self.caocapNameTF.text!,
-                                          "code": ["html":"<h1> write your code here </h1>",
-                                                   "js": "//write your JS code here",
-                                                   "css": "h1 { color: blue; }"],
+                                          "code": self.caocapCode,
                                           "owners": [currentUserUID],
                             ] as [String : Any]
                         

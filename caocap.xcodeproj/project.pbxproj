@@ -63,6 +63,8 @@
 		ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479A21C79156000E16DC /* ContactChatVC.swift */; };
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
 		ECB96C242527423A00901E35 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB96C232527423A00901E35 /* Block.swift */; };
+		ECB96C2A252A348E00901E35 /* Fuzi in Frameworks */ = {isa = PBXBuildFile; productRef = ECB96C29252A348E00901E35 /* Fuzi */; };
+		ECB96C30252AD53100901E35 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = ECB96C2F252AD53100901E35 /* SwiftSoup */; };
 		ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */; };
 		ECE29FD82520852B00EFF8B4 /* ArtBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */; };
 		ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */; };
@@ -198,6 +200,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB96C2A252A348E00901E35 /* Fuzi in Frameworks */,
+				ECB96C30252AD53100901E35 /* SwiftSoup in Frameworks */,
 				16290DFCDF33CCE321A3DCA9 /* Pods_caocap.framework in Frameworks */,
 				EC03B1D42450610C00274B1D /* SwiftUICharts in Frameworks */,
 			);
@@ -512,6 +516,8 @@
 			name = caocap;
 			packageProductDependencies = (
 				EC03B1D32450610C00274B1D /* SwiftUICharts */,
+				ECB96C29252A348E00901E35 /* Fuzi */,
+				ECB96C2F252AD53100901E35 /* SwiftSoup */,
 			);
 			productName = caocap;
 			productReference = EC8E19422159E02A000E4EE6 /* CAOCAPx.app */;
@@ -592,6 +598,8 @@
 			mainGroup = EC8E19392159E02A000E4EE6;
 			packageReferences = (
 				EC03B1D22450610C00274B1D /* XCRemoteSwiftPackageReference "ChartView" */,
+				ECB96C28252A348E00901E35 /* XCRemoteSwiftPackageReference "Fuzi" */,
+				ECB96C2E252AD53100901E35 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = EC8E19432159E02A000E4EE6 /* Products */;
 			projectDirPath = "";
@@ -1135,6 +1143,22 @@
 				minimumVersion = 1.5.0;
 			};
 		};
+		ECB96C28252A348E00901E35 /* XCRemoteSwiftPackageReference "Fuzi" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cezheng/Fuzi";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.2;
+			};
+		};
+		ECB96C2E252AD53100901E35 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1142,6 +1166,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC03B1D22450610C00274B1D /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
+		};
+		ECB96C29252A348E00901E35 /* Fuzi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECB96C28252A348E00901E35 /* XCRemoteSwiftPackageReference "Fuzi" */;
+			productName = Fuzi;
+		};
+		ECB96C2F252AD53100901E35 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECB96C2E252AD53100901E35 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -15,14 +15,13 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     @IBOutlet weak var theView: DesignableView!
     @IBOutlet weak var webView: WKWebView!
     
-    @IBOutlet weak var htmlTextView: UITextView!
-    @IBOutlet weak var jsTextView: UITextView!
-    @IBOutlet weak var cssTextView: UITextView!
+    @IBOutlet weak var versionsTableView: UITableView!
+    @IBOutlet weak var codeTextView: UITextView!
+    @IBOutlet weak var settingsTableView: UITableView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
-    var caocapCode = ""
     var openedCaocap = Caocap(key: "", dictionary: ["":""])
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,31 +39,23 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     
     func getCaocapData() {
-        htmlTextView.text = openedCaocap.code["html"]
-        jsTextView.text = openedCaocap.code["js"]
-        cssTextView.text = openedCaocap.code["css"]
-        caocapCode = """
-        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(self.cssTextView.text!)</style></head><body>\(self.htmlTextView.text!)<script>\(self.jsTextView.text!)</script></body></html>
-        """
-        
+        codeTextView.text = openedCaocap.code
         loudCaocap()
-        
     }
     
     @IBOutlet var topNavBTNs: [UIButton]!
     @IBAction func topNavBTNs(_ sender: UIButton) {
         switch sender.tag {
         case 0:
-            showTextView(html: true)
+            present(versionsView: true)
             topNavBTNs[1].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
             topNavBTNs[2].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         case 1:
-            showTextView(js: true)
+            present(codeView: true)
             topNavBTNs[0].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
             topNavBTNs[2].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         case 2:
-            showTextView(css: true)
+            present(settingsView: true)
             topNavBTNs[0].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
             topNavBTNs[1].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
         default:
@@ -73,14 +64,14 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         sender.setTitleColor(#colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), for: .normal)
     }
     
-    func showTextView(html: Bool = false, js: Bool = false, css: Bool = false) {
-        htmlTextView.isHidden = !html
-        jsTextView.isHidden = !js
-        cssTextView.isHidden = !css
+    func present(versionsView: Bool = false, codeView: Bool = false, settingsView: Bool = false) {
+        versionsTableView.isHidden = !versionsView
+        codeTextView.isHidden = !codeView
+        settingsTableView.isHidden = !settingsView
     }
     
     func loudCaocap() {
-        self.webView.loadHTMLString(caocapCode, baseURL: nil)
+        self.webView.loadHTMLString(codeTextView.text, baseURL: nil)
     }
     
     var startTest = true
@@ -105,7 +96,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     @IBAction func launchCaocapBTN(_ sender: Any) {
         // save the code in /caocap-x/caocap/[UID]/code
         
-        DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: ["html": htmlTextView.text , "js": jsTextView.text, "css": cssTextView.text])
+        DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: codeTextView.text)
             launchCaocapBTN.setImage(#imageLiteral(resourceName: "icons8-launch-1"), for: .normal)
     }
     
@@ -167,10 +158,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         launchCaocapBTN.setImage(#imageLiteral(resourceName: "icons8-launch"), for: .normal)
-        caocapCode = """
-        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(cssTextView.text!)</style></head><body>\(htmlTextView.text!)<script>\(jsTextView.text!)</script></body></html>
-        """
         if startTest { loudCaocap() }
         
     }

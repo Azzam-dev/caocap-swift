@@ -94,26 +94,26 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="0cn-rw-sMV">
-                                                        <rect key="frame" x="50" y="15" width="274" height="30"/>
+                                                        <rect key="frame" x="20" y="15" width="334" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cq1-S9-TYP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="41" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="82" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="Y7m-fv-RSk"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                                <state key="normal" title="HTML"/>
+                                                                <state key="normal" title="Versions"/>
                                                                 <connections>
                                                                     <action selector="topNavBTNs:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="JQN-7N-L8j"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycs-sc-6lp">
-                                                                <rect key="frame" x="124.5" y="0.0" width="30" height="30"/>
+                                                                <rect key="frame" x="146.5" y="0.0" width="41" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="tC5-eY-sFC"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                                <state key="normal" title="JS">
+                                                                <state key="normal" title="Code">
                                                                     <color key="titleColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
@@ -121,12 +121,12 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpU-hY-fLA">
-                                                                <rect key="frame" x="243" y="0.0" width="31" height="30"/>
+                                                                <rect key="frame" x="252" y="0.0" width="82" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="b4V-5g-48h"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                                <state key="normal" title="CSS"/>
+                                                                <state key="normal" title="Settings"/>
                                                                 <connections>
                                                                     <action selector="topNavBTNs:" destination="iEU-Q6-Fgf" eventType="touchUpInside" id="B5u-qG-JMe"/>
                                                                 </connections>
@@ -136,7 +136,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.30588235289999999" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstItem="0cn-rw-sMV" firstAttribute="leading" secondItem="tBJ-J1-dCf" secondAttribute="leading" constant="50" id="PJL-Pf-73e"/>
+                                                    <constraint firstItem="0cn-rw-sMV" firstAttribute="leading" secondItem="tBJ-J1-dCf" secondAttribute="leading" constant="20" id="PJL-Pf-73e"/>
                                                     <constraint firstItem="0cn-rw-sMV" firstAttribute="centerX" secondItem="tBJ-J1-dCf" secondAttribute="centerX" id="dxv-PT-IpN"/>
                                                     <constraint firstItem="0cn-rw-sMV" firstAttribute="centerY" secondItem="tBJ-J1-dCf" secondAttribute="centerY" id="gEf-WH-Cin"/>
                                                     <constraint firstAttribute="height" constant="60" id="lt9-2b-ppC"/>
@@ -155,28 +155,14 @@
                                                             <outlet property="delegate" destination="iEU-Q6-Fgf" id="O0r-vC-wHt"/>
                                                         </connections>
                                                     </textView>
-                                                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&lt;!-- write your HTML code here --&gt;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Wl-Xd-ZRN">
-                                                        <rect key="frame" x="10" y="5" width="354" height="110"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="iEU-Q6-Fgf" id="YRW-U2-eKP"/>
-                                                        </connections>
-                                                    </textView>
-                                                    <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="/* write your CSS code here */" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P5E-ax-Erd">
-                                                        <rect key="frame" x="10" y="5" width="354" height="110"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="iEU-Q6-Fgf" id="V9p-RI-8aV"/>
-                                                        </connections>
-                                                    </textView>
+                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z27-D0-AYH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </tableView>
+                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6ez-S8-NGx">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </tableView>
                                                 </subviews>
                                                 <viewLayoutGuide key="safeArea" id="6hY-VY-SRF"/>
                                                 <color key="backgroundColor" red="0.26451683040000001" green="0.28867769240000002" blue="0.61573868990000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -185,7 +171,15 @@
                                                     <constraint firstItem="rRl-oS-igi" firstAttribute="centerY" secondItem="5sZ-3h-4pT" secondAttribute="centerY" id="2Vo-9P-UOx"/>
                                                     <constraint firstItem="rRl-oS-igi" firstAttribute="centerX" secondItem="5sZ-3h-4pT" secondAttribute="centerX" id="4Zp-2T-yhh"/>
                                                     <constraint firstItem="rRl-oS-igi" firstAttribute="top" secondItem="6hY-VY-SRF" secondAttribute="top" constant="5" id="KR4-sw-ZOy"/>
+                                                    <constraint firstItem="Z27-D0-AYH" firstAttribute="centerY" secondItem="5sZ-3h-4pT" secondAttribute="centerY" id="Lgl-UE-fhb"/>
                                                     <constraint firstAttribute="height" constant="120" id="UOM-15-Esq"/>
+                                                    <constraint firstItem="Z27-D0-AYH" firstAttribute="trailing" secondItem="6hY-VY-SRF" secondAttribute="trailing" id="Wxg-iy-Kda"/>
+                                                    <constraint firstItem="6ez-S8-NGx" firstAttribute="centerY" secondItem="5sZ-3h-4pT" secondAttribute="centerY" id="ZKk-Tw-YfU"/>
+                                                    <constraint firstItem="Z27-D0-AYH" firstAttribute="centerX" secondItem="5sZ-3h-4pT" secondAttribute="centerX" id="bOa-Cp-QwN"/>
+                                                    <constraint firstItem="Z27-D0-AYH" firstAttribute="top" secondItem="6hY-VY-SRF" secondAttribute="top" id="jQW-CC-E99"/>
+                                                    <constraint firstItem="6hY-VY-SRF" firstAttribute="trailing" secondItem="6ez-S8-NGx" secondAttribute="trailing" id="pOB-rn-TYq"/>
+                                                    <constraint firstItem="6ez-S8-NGx" firstAttribute="centerX" secondItem="5sZ-3h-4pT" secondAttribute="centerX" id="pxv-jb-1qQ"/>
+                                                    <constraint firstItem="6ez-S8-NGx" firstAttribute="top" secondItem="5sZ-3h-4pT" secondAttribute="top" id="v2S-cm-3Rq"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crd-W1-dW8">
@@ -288,14 +282,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="keo-SB-2Eh"/>
                     <connections>
-                        <outlet property="cssTextView" destination="P5E-ax-Erd" id="1sP-oJ-HoH"/>
+                        <outlet property="codeTextView" destination="rRl-oS-igi" id="iBV-Me-2ma"/>
                         <outlet property="gestureRecognizerView" destination="coo-Xb-Lhg" id="tR5-2j-2JD"/>
                         <outlet property="hotReloudBTN" destination="wqo-1h-S27" id="Tig-pt-xLu"/>
-                        <outlet property="htmlTextView" destination="3Wl-Xd-ZRN" id="Ycr-1E-8To"/>
-                        <outlet property="jsTextView" destination="rRl-oS-igi" id="iBV-Me-2ma"/>
                         <outlet property="launchCaocapBTN" destination="VrD-VK-uFz" id="vvr-hL-CJp"/>
+                        <outlet property="settingsTableView" destination="6ez-S8-NGx" id="Dre-TV-K2M"/>
                         <outlet property="theView" destination="Eay-SC-9EV" id="MeZ-50-beJ"/>
                         <outlet property="toolsViewHeightConstraint" destination="ev0-zY-Bky" id="fv5-Nk-sWe"/>
+                        <outlet property="versionsTableView" destination="Z27-D0-AYH" id="pB0-5c-uBt"/>
                         <outlet property="webView" destination="spA-Ki-ysH" id="nhq-w4-i9n"/>
                         <outletCollection property="topNavBTNs" destination="cq1-S9-TYP" collectionClass="NSMutableArray" id="D4m-RT-2t6"/>
                         <outletCollection property="topNavBTNs" destination="ycs-sc-6lp" collectionClass="NSMutableArray" id="NLI-wh-LZj"/>

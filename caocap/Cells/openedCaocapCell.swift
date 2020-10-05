@@ -53,12 +53,8 @@ class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     var caocapIsOrbited = false
     func configureCell(caocap: Caocap ,released: Bool) {
         caocapKey = caocap.key
-        let caocapCode = """
-        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(caocap.code["css"] ?? "")</style></head><body>\(caocap.code["html"] ?? "" )<script>\(caocap.code["js"] ?? "")</script></body></html>
-        """
         
-        self.webView.loadHTMLString(caocapCode , baseURL: nil)
+        self.webView.loadHTMLString(caocap.code , baseURL: nil)
         
         //this stops the image and the Url from duplicating
         self.caocapIMG.image = nil

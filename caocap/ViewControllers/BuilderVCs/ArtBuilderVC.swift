@@ -172,11 +172,10 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let blockIndexPath = blocks[indexPath.row]
-        let htmlBlockCode = blockIndexPath.htmlCode[0] + "testing" + blockIndexPath.htmlCode[2]
-        let caocapHtmlCode = openedCaocap.code["html"]! + htmlBlockCode
-        
-        DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: ["html": caocapHtmlCode])
+        //let blockIndexPath = blocks[indexPath.row]
+        //let htmlBlockCode = blockIndexPath.htmlCode[0] + "testing" + blockIndexPath.htmlCode[2]
+        //let caocapHtmlCode = openedCaocap.code["html"]! + htmlBlockCode
+        //DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: ["html": caocapHtmlCode])
         
         
     }
