@@ -11,7 +11,7 @@ import WebKit
 import Firebase
 
 /* Declare a Delegate Protocol method */
-protocol openedCaocapCellDelegate: class {
+protocol OpenedCaocapCellDelegate: class {
     func shareBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton)
     func moreBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton)
     func roomBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton)
@@ -20,8 +20,7 @@ protocol openedCaocapCellDelegate: class {
 class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     
     //Define delegate variable
-    
-    weak var cellDelegate: openedCaocapCellDelegate?
+    weak var cellDelegate: OpenedCaocapCellDelegate?
     
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var theView: DesignableView!

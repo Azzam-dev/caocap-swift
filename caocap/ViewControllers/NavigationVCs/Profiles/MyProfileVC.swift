@@ -36,7 +36,6 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
     @IBOutlet weak var nameLBL: UILabel!
     @IBOutlet weak var bioLBL: UILabel!
   
-    var cellCaocapKey = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,7 +49,6 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadMyProfile), name: Notification.Name("reloadMyProfile"), object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(moreBTNpressed), name: Notification.Name("moreBTNpressed"), object: nil)
     }
     
     
@@ -233,24 +231,6 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         self.present(builderVC, animated: true)
     }
     
-    @objc func moreBTNpressed() {
-        print("ياربي لك الحمدلله")
-        let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let visitOwnerACT = UIAlertAction(title: "delete",style: .destructive ) { (buttonTapped) in
-            DataService.instance.removeCaocap(self.cellCaocapKey)
-        }
-        let cancel = UIAlertAction(title: "cancel", style: .default, handler: nil)
-        moreInfoPopup.addAction(visitOwnerACT)
-        moreInfoPopup.addAction(cancel)
-        
-        if let popoverController = moreInfoPopup.popoverPresentationController {
-            popoverController.sourceView = self.view
-            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-        }
-        
-        self.present(moreInfoPopup, animated: true , completion: nil)
-    }
-    
     func displayAlertMessage(messageToDisplay: String) {
         let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "حسناً", style: .default)
@@ -294,7 +274,7 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? caocapCell else { return UICollectionViewCell() }
         
         cell.configureCell(caocap: caocapsArray[indexPath.row], released: isReleased)
-        
+        cell.caocapCellDelegate = self
         return cell
     }
     
@@ -307,5 +287,26 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         openBuilder(with: caocapsArray[indexPath.row])
+    }
+}
+
+
+
+extension MyProfileVC: CaocapCellDelegate {
+    func moreBTNpressed(caocapKey: String) {
+        let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "delete",style: .destructive ) { (buttonTapped) in
+            DataService.instance.removeCaocap(caocapKey)
+        }
+        let cancel = UIAlertAction(title: "cancel", style: .default, handler: nil)
+        moreInfoPopup.addAction(deleteAction)
+        moreInfoPopup.addAction(cancel)
+        
+        if let popoverController = moreInfoPopup.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        
+        self.present(moreInfoPopup, animated: true , completion: nil)
     }
 }

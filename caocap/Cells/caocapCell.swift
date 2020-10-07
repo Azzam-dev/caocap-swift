@@ -9,8 +9,16 @@
 import UIKit
 import WebKit
 
+
+/* Declare a Delegate Protocol method */
+protocol CaocapCellDelegate {
+    func moreBTNpressed(caocapKey: String)
+}
+
 class caocapCell: UICollectionViewCell, WKNavigationDelegate {
 
+    var caocapCellDelegate: CaocapCellDelegate?
+    
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var theView: DesignableView!
     @IBOutlet weak var caocapName: UILabel!
@@ -74,7 +82,7 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
     }
     
     @IBAction func moreBTN(_ sender: Any) {
-        NotificationCenter.default.post(name: Notification.Name("moreBTNpressed"), object: nil)
+        caocapCellDelegate?.moreBTNpressed(caocapKey: caocapKey)
     }
     
 }

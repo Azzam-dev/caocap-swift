@@ -62,7 +62,7 @@ class caocapVC: UIViewController, UITextFieldDelegate {
     
 }
 
-extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout , openedCaocapCellDelegate {
+extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout , OpenedCaocapCellDelegate {
     
     //this is the share function, when the shareBTN in the opendCaocapVC is pressed it will show the share Viewc Controller
     func shareBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton) {
@@ -130,7 +130,7 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "openedCaocapCell", for: indexPath) as? openedCaocapCell else { return UICollectionViewCell() }
             
             cell.configureCell(caocap: openedCaocap!, released: isReleased)
-            cell.cellDelegate = self as openedCaocapCellDelegate
+            cell.cellDelegate = self as OpenedCaocapCellDelegate
             
             return cell
         } else {
