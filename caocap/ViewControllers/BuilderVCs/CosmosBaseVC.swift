@@ -8,9 +8,10 @@
 
 import UIKit
 import SwiftUI
+import Firebase
 
 class CosmosBaseVC: UIViewController {
-
+    
     let chartView = UIHostingController(rootView: ChartUI())
     
     @IBOutlet weak var contentView: UIView!
@@ -18,8 +19,11 @@ class CosmosBaseVC: UIViewController {
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
+    var openedCaocap = Caocap(key: "", dictionary: ["":""])
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getCaocapData()
         
         addChild(chartView)
         chartView.view.frame = view.frame
@@ -28,6 +32,13 @@ class CosmosBaseVC: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         
         gestureRecognizerSetup()
+    }
+    
+    func getCaocapData() {
+        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
+            let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
+            //...
+        }
     }
     
     func gestureRecognizerSetup() {
@@ -45,30 +56,30 @@ class CosmosBaseVC: UIViewController {
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
         if sender.state == .ended {
-                switch sender.direction {
-                case .up:
-                    if self.toolsViewHeightConstraint.constant == 75 {
-                        toolsViewAnimation(120)
-                    } else {
-                        toolsViewAnimation(300)
-                    }
-                case .down:
-                    if self.toolsViewHeightConstraint.constant == 120 {
-                        toolsViewAnimation(75)
-                    } else {
-                        toolsViewAnimation(120)
-                    }
-                default:
-                    break
+            switch sender.direction {
+            case .up:
+                if self.toolsViewHeightConstraint.constant == 75 {
+                    toolsViewAnimation(120)
+                } else {
+                    toolsViewAnimation(300)
                 }
+            case .down:
+                if self.toolsViewHeightConstraint.constant == 120 {
+                    toolsViewAnimation(75)
+                } else {
+                    toolsViewAnimation(120)
+                }
+            default:
+                break
             }
         }
+    }
     
     func toolsViewAnimation(_ hight: Int) {
-           UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-               self.toolsViewHeightConstraint.constant = CGFloat(hight)
-               self.view.layoutIfNeeded()
-           })
-       }
-
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+            self.toolsViewHeightConstraint.constant = CGFloat(hight)
+            self.view.layoutIfNeeded()
+        })
+    }
+    
 }

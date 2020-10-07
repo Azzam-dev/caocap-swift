@@ -40,7 +40,7 @@ class caocapVC: UIViewController, UITextFieldDelegate {
     
     //This pulls all the caocaps from firebase and insert them to the caocap array
     func getCaocapsData() {
-        DataService.instance.getAllCaocaps(handler: { (returnedExploreArray) in
+        DataService.instance.getAllPublishedCaocaps(handler: { (returnedExploreArray) in
             self.caocapsArray = returnedExploreArray.shuffled()
             self.caocapsCollectionView.reloadData()
         })

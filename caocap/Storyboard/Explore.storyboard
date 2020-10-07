@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="saw-FO-J6K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="saw-FO-J6K">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +41,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B-full_screen_filled" translatesAutoresizingMaskIntoConstraints="NO" id="K3D-Ce-BwZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7o-9C-4aS">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j7o-9C-4aS">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             </button>
                                         </subviews>
@@ -62,7 +63,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B-sorting_options" translatesAutoresizingMaskIntoConstraints="NO" id="Oqg-Gj-vet">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1y-Nd-OoW">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1y-Nd-OoW">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             </button>
                                         </subviews>
@@ -117,6 +118,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <viewLayoutGuide key="safeArea" id="yN1-fA-YS1"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="hTi-Vx-aEV" firstAttribute="centerX" secondItem="mor-4g-h5j" secondAttribute="centerX" id="2yh-IR-82I"/>
@@ -124,7 +126,6 @@
                                     <constraint firstAttribute="height" constant="90" id="eMj-Ha-gjs"/>
                                     <constraint firstItem="hTi-Vx-aEV" firstAttribute="top" secondItem="yN1-fA-YS1" secondAttribute="top" id="xnL-jY-l0h"/>
                                 </constraints>
-                                <viewLayoutGuide key="safeArea" id="yN1-fA-YS1"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
                                         <color key="value" red="0.19215686274509802" green="0.22352941176470587" blue="0.2627450980392157" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
@@ -135,6 +136,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="3yi-4a-nwr"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Rn4-Er-6cs" firstAttribute="top" secondItem="J4T-ed-cKm" secondAttribute="top" id="2Ia-D8-YKE"/>
@@ -147,7 +149,6 @@
                             <constraint firstItem="q2U-hm-gZU" firstAttribute="centerX" secondItem="3yi-4a-nwr" secondAttribute="centerX" id="qTf-hd-Vr4"/>
                             <constraint firstItem="mor-4g-h5j" firstAttribute="centerX" secondItem="J4T-ed-cKm" secondAttribute="centerX" id="vUc-zo-6Jc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3yi-4a-nwr"/>
                     </view>
                     <navigationItem key="navigationItem" id="PEk-Ir-gUf"/>
                     <connections>
@@ -259,7 +260,7 @@
                                                                         <constraint firstAttribute="width" secondItem="WCk-G4-bhu" secondAttribute="height" multiplier="1:1" id="imv-dr-X1s"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufn-zE-J4Z">
+                                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufn-zE-J4Z">
                                                                     <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                     <connections>
                                                                         <action selector="shareBTN:" destination="5RM-wD-ssu" eventType="touchUpInside" id="YKf-c2-jx5"/>
@@ -286,7 +287,7 @@
                                                                         <constraint firstAttribute="width" secondItem="U5S-zZ-wfz" secondAttribute="height" multiplier="1:1" id="jCH-tn-1Yv"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EW-HB-vu9">
+                                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EW-HB-vu9">
                                                                     <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                     <connections>
                                                                         <action selector="roomBTN:" destination="5RM-wD-ssu" eventType="touchUpInside" id="0ws-V9-EBU"/>
@@ -313,7 +314,7 @@
                                                                         <constraint firstAttribute="width" secondItem="Hxe-vd-ZpI" secondAttribute="height" multiplier="1:1" id="lIK-Ix-H2B"/>
                                                                     </constraints>
                                                                 </imageView>
-                                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZS-6R-cMV">
+                                                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ZS-6R-cMV">
                                                                     <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                     <connections>
                                                                         <action selector="moreBTN:" destination="5RM-wD-ssu" eventType="touchUpInside" id="4PB-og-9Og"/>
@@ -507,7 +508,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B-full_screen_filled" translatesAutoresizingMaskIntoConstraints="NO" id="HGX-VJ-Otz">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-0k-rz6">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VBx-0k-rz6">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             </button>
                                         </subviews>
@@ -529,7 +530,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B-sorting_options" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-D3-SCh">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCS-mG-vdd">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zCS-mG-vdd">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                             </button>
                                         </subviews>
@@ -572,6 +573,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="9IX-ix-kAK"/>
                         <color key="backgroundColor" red="0.18431372549019609" green="0.22352941176470587" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ewp-1G-ikH" firstAttribute="leading" secondItem="9IX-ix-kAK" secondAttribute="leading" id="D64-1n-co5"/>
@@ -582,7 +584,6 @@
                             <constraint firstItem="1b4-VF-9ff" firstAttribute="centerX" secondItem="9IX-ix-kAK" secondAttribute="centerX" id="dUH-4P-F74"/>
                             <constraint firstItem="1b4-VF-9ff" firstAttribute="top" secondItem="9IX-ix-kAK" secondAttribute="top" constant="55" id="jSM-ff-6jy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="9IX-ix-kAK"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="1b4-VF-9ff"/>
@@ -600,6 +601,11 @@
             <point key="canvasLocation" x="-1612" y="1531"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="qYe-uA-82c">
+            <size key="intrinsicContentSize" width="512" height="512"/>
+        </designable>
+    </designables>
     <resources>
         <image name="B-full_screen_filled" width="100" height="106"/>
         <image name="B-sorting_options" width="92" height="72"/>

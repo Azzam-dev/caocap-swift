@@ -7,17 +7,16 @@
 //
 
 import UIKit
+import WebKit
+import SwiftSoup
+import Firebase
 
 class ArtBuilderVC: UIViewController {
     
     var blocksArray = [#imageLiteral(resourceName: "icons8-text"),  #imageLiteral(resourceName: "icons8-button"),  #imageLiteral(resourceName: "icons8-square.png"),  #imageLiteral(resourceName: "icons8-circled_menu"),  #imageLiteral(resourceName: "icons8-content"),  #imageLiteral(resourceName: "icons8-descending_sorting.png"),  #imageLiteral(resourceName: "icons8-medium_icons"),  #imageLiteral(resourceName: "icons8-play_button"),  #imageLiteral(resourceName: "icons8-map.png"),  #imageLiteral(resourceName: "icons8-progress_indicator"),  #imageLiteral(resourceName: "icons8-favorite_window"),  #imageLiteral(resourceName: "icons8-promotion_window"),  #imageLiteral(resourceName: "icons8-adjust"),  #imageLiteral(resourceName: "icons8-toggle_on")]
     
     var blocks = [
-        Block(name: "h1", image: #imageLiteral(resourceName: "icons8-text"), bio: "title text", htmlCode: ["<h1>", #"***"#, "</h1>"]),
-        Block(name: "li", image: #imageLiteral(resourceName: "icons8-square.png"), bio: "list item", htmlCode: ["<li>", #"***"#, "</li>"]),
-        Block(name: "ul", image: #imageLiteral(resourceName: "icons8-content"), bio: "unordered list", htmlCode: ["<ul>", #"***"#, "</ul>"]),
-        Block(name: "ol", image: #imageLiteral(resourceName: "icons8-descending_sorting.png"), bio: "ordered list", htmlCode: ["<ol>", #"***"#, "</ol>"]),
-        Block(name: "img", image: #imageLiteral(resourceName: "icons8-medium_icons"), bio: "image", htmlCode: ["<img src=", #" "***" "#, ">"]),
+        Block(name: "h1", image: #imageLiteral(resourceName: "icons8-text"), bio: "title text", htmlCode: ["<h1>", #"***"#, "</h1>"])
     ]
     
     @IBOutlet weak var designScrollView: UIScrollView!
@@ -48,8 +47,16 @@ class ArtBuilderVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getCaocapData() 
         setupViews()
         gestureRecognizerSetup()
+    }
+    
+    func getCaocapData() {
+        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
+            let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
+            //...
+        }
     }
     
     @IBAction func topToolBarBTNs(_ sender: UIButton) {

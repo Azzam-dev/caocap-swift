@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SwiftSoup
 import Firebase
 
 class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
@@ -17,7 +18,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     @IBOutlet weak var versionsTableView: UITableView!
     @IBOutlet weak var codeTextView: UITextView!
-    @IBOutlet weak var settingsTableView: UITableView!
+    @IBOutlet weak var settingsScrollView: UIScrollView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
@@ -33,14 +34,18 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         self.webView.navigationDelegate = self
         
         addPulse()
-        
         gestureRecognizerSetup()
     }
     
     
     func getCaocapData() {
-        codeTextView.text = openedCaocap.code
-        loudCaocap()
+        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
+            let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
+            self.caocapNameTF.text = caocap["name"] as? String ?? ""
+            self.publishingSwitch.isOn = caocap["published"] as? Bool ?? false
+            self.codeTextView.text = caocap["code"] as? String ?? ""
+            self.loudCaocap()
+        }
     }
     
     @IBOutlet var topNavBTNs: [UIButton]!
@@ -67,7 +72,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     func present(versionsView: Bool = false, codeView: Bool = false, settingsView: Bool = false) {
         versionsTableView.isHidden = !versionsView
         codeTextView.isHidden = !codeView
-        settingsTableView.isHidden = !settingsView
+        settingsScrollView.isHidden = !settingsView
     }
     
     func loudCaocap() {
@@ -162,5 +167,24 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         
     }
     
+    //-----Settings-----
+    
+    @IBOutlet weak var caocapNameTF: UITextField!
+    @IBOutlet weak var publishingSwitch: UISwitch!
+    
+    @IBAction func caocapNameTFDidEndEditing(_ sender: Any) {
+        if caocapNameTF.text != "" {
+            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["name": caocapNameTF.text!])
+        }
+    }
+    
+    
+    @IBAction func publishingSwitchValueDidChange(_ sender: Any) {
+        if publishingSwitch.isOn {
+            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": true])
+        } else {
+            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": false])
+        }
+    }
+    
 }
-

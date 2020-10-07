@@ -234,8 +234,27 @@ class DataService {
                 var caocapsArray = [Caocap]()
                 for caocap in caocapsSnapshot {
                     let dictionary = caocap.value
-                    let caocap = Caocap(key: caocap.key, dictionary: dictionary as! [String : Any] )
-                    caocapsArray.append(caocap)
+                    let theCaocap = Caocap(key: caocap.key, dictionary: dictionary as! [String : Any] )
+                    caocapsArray.append(theCaocap)
+                }
+                DispatchQueue.main.async {
+                    handler(caocapsArray)
+                }
+            }
+        }
+    }
+    
+    func getAllPublishedCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.REF_CAOCAPS.observeSingleEvent(of: .value) { (caocapsSnapshot) in
+                guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
+                var caocapsArray = [Caocap]()
+                for caocap in caocapsSnapshot {
+                    let dictionary = caocap.value
+                    let theCaocap = Caocap(key: caocap.key, dictionary: dictionary as! [String : Any] )
+                    if theCaocap.isPublished {
+                        caocapsArray.append(theCaocap)
+                    }
                 }
                 DispatchQueue.main.async {
                     handler(caocapsArray)

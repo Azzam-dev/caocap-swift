@@ -36,7 +36,8 @@ class BuilderVC: UIViewController {
         let artBuilderVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as? ArtBuilderVC
         let testLabVC = storyboard.instantiateViewController(withIdentifier: "testLab") as? TestLabVC
         
-       
+        cosmosBaseVC?.openedCaocap = openedCaocap
+        logicMindMapVC?.openedCaocap = openedCaocap
         artBuilderVC?.openedCaocap = openedCaocap
         testLabVC?.openedCaocap = openedCaocap
         viewControllers = [cosmosBaseVC!, logicMindMapVC!, artBuilderVC!, testLabVC!]

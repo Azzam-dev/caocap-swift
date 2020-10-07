@@ -193,6 +193,7 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
                         let caocapData = ["imageURL": url?.absoluteString ?? "",
                                           "name" : self.caocapNameTF.text!,
                                           "code": self.caocapCode,
+                                          "published": false,
                                           "owners": [currentUserUID],
                             ] as [String : Any]
                         

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import WebKit
+import SwiftSoup
+import Firebase
 
 class LogicMindMapVC: UIViewController {
     
@@ -35,14 +38,23 @@ class LogicMindMapVC: UIViewController {
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
     
+    var openedCaocap = Caocap(key: "", dictionary: ["":""])
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getCaocapData()
         
         setupViews()
         gestureRecognizerSetup()
         
     }
     
+    func getCaocapData() {
+        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
+            let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
+            //...
+        }
+    }
     
     @IBAction func topToolBarBTNs(_ sender: UIButton) {
         
@@ -54,14 +66,14 @@ class LogicMindMapVC: UIViewController {
     
     func topToolBarAnimation() {
         UIView.animate(withDuration: 0.1,animations: {
-                  self.selectorView.shadowOpacity = 0
-                  
-              }, completion: { (finished) in
-                  self.selectorView.frame.origin.x = self.topToolBarBTNs[self.toolsSelectedIndex].frame.origin.x + 12
-                  UIView.animate(withDuration: 0.1) {
-                      self.selectorView.shadowOpacity = 0.2
-                  }
-              })
+            self.selectorView.shadowOpacity = 0
+            
+        }, completion: { (finished) in
+            self.selectorView.frame.origin.x = self.topToolBarBTNs[self.toolsSelectedIndex].frame.origin.x + 12
+            UIView.animate(withDuration: 0.1) {
+                self.selectorView.shadowOpacity = 0.2
+            }
+        })
     }
     
     func optionsViewAnimation(_ senderTag: Int) {
