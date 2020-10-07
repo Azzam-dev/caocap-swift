@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-mesh.png",
+      "filename" : "JS.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "JS@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "JS@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

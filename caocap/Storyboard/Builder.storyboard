@@ -567,28 +567,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGL-0o-oJM">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Loa-5B-ayC" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                                        <rect key="frame" x="167" y="10" width="40" height="40"/>
-                                                        <color key="backgroundColor" red="0.30588235289999999" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="40" id="FT3-0Z-qe4"/>
-                                                            <constraint firstAttribute="width" secondItem="Loa-5B-ayC" secondAttribute="height" multiplier="1:1" id="G3j-6W-Fmn"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                <real key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                <real key="value" value="0.20000000000000001"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                                <size key="value" width="-2" height="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="OL5-tf-JPQ">
                                                         <rect key="frame" x="50" y="17.5" width="274" height="25"/>
                                                         <subviews>
@@ -604,7 +582,7 @@
                                                             </button>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YB5-Ed-RSu">
                                                                 <rect key="frame" x="124.5" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-pen"/>
+                                                                <state key="normal" image="icons8-pen-1"/>
                                                                 <connections>
                                                                     <action selector="topToolBarBTNs:" destination="8ie-uo-scn" eventType="touchUpInside" id="a5V-xA-G2s"/>
                                                                 </connections>
@@ -626,9 +604,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.30588235289999999" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstItem="Loa-5B-ayC" firstAttribute="centerX" secondItem="YB5-Ed-RSu" secondAttribute="centerX" id="4JP-Xk-GC3"/>
                                                     <constraint firstItem="OL5-tf-JPQ" firstAttribute="centerY" secondItem="hGL-0o-oJM" secondAttribute="centerY" id="7H6-pC-1cA"/>
-                                                    <constraint firstItem="Loa-5B-ayC" firstAttribute="centerY" secondItem="hGL-0o-oJM" secondAttribute="centerY" id="Gb2-0z-Obe"/>
                                                     <constraint firstItem="OL5-tf-JPQ" firstAttribute="centerX" secondItem="hGL-0o-oJM" secondAttribute="centerX" id="H7K-iY-jcp"/>
                                                     <constraint firstAttribute="trailing" secondItem="OL5-tf-JPQ" secondAttribute="trailing" constant="50" id="P0k-Th-UE0"/>
                                                     <constraint firstAttribute="height" constant="60" id="UGd-ym-NgA"/>
@@ -637,9 +613,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="727-JF-7Vw">
                                                 <rect key="frame" x="0.0" y="60" width="374" height="120"/>
                                                 <subviews>
-                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fRn-Pe-45W">
+                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fRn-Pe-45W">
                                                         <rect key="frame" x="5" y="0.0" width="364" height="120"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bEs-Gb-Soe">
@@ -710,7 +686,7 @@
                                                     </collectionView>
                                                     <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b72-jo-tCh">
                                                         <rect key="frame" x="5" y="0.0" width="364" height="120"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableView>
                                                 </subviews>
@@ -839,7 +815,6 @@
                         <outlet property="designScrollView" destination="FsA-f2-set" id="2cg-wA-tWP"/>
                         <outlet property="dimensionsInspectorTableView" destination="b72-jo-tCh" id="jEy-fI-j9v"/>
                         <outlet property="gestureRecognizerView" destination="D7q-d5-g2G" id="Pqk-8Y-ssL"/>
-                        <outlet property="selectorView" destination="Loa-5B-ayC" id="9PT-2b-4ZZ"/>
                         <outlet property="surfaceBlock" destination="OfH-Ez-qmg" id="gTO-oK-w75"/>
                         <outlet property="surfaceBlock2" destination="G1f-CN-mnA" id="vwy-qd-jw2"/>
                         <outlet property="surfaceBlock3" destination="BiO-Cs-UKf" id="cry-NH-bu5"/>
@@ -1024,28 +999,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u5u-xE-iQh">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQ9-vK-ZGC" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                                        <rect key="frame" x="167" y="10" width="40" height="40"/>
-                                                        <color key="backgroundColor" red="0.30588235289999999" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="eQ9-vK-ZGC" secondAttribute="height" multiplier="1:1" id="uzV-Ua-Ww6"/>
-                                                            <constraint firstAttribute="width" constant="40" id="zdg-yW-G4s"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="8"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                <real key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                <real key="value" value="0.20000000000000001"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                                <size key="value" width="-2" height="2"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="SJt-tD-DRu">
                                                         <rect key="frame" x="50" y="18.5" width="274" height="23"/>
                                                         <subviews>
@@ -1057,28 +1010,14 @@
                                                                     <action selector="topToolBarBTNs:" destination="Bhe-V6-Jw1" eventType="touchUpInside" id="WXd-jH-haA"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhF-46-SiZ">
-                                                                <rect key="frame" x="63" y="0.0" width="23" height="23"/>
-                                                                <state key="normal" image="HTML"/>
-                                                                <connections>
-                                                                    <action selector="topToolBarBTNs:" destination="Bhe-V6-Jw1" eventType="touchUpInside" id="FS8-ex-fCC"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ss-YX-R9s">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ss-YX-R9s">
                                                                 <rect key="frame" x="125.5" y="0.0" width="23" height="23"/>
-                                                                <state key="normal" image="JS"/>
+                                                                <state key="normal" image="JS-1"/>
                                                                 <connections>
                                                                     <action selector="topToolBarBTNs:" destination="Bhe-V6-Jw1" eventType="touchUpInside" id="TZR-oL-YtP"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpo-7d-TPq">
-                                                                <rect key="frame" x="188.5" y="0.0" width="23" height="23"/>
-                                                                <state key="normal" image="CSS"/>
-                                                                <connections>
-                                                                    <action selector="topToolBarBTNs:" destination="Bhe-V6-Jw1" eventType="touchUpInside" id="p5F-4F-rSO"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMd-Qr-sWO">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMd-Qr-sWO">
                                                                 <rect key="frame" x="251" y="0.0" width="23" height="23"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="cMd-Qr-sWO" secondAttribute="height" multiplier="1:1" id="htp-Kl-4pY"/>
@@ -1093,8 +1032,6 @@
                                                             <constraint firstItem="P4j-P1-Vxr" firstAttribute="width" secondItem="P4j-P1-Vxr" secondAttribute="height" multiplier="1:1" id="27u-3W-hPL"/>
                                                             <constraint firstItem="7Ss-YX-R9s" firstAttribute="width" secondItem="7Ss-YX-R9s" secondAttribute="height" multiplier="1:1" id="8Af-cE-Rdv"/>
                                                             <constraint firstAttribute="height" constant="23" id="Per-pI-1uG"/>
-                                                            <constraint firstItem="bhF-46-SiZ" firstAttribute="width" secondItem="bhF-46-SiZ" secondAttribute="height" multiplier="1:1" id="T2P-Ir-ghc"/>
-                                                            <constraint firstItem="kpo-7d-TPq" firstAttribute="width" secondItem="kpo-7d-TPq" secondAttribute="height" multiplier="1:1" id="gGJ-6g-Tyo"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
@@ -1102,9 +1039,7 @@
                                                 <constraints>
                                                     <constraint firstItem="SJt-tD-DRu" firstAttribute="centerY" secondItem="u5u-xE-iQh" secondAttribute="centerY" id="0rQ-N8-hw6"/>
                                                     <constraint firstAttribute="height" constant="60" id="8za-o1-mGI"/>
-                                                    <constraint firstItem="eQ9-vK-ZGC" firstAttribute="centerX" secondItem="7Ss-YX-R9s" secondAttribute="centerX" id="K45-th-dAS"/>
                                                     <constraint firstItem="SJt-tD-DRu" firstAttribute="centerX" secondItem="u5u-xE-iQh" secondAttribute="centerX" id="icj-Dl-R5Y"/>
-                                                    <constraint firstItem="eQ9-vK-ZGC" firstAttribute="centerY" secondItem="u5u-xE-iQh" secondAttribute="centerY" id="jHz-Zx-XrL"/>
                                                     <constraint firstAttribute="trailing" secondItem="SJt-tD-DRu" secondAttribute="trailing" constant="50" id="jTE-J0-gDO"/>
                                                 </constraints>
                                             </view>
@@ -1248,7 +1183,7 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KPe-TJ-Zl9">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KPe-TJ-Zl9">
                                                         <rect key="frame" x="5" y="10" width="364" height="100"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gHr-lg-OD9">
@@ -1385,7 +1320,7 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rjm-DT-wBB">
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rjm-DT-wBB">
                                                         <rect key="frame" x="5" y="10" width="364" height="100"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="avj-Al-Su5">
@@ -1522,303 +1457,21 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bx8-By-bsT">
-                                                        <rect key="frame" x="5" y="10" width="364" height="100"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vxJ-0j-txu">
-                                                                <rect key="frame" x="0.0" y="0.0" width="364" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55z-Bt-938" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="size">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZ5-o8-swc" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="124.5" y="0.0" width="115" height="30"/>
-                                                                        <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="color">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaL-QW-0Uj" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="249.5" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="font">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eO3-SF-eMp">
-                                                                <rect key="frame" x="0.0" y="35" width="364" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7U-44-2ce" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="hight">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d6-FW-5q5" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="124.5" y="0.0" width="115" height="30"/>
-                                                                        <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="align">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IG-OH-KtX" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="249.5" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="wight">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UdB-PB-3VC">
-                                                                <rect key="frame" x="0.0" y="70" width="364" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBQ-Fu-35K" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="desplay">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlH-Xl-Adi" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="124.5" y="0.0" width="115" height="30"/>
-                                                                        <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="animation">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRX-pe-xVH" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="249.5" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="border">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="W9b-QH-u9X">
-                                                        <rect key="frame" x="5" y="10" width="364" height="100"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ybV-YE-KMB">
-                                                                <rect key="frame" x="0.0" y="0.0" width="364" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuS-mw-10f" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Comments">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PyS-IR-ao5" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="124.5" y="0.0" width="115" height="30"/>
-                                                                        <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Conditions">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNz-UU-Vbe" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="249.5" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.95576733349999998" green="0.93194371460000003" blue="0.99988120790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Variables">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Das-1z-n4Z">
-                                                                <rect key="frame" x="0.0" y="35" width="364" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghM-nG-XgE" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Datatypes">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpO-pZ-kp7" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="124.5" y="0.0" width="115" height="30"/>
-                                                                        <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="art">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fy-kn-xy2" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="249.5" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.86264020200000002" green="0.83827298880000001" blue="0.96936005349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Identifiers">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ze5-jF-a3r">
-                                                                <rect key="frame" x="0.0" y="70" width="364" height="30"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiJ-rS-sbR" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Operators">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4r-8K-its" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="124.5" y="0.0" width="115" height="30"/>
-                                                                        <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Functions">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3L-1s-Baf" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                                        <rect key="frame" x="249.5" y="0.0" width="114.5" height="30"/>
-                                                                        <color key="backgroundColor" red="0.65104311699999995" green="0.69523590800000001" blue="0.88347464799999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="15"/>
-                                                                        <state key="normal" title="Objects">
-                                                                            <color key="titleColor" red="0.25958132740000001" green="0.28162807229999998" blue="0.4559032321" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                                <real key="value" value="7"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
                                                 </subviews>
                                                 <viewLayoutGuide key="safeArea" id="NmL-bc-NC0"/>
                                                 <color key="backgroundColor" red="0.26451683040000001" green="0.28867769240000002" blue="0.61573868990000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstItem="NmL-bc-NC0" firstAttribute="trailing" secondItem="W9b-QH-u9X" secondAttribute="trailing" constant="5" id="28e-Rc-pif"/>
                                                     <constraint firstItem="rjm-DT-wBB" firstAttribute="top" secondItem="BaF-hU-hjU" secondAttribute="top" constant="10" id="4Q2-VR-iCi"/>
-                                                    <constraint firstItem="W9b-QH-u9X" firstAttribute="centerX" secondItem="BaF-hU-hjU" secondAttribute="centerX" id="78z-Ws-FTH"/>
-                                                    <constraint firstItem="NmL-bc-NC0" firstAttribute="trailing" secondItem="bx8-By-bsT" secondAttribute="trailing" constant="5" id="9ej-X7-L1J"/>
                                                     <constraint firstItem="cfh-Ko-V2v" firstAttribute="centerY" secondItem="BaF-hU-hjU" secondAttribute="centerY" id="BfP-8h-lnH"/>
                                                     <constraint firstItem="rjm-DT-wBB" firstAttribute="centerX" secondItem="BaF-hU-hjU" secondAttribute="centerX" id="Djn-dl-UMB"/>
                                                     <constraint firstItem="NmL-bc-NC0" firstAttribute="trailing" secondItem="cfh-Ko-V2v" secondAttribute="trailing" constant="5" id="JpJ-yc-1sH"/>
-                                                    <constraint firstItem="bx8-By-bsT" firstAttribute="centerX" secondItem="BaF-hU-hjU" secondAttribute="centerX" id="L6n-VJ-tNZ"/>
                                                     <constraint firstItem="rjm-DT-wBB" firstAttribute="centerY" secondItem="BaF-hU-hjU" secondAttribute="centerY" id="SID-OI-t9q"/>
                                                     <constraint firstItem="NmL-bc-NC0" firstAttribute="trailing" secondItem="rjm-DT-wBB" secondAttribute="trailing" constant="5" id="TKm-ad-5dX"/>
-                                                    <constraint firstItem="bx8-By-bsT" firstAttribute="top" secondItem="NmL-bc-NC0" secondAttribute="top" constant="10" id="U1C-6W-XBP"/>
                                                     <constraint firstItem="KPe-TJ-Zl9" firstAttribute="centerY" secondItem="BaF-hU-hjU" secondAttribute="centerY" id="WHb-wQ-fXx"/>
                                                     <constraint firstItem="NmL-bc-NC0" firstAttribute="trailing" secondItem="KPe-TJ-Zl9" secondAttribute="trailing" constant="5" id="dky-3o-eZ9"/>
-                                                    <constraint firstItem="W9b-QH-u9X" firstAttribute="centerY" secondItem="BaF-hU-hjU" secondAttribute="centerY" id="eio-Xd-gLc"/>
                                                     <constraint firstItem="KPe-TJ-Zl9" firstAttribute="centerX" secondItem="BaF-hU-hjU" secondAttribute="centerX" id="fZH-n6-vXE"/>
-                                                    <constraint firstItem="W9b-QH-u9X" firstAttribute="top" secondItem="NmL-bc-NC0" secondAttribute="top" constant="10" id="gFN-Dn-seD"/>
                                                     <constraint firstAttribute="height" constant="120" id="gsS-oR-2n4"/>
                                                     <constraint firstItem="KPe-TJ-Zl9" firstAttribute="top" secondItem="BaF-hU-hjU" secondAttribute="top" constant="10" id="mms-dk-dJD"/>
-                                                    <constraint firstItem="bx8-By-bsT" firstAttribute="centerY" secondItem="BaF-hU-hjU" secondAttribute="centerY" id="tnG-DI-K9U"/>
                                                     <constraint firstItem="cfh-Ko-V2v" firstAttribute="top" secondItem="BaF-hU-hjU" secondAttribute="top" constant="10" id="uXE-XU-s2A"/>
                                                     <constraint firstItem="cfh-Ko-V2v" firstAttribute="centerX" secondItem="BaF-hU-hjU" secondAttribute="centerX" id="x79-ah-v0L"/>
                                                 </constraints>
@@ -1937,14 +1590,9 @@
                         <outlet property="optionsStackView0" destination="cfh-Ko-V2v" id="KIz-Al-gkS"/>
                         <outlet property="optionsStackView1" destination="KPe-TJ-Zl9" id="E0R-sd-ENb"/>
                         <outlet property="optionsStackView2" destination="rjm-DT-wBB" id="Ys8-9N-xO2"/>
-                        <outlet property="optionsStackView3" destination="bx8-By-bsT" id="sOr-5d-X0M"/>
-                        <outlet property="optionsStackView4" destination="W9b-QH-u9X" id="w73-mz-L0G"/>
-                        <outlet property="selectorView" destination="eQ9-vK-ZGC" id="KQT-eG-Fl0"/>
                         <outlet property="toolsViewHeightConstraint" destination="LOd-o2-7fz" id="HWx-m9-HdR"/>
                         <outletCollection property="topToolBarBTNs" destination="P4j-P1-Vxr" collectionClass="NSMutableArray" id="Enp-si-Aqa"/>
-                        <outletCollection property="topToolBarBTNs" destination="bhF-46-SiZ" collectionClass="NSMutableArray" id="8bH-EP-7AO"/>
                         <outletCollection property="topToolBarBTNs" destination="7Ss-YX-R9s" collectionClass="NSMutableArray" id="GMh-Y8-qvU"/>
-                        <outletCollection property="topToolBarBTNs" destination="kpo-7d-TPq" collectionClass="NSMutableArray" id="hil-cs-Oil"/>
                         <outletCollection property="topToolBarBTNs" destination="cMd-Qr-sWO" collectionClass="NSMutableArray" id="NDf-cA-Rvo"/>
                     </connections>
                 </viewController>
@@ -2119,46 +1767,39 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="7hG-oL-ecz">
-                                                        <rect key="frame" x="20" y="17.5" width="334" height="25"/>
+                                                        <rect key="frame" x="50" y="17.5" width="274" height="25"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofK-f5-QQy">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aD7-mD-Qnv">
                                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="ofK-f5-QQy" secondAttribute="height" multiplier="1:1" id="LRh-6C-0X6"/>
+                                                                    <constraint firstAttribute="width" secondItem="aD7-mD-Qnv" secondAttribute="height" multiplier="1:1" id="n1M-Ny-Yqy"/>
                                                                 </constraints>
-                                                                <state key="normal" image="icons8-paper-attach"/>
+                                                                <state key="normal" image="icons8-pictures_folder"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFp-AW-CFy">
-                                                                <rect key="frame" x="77.5" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-list_view"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v6-m4-JPU">
+                                                                <rect key="frame" x="124.5" y="0.0" width="25" height="25"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="9v6-m4-JPU" secondAttribute="height" multiplier="1:1" id="q9Z-dY-PlI"/>
+                                                                </constraints>
+                                                                <state key="normal" image="icons8-user_account"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3hk-8u-M8I">
-                                                                <rect key="frame" x="154.5" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-pen"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-b8-ADf">
-                                                                <rect key="frame" x="232" y="0.0" width="25" height="25"/>
-                                                                <state key="normal" image="icons8-ruler"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNm-9n-myI">
-                                                                <rect key="frame" x="309" y="0.0" width="25" height="25"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" image="icons8-connected"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFO-MJ-ezK">
+                                                                <rect key="frame" x="249" y="0.0" width="25" height="25"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="oFO-MJ-ezK" secondAttribute="height" multiplier="1:1" id="GUv-5T-W8I"/>
+                                                                </constraints>
+                                                                <state key="normal" image="icons8-flow_chart"/>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="nNm-9n-myI" firstAttribute="width" secondItem="nNm-9n-myI" secondAttribute="height" multiplier="1:1" id="4pH-qo-8Rl"/>
-                                                            <constraint firstItem="WKv-b8-ADf" firstAttribute="width" secondItem="WKv-b8-ADf" secondAttribute="height" multiplier="1:1" id="9EH-C3-ezg"/>
                                                             <constraint firstAttribute="height" constant="25" id="C87-rS-WGj"/>
-                                                            <constraint firstItem="wFp-AW-CFy" firstAttribute="width" secondItem="wFp-AW-CFy" secondAttribute="height" multiplier="1:1" id="P5q-MR-el2"/>
-                                                            <constraint firstItem="3hk-8u-M8I" firstAttribute="width" secondItem="3hk-8u-M8I" secondAttribute="height" multiplier="1:1" id="RF7-WE-Z0X"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.30588235289999999" green="0.3294117647" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="3dp-gR-Rl6"/>
-                                                    <constraint firstAttribute="trailing" secondItem="7hG-oL-ecz" secondAttribute="trailing" constant="20" id="IRR-WC-nRM"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7hG-oL-ecz" secondAttribute="trailing" constant="50" id="IRR-WC-nRM"/>
                                                     <constraint firstItem="7hG-oL-ecz" firstAttribute="centerY" secondItem="NnH-nf-9gN" secondAttribute="centerY" id="Plk-YJ-50W"/>
                                                     <constraint firstItem="7hG-oL-ecz" firstAttribute="centerX" secondItem="NnH-nf-9gN" secondAttribute="centerX" id="qwb-KZ-v1E"/>
                                                 </constraints>
@@ -2232,29 +1873,15 @@
                                                                 </constraints>
                                                                 <state key="normal" image="undo"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aD7-mD-Qnv">
-                                                                <rect key="frame" x="54" y="0.0" width="25" height="25"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUn-mn-Vey">
+                                                                <rect key="frame" x="89.5" y="0.0" width="25" height="25"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="aD7-mD-Qnv" secondAttribute="height" multiplier="1:1" id="n1M-Ny-Yqy"/>
+                                                                    <constraint firstAttribute="width" secondItem="uUn-mn-Vey" secondAttribute="height" multiplier="1:1" id="Oe5-tt-ds7"/>
                                                                 </constraints>
-                                                                <state key="normal" image="icons8-pictures_folder"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v6-m4-JPU">
-                                                                <rect key="frame" x="107.5" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="9v6-m4-JPU" secondAttribute="height" multiplier="1:1" id="q9Z-dY-PlI"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-user_account"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFO-MJ-ezK">
-                                                                <rect key="frame" x="161.5" y="0.0" width="25" height="25"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="oFO-MJ-ezK" secondAttribute="height" multiplier="1:1" id="GUv-5T-W8I"/>
-                                                                </constraints>
-                                                                <state key="normal" image="icons8-flow_chart"/>
+                                                                <state key="normal" image="icons8-copy"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jgJ-HQ-RL6">
-                                                                <rect key="frame" x="215" y="0.0" width="25" height="25"/>
+                                                                <rect key="frame" x="179.5" y="0.0" width="25" height="25"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="jgJ-HQ-RL6" secondAttribute="height" multiplier="1:1" id="Y60-h7-Md4"/>
                                                                 </constraints>
@@ -2269,6 +1896,7 @@
                                                             </button>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="uUn-mn-Vey" firstAttribute="width" secondItem="uUn-mn-Vey" secondAttribute="height" multiplier="1:1" id="7td-99-bvx"/>
                                                             <constraint firstAttribute="height" constant="25" id="M5A-gS-XGk"/>
                                                         </constraints>
                                                     </stackView>
@@ -2350,15 +1978,6 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="1IG-OH-KtX">
-            <size key="intrinsicContentSize" width="46" height="30"/>
-        </designable>
-        <designable name="1d6-FW-5q5">
-            <size key="intrinsicContentSize" width="46" height="30"/>
-        </designable>
-        <designable name="1fy-kn-xy2">
-            <size key="intrinsicContentSize" width="100" height="30"/>
-        </designable>
         <designable name="2MZ-Qb-4vf">
             <size key="intrinsicContentSize" width="100" height="30"/>
         </designable>
@@ -2371,14 +1990,8 @@
         <designable name="4oS-3e-Eo2">
             <size key="intrinsicContentSize" width="37" height="30"/>
         </designable>
-        <designable name="55z-Bt-938">
-            <size key="intrinsicContentSize" width="37" height="30"/>
-        </designable>
         <designable name="7fU-ZK-k0W">
             <size key="intrinsicContentSize" width="64" height="30"/>
-        </designable>
-        <designable name="DNz-UU-Vbe">
-            <size key="intrinsicContentSize" width="82" height="30"/>
         </designable>
         <designable name="E3I-HY-GCz">
             <size key="intrinsicContentSize" width="46" height="30"/>
@@ -2392,9 +2005,6 @@
         <designable name="JFJ-mu-d5p">
             <size key="intrinsicContentSize" width="73" height="30"/>
         </designable>
-        <designable name="JiJ-rS-sbR">
-            <size key="intrinsicContentSize" width="82" height="30"/>
-        </designable>
         <designable name="MXV-r3-4JI">
             <size key="intrinsicContentSize" width="73" height="30"/>
         </designable>
@@ -2404,20 +2014,8 @@
         <designable name="PwT-KT-z5u">
             <size key="intrinsicContentSize" width="91" height="30"/>
         </designable>
-        <designable name="PyS-IR-ao5">
-            <size key="intrinsicContentSize" width="91" height="30"/>
-        </designable>
         <designable name="QSC-WP-z9c">
             <size key="intrinsicContentSize" width="46" height="30"/>
-        </designable>
-        <designable name="RuS-mw-10f">
-            <size key="intrinsicContentSize" width="73" height="30"/>
-        </designable>
-        <designable name="SZ5-o8-swc">
-            <size key="intrinsicContentSize" width="46" height="30"/>
-        </designable>
-        <designable name="T4r-8K-its">
-            <size key="intrinsicContentSize" width="82" height="30"/>
         </designable>
         <designable name="UUa-6k-sGx">
             <size key="intrinsicContentSize" width="73" height="30"/>
@@ -2431,20 +2029,11 @@
         <designable name="bkq-Fw-fKp">
             <size key="intrinsicContentSize" width="37" height="30"/>
         </designable>
-        <designable name="eaL-QW-0Uj">
-            <size key="intrinsicContentSize" width="37" height="30"/>
-        </designable>
         <designable name="gBy-vh-m7p">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
-        <designable name="ghM-nG-XgE">
-            <size key="intrinsicContentSize" width="82" height="30"/>
-        </designable>
         <designable name="gqb-by-01o">
             <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="hBQ-Fu-35K">
-            <size key="intrinsicContentSize" width="64" height="30"/>
         </designable>
         <designable name="hiv-kZ-2cy">
             <size key="intrinsicContentSize" width="82" height="30"/>
@@ -2452,26 +2041,11 @@
         <designable name="hnl-bN-0zi">
             <size key="intrinsicContentSize" width="55" height="30"/>
         </designable>
-        <designable name="i7U-44-2ce">
-            <size key="intrinsicContentSize" width="46" height="30"/>
-        </designable>
-        <designable name="qlH-Xl-Adi">
-            <size key="intrinsicContentSize" width="82" height="30"/>
-        </designable>
-        <designable name="r3L-1s-Baf">
-            <size key="intrinsicContentSize" width="64" height="30"/>
-        </designable>
-        <designable name="tpO-pZ-kp7">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
         <designable name="tub-Bw-DjB">
             <size key="intrinsicContentSize" width="82" height="30"/>
         </designable>
         <designable name="u5z-Fp-wAu">
             <size key="intrinsicContentSize" width="82" height="30"/>
-        </designable>
-        <designable name="wRX-pe-xVH">
-            <size key="intrinsicContentSize" width="55" height="30"/>
         </designable>
         <designable name="wVa-HP-v89">
             <size key="intrinsicContentSize" width="100" height="30"/>
@@ -2487,23 +2061,18 @@
         </designable>
     </designables>
     <resources>
-        <image name="CSS" width="340" height="380"/>
-        <image name="HTML" width="340" height="380"/>
-        <image name="JS" width="412" height="460"/>
+        <image name="JS-1" width="412" height="460"/>
         <image name="icons8-chat0" width="84" height="78"/>
         <image name="icons8-cloud_database" width="96" height="96"/>
-        <image name="icons8-connected" width="96" height="96"/>
         <image name="icons8-copy" width="100" height="100"/>
         <image name="icons8-design" width="96" height="96"/>
         <image name="icons8-flow_chart" width="100" height="100"/>
         <image name="icons8-hot_reload-1" width="100" height="100"/>
         <image name="icons8-launch-1" width="104" height="104"/>
         <image name="icons8-layers" width="100" height="100"/>
-        <image name="icons8-list_view" width="100" height="100"/>
         <image name="icons8-mesh" width="100" height="100"/>
         <image name="icons8-module" width="100" height="100"/>
-        <image name="icons8-paper-attach" width="100" height="100"/>
-        <image name="icons8-pen" width="100" height="100"/>
+        <image name="icons8-pen-1" width="100" height="100"/>
         <image name="icons8-pictures_folder" width="100" height="100"/>
         <image name="icons8-ruler" width="100" height="100"/>
         <image name="icons8-save-1" width="96" height="96"/>

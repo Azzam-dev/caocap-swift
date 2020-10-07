@@ -36,8 +36,7 @@ class ArtBuilderVC: UIViewController {
     var toolsSelectedIndex: Int = 1
     var toolsPreviousIndex: Int?
     
-    @IBOutlet weak var selectorView: DesignableView!
-    @IBOutlet var topToolBarBTNs: [UIButton]!
+    
     
     
     lazy var viewWidth = self.view.frame.width
@@ -59,44 +58,33 @@ class ArtBuilderVC: UIViewController {
         }
     }
     
+    @IBOutlet var topToolBarBTNs: [UIButton]!
     @IBAction func topToolBarBTNs(_ sender: UIButton) {
-        
-        toolsPreviousIndex = toolsSelectedIndex
-        toolsSelectedIndex = sender.tag
-        optionsViewAnimation(sender.tag)
-        topToolBarAnimation()
-    }
-    
-    func topToolBarAnimation() {
-        UIView.animate(withDuration: 0.1,animations: {
-                  self.selectorView.shadowOpacity = 0
-                  
-              }, completion: { (finished) in
-                  self.selectorView.frame.origin.x = self.topToolBarBTNs[self.toolsSelectedIndex].frame.origin.x + 12
-                  UIView.animate(withDuration: 0.1) {
-                      self.selectorView.shadowOpacity = 0.2
-                  }
-              })
-    }
-    
-    func optionsViewAnimation(_ senderTag: Int) {
-        switch senderTag {
+        topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-layers"), for: .normal)
+        topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-pen"), for: .normal)
+        topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-ruler"), for: .normal)
+        switch sender.tag {
         case 0:
+            topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-layers-1"), for: .normal)
             blockHierarchyTableView.isHidden = false
             blockCollectionView.isHidden = true
             dimensionsInspectorTableView.isHidden = true
         case 1:
+            topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-pen-1"), for: .normal)
             blockHierarchyTableView.isHidden = true
             blockCollectionView.isHidden = false
             dimensionsInspectorTableView.isHidden = true
         case 2:
+            topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-ruler-1"), for: .normal)
             blockHierarchyTableView.isHidden = true
             blockCollectionView.isHidden = true
             dimensionsInspectorTableView.isHidden = false
         default:
             blockHierarchyTableView.isHidden = true
             blockCollectionView.isHidden = false
-            dimensionsInspectorTableView.isHidden = true        }
+            dimensionsInspectorTableView.isHidden = true
+            
+        }
     }
     
     
@@ -136,15 +124,15 @@ class ArtBuilderVC: UIViewController {
             switch sender.direction {
             case .up:
                 if self.toolsViewHeightConstraint.constant == 75 {
-                    optionsViewAnimation(120)
+                    toolsViewAnimation(120)
                 } else {
-                    optionsViewAnimation(300)
+                    toolsViewAnimation(300)
                 }
             case .down:
                 if self.toolsViewHeightConstraint.constant == 120 {
-                    optionsViewAnimation(75)
+                    toolsViewAnimation(75)
                 } else {
-                    optionsViewAnimation(120)
+                    toolsViewAnimation(120)
                 }
             default:
                 break

@@ -16,8 +16,6 @@ class LogicMindMapVC: UIViewController {
     @IBOutlet var optionsStackView0: UIStackView!
     @IBOutlet var optionsStackView1: UIStackView!
     @IBOutlet var optionsStackView2: UIStackView!
-    @IBOutlet var optionsStackView3: UIStackView!
-    @IBOutlet var optionsStackView4: UIStackView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
@@ -25,8 +23,7 @@ class LogicMindMapVC: UIViewController {
     var toolsSelectedIndex: Int = 2
     var toolsPreviousIndex: Int?
     
-    @IBOutlet weak var selectorView: DesignableView!
-    @IBOutlet var topToolBarBTNs: [UIButton]!
+    
     
     @IBOutlet weak var logicScrollView: UIScrollView!
     @IBOutlet weak var logicSVContant: UIView!
@@ -56,65 +53,37 @@ class LogicMindMapVC: UIViewController {
         }
     }
     
+    @IBOutlet var topToolBarBTNs: [UIButton]!
     @IBAction func topToolBarBTNs(_ sender: UIButton) {
-        
-        toolsPreviousIndex = toolsSelectedIndex
-        toolsSelectedIndex = sender.tag
-        optionsViewAnimation(sender.tag)
-        topToolBarAnimation()
-    }
-    
-    func topToolBarAnimation() {
-        UIView.animate(withDuration: 0.1,animations: {
-            self.selectorView.shadowOpacity = 0
-            
-        }, completion: { (finished) in
-            self.selectorView.frame.origin.x = self.topToolBarBTNs[self.toolsSelectedIndex].frame.origin.x + 12
-            UIView.animate(withDuration: 0.1) {
-                self.selectorView.shadowOpacity = 0.2
-            }
-        })
-    }
-    
-    func optionsViewAnimation(_ senderTag: Int) {
-        switch senderTag {
+        topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-mesh"), for: .normal)
+        topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "JS"), for: .normal)
+        topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-module"), for: .normal)
+        switch sender.tag {
         case 0:
+            topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-mesh-1"), for: .normal)
             optionsStackView0.isHidden = false
             optionsStackView1.isHidden = true
             optionsStackView2.isHidden = true
-            optionsStackView3.isHidden = true
-            optionsStackView4.isHidden = true
         case 1:
+            topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "JS-1"), for: .normal)
             optionsStackView0.isHidden = true
             optionsStackView1.isHidden = false
             optionsStackView2.isHidden = true
-            optionsStackView3.isHidden = true
-            optionsStackView4.isHidden = true
         case 2:
+            topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-module-1"), for: .normal)
             optionsStackView0.isHidden = true
             optionsStackView1.isHidden = true
             optionsStackView2.isHidden = false
-            optionsStackView3.isHidden = true
-            optionsStackView4.isHidden = true
-        case 3:
-            optionsStackView0.isHidden = true
-            optionsStackView1.isHidden = true
-            optionsStackView2.isHidden = true
-            optionsStackView3.isHidden = false
-            optionsStackView4.isHidden = true
-        case 4:
-            optionsStackView0.isHidden = true
-            optionsStackView1.isHidden = true
-            optionsStackView2.isHidden = true
-            optionsStackView3.isHidden = true
-            optionsStackView4.isHidden = false
         default:
             optionsStackView0.isHidden = true
             optionsStackView1.isHidden = true
             optionsStackView2.isHidden = false
-            optionsStackView3.isHidden = true
-            optionsStackView4.isHidden = true
         }
+    }
+    
+    
+    func optionsViewAnimation(_ senderTag: Int) {
+        
     }
     
     func setupViews() {
