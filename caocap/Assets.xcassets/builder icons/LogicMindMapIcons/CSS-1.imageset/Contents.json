@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "cssColored.png",
+      "filename" : "CSS.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "CSS@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "CSS@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
