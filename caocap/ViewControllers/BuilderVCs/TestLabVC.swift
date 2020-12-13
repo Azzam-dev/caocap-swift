@@ -17,12 +17,17 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     @IBOutlet weak var webView: WKWebView!
     
     @IBOutlet weak var versionsTableView: UITableView!
-    @IBOutlet weak var codeTextView: UITextView!
+    @IBOutlet weak var codeScrollView: UIScrollView!
     @IBOutlet weak var settingsScrollView: UIScrollView!
+    
+    @IBOutlet weak var htmlTextView: UITextView!
+    @IBOutlet weak var jsTextView: UITextView!
+    @IBOutlet weak var cssTextView: UITextView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
+    var caocapCode = ""
     var openedCaocap = Caocap(key: "", dictionary: ["":""])
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +44,22 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     
     func getCaocapData() {
+        // we are useing the observe method to make the changes in real-time and to allow "Multi device changes"
         DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
-            let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
-            self.caocapNameTF.text = caocap["name"] as? String ?? ""
-            self.publishingSwitch.isOn = caocap["published"] as? Bool ?? false
-            self.codeTextView.text = caocap["code"] as? String ?? ""
+            let caocapSnapshot = caocapSnapshot.value as? [String : AnyObject] ?? [:]
+            self.caocapNameTF.text = caocapSnapshot["name"] as? String ?? ""
+            self.publishingSwitch.isOn = caocapSnapshot["published"] as? Bool ?? false
+            let code = caocapSnapshot["code"] as? [String: String] ?? ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]
+            
+            self.htmlTextView.text = code["html"]
+            self.jsTextView.text = code["js"]
+            self.cssTextView.text = code["css"]
+            self.caocapCode = """
+            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(self.cssTextView.text!)</style></head><body>\(self.htmlTextView.text!)<script>\(self.jsTextView.text!)</script></body></html>
+            """
+//            self.codeTextView.text = self.caocapCode
+            
             self.loudCaocap()
         }
     }
@@ -71,12 +87,12 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     func present(versionsView: Bool = false, codeView: Bool = false, settingsView: Bool = false) {
         versionsTableView.isHidden = !versionsView
-        codeTextView.isHidden = !codeView
+        codeScrollView.isHidden = !codeView
         settingsScrollView.isHidden = !settingsView
     }
     
     func loudCaocap() {
-        self.webView.loadHTMLString(codeTextView.text, baseURL: nil)
+        self.webView.loadHTMLString(caocapCode, baseURL: nil)
     }
     
     var startTest = true
@@ -101,7 +117,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     @IBAction func launchCaocapBTN(_ sender: Any) {
         // save the code in /caocap-x/caocap/[UID]/code
         
-        DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: codeTextView.text)
+        DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: ["html": htmlTextView.text , "js": jsTextView.text, "css": cssTextView.text])
             launchCaocapBTN.setImage(#imageLiteral(resourceName: "icons8-launch-1"), for: .normal)
     }
     
@@ -163,6 +179,10 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         launchCaocapBTN.setImage(#imageLiteral(resourceName: "icons8-launch"), for: .normal)
+        caocapCode = """
+        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(cssTextView.text!)</style></head><body>\(htmlTextView.text!)<script>\(jsTextView.text!)</script></body></html>
+        """
         if startTest { loudCaocap() }
         
     }

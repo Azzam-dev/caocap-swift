@@ -15,7 +15,7 @@ class Caocap {
     private var _name: String
     private var _bio: String
     private var _website: String
-    private var _code: String
+    private var _code: [String: String]
     private var _isPublished: Bool
     private var _owners: [String]
     
@@ -37,7 +37,7 @@ class Caocap {
     var website: String {
         return _website
     }
-    var code: String {
+    var code: [String: String] {
         return _code
     }
     var isPublished: Bool {
@@ -54,7 +54,7 @@ class Caocap {
         self._name = dictionary["name"] as? String ?? "loading..."
         self._bio = dictionary["bio"] as? String ?? ""
         self._website = dictionary["website"] as? String ?? ""
-        self._code = dictionary["code"] as? String ?? "<h1> failed to load.. </h1>"
+        self._code = dictionary["code"] as? [String: String] ?? ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]
         self._isPublished = dictionary["published"] as? Bool ?? false
         self._owners = dictionary["owners"] as? [String] ?? [""]
         
