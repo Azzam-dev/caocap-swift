@@ -10,21 +10,11 @@ import UIKit
 import SwiftUI
 import Firebase
 
-
-class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class MyProfileVC: UIViewController {
     
     @IBOutlet weak var profileCollectionView: UICollectionView!
     var caocapsArray = [Caocap]()
-    
-    @IBOutlet weak var popupView: UIView!
-    @IBOutlet weak var blurredView: UIVisualEffectView!
-    @IBOutlet weak var cancelPopupsBTN: UIButton!
-    @IBOutlet weak var plusBTN: UIView!
-    
-    @IBOutlet weak var caocapIMG: DesignableImage!
-    @IBOutlet weak var caocapIMGview: DesignableView!
-    @IBOutlet weak var caocapNameTF: UITextField!
-    
+
     @IBOutlet weak var userIMG: DesignableImage!
     @IBOutlet weak var userIMGview: DesignableView!
     
@@ -43,10 +33,6 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         getMyCaocapsData()
         
         profileCollectionView.register(UINib.init(nibName: "caocapCell", bundle: nil), forCellWithReuseIdentifier: "caocapCell")
-        caocapIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeImage)))
-        
-        createButtonSetup(withTitle: "create")
-        
         NotificationCenter.default.addObserver(self, selector: #selector(reloadMyProfile), name: Notification.Name("reloadMyProfile"), object: nil)
         
     }
@@ -105,123 +91,44 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         self.profileCollectionView.scrollToItem(at: indexPath as IndexPath, at: .left , animated: true )
     }
     
-    @objc func changeImage() {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        present(picker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        var selectedImageFromPicker: UIImage?
-        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            selectedImageFromPicker = editedImage
-        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            selectedImageFromPicker = originalImage
+    @IBAction func didPressAddNewCaocap(_ sender: Any) {
+        let createCaocapPopup = UIAlertController(title: "انشاء كوكب جديد", message: "حدد نوع الكوكب", preferredStyle: .actionSheet)
+        let addNewLinkCaocap = UIAlertAction(title: "link", style: .default ) { (buttonTapped) in
+            do {
+                self.presentCreateCaocapVC(with: .link)
+            } catch {
+                self.displayAlertMessage(messageToDisplay: error.localizedDescription)
+            }
         }
-        if let selectedImage = selectedImageFromPicker {
-            caocapIMG.image = selectedImage
+        let addNewCodeCaocap = UIAlertAction(title: "code", style: .default ) { (buttonTapped) in
+            do {
+                self.presentCreateCaocapVC(with: .code)
+            } catch {
+                self.displayAlertMessage(messageToDisplay: error.localizedDescription)
+            }
         }
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-
-    
-    @IBAction func popupACT(_ sender: Any) {
-        presentAddCaocapView()
-    }
-    
-    @IBAction func cancelPopupBTN(_ sender: Any) {
-        hideAddCaocapView()
-    }
-    
-    func presentAddCaocapView() {
-        cancelPopupsBTN.isHidden = false
-        popupView.isHidden = false
-        blurredViewShowAnimation()
-        UIView.animate(withDuration: 0.3 ,delay: 0.3, animations: {
-            self.popupView.alpha = 1
-            self.view.layoutIfNeeded()
-        })
-    }
-    
-    func hideAddCaocapView() {
-        blurredViewHideAnimation()
-        UIView.animate(withDuration: 0.3, delay: 0.3, animations: {
-            self.popupView.alpha = 0
-            self.view.layoutIfNeeded()
-        }, completion: { finished in
-            self.cancelPopupsBTN.isHidden = true
-            self.popupView.isHidden = true
-        })
-    }
-    
-    @IBOutlet weak var createBTN: DesignableButton!
-    @IBAction func createBTN(_ sender: Any) {
-        createButtonSetup(withTitle: "loading...", andAlpha: 0.5, isEnabled: false)
-        // create caocap
-        if caocapNameTF.text == "" {
-            displayAlertMessage(messageToDisplay: "please enter the caocap's name")
-            createButtonSetup(withTitle: "create")
-        } else {
-            uploudCaocap()
+        
+        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+        createCaocapPopup.addAction(addNewLinkCaocap)
+        createCaocapPopup.addAction(addNewCodeCaocap)
+        createCaocapPopup.addAction(cancel)
+        
+        if let popoverController = createCaocapPopup.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
+        
+        self.present(createCaocapPopup, animated: true , completion: nil)
     }
     
-    
-    func uploudCaocap() {
-        guard let currentUserUID = Auth.auth().currentUser?.uid else { return }
-        let imageNameUID = NSUUID().uuidString
-        let storageRef = DataService.instance.REF_CAOCAP_IMAGES.child("\(imageNameUID).jpg")
-        if let uploadData = self.caocapIMG.image?.jpegData(compressionQuality: 0.2) {
-            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
-                
-                if error != nil { print(error!) }
-                storageRef.downloadURL(completion: { url, error in
-                    if error != nil { print(error!) } else {
-                        // Here you can get the download URL
-                        let caocapData = ["imageURL": url?.absoluteString ?? "",
-                                          "name" : self.caocapNameTF.text!,
-                                          "code": ["html":"<h1> write your code here </h1>",
-                                                   "js": "//write your JS code here",
-                                                   "css": "h1 { color: blue; }"],
-                                          "published": false,
-                                          "owners": [currentUserUID],
-                            ] as [String : Any]
-                        
-                        DataService.instance.createCaocap(caocapData: caocapData, handler: { (caocapCreated) in
-                            if caocapCreated {
-                                self.profileCollectionView.reloadData()
-                                self.caocapNameTF.text = ""
-                                self.caocapIMG.image = #imageLiteral(resourceName: "caocap app icon old")
-                                self.createButtonSetup(withTitle: "create")
-                                self.getMyLastCaocapData()
-                                self.hideAddCaocapView()
-                            }
-                        })
-                    }
-                })
-            })
-        }
+    func presentCreateCaocapVC(with caocapType: CaocapType) {
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
+        createCaocapVC.caocapType = caocapType
+        self.present(createCaocapVC, animated: true)
     }
     
-    func getMyLastCaocapData() {
-        DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
-            self.openBuilder(with: returnedCaocapsArray.last!)
-        }
-    }
-    
-    func createButtonSetup(withTitle title: String, andAlpha alphaLevel: CGFloat = 1, isEnabled: Bool = true) {
-        createBTN.isEnabled = isEnabled
-        createBTN.setTitle(title ,for: .normal)
-        createBTN.alpha = alphaLevel
-    }
-    
-    func openBuilder(with caocap: Caocap) {
+    func presentBuilderVC(with caocap: Caocap) {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
         let builderVC = storyboard.instantiateViewController(withIdentifier: "builder") as! BuilderVC
         builderVC.openedCaocap = caocap
@@ -235,28 +142,6 @@ class MyProfileVC: UIViewController , UIImagePickerControllerDelegate , UINaviga
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
-    func blurredViewShowAnimation() {
-        if blurredView.isHidden {
-            blurredView.isHidden = false
-            UIView.animate(withDuration: 0.2 , animations: {
-                self.blurredView.alpha = 1
-                self.view.layoutIfNeeded()
-            })
-        }
-    }
-    
-    func blurredViewHideAnimation() {
-        if blurredView.isHidden == false {
-            UIView.animate(withDuration: 0.2 , animations: {
-                self.blurredView.alpha = 0
-                self.view.layoutIfNeeded()
-            }, completion: { finished in
-                self.blurredView.isHidden = true
-            })
-        }
-    }
-    
     
 }
 
@@ -284,7 +169,7 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openBuilder(with: caocapsArray[indexPath.row])
+        presentBuilderVC(with: caocapsArray[indexPath.row])
     }
 }
 

@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum CaocapType {
+    case link
+    case code
+    case builder
+    case template
+}
+
 class Caocap {
     private var _key: String
     private var _imageURL: String?

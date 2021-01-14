@@ -64,6 +64,7 @@
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
 		ECB96C242527423A00901E35 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB96C232527423A00901E35 /* Block.swift */; };
 		ECC94A80224E995B00D7E8DA /* caocapIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */; };
+		ECCE4A8225B0C65D0065EB0A /* CreateCaocapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4A8125B0C65D0065EB0A /* CreateCaocapVC.swift */; };
 		ECE29FD82520852B00EFF8B4 /* ArtBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */; };
 		ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */; };
 		ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */; };
@@ -171,6 +172,7 @@
 		ECAD479C21CA97C4000E16DC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		ECB96C232527423A00901E35 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		ECC94A7F224E995B00D7E8DA /* caocapIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapIconCell.swift; sourceTree = "<group>"; };
+		ECCE4A8125B0C65D0065EB0A /* CreateCaocapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaocapVC.swift; sourceTree = "<group>"; };
 		ECDABBF2238348170029B026 /* caocap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = caocap.entitlements; sourceTree = "<group>"; };
 		ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBuilderVC.swift; sourceTree = "<group>"; };
 		ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicMindMapVC.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				ECE29FD72520852B00EFF8B4 /* ArtBuilderVC.swift */,
 				4E0E42D424651F9A00522B2F /* TestLabVC.swift */,
 				ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */,
+				ECCE4A8125B0C65D0065EB0A /* CreateCaocapVC.swift */,
 			);
 			path = BuilderVCs;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				ECF63E8521BD6C6D00E491FE /* caocapCell.swift in Sources */,
 				EC70ACEC215D6954004C16D2 /* ExploreVC.swift in Sources */,
 				EC501674234E121900021D70 /* caocapRoomVC.swift in Sources */,
+				ECCE4A8225B0C65D0065EB0A /* CreateCaocapVC.swift in Sources */,
 				EC501676234E610200021D70 /* sentMessageCell.swift in Sources */,
 				ECF63E8D21BD914B00E491FE /* caocapRoomCell.swift in Sources */,
 				EC6EE2842323D3180069F488 /* menuCell.swift in Sources */,

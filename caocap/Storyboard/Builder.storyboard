@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vgt-hj-zvB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RIv-0H-UuW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -410,6 +410,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2o-sy-9dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6953.6231884057979" y="1459.8214285714284"/>
+        </scene>
+        <!--Create CaocapVC-->
+        <scene sceneID="gwe-au-FhR">
+            <objects>
+                <viewController storyboardIdentifier="createCaocap" id="RIv-0H-UuW" customClass="CreateCaocapVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2er-TM-wX5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sta-Mj-Abp" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
+                                <rect key="frame" x="67" y="257" width="280" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="omW-cX-qqB" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ts9-CY-3xr">
+                                <rect key="frame" x="159" y="486" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9J-kD-92M" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
+                                <rect key="frame" x="107" y="428" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NK9-NV-Gcr"/>
+                                    <constraint firstAttribute="width" constant="200" id="jRQ-fa-CR6"/>
+                                </constraints>
+                                <state key="normal" title="create">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createBTN:" destination="RIv-0H-UuW" eventType="touchUpInside" id="7wD-Mo-bWg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eS4-28-C2v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="u9J-kD-92M" firstAttribute="centerY" secondItem="2er-TM-wX5" secondAttribute="centerY" id="D7q-Po-6K4"/>
+                            <constraint firstItem="u9J-kD-92M" firstAttribute="centerX" secondItem="2er-TM-wX5" secondAttribute="centerX" id="s3J-gZ-2jz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="caocapIMG" destination="omW-cX-qqB" id="fOa-KP-4Qg"/>
+                        <outlet property="caocapIMGview" destination="Sta-Mj-Abp" id="jFS-T2-uat"/>
+                        <outlet property="caocapNameTF" destination="ts9-CY-3xr" id="39y-27-9Dm"/>
+                        <outlet property="createBTN" destination="u9J-kD-92M" id="5Lg-EF-eLb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTa-rM-53e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5562" y="5"/>
         </scene>
         <!--BuilderVC-->
         <scene sceneID="NVE-Uy-78f">
@@ -2117,6 +2180,9 @@
         </designable>
         <designable name="u5z-Fp-wAu">
             <size key="intrinsicContentSize" width="82" height="30"/>
+        </designable>
+        <designable name="u9J-kD-92M">
+            <size key="intrinsicContentSize" width="44" height="30"/>
         </designable>
         <designable name="wVa-HP-v89">
             <size key="intrinsicContentSize" width="100" height="30"/>

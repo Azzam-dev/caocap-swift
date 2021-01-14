@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eir-lT-2oo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1529" y="1492"/>
+            <point key="canvasLocation" x="2458" y="740"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Iwd-dv-e6W">
@@ -477,7 +477,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BWH-dw-UIT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2429" y="743"/>
+            <point key="canvasLocation" x="1529" y="1436"/>
         </scene>
         <!--My ProfileVC-->
         <scene sceneID="chU-g6-7jr">
@@ -491,7 +491,7 @@
                                 <rect key="frame" x="0.0" y="94" width="414" height="285"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GTf-lD-cX3" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="48" width="70" height="70"/>
+                                        <rect key="frame" x="40" y="50" width="70" height="70"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_2235" translatesAutoresizingMaskIntoConstraints="NO" id="0Z8-6M-tMt" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
@@ -531,22 +531,22 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="atT-f9-c5r">
-                                        <rect key="frame" x="140" y="58" width="254" height="50"/>
+                                        <rect key="frame" x="140" y="60" width="254" height="50"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="grf-tr-deQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="84.666666666666671" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LUK-xv-SWR">
-                                                        <rect key="frame" x="18.666666666666654" y="2" width="47.666666666666657" height="45.666666666666664"/>
+                                                        <rect key="frame" x="18.333333333333343" y="3.6666666666666572" width="48" height="42.333333333333336"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-ba-OSX">
-                                                                <rect key="frame" x="0.0" y="0.0" width="47.666666666666664" height="25.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="48" height="22.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="orbiting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YsY-w5-7fC">
-                                                                <rect key="frame" x="0.0" y="30.666666666666657" width="47.666666666666664" height="15"/>
+                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="48" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="2MM-mZ-J5y"/>
                                                                 </constraints>
@@ -578,16 +578,16 @@
                                                 <rect key="frame" x="84.666666666666657" y="0.0" width="84.666666666666657" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hss-kC-FtB">
-                                                        <rect key="frame" x="15.666666666666682" y="2" width="53.666666666666657" height="45.666666666666664"/>
+                                                        <rect key="frame" x="18" y="3.6666666666666572" width="49" height="42.333333333333336"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMY-1s-1f4">
-                                                                <rect key="frame" x="0.0" y="0.0" width="53.666666666666664" height="25.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="49" height="22.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caocaps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Im0-I1-vKi">
-                                                                <rect key="frame" x="0.0" y="30.666666666666657" width="53.666666666666664" height="15"/>
+                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="49" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="lCA-qJ-w4R"/>
                                                                 </constraints>
@@ -619,16 +619,16 @@
                                                 <rect key="frame" x="169.33333333333331" y="0.0" width="84.666666666666686" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zp4-kl-Yfi">
-                                                        <rect key="frame" x="20.999999999999996" y="2" width="42.666666666666657" height="45.666666666666664"/>
+                                                        <rect key="frame" x="20.666666666666689" y="3.6666666666666572" width="43.333333333333343" height="42.333333333333336"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB1-Es-Ffz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="42.666666666666664" height="25.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="43.333333333333336" height="22.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4l-3v-13K">
-                                                                <rect key="frame" x="0.0" y="30.666666666666657" width="42.666666666666664" height="15"/>
+                                                                <rect key="frame" x="0.0" y="27.333333333333343" width="43.333333333333336" height="15"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="15" id="gKZ-hd-wLX"/>
                                                                 </constraints>
@@ -662,13 +662,13 @@
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="J9F-mF-dDM">
-                                        <rect key="frame" x="40" y="138" width="334" height="29.333333333333343"/>
+                                        <rect key="frame" x="40" y="140" width="334" height="25.333333333333343"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="25"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="jjh-FY-632">
-                                        <rect key="frame" x="40" y="177.33333333333331" width="334" height="57"/>
+                                        <rect key="frame" x="40" y="175.33333333333331" width="334" height="57"/>
                                         <string key="text">CAOCAP is a galaxy filled with ideas in which you can navigate your way through a wide range of worlds that shares your interest ,passion and ambition.</string>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
@@ -761,7 +761,7 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nk-FE-YXo">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                         <connections>
-                                            <action selector="popupACT:" destination="vsP-E9-uMm" eventType="touchUpInside" id="1u0-P0-ehQ"/>
+                                            <action selector="didPressAddNewCaocap:" destination="vsP-E9-uMm" eventType="touchUpInside" id="fGw-cq-W8c"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -777,25 +777,11 @@
                                     <constraint firstAttribute="bottom" secondItem="5nk-FE-YXo" secondAttribute="bottom" id="sju-xy-zov"/>
                                 </constraints>
                             </view>
-                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQM-Eo-8Fy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="e47-g4-GMv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="dark"/>
-                            </visualEffectView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyB-JJ-MLT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <connections>
-                                    <action selector="cancelPopupBTN:" destination="vsP-E9-uMm" eventType="touchUpInside" id="q0d-HV-Eah"/>
-                                </connections>
-                            </button>
                             <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B95-ag-oL2" userLabel="topNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="-493" y="0.0" width="1400" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lm-lZ-79c">
-                                        <rect key="frame" x="634.66666666666663" y="44" width="131" height="50"/>
+                                        <rect key="frame" x="636.33333333333337" y="44" width="127.66666666666663" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="QzP-X4-rrn"/>
                                         </constraints>
@@ -821,171 +807,35 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyh-DU-PMH" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="57" y="348" width="300" height="200"/>
-                                <subviews>
-                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1N-uh-ygW" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="120" y="-20" width="60" height="60"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap app icon old" translatesAutoresizingMaskIntoConstraints="NO" id="0Ez-Ld-oHa" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.17346543073654175" green="0.22139126062393188" blue="0.26790127158164978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="0Ez-Ld-oHa" secondAttribute="trailing" id="1ia-qK-IlI"/>
-                                            <constraint firstAttribute="bottom" secondItem="0Ez-Ld-oHa" secondAttribute="bottom" id="Ht7-ly-kO5"/>
-                                            <constraint firstItem="0Ez-Ld-oHa" firstAttribute="leading" secondItem="d1N-uh-ygW" secondAttribute="leading" id="MXn-zx-AnC"/>
-                                            <constraint firstAttribute="width" secondItem="d1N-uh-ygW" secondAttribute="height" multiplier="1:1" id="alU-Zz-uhI"/>
-                                            <constraint firstAttribute="width" constant="60" id="pii-Gu-S5D"/>
-                                            <constraint firstItem="0Ez-Ld-oHa" firstAttribute="top" secondItem="d1N-uh-ygW" secondAttribute="top" id="wEp-cQ-8tY"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.20000000000000001"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                <size key="value" width="5" height="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
-                                                <integer key="value" value="0"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="caocap name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sIk-IS-LCT" customClass="DesignableTextField" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="67.666666666666686" width="260" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ICx-cY-gje"/>
-                                        </constraints>
-                                        <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
-                                                <integer key="value" value="35"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnv-31-jaX">
-                                        <rect key="frame" x="20" y="99.666666666666686" width="260" height="1"/>
-                                        <color key="backgroundColor" red="0.2902041078" green="0.29019048809999998" blue="0.2902008593" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="bPx-2T-Hce"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QAb-UY-x3v" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="155" width="200" height="35"/>
-                                        <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="Jz7-2x-QvE"/>
-                                            <constraint firstAttribute="width" constant="200" id="Rii-vG-wLg"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
-                                        <state key="normal" title="create">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="createBTN:" destination="vsP-E9-uMm" eventType="touchUpInside" id="DGl-UU-Xd2"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.14901960784313725" green="0.1764705882352941" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="d1N-uh-ygW" firstAttribute="top" secondItem="uyh-DU-PMH" secondAttribute="top" constant="-20" id="1vi-Xo-rMe"/>
-                                    <constraint firstItem="rnv-31-jaX" firstAttribute="leading" secondItem="uyh-DU-PMH" secondAttribute="leading" constant="20" id="Ds4-39-nmj"/>
-                                    <constraint firstItem="rnv-31-jaX" firstAttribute="centerY" secondItem="uyh-DU-PMH" secondAttribute="centerY" id="EhY-gf-cuN"/>
-                                    <constraint firstAttribute="width" priority="750" constant="300" id="TjU-TT-gcO"/>
-                                    <constraint firstItem="rnv-31-jaX" firstAttribute="centerX" secondItem="uyh-DU-PMH" secondAttribute="centerX" id="Wdh-1c-aZA"/>
-                                    <constraint firstAttribute="trailing" secondItem="rnv-31-jaX" secondAttribute="trailing" constant="20" id="bZZ-G4-MGk"/>
-                                    <constraint firstItem="sIk-IS-LCT" firstAttribute="trailing" secondItem="rnv-31-jaX" secondAttribute="trailing" id="ffu-BJ-pVD"/>
-                                    <constraint firstItem="QAb-UY-x3v" firstAttribute="centerX" secondItem="uyh-DU-PMH" secondAttribute="centerX" id="gOb-e7-RRn"/>
-                                    <constraint firstItem="sIk-IS-LCT" firstAttribute="leading" secondItem="rnv-31-jaX" secondAttribute="leading" id="iVm-37-5PH"/>
-                                    <constraint firstAttribute="bottom" secondItem="QAb-UY-x3v" secondAttribute="bottom" constant="10" id="oi5-z2-qiL"/>
-                                    <constraint firstItem="rnv-31-jaX" firstAttribute="top" secondItem="sIk-IS-LCT" secondAttribute="bottom" constant="2" id="q6V-0E-ANN"/>
-                                    <constraint firstItem="d1N-uh-ygW" firstAttribute="centerX" secondItem="uyh-DU-PMH" secondAttribute="centerX" id="x7D-IM-NYa"/>
-                                    <constraint firstAttribute="height" constant="200" id="z5G-II-D55"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="-2" height="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6OO-sG-LXu"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RyB-JJ-MLT" firstAttribute="top" secondItem="uEV-UB-DJR" secondAttribute="top" id="287-FT-g7W"/>
-                            <constraint firstItem="uyh-DU-PMH" firstAttribute="centerY" secondItem="uEV-UB-DJR" secondAttribute="centerY" priority="750" id="40f-Ky-J6R"/>
                             <constraint firstItem="6OO-sG-LXu" firstAttribute="trailing" secondItem="TG4-qA-lJd" secondAttribute="trailing" constant="20" id="63z-dV-Poi"/>
                             <constraint firstItem="6OO-sG-LXu" firstAttribute="trailing" secondItem="PaE-eC-JA1" secondAttribute="trailing" id="6yy-XG-ycY"/>
                             <constraint firstItem="6OO-sG-LXu" firstAttribute="trailing" secondItem="U3l-cq-4LI" secondAttribute="trailing" constant="50" id="7Ox-Jq-zDE"/>
                             <constraint firstItem="PaE-eC-JA1" firstAttribute="leading" secondItem="uEV-UB-DJR" secondAttribute="leading" id="91E-A8-0b5"/>
                             <constraint firstItem="erq-0s-LSG" firstAttribute="trailing" secondItem="6OO-sG-LXu" secondAttribute="trailing" id="97r-44-Kmm"/>
                             <constraint firstItem="TG4-qA-lJd" firstAttribute="top" secondItem="6OO-sG-LXu" secondAttribute="top" id="A7b-Lf-984"/>
-                            <constraint firstItem="6OO-sG-LXu" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uyh-DU-PMH" secondAttribute="bottom" constant="260" id="B3S-hF-egQ"/>
-                            <constraint firstAttribute="bottom" secondItem="NQM-Eo-8Fy" secondAttribute="bottom" id="DPW-wa-HBU"/>
                             <constraint firstItem="PaE-eC-JA1" firstAttribute="top" secondItem="erq-0s-LSG" secondAttribute="bottom" id="G5j-vH-YUX"/>
                             <constraint firstItem="erq-0s-LSG" firstAttribute="top" secondItem="TG4-qA-lJd" secondAttribute="bottom" id="JiB-4j-6VC"/>
                             <constraint firstItem="erq-0s-LSG" firstAttribute="leading" secondItem="6OO-sG-LXu" secondAttribute="leading" id="L0b-5w-WE4"/>
                             <constraint firstItem="PaE-eC-JA1" firstAttribute="centerY" secondItem="uEV-UB-DJR" secondAttribute="centerY" priority="750" constant="140" id="PyW-2u-ki3"/>
-                            <constraint firstItem="NQM-Eo-8Fy" firstAttribute="top" secondItem="uEV-UB-DJR" secondAttribute="top" id="QoE-hc-fyw"/>
-                            <constraint firstItem="uyh-DU-PMH" firstAttribute="centerX" secondItem="uEV-UB-DJR" secondAttribute="centerX" id="UsA-QZ-lim"/>
-                            <constraint firstItem="RyB-JJ-MLT" firstAttribute="leading" secondItem="6OO-sG-LXu" secondAttribute="leading" id="Vh3-UR-7u7"/>
                             <constraint firstItem="B95-ag-oL2" firstAttribute="top" secondItem="uEV-UB-DJR" secondAttribute="top" id="X7z-r9-59n"/>
-                            <constraint firstItem="RyB-JJ-MLT" firstAttribute="trailing" secondItem="6OO-sG-LXu" secondAttribute="trailing" id="XgV-bf-pZR"/>
                             <constraint firstItem="6OO-sG-LXu" firstAttribute="bottom" secondItem="PaE-eC-JA1" secondAttribute="bottom" constant="65" id="iEP-02-hcO"/>
                             <constraint firstItem="6OO-sG-LXu" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="U3l-cq-4LI" secondAttribute="bottom" constant="15" id="jas-4z-8Mc"/>
-                            <constraint firstAttribute="bottom" secondItem="RyB-JJ-MLT" secondAttribute="bottom" id="jyw-ma-s9w"/>
-                            <constraint firstItem="NQM-Eo-8Fy" firstAttribute="trailing" secondItem="6OO-sG-LXu" secondAttribute="trailing" id="mBb-Bq-iIm"/>
-                            <constraint firstItem="NQM-Eo-8Fy" firstAttribute="leading" secondItem="6OO-sG-LXu" secondAttribute="leading" id="paQ-f6-ejN"/>
                             <constraint firstAttribute="bottomMargin" secondItem="U3l-cq-4LI" secondAttribute="bottom" priority="750" constant="30" id="wba-M5-Opp"/>
                             <constraint firstItem="B95-ag-oL2" firstAttribute="centerX" secondItem="uEV-UB-DJR" secondAttribute="centerX" id="x2Q-g8-eot"/>
-                            <constraint firstItem="6OO-sG-LXu" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uyh-DU-PMH" secondAttribute="trailing" constant="20" id="y5h-kJ-cpI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bKp-H2-kbn"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bioLBL" destination="jjh-FY-632" id="xXz-Bh-Z5X"/>
-                        <outlet property="blurredView" destination="NQM-Eo-8Fy" id="s9z-nA-7mI"/>
-                        <outlet property="cancelPopupsBTN" destination="RyB-JJ-MLT" id="Cn0-9c-cg3"/>
-                        <outlet property="caocapIMG" destination="0Ez-Ld-oHa" id="NaW-D3-XPe"/>
-                        <outlet property="caocapIMGview" destination="d1N-uh-ygW" id="I87-2N-l20"/>
-                        <outlet property="caocapNameTF" destination="sIk-IS-LCT" id="qla-R6-sCf"/>
                         <outlet property="caocapsCountLBL" destination="lMY-1s-1f4" id="2u4-i9-GC3"/>
-                        <outlet property="createBTN" destination="QAb-UY-x3v" id="Zv4-c8-rDM"/>
                         <outlet property="friendsCountLBL" destination="bB1-Es-Ffz" id="wDa-Jw-0u5"/>
                         <outlet property="nameLBL" destination="J9F-mF-dDM" id="WUB-5T-HWE"/>
                         <outlet property="orbitingCountLBL" destination="2P2-ba-OSX" id="cMB-0p-zy5"/>
-                        <outlet property="plusBTN" destination="U3l-cq-4LI" id="UZr-eg-C0n"/>
-                        <outlet property="popupView" destination="uyh-DU-PMH" id="b2j-vz-z69"/>
                         <outlet property="profileCollectionView" destination="PaE-eC-JA1" id="gdj-e2-Fik"/>
                         <outlet property="userIMG" destination="0Z8-6M-tMt" id="nXp-I8-eYA"/>
                         <outlet property="userIMGview" destination="GTf-lD-cX3" id="joV-uF-K0J"/>
@@ -1002,12 +852,12 @@
                 <viewControllerPlaceholder storyboardIdentifier="builder" storyboardName="Builder" referencedIdentifier="builder" id="iF9-hH-XdY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1c-IZ-NGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="740"/>
+            <point key="canvasLocation" x="1530" y="350"/>
         </scene>
         <!--Edit ProfileVC-->
         <scene sceneID="Y2H-H7-14c">
             <objects>
-                <viewController storyboardIdentifier="editProfile" id="B1o-oN-deJ" customClass="editProfileVC" customModule="caocap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editProfile" id="B1o-oN-deJ" customClass="editProfileVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ybG-7e-bqK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1018,10 +868,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFY-YU-M1N" userLabel="user profile">
                                         <rect key="frame" x="0.0" y="80" width="414" height="150"/>
                                         <subviews>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f73-Fo-fWt" customClass="DesignableView" customModule="caocap" customModuleProvider="target">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f73-Fo-fWt" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                 <rect key="frame" x="167" y="20" width="80" height="80"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_2235" translatesAutoresizingMaskIntoConstraints="NO" id="aCf-8F-t7J" customClass="DesignableImage" customModule="caocap" customModuleProvider="target">
+                                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_2235" translatesAutoresizingMaskIntoConstraints="NO" id="aCf-8F-t7J" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1066,7 +916,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ha7-gA-5sX">
                                                 <rect key="frame" x="117" y="105" width="180" height="30"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOi-AN-0Pj" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOi-AN-0Pj" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="7.6666666666666572" width="15" height="15"/>
                                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1082,7 +932,7 @@
                                                             <action selector="colorBTNpressed:" destination="B1o-oN-deJ" eventType="touchUpInside" id="BMn-ec-cID"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wS4-Lh-lOr" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wS4-Lh-lOr" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="33" y="7.6666666666666572" width="15" height="15"/>
                                                         <color key="backgroundColor" red="1" green="0.63911598920000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1098,7 +948,7 @@
                                                             <action selector="colorBTNpressed:" destination="B1o-oN-deJ" eventType="touchUpInside" id="AzK-rs-1d8"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVB-nL-jO8" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVB-nL-jO8" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="66" y="7.6666666666666572" width="15" height="15"/>
                                                         <color key="backgroundColor" red="0.38465031979999997" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1114,7 +964,7 @@
                                                             <action selector="colorBTNpressed:" destination="B1o-oN-deJ" eventType="touchUpInside" id="tfo-pj-jk4"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-0a-kSM" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5S5-0a-kSM" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="99" y="7.6666666666666572" width="15" height="15"/>
                                                         <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1130,7 +980,7 @@
                                                             <action selector="colorBTNpressed:" destination="B1o-oN-deJ" eventType="touchUpInside" id="MsA-Gc-2OC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eao-47-Os9" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eao-47-Os9" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="132" y="7.6666666666666572" width="15" height="15"/>
                                                         <color key="backgroundColor" red="0.88617801669999996" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1146,7 +996,7 @@
                                                             <action selector="colorBTNpressed:" destination="B1o-oN-deJ" eventType="touchUpInside" id="QCf-ez-ldC"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbC-St-JDk" customClass="DesignableButton" customModule="caocap" customModuleProvider="target">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbC-St-JDk" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="165" y="7.6666666666666572" width="15" height="15"/>
                                                         <color key="backgroundColor" red="0.91756969690000001" green="0.91769832370000004" blue="0.9175290465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -1251,7 +1101,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7yu-eo-ZY0">
                                                                 <rect key="frame" x="100" y="0.0" width="259" height="23"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="96k-bI-yth" customClass="DesignableTextField" customModule="caocap" customModuleProvider="target">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="96k-bI-yth" customClass="DesignableTextField" customModule="CAOCAPx" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="249" height="20"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="20" id="hhl-n8-8fx"/>
@@ -1616,13 +1466,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQr-Vj-s7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2428.985507246377" y="1491.9642857142856"/>
+            <point key="canvasLocation" x="3184" y="740"/>
         </scene>
     </scenes>
     <designables>
-        <designable name="0Ez-Ld-oHa">
-            <size key="intrinsicContentSize" width="512" height="512"/>
-        </designable>
         <designable name="0Z8-6M-tMt">
             <size key="intrinsicContentSize" width="100" height="101"/>
         </designable>
@@ -1631,9 +1478,6 @@
         </designable>
         <designable name="96k-bI-yth">
             <size key="intrinsicContentSize" width="35.666666666666664" height="18.666666666666668"/>
-        </designable>
-        <designable name="QAb-UY-x3v">
-            <size key="intrinsicContentSize" width="56" height="36"/>
         </designable>
         <designable name="aCf-8F-t7J">
             <size key="intrinsicContentSize" width="100" height="101"/>
@@ -1656,9 +1500,6 @@
         <designable name="jOi-AN-0Pj">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
-        <designable name="sIk-IS-LCT">
-            <size key="intrinsicContentSize" width="86.333333333333329" height="18.666666666666668"/>
-        </designable>
         <designable name="wS4-Lh-lOr">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
@@ -1667,7 +1508,6 @@
         <image name="IMG_2235" width="100" height="101"/>
         <image name="W-chat" width="106" height="100"/>
         <image name="W-plus_math" width="100" height="100"/>
-        <image name="caocap app icon old" width="512" height="512"/>
         <image name="icons8-audio_wave0" width="104" height="85"/>
         <image name="icons8-menu0" width="100" height="64"/>
         <image name="w-astronaut_helmet" width="100" height="100"/>

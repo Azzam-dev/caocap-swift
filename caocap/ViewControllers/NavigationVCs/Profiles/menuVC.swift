@@ -23,7 +23,7 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     }
     
     func logoutAct() {
-        let logoutPopup = UIAlertController(title: "تسجيل الخروج", message: "هل توريد تسجيل الخروج ؟", preferredStyle: .actionSheet)
+        let logoutPopup = UIAlertController(title: "تسجيل الخروج", message: "هل تريد تسجيل الخروج ؟", preferredStyle: .actionSheet)
         let logoutAction = UIAlertAction(title: "نعم", style: .destructive ) { (buttonTapped) in
             do {
                 try Auth.auth().signOut()
@@ -32,11 +32,11 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                 authVC!.modalPresentationStyle = .fullScreen
                 self.present(authVC!, animated: true, completion: nil)
             } catch {
-                self.displayAlertMessage(messageToDisplay: error as! String)
+                self.displayAlertMessage(messageToDisplay: error.localizedDescription )
                 
             }
         }
-        let cancel = UIAlertAction(title: "لا", style: .default, handler: nil)
+        let cancel = UIAlertAction(title: "لا", style: .cancel, handler: nil)
         logoutPopup.addAction(logoutAction)
         logoutPopup.addAction(cancel)
         
