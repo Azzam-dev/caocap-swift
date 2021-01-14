@@ -9,24 +9,6 @@
           "revision": "c12c773af0b18be3abc30a5e39fc8370a6498502",
           "version": "1.5.0"
         }
-      },
-      {
-        "package": "Fuzi",
-        "repositoryURL": "https://github.com/cezheng/Fuzi",
-        "state": {
-          "branch": null,
-          "revision": "5955a7d9b3bb5f24adb1a46ce8586ba37eee43bc",
-          "version": "3.1.2"
-        }
-      },
-      {
-        "package": "SwiftSoup",
-        "repositoryURL": "https://github.com/scinfu/SwiftSoup.git",
-        "state": {
-          "branch": null,
-          "revision": "774dc9c7213085db8aa59595e27c1cd22e428904",
-          "version": "2.3.2"
-        }
       }
     ]
   },

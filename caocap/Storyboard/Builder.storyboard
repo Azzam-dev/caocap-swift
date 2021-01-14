@@ -875,6 +875,7 @@
                         <outlet property="surfaceBlock2" destination="G1f-CN-mnA" id="vwy-qd-jw2"/>
                         <outlet property="surfaceBlock3" destination="BiO-Cs-UKf" id="cry-NH-bu5"/>
                         <outlet property="toolsViewHeightConstraint" destination="0Zl-Jn-V3b" id="685-UW-J25"/>
+                        <outlet property="webView" destination="t8K-rQ-Fxc" id="8zt-fk-XJ7"/>
                         <outletCollection property="topToolBarBTNs" destination="WG7-kz-3Kt" collectionClass="NSMutableArray" id="Umb-AL-XAm"/>
                         <outletCollection property="topToolBarBTNs" destination="YB5-Ed-RSu" collectionClass="NSMutableArray" id="GRX-ZV-vGw"/>
                         <outletCollection property="topToolBarBTNs" destination="RWc-B9-aYo" collectionClass="NSMutableArray" id="e2M-te-qPv"/>
@@ -913,12 +914,26 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3o-gU-LWy" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3o-gU-LWy" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="30" width="200" height="250"/>
+                            <subviews>
+                                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8K-rQ-Fxc">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
+                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <wkWebViewConfiguration key="configuration">
+                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                        <wkPreferences key="preferences"/>
+                                    </wkWebViewConfiguration>
+                                </wkWebView>
+                            </subviews>
                             <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                             <constraints>
+                                <constraint firstAttribute="trailing" secondItem="t8K-rQ-Fxc" secondAttribute="trailing" id="1xu-BR-mJw"/>
                                 <constraint firstAttribute="width" constant="200" id="Eyq-cM-KO0"/>
+                                <constraint firstAttribute="bottom" secondItem="t8K-rQ-Fxc" secondAttribute="bottom" id="OKe-yt-lAP"/>
                                 <constraint firstAttribute="width" secondItem="k3o-gU-LWy" secondAttribute="height" multiplier="4:5" id="Qww-dn-tuv"/>
+                                <constraint firstItem="t8K-rQ-Fxc" firstAttribute="top" secondItem="k3o-gU-LWy" secondAttribute="top" id="eye-sp-MvA"/>
+                                <constraint firstItem="t8K-rQ-Fxc" firstAttribute="leading" secondItem="k3o-gU-LWy" secondAttribute="leading" id="noj-wm-s64"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

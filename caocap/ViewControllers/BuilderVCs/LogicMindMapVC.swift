@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import SwiftSoup
 import Firebase
 
 class LogicMindMapVC: UIViewController {

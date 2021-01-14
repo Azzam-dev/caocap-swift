@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import SwiftSoup
 import Firebase
 
 class ArtBuilderVC: UIViewController {
@@ -25,6 +24,7 @@ class ArtBuilderVC: UIViewController {
     @IBOutlet var surfaceBlock2: UIStackView!
     @IBOutlet var surfaceBlock3: UIStackView!
     
+    @IBOutlet weak var webView: WKWebView!
     
     @IBOutlet weak var blockHierarchyTableView: UITableView!
     @IBOutlet weak var blockCollectionView: UICollectionView!
@@ -42,6 +42,7 @@ class ArtBuilderVC: UIViewController {
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
     
+    var caocapCode = ""
     var openedCaocap = Caocap(key: "", dictionary: ["":""])
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,8 +55,19 @@ class ArtBuilderVC: UIViewController {
     func getCaocapData() {
         DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
             let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
-            //...
+            let code = caocap["code"] as? [String: String] ?? ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]
+            
+            self.caocapCode = """
+            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(code["css"]!)</style></head><body>\(code["html"]!)<script>\(code["js"]!)</script></body></html>
+            """
+            
+            self.loudCaocap()
         }
+    }
+    
+    func loudCaocap() {
+        self.webView.loadHTMLString(caocapCode, baseURL: nil)
     }
     
     @IBOutlet var topToolBarBTNs: [UIButton]!

@@ -109,12 +109,6 @@ class editProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
         dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBAction func cancelBTN(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    
     @IBOutlet weak var saveBTN: DesignableButton!
     @IBAction func saveBTN(_ sender: Any) {
         
