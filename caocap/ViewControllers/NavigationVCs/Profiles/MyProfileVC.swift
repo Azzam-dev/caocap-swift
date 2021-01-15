@@ -11,7 +11,6 @@ import SwiftUI
 import Firebase
 
 class MyProfileVC: UIViewController {
-    
     @IBOutlet weak var profileCollectionView: UICollectionView!
     var caocapsArray = [Caocap]()
 
@@ -125,9 +124,10 @@ class MyProfileVC: UIViewController {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
         let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
         createCaocapVC.caocapType = caocapType
+        createCaocapVC.createCaocapDelegate = self
         self.present(createCaocapVC, animated: true)
     }
-    
+
     func presentBuilderVC(with caocap: Caocap) {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
         let builderVC = storyboard.instantiateViewController(withIdentifier: "builder") as! BuilderVC
@@ -191,5 +191,13 @@ extension MyProfileVC: CaocapCellDelegate {
         }
         
         self.present(moreInfoPopup, animated: true , completion: nil)
+    }
+}
+
+extension MyProfileVC: CreateCaocapDelegate {
+    func openNewlyCreatedCaocap() {
+        DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
+            self.presentBuilderVC(with: returnedCaocapsArray.last!)
+        }
     }
 }
