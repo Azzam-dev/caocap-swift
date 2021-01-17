@@ -50,18 +50,13 @@ class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     
     var caocapKey = ""
     var caocapIsOrbited = false
+    
     func configureCell(caocap: Caocap ,released: Bool) {
         caocapKey = caocap.key
         
-        let caocapCode = """
-        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(caocap.code["css"] ?? "")</style></head><body>\(caocap.code["html"] ?? "" )<script>\(caocap.code["js"] ?? "")</script></body></html>
-        """
-        
-        self.webView.loadHTMLString(caocapCode , baseURL: nil)
-        
         //this stops the image and the Url from duplicating
         self.caocapIMG.image = nil
+        self.webView.stopLoading()
         
         //start the Circle Animation
         addPulse()
@@ -87,6 +82,7 @@ class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
             self.theView.isHidden = false
             self.caocapBackgroundIMG.isHidden = true
             self.caocapBackgroundIMG.image = nil
+            loadCaocap(caocap)
         } else {
             self.theView.isHidden = true
             self.caocapBackgroundIMG.isHidden = false
@@ -107,6 +103,28 @@ class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
         pulse.backgroundColor = #colorLiteral(red: 0.2902041078, green: 0.2901904881, blue: 0.2902008593, alpha: 0.5)
         
         self.theView.layer.insertSublayer(pulse, at:  0)
+        
+    }
+    
+    fileprivate func loadCaocap(_ caocap: Caocap) {
+        switch caocap.type {
+        case .code:
+            let caocapCode = """
+            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(caocap.code!["css"] ?? "")</style></head><body>\(caocap.code!["html"] ?? "" )<script>\(caocap.code!["js"] ?? "")</script></body></html>
+            """
+            
+            self.webView.loadHTMLString(caocapCode , baseURL: nil)
+            
+        case .link:
+            let caocapURL = URL(string: caocap.link!)!
+            var urlRequest = URLRequest(url: caocapURL)
+            urlRequest.cachePolicy = .returnCacheDataElseLoad
+            self.webView.load(urlRequest)
+            
+        default:
+            print("unexpected caocap type")
+        }
         
     }
     

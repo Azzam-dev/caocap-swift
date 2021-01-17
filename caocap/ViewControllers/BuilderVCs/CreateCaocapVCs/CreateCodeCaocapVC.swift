@@ -13,19 +13,16 @@ protocol CreateCaocapDelegate {
     func openNewlyCreatedCaocap()
 }
 
-class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateCodeCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var createCaocapDelegate: CreateCaocapDelegate?
     
-    var caocapType: CaocapType?
     @IBOutlet weak var caocapIMG: DesignableImage!
     @IBOutlet weak var caocapIMGview: DesignableView!
     @IBOutlet weak var caocapNameTF: UITextField!
-    @IBOutlet weak var caocapLinkTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         caocapIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeImage)))
         createButtonSetup(withTitle: "create")
     }
@@ -35,7 +32,6 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var constraintsArray: [NSLayoutConstraint]!
     @IBOutlet var colorBTNs: [UIButton]!
     @IBAction func colorBTNpressed(_ sender: UIButton) {
-        
         let previousColorIndex = colorSelectedIndex
         colorSelectedIndex = sender.tag
         let previousConstraint = constraintsArray[previousColorIndex]
@@ -86,9 +82,6 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         if caocapNameTF.text == "" {
             displayAlertMessage(messageToDisplay: "please enter the caocap's name")
             createButtonSetup(withTitle: "create")
-        } else if caocapLinkTF.text == "" {
-            displayAlertMessage(messageToDisplay: "please enter the caocap's link")
-            createButtonSetup(withTitle: "create")
         } else {
             uploudCaocap()
         }
@@ -106,7 +99,9 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
                     if error != nil { print(error!) } else {
                         // Here you can get the download URL
                         let caocapData = ["imageURL": url?.absoluteString ?? "",
+                                          "color": self.colorSelectedIndex,
                                           "name" : self.caocapNameTF.text!,
+                                          "type": "code",
                                           "code": ["html":"<h1> write your code here </h1>",
                                                    "js": "//write your JS code here",
                                                    "css": "h1 { color: blue; }"],
@@ -118,9 +113,6 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
                             if caocapCreated {
                                 self.dismiss(animated: true, completion: nil)
                                 self.createCaocapDelegate?.openNewlyCreatedCaocap()
-                                self.caocapNameTF.text = ""
-                                self.caocapIMG.image = #imageLiteral(resourceName: "caocap old app icon no-color")
-                                self.createButtonSetup(withTitle: "create")
                             }
                         })
                     }

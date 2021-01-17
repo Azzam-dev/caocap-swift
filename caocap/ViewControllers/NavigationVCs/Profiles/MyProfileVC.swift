@@ -122,10 +122,24 @@ class MyProfileVC: UIViewController {
     
     func presentCreateCaocapVC(with caocapType: CaocapType) {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-        createCaocapVC.caocapType = caocapType
-        createCaocapVC.createCaocapDelegate = self
-        self.present(createCaocapVC, animated: true)
+        switch caocapType {
+        case .code:
+            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCodeCaocap") as! CreateCodeCaocapVC
+            createCaocapVC.createCaocapDelegate = self
+            self.present(createCaocapVC, animated: true)
+        case .link:
+            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createLinkCaocap") as! CreateLinkCaocapVC
+            createCaocapVC.createCaocapDelegate = self
+            self.present(createCaocapVC, animated: true)
+        case .block:
+            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createblockCaocap") as! CreateBlockCaocapVC
+            createCaocapVC.createCaocapDelegate = self
+            self.present(createCaocapVC, animated: true)
+        case .template:
+            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createTemplateCaocap") as! CreateTemplateCaocapVC
+            createCaocapVC.createCaocapDelegate = self
+            self.present(createCaocapVC, animated: true)
+        }
     }
 
     func presentBuilderVC(with caocap: Caocap) {
