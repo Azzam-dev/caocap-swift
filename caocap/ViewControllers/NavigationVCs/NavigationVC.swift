@@ -29,7 +29,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         
         self.hideKeyboardWhenTappedAround()
         checkNetworkStatus()
-        addGesturesToNavCircleBTN()
+        addNavCircleGestures()
         setupSubNavigationControllers()
         showSplashAnimation()
         
@@ -37,21 +37,21 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         
     }
     
-    func addGesturesToNavCircleBTN() {
+    func addNavCircleGestures() {
         //this is for the tap press
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(navNormalTap(_:)))
         tapGesture.numberOfTapsRequired = 1
-        navCircleBTN.addGestureRecognizer(tapGesture)
+        navFingerTrackingView.addGestureRecognizer(tapGesture)
         
         //this is for the long press
         let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(navLongTap(_:)))
         longGesture.minimumPressDuration = 0.2
         longGesture.allowableMovement = 100
-        navCircleBTN.addGestureRecognizer(longGesture)
+        navFingerTrackingView.addGestureRecognizer(longGesture)
         
         //this is for the pan gesture
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(navPan(_:)))
-        navCircleBTN.addGestureRecognizer(panGesture)
+        navFingerTrackingView.addGestureRecognizer(panGesture)
     }
     
     func setupSubNavigationControllers() {
@@ -81,7 +81,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     @IBOutlet weak var navCircleButtonHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var navCircleView: DesignableView!
-    @IBOutlet weak var navCircleBTN: UIButton!
+    @IBOutlet weak var navFingerTrackingView: UIView!
     
     @objc func navNormalTap(_ sender: UIGestureRecognizer){
         navCircleButtonAnimation()

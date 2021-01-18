@@ -15,14 +15,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     @IBOutlet weak var theView: DesignableView!
     @IBOutlet weak var webView: WKWebView!
     
-    @IBOutlet weak var versionsTableView: UITableView!
-    @IBOutlet weak var codeScrollView: UIScrollView!
-    @IBOutlet weak var settingsScrollView: UIScrollView!
-    
-    @IBOutlet weak var htmlTextView: UITextView!
-    @IBOutlet weak var jsTextView: UITextView!
-    @IBOutlet weak var cssTextView: UITextView!
-    
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
@@ -47,15 +39,12 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
             let caocapSnapshot = caocapSnapshot.value as? [String : AnyObject] ?? [:]
             self.caocapNameTF.text = caocapSnapshot["name"] as? String ?? ""
-            self.publishingSwitch.isOn = caocapSnapshot["published"] as? Bool ?? false
+            //self.publishingSwitch.isOn = caocapSnapshot["published"] as? Bool ?? false
             let code = caocapSnapshot["code"] as? [String: String] ?? ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]
             
-            self.htmlTextView.text = code["html"]
-            self.jsTextView.text = code["js"]
-            self.cssTextView.text = code["css"]
             self.caocapCode = """
             <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(self.cssTextView.text!)</style></head><body>\(self.htmlTextView.text!)<script>\(self.jsTextView.text!)</script></body></html>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style></style></head><body><script></script></body></html>
             """
 //            self.codeTextView.text = self.caocapCode
             
@@ -63,32 +52,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         }
     }
     
-    @IBOutlet var topNavBTNs: [UIButton]!
-    @IBAction func topNavBTNs(_ sender: UIButton) {
-        switch sender.tag {
-        case 0:
-            present(versionsView: true)
-            topNavBTNs[1].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-            topNavBTNs[2].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        case 1:
-            present(codeView: true)
-            topNavBTNs[0].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-            topNavBTNs[2].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        case 2:
-            present(settingsView: true)
-            topNavBTNs[0].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-            topNavBTNs[1].setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-        default:
-            print("some bad shit happened 😅")
-        }
-        sender.setTitleColor(#colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), for: .normal)
-    }
-    
-    func present(versionsView: Bool = false, codeView: Bool = false, settingsView: Bool = false) {
-        versionsTableView.isHidden = !versionsView
-        codeScrollView.isHidden = !codeView
-        settingsScrollView.isHidden = !settingsView
-    }
     
     func loudCaocap() {
         self.webView.loadHTMLString(caocapCode, baseURL: nil)
@@ -112,15 +75,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         // save the code in /caocap-x/commit/[UID]/[virsionNum]
     }
     
-    @IBOutlet weak var launchCaocapBTN: UIButton!
-    @IBAction func launchCaocapBTN(_ sender: Any) {
-        // save the code in /caocap-x/caocap/[UID]/code
-        
-        DataService.instance.launchCaocap(caocapKey: openedCaocap.key, code: ["html": htmlTextView.text , "js": jsTextView.text, "css": cssTextView.text])
-            launchCaocapBTN.setImage(#imageLiteral(resourceName: "icons8-launch-1"), for: .normal)
-    }
-    
-    
     func gestureRecognizerSetup() {
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
         upSwipe.direction = .up
@@ -141,7 +95,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
                 if self.toolsViewHeightConstraint.constant == 75 {
                     toolsViewAnimation(120)
                 } else {
-                    toolsViewAnimation(300)
+                    toolsViewAnimation(350)
                 }
             case .down:
                 if self.toolsViewHeightConstraint.constant == 120 {
@@ -176,15 +130,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         
     }
     
-    func textViewDidChange(_ textView: UITextView) {
-        launchCaocapBTN.setImage(#imageLiteral(resourceName: "icons8-launch"), for: .normal)
-        caocapCode = """
-        <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(cssTextView.text!)</style></head><body>\(htmlTextView.text!)<script>\(jsTextView.text!)</script></body></html>
-        """
-        if startTest { loudCaocap() }
-        
-    }
     
     //-----Settings-----
     

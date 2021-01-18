@@ -270,16 +270,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hiE-uO-Nha">
-                                        <rect key="frame" x="101.33333333333333" y="31" width="211.33333333333337" height="29"/>
+                                        <rect key="frame" x="104.66666666666667" y="33" width="204.66666666666663" height="27"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlL-II-jEr">
-                                                <rect key="frame" x="0.0" y="6.3333333333333712" width="162.33333333333334" height="16.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="6.3333333333333721" width="155.66666666666666" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                 <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1Y-bB-ySX">
-                                                <rect key="frame" x="170.33333333333337" y="0.0" width="41" height="29"/>
+                                                <rect key="frame" x="163.66666666666663" y="0.0" width="41" height="27"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                 <state key="normal" title="sign in">
                                                     <color key="titleColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -350,20 +350,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jF-Is-xmu" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jF-Is-xmu">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                        <size key="value" width="-2" height="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-lZ-W2C">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -390,55 +379,6 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDl-TK-izB" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="97" y="728.66666666666663" width="220" height="220"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFF-CG-94N" userLabel="Search">
-                                        <rect key="frame" x="20" y="105" width="30" height="30"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="W-search_filled" translatesAutoresizingMaskIntoConstraints="NO" id="MDm-UG-O8w">
-                                                <rect key="frame" x="5" y="5" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="MDm-UG-O8w" secondAttribute="height" multiplier="1:1" id="S89-Im-76J"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6Y-R0-fzC">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="MDm-UG-O8w" firstAttribute="top" secondItem="iFF-CG-94N" secondAttribute="top" constant="5" id="I8n-ZI-yVq"/>
-                                            <constraint firstItem="i6Y-R0-fzC" firstAttribute="top" secondItem="iFF-CG-94N" secondAttribute="top" id="QqD-ZX-GRC"/>
-                                            <constraint firstItem="MDm-UG-O8w" firstAttribute="centerY" secondItem="iFF-CG-94N" secondAttribute="centerY" id="Sp9-6n-bod"/>
-                                            <constraint firstItem="MDm-UG-O8w" firstAttribute="centerX" secondItem="iFF-CG-94N" secondAttribute="centerX" id="fpZ-VQ-pr9"/>
-                                            <constraint firstItem="i6Y-R0-fzC" firstAttribute="leading" secondItem="iFF-CG-94N" secondAttribute="leading" id="giV-eq-uRd"/>
-                                            <constraint firstAttribute="height" constant="30" id="nd2-VA-cTi"/>
-                                            <constraint firstAttribute="trailing" secondItem="i6Y-R0-fzC" secondAttribute="trailing" id="tqA-MX-SiN"/>
-                                            <constraint firstAttribute="bottom" secondItem="i6Y-R0-fzC" secondAttribute="bottom" id="wyy-9m-JEE"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAi-FJ-BWE" userLabel="QR">
-                                        <rect key="frame" x="170" y="105" width="30" height="30"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="W-full_screen_filled" translatesAutoresizingMaskIntoConstraints="NO" id="NM4-UV-Gki">
-                                                <rect key="frame" x="5" y="5" width="20" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="NM4-UV-Gki" secondAttribute="height" multiplier="1:1" id="Uw5-g4-8aT"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZQ-UO-bQ6">
-                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="hZQ-UO-bQ6" firstAttribute="top" secondItem="GAi-FJ-BWE" secondAttribute="top" id="5RD-LG-1uI"/>
-                                            <constraint firstAttribute="height" constant="30" id="ED6-br-cjr"/>
-                                            <constraint firstItem="NM4-UV-Gki" firstAttribute="top" secondItem="GAi-FJ-BWE" secondAttribute="top" constant="5" id="Ggm-z6-xDU"/>
-                                            <constraint firstItem="NM4-UV-Gki" firstAttribute="centerX" secondItem="GAi-FJ-BWE" secondAttribute="centerX" id="Plq-Sa-R1m"/>
-                                            <constraint firstItem="NM4-UV-Gki" firstAttribute="centerY" secondItem="GAi-FJ-BWE" secondAttribute="centerY" id="XxK-AW-hPr"/>
-                                            <constraint firstAttribute="width" secondItem="GAi-FJ-BWE" secondAttribute="height" multiplier="1:1" id="gWp-w8-c60"/>
-                                            <constraint firstAttribute="trailing" secondItem="hZQ-UO-bQ6" secondAttribute="trailing" id="kQL-ag-pJ7"/>
-                                            <constraint firstAttribute="bottom" secondItem="hZQ-UO-bQ6" secondAttribute="bottom" id="lfG-OQ-tAo"/>
-                                            <constraint firstItem="hZQ-UO-bQ6" firstAttribute="leading" secondItem="GAi-FJ-BWE" secondAttribute="leading" id="t3C-CQ-OmI"/>
-                                        </constraints>
-                                    </view>
                                     <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRG-eG-26f">
                                         <rect key="frame" x="25" y="45" width="50" height="50"/>
                                         <subviews>
@@ -506,7 +446,7 @@
                                                     <constraint firstAttribute="width" secondItem="C4e-ii-pH7" secondAttribute="height" multiplier="1:1" id="LZ0-3m-tgU"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od2-iV-hng" customClass="DesignableButton" customModule="caocap">
+                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od2-iV-hng">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -532,36 +472,31 @@
                                             <constraint firstItem="od2-iV-hng" firstAttribute="top" secondItem="SDp-Ih-1WN" secondAttribute="top" id="zFd-sX-mFy"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="upi-2f-eT5" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-eG-5T8" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="85" y="85" width="50" height="50"/>
-                                        <color key="backgroundColor" red="0.0" green="0.65446996688842773" blue="1" alpha="0.51963682432432434" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="0.65490196078431373" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="upi-2f-eT5" secondAttribute="height" multiplier="1:1" id="cQH-8D-KmM"/>
-                                            <constraint firstAttribute="height" constant="50" id="obC-uX-SJY"/>
+                                            <constraint firstAttribute="width" secondItem="Ojj-eG-5T8" secondAttribute="height" multiplier="1:1" id="ffs-Lo-uv7"/>
+                                            <constraint firstAttribute="width" constant="50" id="zLE-0B-AUc"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                    </button>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="SDp-Ih-1WN" firstAttribute="top" secondItem="fDl-TK-izB" secondAttribute="top" constant="5" id="3kz-56-qat"/>
                                     <constraint firstItem="W8K-aa-pFd" firstAttribute="top" secondItem="fDl-TK-izB" secondAttribute="top" constant="45" id="4Cm-6s-yas"/>
-                                    <constraint firstItem="upi-2f-eT5" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" id="4pc-ar-sfd"/>
                                     <constraint firstAttribute="height" constant="220" id="A6M-Ij-4Gj"/>
                                     <constraint firstAttribute="width" secondItem="fDl-TK-izB" secondAttribute="height" multiplier="1:1" id="Fzd-qh-L9l"/>
                                     <constraint firstItem="SDp-Ih-1WN" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" id="I8z-Fe-w50"/>
-                                    <constraint firstItem="iFF-CG-94N" firstAttribute="leading" secondItem="fDl-TK-izB" secondAttribute="leading" constant="20" id="OAO-Mx-iqN"/>
-                                    <constraint firstItem="GAi-FJ-BWE" firstAttribute="centerY" secondItem="fDl-TK-izB" secondAttribute="centerY" constant="10" id="TJb-WL-Vjf"/>
-                                    <constraint firstItem="upi-2f-eT5" firstAttribute="centerY" secondItem="fDl-TK-izB" secondAttribute="centerY" id="c2b-1p-HSZ"/>
-                                    <constraint firstItem="iFF-CG-94N" firstAttribute="width" secondItem="iFF-CG-94N" secondAttribute="height" multiplier="1:1" id="frb-vn-lIe"/>
+                                    <constraint firstItem="Ojj-eG-5T8" firstAttribute="centerY" secondItem="fDl-TK-izB" secondAttribute="centerY" id="clC-fY-yGV"/>
                                     <constraint firstItem="ZRG-eG-26f" firstAttribute="top" secondItem="fDl-TK-izB" secondAttribute="top" constant="45" id="jSo-5K-A9e"/>
                                     <constraint firstItem="ZRG-eG-26f" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" constant="-60" id="oAE-dT-M2N"/>
                                     <constraint firstItem="W8K-aa-pFd" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" constant="60" id="pA9-YL-W7U"/>
-                                    <constraint firstAttribute="trailing" secondItem="GAi-FJ-BWE" secondAttribute="trailing" constant="20" id="rJt-zC-MVl"/>
-                                    <constraint firstItem="iFF-CG-94N" firstAttribute="centerY" secondItem="fDl-TK-izB" secondAttribute="centerY" constant="10" id="z0D-Ah-Y8X"/>
+                                    <constraint firstItem="Ojj-eG-5T8" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" id="woV-ku-vIh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -583,12 +518,6 @@
                                         <color key="value" red="0.17346543073654175" green="0.22139126062393188" blue="0.26790127158164978" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="iFF-CG-94N"/>
-                                        <exclude reference="GAi-FJ-BWE"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-Dl-d8S" userLabel="bottomNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="174.66666666666666" y="806" width="65" height="65"/>
@@ -637,22 +566,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rg-5e-OQE">
-                                                <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
-                                            </button>
-                                            <button opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkW-34-gze">
-                                                <rect key="frame" x="9.3333333333333428" y="10" width="65" height="65"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.16860964894294739" green="0.16863921284675598" blue="0.16860029101371765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="3rg-5e-OQE" secondAttribute="bottom" id="4w0-2t-M3O"/>
-                                            <constraint firstAttribute="trailing" secondItem="3rg-5e-OQE" secondAttribute="trailing" id="6DD-59-yj8"/>
                                             <constraint firstItem="7Rx-ap-Ey6" firstAttribute="centerY" secondItem="IMv-GT-7uj" secondAttribute="centerY" id="7YV-Xd-RAk"/>
-                                            <constraint firstItem="3rg-5e-OQE" firstAttribute="top" secondItem="IMv-GT-7uj" secondAttribute="top" id="7nx-a2-ErS"/>
                                             <constraint firstItem="7Rx-ap-Ey6" firstAttribute="centerX" secondItem="IMv-GT-7uj" secondAttribute="centerX" id="GSx-LA-Lzx"/>
-                                            <constraint firstItem="3rg-5e-OQE" firstAttribute="leading" secondItem="IMv-GT-7uj" secondAttribute="leading" id="R6p-tE-RYg"/>
                                             <constraint firstItem="7Rx-ap-Ey6" firstAttribute="top" secondItem="IMv-GT-7uj" secondAttribute="top" constant="5" id="Wkw-E8-ZW0"/>
                                             <constraint firstAttribute="width" secondItem="IMv-GT-7uj" secondAttribute="height" multiplier="1:1" id="iPb-NO-mjg"/>
                                             <constraint firstAttribute="height" constant="65" id="w8d-lN-V8i"/>
@@ -706,10 +624,10 @@
                         <outlet property="exploreICON" destination="oR6-Gw-xRQ" id="ii0-Gw-fXK"/>
                         <outlet property="exploreIconView" destination="ZRG-eG-26f" id="q0c-A0-jfn"/>
                         <outlet property="myprofileIconView" destination="W8K-aa-pFd" id="Dbf-eP-8CZ"/>
-                        <outlet property="navCircleBTN" destination="upi-2f-eT5" id="cpW-22-IXs"/>
                         <outlet property="navCircleButtonHeightConstraint" destination="w8d-lN-V8i" id="nDI-3i-6R8"/>
                         <outlet property="navCircleView" destination="fDl-TK-izB" id="Bpt-5z-8gL"/>
                         <outlet property="navCircleViewHeightConstraint" destination="A6M-Ij-4Gj" id="avA-7w-Hzk"/>
+                        <outlet property="navFingerTrackingView" destination="Ojj-eG-5T8" id="I7B-9a-t7n"/>
                         <outlet property="orbitICON" destination="caS-FX-zLz" id="Gvd-DA-uAG"/>
                         <outletCollection property="navBTNs" destination="z7c-aX-7ne" collectionClass="NSMutableArray" id="csg-cQ-ytL"/>
                         <outletCollection property="navBTNs" destination="od2-iV-hng" collectionClass="NSMutableArray" id="epA-pX-AIV"/>
@@ -951,17 +869,9 @@ Please visit the app tomorrow and everything will be done
         <designable name="YI8-5v-pW8">
             <size key="intrinsicContentSize" width="1000" height="1000"/>
         </designable>
-        <designable name="od2-iV-hng">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="upi-2f-eT5">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
     </designables>
     <resources>
         <image name="W-chat" width="106" height="100"/>
-        <image name="W-full_screen_filled" width="100" height="106"/>
-        <image name="W-search_filled" width="86" height="88"/>
         <image name="caocap circle" width="1000" height="1000"/>
         <image name="icons8-astronaut_helmet" width="96" height="92"/>
         <image name="icons8-email" width="88" height="92"/>
