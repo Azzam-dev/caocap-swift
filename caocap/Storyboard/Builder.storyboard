@@ -1256,10 +1256,10 @@
             </objects>
             <point key="canvasLocation" x="1996" y="1511"/>
         </scene>
-        <!--Logic Mind MapVC-->
+        <!--View Controller-->
         <scene sceneID="fwy-Um-DEb">
             <objects>
-                <viewController storyboardIdentifier="logicMindMap" id="Bhe-V6-Jw1" customClass="LogicMindMapVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bhe-V6-Jw1" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uyp-tZ-JA6"/>
                         <viewControllerLayoutGuide type="bottom" id="5bg-WV-vpI"/>
@@ -2645,10 +2645,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="caocap link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUN-op-RxL">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://" borderStyle="roundedRect" placeholder="caocap link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUN-op-RxL">
                                         <rect key="frame" x="0.0" y="44" width="324" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -3652,15 +3652,41 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="createBG" translatesAutoresizingMaskIntoConstraints="NO" id="7Do-YY-0YK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="10" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="kLS-dG-GIU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="bbT-fP-luo"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="YPD-bY-wdx"/>
-                                <connections>
-                                    <outlet property="delegate" destination="CLh-9X-Pee" id="AeR-Bc-g53"/>
-                                </connections>
-                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEC-hX-wD7" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
+                                <rect key="frame" x="18" y="84" width="378" height="540"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XK4-29-Sac">
+                                        <rect key="frame" x="10" y="10" width="358" height="520"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <mutableString key="text">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;CAOCAP&lt;/title&gt;&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"&gt;&lt;style&gt;\(code["css"]!)&lt;/style&gt;&lt;/head&gt;&lt;body&gt;\(code["html"]!)&lt;script&gt;\(code["js"]!)&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</mutableString>
+                                        <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.16860964894294739" green="0.16863921284675598" blue="0.16860029101371765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="XK4-29-Sac" secondAttribute="bottom" constant="10" id="Ga2-5v-dNK"/>
+                                    <constraint firstAttribute="trailing" secondItem="XK4-29-Sac" secondAttribute="trailing" constant="10" id="OJm-0k-izh"/>
+                                    <constraint firstItem="XK4-29-Sac" firstAttribute="leading" secondItem="jEC-hX-wD7" secondAttribute="leading" constant="10" id="ZyN-Vr-OzZ"/>
+                                    <constraint firstItem="XK4-29-Sac" firstAttribute="top" secondItem="jEC-hX-wD7" secondAttribute="top" constant="10" id="wk3-p2-syC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="2" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1n-aQ-IRs">
                                 <rect key="frame" x="20" y="516" width="374" height="360"/>
                                 <subviews>
@@ -3797,30 +3823,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jEC-hX-wD7" firstAttribute="leading" secondItem="ffE-Gk-bkH" secondAttribute="leading" constant="18" id="6y9-jR-dDx"/>
                             <constraint firstItem="x1n-aQ-IRs" firstAttribute="centerX" secondItem="ffE-Gk-bkH" secondAttribute="centerX" id="84n-1s-Mxr"/>
-                            <constraint firstItem="kLS-dG-GIU" firstAttribute="top" secondItem="ffE-Gk-bkH" secondAttribute="top" id="PqY-8C-liY"/>
+                            <constraint firstItem="jEC-hX-wD7" firstAttribute="width" secondItem="jEC-hX-wD7" secondAttribute="height" multiplier="7:10" id="KgI-8v-zgv"/>
                             <constraint firstAttribute="bottom" secondItem="x1n-aQ-IRs" secondAttribute="bottom" priority="750" constant="20" id="SOC-rc-Zif"/>
                             <constraint firstItem="7Do-YY-0YK" firstAttribute="leading" secondItem="ffE-Gk-bkH" secondAttribute="leading" id="Sb5-Ji-r1X"/>
-                            <constraint firstAttribute="trailing" secondItem="kLS-dG-GIU" secondAttribute="trailing" id="VNG-SW-p8n"/>
-                            <constraint firstItem="kLS-dG-GIU" firstAttribute="leading" secondItem="ffE-Gk-bkH" secondAttribute="leading" id="WCy-dF-NJ8"/>
                             <constraint firstItem="x1n-aQ-IRs" firstAttribute="leading" secondItem="ffE-Gk-bkH" secondAttribute="leading" constant="20" id="WYf-1W-JYE"/>
+                            <constraint firstItem="jEC-hX-wD7" firstAttribute="top" secondItem="8P8-xo-ccW" secondAttribute="bottom" constant="40" id="XEb-rb-BCw"/>
                             <constraint firstItem="7Do-YY-0YK" firstAttribute="top" secondItem="ffE-Gk-bkH" secondAttribute="top" id="XI0-3l-OtZ"/>
-                            <constraint firstAttribute="bottom" secondItem="kLS-dG-GIU" secondAttribute="bottom" id="Ymg-7Z-kzx"/>
                             <constraint firstAttribute="bottom" secondItem="7Do-YY-0YK" secondAttribute="bottom" id="qH8-bA-CQJ"/>
+                            <constraint firstItem="jEC-hX-wD7" firstAttribute="centerX" secondItem="ffE-Gk-bkH" secondAttribute="centerX" id="taq-XR-EQx"/>
                             <constraint firstAttribute="trailing" secondItem="7Do-YY-0YK" secondAttribute="trailing" id="uL9-je-QWi"/>
                             <constraint firstItem="OKA-IT-3VL" firstAttribute="top" relation="lessThanOrEqual" secondItem="x1n-aQ-IRs" secondAttribute="bottom" constant="10" id="uZy-w6-7VM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HQe-cT-Pja"/>
                     <connections>
-                        <outlet property="designSVContant" destination="Jsf-kG-An5" id="UPL-5f-Qzi"/>
-                        <outlet property="designScrollView" destination="kLS-dG-GIU" id="AkF-xn-czd"/>
                         <outlet property="gestureRecognizerView" destination="x1n-aQ-IRs" id="WrM-bb-9xy"/>
-                        <outlet property="surfaceBlock" destination="OfH-Ez-qmg" id="c9K-Cn-YZC"/>
-                        <outlet property="surfaceBlock2" destination="G1f-CN-mnA" id="Uhp-YU-h6w"/>
-                        <outlet property="surfaceBlock3" destination="BiO-Cs-UKf" id="wK4-UW-frk"/>
                         <outlet property="toolsViewHeightConstraint" destination="Sls-tC-4z7" id="Zyj-DO-GYJ"/>
-                        <outlet property="webView" destination="t8K-rQ-Fxc" id="UuS-x4-yfx"/>
                         <outletCollection property="topToolBarBTNs" destination="5zj-r2-Asn" collectionClass="NSMutableArray" id="EgF-Ls-llL"/>
                         <outletCollection property="topToolBarBTNs" destination="Yhe-1G-daI" collectionClass="NSMutableArray" id="tIi-zu-eJn"/>
                         <outletCollection property="topToolBarBTNs" destination="PPb-UY-vFc" collectionClass="NSMutableArray" id="8Ks-Sh-xdf"/>
@@ -4249,6 +4269,9 @@
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

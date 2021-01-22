@@ -85,16 +85,20 @@ class BuilderVC: UIViewController {
             circleViewScaleDownAnimation()
             blurredViewHideAnimation()
         } else if self.navCircleViewHeightConstraint.constant == 65 && blurredView.isHidden {
+            
             switch navSelectedIndex {
             case 0:
                 print("cosmosBase pop View Controller")
+                self.dismiss(animated: true, completion: nil)
                 // TODO: pop the top view controller in the cosmosBase NavigationController
             // like this -> exploreSubNAV?.popViewController(animated: true)
             case 1:
                 print("artBuilder pop View Controller")
+                self.dismiss(animated: true, completion: nil)
                 // TODO: pop the top view controller in the artBuilder NavigationController
             case 2:
                 print("testLab pop View Controller")
+                self.dismiss(animated: true, completion: nil)
                 // TODO: pop the top view controller in the testLab NavigationController
             default:
                 break
