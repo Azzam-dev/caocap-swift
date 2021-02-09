@@ -59,11 +59,7 @@ class BuilderVC: UIViewController {
         artBuilderSubVC?.openedCaocap = openedCaocap
         testLabSubVC?.openedCaocap = openedCaocap
         viewControllers = [cosmosBaseSubVC!, artBuilderSubVC!, testLabSubVC!]
-        let vc = viewControllers[navSelectedIndex]
-        addChild(vc)
-        vc.view.frame = contentView.bounds
-        contentView.addSubview(vc.view)
-        vc.didMove(toParent: self)
+        navBTNpressed(navBTNs[navSelectedIndex])
     }
     
     @IBOutlet weak var contentView: UIView!
@@ -230,21 +226,21 @@ class BuilderVC: UIViewController {
         
         switch navSelectedIndex {
         case 0:
-            cosmosBaseICON.image = #imageLiteral(resourceName: "B-launched_rocket")
-            artBuilderICON.image = #imageLiteral(resourceName: "w-planet_filled")
-            testLabICON.image = #imageLiteral(resourceName: "W-chat")
+            cosmosBaseICON.image = #imageLiteral(resourceName: "cosmos-1")
+            artBuilderICON.image = #imageLiteral(resourceName: "artBuilder")
+            testLabICON.image = #imageLiteral(resourceName: "testLab")
         case 1:
-            cosmosBaseICON.image = #imageLiteral(resourceName: "w-launched_rocket")
-            artBuilderICON.image = #imageLiteral(resourceName: "B-planet_filled")
-            testLabICON.image = #imageLiteral(resourceName: "W-chat")
+            cosmosBaseICON.image = #imageLiteral(resourceName: "cosmos")
+            artBuilderICON.image = #imageLiteral(resourceName: "artBuilder-1")
+            testLabICON.image = #imageLiteral(resourceName: "testLab")
         case 2:
-            cosmosBaseICON.image = #imageLiteral(resourceName: "w-launched_rocket")
-            artBuilderICON.image = #imageLiteral(resourceName: "w-planet_filled")
-            testLabICON.image = #imageLiteral(resourceName: "B-chat")
+            cosmosBaseICON.image = #imageLiteral(resourceName: "cosmos")
+            artBuilderICON.image = #imageLiteral(resourceName: "artBuilder")
+            testLabICON.image = #imageLiteral(resourceName: "testLab-1")
         default:
-            cosmosBaseICON.image = #imageLiteral(resourceName: "w-launched_rocket")
-            artBuilderICON.image = #imageLiteral(resourceName: "w-planet_filled")
-            testLabICON.image = #imageLiteral(resourceName: "W-chat")
+            cosmosBaseICON.image = #imageLiteral(resourceName: "cosmos")
+            artBuilderICON.image = #imageLiteral(resourceName: "artBuilder")
+            testLabICON.image = #imageLiteral(resourceName: "testLab")
         }
         let vc = viewControllers[navSelectedIndex]
         addChild(vc)

@@ -3017,7 +3017,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIU-hi-b9h" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="10" width="374" height="350"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGl-2N-dg0">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hGl-2N-dg0">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="M4u-re-KVV">
@@ -3381,7 +3381,7 @@
                                     <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Sm-hy-Fas">
                                         <rect key="frame" x="25" y="45" width="50" height="50"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-cloud_database" translatesAutoresizingMaskIntoConstraints="NO" id="9yM-I1-BFp">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cosmos" translatesAutoresizingMaskIntoConstraints="NO" id="9yM-I1-BFp">
                                                 <rect key="frame" x="10" y="10" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9yM-I1-BFp" secondAttribute="height" multiplier="1:1" id="Lf0-1D-pLD"/>
@@ -3410,13 +3410,13 @@
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PRi-6e-zdp">
                                         <rect key="frame" x="145" y="45" width="50" height="50"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-test_tube" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-bW-V5h">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testLab" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-bW-V5h">
                                                 <rect key="frame" x="10" y="10" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="CPj-bW-V5h" secondAttribute="height" multiplier="1:1" id="nsh-il-aK5"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzO-rJ-9Vt">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzO-rJ-9Vt">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <connections>
                                                     <action selector="navBTNpressed:" destination="f3l-jt-FAe" eventType="touchDragInside" id="PZh-S1-8WL"/>
@@ -3439,13 +3439,13 @@
                                     <view clipsSubviews="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yu-pX-IKf">
                                         <rect key="frame" x="85" y="5" width="50" height="50"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-source_code" translatesAutoresizingMaskIntoConstraints="NO" id="z71-j0-FYN">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="artBuilder" translatesAutoresizingMaskIntoConstraints="NO" id="z71-j0-FYN">
                                                 <rect key="frame" x="10" y="10" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="z71-j0-FYN" secondAttribute="height" multiplier="1:1" id="5eY-gF-jUO"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3T-vZ-HkU">
+                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3T-vZ-HkU">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -3615,8 +3615,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="8NR-D9-uBm"/>
                     <connections>
-                        <outlet property="artBuilderICON" destination="CPj-bW-V5h" id="S2A-sG-XP4"/>
-                        <outlet property="artBuilderIconView" destination="PRi-6e-zdp" id="zrO-82-NPw"/>
+                        <outlet property="artBuilderICON" destination="z71-j0-FYN" id="WD4-ec-QZK"/>
+                        <outlet property="artBuilderIconView" destination="2yu-pX-IKf" id="7dv-Jb-Ieu"/>
                         <outlet property="blurredView" destination="0Vf-LR-xM9" id="GJU-QR-hwp"/>
                         <outlet property="cancelPopupsBTN" destination="uY0-0a-Uv6" id="jdB-gi-pty"/>
                         <outlet property="contentView" destination="PMx-9c-zW2" id="RaA-A9-c7z"/>
@@ -3626,8 +3626,8 @@
                         <outlet property="navCircleView" destination="dv0-ym-zJj" id="KBf-TE-bNd"/>
                         <outlet property="navCircleViewHeightConstraint" destination="P0H-nO-4Al" id="Y9Q-eN-RSq"/>
                         <outlet property="navFingerTrackingView" destination="dBu-OJ-aBR" id="Oyp-lb-lqw"/>
-                        <outlet property="testLabICON" destination="z71-j0-FYN" id="pbS-aE-cSl"/>
-                        <outlet property="testLabIconView" destination="2yu-pX-IKf" id="fuM-ho-rfj"/>
+                        <outlet property="testLabICON" destination="CPj-bW-V5h" id="25y-JA-uIb"/>
+                        <outlet property="testLabIconView" destination="PRi-6e-zdp" id="EP2-9a-RDc"/>
                         <outletCollection property="navBTNs" destination="B2U-9u-gen" collectionClass="NSMutableArray" id="Vim-tG-mJ0"/>
                         <outletCollection property="navBTNs" destination="l3T-vZ-HkU" collectionClass="NSMutableArray" id="kbc-md-IWO"/>
                         <outletCollection property="navBTNs" destination="IzO-rJ-9Vt" collectionClass="NSMutableArray" id="33v-CZ-qAd"/>
@@ -3658,8 +3658,8 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XK4-29-Sac">
                                         <rect key="frame" x="10" y="10" width="358" height="520"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <mutableString key="text">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
-            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;CAOCAP&lt;/title&gt;&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"&gt;&lt;style&gt;\(code["css"]!)&lt;/style&gt;&lt;/head&gt;&lt;body&gt;\(code["html"]!)&lt;script&gt;\(code["js"]!)&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</mutableString>
+                                        <string key="text">&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&lt;meta charset="utf-8"&gt;&lt;title&gt;CAOCAP&lt;/title&gt;&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"&gt;&lt;style&gt;\(code["css"]!)&lt;/style&gt;&lt;/head&gt;&lt;body&gt;\(code["html"]!)&lt;script&gt;\(code["js"]!)&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</string>
                                         <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -3706,7 +3706,7 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fFB-bH-UgA" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="10" width="374" height="350"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BH-s0-FOw">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BH-s0-FOw">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="8F9-95-sh0">
@@ -4230,7 +4230,9 @@
         <image name="HTML-1" width="340" height="380"/>
         <image name="JS" width="340" height="380"/>
         <image name="JS-1" width="412" height="460"/>
+        <image name="artBuilder" width="78" height="78"/>
         <image name="caocap old app icon no-color" width="500" height="500"/>
+        <image name="cosmos" width="96" height="80"/>
         <image name="createBG" width="1661" height="2214"/>
         <image name="icons8-chat" width="84" height="78"/>
         <image name="icons8-chat0" width="84" height="78"/>
@@ -4254,6 +4256,7 @@
         <image name="icons8-user_account" width="96" height="96"/>
         <image name="power" catalog="system" width="128" height="124"/>
         <image name="redo" width="100" height="100"/>
+        <image name="testLab" width="72" height="72"/>
         <image name="undo" width="100" height="100"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

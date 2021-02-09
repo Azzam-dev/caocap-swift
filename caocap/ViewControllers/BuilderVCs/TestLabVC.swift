@@ -93,15 +93,15 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
             switch sender.direction {
             case .up:
                 if self.toolsViewHeightConstraint.constant == 75 {
-                    toolsViewAnimation(120)
+                    toolsViewAnimation(135)
                 } else {
                     toolsViewAnimation(350)
                 }
             case .down:
-                if self.toolsViewHeightConstraint.constant == 120 {
+                if self.toolsViewHeightConstraint.constant == 135 {
                     toolsViewAnimation(75)
                 } else {
-                    toolsViewAnimation(120)
+                    toolsViewAnimation(135)
                 }
             default:
                 break

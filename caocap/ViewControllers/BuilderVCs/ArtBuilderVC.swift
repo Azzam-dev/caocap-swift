@@ -46,22 +46,22 @@ class ArtBuilderVC: UIViewController {
     
     @IBOutlet var topToolBarBTNs: [UIButton]!
     @IBAction func topToolBarBTNs(_ sender: UIButton) {
-        topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-layers"), for: .normal)
-        topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-pen"), for: .normal)
-        topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-ruler"), for: .normal)
+        topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "JS"), for: .normal)
+        topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "HTML"), for: .normal)
+        topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "CSS"), for: .normal)
         switch sender.tag {
         case 0:
-            topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-layers-1"), for: .normal)
+            topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "JS-1"), for: .normal)
 //            blockHierarchyTableView.isHidden = false
 //            blockCollectionView.isHidden = true
 //            dimensionsInspectorTableView.isHidden = true
         case 1:
-            topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-pen-1"), for: .normal)
+            topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "HTML-1"), for: .normal)
 //            blockHierarchyTableView.isHidden = true
 //            blockCollectionView.isHidden = false
 //            dimensionsInspectorTableView.isHidden = true
         case 2:
-            topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-ruler-1"), for: .normal)
+            topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "CSS-1"), for: .normal)
 //            blockHierarchyTableView.isHidden = true
 //            blockCollectionView.isHidden = true
 //            dimensionsInspectorTableView.isHidden = false
@@ -92,15 +92,15 @@ class ArtBuilderVC: UIViewController {
             switch sender.direction {
             case .up:
                 if self.toolsViewHeightConstraint.constant == 75 {
-                    toolsViewAnimation(120)
+                    toolsViewAnimation(135)
                 } else {
-                    toolsViewAnimation(300)
+                    toolsViewAnimation(350)
                 }
             case .down:
-                if self.toolsViewHeightConstraint.constant == 120 {
+                if self.toolsViewHeightConstraint.constant == 135 {
                     toolsViewAnimation(75)
                 } else {
-                    toolsViewAnimation(120)
+                    toolsViewAnimation(135)
                 }
             default:
                 break
