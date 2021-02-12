@@ -1,5 +1,5 @@
 //
-//  menuVC.swift
+//  MenuVC.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 21/01/1440 AH.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
+class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     let menuItemsNames = ["edit profile", "settings", "logout" ]
     let menuItemsImages = [#imageLiteral(resourceName: "icons8-user_folder_filled"),#imageLiteral(resourceName: "icons8-settings"),#imageLiteral(resourceName: "icons8-logout_rounded_up_filled")]
@@ -28,7 +28,7 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
             do {
                 try Auth.auth().signOut()
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                let authVC = storyboard.instantiateViewController(withIdentifier: "auth") as? authVC
+                let authVC = storyboard.instantiateViewController(withIdentifier: "auth") as? AuthVC
                 authVC!.modalPresentationStyle = .fullScreen
                 self.present(authVC!, animated: true, completion: nil)
             } catch {
@@ -70,7 +70,7 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell" , for: indexPath ) as! menuCell
+        let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell" , for: indexPath ) as! MenuCell
         cell.configureCell(image: menuItemsImages[indexPath.row], label: menuItemsNames[indexPath.row])
         return cell
     }
@@ -80,7 +80,7 @@ class menuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
             //edit profile VC
             
             let storyboard = UIStoryboard(name: "UserProfile", bundle: nil)
-            let editProfile = storyboard.instantiateViewController(withIdentifier: "editProfile") as! editProfileVC
+            let editProfile = storyboard.instantiateViewController(withIdentifier: "editProfile") as! EditProfileVC
             navigationController?.pushViewController(editProfile, animated: true)
             
         } else if indexPath.row == 1 {

@@ -1,5 +1,5 @@
 //
-//  arrivedMessageCell.swift
+//  ArrivedMessageCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 10/02/1441 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class arrivedMessageCell: UITableViewCell {
+class ArrivedMessageCell: UITableViewCell {
     
     
     @IBOutlet weak var profileIMG: DesignableImage!

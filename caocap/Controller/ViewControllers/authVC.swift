@@ -1,5 +1,5 @@
 //
-//  authVC.swift
+//  AuthVC.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 20/01/1440 AH.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class authVC: UIViewController {
+class AuthVC: UIViewController {
     
     override var prefersStatusBarHidden: Bool {  return true }
     

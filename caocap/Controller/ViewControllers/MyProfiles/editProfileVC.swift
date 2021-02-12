@@ -1,5 +1,5 @@
 //
-//  editProfileVC.swift
+//  EditProfileVC.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 27/01/1440 AH.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class editProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
     @IBOutlet weak var userIMG: DesignableImage!
     @IBOutlet weak var userIMGview: DesignableView!
@@ -62,7 +62,7 @@ class editProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
             DataService.instance.REF_USERS.child(currentUserUID).observeSingleEvent(of: .value, with: { (userDataSnapshot) in
                 // Get user value
                 if let userData = userDataSnapshot.value as? [String : Any] {
-                  let user = Users(uid: currentUserUID , dictionary: userData)
+                  let user = User(uid: currentUserUID , dictionary: userData)
                      
                     self.colorBTNpressed(self.colorBTNs[user.color])
                     self.usernameTF.text = user.username

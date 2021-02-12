@@ -1,5 +1,5 @@
 //
-//  caocapVC.swift
+//  CaocapVC.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 14/08/1440 AH.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class caocapVC: UIViewController, UITextFieldDelegate {
+class CaocapVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var caocapsCollectionView: UICollectionView!
     var openedCaocap: Caocap?
@@ -25,7 +25,7 @@ class caocapVC: UIViewController, UITextFieldDelegate {
         searchTF.delegate = self
         searchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
-        caocapsCollectionView.register(UINib.init(nibName: "caocapCell", bundle: nil), forCellWithReuseIdentifier: "caocapCell")
+        caocapsCollectionView.register(UINib.init(nibName: "CaocapCell", bundle: nil), forCellWithReuseIdentifier: "caocapCell")
     }
     
     var isReleased = Bool()
@@ -62,10 +62,10 @@ class caocapVC: UIViewController, UITextFieldDelegate {
     
 }
 
-extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout , OpenedCaocapCellDelegate {
+extension CaocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout , OpenedCaocapCellDelegate {
     
     //this is the share function, when the shareBTN in the opendCaocapVC is pressed it will show the share Viewc Controller
-    func shareBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton) {
+    func shareBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton) {
         let activityVC = UIActivityViewController(activityItems: ["https://caocap.app"], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         
@@ -75,7 +75,7 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     
     //this is the more info function, when the moreBTN in the opendCaocapCell is pressed it will display Alert controller with more functions
-    func moreBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton) {
+    func moreBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton) {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let visitOwnerACT = UIAlertAction(title: openedCaocap?.name, style: .default ) { (buttonTapped) in
             //FIXME: عند اختيار هذا الخيار يجب ارسال المستخدم الى صفحت صاحب الكوكب
@@ -95,9 +95,9 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     }
     
     //this is the room function, when the roomBTN in the opendCaocapVC is pressed it will
-    func roomBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton) {
+    func roomBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton) {
         let storyboard = UIStoryboard(name: "Chat", bundle: nil)
-        let caocapRoomVC = storyboard.instantiateViewController(withIdentifier: "caocapRoomVC") as! caocapRoomVC
+        let caocapRoomVC = storyboard.instantiateViewController(withIdentifier: "caocapRoomVC") as! CaocapRoomVC
         caocapRoomVC.openedCaocap = openedCaocap
         navigationController?.pushViewController(caocapRoomVC, animated: true)
     }
@@ -123,7 +123,7 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
-            guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "openedCaocapCell", for: indexPath) as? openedCaocapCell else { return UICollectionViewCell() }
+            guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "openedCaocapCell", for: indexPath) as? OpenedCaocapCell else { return UICollectionViewCell() }
             
             cell.configureCell(caocap: openedCaocap!, released: isReleased)
             cell.cellDelegate = self as OpenedCaocapCellDelegate
@@ -131,7 +131,7 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             return cell
         } else {
             
-            guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? caocapCell else { return UICollectionViewCell() }
+            guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? CaocapCell else { return UICollectionViewCell() }
             
             cell.configureCell(caocap: caocapsArray[indexPath.row - 1], released: isReleased)
             
@@ -160,7 +160,7 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row != 0 {
             let storyboard = UIStoryboard(name: "Explore", bundle: nil)
-            let caocap = storyboard.instantiateViewController(withIdentifier: "caocap") as! caocapVC
+            let caocap = storyboard.instantiateViewController(withIdentifier: "caocap") as! CaocapVC
             caocap.openedCaocap = caocapsArray[indexPath.row - 1]
             navigationController?.pushViewController(caocap, animated: true)
             let cell = collectionView.cellForItem(at: indexPath)

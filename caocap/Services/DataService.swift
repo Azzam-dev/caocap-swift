@@ -316,16 +316,16 @@ class DataService {
         }
     }
     
-    func getAllUsernames( handler: @escaping (_ usernameArray: [Users]) -> ()) {
+    func getAllUsernames( handler: @escaping (_ usernameArray: [User]) -> ()) {
         let currentUserID = Auth.auth().currentUser?.uid
         // This goes over all the usernames and gets the query without the currentUser username
         REF_USERS.observe(.value) { (userSnapshot) in
             guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
-            var userArray = [Users]()
+            var userArray = [User]()
             for user in userSnapshot {
                 if user.key != currentUserID {
                     let userDict = user.value as? [String : AnyObject] ?? [:]
-                    let thisUser = Users(uid: user.key, dictionary: userDict)
+                    let thisUser = User(uid: user.key, dictionary: userDict)
                     userArray.append(thisUser)
                 }
             }
@@ -333,17 +333,17 @@ class DataService {
         }
     }
     
-    func getUsernameQuery(forSearchQuery query: String, handler: @escaping (_ usernameArray: [Users]) -> ()) {
+    func getUsernameQuery(forSearchQuery query: String, handler: @escaping (_ usernameArray: [User]) -> ()) {
         let currentUserUID = Auth.auth().currentUser?.uid
         // This goes over all the usernames and gets the query without the currentUser username
         REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
             guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
-            var userArray = [Users]()
+            var userArray = [User]()
             for user in userSnapshot {
                 let username = user.childSnapshot(forPath: "username").value as! String
                 if username.contains(query) && user.key != currentUserUID {
                     let userDict = user.value as? [String : AnyObject] ?? [:]
-                    let thisUser = Users(uid: user.key, dictionary: userDict)
+                    let thisUser = User(uid: user.key, dictionary: userDict)
                     userArray.append(thisUser)
                 }
             }
@@ -365,11 +365,11 @@ class DataService {
         }
     }
     
-    func getUserData(handler: @escaping (_ theUser: Users?) -> ()) {
+    func getUserData(handler: @escaping (_ theUser: User?) -> ()) {
         guard let currentUserUID = Auth.auth().currentUser?.uid else { return }
         DataService.instance.REF_USERS.child(currentUserUID).observe(.value) { (userDataSnapshot) in
             if let userData = userDataSnapshot.value as? [String : Any] {
-                let user = Users(uid: currentUserUID , dictionary: userData)
+                let user = User(uid: currentUserUID , dictionary: userData)
                 handler(user)
             }
         }

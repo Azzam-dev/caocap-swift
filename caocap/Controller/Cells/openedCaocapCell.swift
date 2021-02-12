@@ -1,5 +1,5 @@
 //
-//  openedCaocapCell.swift
+//  OpenedCaocapCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 14/08/1440 AH.
@@ -12,12 +12,12 @@ import Firebase
 
 /* Declare a Delegate Protocol method */
 protocol OpenedCaocapCellDelegate: class {
-    func shareBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton)
-    func moreBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton)
-    func roomBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton)
+    func shareBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
+    func moreBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
+    func roomBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
 }
 
-class openedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
+class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     
     //Define delegate variable
     weak var cellDelegate: OpenedCaocapCellDelegate?

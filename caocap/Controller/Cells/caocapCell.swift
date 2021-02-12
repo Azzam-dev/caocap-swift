@@ -1,5 +1,5 @@
 //
-//  caocapCell.swift
+//  CaocapCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 02/04/1440 AH.
@@ -15,7 +15,7 @@ protocol CaocapCellDelegate {
     func moreBTNpressed(caocapKey: String)
 }
 
-class caocapCell: UICollectionViewCell, WKNavigationDelegate {
+class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
 
     var caocapCellDelegate: CaocapCellDelegate?
     

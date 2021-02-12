@@ -24,9 +24,9 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
         searchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         
         caocapsCollectionView.contentInset.top = 45
-        caocapsCollectionView.register(UINib.init(nibName: "caocapCell", bundle: nil), forCellWithReuseIdentifier: "caocapCell")
+        caocapsCollectionView.register(UINib.init(nibName: "CaocapCell", bundle: nil), forCellWithReuseIdentifier: "caocapCell")
         
-        if let layout = caocapsCollectionView?.collectionViewLayout as? caocapLayout {
+        if let layout = caocapsCollectionView?.collectionViewLayout as? CaocapLayout {
             layout.delegate = self
         }
         
@@ -88,7 +88,7 @@ extension ExploreVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? caocapCell else { return UICollectionViewCell() }
+        guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? CaocapCell else { return UICollectionViewCell() }
         
         cell.configureCell(caocap: caocapsArray[indexPath.row], released: isReleased)
         return cell
@@ -98,7 +98,7 @@ extension ExploreVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let storyboard = UIStoryboard(name: "Explore", bundle: nil)
-        let caocap = storyboard.instantiateViewController(withIdentifier: "caocap") as! caocapVC
+        let caocap = storyboard.instantiateViewController(withIdentifier: "caocap") as! CaocapVC
         caocap.openedCaocap = caocapsArray[indexPath.row]
         navigationController?.pushViewController(caocap, animated: true)
         
@@ -108,7 +108,7 @@ extension ExploreVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
 }
 
 
-extension ExploreVC: caocapLayoutDelegate {
+extension ExploreVC: CaocapLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView,heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
         let randomHeight = [350 , 450 , 500].shuffled()
         return CGFloat(randomHeight[0])

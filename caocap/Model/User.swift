@@ -1,5 +1,5 @@
 //
-//  Users.swift
+//  User.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 13/03/1440 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Users {
+class User {
     private var _uid: String
     private var _imageURL: String?
     private var _color: Int

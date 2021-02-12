@@ -1,5 +1,5 @@
 //
-//  contactUserCell.swift
+//  ContactUserCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 28/02/1440 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class contactUserCell: UITableViewCell {
+class ContactUserCell: UITableViewCell {
     
     
     @IBOutlet weak var profileIMG: DesignableImage!

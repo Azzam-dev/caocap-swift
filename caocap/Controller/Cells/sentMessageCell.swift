@@ -1,5 +1,5 @@
 //
-//  sentMessageCell.swift
+//  SentMessageCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 10/02/1441 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class sentMessageCell: UITableViewCell {
+class SentMessageCell: UITableViewCell {
     
     @IBOutlet weak var profileIMG: DesignableImage!
     @IBOutlet weak var pofileIMGview: DesignableView!

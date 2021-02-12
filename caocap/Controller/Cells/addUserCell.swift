@@ -1,5 +1,5 @@
 //
-//  addUserCell.swift
+//  AddUserCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 02/02/1440 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class addUserCell: UITableViewCell {
+class AddUserCell: UITableViewCell {
 
     
     @IBOutlet weak var profileIMG: DesignableImage!

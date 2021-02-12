@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="saw-FO-J6K">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,14 +16,14 @@
             <objects>
                 <viewController storyboardIdentifier="explore" id="saw-FO-J6K" customClass="ExploreVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J4T-ed-cKm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rn4-Er-6cs">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="5" minY="40" maxX="5" maxY="0.0"/>
-                                <collectionViewLayout key="collectionViewLayout" id="CXA-ah-zaP" customClass="caocapLayout" customModule="CAOCAPx" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="CXA-ah-zaP" customClass="CaocapLayout" customModule="CAOCAPx" customModuleProvider="target"/>
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="saw-FO-J6K" id="fYi-of-rWO"/>
@@ -33,10 +31,10 @@
                                 </connections>
                             </collectionView>
                             <view hidden="YES" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2U-hm-gZU" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="50" y="99" width="314" height="45"/>
+                                <rect key="frame" x="50" y="55" width="500" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g75-LS-XJL">
-                                        <rect key="frame" x="279" y="10" width="25" height="25"/>
+                                        <rect key="frame" x="465" y="10" width="25" height="25"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B-full_screen_filled" translatesAutoresizingMaskIntoConstraints="NO" id="K3D-Ce-BwZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
@@ -80,7 +78,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hn4-2z-rB8">
-                                        <rect key="frame" x="45" y="11.5" width="224" height="22"/>
+                                        <rect key="frame" x="45" y="10" width="410" height="25"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -106,10 +104,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mor-4g-h5j" userLabel="topNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="-493" y="0.0" width="1400" height="90"/>
+                                <rect key="frame" x="-400" y="0.0" width="1400" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="explore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTi-Vx-aEV">
-                                        <rect key="frame" x="659.5" y="44" width="81.5" height="50"/>
+                                        <rect key="frame" x="659" y="0.0" width="82.5" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bta-c9-N4T"/>
                                         </constraints>
@@ -163,13 +161,13 @@
         <!--CaocapVC-->
         <scene sceneID="qNP-Tt-zDz">
             <objects>
-                <viewController storyboardIdentifier="caocap" id="CAC-ib-zLD" customClass="caocapVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="caocap" id="CAC-ib-zLD" customClass="CaocapVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uJc-vn-jKT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ewp-1G-ikH">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="phu-vq-01d">
                                     <size key="itemSize" width="50" height="50"/>
@@ -178,8 +176,8 @@
                                     <inset key="sectionInset" minX="10" minY="40" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="openedCaocapCell" id="5RM-wD-ssu" customClass="openedCaocapCell" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="40" width="394" height="700"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="openedCaocapCell" id="5RM-wD-ssu" customClass="OpenedCaocapCell" customModule="CAOCAPx" customModuleProvider="target">
+                                        <rect key="frame" x="103" y="40" width="394" height="700"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="700"/>
@@ -340,16 +338,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-mg-qaD">
-                                                    <rect key="frame" x="62" y="558" width="139" height="34"/>
+                                                    <rect key="frame" x="62" y="558" width="144.5" height="34"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="thecaocapname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="25b-cw-8qm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="139" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="144.5" height="23.5"/>
                                                             <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="405 orbiting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPM-g4-tVw" userLabel="orbits">
-                                                            <rect key="frame" x="0.0" y="22.5" width="66" height="11.5"/>
+                                                            <rect key="frame" x="0.0" y="25.5" width="64.5" height="8.5"/>
                                                             <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="12"/>
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -400,7 +398,7 @@
                                                     <rect key="frame" x="18" y="602" width="358" height="40"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-YT-ekY">
-                                                            <rect key="frame" x="115.5" y="10" width="127" height="20"/>
+                                                            <rect key="frame" x="111" y="10" width="136" height="20"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w-planet_filled" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-Vv-Xle">
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -410,7 +408,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD TO ORBIT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64w-Nb-QrP">
-                                                                    <rect key="frame" x="25" y="3.5" width="102" height="16.5"/>
+                                                                    <rect key="frame" x="25" y="1" width="111" height="19"/>
                                                                     <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="16"/>
                                                                     <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
@@ -601,11 +599,6 @@
             <point key="canvasLocation" x="-1612" y="1531"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="qYe-uA-82c">
-            <size key="intrinsicContentSize" width="512" height="512"/>
-        </designable>
-    </designables>
     <resources>
         <image name="B-full_screen_filled" width="100" height="106"/>
         <image name="B-sorting_options" width="92" height="72"/>

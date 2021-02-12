@@ -1,5 +1,5 @@
 //
-//  chatGroupCell.swift
+//  ChatGroupCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 27/02/1440 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class chatGroupCell: UITableViewCell {
+class ChatGroupCell: UITableViewCell {
     
     @IBOutlet weak var groupIMG: DesignableImage!
     @IBOutlet weak var groupIMGview: DesignableView!

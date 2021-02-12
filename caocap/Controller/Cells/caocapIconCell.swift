@@ -1,5 +1,5 @@
 //
-//  caocapIconCell.swift
+//  CaocapIconCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 22/07/1440 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class caocapIconCell: UICollectionViewCell {
+class CaocapIconCell: UICollectionViewCell {
     
     @IBOutlet weak var caocapIMG: DesignableImage!
     @IBOutlet weak var caocapIMGview: DesignableView!

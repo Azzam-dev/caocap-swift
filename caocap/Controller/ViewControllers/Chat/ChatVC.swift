@@ -116,7 +116,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     @IBOutlet weak var cancelPopupsBTN: UIButton!
     
     // contact
-    var contactSearchArray = [Users]()
+    var contactSearchArray = [User]()
     
     @IBOutlet weak var contactTableView: UITableView!
     @IBOutlet weak var contactSearchTF: UITextField!
@@ -159,7 +159,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     @IBOutlet weak var groupIMG: DesignableImage!
     let colorArray = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.6391159892, blue: 0, alpha: 1), #colorLiteral(red: 0.3846503198, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), #colorLiteral(red: 0.8861780167, green: 0, blue: 1, alpha: 1), #colorLiteral(red: 0.9175696969, green: 0.9176983237, blue: 0.9175290465, alpha: 1)]
     
-    var groupMembersSearchArray = [Users]()
+    var groupMembersSearchArray = [User]()
     var groupSelectedMembersArray = [String]()
     
     @IBOutlet weak var groupMembersTableView: UITableView!
@@ -327,7 +327,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == chatsTableView {
             let chat = chatsArray[indexPath.row]
             if chat.type == "contact" {
-                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "contactChatCell", for: indexPath) as? contactChatCell else { return UITableViewCell() }
+                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "contactChatCell", for: indexPath) as? ContactChatCell else { return UITableViewCell() }
                 
                 //This recognizes the contact UID by getting the current user UID and filtering it from the members array
                 //than uses the contactUID to get his data to fill the cell
@@ -336,7 +336,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                     DataService.instance.REF_USERS.child(contactUID[0]).observeSingleEvent(of: .value, with: { (userDataSnapshot) in
                         // Get user value
                         if let userData = userDataSnapshot.value as? [String : Any] {
-                            let user = Users(uid: currentUserUID , dictionary: userData)
+                            let user = User(uid: currentUserUID , dictionary: userData)
                             
                             if let url = URL(string: user.imageURL ?? "" ) {
                                 ImageService.getImage(withURL: url) { (returnedImage) in
@@ -354,7 +354,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                 return cell
                 
             } else if chat.type == "group" {
-                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "chatGroupCell", for: indexPath) as? chatGroupCell else { return UITableViewCell() }
+                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "chatGroupCell", for: indexPath) as? ChatGroupCell else { return UITableViewCell() }
                 //This takes the image URL returnes the image
                 if let url = URL(string: chat.imageURL ?? "" ) {
                     ImageService.getImage(withURL: url) { (returnedImage) in
@@ -368,7 +368,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                 return cell
                 
             } else {
-                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "caocapGroupCell", for: indexPath) as? caocapGroupCell else { return UITableViewCell() }
+                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "caocapGroupCell", for: indexPath) as? CaocapGroupCell else { return UITableViewCell() }
                 
                 //This takes the image URL returnes the image
                 if let url = URL(string: chat.imageURL ?? "" ) {
@@ -384,7 +384,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else if tableView == groupMembersTableView {
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "addUserCell") as? addUserCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "addUserCell") as? AddUserCell else { return UITableViewCell() }
             
             if let url = URL(string: groupMembersSearchArray[indexPath.row].imageURL ?? "" ) {
                 ImageService.getImage(withURL: url) { (returnedImage) in
@@ -424,7 +424,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "contactUserCell") as? contactUserCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "contactUserCell") as? ContactUserCell else { return UITableViewCell() }
             
             if let url = URL(string: contactSearchArray[indexPath.row].imageURL ?? "" ) {
                 ImageService.getImage(withURL: url) { (returnedImage) in
@@ -460,7 +460,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                 
             }
         } else if tableView == groupMembersTableView {
-            guard let cell = tableView.cellForRow(at: indexPath) as? addUserCell else { return }
+            guard let cell = tableView.cellForRow(at: indexPath) as? AddUserCell else { return }
             if !groupSelectedMembersArray.contains(cell.usernameLBL.text!) {
                 groupSelectedMembersArray.append(cell.usernameLBL.text!)
                 //groupMembersLBL.text = groupSelectedMembersArray.joined(separator: ", ")
@@ -475,7 +475,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                 }
             }
         } else {
-            guard let cell = tableView.cellForRow(at: indexPath) as? contactUserCell else { return }
+            guard let cell = tableView.cellForRow(at: indexPath) as? ContactUserCell else { return }
             
             DataService.instance.getUIDs(forUsername: [cell.usernameLBL.text!]) { (idsArray) in
                 var userIds = idsArray

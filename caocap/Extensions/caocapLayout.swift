@@ -1,5 +1,5 @@
 //
-//  caocapLayout.swift
+//  CaocapLayout.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 25/07/1440 AH.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-protocol caocapLayoutDelegate: AnyObject {
+protocol CaocapLayoutDelegate: AnyObject {
   func collectionView(
     _ collectionView: UICollectionView,
     heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
 }
 
-class caocapLayout: UICollectionViewLayout {
+class CaocapLayout: UICollectionViewLayout {
     
     // 1
-    var delegate: caocapLayoutDelegate!
+    var delegate: CaocapLayoutDelegate!
     // 2
     fileprivate var numberOfColumns = 2
     fileprivate var cellPadding: CGFloat = 6

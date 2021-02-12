@@ -1,5 +1,5 @@
 //
-//  caocapRoomVC.swift
+//  CaocapRoomVC.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 10/02/1441 AH.
@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import IQKeyboardManagerSwift
 
-class caocapRoomVC: UIViewController {
+class CaocapRoomVC: UIViewController {
     
     @IBOutlet weak var messagesTableView: UITableView!
     var openedCaocap: Caocap?
@@ -113,7 +113,7 @@ class caocapRoomVC: UIViewController {
     
 }
 
-extension caocapRoomVC: UITableViewDelegate, UITableViewDataSource {
+extension CaocapRoomVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -127,13 +127,13 @@ extension caocapRoomVC: UITableViewDelegate, UITableViewDataSource {
         let message = messagesArray[indexPath.row]
         let currentUserUID = (Auth.auth().currentUser?.uid)!
         if message.senderUid == currentUserUID {
-            guard let cell = messagesTableView.dequeueReusableCell(withIdentifier: "sentMessageCell", for: indexPath) as? sentMessageCell else { return UITableViewCell() }
+            guard let cell = messagesTableView.dequeueReusableCell(withIdentifier: "sentMessageCell", for: indexPath) as? SentMessageCell else { return UITableViewCell() }
             
             cell.configureCell(message: message)
             
             return cell
         } else {
-            guard let cell = messagesTableView.dequeueReusableCell(withIdentifier: "arrivedMessageCell", for: indexPath) as? arrivedMessageCell else { return UITableViewCell() }
+            guard let cell = messagesTableView.dequeueReusableCell(withIdentifier: "arrivedMessageCell", for: indexPath) as? ArrivedMessageCell else { return UITableViewCell() }
             
             cell.configureCell(message: message)
             

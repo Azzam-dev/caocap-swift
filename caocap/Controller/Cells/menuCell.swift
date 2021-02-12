@@ -1,5 +1,5 @@
 //
-//  menuCell.swift
+//  MenuCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 08/01/1441 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class menuCell: UITableViewCell {
+class MenuCell: UITableViewCell {
     
     
     @IBOutlet weak var itemImage: UIImageView!
