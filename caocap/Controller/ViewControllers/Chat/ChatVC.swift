@@ -19,10 +19,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let tableViewtopCellNib = UINib(nibName: "topTableCell", bundle: nil)
-        self.chatsTableView.register(tableViewtopCellNib, forCellReuseIdentifier: "topTableCell")
-        
+        chatsTableView.contentInset.top = 45
         groupMembersSearchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         groupIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeGroupImage)))
         
@@ -312,12 +309,15 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableView == chatsTableView {
-            return chatsArray.count + 1
-        } else if tableView == groupMembersTableView {
-            return  groupMembersSearchArray.count
-        } else {
+        switch tableView {
+        case chatsTableView:
+            return chatsArray.count
+        case groupMembersTableView:
+            return groupMembersSearchArray.count
+        case contactTableView:
             return contactSearchArray.count
+        default:
+            return 0
         }
     }
     
@@ -325,70 +325,62 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == chatsTableView {
-            if indexPath.row == 0 {
-                //this is the TOP Empty Cell
-                let cell = chatsTableView.dequeueReusableCell(withIdentifier: "topTableCell" , for: indexPath ) as! topTableCell
-                cell.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            let chat = chatsArray[indexPath.row]
+            if chat.type == "contact" {
+                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "contactChatCell", for: indexPath) as? contactChatCell else { return UITableViewCell() }
+                
+                //This recognizes the contact UID by getting the current user UID and filtering it from the members array
+                //than uses the contactUID to get his data to fill the cell
+                if let currentUserUID = Auth.auth().currentUser?.uid {
+                    let contactUID = chat.members.filter({ $0 != currentUserUID })
+                    DataService.instance.REF_USERS.child(contactUID[0]).observeSingleEvent(of: .value, with: { (userDataSnapshot) in
+                        // Get user value
+                        if let userData = userDataSnapshot.value as? [String : Any] {
+                            let user = Users(uid: currentUserUID , dictionary: userData)
+                            
+                            if let url = URL(string: user.imageURL ?? "" ) {
+                                ImageService.getImage(withURL: url) { (returnedImage) in
+                                    cell.configureCell(chatIMG: returnedImage!, chatColor: user.color, chatName: user.username, lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
+                                }
+                            } else {
+                                cell.configureCell(chatIMG: #imageLiteral(resourceName: "caocap app icon"), chatColor: user.color, chatName: user.username, lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
+                            }
+                        }
+                        
+                    }) { (error) in
+                        print(error.localizedDescription)
+                    }
+                }
+                return cell
+                
+            } else if chat.type == "group" {
+                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "chatGroupCell", for: indexPath) as? chatGroupCell else { return UITableViewCell() }
+                //This takes the image URL returnes the image
+                if let url = URL(string: chat.imageURL ?? "" ) {
+                    ImageService.getImage(withURL: url) { (returnedImage) in
+                        
+                        cell.configureCell(chatIMG: returnedImage!, chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
+                    }
+                } else {
+                    //this is used if the image did not return
+                    cell.configureCell(chatIMG: #imageLiteral(resourceName: "IMG_2235"), chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
+                }
                 return cell
                 
             } else {
-                let chat = chatsArray[indexPath.row - 1]
-                if chat.type == "contact" {
-                    guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "contactChatCell", for: indexPath) as? contactChatCell else { return UITableViewCell() }
-                    
-                    //This recognizes the contact UID by getting the current user UID and filtering it from the members array
-                    //than uses the contactUID to get his data to fill the cell
-                    if let currentUserUID = Auth.auth().currentUser?.uid {
-                        let contactUID = chat.members.filter({ $0 != currentUserUID })
-                        DataService.instance.REF_USERS.child(contactUID[0]).observeSingleEvent(of: .value, with: { (userDataSnapshot) in
-                            // Get user value
-                            if let userData = userDataSnapshot.value as? [String : Any] {
-                                let user = Users(uid: currentUserUID , dictionary: userData)
-                                
-                                if let url = URL(string: user.imageURL ?? "" ) {
-                                    ImageService.getImage(withURL: url) { (returnedImage) in
-                                        cell.configureCell(chatIMG: returnedImage!, chatColor: user.color, chatName: user.username, lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                                    }
-                                } else {
-                                    cell.configureCell(chatIMG: #imageLiteral(resourceName: "caocap app icon"), chatColor: user.color, chatName: user.username, lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                                }
-                            }
-                            
-                        }) { (error) in
-                            print(error.localizedDescription)
-                        }
+                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "caocapGroupCell", for: indexPath) as? caocapGroupCell else { return UITableViewCell() }
+                
+                //This takes the image URL returnes the image
+                if let url = URL(string: chat.imageURL ?? "" ) {
+                    ImageService.getImage(withURL: url) { (returnedImage) in
+                        
+                        cell.configureCell(chatIMG: returnedImage!, chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
                     }
-                    return cell
-                    
-                } else if chat.type == "group" {
-                    guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "chatGroupCell", for: indexPath) as? chatGroupCell else { return UITableViewCell() }
-                    //This takes the image URL returnes the image
-                    if let url = URL(string: chat.imageURL ?? "" ) {
-                        ImageService.getImage(withURL: url) { (returnedImage) in
-                            
-                            cell.configureCell(chatIMG: returnedImage!, chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                        }
-                    } else {
-                        //this is used if the image did not return
-                        cell.configureCell(chatIMG: #imageLiteral(resourceName: "IMG_2235"), chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                    }
-                    return cell
-                    
                 } else {
-                    guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "caocapGroupCell", for: indexPath) as? caocapGroupCell else { return UITableViewCell() }
-                    
-                    //This takes the image URL returnes the image
-                    if let url = URL(string: chat.imageURL ?? "" ) {
-                        ImageService.getImage(withURL: url) { (returnedImage) in
-                            
-                            cell.configureCell(chatIMG: returnedImage!, chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                        }
-                    } else {
-                        //this is used if the image did not return
-                        cell.configureCell(chatIMG: #imageLiteral(resourceName: "IMG_2235"), chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                    }
-                    return cell
+                    //this is used if the image did not return
+                    cell.configureCell(chatIMG: #imageLiteral(resourceName: "IMG_2235"), chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
                 }
+                return cell
             }
         } else if tableView == groupMembersTableView {
             
@@ -454,20 +446,18 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == chatsTableView {
-            if indexPath.row != 0 {
-                let chat = chatsArray[indexPath.row - 1]
-                let storyboard = UIStoryboard(name: "Chat", bundle: nil)
-                if chat.type == "contact" {
-                    let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
-                    contactChatVC.opendChat = chat
-                    navigationController?.pushViewController(contactChatVC, animated: true)
-                } else if chat.type == "group" {
-                    let groupChatVC = storyboard.instantiateViewController(withIdentifier: "GroupChatVC") as! GroupChatVC
-                    groupChatVC.opendChat = chat
-                    navigationController?.pushViewController(groupChatVC, animated: true)
-                } else {
-                    
-                }
+            let chat = chatsArray[indexPath.row]
+            let storyboard = UIStoryboard(name: "Chat", bundle: nil)
+            if chat.type == "contact" {
+                let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
+                contactChatVC.opendChat = chat
+                navigationController?.pushViewController(contactChatVC, animated: true)
+            } else if chat.type == "group" {
+                let groupChatVC = storyboard.instantiateViewController(withIdentifier: "GroupChatVC") as! GroupChatVC
+                groupChatVC.opendChat = chat
+                navigationController?.pushViewController(groupChatVC, animated: true)
+            } else {
+                
             }
         } else if tableView == groupMembersTableView {
             guard let cell = tableView.cellForRow(at: indexPath) as? addUserCell else { return }
@@ -501,10 +491,10 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if tableView == chatsTableView {
-            if indexPath.row == 0 { return 45 } else { return 80 }
-        } else {
-            //this is for the members table views
+        switch tableView {
+        case chatsTableView:
+            return 80
+        default:
             return 60
         }
     }

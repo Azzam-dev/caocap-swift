@@ -340,16 +340,16 @@
                                                     </constraints>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="b2i-mg-qaD">
-                                                    <rect key="frame" x="62" y="558" width="144.5" height="34"/>
+                                                    <rect key="frame" x="62" y="558" width="139" height="34"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="thecaocapname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="25b-cw-8qm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="144.5" height="23.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="139" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="405 orbiting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPM-g4-tVw" userLabel="orbits">
-                                                            <rect key="frame" x="0.0" y="25.5" width="64.5" height="8.5"/>
+                                                            <rect key="frame" x="0.0" y="22.5" width="66" height="11.5"/>
                                                             <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="12"/>
                                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -400,7 +400,7 @@
                                                     <rect key="frame" x="18" y="602" width="358" height="40"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9N1-YT-ekY">
-                                                            <rect key="frame" x="111" y="10" width="136" height="20"/>
+                                                            <rect key="frame" x="115.5" y="10" width="127" height="20"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w-planet_filled" translatesAutoresizingMaskIntoConstraints="NO" id="Afg-Vv-Xle">
                                                                     <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -410,7 +410,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADD TO ORBIT" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64w-Nb-QrP">
-                                                                    <rect key="frame" x="25" y="1" width="111" height="19"/>
+                                                                    <rect key="frame" x="25" y="3.5" width="102" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="16"/>
                                                                     <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
