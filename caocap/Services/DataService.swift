@@ -152,7 +152,7 @@ class DataService {
                 switch chat.childSnapshot(forPath: "type").value as! String {
                 case "contact":
                     let membersArray = chat.childSnapshot(forPath: "members").value as! [String]
-                    let contactUID = membersArray.filter({ $0 != currentUserUID })
+//                    let contactUID = membersArray.filter({ $0 != currentUserUID })
                     self.REF_USERS.observe(.value) { (userSnapshot) in
                         guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
                         for user in userSnapshot {

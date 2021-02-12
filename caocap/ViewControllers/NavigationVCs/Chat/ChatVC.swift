@@ -242,7 +242,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
                         storageRef.downloadURL(completion: { url, error in
                             if error != nil { print(error!) } else {
                                 // Here you can get the download URL
-                                let groupData = ["imageURL": url?.absoluteString,
+                                let groupData = ["imageURL": url?.absoluteString ?? "",
                                                  "color": self.groupColorSelectedIndex,
                                                  "name" : self.groupNameTF.text!,
                                                  "members": members,

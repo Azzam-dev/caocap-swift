@@ -93,18 +93,10 @@ class MyProfileVC: UIViewController {
     @IBAction func didPressAddNewCaocap(_ sender: Any) {
         let createCaocapPopup = UIAlertController(title: "انشاء كوكب جديد", message: "حدد نوع الكوكب", preferredStyle: .actionSheet)
         let addNewLinkCaocap = UIAlertAction(title: "link", style: .default ) { (buttonTapped) in
-            do {
-                self.presentCreateCaocapVC(with: .link)
-            } catch {
-                self.displayAlertMessage(messageToDisplay: error.localizedDescription)
-            }
+            self.presentCreateCaocapVC(with: .link)
         }
         let addNewCodeCaocap = UIAlertAction(title: "code", style: .default ) { (buttonTapped) in
-            do {
-                self.presentCreateCaocapVC(with: .code)
-            } catch {
-                self.displayAlertMessage(messageToDisplay: error.localizedDescription)
-            }
+            self.presentCreateCaocapVC(with: .code)
         }
         
         let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
@@ -213,5 +205,11 @@ extension MyProfileVC: CreateCaocapDelegate {
         DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
             self.presentBuilderVC(with: returnedCaocapsArray.last!)
         }
+    }
+}
+
+struct MyProfileVC_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

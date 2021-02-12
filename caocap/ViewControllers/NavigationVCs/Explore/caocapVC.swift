@@ -78,12 +78,8 @@ extension caocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func moreBTNpressed(cell: openedCaocapCell, didTappedshow button: UIButton) {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let visitOwnerACT = UIAlertAction(title: openedCaocap?.name, style: .default ) { (buttonTapped) in
-            do {
-                //FIXME: عند اختيار هذا الخيار يجب ارسال المستخدم الى صفحت صاحب الكوكب
-                print("visitOwnerACT")
-            } catch {
-                self.displayAlertMessage(messageToDisplay: error.localizedDescription)
-            }
+            //FIXME: عند اختيار هذا الخيار يجب ارسال المستخدم الى صفحت صاحب الكوكب
+            print("visitOwnerACT")
         }
         let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
         moreInfoPopup.addAction(visitOwnerACT)
