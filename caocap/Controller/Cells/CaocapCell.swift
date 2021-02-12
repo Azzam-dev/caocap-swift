@@ -1,5 +1,5 @@
 //
-//  caocapCell.swift
+//  CaocapCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 02/04/1440 AH.
@@ -15,7 +15,7 @@ protocol CaocapCellDelegate {
     func moreBTNpressed(caocapKey: String)
 }
 
-class caocapCell: UICollectionViewCell, WKNavigationDelegate {
+class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
 
     var caocapCellDelegate: CaocapCellDelegate?
     
@@ -31,7 +31,7 @@ class caocapCell: UICollectionViewCell, WKNavigationDelegate {
         
     }
     
-    func configureCell(caocap: Caocap ,released: Bool) {
+    func configure(caocap: Caocap ,released: Bool) {
         caocapKey = caocap.key
         
         //this stops the image and the Url from duplicating

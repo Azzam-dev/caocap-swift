@@ -1,5 +1,5 @@
 //
-//  blockCollectionViewCell.swift
+//  BlockCollectionViewCell.swift
 //  caocap
 //
 //  Created by omar alzhrani on 12/09/1441 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class blockCollectionViewCell: UICollectionViewCell {
+class BlockCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var blockIcon: UIImageView!
     
     func configureCell(icon: UIImage) {

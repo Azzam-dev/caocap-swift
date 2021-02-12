@@ -1,5 +1,5 @@
 //
-//  contactChatCell.swift
+//  ContactChatCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 27/02/1440 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class contactChatCell: UITableViewCell {
+class ContactChatCell: UITableViewCell {
 
     @IBOutlet weak var userIMG: DesignableImage!
     @IBOutlet weak var userIMGview: DesignableView!

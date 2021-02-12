@@ -23,6 +23,8 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: hide the caocapLinkTF if the caocap is not of type link
+        
         addPulse()
         getCaocapData()
         gestureRecognizerSetup()
@@ -38,14 +40,25 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
             let caocapSnapshot = caocapSnapshot.value as? [String : AnyObject] ?? [:]
             self.caocapNameTF.text = caocapSnapshot["name"] as? String ?? ""
-            //self.publishingSwitch.isOn = caocapSnapshot["published"] as? Bool ?? false
+            self.publishedStatus = caocapSnapshot["published"] as? Bool ?? false
+            if self.publishedStatus {
+                self.publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+                self.publishingSwitchBTN.borderWidth = 0
+                self.publishingSwitchBTN.setTitle("Published", for: .normal)
+                self.publishingSwitchBTN.setTitleColor(#colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1), for: .normal)
+            } else {
+                self.publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+                self.publishingSwitchBTN.borderWidth = 2
+                self.publishingSwitchBTN.setTitle("Publish", for: .normal)
+                self.publishingSwitchBTN.setTitleColor(#colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), for: .normal)
+            }
+            
             let code = caocapSnapshot["code"] as? [String: String] ?? ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]
             
             self.caocapCode = """
             <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
             <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style></style></head><body><script></script></body></html>
             """
-//            self.codeTextView.text = self.caocapCode
             
             self.loudCaocap()
         }
@@ -56,23 +69,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         self.webView.loadHTMLString(caocapCode, baseURL: nil)
     }
     
-    var startTest = true
-    
-    @IBOutlet weak var hotReloudBTN: UIButton!
-    @IBAction func hotReloudBTN(_ sender: Any) {
-        loudCaocap()
-        startTest.toggle()
-        if startTest {
-            hotReloudBTN.setImage(#imageLiteral(resourceName: "icons8-hot_reload-1"), for: .normal)
-        } else {
-            hotReloudBTN.setImage(#imageLiteral(resourceName: "icons8-hot_reload"), for: .normal)
-        }
-    }
-    
-    
-    @IBAction func saveBTN(_ sender: Any) {
-        // save the code in /caocap-x/commit/[UID]/[virsionNum]
-    }
     
     func gestureRecognizerSetup() {
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
@@ -133,7 +129,21 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     //-----Settings-----
     
     @IBOutlet weak var caocapNameTF: UITextField!
-    @IBOutlet weak var publishingSwitch: UISwitch!
+    @IBOutlet weak var caocapLinkTF: UITextField!
+    @IBOutlet weak var publishingSwitchBTN: UIButton!
+    var publishedStatus = false
+    @IBAction func didPressPublishingSwitchBTN(_ sender: Any) {
+        publishedStatus.toggle()
+        if publishedStatus {
+            publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+            publishingSwitchBTN.borderWidth = 0
+            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": true])
+        } else {
+            publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
+            publishingSwitchBTN.borderWidth = 2
+            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": false])
+        }
+    }
     
     @IBAction func caocapNameTFDidEndEditing(_ sender: Any) {
         if caocapNameTF.text != "" {
@@ -141,13 +151,8 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         }
     }
     
-    
-    @IBAction func publishingSwitchValueDidChange(_ sender: Any) {
-        if publishingSwitch.isOn {
-            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": true])
-        } else {
-            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": false])
-        }
+    @IBAction func caocapLinkTFDidEndEditing(_ sender: Any) {
+        // TODO: check if the link is valid and then send it to firebase
     }
     
 }
