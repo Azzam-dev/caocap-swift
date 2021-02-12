@@ -23,7 +23,7 @@ class ArtBuilderVC: UIViewController {
     lazy var viewHeight = self.view.frame.height
     
     var caocapCode = ["html":"<h1> failed to load.. </h1>", "js":"// failed to load..", "css":"/* failed to load.. */"]
-    var openedCaocap = Caocap(key: "", dictionary: ["":""])
+    var openedCaocapKey = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         getCaocapData()
@@ -32,11 +32,14 @@ class ArtBuilderVC: UIViewController {
     }
     
     func getCaocapData() {
-        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
-            let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
-            let code = caocap["code"] as? [String: String] ?? self.caocapCode
+        DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
+            guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
+            let caocap = Caocap(key: self.openedCaocapKey, dictionary: caocapSnapshot)
             
-            self.caocapCode = code
+            if let code = caocap.code {
+                self.caocapCode = code
+            }
+           
             
         }
     }

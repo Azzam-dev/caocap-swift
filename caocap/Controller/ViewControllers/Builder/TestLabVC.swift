@@ -18,8 +18,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
-    var caocapCode = ""
-    var openedCaocap = Caocap(key: "", dictionary: ["":""])
+    var openedCaocapKey = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,10 +36,11 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     
     func getCaocapData() {
         // we are useing the observe method to make the changes in real-time and to allow "Multi device changes"
-        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
-            let caocapSnapshot = caocapSnapshot.value as? [String : AnyObject] ?? [:]
-            self.caocapNameTF.text = caocapSnapshot["name"] as? String ?? ""
-            self.publishedStatus = caocapSnapshot["published"] as? Bool ?? false
+        DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
+            guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
+            let caocap = Caocap(key: self.openedCaocapKey, dictionary: caocapSnapshot)
+            self.caocapNameTF.text = caocap.name
+            self.publishedStatus = caocap.isPublished
             if self.publishedStatus {
                 self.publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
                 self.publishingSwitchBTN.borderWidth = 0
@@ -53,20 +53,32 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
                 self.publishingSwitchBTN.setTitleColor(#colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), for: .normal)
             }
             
-            let code = caocapSnapshot["code"] as? [String: String] ?? ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]
             
-            self.caocapCode = """
-            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style></style></head><body><script></script></body></html>
-            """
-            
-            self.loudCaocap()
+            self.loadCaocap(caocap)
         }
     }
     
     
-    func loudCaocap() {
-        self.webView.loadHTMLString(caocapCode, baseURL: nil)
+    private func loadCaocap(_ caocap: Caocap) {
+        switch caocap.type {
+        case .code:
+            let caocapCode = """
+            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(caocap.code!["css"] ?? "")</style></head><body>\(caocap.code!["html"] ?? "" )<script>\(caocap.code!["js"] ?? "")</script></body></html>
+            """
+            
+            self.webView.loadHTMLString(caocapCode , baseURL: nil)
+            
+        case .link:
+            let caocapURL = URL(string: caocap.link!)!
+            var urlRequest = URLRequest(url: caocapURL)
+            urlRequest.cachePolicy = .returnCacheDataElseLoad
+            self.webView.load(urlRequest)
+            
+        default:
+            print("unexpected caocap type")
+        }
+        
     }
     
     
@@ -137,17 +149,17 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
         if publishedStatus {
             publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
             publishingSwitchBTN.borderWidth = 0
-            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": true])
+            DataService.instance.REF_CAOCAPS.child(openedCaocapKey).updateChildValues(["published": true])
         } else {
             publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
             publishingSwitchBTN.borderWidth = 2
-            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": false])
+            DataService.instance.REF_CAOCAPS.child(openedCaocapKey).updateChildValues(["published": false])
         }
     }
     
     @IBAction func caocapNameTFDidEndEditing(_ sender: Any) {
         if caocapNameTF.text != "" {
-            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["name": caocapNameTF.text!])
+            DataService.instance.REF_CAOCAPS.child(openedCaocapKey).updateChildValues(["name": caocapNameTF.text!])
         }
     }
     

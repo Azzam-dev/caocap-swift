@@ -55,9 +55,9 @@ class BuilderVC: UIViewController {
         artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as? ArtBuilderVC
         testLabSubVC = storyboard.instantiateViewController(withIdentifier: "testLab") as? TestLabVC
         
-        cosmosBaseSubVC?.openedCaocap = openedCaocap
-        artBuilderSubVC?.openedCaocap = openedCaocap
-        testLabSubVC?.openedCaocap = openedCaocap
+        cosmosBaseSubVC?.openedCaocapKey = openedCaocap.key
+        artBuilderSubVC?.openedCaocapKey = openedCaocap.key
+        testLabSubVC?.openedCaocapKey = openedCaocap.key
         viewControllers = [cosmosBaseSubVC!, artBuilderSubVC!, testLabSubVC!]
         navBTNpressed(navBTNs[navSelectedIndex])
     }

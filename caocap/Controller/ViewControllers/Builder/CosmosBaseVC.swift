@@ -19,7 +19,7 @@ class CosmosBaseVC: UIViewController {
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
-    var openedCaocap = Caocap(key: "", dictionary: ["":""])
+    var openedCaocapKey = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,8 +34,10 @@ class CosmosBaseVC: UIViewController {
     }
     
     func getCaocapData() {
-        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
-            let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
+        DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
+            guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
+            let caocap = Caocap(key: self.openedCaocapKey, dictionary: caocapSnapshot)
+            print(caocap.name)
             //...
         }
     }

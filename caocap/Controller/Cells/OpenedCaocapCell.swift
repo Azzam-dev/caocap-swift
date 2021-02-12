@@ -106,7 +106,7 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
         
     }
     
-    fileprivate func loadCaocap(_ caocap: Caocap) {
+    private func loadCaocap(_ caocap: Caocap) {
         switch caocap.type {
         case .code:
             let caocapCode = """
