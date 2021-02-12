@@ -23,14 +23,13 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addPulse()
         getCaocapData()
+        gestureRecognizerSetup()
         
         //This hides the webView until the download finishes
         self.webView.isHidden = true
         self.webView.navigationDelegate = self
-        
-        addPulse()
-        gestureRecognizerSetup()
     }
     
     

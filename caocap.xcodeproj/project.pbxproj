@@ -16,6 +16,7 @@
 		EC03B1D42450610C00274B1D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = EC03B1D32450610C00274B1D /* SwiftUICharts */; };
 		EC16EE7A21A5AE1F009A46B8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC16EE7921A5AE1F009A46B8 /* User.swift */; };
 		EC1C8B7B25D6C38C00CC8A0E /* CaocapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECF63E8421BD6C6D00E491FE /* CaocapCell.xib */; };
+		EC1C8B9625D6DCB700CC8A0E /* CodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1C8B9525D6DCB700CC8A0E /* CodeCell.swift */; };
 		EC2B26B722692B2C00779486 /* OpenedCaocapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B26B622692B2C00779486 /* OpenedCaocapCell.swift */; };
 		EC2B26C1226A12DC00779486 /* CaocapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B26C0226A12DC00779486 /* CaocapVC.swift */; };
 		EC2B26C3226B2E2700779486 /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2B26C2226B2E2700779486 /* SwipeNavigationController.swift */; };
@@ -109,6 +110,7 @@
 		D1808BFFAF766882BD21C196 /* Pods-caocap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-caocap/Pods-caocap.debug.xcconfig"; sourceTree = "<group>"; };
 		E33433C91972EAC63C3991AD /* Pods-caocapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-caocapTests/Pods-caocapTests.release.xcconfig"; sourceTree = "<group>"; };
 		EC16EE7921A5AE1F009A46B8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EC1C8B9525D6DCB700CC8A0E /* CodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCell.swift; sourceTree = "<group>"; };
 		EC2B26B622692B2C00779486 /* OpenedCaocapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenedCaocapCell.swift; sourceTree = "<group>"; };
 		EC2B26C0226A12DC00779486 /* CaocapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapVC.swift; sourceTree = "<group>"; };
 		EC2B26C2226B2E2700779486 /* SwipeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeNavigationController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				EC5C0DE0216F895100ED508F /* AddUserCell.swift */,
+				EC1C8B9525D6DCB700CC8A0E /* CodeCell.swift */,
 				EC5238E121916E3A00D966F3 /* ContactUserCell.swift */,
 				EC5238DB2190834200D966F3 /* ContactChatCell.swift */,
 				EC5238D9219082F100D966F3 /* ChatGroupCell.swift */,
@@ -336,11 +339,11 @@
 			isa = PBXGroup;
 			children = (
 				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
-				EC84070B24681A0800223FB1 /* UserProfile.storyboard */,
-				EC8407092468147800223FB1 /* Chat.storyboard */,
-				EC8407072468134600223FB1 /* Explore.storyboard */,
-				EC84070524680C2200223FB1 /* Builder.storyboard */,
 				EC8E19492159E02A000E4EE6 /* Main.storyboard */,
+				EC8407072468134600223FB1 /* Explore.storyboard */,
+				EC8407092468147800223FB1 /* Chat.storyboard */,
+				EC84070B24681A0800223FB1 /* UserProfile.storyboard */,
+				EC84070524680C2200223FB1 /* Builder.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -371,13 +374,13 @@
 			isa = PBXGroup;
 			children = (
 				EC70ACF5215D87F9004C16D2 /* Model */,
-				EC1C8B0925D6BBBD00CC8A0E /* Controller */,
 				EC1C8B0A25D6BBF200CC8A0E /* View */,
+				EC1C8B0925D6BBBD00CC8A0E /* Controller */,
 				EC70ACF7215D8856004C16D2 /* Services */,
 				EC8E1976215A00A8000E4EE6 /* Extensions */,
-				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
-				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
 				EC2F25002168FFD400D14733 /* fonts */,
+				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
+				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
 				EC8E19542159E02C000E4EE6 /* Info.plist */,
 				ECDABBF2238348170029B026 /* caocap.entitlements */,
 				EC8E194C2159E02A000E4EE6 /* caocap.xcdatamodeld */,
@@ -712,6 +715,7 @@
 				EC501676234E610200021D70 /* SentMessageCell.swift in Sources */,
 				EC6EE2842323D3180069F488 /* MenuCell.swift in Sources */,
 				EC8E194E2159E02A000E4EE6 /* caocap.xcdatamodeld in Sources */,
+				EC1C8B9625D6DCB700CC8A0E /* CodeCell.swift in Sources */,
 				EC2B26C3226B2E2700779486 /* SwipeNavigationController.swift in Sources */,
 				ECF205492160ED6D00C48F2A /* AuthVC.swift in Sources */,
 				ECF2054B216102C200C48F2A /* AuthService.swift in Sources */,

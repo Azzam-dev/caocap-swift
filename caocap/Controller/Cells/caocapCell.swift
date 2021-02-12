@@ -31,7 +31,7 @@ class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
         
     }
     
-    func configureCell(caocap: Caocap ,released: Bool) {
+    func configure(caocap: Caocap ,released: Bool) {
         caocapKey = caocap.key
         
         //this stops the image and the Url from duplicating
