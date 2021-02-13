@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		16290DFCDF33CCE321A3DCA9 /* Pods_caocap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E37161B259C040EE5C0FA9 /* Pods_caocap.framework */; };
 		4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E42D424651F9A00522B2F /* TestLabVC.swift */; };
+		4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E182A4425D84C5A00DB37C4 /* MenuItem.swift */; };
 		4E272DB424612C21005718EF /* BlockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E272DB324612C21005718EF /* BlockCollectionViewCell.swift */; };
 		4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AEF8A2404FA92004B4F37 /* Reachability.swift */; };
 		7FCE5A9124FDF3CB7984E1DA /* Pods_caocapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E7F4AE818B44B5884B4A27 /* Pods_caocapTests.framework */; };
@@ -102,6 +103,7 @@
 		22022B945CCAD5D75ED8F168 /* Pods_caocapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_caocapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E37161B259C040EE5C0FA9 /* Pods_caocap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_caocap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E0E42D424651F9A00522B2F /* TestLabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabVC.swift; sourceTree = "<group>"; };
+		4E182A4425D84C5A00DB37C4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		4E272DB324612C21005718EF /* BlockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E8AEF8A2404FA92004B4F37 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		81DD89228B8151C0A4A3C914 /* Pods-caocap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocap.release.xcconfig"; path = "Pods/Target Support Files/Pods-caocap/Pods-caocap.release.xcconfig"; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				EC16EE7921A5AE1F009A46B8 /* User.swift */,
 				ECF63E9121C0D9DF00E491FE /* Caocap.swift */,
 				ECB96C232527423A00901E35 /* Block.swift */,
+				4E182A4425D84C5A00DB37C4 /* MenuItem.swift */,
 				EC5238DF2190B4CD00D966F3 /* Chat.swift */,
 				ECAD479C21CA97C4000E16DC /* Message.swift */,
 			);
@@ -759,6 +762,7 @@
 				EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */,
 				EC339BE62253D75200FDC14A /* UrlService.swift in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,
+				4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */,
 				ECF2055121624C9400C48F2A /* MenuVC.swift in Sources */,
 				EC6AB852215D8F4B00C276E3 /* DataService.swift in Sources */,
 			);

@@ -9,16 +9,37 @@
 import UIKit
 import Firebase
 
+enum MenuType {
+    case account
+    case setting
+}
 class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
-    let menuItemsNames = ["edit profile", "settings", "logout" ]
-    let menuItemsImages = [#imageLiteral(resourceName: "icons8-user_folder_filled"),#imageLiteral(resourceName: "icons8-settings"),#imageLiteral(resourceName: "icons8-logout_rounded_up_filled")]
+    var menuType: MenuType = .account
+    var menuItems = [MenuItem]()
+    
     
     @IBOutlet weak var menuTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        switch menuType {
+        case .account:
+            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-user_folder_filled"), label: .editProfile),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-settings"), label: .settings),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-logout_rounded_up_filled"), label: .logout)
+            ]
+        case .setting:
+            menuItems = [MenuItem(image: #imageLiteral(resourceName: "w-launched_rocket"), label: .yourActivity),
+                         MenuItem(image: #imageLiteral(resourceName: "w-comments"), label: .notification),
+                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .privacy),
+                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .security),
+                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .ads),
+                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .account),
+                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .help),
+                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .about)
+            ]
+        }
         
     }
     
@@ -66,28 +87,48 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItemsNames.count
+        return menuItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell" , for: indexPath ) as! MenuCell
-        cell.configureCell(image: menuItemsImages[indexPath.row], label: menuItemsNames[indexPath.row])
+        cell.configure(menuItem: menuItems[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            //edit profile VC
-            
+        
+        switch menuItems[indexPath.row].label {
+        case .editProfile:
             let storyboard = UIStoryboard(name: "UserProfile", bundle: nil)
-            let editProfile = storyboard.instantiateViewController(withIdentifier: "editProfile") as! EditProfileVC
-            navigationController?.pushViewController(editProfile, animated: true)
+            let editProfileVC = storyboard.instantiateViewController(withIdentifier: "editProfile") as! EditProfileVC
+            navigationController?.pushViewController(editProfileVC, animated: true)
             
-        } else if indexPath.row == 1 {
-            //settings VC
-        } else if indexPath.row == 2 {
+        case .settings:
+            let storyboardSettings = UIStoryboard(name: "UserProfile", bundle: nil)
+            let settingsVC = storyboardSettings.instantiateViewController(withIdentifier: "menu") as! MenuVC
+            settingsVC.menuType = .setting
+            navigationController?.pushViewController(settingsVC, animated: true)
+        case .logout:
             logoutAct()
+        case .yourActivity:
+            print("")
+        case .notification:
+            print("")
+        case .privacy:
+            print("")
+        case .security:
+            print("")
+        case .ads:
+            print("")
+        case .account:
+            print("")
+        case .help:
+            print("")
+        case .about:
+            print("")
         }
+        
     }
     
 }

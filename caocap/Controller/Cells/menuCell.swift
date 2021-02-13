@@ -14,9 +14,9 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemlabel: UILabel!
     
-    func configureCell(image: UIImage , label: String ) {
-        self.itemImage.image = image
-        self.itemlabel.text = label
+    func configure(menuItem: MenuItem) {
+        self.itemImage.image = menuItem.image
+        self.itemlabel.text = menuItem.label.rawValue
         
     }
     
