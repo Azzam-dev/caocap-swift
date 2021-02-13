@@ -161,11 +161,11 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         
         switch indexPath.row {
         case 0:
-            cell.configure(code: caocapCode["js"]!)
+            cell.configure(code: caocapCode["js"]!, type: .js, key: openedCaocapKey)
         case 1:
-            cell.configure(code: caocapCode["html"]!)
+            cell.configure(code: caocapCode["html"]!, type: .html, key: openedCaocapKey)
         case 2:
-            cell.configure(code: caocapCode["css"]!)
+            cell.configure(code: caocapCode["css"]!, type: .css, key: openedCaocapKey)
         default:
             break
         }

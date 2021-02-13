@@ -99,7 +99,8 @@ class CreateCodeCaocapVC: UIViewController, UIImagePickerControllerDelegate, UIN
                 storageRef.downloadURL(completion: { url, error in
                     if error != nil { print(error!) } else {
                         // Here you can get the download URL
-                        let caocapData = ["imageURL": url?.absoluteString ?? "",
+                        guard let imageURL = url?.absoluteString else { return }
+                        let caocapData = ["imageURL": imageURL,
                                           "color": self.colorSelectedIndex,
                                           "name" : self.caocapNameTF.text!,
                                           "type": "code",

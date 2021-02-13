@@ -7,11 +7,28 @@
 //
 
 import UIKit
+enum CodeType: String {
+    case js
+    case html
+    case css
+}
 
-class CodeCell: UICollectionViewCell {
+class CodeCell: UICollectionViewCell, UITextViewDelegate {
     
+    var key: String?
+    var type: CodeType?
     @IBOutlet weak var textView: UITextView!
-    func configure(code: String) {
+    func configure(code: String, type: CodeType, key: String) {
         textView.text = code
+        self.key = key
+        self.type = type
+    }
+
+    
+    func textViewDidChange(_ textView: UITextView) {
+        guard let key = key else { return }
+        guard let type = type?.rawValue else { return }
+        guard let text = textView.text else { return }
+        DataService.instance.REF_CAOCAPS.child(key).child("code").updateChildValues([type: text])
     }
 }

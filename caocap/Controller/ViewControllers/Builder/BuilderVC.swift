@@ -58,6 +58,8 @@ class BuilderVC: UIViewController {
         cosmosBaseSubVC?.openedCaocapKey = openedCaocap.key
         artBuilderSubVC?.openedCaocapKey = openedCaocap.key
         testLabSubVC?.openedCaocapKey = openedCaocap.key
+        testLabSubVC?.openedCaocapType = openedCaocap.type
+        
         viewControllers = [cosmosBaseSubVC!, artBuilderSubVC!, testLabSubVC!]
         navBTNpressed(navBTNs[navSelectedIndex])
     }
