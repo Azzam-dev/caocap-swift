@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum CaocapType {
+enum CaocapType: String {
     case link
     case code
     case block
