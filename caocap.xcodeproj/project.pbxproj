@@ -12,6 +12,8 @@
 		4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E182A4425D84C5A00DB37C4 /* MenuItem.swift */; };
 		4E272DB424612C21005718EF /* BlockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E272DB324612C21005718EF /* BlockCollectionViewCell.swift */; };
 		4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AEF8A2404FA92004B4F37 /* Reachability.swift */; };
+		4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */; };
+		4ECAEA1325DDC7E200972415 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA1225DDC7E200972415 /* Builder.swift */; };
 		7FCE5A9124FDF3CB7984E1DA /* Pods_caocapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E7F4AE818B44B5884B4A27 /* Pods_caocapTests.framework */; };
 		DD4B6A04445A93D97079AFF5 /* Pods_caocapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22022B945CCAD5D75ED8F168 /* Pods_caocapUITests.framework */; };
 		EC03B1D42450610C00274B1D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = EC03B1D32450610C00274B1D /* SwiftUICharts */; };
@@ -103,6 +105,8 @@
 		4E182A4425D84C5A00DB37C4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		4E272DB324612C21005718EF /* BlockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCollectionViewCell.swift; sourceTree = "<group>"; };
 		4E8AEF8A2404FA92004B4F37 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTypeCell.swift; sourceTree = "<group>"; };
+		4ECAEA1225DDC7E200972415 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		81DD89228B8151C0A4A3C914 /* Pods-caocap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocap.release.xcconfig"; path = "Pods/Target Support Files/Pods-caocap/Pods-caocap.release.xcconfig"; sourceTree = "<group>"; };
 		8DE1543AA5E33412EF08C933 /* Pods-caocapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-caocapUITests/Pods-caocapUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8E7F4AE818B44B5884B4A27 /* Pods_caocapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_caocapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,6 +286,7 @@
 				EC5238DB2190834200D966F3 /* ContactChatCell.swift */,
 				EC5238D9219082F100D966F3 /* ChatGroupCell.swift */,
 				EC5238DD2190836200D966F3 /* CaocapGroupCell.swift */,
+				4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */,
 				ECC94A7F224E995B00D7E8DA /* CaocapIconCell.swift */,
 				EC2B26B622692B2C00779486 /* OpenedCaocapCell.swift */,
 				ECF63E8321BD6C6D00E491FE /* CaocapCell.swift */,
@@ -313,6 +318,7 @@
 			children = (
 				EC16EE7921A5AE1F009A46B8 /* User.swift */,
 				ECF63E9121C0D9DF00E491FE /* Caocap.swift */,
+				4ECAEA1225DDC7E200972415 /* Builder.swift */,
 				ECB96C232527423A00901E35 /* Block.swift */,
 				4E182A4425D84C5A00DB37C4 /* MenuItem.swift */,
 				EC5238DF2190B4CD00D966F3 /* Chat.swift */,
@@ -719,6 +725,7 @@
 				ECF63E9221C0D9DF00E491FE /* Caocap.swift in Sources */,
 				EC16EE7A21A5AE1F009A46B8 /* User.swift in Sources */,
 				EC5C0DE1216F895100ED508F /* AddUserCell.swift in Sources */,
+				4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */,
 				EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */,
 				ECE29FFF25208E2100EFF8B4 /* ExploreUI.swift in Sources */,
 				ECE2A00025208E2100EFF8B4 /* ChartUI.swift in Sources */,
@@ -742,6 +749,7 @@
 				EC5238E02190B4CD00D966F3 /* Chat.swift in Sources */,
 				EC501679234E62B900021D70 /* ArrivedMessageCell.swift in Sources */,
 				ECE29FD82520852B00EFF8B4 /* ArtBuilderVC.swift in Sources */,
+				4ECAEA1325DDC7E200972415 /* Builder.swift in Sources */,
 				ECE29FFE25208E2100EFF8B4 /* CircleImage.swift in Sources */,
 				EC2F25072169C47F00D14733 /* EditProfileVC.swift in Sources */,
 				4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */,

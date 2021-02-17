@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -354,7 +355,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <visualEffectView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-lZ-W2C">
+                            <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-lZ-W2C">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fGN-wV-0I1">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -366,12 +367,84 @@
                                                 <action selector="popupACT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y54-sD-oOR"/>
                                             </connections>
                                         </button>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f4K-mc-alG">
+                                            <rect key="frame" x="0.0" y="248" width="414" height="400"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="400" id="Yh9-Uu-tzn"/>
+                                            </constraints>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LBc-p1-ILr">
+                                                <size key="itemSize" width="367" height="411"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="builderTypeCell" id="IM1-6i-B1E" customClass="BuilderTypeCell" customModule="CAOCAPx" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="-5.666666666666667" width="367" height="411"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="r4b-uO-u78">
+                                                        <rect key="frame" x="0.0" y="0.0" width="367" height="411"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-0l-PKd" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
+                                                                <rect key="frame" x="10" y="10" width="347" height="391"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A6K-VJ-OAZ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="347" height="391"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="A6K-VJ-OAZ" secondAttribute="trailing" id="6YN-2X-EsC"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="A6K-VJ-OAZ" secondAttribute="bottom" id="Fj4-c5-Xqu"/>
+                                                                    <constraint firstItem="A6K-VJ-OAZ" firstAttribute="leading" secondItem="qf4-0l-PKd" secondAttribute="leading" id="MPe-yj-RuZ"/>
+                                                                    <constraint firstItem="A6K-VJ-OAZ" firstAttribute="top" secondItem="qf4-0l-PKd" secondAttribute="top" id="sOm-Uz-pjm"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                        <real key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                        <real key="value" value="0.29999999999999999"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                        <size key="value" width="2" height="3"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="qf4-0l-PKd" firstAttribute="leading" secondItem="r4b-uO-u78" secondAttribute="leading" constant="10" id="Cip-oF-h1B"/>
+                                                            <constraint firstAttribute="trailing" secondItem="qf4-0l-PKd" secondAttribute="trailing" constant="10" id="S2m-c5-XeM"/>
+                                                            <constraint firstItem="qf4-0l-PKd" firstAttribute="top" secondItem="r4b-uO-u78" secondAttribute="top" constant="10" id="bkR-dx-fs7"/>
+                                                            <constraint firstAttribute="bottom" secondItem="qf4-0l-PKd" secondAttribute="bottom" constant="10" id="zZg-rU-OcZ"/>
+                                                        </constraints>
+                                                    </collectionViewCellContentView>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="customSize" width="367" height="411"/>
+                                                    <connections>
+                                                        <outlet property="backgroundImage" destination="A6K-VJ-OAZ" id="04r-38-m6e"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="BYZ-38-t0r" id="yon-L2-bAF"/>
+                                                <outlet property="delegate" destination="BYZ-38-t0r" id="WdP-DE-QmI"/>
+                                            </connections>
+                                        </collectionView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="f4K-mc-alG" secondAttribute="trailing" id="LUL-59-geX"/>
                                         <constraint firstAttribute="trailing" secondItem="qdl-mY-shQ" secondAttribute="trailing" id="W9y-Kx-tsi"/>
                                         <constraint firstItem="qdl-mY-shQ" firstAttribute="top" secondItem="fGN-wV-0I1" secondAttribute="top" id="l86-rk-x4h"/>
                                         <constraint firstAttribute="bottom" secondItem="qdl-mY-shQ" secondAttribute="bottom" id="lK6-g4-vXr"/>
+                                        <constraint firstItem="f4K-mc-alG" firstAttribute="centerX" secondItem="fGN-wV-0I1" secondAttribute="centerX" id="o2a-6Y-z2Z"/>
                                         <constraint firstItem="qdl-mY-shQ" firstAttribute="leading" secondItem="fGN-wV-0I1" secondAttribute="leading" id="q89-8X-bVj"/>
+                                        <constraint firstItem="f4K-mc-alG" firstAttribute="centerY" secondItem="fGN-wV-0I1" secondAttribute="centerY" id="uPu-qM-fzh"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="dark"/>
@@ -617,6 +690,7 @@
                     <navigationItem key="navigationItem" id="HwG-ch-Gke"/>
                     <connections>
                         <outlet property="blurredView" destination="2Su-lZ-W2C" id="mhx-uN-nqd"/>
+                        <outlet property="builderCollectionView" destination="f4K-mc-alG" id="S65-NH-O7Q"/>
                         <outlet property="cancelPopupsBTN" destination="qdl-mY-shQ" id="gdZ-eM-ll2"/>
                         <outlet property="chatICON" destination="C4e-ii-pH7" id="TuH-oJ-xJy"/>
                         <outlet property="chatIconView" destination="SDp-Ih-1WN" id="3SA-4G-2PX"/>
@@ -636,7 +710,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64" y="-695"/>
+            <point key="canvasLocation" x="63.768115942028992" y="-695.08928571428567"/>
         </scene>
         <!--UpdateVC-->
         <scene sceneID="OOz-KU-lJX">

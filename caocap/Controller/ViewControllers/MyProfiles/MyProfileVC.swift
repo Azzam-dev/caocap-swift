@@ -90,49 +90,6 @@ class MyProfileVC: UIViewController {
         self.profileCollectionView.scrollToItem(at: indexPath as IndexPath, at: .left , animated: true )
     }
     
-    @IBAction func didPressAddNewCaocap(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        let createCaocapPopup = UIAlertController(title: "انشاء كوكب جديد", message: "حدد نوع الكوكب", preferredStyle: .actionSheet)
-        let addNewLinkCaocap = UIAlertAction(title: "link", style: .default ) { (buttonTapped) in
-            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.createCaocapDelegate = self
-            createCaocapVC.type = .link
-            self.present(createCaocapVC, animated: true)
-        }
-        let addNewCodeCaocap = UIAlertAction(title: "code", style: .default ) { (buttonTapped) in
-            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.createCaocapDelegate = self
-            createCaocapVC.type = .code
-            self.present(createCaocapVC, animated: true)
-        }
-        let addNewTemplateCaocap = UIAlertAction(title: "template", style: .default ) { (buttonTapped) in
-            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.createCaocapDelegate = self
-            createCaocapVC.type = .template
-            self.present(createCaocapVC, animated: true)
-        }
-        let addNewBlockCaocap = UIAlertAction(title: "block", style: .default ) { (buttonTapped) in
-            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.createCaocapDelegate = self
-            createCaocapVC.type = .block
-            self.present(createCaocapVC, animated: true)
-        }
-        
-        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
-        createCaocapPopup.addAction(addNewLinkCaocap)
-        createCaocapPopup.addAction(addNewCodeCaocap)
-        createCaocapPopup.addAction(addNewTemplateCaocap)
-        createCaocapPopup.addAction(addNewBlockCaocap)
-        createCaocapPopup.addAction(cancel)
-        
-        if let popoverController = createCaocapPopup.popoverPresentationController {
-            popoverController.sourceView = self.view
-            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
-        }
-        
-        self.present(createCaocapPopup, animated: true , completion: nil)
-    }
-
     func presentBuilderVC(with caocap: Caocap) {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
         let builderVC = storyboard.instantiateViewController(withIdentifier: "builder") as! BuilderVC
@@ -199,16 +156,3 @@ extension MyProfileVC: CaocapCellDelegate {
     }
 }
 
-extension MyProfileVC: CreateCaocapDelegate {
-    func openNewlyCreatedCaocap() {
-        DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
-            self.presentBuilderVC(with: returnedCaocapsArray.last!)
-        }
-    }
-}
-
-struct MyProfileVC_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}

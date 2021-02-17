@@ -12,7 +12,14 @@ import RevealingSplashView
 
 
 class NavigationVC: UIViewController , UINavigationControllerDelegate {
-   
+
+    @IBOutlet weak var builderCollectionView: UICollectionView!
+    let builderTypeArray = [
+        Builder(type: .link, image: #imageLiteral(resourceName: "builderLink"), description: ""),
+        Builder(type: .template, image: #imageLiteral(resourceName: "builderTemplate"), description: ""),
+        Builder(type: .code, image: #imageLiteral(resourceName: "builderLink"), description: ""),
+        Builder(type: .block, image: #imageLiteral(resourceName: "builderLink"), description: "")
+    ]
     var exploreSubNAV: UINavigationController!
     var chatSubNAV: UINavigationController!
     var myPageSubNAV: UINavigationController!
@@ -294,7 +301,67 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
 }
 
+extension NavigationVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: indexPath) as! BuilderTypeCell
+        
+        cell.configure(builder: builderTypeArray[indexPath.row])
+        
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        switch builderTypeArray[indexPath.row].type {
+        case .link:
+            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
+            createCaocapVC.createCaocapDelegate = self
+            createCaocapVC.type = .link
+            self.present(createCaocapVC, animated: true)
+        case .template:
+            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
+            createCaocapVC.createCaocapDelegate = self
+            createCaocapVC.type = .template
+            self.present(createCaocapVC, animated: true)
+        case .code:
+            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
+            createCaocapVC.createCaocapDelegate = self
+            createCaocapVC.type = .code
+            self.present(createCaocapVC, animated: true)
+        case .block:
+            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
+            createCaocapVC.createCaocapDelegate = self
+            createCaocapVC.type = .block
+            self.present(createCaocapVC, animated: true)
+        }
+    }
+    
+    
+}
+
+extension NavigationVC: CreateCaocapDelegate {
+    
+    func presentBuilderVC(with caocap: Caocap) {
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        let builderVC = storyboard.instantiateViewController(withIdentifier: "builder") as! BuilderVC
+        builderVC.openedCaocap = caocap
+        builderVC.modalPresentationStyle = .fullScreen
+        self.present(builderVC, animated: true)
+    }
+    
+    func openNewlyCreatedCaocap() {
+        DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
+            self.presentBuilderVC(with: returnedCaocapsArray.last!)
+        }
+    }
+}
+
 extension NavigationVC: UITextFieldDelegate {
     
 }
+
 
