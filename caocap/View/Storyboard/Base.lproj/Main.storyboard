@@ -367,7 +367,7 @@
                                                 <action selector="popupACT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y54-sD-oOR"/>
                                             </connections>
                                         </button>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f4K-mc-alG">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f4K-mc-alG">
                                             <rect key="frame" x="0.0" y="248" width="414" height="400"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -434,6 +434,8 @@
                                             <connections>
                                                 <outlet property="dataSource" destination="BYZ-38-t0r" id="yon-L2-bAF"/>
                                                 <outlet property="delegate" destination="BYZ-38-t0r" id="WdP-DE-QmI"/>
+                                                <outletCollection property="gestureRecognizers" destination="vJa-sm-Hvu" appends="YES" id="0WR-kb-Wss"/>
+                                                <outletCollection property="gestureRecognizers" destination="evH-D1-XHw" appends="YES" id="njF-hy-MRi"/>
                                             </connections>
                                         </collectionView>
                                     </subviews>
@@ -709,6 +711,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="vJa-sm-Hvu">
+                    <connections>
+                        <action selector="didSwipeCollectionView:" destination="BYZ-38-t0r" id="thq-zi-g3I"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="evH-D1-XHw">
+                    <connections>
+                        <action selector="didSwipeCollectionView:" destination="BYZ-38-t0r" id="S5b-89-EcU"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="63.768115942028992" y="-695.08928571428567"/>
         </scene>

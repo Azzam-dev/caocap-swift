@@ -13,13 +13,7 @@ import RevealingSplashView
 
 class NavigationVC: UIViewController , UINavigationControllerDelegate {
 
-    @IBOutlet weak var builderCollectionView: UICollectionView!
-    let builderTypeArray = [
-        Builder(type: .link, image: #imageLiteral(resourceName: "builderLink"), description: ""),
-        Builder(type: .template, image: #imageLiteral(resourceName: "builderTemplate"), description: ""),
-        Builder(type: .code, image: #imageLiteral(resourceName: "builderLink"), description: ""),
-        Builder(type: .block, image: #imageLiteral(resourceName: "builderLink"), description: "")
-    ]
+  
     var exploreSubNAV: UINavigationController!
     var chatSubNAV: UINavigationController!
     var myPageSubNAV: UINavigationController!
@@ -39,6 +33,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         addNavCircleGestures()
         setupSubNavigationControllers()
         showSplashAnimation()
+        setupBuilderCells()
         
         NotificationCenter.default.addObserver(self, selector: #selector(openExplore), name: Notification.Name("openExplore"), object: nil)
         
@@ -272,6 +267,49 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         
     }
     
+    var builderItemSelectedIndex = 2
+    var builderItemPreviousIndex: Int?
+    @IBAction func didSwipeCollectionView(_ sender: UISwipeGestureRecognizer) {
+        switch sender.direction {
+        case .left where builderItemSelectedIndex < 3:
+            builderItemPreviousIndex = builderItemSelectedIndex
+            builderItemSelectedIndex += 1
+            transitionAnimtion(fram: builderItemPreviousIndex!, to: builderItemSelectedIndex)
+        case .right where builderItemSelectedIndex > 0 :
+            builderItemPreviousIndex = builderItemSelectedIndex
+            builderItemSelectedIndex -= 1
+            transitionAnimtion(fram: builderItemPreviousIndex!, to: builderItemSelectedIndex)
+        default:
+            break
+        }
+    }
+    
+    func transitionAnimtion(fram indexOne: Int, to indexTwo: Int) {
+        builderCollectionView.scrollToItem(at:IndexPath(item: indexTwo, section: 0), at: .right, animated: true)
+        UIView.animate(withDuration: 0.1) {
+            self.builderItemCells[indexOne].backgroundImage.image = #imageLiteral(resourceName: "icons8-logout_rounded_up_filled")
+            self.builderItemCells[indexTwo].backgroundImage.image = #imageLiteral(resourceName: "jsColored")
+            
+        }
+    }
+    
+    @IBOutlet weak var builderCollectionView: UICollectionView!
+    
+    var builderItemCells = [BuilderTypeCell]()
+    func setupBuilderCells() {
+        let linkBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 0, section: 0)) as! BuilderTypeCell
+        let codeBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 1, section: 0)) as! BuilderTypeCell
+        let templateBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 2, section: 0)) as! BuilderTypeCell
+        let blockBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 3, section: 0)) as! BuilderTypeCell
+        
+        linkBuilderCell.configure(builder: Builder(type: .link, image: #imageLiteral(resourceName: "builderLink"), description: ""))
+        codeBuilderCell.configure(builder: Builder(type: .template, image: #imageLiteral(resourceName: "builderTemplate"), description: ""))
+        templateBuilderCell.configure(builder: Builder(type: .code, image: #imageLiteral(resourceName: "builderLink"), description: ""))
+        blockBuilderCell.configure(builder: Builder(type: .block, image: #imageLiteral(resourceName: "builderLink"), description: ""))
+        builderItemCells = [linkBuilderCell, codeBuilderCell, templateBuilderCell, blockBuilderCell]
+        builderCollectionView.reloadData()
+    }
+    
     
     @IBOutlet weak var blurredView: UIVisualEffectView!
     @IBOutlet weak var cancelPopupsBTN: UIButton!
@@ -303,20 +341,18 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
 
 extension NavigationVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return builderItemCells.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: indexPath) as! BuilderTypeCell
-        
-        cell.configure(builder: builderTypeArray[indexPath.row])
-        
-        return cell
+        return builderItemCells[indexPath.row]
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        guard let type = builderItemCells[indexPath.row].builder?.type  else { return }
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        switch builderTypeArray[indexPath.row].type {
+        switch type {
         case .link:
             let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
             createCaocapVC.createCaocapDelegate = self

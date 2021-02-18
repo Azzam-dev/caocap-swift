@@ -12,8 +12,10 @@ class BuilderTypeCell: UICollectionViewCell {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    
+    var builder: Builder?
     func configure(builder: Builder) {
+        self.builder = builder
         self.backgroundImage.image = builder.image
     }
-    
 }
