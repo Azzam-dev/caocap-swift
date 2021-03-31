@@ -267,11 +267,11 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         
     }
     
-    var builderItemSelectedIndex = 2
+    var builderItemSelectedIndex = 0
     var builderItemPreviousIndex: Int?
     @IBAction func didSwipeCollectionView(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
-        case .left where builderItemSelectedIndex < 3:
+        case .left where builderItemSelectedIndex < 4:
             builderItemPreviousIndex = builderItemSelectedIndex
             builderItemSelectedIndex += 1
             transitionAnimtion(fram: builderItemPreviousIndex!, to: builderItemSelectedIndex)
@@ -284,11 +284,17 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         }
     }
     
-    func transitionAnimtion(fram indexOne: Int, to indexTwo: Int) {
-        builderCollectionView.scrollToItem(at:IndexPath(item: indexTwo, section: 0), at: .right, animated: true)
+    func transitionAnimtion(fram previousIndex: Int, to selectedIndex: Int) {
+        builderCollectionView.scrollToItem(at:IndexPath(item: selectedIndex, section: 0), at: .right, animated: true)
         UIView.animate(withDuration: 0.1) {
-            self.builderItemCells[indexOne].backgroundImage.image = #imageLiteral(resourceName: "icons8-logout_rounded_up_filled")
-            self.builderItemCells[indexTwo].backgroundImage.image = #imageLiteral(resourceName: "jsColored")
+            
+            self.builderItemCells[previousIndex].frame.size.height = 310 - 50
+            self.builderItemCells[previousIndex].frame.size.width = 220 - 50
+            self.builderItemCells[previousIndex].titleLabel.font = UIFont.systemFont(ofSize: 25.0)
+        
+            self.builderItemCells[selectedIndex].frame.size.height = 310
+            self.builderItemCells[selectedIndex].frame.size.width = 220
+            self.builderItemCells[selectedIndex].titleLabel.font = UIFont.systemFont(ofSize: 30.0)
             
         }
     }
@@ -301,12 +307,15 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         let codeBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 1, section: 0)) as! BuilderTypeCell
         let templateBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 2, section: 0)) as! BuilderTypeCell
         let blockBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 3, section: 0)) as! BuilderTypeCell
+        let chatBuilderBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 4, section: 0)) as! BuilderTypeCell
         
-        linkBuilderCell.configure(builder: Builder(type: .link, image: #imageLiteral(resourceName: "builderLink"), description: ""))
-        codeBuilderCell.configure(builder: Builder(type: .template, image: #imageLiteral(resourceName: "builderTemplate"), description: ""))
-        templateBuilderCell.configure(builder: Builder(type: .code, image: #imageLiteral(resourceName: "builderLink"), description: ""))
-        blockBuilderCell.configure(builder: Builder(type: .block, image: #imageLiteral(resourceName: "builderLink"), description: ""))
-        builderItemCells = [linkBuilderCell, codeBuilderCell, templateBuilderCell, blockBuilderCell]
+        linkBuilderCell.configure(builder: Builder(type: .link, title: "Link", image: #imageLiteral(resourceName: "builderLink"), description: ""))
+        codeBuilderCell.configure(builder: Builder(type: .template, title: "Code", image: #imageLiteral(resourceName: "builderTemplate"), description: ""))
+        templateBuilderCell.configure(builder: Builder(type: .code, title: "Template", image: #imageLiteral(resourceName: "code builder"), description: ""))
+        blockBuilderCell.configure(builder: Builder(type: .block, title: "Block", image: #imageLiteral(resourceName: "soon builder"), description: ""))
+        chatBuilderBuilderCell.configure(builder: Builder(type: .chat, title: "Chat", image: #imageLiteral(resourceName: "builderLink"), description: ""))
+        builderItemCells = [linkBuilderCell, codeBuilderCell, templateBuilderCell, blockBuilderCell, chatBuilderBuilderCell]
+
         builderCollectionView.reloadData()
     }
     
@@ -372,6 +381,11 @@ extension NavigationVC: UICollectionViewDelegate, UICollectionViewDataSource {
             let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
             createCaocapVC.createCaocapDelegate = self
             createCaocapVC.type = .block
+            self.present(createCaocapVC, animated: true)
+        case .chat:
+            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
+            createCaocapVC.createCaocapDelegate = self
+            createCaocapVC.type = .chat
             self.present(createCaocapVC, animated: true)
         }
     }

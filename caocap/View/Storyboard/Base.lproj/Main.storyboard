@@ -271,16 +271,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hiE-uO-Nha">
-                                        <rect key="frame" x="101.33333333333333" y="31" width="211.33333333333337" height="29"/>
+                                        <rect key="frame" x="104.66666666666667" y="33" width="204.66666666666663" height="27"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlL-II-jEr">
-                                                <rect key="frame" x="0.0" y="6.3333333333333712" width="162.33333333333334" height="16.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="6.3333333333333721" width="155.66666666666666" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                 <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1Y-bB-ySX">
-                                                <rect key="frame" x="170.33333333333337" y="0.0" width="41" height="29"/>
+                                                <rect key="frame" x="163.66666666666663" y="0.0" width="41" height="27"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                 <state key="normal" title="sign in">
                                                     <color key="titleColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -368,30 +368,36 @@
                                             </connections>
                                         </button>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="f4K-mc-alG">
-                                            <rect key="frame" x="0.0" y="248" width="414" height="400"/>
+                                            <rect key="frame" x="0.0" y="223" width="414" height="450"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="400" id="Yh9-Uu-tzn"/>
+                                                <constraint firstAttribute="height" constant="450" id="Yh9-Uu-tzn"/>
                                             </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LBc-p1-ILr">
-                                                <size key="itemSize" width="367" height="411"/>
+                                                <size key="itemSize" width="414" height="445"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="builderTypeCell" id="IM1-6i-B1E" customClass="BuilderTypeCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="-5.666666666666667" width="367" height="411"/>
+                                                    <rect key="frame" x="0.0" y="2.6666666666666665" width="414" height="445"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="r4b-uO-u78">
-                                                        <rect key="frame" x="0.0" y="0.0" width="367" height="411"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="445"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfs-Qh-5wI">
+                                                                <rect key="frame" x="207" y="0.0" width="0.0" height="0.0"/>
+                                                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qf4-0l-PKd" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                                                <rect key="frame" x="10" y="10" width="347" height="391"/>
+                                                                <rect key="frame" x="10" y="45" width="394" height="390"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A6K-VJ-OAZ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="347" height="391"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="390"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -420,14 +426,17 @@
                                                         <constraints>
                                                             <constraint firstItem="qf4-0l-PKd" firstAttribute="leading" secondItem="r4b-uO-u78" secondAttribute="leading" constant="10" id="Cip-oF-h1B"/>
                                                             <constraint firstAttribute="trailing" secondItem="qf4-0l-PKd" secondAttribute="trailing" constant="10" id="S2m-c5-XeM"/>
-                                                            <constraint firstItem="qf4-0l-PKd" firstAttribute="top" secondItem="r4b-uO-u78" secondAttribute="top" constant="10" id="bkR-dx-fs7"/>
+                                                            <constraint firstItem="Xfs-Qh-5wI" firstAttribute="top" secondItem="r4b-uO-u78" secondAttribute="top" id="aTx-xK-DuA"/>
+                                                            <constraint firstItem="qf4-0l-PKd" firstAttribute="top" secondItem="r4b-uO-u78" secondAttribute="top" constant="45" id="bkR-dx-fs7"/>
+                                                            <constraint firstItem="Xfs-Qh-5wI" firstAttribute="centerX" secondItem="r4b-uO-u78" secondAttribute="centerX" id="nkL-pa-vCa"/>
                                                             <constraint firstAttribute="bottom" secondItem="qf4-0l-PKd" secondAttribute="bottom" constant="10" id="zZg-rU-OcZ"/>
                                                         </constraints>
                                                     </collectionViewCellContentView>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <size key="customSize" width="367" height="411"/>
+                                                    <size key="customSize" width="414" height="445"/>
                                                     <connections>
                                                         <outlet property="backgroundImage" destination="A6K-VJ-OAZ" id="04r-38-m6e"/>
+                                                        <outlet property="titleLabel" destination="Xfs-Qh-5wI" id="rIf-dL-aNz"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>

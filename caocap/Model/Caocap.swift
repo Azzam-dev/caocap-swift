@@ -13,6 +13,7 @@ enum CaocapType: String {
     case code
     case block
     case template
+    case chat
 }
 
 class Caocap {

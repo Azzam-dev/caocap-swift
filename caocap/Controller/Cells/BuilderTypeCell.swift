@@ -11,11 +11,13 @@ import UIKit
 class BuilderTypeCell: UICollectionViewCell {
     
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
     
     
     var builder: Builder?
     func configure(builder: Builder) {
         self.builder = builder
         self.backgroundImage.image = builder.image
+        self.titleLabel.text = builder.title
     }
 }
