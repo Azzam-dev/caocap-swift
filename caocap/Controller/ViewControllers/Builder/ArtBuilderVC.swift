@@ -28,6 +28,10 @@ class ArtBuilderVC: UIViewController {
         super.viewDidLoad()
         getCaocapData()
         gestureRecognizerSetup()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         collectionView.scrollToItem(at:IndexPath(item: 1, section: 0), at: .right, animated: false)
     }
     
@@ -35,12 +39,7 @@ class ArtBuilderVC: UIViewController {
         DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
             guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
             let caocap = Caocap(key: self.openedCaocapKey, dictionary: caocapSnapshot)
-            
-            if let code = caocap.code {
-                self.caocapCode = code
-            }
-           
-            
+            if let code = caocap.code { self.caocapCode = code }
         }
     }
     
@@ -54,29 +53,16 @@ class ArtBuilderVC: UIViewController {
             toolsSelectedIndex = 0
             topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "JS-1"), for: .normal)
             collectionView.scrollToItem(at:IndexPath(item: 0, section: 0), at: .right, animated: true)
-//            blockHierarchyTableView.isHidden = false
-//            blockCollectionView.isHidden = true
-//            dimensionsInspectorTableView.isHidden = true
         case 1:
             toolsSelectedIndex = 1
             topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "HTML-1"), for: .normal)
             collectionView.scrollToItem(at:IndexPath(item: 1, section: 0), at: .right, animated: true)
-//            blockHierarchyTableView.isHidden = true
-//            blockCollectionView.isHidden = false
-//            dimensionsInspectorTableView.isHidden = true
         case 2:
             toolsSelectedIndex = 2
             topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "CSS-1"), for: .normal)
             collectionView.scrollToItem(at:IndexPath(item: 2, section: 0), at: .right, animated: true)
-//            blockHierarchyTableView.isHidden = true
-//            blockCollectionView.isHidden = true
-//            dimensionsInspectorTableView.isHidden = false
         default:
             break
-//            blockHierarchyTableView.isHidden = true
-//            blockCollectionView.isHidden = false
-//            dimensionsInspectorTableView.isHidden = true
-            
         }
     }
     
@@ -179,7 +165,5 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         let height = collectionView.frame.size.height
         return CGSize(width: width , height: height)
     }
-    
-
 }
 
