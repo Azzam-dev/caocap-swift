@@ -117,9 +117,7 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
                                                            "js": "//write your JS code here",
                                                            "css": "h1 { color: blue; }"]
                         case .template:
-                            content[self.type.rawValue] = ["html":"<h1> write your code here </h1>",
-                                                           "js": "//write your JS code here",
-                                                           "css": "h1 { color: blue; }"]
+                            content[self.type.rawValue] = [["name": "blog", "title" : "Blog Title", "description" : "this is the blog description"]]
                         case .block:
                             content[self.type.rawValue] = ["html":"<h1> write your code here </h1>",
                                                            "js": "//write your JS code here",

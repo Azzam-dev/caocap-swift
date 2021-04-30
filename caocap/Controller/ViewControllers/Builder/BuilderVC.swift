@@ -52,8 +52,19 @@ class BuilderVC: UIViewController {
     func setupSubViewControllers() {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
         cosmosBaseSubVC = storyboard.instantiateViewController(withIdentifier: "cosmosBase") as? CosmosBaseVC
-        artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as? ArtBuilderVC
         testLabSubVC = storyboard.instantiateViewController(withIdentifier: "testLab") as? TestLabVC
+        switch openedCaocap.type {
+        case .link:
+            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "linkBuilder") as? LinkBuilderVC
+        case .code:
+            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "codeBuilder") as? CodeBuilderVC
+        case .template:
+            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "templateBuilder") as? TemplateBuilderVC
+        case .block:
+            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as? CodeBuilderVC
+        case .chat:
+            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as? CodeBuilderVC
+        }
         
         cosmosBaseSubVC?.openedCaocapKey = openedCaocap.key
         artBuilderSubVC?.openedCaocapKey = openedCaocap.key

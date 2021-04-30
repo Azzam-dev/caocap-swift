@@ -21,6 +21,7 @@ enum MenuItemType: String {
     case help
     case about
 }
+
 struct MenuItem {
      let image: UIImage
      let label: MenuItemType
