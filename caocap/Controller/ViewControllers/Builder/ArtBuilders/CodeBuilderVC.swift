@@ -18,11 +18,11 @@ class CodeBuilderVC: ArtBuilderVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         getCaocapData()
-        gestureRecognizerSetup()
+        topToolBarBTNs(topToolBarBTNs[1])
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         codeCollectionView.scrollToItem(at:IndexPath(item: 1, section: 0), at: .right, animated: false)
     }
     

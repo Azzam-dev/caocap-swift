@@ -34,9 +34,9 @@ class LinkBuilderVC: ArtBuilderVC {
     
     @IBOutlet var topToolBarBTNs: [UIButton]!
     @IBAction func topToolBarBTNs(_ sender: UIButton) {
-        topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "JS"), for: .normal)
-        topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "HTML"), for: .normal)
-        topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "CSS"), for: .normal)
+        topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-mesh"), for: .normal)
+        topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-email"), for: .normal)
+        topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-password"), for: .normal)
         switch sender.tag {
         case 0:
             toolsSelectedIndex = 0
@@ -44,11 +44,11 @@ class LinkBuilderVC: ArtBuilderVC {
             
         case 1:
             toolsSelectedIndex = 1
-            topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-email"), for: .normal)
+            topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-email-1"), for: .normal)
             
         case 2:
             toolsSelectedIndex = 2
-            topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-password"), for: .normal)
+            topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-password-1"), for: .normal)
             
         default:
             break
