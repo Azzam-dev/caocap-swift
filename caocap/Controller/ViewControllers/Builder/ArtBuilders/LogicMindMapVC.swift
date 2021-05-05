@@ -10,24 +10,17 @@ import UIKit
 import WebKit
 import Firebase
 
-class LogicMindMapVC: UIViewController {
+class LogicMindMapVC: ArtBuilderVC {
     
     @IBOutlet var optionsStackView0: UIStackView!
     @IBOutlet var optionsStackView1: UIStackView!
     @IBOutlet var optionsStackView2: UIStackView!
-    
-    @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var gestureRecognizerView: UIView!
-    
-    var toolsSelectedIndex: Int = 2
-    var toolsPreviousIndex: Int?
     
     @IBOutlet weak var logicScrollView: UIScrollView!
     @IBOutlet weak var logicSVContant: UIView!
     @IBOutlet var classBlock: UIStackView!
     @IBOutlet var classBlock2: UIStackView!
     @IBOutlet var classBlock3: UIStackView!
-    
     
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
@@ -43,6 +36,7 @@ class LogicMindMapVC: UIViewController {
     func getCaocapData() {
         DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
             let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
+            print(caocap)
             //...
         }
     }
@@ -76,10 +70,6 @@ class LogicMindMapVC: UIViewController {
     }
     
     
-    func optionsViewAnimation(_ senderTag: Int) {
-        
-    }
-    
     func setupViews() {
         logicScrollView.contentSize = CGSize(width: viewWidth * 2, height: viewHeight * 2)
         logicScrollView.contentOffset = CGPoint(x: viewWidth / 2 , y: viewHeight / 2 )
@@ -96,47 +86,6 @@ class LogicMindMapVC: UIViewController {
         
         logicSVContant.addSubview(classBlock3)
         classBlock3.frame.origin = CGPoint(x: classBlock.frame.origin.x - 220 , y: viewHeight * 0.55)
-    }
-    
-    func gestureRecognizerSetup() {
-        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        upSwipe.direction = .up
-        
-        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
-        downSwipe.direction = .down
-        
-        gestureRecognizerView.addGestureRecognizer(upSwipe)
-        gestureRecognizerView.addGestureRecognizer(downSwipe)
-        
-        
-    }
-    
-    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
-        if sender.state == .ended {
-            switch sender.direction {
-            case .up:
-                if self.toolsViewHeightConstraint.constant == 75 {
-                    toolsViewAnimation(120)
-                } else {
-                    toolsViewAnimation(300)
-                }
-            case .down:
-                if self.toolsViewHeightConstraint.constant == 120 {
-                    toolsViewAnimation(75)
-                } else {
-                    toolsViewAnimation(120)
-                }
-            default:
-                break
-            }
-        }
-    }
-    
-    func toolsViewAnimation(_ hight: Int) {
-        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
-            self.toolsViewHeightConstraint.constant = CGFloat(hight)
-            self.view.layoutIfNeeded()
-        })
     }
     
 }
