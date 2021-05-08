@@ -18,7 +18,7 @@ class TemplateBuilderVC: ArtBuilderVC {
     @IBOutlet weak var structureTableView: UITableView!
     
     
-    var caocapTemplates = [["name": "blog", "title" : "failed to load templates", "description" : "this is the blog description"]] // this should be of type Template
+    var caocapTemplates = [["name": "blog", "title" : "failed to load templates", "description" : "this is the blog description"],["":""],["":""],["":""]] // this should be of type Template
     override func viewDidLoad() {
         super.viewDidLoad()
         getCaocapData()
@@ -29,7 +29,7 @@ class TemplateBuilderVC: ArtBuilderVC {
         DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
             guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
             let caocap = Caocap(key: self.openedCaocapKey, dictionary: caocapSnapshot)
-            if let templates = caocap.templates { self.caocapTemplates = templates }
+//            if let templates = caocap.templates { self.caocapTemplates = templates }
         }
     }
     
@@ -70,7 +70,7 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case previewTableView:
-            return caocapTemplates.count
+            return caocapTemplates.count + 1
         case structureTableView:
             //TODO:- return number of cells in the structureTableView
             return 3
@@ -83,13 +83,21 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
         case previewTableView:
-            guard let cell = previewTableView.dequeueReusableCell(withIdentifier: "templateCell", for: indexPath) as? TemplateCell else { return UITableViewCell() }
-            
-            cell.configure(template: Template(type: .blog, content: ["title" : "Blog Title", "description" : "this is the blog description"]))
-            return cell
+            if indexPath.row == caocapTemplates.count { // if it was the last cell then show add template
+                guard let cell = previewTableView.dequeueReusableCell(withIdentifier: "addTemplateCell", for: indexPath) as? AddTemplateCell else { return UITableViewCell() }
+                
+                return cell
+            } else {
+                guard let cell = previewTableView.dequeueReusableCell(withIdentifier: "templateCell", for: indexPath) as? TemplateCell else { return UITableViewCell() }
+                
+                cell.configure(template: Template(type: .blog, content: ["title" : "Blog Title", "description" : "this is the blog description"]))
+                return cell
+            }
         case structureTableView:
             //TODO:- setup the structure table view cells
             return UITableViewCell()
@@ -116,8 +124,6 @@ extension TemplateBuilderVC: UICollectionViewDelegate, UICollectionViewDataSourc
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("did Select row at" , indexPath.row)
-    }
+   
 }
 

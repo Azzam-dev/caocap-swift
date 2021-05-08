@@ -42,6 +42,7 @@
 		EC5238E221916E3A00D966F3 /* ContactUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5238E121916E3A00D966F3 /* ContactUserCell.swift */; };
 		EC5C0DE1216F895100ED508F /* AddUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5C0DE0216F895100ED508F /* AddUserCell.swift */; };
 		EC6109B426432EF200E760CD /* TemplateIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6109B326432EF200E760CD /* TemplateIconCell.swift */; };
+		EC6109C92645FE1800E760CD /* AddTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6109C82645FE1800E760CD /* AddTemplateCell.swift */; };
 		EC69740A261D889700EB71F4 /* TemplateBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC697409261D889700EB71F4 /* TemplateBuilderVC.swift */; };
 		EC697412261D899A00EB71F4 /* LinkBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC697411261D899A00EB71F4 /* LinkBuilderVC.swift */; };
 		EC6AB852215D8F4B00C276E3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AB851215D8F4B00C276E3 /* DataService.swift */; };
@@ -140,6 +141,7 @@
 		EC5238E121916E3A00D966F3 /* ContactUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUserCell.swift; sourceTree = "<group>"; };
 		EC5C0DE0216F895100ED508F /* AddUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserCell.swift; sourceTree = "<group>"; };
 		EC6109B326432EF200E760CD /* TemplateIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateIconCell.swift; sourceTree = "<group>"; };
+		EC6109C82645FE1800E760CD /* AddTemplateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTemplateCell.swift; sourceTree = "<group>"; };
 		EC697409261D889700EB71F4 /* TemplateBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateBuilderVC.swift; sourceTree = "<group>"; };
 		EC697411261D899A00EB71F4 /* LinkBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBuilderVC.swift; sourceTree = "<group>"; };
 		EC6AB851215D8F4B00C276E3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -289,10 +291,10 @@
 		EC5C0DDF216F88E600ED508F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				EC6109B82643439800E760CD /* Chat */,
-				EC6109BC2643445700E760CD /* Builder */,
-				EC6109C0264344AD00E760CD /* Explore */,
 				EC6109C1264344CC00E760CD /* MyProfile */,
+				EC6109B82643439800E760CD /* Chat */,
+				EC6109C0264344AD00E760CD /* Explore */,
+				EC6109BC2643445700E760CD /* Builder */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -318,6 +320,7 @@
 				EC1C8B9525D6DCB700CC8A0E /* CodeCell.swift */,
 				EC3C86C5263C94E00005DBAB /* TemplateCell.swift */,
 				EC6109B326432EF200E760CD /* TemplateIconCell.swift */,
+				EC6109C82645FE1800E760CD /* AddTemplateCell.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -811,6 +814,7 @@
 				4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */,
 				ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */,
 				EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */,
+				EC6109C92645FE1800E760CD /* AddTemplateCell.swift in Sources */,
 				EC339BE62253D75200FDC14A /* UrlService.swift in Sources */,
 				EC6109B426432EF200E760CD /* TemplateIconCell.swift in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,

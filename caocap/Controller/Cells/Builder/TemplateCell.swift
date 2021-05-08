@@ -11,10 +11,11 @@ import WebKit
 
 class TemplateCell: UITableViewCell {
 
+    @IBOutlet weak var selectedEffectView: UIView!
     @IBOutlet weak var webView: WKWebView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        selectedEffectView.isHidden = !selected 
     }
 
     func configure(template: Template) {

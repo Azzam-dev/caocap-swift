@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons8-flow_chart.png",
+      "filename" : "icons8-accounting.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-flow_chart@2x.png",
+      "filename" : "icons8-accounting@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icons8-flow_chart@3x.png",
+      "filename" : "icons8-accounting@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
