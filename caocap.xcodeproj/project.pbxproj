@@ -43,6 +43,11 @@
 		EC5C0DE1216F895100ED508F /* AddUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5C0DE0216F895100ED508F /* AddUserCell.swift */; };
 		EC6109B426432EF200E760CD /* TemplateIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6109B326432EF200E760CD /* TemplateIconCell.swift */; };
 		EC6109C92645FE1800E760CD /* AddTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6109C82645FE1800E760CD /* AddTemplateCell.swift */; };
+		EC6109D22646D56300E760CD /* ReSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EC6109D12646D56300E760CD /* ReSwift */; };
+		EC6109DB2646DB0100E760CD /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6109DA2646DB0100E760CD /* Actions.swift */; };
+		EC6109E02646DB7000E760CD /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6109DF2646DB7000E760CD /* AppReducer.swift */; };
+		EC6109E52646DC0A00E760CD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6109E42646DC0A00E760CD /* AppState.swift */; };
+		EC6109EB2646E0F900E760CD /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6109EA2646E0F900E760CD /* Store.swift */; };
 		EC69740A261D889700EB71F4 /* TemplateBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC697409261D889700EB71F4 /* TemplateBuilderVC.swift */; };
 		EC697412261D899A00EB71F4 /* LinkBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC697411261D899A00EB71F4 /* LinkBuilderVC.swift */; };
 		EC6AB852215D8F4B00C276E3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AB851215D8F4B00C276E3 /* DataService.swift */; };
@@ -142,6 +147,10 @@
 		EC5C0DE0216F895100ED508F /* AddUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserCell.swift; sourceTree = "<group>"; };
 		EC6109B326432EF200E760CD /* TemplateIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateIconCell.swift; sourceTree = "<group>"; };
 		EC6109C82645FE1800E760CD /* AddTemplateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTemplateCell.swift; sourceTree = "<group>"; };
+		EC6109DA2646DB0100E760CD /* Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
+		EC6109DF2646DB7000E760CD /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		EC6109E42646DC0A00E760CD /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		EC6109EA2646E0F900E760CD /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		EC697409261D889700EB71F4 /* TemplateBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateBuilderVC.swift; sourceTree = "<group>"; };
 		EC697411261D899A00EB71F4 /* LinkBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkBuilderVC.swift; sourceTree = "<group>"; };
 		EC6AB851215D8F4B00C276E3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
@@ -196,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC6109D22646D56300E760CD /* ReSwift in Frameworks */,
 				16290DFCDF33CCE321A3DCA9 /* Pods_caocap.framework in Frameworks */,
 				EC03B1D42450610C00274B1D /* SwiftUICharts in Frameworks */,
 			);
@@ -342,6 +352,49 @@
 			path = MyProfile;
 			sourceTree = "<group>";
 		};
+		EC6109D62646DAB500E760CD /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				EC6109E92646E0C800E760CD /* Store */,
+				EC6109D72646DADA00E760CD /* State */,
+				EC6109D92646DAEB00E760CD /* Actions */,
+				EC6109D82646DAE200E760CD /* Reducers */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		EC6109D72646DADA00E760CD /* State */ = {
+			isa = PBXGroup;
+			children = (
+				EC6109E42646DC0A00E760CD /* AppState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		EC6109D82646DAE200E760CD /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				EC6109DF2646DB7000E760CD /* AppReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		EC6109D92646DAEB00E760CD /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				EC6109DA2646DB0100E760CD /* Actions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		EC6109E92646E0C800E760CD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				EC6109EA2646E0F900E760CD /* Store.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		EC697408261D87F300EB71F4 /* ArtBuilders */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,6 +485,7 @@
 		EC8E19442159E02A000E4EE6 /* caocap */ = {
 			isa = PBXGroup;
 			children = (
+				EC6109D62646DAB500E760CD /* Redux */,
 				EC70ACF5215D87F9004C16D2 /* Model */,
 				EC1C8B0A25D6BBF200CC8A0E /* View */,
 				EC1C8B0925D6BBBD00CC8A0E /* Controller */,
@@ -557,6 +611,7 @@
 			name = caocap;
 			packageProductDependencies = (
 				EC03B1D32450610C00274B1D /* SwiftUICharts */,
+				EC6109D12646D56300E760CD /* ReSwift */,
 			);
 			productName = caocap;
 			productReference = EC8E19422159E02A000E4EE6 /* CAOCAPx.app */;
@@ -637,6 +692,7 @@
 			mainGroup = EC8E19392159E02A000E4EE6;
 			packageReferences = (
 				EC03B1D22450610C00274B1D /* XCRemoteSwiftPackageReference "ChartView" */,
+				EC6109D02646D56300E760CD /* XCRemoteSwiftPackageReference "ReSwift" */,
 			);
 			productRefGroup = EC8E19432159E02A000E4EE6 /* Products */;
 			projectDirPath = "";
@@ -784,10 +840,13 @@
 				EC5C0DE1216F895100ED508F /* AddUserCell.swift in Sources */,
 				4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */,
 				EC3C86BE263C89430005DBAB /* ArtBuilderVC.swift in Sources */,
+				EC6109DB2646DB0100E760CD /* Actions.swift in Sources */,
 				EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */,
 				ECE29FFF25208E2100EFF8B4 /* ExploreUI.swift in Sources */,
 				ECE2A00025208E2100EFF8B4 /* ChartUI.swift in Sources */,
 				ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */,
+				EC6109E52646DC0A00E760CD /* AppState.swift in Sources */,
+				EC6109EB2646E0F900E760CD /* Store.swift in Sources */,
 				EC3C86C6263C94E00005DBAB /* TemplateCell.swift in Sources */,
 				EC5238DA219082F100D966F3 /* ChatGroupCell.swift in Sources */,
 				ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */,
@@ -816,6 +875,7 @@
 				EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */,
 				EC6109C92645FE1800E760CD /* AddTemplateCell.swift in Sources */,
 				EC339BE62253D75200FDC14A /* UrlService.swift in Sources */,
+				EC6109E02646DB7000E760CD /* AppReducer.swift in Sources */,
 				EC6109B426432EF200E760CD /* TemplateIconCell.swift in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,
 				4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */,
@@ -1179,6 +1239,14 @@
 				minimumVersion = 1.5.0;
 			};
 		};
+		EC6109D02646D56300E760CD /* XCRemoteSwiftPackageReference "ReSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReSwift/ReSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1186,6 +1254,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC03B1D22450610C00274B1D /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
+		};
+		EC6109D12646D56300E760CD /* ReSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC6109D02646D56300E760CD /* XCRemoteSwiftPackageReference "ReSwift" */;
+			productName = ReSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
