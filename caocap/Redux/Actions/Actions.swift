@@ -13,5 +13,10 @@ import ReSwift
  
  - Only Actions can initiate a Reducer to start changing the current application state
 */
-struct OneAction: Action {}
-struct TwoAction: Action {}
+struct CreateCaocapAction: Action {
+    let caocap: Caocap
+}
+struct OpenBuilderAction: Action {
+    let caocap: Caocap
+}
+struct CloseBuilderAction: Action {}

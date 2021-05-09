@@ -21,10 +21,12 @@ func appReducer(action: Action, state: AppState?) -> AppState {
     var state = state ?? AppState()
     
     switch action {
-    case let oneAction as OneAction:
-        state.currentUser = nil
-    case let twoAction as TwoAction:
-        state.currentUser = nil
+    case let createCaocapAction as CreateCaocapAction:
+        state.openedCaocap = createCaocapAction.caocap
+    case let openBuilderAction as OpenBuilderAction:
+        state.openedCaocap = openBuilderAction.caocap
+    case _ as CloseBuilderAction:
+        state.openedCaocap = nil
     default:
         break
     }

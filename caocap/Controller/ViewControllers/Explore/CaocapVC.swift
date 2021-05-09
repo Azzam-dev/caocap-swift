@@ -106,21 +106,6 @@ extension CaocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         return caocapsArray.count + 1
     }
     
-    func displayAlertMessage(messageToDisplay: String) {
-        let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        
-        let OKAction = UIAlertAction(title: "حسناً", style: .default) { (action:UIAlertAction!) in
-            
-            // Code in this block will trigger when OK button tapped.
-            print("Ok button tapped")
-            
-        }
-        
-        alertController.addAction(OKAction)
-        
-        self.present(alertController, animated: true, completion:nil)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == 0 {
             guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "openedCaocapCell", for: indexPath) as? OpenedCaocapCell else { return UICollectionViewCell() }

@@ -148,26 +148,19 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
                     }
                 } else {
                     //"Email address is not valid
-                    displayAlertMessage(messageToDisplay: "الرجاء التحقق من البريد الالكتروني")
+                    displayAlertMessage("الرجاء التحقق من البريد الالكتروني", in: self)
                     self.saveBTN.isEnabled = true
                     self.saveBTN.setTitle("save",for: .normal)
                     self.saveBTN.alpha = 1
                 }
                 
             } else {
-                displayAlertMessage(messageToDisplay: "فضلا ادخل اسم المستخدم")
+                displayAlertMessage("فضلا ادخل اسم المستخدم", in: self)
                 self.saveBTN.isEnabled = true
                 self.saveBTN.setTitle("save",for: .normal)
                 self.saveBTN.alpha = 1
             }
         }
-    }
-    
-    func displayAlertMessage(messageToDisplay: String) {
-        let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "حسناً", style: .default)
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion:nil)
     }
     
     func isValidEmailAddress(emailAddressString: String) -> Bool {

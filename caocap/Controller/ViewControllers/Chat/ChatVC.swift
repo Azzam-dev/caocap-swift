@@ -223,7 +223,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     @IBOutlet weak var createGroupBTN: UIButton!
     @IBAction func createGroupBTN(_ sender: Any) {
         if groupNameTF.text == "" {
-            displayAlertMessage(messageToDisplay: "فضلا حدد اسم للمجموعة")
+            displayAlertMessage("فضلا حدد اسم للمجموعة", in: self)
         } else {
             DataService.instance.getUIDs(forUsername: groupSelectedMembersArray) { (idsArray) in
                 var members = idsArray
@@ -283,22 +283,6 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
-    
-    
-    //this is a function to display alert messages , you have to provide the message
-    func displayAlertMessage(messageToDisplay: String) {
-        let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "حسناً", style: .default) { (action:UIAlertAction!) in
-            // Code in this block will trigger when OK button tapped.
-            print("Ok button tapped")
-        }
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion:nil)
-    }
-    
-    
 }
 
 extension ChatVC: UITableViewDelegate, UITableViewDataSource {

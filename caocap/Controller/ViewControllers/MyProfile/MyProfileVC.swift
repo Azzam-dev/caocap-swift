@@ -90,21 +90,6 @@ class MyProfileVC: UIViewController {
         self.profileCollectionView.scrollToItem(at: indexPath as IndexPath, at: .left , animated: true )
     }
     
-    func presentBuilderVC(with caocap: Caocap) {
-        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        let builderVC = storyboard.instantiateViewController(withIdentifier: "builder") as! BuilderVC
-        builderVC.openedCaocap = caocap
-        builderVC.modalPresentationStyle = .fullScreen
-        self.present(builderVC, animated: true)
-    }
-    
-    func displayAlertMessage(messageToDisplay: String) {
-        let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "حسناً", style: .default)
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
 }
 
 
@@ -131,7 +116,7 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presentBuilderVC(with: caocapsArray[indexPath.row])
+        store.dispatch(OpenBuilderAction(caocap: caocapsArray[indexPath.row]))
     }
 }
 

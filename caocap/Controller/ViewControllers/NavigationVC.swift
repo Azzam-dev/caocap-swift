@@ -333,17 +333,10 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     func checkNetworkStatus() {
         //check if the Network is available if not present a message requesting a network connection
         if !Reachability()!.isReachable {
-            displayAlertMessage(messageToDisplay: "لا يوجد اتصال بالانترنت")
+            displayAlertMessage("لا يوجد اتصال بالانترنت", in: self)
         } else {
             print("كل شي تمام")
         }
-    }
-    
-    func displayAlertMessage(messageToDisplay: String) {
-        let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "حسناً", style: .default)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion:nil)
     }
     
 }

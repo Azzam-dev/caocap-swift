@@ -12,5 +12,5 @@ import ReSwift
  
 */
 struct AppState: StateType {
-    var currentUser: User?
+    var openedCaocap: Caocap?
 }
