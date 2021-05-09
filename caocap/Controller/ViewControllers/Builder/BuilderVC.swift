@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import ReSwift
 
 class BuilderVC: UIViewController {
     
-    var openedCaocap = Caocap(key: "", dictionary: ["":""])
+    var openedCaocap: Caocap?
     
     var cosmosBaseSubVC: CosmosBaseVC!
     var artBuilderSubVC: ArtBuilderVC!
@@ -25,10 +26,6 @@ class BuilderVC: UIViewController {
         self.hideKeyboardWhenTappedAround()
         addNavCircleGestures()
         setupSubViewControllers()
-    }
-    
-    @IBAction func exitBuilder(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
     }
     
     func addNavCircleGestures() {
@@ -48,13 +45,12 @@ class BuilderVC: UIViewController {
         navFingerTrackingView.addGestureRecognizer(panGesture)
     }
     
-    
     func setupSubViewControllers() {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
         cosmosBaseSubVC = storyboard.instantiateViewController(withIdentifier: "cosmosBase") as? CosmosBaseVC
         testLabSubVC = storyboard.instantiateViewController(withIdentifier: "testLab") as? TestLabVC
-        switch openedCaocap.type {
-        case .link:
+        switch openedCaocap?.type  {
+        case .link, .none:
             artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "linkBuilder") as? LinkBuilderVC
         case .code:
             artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "codeBuilder") as? CodeBuilderVC
@@ -66,10 +62,9 @@ class BuilderVC: UIViewController {
             artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as? CodeBuilderVC
         }
         
-        cosmosBaseSubVC?.openedCaocapKey = openedCaocap.key
-        artBuilderSubVC?.openedCaocapKey = openedCaocap.key
-        testLabSubVC?.openedCaocapKey = openedCaocap.key
-        testLabSubVC?.openedCaocapType = openedCaocap.type
+        cosmosBaseSubVC?.openedCaocap = openedCaocap
+        artBuilderSubVC?.openedCaocap = openedCaocap
+        testLabSubVC?.openedCaocap = openedCaocap
         
         viewControllers = [cosmosBaseSubVC!, artBuilderSubVC!, testLabSubVC!]
         navBTNpressed(navBTNs[navSelectedIndex])
@@ -94,25 +89,8 @@ class BuilderVC: UIViewController {
             circleViewScaleDownAnimation()
             blurredViewHideAnimation()
         } else if self.navCircleViewHeightConstraint.constant == 65 && blurredView.isHidden {
-            
-            switch navSelectedIndex {
-            case 0:
-                print("cosmosBase pop View Controller")
-                self.dismiss(animated: true, completion: nil)
-                // TODO: pop the top view controller in the cosmosBase NavigationController
-            // like this -> exploreSubNAV?.popViewController(animated: true)
-            case 1:
-                print("artBuilder pop View Controller")
-                self.dismiss(animated: true, completion: nil)
-                // TODO: pop the top view controller in the artBuilder NavigationController
-            case 2:
-                print("testLab pop View Controller")
-                self.dismiss(animated: true, completion: nil)
-                // TODO: pop the top view controller in the testLab NavigationController
-            default:
-                break
-            }
-            
+            self.dismiss(animated: true, completion: nil)
+            store.dispatch(CloseBuilderAction())
         } else if cancelPopupsBTN.isHidden == false {
             self.popupACT(self)
         }
@@ -255,6 +233,7 @@ class BuilderVC: UIViewController {
             artBuilderICON.image = #imageLiteral(resourceName: "artBuilder")
             testLabICON.image = #imageLiteral(resourceName: "testLab")
         }
+        
         let vc = viewControllers[navSelectedIndex]
         addChild(vc)
         
@@ -275,5 +254,25 @@ class BuilderVC: UIViewController {
     }
     
 }
+
+
+extension BuilderVC: StoreSubscriber {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        openedCaocap = state.openedCaocap
+    }
+    
+}
+
 
 

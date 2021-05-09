@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import ReSwift
 
 class ArtBuilderVC: UIViewController {
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
     var toolsSelectedIndex = 1
-    var openedCaocapKey = ""
+    var openedCaocap: Caocap?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,5 +59,23 @@ class ArtBuilderVC: UIViewController {
             }
         }
     }
+}
+
+extension ArtBuilderVC: StoreSubscriber {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        openedCaocap = state.openedCaocap
+    }
+    
 }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import ReSwift
 import Firebase
 
 class CosmosBaseVC: UIViewController {
@@ -19,7 +20,7 @@ class CosmosBaseVC: UIViewController {
     @IBOutlet weak var gestureRecognizerView: UIView!
     
     var toolsSelectedIndex = 1
-    var openedCaocapKey = ""
+    var openedCaocap: Caocap?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,10 @@ class CosmosBaseVC: UIViewController {
     }
     
     func getCaocapData() {
-        DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
+        guard let openedCaocap = openedCaocap else { return }
+        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
             guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
-            let caocap = Caocap(key: self.openedCaocapKey, dictionary: caocapSnapshot)
+            let caocap = Caocap(key: openedCaocap.key, dictionary: caocapSnapshot)
             print(caocap.name)
             //...
         }
@@ -105,6 +107,24 @@ class CosmosBaseVC: UIViewController {
     func presentSelectedView(_ selectedView: UIView) {
 
         selectedView.isHidden = false
+    }
+    
+}
+
+extension CosmosBaseVC: StoreSubscriber {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        openedCaocap = state.openedCaocap
     }
     
 }

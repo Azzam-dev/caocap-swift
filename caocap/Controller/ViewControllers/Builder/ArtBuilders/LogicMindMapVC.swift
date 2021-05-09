@@ -25,7 +25,6 @@ class LogicMindMapVC: ArtBuilderVC {
     lazy var viewWidth = self.view.frame.width
     lazy var viewHeight = self.view.frame.height
     
-    var openedCaocap = Caocap(key: "", dictionary: ["":""])
     override func viewDidLoad() {
         super.viewDidLoad()
         getCaocapData()
@@ -34,11 +33,7 @@ class LogicMindMapVC: ArtBuilderVC {
     }
     
     func getCaocapData() {
-        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
-            let caocap = caocapSnapshot.value as? [String : AnyObject] ?? [:]
-            print(caocap)
-            //...
-        }
+        //TODO:- get Caocap Data
     }
     
     @IBOutlet var topToolBarBTNs: [UIButton]!

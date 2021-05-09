@@ -27,9 +27,10 @@ class CodeBuilderVC: ArtBuilderVC {
     }
     
     func getCaocapData() {
+        guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
             guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
-            let caocap = Caocap(key: self.openedCaocapKey, dictionary: caocapSnapshot)
+            let caocap = Caocap(key: openedCaocapKey, dictionary: caocapSnapshot)
             if let code = caocap.code { self.caocapCode = code }
         }
     }
@@ -91,7 +92,7 @@ extension CodeBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "codeCell", for: indexPath) as? CodeCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "codeCell", for: indexPath) as? CodeCell, let openedCaocapKey = openedCaocap?.key else { return UICollectionViewCell() }
         
         switch indexPath.row {
         case 0:

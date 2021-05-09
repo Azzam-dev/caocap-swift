@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import ReSwift
 import Firebase
 
 class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -18,8 +19,8 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
-    var openedCaocapKey: String?
-    var openedCaocapType: CaocapType?
+    var openedCaocap: Caocap?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,11 +38,11 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
     
     func getCaocapData() {
         // we are useing the observe method to make the changes in real-time and to allow "Multi device changes"
-        guard let caocapKey = openedCaocapKey, let caocapType = openedCaocapType else { return }
-        if caocapType == .link { caocapLinkTF.isHidden = false }
-        DataService.instance.REF_CAOCAPS.child(caocapKey).observe(.value) { (caocapSnapshot) in
+        guard let openedCaocap = openedCaocap else { return }
+        if openedCaocap.type == .link { caocapLinkTF.isHidden = false }
+        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
             guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
-            let caocap = Caocap(key: caocapKey, dictionary: caocapSnapshot)
+            let caocap = Caocap(key: openedCaocap.key, dictionary: caocapSnapshot)
             self.caocapNameTF.text = caocap.name
             self.colorBTNpressed(self.colorBTNs[caocap.color])
             
@@ -164,11 +165,10 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
     @IBOutlet var constraintsArray: [NSLayoutConstraint]!
     @IBOutlet var colorBTNs: [UIButton]!
     @IBAction func colorBTNpressed(_ sender: UIButton) {
-        guard let caocapKey = openedCaocapKey else { return }
+        guard let openedCaocap = openedCaocap else { return }
         let previousColorIndex = colorSelectedIndex
         colorSelectedIndex = sender.tag
-        print(caocapKey)
-        DataService.instance.REF_CAOCAPS.child(caocapKey).updateChildValues(["color": colorSelectedIndex])
+        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["color": colorSelectedIndex])
         let previousConstraint = constraintsArray[previousColorIndex]
         let selectedConstraint = constraintsArray[colorSelectedIndex]
         
@@ -206,7 +206,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
     }
     
     func uploudNewCaocapImage() {
-        guard let caocapKey = openedCaocapKey else { return }
+        guard let openedCaocap = openedCaocap else { return }
         let imageNameUID = NSUUID().uuidString
         let storageRef = DataService.instance.REF_CAOCAP_IMAGES.child("\(imageNameUID).jpg")
         if let uploadData = self.caocapIMG.image?.jpegData(compressionQuality: 0.2) {
@@ -216,7 +216,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
                 storageRef.downloadURL(completion: { url, error in
                     if error != nil { print(error!) } else {
                         guard let imageURL = url?.absoluteString else { return }
-                        DataService.instance.REF_CAOCAPS.child(caocapKey).updateChildValues(["imageURL": imageURL])
+                        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["imageURL": imageURL])
                     }
                 })
             })
@@ -224,30 +224,48 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
     }
     
     @IBAction func didPressPublishingSwitchBTN(_ sender: Any) {
-        guard let caocapKey = openedCaocapKey else { return }
+        guard let openedCaocap = openedCaocap else { return }
         publishedStatus.toggle()
         if publishedStatus {
             publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
             publishingSwitchBTN.borderWidth = 0
-            DataService.instance.REF_CAOCAPS.child(caocapKey).updateChildValues(["published": true])
+            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": true])
         } else {
             publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
             publishingSwitchBTN.borderWidth = 2
-            DataService.instance.REF_CAOCAPS.child(caocapKey).updateChildValues(["published": false])
+            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["published": false])
         }
     }
     
     @IBAction func caocapNameTFDidEndEditing(_ sender: Any) {
         if caocapNameTF.text != "" {
-            guard let caocapKey = openedCaocapKey else { return }
-            DataService.instance.REF_CAOCAPS.child(caocapKey).updateChildValues(["name": caocapNameTF.text!])
+            guard let openedCaocap = openedCaocap else { return }
+            DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["name": caocapNameTF.text!])
         }
     }
     
     @IBAction func caocapLinkTFDidEndEditing(_ sender: Any) {
-        guard let key = openedCaocapKey else { return }
+        guard let openedCaocap = openedCaocap else { return }
         guard let text = caocapLinkTF.text else { return }
-        DataService.instance.REF_CAOCAPS.child(key).updateChildValues(["link": text])
+        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["link": text])
+    }
+    
+}
+
+extension TestLabVC: StoreSubscriber {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        openedCaocap = state.openedCaocap
     }
     
 }

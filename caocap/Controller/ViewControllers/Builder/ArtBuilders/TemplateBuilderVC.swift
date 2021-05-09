@@ -26,9 +26,10 @@ class TemplateBuilderVC: ArtBuilderVC {
     
     
     func getCaocapData() {
+        guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
             guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
-            let caocap = Caocap(key: self.openedCaocapKey, dictionary: caocapSnapshot)
+            let caocap = Caocap(key: openedCaocapKey, dictionary: caocapSnapshot)
 //            if let templates = caocap.templates { self.caocapTemplates = templates }
         }
     }

@@ -9,15 +9,9 @@
 import UIKit
 import Firebase
 
-protocol CreateCaocapDelegate {
-    func openNewlyCreatedCaocap()
-}
-
 class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
     
     var type: CaocapType = .link
-    var createCaocapDelegate: CreateCaocapDelegate?
     
     @IBOutlet weak var caocapIMG: DesignableImage!
     @IBOutlet weak var caocapIMGview: DesignableView!
@@ -137,10 +131,13 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
                                           "owners": [currentUserUID],
                         ] as! [String : Any]
                         
-                        DataService.instance.createCaocap(caocapData: caocapData, handler: { (caocapCreated) in
-                            if caocapCreated {
+                        DataService.instance.createCaocap(caocapData: caocapData, handler: { (createdCaocap) in
+                            if let createdCaocap = createdCaocap {
                                 self.dismiss(animated: true, completion: nil)
-                                self.createCaocapDelegate?.openNewlyCreatedCaocap()
+                                store.dispatch(CreateCaocapAction(caocap: createdCaocap))
+                            } else {
+                                print("error: could not create caocap")
+                                displayAlertMessage("could not create caocap", in: self)
                             }
                         })
                     }

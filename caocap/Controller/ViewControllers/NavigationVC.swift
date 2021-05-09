@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import ReSwift
 import Firebase
 import RevealingSplashView
 
 
 class NavigationVC: UIViewController , UINavigationControllerDelegate {
-
-  
+    
     var exploreSubNAV: UINavigationController!
     var chatSubNAV: UINavigationController!
     var myPageSubNAV: UINavigationController!
@@ -357,27 +357,22 @@ extension NavigationVC: UICollectionViewDelegate, UICollectionViewDataSource {
         switch type {
         case .link:
             let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.createCaocapDelegate = self
             createCaocapVC.type = .link
             self.present(createCaocapVC, animated: true)
         case .template:
             let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.createCaocapDelegate = self
             createCaocapVC.type = .template
             self.present(createCaocapVC, animated: true)
         case .code:
             let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.createCaocapDelegate = self
             createCaocapVC.type = .code
             self.present(createCaocapVC, animated: true)
         case .block:
             let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.createCaocapDelegate = self
             createCaocapVC.type = .block
             self.present(createCaocapVC, animated: true)
         case .chat:
             let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.createCaocapDelegate = self
             createCaocapVC.type = .chat
             self.present(createCaocapVC, animated: true)
         }
@@ -386,7 +381,23 @@ extension NavigationVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
-extension NavigationVC: CreateCaocapDelegate {
+extension NavigationVC: StoreSubscriber {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        if let openedCaocap = state.openedCaocap {
+            presentBuilderVC(with: openedCaocap)
+        }
+    }
     
     func presentBuilderVC(with caocap: Caocap) {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
@@ -396,11 +407,6 @@ extension NavigationVC: CreateCaocapDelegate {
         self.present(builderVC, animated: true)
     }
     
-    func openNewlyCreatedCaocap() {
-        DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
-            self.presentBuilderVC(with: returnedCaocapsArray.last!)
-        }
-    }
 }
 
 extension NavigationVC: UITextFieldDelegate {
