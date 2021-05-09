@@ -13,6 +13,7 @@ enum MenuType {
     case account
     case setting
 }
+
 class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     var menuType: MenuType = .account
@@ -53,8 +54,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                 authVC!.modalPresentationStyle = .fullScreen
                 self.present(authVC!, animated: true, completion: nil)
             } catch {
-                self.displayAlertMessage(messageToDisplay: error.localizedDescription )
-                
+                displayAlertMessage(error.localizedDescription, in: self)
             }
         }
         let cancel = UIAlertAction(title: "لا", style: .cancel, handler: nil)
@@ -72,18 +72,8 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    
-    func displayAlertMessage(messageToDisplay: String) {
-        let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "حسناً", style: .default)
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion:nil)
-    }
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

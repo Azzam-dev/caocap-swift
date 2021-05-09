@@ -14,7 +14,6 @@ class AuthVC: UIViewController {
     override var prefersStatusBarHidden: Bool {  return true }
     
     @IBOutlet weak var usernameView: UIView!
-    
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -43,12 +42,12 @@ class AuthVC: UIViewController {
             if passwordTF.text != "" {
                 loginUser()
             } else {
-                displayAlertMessage(messageToDisplay: "فضلا ادخل كلمة السر")
+                displayAlertMessage("فضلا ادخل كلمة السر", in: self)
                 resetSignBTN("sign in")
             }
         } else {
             //Email address is not valid
-            displayAlertMessage(messageToDisplay: "الرجاء التحقق من البريد الالكتروني")
+            displayAlertMessage("الرجاء التحقق من البريد الالكتروني", in: self)
             resetSignBTN("sign in")
         }
     }
@@ -61,16 +60,16 @@ class AuthVC: UIViewController {
                 if passwordTF.text != "" {
                     registerUser()
                 } else {
-                    displayAlertMessage(messageToDisplay: "فضلا ادخل كلمة السر")
+                    displayAlertMessage("فضلا ادخل كلمة السر", in: self)
                     resetSignBTN("sign up")
                 }
             } else {
                 //Email address is not valid
-                displayAlertMessage(messageToDisplay: "الرجاء التحقق من البريد الالكتروني")
+                displayAlertMessage("الرجاء التحقق من البريد الالكتروني", in: self)
                 resetSignBTN("sign up")
             }
         } else {
-            displayAlertMessage(messageToDisplay: "فضلا ادخل اسم المستخدم")
+            displayAlertMessage("فضلا ادخل اسم المستخدم", in: self)
             resetSignBTN("sign up")
         }
     }
@@ -88,7 +87,7 @@ class AuthVC: UIViewController {
             if success {
                 self.rocketLaunchAnimation()
             } else {
-                self.displayAlertMessage(messageToDisplay: String(describing: loginError?.localizedDescription) )
+                displayAlertMessage(String(describing: loginError?.localizedDescription), in: self)
                 self.resetSignBTN("sign in")
             }
         })
@@ -102,7 +101,7 @@ class AuthVC: UIViewController {
                     self.rocketLaunchAnimation()
                 })
             } else {
-                self.displayAlertMessage(messageToDisplay: String(describing: registrationError?.localizedDescription) )
+                displayAlertMessage(String(describing: registrationError?.localizedDescription), in: self)
                 self.resetSignBTN("sign up")
             }
         })
@@ -164,16 +163,6 @@ class AuthVC: UIViewController {
         }
         
         return  returnValue
-    }
-    
-    func displayAlertMessage(messageToDisplay: String) {
-        let alertController = UIAlertController(title: "عذراً", message: messageToDisplay, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "حسناً", style: .default) { (action:UIAlertAction!) in
-            // Code in this block will trigger when OK button tapped.
-            print("Ok button tapped")
-        }
-        alertController.addAction(OKAction)
-        self.present(alertController, animated: true, completion:nil)
     }
     
     private func dismissVC() {
