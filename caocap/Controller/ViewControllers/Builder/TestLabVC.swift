@@ -14,6 +14,7 @@ import Firebase
 class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var theView: DesignableView!
+    @IBOutlet weak var loadingIcon: UIImageView!
     @IBOutlet weak var webView: WKWebView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
@@ -26,7 +27,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
         
         // TODO: hide the caocapLinkTF if the caocap is not of type link
         
-        addPulse()
+        loadingAnimation(image: loadingIcon)
         getCaocapData()
         gestureRecognizerSetup()
         
@@ -137,16 +138,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
     //This shows the webView after the download finishes
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.webView.isHidden = false
-    }
-    
-    //Circle Animation
-    func addPulse(){
-        let pulse = Pulsing(numberOfPulses: 10, radius: theView.frame.width , position: theView.center)
-        pulse.animationDuration = 0.8
-        pulse.backgroundColor = #colorLiteral(red: 0.188285023, green: 0.2415923178, blue: 1, alpha: 0.8345194777)
-        
-        self.theView.layer.insertSublayer(pulse, at:  0)
-        
     }
     
     

@@ -258,6 +258,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8l-oD-98j" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="18" y="84" width="378" height="540"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading mask" translatesAutoresizingMaskIntoConstraints="NO" id="Xvg-w9-2WO">
+                                        <rect key="frame" x="79" y="147" width="220" height="246"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="220" id="GcL-YU-N4p"/>
+                                            <constraint firstAttribute="width" secondItem="Xvg-w9-2WO" secondAttribute="height" multiplier="145:162" id="Qal-ZC-mq0"/>
+                                        </constraints>
+                                    </imageView>
                                     <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VeI-Nr-pzv" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="378" height="540"/>
                                         <subviews>
@@ -289,6 +297,8 @@
                                     <constraint firstItem="VeI-Nr-pzv" firstAttribute="top" secondItem="D8l-oD-98j" secondAttribute="top" id="8Kc-fp-1St"/>
                                     <constraint firstAttribute="bottom" secondItem="VeI-Nr-pzv" secondAttribute="bottom" id="BQI-2O-23I"/>
                                     <constraint firstAttribute="trailing" secondItem="VeI-Nr-pzv" secondAttribute="trailing" id="Q1A-KE-SGl"/>
+                                    <constraint firstItem="Xvg-w9-2WO" firstAttribute="centerX" secondItem="D8l-oD-98j" secondAttribute="centerX" id="SaX-MF-FT8"/>
+                                    <constraint firstItem="Xvg-w9-2WO" firstAttribute="centerY" secondItem="D8l-oD-98j" secondAttribute="centerY" id="hhH-U3-FNT"/>
                                     <constraint firstItem="VeI-Nr-pzv" firstAttribute="leading" secondItem="D8l-oD-98j" secondAttribute="leading" id="psQ-TT-hXv"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -659,6 +669,7 @@
                         <outlet property="caocapLinkTF" destination="jt9-tt-7VW" id="an0-b9-a7y"/>
                         <outlet property="caocapNameTF" destination="kvh-II-SM8" id="UGC-gM-dUr"/>
                         <outlet property="gestureRecognizerView" destination="zKL-Gi-M90" id="WbS-E0-bwS"/>
+                        <outlet property="loadingIcon" destination="Xvg-w9-2WO" id="laV-Je-nfi"/>
                         <outlet property="publishingSwitchBTN" destination="ikp-83-eNU" id="X6S-B4-QxS"/>
                         <outlet property="theView" destination="VeI-Nr-pzv" id="X69-9u-m0w"/>
                         <outlet property="toolsViewHeightConstraint" destination="bfw-Sh-Wh9" id="FE4-Sf-YoP"/>
@@ -2318,6 +2329,7 @@
         <image name="icons8-password" width="245" height="300"/>
         <image name="icons8-pen" width="276" height="270"/>
         <image name="icons8-pictures_folder" width="264" height="222"/>
+        <image name="loading mask" width="226" height="162"/>
         <image name="redo" width="100" height="100"/>
         <image name="testLab" width="72" height="72"/>
         <image name="undo" width="100" height="100"/>

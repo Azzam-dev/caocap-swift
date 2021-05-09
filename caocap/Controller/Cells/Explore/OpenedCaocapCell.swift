@@ -59,7 +59,7 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
         self.caocapIMG.image = nil
         self.webView.stopLoading()
         
-        loadingAnimation()
+        loadingAnimation(image: loadingIcon)
         
         checkOrbiteStatus()
         
@@ -94,18 +94,6 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     //This shows the webView after the download finishes
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.webView.isHidden = false
-    }
-    
-    func loadingAnimation(){
-        let maskView = UIImageView()
-        maskView.image = UIImage(named: "Loading SVG")
-        maskView.frame = loadingIcon.bounds
-        maskView.contentMode = .scaleAspectFit
-        loadingIcon.mask = maskView
-        let pulse = Pulsing(numberOfPulses: 25, radius: loadingIcon.frame.width * 1.5 , position: CGPoint(x: 0, y: 0))
-        pulse.animationDuration = 0.8
-        pulse.backgroundColor = #colorLiteral(red: 0.2156862745, green: 0.2549019608, blue: 0.3019607843, alpha: 1)
-        loadingIcon.layer.insertSublayer(pulse, at:  0)
     }
     
     private func loadCaocap(_ caocap: Caocap) {

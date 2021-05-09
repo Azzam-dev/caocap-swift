@@ -9,7 +9,6 @@
 import UIKit
 
 class Pulsing: CALayer {
-    
     var animationGroup = CAAnimationGroup()
     
     var initialPulseScale:Float = 0
@@ -49,33 +48,26 @@ class Pulsing: CALayer {
                 self.add(self.animationGroup, forKey: "pulse")
             }
         }
-        
-        
-        
     }
     
     
-    func createScaleAnimation () -> CABasicAnimation {
+    private func createScaleAnimation () -> CABasicAnimation {
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale.xy")
         scaleAnimation.fromValue = NSNumber(value: initialPulseScale)
         scaleAnimation.toValue = NSNumber(value: 1)
         scaleAnimation.duration = animationDuration
-        
         return scaleAnimation
     }
     
-    func createOpacityAnimation() -> CAKeyframeAnimation {
-        
+    private func createOpacityAnimation() -> CAKeyframeAnimation {
         let opacityAnimation = CAKeyframeAnimation(keyPath: "opacity")
         opacityAnimation.duration = animationDuration
         opacityAnimation.values = [0.4, 0.8, 0]
         opacityAnimation.keyTimes = [0, 0.2, 1]
-        
-        
         return opacityAnimation
     }
     
-    func setupAnimationGroup() {
+    private func setupAnimationGroup() {
         self.animationGroup = CAAnimationGroup()
         self.animationGroup.duration = animationDuration + nextPulseAfter
         self.animationGroup.repeatCount = numberOfPulses
@@ -84,10 +76,20 @@ class Pulsing: CALayer {
         self.animationGroup.timingFunction = defaultCurve
         
         self.animationGroup.animations = [createScaleAnimation(), createOpacityAnimation()]
-        
-        
     }
     
+}
+
+func loadingAnimation(image: UIImageView){
+    image.layer.sublayers?.removeAll()
+    let maskView = UIImageView()
+    maskView.image = UIImage(named: "loading mask")
     
-    
+    maskView.frame = image.bounds
+    maskView.contentMode = .scaleAspectFit
+    image.mask = maskView
+    let pulse = Pulsing(numberOfPulses: 25, radius: image.frame.width * 1.5 , position: CGPoint(x: 0, y: 0))
+    pulse.animationDuration = 0.8
+    pulse.backgroundColor = #colorLiteral(red: 0.1298420429, green: 0.1298461258, blue: 0.1298439503, alpha: 1)
+    image.layer.insertSublayer(pulse, at:  0)
 }
