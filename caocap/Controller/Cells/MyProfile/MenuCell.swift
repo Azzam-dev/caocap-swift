@@ -17,7 +17,6 @@ class MenuCell: UITableViewCell {
     func configure(menuItem: MenuItem) {
         self.itemImage.image = menuItem.image
         self.itemlabel.text = menuItem.label.rawValue
-        
     }
     
     

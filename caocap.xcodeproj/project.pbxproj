@@ -81,7 +81,7 @@
 		ECE29FFF25208E2100EFF8B4 /* ExploreUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF825208E2100EFF8B4 /* ExploreUI.swift */; };
 		ECE2A00025208E2100EFF8B4 /* ChartUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF925208E2100EFF8B4 /* ChartUI.swift */; };
 		ECE2A00325208E2100EFF8B4 /* FullScreenChartUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FFC25208E2100EFF8B4 /* FullScreenChartUI.swift */; };
-		ECE9E8E926478D4E00ACB575 /* displayAlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9E8E826478D4E00ACB575 /* displayAlertMessage.swift */; };
+		ECE9E8E926478D4E00ACB575 /* DisplayAlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE9E8E826478D4E00ACB575 /* DisplayAlertMessage.swift */; };
 		ECF205492160ED6D00C48F2A /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF205482160ED6D00C48F2A /* AuthVC.swift */; };
 		ECF2054B216102C200C48F2A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2054A216102C200C48F2A /* AuthService.swift */; };
 		ECF2055121624C9400C48F2A /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2055021624C9400C48F2A /* MenuVC.swift */; };
@@ -192,7 +192,7 @@
 		ECE29FF825208E2100EFF8B4 /* ExploreUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreUI.swift; sourceTree = "<group>"; };
 		ECE29FF925208E2100EFF8B4 /* ChartUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartUI.swift; sourceTree = "<group>"; };
 		ECE29FFC25208E2100EFF8B4 /* FullScreenChartUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenChartUI.swift; sourceTree = "<group>"; };
-		ECE9E8E826478D4E00ACB575 /* displayAlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayAlertMessage.swift; sourceTree = "<group>"; };
+		ECE9E8E826478D4E00ACB575 /* DisplayAlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAlertMessage.swift; sourceTree = "<group>"; };
 		ECF205482160ED6D00C48F2A /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		ECF2054A216102C200C48F2A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		ECF2055021624C9400C48F2A /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
@@ -526,7 +526,7 @@
 			isa = PBXGroup;
 			children = (
 				EC8E1977215A00D5000E4EE6 /* MainExtensions.swift */,
-				ECE9E8E826478D4E00ACB575 /* displayAlertMessage.swift */,
+				ECE9E8E826478D4E00ACB575 /* DisplayAlertMessage.swift */,
 				EC339BE222520D1F00FDC14A /* CaocapLayout.swift */,
 				EC368420225AFE8C00ABC9C6 /* CaocapCellAnimation.swift */,
 				4E8AEF8A2404FA92004B4F37 /* Reachability.swift */,
@@ -864,7 +864,7 @@
 				ECE2A00325208E2100EFF8B4 /* FullScreenChartUI.swift in Sources */,
 				EC5238E221916E3A00D966F3 /* ContactUserCell.swift in Sources */,
 				ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */,
-				ECE9E8E926478D4E00ACB575 /* displayAlertMessage.swift in Sources */,
+				ECE9E8E926478D4E00ACB575 /* DisplayAlertMessage.swift in Sources */,
 				EC2B26B722692B2C00779486 /* OpenedCaocapCell.swift in Sources */,
 				EC3F6D93234F81DF007DD028 /* GroupChatVC.swift in Sources */,
 				EC5238E02190B4CD00D966F3 /* Chat.swift in Sources */,

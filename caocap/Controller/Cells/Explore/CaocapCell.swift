@@ -20,39 +20,34 @@ class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
     var caocapCellDelegate: CaocapCellDelegate?
     
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var loadingIcon: UIImageView!
     @IBOutlet weak var theView: DesignableView!
     @IBOutlet weak var caocapName: UILabel!
     @IBOutlet weak var caocapIMG: UIImageView!
     
     var caocapKey = ""
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
     func configure(caocap: Caocap ,released: Bool) {
         caocapKey = caocap.key
         
         //this stops the image and the Url from duplicating
-        self.caocapIMG.image = nil
+        caocapIMG.image = nil
+        webView.isHidden = true
+        webView.stopLoading()
         
-        //start the Circle Animation
-        addPulse()
-
-        self.webView.navigationDelegate = self
-        self.caocapName.text = caocap.name
-        
+        loadingAnimation()
+        webView.navigationDelegate = self
+        caocapName.text = caocap.name
         
         if released {
-            self.theView.isHidden = false
-            self.caocapIMG.isHidden = true
-            self.caocapIMG.image = nil
+            theView.isHidden = false
+            caocapIMG.isHidden = true
+            caocapIMG.image = nil
             loadCaocap(caocap)
         } else {
-            self.theView.isHidden = true
-            self.caocapIMG.isHidden = false
-            self.webView.stopLoading()
+            theView.isHidden = true
+            caocapIMG.isHidden = false
+            webView.stopLoading()
             //this gets the caocap UIimage from the url
             if let imageURL = URL(string: caocap.imageURL ?? "" ) {
                 ImageService.getImage(withURL: imageURL) { (returnedImage) in
@@ -62,21 +57,21 @@ class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
         }
     }
     
-    
-    
     //This shows the webView after the download finishes
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.webView.isHidden = false
+        webView.isHidden = false
     }
 
-    //Circle Animation
-    func addPulse(){
-        let pulse = Pulsing(numberOfPulses: 10, radius: theView.frame.width , position: theView.center)
+    func loadingAnimation(){
+        let maskView = UIImageView()
+        maskView.image = UIImage(named: "Loading SVG")
+        maskView.frame = loadingIcon.bounds
+        maskView.contentMode = .scaleAspectFit
+        loadingIcon.mask = maskView
+        let pulse = Pulsing(numberOfPulses: 25, radius: loadingIcon.frame.width * 1.5 , position: CGPoint(x: 0, y: 0))
         pulse.animationDuration = 0.8
-        pulse.backgroundColor = #colorLiteral(red: 0.1921568627, green: 0.2235294118, blue: 0.262745098, alpha: 0.5)
-        
-        self.theView.layer.insertSublayer(pulse, at:  0)
-        
+        pulse.backgroundColor = #colorLiteral(red: 0.2156862745, green: 0.2549019608, blue: 0.3019607843, alpha: 1)
+        loadingIcon.layer.insertSublayer(pulse, at:  0)
     }
     
     fileprivate func loadCaocap(_ caocap: Caocap) {
@@ -87,13 +82,13 @@ class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
             <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(caocap.code!["css"] ?? "")</style></head><body>\(caocap.code!["html"] ?? "" )<script>\(caocap.code!["js"] ?? "")</script></body></html>
             """
             
-            self.webView.loadHTMLString(caocapCode , baseURL: nil)
+            webView.loadHTMLString(caocapCode , baseURL: nil)
             
         case .link:
             let caocapURL = URL(string: caocap.link!)!
             var urlRequest = URLRequest(url: caocapURL)
             urlRequest.cachePolicy = .returnCacheDataElseLoad
-            self.webView.load(urlRequest)
+            webView.load(urlRequest)
             
         default:
             print("unexpected caocap type")
