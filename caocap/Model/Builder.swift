@@ -9,10 +9,8 @@
 import UIKit
 
 struct Builder {
-    
     let type: CaocapType
     let title: String
     let image: UIImage
     let description: String
-    
 }

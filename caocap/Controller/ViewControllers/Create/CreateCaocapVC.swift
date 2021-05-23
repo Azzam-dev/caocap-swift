@@ -112,15 +112,6 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
                                                            "css": "h1 { color: blue; }"]
                         case .template:
                             content[self.type.rawValue] = [["name": "blog", "title" : "Blog Title", "description" : "this is the blog description"]]
-                        case .block:
-                            content[self.type.rawValue] = ["html":"<h1> write your code here </h1>",
-                                                           "js": "//write your JS code here",
-                                                           "css": "h1 { color: blue; }"]
-                        case .chat:
-                            content[self.type.rawValue] = ["html":"<h1> write your code here </h1>",
-                                                           "js": "//write your JS code here",
-                                                           "css": "h1 { color: blue; }"]
-    
                         }
                         let caocapData = ["imageURL": imageURL,
                                           "color": self.colorSelectedIndex,

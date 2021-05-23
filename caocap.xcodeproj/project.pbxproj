@@ -75,7 +75,6 @@
 		ECB96C242527423A00901E35 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB96C232527423A00901E35 /* Block.swift */; };
 		ECCE4AE725B1E0080065EB0A /* CreateCaocapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4AE625B1E0080065EB0A /* CreateCaocapVC.swift */; };
 		ECE29FD82520852B00EFF8B4 /* CodeBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */; };
-		ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */; };
 		ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */; };
 		ECE29FFE25208E2100EFF8B4 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF725208E2100EFF8B4 /* CircleImage.swift */; };
 		ECE29FFF25208E2100EFF8B4 /* ExploreUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF825208E2100EFF8B4 /* ExploreUI.swift */; };
@@ -186,7 +185,6 @@
 		ECCE4AE625B1E0080065EB0A /* CreateCaocapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaocapVC.swift; sourceTree = "<group>"; };
 		ECDABBF2238348170029B026 /* caocap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = caocap.entitlements; sourceTree = "<group>"; };
 		ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuilderVC.swift; sourceTree = "<group>"; };
-		ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicMindMapVC.swift; sourceTree = "<group>"; };
 		ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosBaseVC.swift; sourceTree = "<group>"; };
 		ECE29FF725208E2100EFF8B4 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		ECE29FF825208E2100EFF8B4 /* ExploreUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreUI.swift; sourceTree = "<group>"; };
@@ -401,10 +399,9 @@
 			isa = PBXGroup;
 			children = (
 				EC3C86BD263C89430005DBAB /* ArtBuilderVC.swift */,
-				ECE29FDC25208C3400EFF8B4 /* LogicMindMapVC.swift */,
+				EC697411261D899A00EB71F4 /* LinkBuilderVC.swift */,
 				ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */,
 				EC697409261D889700EB71F4 /* TemplateBuilderVC.swift */,
-				EC697411261D899A00EB71F4 /* LinkBuilderVC.swift */,
 			);
 			path = ArtBuilders;
 			sourceTree = "<group>";
@@ -852,7 +849,6 @@
 				EC6109EB2646E0F900E760CD /* Store.swift in Sources */,
 				EC3C86C6263C94E00005DBAB /* TemplateCell.swift in Sources */,
 				EC5238DA219082F100D966F3 /* ChatGroupCell.swift in Sources */,
-				ECE29FDD25208C3400EFF8B4 /* LogicMindMapVC.swift in Sources */,
 				EC2B26C1226A12DC00779486 /* CaocapVC.swift in Sources */,
 				ECF63E6C21BA33E900E491FE /* ImageService.swift in Sources */,
 				EC368421225AFE8C00ABC9C6 /* CaocapCellAnimation.swift in Sources */,

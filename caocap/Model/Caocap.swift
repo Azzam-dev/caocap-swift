@@ -10,10 +10,8 @@ import UIKit
 
 enum CaocapType: String {
     case link
-    case code
-    case block
     case template
-    case chat
+    case code
 }
 
 class Caocap {

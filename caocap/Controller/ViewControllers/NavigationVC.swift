@@ -271,7 +271,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     var builderItemPreviousIndex: Int?
     @IBAction func didSwipeCollectionView(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
-        case .left where builderItemSelectedIndex < 4:
+        case .left where builderItemSelectedIndex < 2:
             builderItemPreviousIndex = builderItemSelectedIndex
             builderItemSelectedIndex += 1
             transitionAnimtion(fram: builderItemPreviousIndex!, to: builderItemSelectedIndex)
@@ -304,17 +304,13 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     var builderItemCells = [BuilderTypeCell]()
     func setupBuilderCells() {
         let linkBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 0, section: 0)) as! BuilderTypeCell
-        let codeBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 1, section: 0)) as! BuilderTypeCell
-        let templateBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 2, section: 0)) as! BuilderTypeCell
-        let blockBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 3, section: 0)) as! BuilderTypeCell
-        let chatBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 4, section: 0)) as! BuilderTypeCell
+        let templateBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 1, section: 0)) as! BuilderTypeCell
+        let codeBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 2, section: 0)) as! BuilderTypeCell
         
         linkBuilderCell.configure(builder: Builder(type: .link, title: "Link", image: #imageLiteral(resourceName: "Create Link"), description: ""))
-        codeBuilderCell.configure(builder: Builder(type: .template, title: "Template", image: #imageLiteral(resourceName: "Create Template"), description: ""))
-        templateBuilderCell.configure(builder: Builder(type: .code, title: "Code", image: #imageLiteral(resourceName: "Create Code"), description: ""))
-        blockBuilderCell.configure(builder: Builder(type: .block, title: "Block", image: #imageLiteral(resourceName: "Create Soon"), description: ""))
-        chatBuilderCell.configure(builder: Builder(type: .chat, title: "Chat", image: #imageLiteral(resourceName: "Create Soon"), description: ""))
-        builderItemCells = [linkBuilderCell, templateBuilderCell, codeBuilderCell, blockBuilderCell, chatBuilderCell]
+        templateBuilderCell.configure(builder: Builder(type: .template, title: "Template", image: #imageLiteral(resourceName: "Create Template"), description: ""))
+        codeBuilderCell.configure(builder: Builder(type: .code, title: "Code", image: #imageLiteral(resourceName: "Create Code"), description: ""))
+        builderItemCells = [linkBuilderCell, templateBuilderCell, codeBuilderCell]
 
         builderCollectionView.reloadData()
     }
@@ -366,14 +362,6 @@ extension NavigationVC: UICollectionViewDelegate, UICollectionViewDataSource {
         case .code:
             let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
             createCaocapVC.type = .code
-            self.present(createCaocapVC, animated: true)
-        case .block:
-            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.type = .block
-            self.present(createCaocapVC, animated: true)
-        case .chat:
-            let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-            createCaocapVC.type = .chat
             self.present(createCaocapVC, animated: true)
         }
     }
