@@ -26,8 +26,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         switch menuType {
         case .account:
-            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-user_folder_filled"), label: .editProfile),
-                         MenuItem(image: #imageLiteral(resourceName: "icons8-settings"), label: .settings),
+            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-settings"), label: .settings),
                          MenuItem(image: #imageLiteral(resourceName: "icons8-logout_rounded_up_filled"), label: .logout)
             ]
         case .setting:
@@ -89,11 +88,6 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         switch menuItems[indexPath.row].label {
-        case .editProfile:
-            let storyboard = UIStoryboard(name: "UserProfile", bundle: nil)
-            let editProfileVC = storyboard.instantiateViewController(withIdentifier: "editProfile") as! EditProfileVC
-            navigationController?.pushViewController(editProfileVC, animated: true)
-            
         case .settings:
             let storyboardSettings = UIStoryboard(name: "UserProfile", bundle: nil)
             let settingsVC = storyboardSettings.instantiateViewController(withIdentifier: "menu") as! MenuVC

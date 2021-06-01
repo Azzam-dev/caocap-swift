@@ -90,6 +90,13 @@ class MyProfileVC: UIViewController {
         self.profileCollectionView.scrollToItem(at: indexPath as IndexPath, at: .left , animated: true )
     }
     
+    
+    @IBAction func editProfileButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "UserProfile", bundle: nil)
+        let editProfileVC = storyboard.instantiateViewController(withIdentifier: "editProfile") as! EditProfileVC
+        navigationController?.pushViewController(editProfileVC, animated: true)
+    }
+    
 }
 
 

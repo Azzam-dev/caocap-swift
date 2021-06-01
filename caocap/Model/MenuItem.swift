@@ -9,7 +9,6 @@
 import UIKit
 
 enum MenuItemType: String {
-    case editProfile = "edit profile"
     case settings
     case logout
     case yourActivity = "your activity"
