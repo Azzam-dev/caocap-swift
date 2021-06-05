@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum TemplateType: String {
+enum TemplateType: String, CaseIterable{
     case blog
 }
 

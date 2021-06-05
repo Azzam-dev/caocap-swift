@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol AddTemplateDelegate: class {
     func didPressAddTemplate()
 }

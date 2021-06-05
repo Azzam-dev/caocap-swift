@@ -23,6 +23,7 @@ class TemplateBuilderVC: ArtBuilderVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         getCaocapData()
+        registerdUINib()
     }
     
     
@@ -65,6 +66,10 @@ class TemplateBuilderVC: ArtBuilderVC {
         selectedView.isHidden = false
     }
     
+    private func registerdUINib() {
+        stylesTableView.register(UINib.init(nibName: "EditTitleStylesCell", bundle: nil), forCellReuseIdentifier: "editTitleStylesCell")
+        stylesTableView.register(UINib.init(nibName: "EditDescriptionStylesCell", bundle: nil), forCellReuseIdentifier: "editDescriptionStylesCell")
+    }
     
 }
 
@@ -103,26 +108,34 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = caocapTemplates[indexPath.row].type.rawValue
             return cell
         case stylesTableView:
-            let cell = UITableViewCell()
-            switch editingTemplate?.type {
-            case .blog:
-                switch indexPath.row {
-                case 0:
-                    cell.textLabel?.text = editingTemplate?.content["title"]
-                case 1:
-                    cell.textLabel?.text = editingTemplate?.content["description"]
-                default:
-                    break
-                }
-            default:
-                break
-            }
-            return cell
+            return getStyleCell(with: indexPath)
         default:
             return UITableViewCell()
         }
     }
     
+    
+    private func getStyleCell(with indexPath: IndexPath) -> UITableViewCell {
+        guard let editingTemplate = editingTemplate else { return UITableViewCell() }
+        switch editingTemplate.type {
+        case .blog:
+            switch indexPath.row {
+            case 0:
+                guard let cell = stylesTableView.dequeueReusableCell(withIdentifier: "editTitleStylesCell", for: indexPath) as? EditTitleStylesCell else { return UITableViewCell() }
+                cell.configure(title: editingTemplate.content["title"] ?? "")
+                return cell
+            case 1:
+                guard let cell = stylesTableView.dequeueReusableCell(withIdentifier: "editDescriptionStylesCell", for: indexPath) as? EditDescriptionStylesCell else { return UITableViewCell() }
+                cell.configure(description: editingTemplate.content["description"] ?? "")
+                return cell
+            default:
+                break
+            }
+        default:
+            break
+        }
+        return UITableViewCell()
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
@@ -156,13 +169,17 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
 extension TemplateBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return TemplateType.allCases.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateIconCell", for: indexPath) as? TemplateIconCell else { return UICollectionViewCell() }
-        
+        cell.configure(type: TemplateType.allCases[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didPressAddTemplate()
     }
     
    

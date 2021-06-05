@@ -1867,7 +1867,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0SB-xK-wPA">
                                                 <rect key="frame" x="0.0" y="60" width="374" height="215"/>
                                                 <subviews>
-                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kM0-Dd-qEW">
+                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kM0-Dd-qEW">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="215"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
@@ -1899,14 +1899,30 @@
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvm-ax-WRI" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="107" height="137"/>
                                                                                     <subviews>
-                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-content" translatesAutoresizingMaskIntoConstraints="NO" id="Kbi-Gf-wUC">
-                                                                                            <rect key="frame" x="3.5" y="18.5" width="100" height="100"/>
-                                                                                        </imageView>
+                                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dkk-EN-rHw">
+                                                                                            <rect key="frame" x="5" y="5" width="97" height="127"/>
+                                                                                            <subviews>
+                                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-content" translatesAutoresizingMaskIntoConstraints="NO" id="Kbi-Gf-wUC">
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="105"/>
+                                                                                                </imageView>
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFJ-mG-JTS">
+                                                                                                    <rect key="frame" x="0.0" y="105" width="97" height="22"/>
+                                                                                                    <constraints>
+                                                                                                        <constraint firstAttribute="height" constant="22" id="fSb-qQ-kHj"/>
+                                                                                                    </constraints>
+                                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                                    <nil key="textColor"/>
+                                                                                                    <nil key="highlightedColor"/>
+                                                                                                </label>
+                                                                                            </subviews>
+                                                                                        </stackView>
                                                                                     </subviews>
                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                     <constraints>
-                                                                                        <constraint firstItem="Kbi-Gf-wUC" firstAttribute="centerX" secondItem="dvm-ax-WRI" secondAttribute="centerX" id="Az1-Td-1Es"/>
-                                                                                        <constraint firstItem="Kbi-Gf-wUC" firstAttribute="centerY" secondItem="dvm-ax-WRI" secondAttribute="centerY" id="Kq3-7r-0pp"/>
+                                                                                        <constraint firstItem="Dkk-EN-rHw" firstAttribute="leading" secondItem="dvm-ax-WRI" secondAttribute="leading" constant="5" id="5ZC-vO-thd"/>
+                                                                                        <constraint firstItem="Dkk-EN-rHw" firstAttribute="top" secondItem="dvm-ax-WRI" secondAttribute="top" constant="5" id="KEf-Tx-eBq"/>
+                                                                                        <constraint firstItem="Dkk-EN-rHw" firstAttribute="centerX" secondItem="dvm-ax-WRI" secondAttribute="centerX" id="bnd-dQ-PYP"/>
+                                                                                        <constraint firstItem="Dkk-EN-rHw" firstAttribute="centerY" secondItem="dvm-ax-WRI" secondAttribute="centerY" id="lsz-0a-D0w"/>
                                                                                     </constraints>
                                                                                     <userDefinedRuntimeAttributes>
                                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1946,6 +1962,10 @@
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="120" height="150"/>
+                                                                <connections>
+                                                                    <outlet property="icon" destination="Kbi-Gf-wUC" id="AnY-KE-dlw"/>
+                                                                    <outlet property="titleLabel" destination="LFJ-mG-JTS" id="h33-I7-d0n"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                         </cells>
                                                         <connections>
@@ -2103,7 +2123,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="POe-hc-n4e">
-            <size key="intrinsicContentSize" width="61" height="35"/>
+            <size key="intrinsicContentSize" width="62" height="38"/>
         </designable>
         <designable name="TW2-z0-Qjf">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -2115,10 +2135,10 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="ikp-83-eNU">
-            <size key="intrinsicContentSize" width="71" height="35"/>
+            <size key="intrinsicContentSize" width="73" height="38"/>
         </designable>
         <designable name="lIv-W9-58g">
-            <size key="intrinsicContentSize" width="103" height="30"/>
+            <size key="intrinsicContentSize" width="105" height="32"/>
         </designable>
         <designable name="moR-Mz-hl5">
             <size key="intrinsicContentSize" width="30" height="30"/>

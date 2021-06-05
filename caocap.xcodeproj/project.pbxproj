@@ -34,6 +34,10 @@
 		EC501674234E121900021D70 /* CaocapRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501673234E121900021D70 /* CaocapRoomVC.swift */; };
 		EC501676234E610200021D70 /* SentMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501675234E610200021D70 /* SentMessageCell.swift */; };
 		EC501679234E62B900021D70 /* ArrivedMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501678234E62B900021D70 /* ArrivedMessageCell.swift */; };
+		EC5107AA266BB334000DB190 /* EditTitleStylesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5107A8266BB334000DB190 /* EditTitleStylesCell.swift */; };
+		EC5107AB266BB334000DB190 /* EditTitleStylesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5107A9266BB334000DB190 /* EditTitleStylesCell.xib */; };
+		EC5107B1266BBB46000DB190 /* EditDescriptionStylesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5107AF266BBB46000DB190 /* EditDescriptionStylesCell.swift */; };
+		EC5107B2266BBB46000DB190 /* EditDescriptionStylesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5107B0266BBB46000DB190 /* EditDescriptionStylesCell.xib */; };
 		EC5238DA219082F100D966F3 /* ChatGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5238D9219082F100D966F3 /* ChatGroupCell.swift */; };
 		EC5238DC2190834200D966F3 /* ContactChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5238DB2190834200D966F3 /* ContactChatCell.swift */; };
 		EC5238DE2190836200D966F3 /* CaocapGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5238DD2190836200D966F3 /* CaocapGroupCell.swift */; };
@@ -136,6 +140,10 @@
 		EC501673234E121900021D70 /* CaocapRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapRoomVC.swift; sourceTree = "<group>"; };
 		EC501675234E610200021D70 /* SentMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMessageCell.swift; sourceTree = "<group>"; };
 		EC501678234E62B900021D70 /* ArrivedMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedMessageCell.swift; sourceTree = "<group>"; };
+		EC5107A8266BB334000DB190 /* EditTitleStylesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTitleStylesCell.swift; sourceTree = "<group>"; };
+		EC5107A9266BB334000DB190 /* EditTitleStylesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTitleStylesCell.xib; sourceTree = "<group>"; };
+		EC5107AF266BBB46000DB190 /* EditDescriptionStylesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDescriptionStylesCell.swift; sourceTree = "<group>"; };
+		EC5107B0266BBB46000DB190 /* EditDescriptionStylesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDescriptionStylesCell.xib; sourceTree = "<group>"; };
 		EC5238D9219082F100D966F3 /* ChatGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGroupCell.swift; sourceTree = "<group>"; };
 		EC5238DB2190834200D966F3 /* ContactChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactChatCell.swift; sourceTree = "<group>"; };
 		EC5238DD2190836200D966F3 /* CaocapGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapGroupCell.swift; sourceTree = "<group>"; };
@@ -327,6 +335,10 @@
 				EC3C86C5263C94E00005DBAB /* TemplateCell.swift */,
 				EC6109B326432EF200E760CD /* TemplateIconCell.swift */,
 				EC6109C82645FE1800E760CD /* AddTemplateCell.swift */,
+				EC5107A8266BB334000DB190 /* EditTitleStylesCell.swift */,
+				EC5107A9266BB334000DB190 /* EditTitleStylesCell.xib */,
+				EC5107AF266BBB46000DB190 /* EditDescriptionStylesCell.swift */,
+				EC5107B0266BBB46000DB190 /* EditDescriptionStylesCell.xib */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -705,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC1C8B7B25D6C38C00CC8A0E /* CaocapCell.xib in Resources */,
+				EC5107B2266BBB46000DB190 /* EditDescriptionStylesCell.xib in Resources */,
 				EC84070624680C2200223FB1 /* Builder.storyboard in Resources */,
 				EC8E19532159E02C000E4EE6 /* LaunchScreen.storyboard in Resources */,
 				EC8407082468134600223FB1 /* Explore.storyboard in Resources */,
@@ -712,6 +725,7 @@
 				EC84070A2468147800223FB1 /* Chat.storyboard in Resources */,
 				EC84070C24681A0800223FB1 /* UserProfile.storyboard in Resources */,
 				EC8E19502159E02C000E4EE6 /* Assets.xcassets in Resources */,
+				EC5107AB266BB334000DB190 /* EditTitleStylesCell.xib in Resources */,
 				EC2F25022168FFE800D14733 /* earthorbiter.ttf in Resources */,
 				EC2F25042169000B00D14733 /* www.Brushez.com-NeoSansArabic.ttf in Resources */,
 				EC8E194B2159E02A000E4EE6 /* Main.storyboard in Resources */,
@@ -819,11 +833,13 @@
 				EC501676234E610200021D70 /* SentMessageCell.swift in Sources */,
 				EC6EE2842323D3180069F488 /* MenuCell.swift in Sources */,
 				EC8E194E2159E02A000E4EE6 /* caocap.xcdatamodeld in Sources */,
+				EC5107B1266BBB46000DB190 /* EditDescriptionStylesCell.swift in Sources */,
 				EC697412261D899A00EB71F4 /* LinkBuilderVC.swift in Sources */,
 				EC1C8B9625D6DCB700CC8A0E /* CodeCell.swift in Sources */,
 				EC2B26C3226B2E2700779486 /* SwipeNavigationController.swift in Sources */,
 				ECF205492160ED6D00C48F2A /* AuthVC.swift in Sources */,
 				ECF2054B216102C200C48F2A /* AuthService.swift in Sources */,
+				EC5107AA266BB334000DB190 /* EditTitleStylesCell.swift in Sources */,
 				EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */,
 				EC69740A261D889700EB71F4 /* TemplateBuilderVC.swift in Sources */,
 				EC5238DC2190834200D966F3 /* ContactChatCell.swift in Sources */,
