@@ -18,7 +18,8 @@ class TemplateBuilderVC: ArtBuilderVC {
     @IBOutlet weak var structureTableView: UITableView!
     
     
-    var caocapTemplates = [["name": "blog", "title" : "failed to load templates", "description" : "this is the blog description"],["":""],["":""],["":""]] // this should be of type Template
+    var caocapTemplates = [Template]()
+    var editingTemplate: Template?
     override func viewDidLoad() {
         super.viewDidLoad()
         getCaocapData()
@@ -68,16 +69,15 @@ class TemplateBuilderVC: ArtBuilderVC {
 }
 
 extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case previewTableView:
             return caocapTemplates.count + 1
         case structureTableView:
-            //TODO:- return number of cells in the structureTableView
-            return 3
+            return caocapTemplates.count
         case stylesTableView:
-            //TODO:- return number of cells in the stylesTableView
-            return 3
+            return editingTemplate?.content.count ?? 0
         default:
             return 0
         }
@@ -85,29 +85,69 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
         case previewTableView:
             if indexPath.row == caocapTemplates.count { // if it was the last cell then show add template
                 guard let cell = previewTableView.dequeueReusableCell(withIdentifier: "addTemplateCell", for: indexPath) as? AddTemplateCell else { return UITableViewCell() }
-                
+                cell.delegate = self
                 return cell
             } else {
                 guard let cell = previewTableView.dequeueReusableCell(withIdentifier: "templateCell", for: indexPath) as? TemplateCell else { return UITableViewCell() }
                 
-                cell.configure(template: Template(type: .blog, content: ["title" : "Blog Title", "description" : "this is the blog description"]))
+                cell.configure(template: caocapTemplates[indexPath.row])
                 return cell
             }
         case structureTableView:
-            //TODO:- setup the structure table view cells
-            return UITableViewCell()
+            let cell = UITableViewCell()
+            cell.textLabel?.text = caocapTemplates[indexPath.row].type.rawValue
+            return cell
         case stylesTableView:
-            //TODO:- setup the styles table view cells
-            return UITableViewCell()
+            let cell = UITableViewCell()
+            switch editingTemplate?.type {
+            case .blog:
+                switch indexPath.row {
+                case 0:
+                    cell.textLabel?.text = editingTemplate?.content["title"]
+                case 1:
+                    cell.textLabel?.text = editingTemplate?.content["description"]
+                default:
+                    break
+                }
+            default:
+                break
+            }
+            return cell
         default:
             return UITableViewCell()
         }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch tableView {
+        case previewTableView, structureTableView:
+            editingTemplate = caocapTemplates[indexPath.row]
+            stylesTableView.reloadData()
+        default:
+            break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if tableView == structureTableView {
+            let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
+                self.caocapTemplates.remove(at: indexPath.row)
+                self.previewTableView.reloadData()
+                self.structureTableView.reloadData()
+            }
+
+            let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
+            swipeActionConfig.performsFirstActionWithFullSwipe = false
+            return swipeActionConfig
+        }
+        
+        return nil
     }
     
     
@@ -128,3 +168,16 @@ extension TemplateBuilderVC: UICollectionViewDelegate, UICollectionViewDataSourc
    
 }
 
+
+extension TemplateBuilderVC: AddTemplateDelegate {
+    
+    func didPressAddTemplate() {
+        let newTemplate = Template(type: .blog, content: ["title" : "Blog Title", "description" : "this is the blog description"])
+        caocapTemplates.append(newTemplate)
+        previewTableView.reloadData()
+        structureTableView.reloadData()
+    }
+    
+    
+    
+}

@@ -111,7 +111,7 @@ extension CaocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "openedCaocapCell", for: indexPath) as? OpenedCaocapCell else { return UICollectionViewCell() }
             
             cell.configureCell(caocap: openedCaocap!, released: isReleased)
-            cell.cellDelegate = self as OpenedCaocapCellDelegate
+            cell.delegate = self as OpenedCaocapCellDelegate
             
             return cell
         } else {

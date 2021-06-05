@@ -8,11 +8,22 @@
 
 import UIKit
 
+
+protocol AddTemplateDelegate: class {
+    func didPressAddTemplate()
+}
+
 class AddTemplateCell: UITableViewCell {
 
+    weak var delegate: AddTemplateDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+    }
+    
+    @IBAction func addTemplateBTN(_ sender: UIButton) {
+        self.delegate?.didPressAddTemplate()
     }
 
 }

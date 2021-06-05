@@ -1743,6 +1743,9 @@
                                                                             <size key="value" width="2" height="2"/>
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="addTemplateBTN:" destination="3Tp-9W-V6H" eventType="touchUpInside" id="qjT-lF-ZKv"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
@@ -2100,7 +2103,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="POe-hc-n4e">
-            <size key="intrinsicContentSize" width="62" height="38"/>
+            <size key="intrinsicContentSize" width="61" height="35"/>
         </designable>
         <designable name="TW2-z0-Qjf">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -2112,10 +2115,10 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="ikp-83-eNU">
-            <size key="intrinsicContentSize" width="73" height="38"/>
+            <size key="intrinsicContentSize" width="71" height="35"/>
         </designable>
         <designable name="lIv-W9-58g">
-            <size key="intrinsicContentSize" width="105" height="32"/>
+            <size key="intrinsicContentSize" width="103" height="30"/>
         </designable>
         <designable name="moR-Mz-hl5">
             <size key="intrinsicContentSize" width="30" height="30"/>

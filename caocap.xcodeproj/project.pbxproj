@@ -26,7 +26,6 @@
 		EC2F25042169000B00D14733 /* www.Brushez.com-NeoSansArabic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC2F25032169000B00D14733 /* www.Brushez.com-NeoSansArabic.ttf */; };
 		EC2F25072169C47F00D14733 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F25062169C47F00D14733 /* EditProfileVC.swift */; };
 		EC339BE322520D1F00FDC14A /* CaocapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE222520D1F00FDC14A /* CaocapLayout.swift */; };
-		EC339BE62253D75200FDC14A /* UrlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE52253D75200FDC14A /* UrlService.swift */; };
 		EC368421225AFE8C00ABC9C6 /* CaocapCellAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368420225AFE8C00ABC9C6 /* CaocapCellAnimation.swift */; };
 		EC3C86BE263C89430005DBAB /* ArtBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86BD263C89430005DBAB /* ArtBuilderVC.swift */; };
 		EC3C86C6263C94E00005DBAB /* TemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86C5263C94E00005DBAB /* TemplateCell.swift */; };
@@ -72,7 +71,6 @@
 		ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */; };
 		ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479A21C79156000E16DC /* ContactChatVC.swift */; };
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
-		ECB96C242527423A00901E35 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB96C232527423A00901E35 /* Block.swift */; };
 		ECCE4AE725B1E0080065EB0A /* CreateCaocapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4AE625B1E0080065EB0A /* CreateCaocapVC.swift */; };
 		ECE29FD82520852B00EFF8B4 /* CodeBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */; };
 		ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */; };
@@ -130,7 +128,6 @@
 		EC2F25032169000B00D14733 /* www.Brushez.com-NeoSansArabic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.Brushez.com-NeoSansArabic.ttf"; sourceTree = "<group>"; };
 		EC2F25062169C47F00D14733 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		EC339BE222520D1F00FDC14A /* CaocapLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapLayout.swift; sourceTree = "<group>"; };
-		EC339BE52253D75200FDC14A /* UrlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlService.swift; sourceTree = "<group>"; };
 		EC368420225AFE8C00ABC9C6 /* CaocapCellAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapCellAnimation.swift; sourceTree = "<group>"; };
 		EC3C86BD263C89430005DBAB /* ArtBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBuilderVC.swift; sourceTree = "<group>"; };
 		EC3C86C5263C94E00005DBAB /* TemplateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCell.swift; sourceTree = "<group>"; };
@@ -181,7 +178,6 @@
 		ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderVC.swift; sourceTree = "<group>"; };
 		ECAD479A21C79156000E16DC /* ContactChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactChatVC.swift; sourceTree = "<group>"; };
 		ECAD479C21CA97C4000E16DC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		ECB96C232527423A00901E35 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		ECCE4AE625B1E0080065EB0A /* CreateCaocapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaocapVC.swift; sourceTree = "<group>"; };
 		ECDABBF2238348170029B026 /* caocap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = caocap.entitlements; sourceTree = "<group>"; };
 		ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuilderVC.swift; sourceTree = "<group>"; };
@@ -426,7 +422,6 @@
 				EC16EE7921A5AE1F009A46B8 /* User.swift */,
 				ECF63E9121C0D9DF00E491FE /* Caocap.swift */,
 				4ECAEA1225DDC7E200972415 /* Builder.swift */,
-				ECB96C232527423A00901E35 /* Block.swift */,
 				EC3C86CD263C95960005DBAB /* Template.swift */,
 				4E182A4425D84C5A00DB37C4 /* MenuItem.swift */,
 				EC5238DF2190B4CD00D966F3 /* Chat.swift */,
@@ -441,7 +436,6 @@
 				EC6AB851215D8F4B00C276E3 /* DataService.swift */,
 				ECF2054A216102C200C48F2A /* AuthService.swift */,
 				ECF63E6B21BA33E900E491FE /* ImageService.swift */,
-				EC339BE52253D75200FDC14A /* UrlService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -831,7 +825,6 @@
 				ECF205492160ED6D00C48F2A /* AuthVC.swift in Sources */,
 				ECF2054B216102C200C48F2A /* AuthService.swift in Sources */,
 				EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */,
-				ECB96C242527423A00901E35 /* Block.swift in Sources */,
 				EC69740A261D889700EB71F4 /* TemplateBuilderVC.swift in Sources */,
 				EC5238DC2190834200D966F3 /* ContactChatCell.swift in Sources */,
 				EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */,
@@ -874,7 +867,6 @@
 				ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */,
 				EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */,
 				EC6109C92645FE1800E760CD /* AddTemplateCell.swift in Sources */,
-				EC339BE62253D75200FDC14A /* UrlService.swift in Sources */,
 				EC6109E02646DB7000E760CD /* AppReducer.swift in Sources */,
 				EC6109B426432EF200E760CD /* TemplateIconCell.swift in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,

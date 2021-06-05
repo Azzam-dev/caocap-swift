@@ -20,7 +20,7 @@ protocol OpenedCaocapCellDelegate: class {
 class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     
     //Define delegate variable
-    weak var cellDelegate: OpenedCaocapCellDelegate?
+    weak var delegate: OpenedCaocapCellDelegate?
     
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loadingIcon: UIImageView!
@@ -133,19 +133,19 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     
     @IBAction func shareBTN(_ sender: Any) {
         let button = sender as! UIButton
-        self.cellDelegate?.shareBTNpressed(cell: self, didTappedshow: button)
+        self.delegate?.shareBTNpressed(cell: self, didTappedshow: button)
     }
     
     
     @IBAction func roomBTN(_ sender: Any) {
         let button = sender as! UIButton
-        self.cellDelegate?.roomBTNpressed(cell: self, didTappedshow: button)
+        self.delegate?.roomBTNpressed(cell: self, didTappedshow: button)
     }
     
     
     @IBAction func moreBTN(_ sender: Any) {
         let button = sender as! UIButton
-        self.cellDelegate?.moreBTNpressed(cell: self, didTappedshow: button)
+        self.delegate?.moreBTNpressed(cell: self, didTappedshow: button)
     }
     
     
