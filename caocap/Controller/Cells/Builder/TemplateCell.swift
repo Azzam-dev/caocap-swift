@@ -19,14 +19,7 @@ class TemplateCell: UITableViewCell {
     }
 
     func configure(template: Template) {
-        var code = ""
-        switch template.type {
-        case .blog:
-            code = template.build()
-        default:
-            print(template.type.rawValue)
-        }
-        
+        var code = template.code
         self.webView.loadHTMLString(code , baseURL: nil)
     }
     

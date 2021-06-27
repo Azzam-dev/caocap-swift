@@ -41,9 +41,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
         // we are useing the observe method to make the changes in real-time and to allow "Multi device changes"
         guard let openedCaocap = openedCaocap else { return }
         if openedCaocap.type == .link { caocapLinkTF.isHidden = false }
-        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).observe(.value) { (caocapSnapshot) in
-            guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
-            let caocap = Caocap(key: openedCaocap.key, dictionary: caocapSnapshot)
+        DataService.instance.getCaocap(withKey: openedCaocap.key) { caocap in
             self.caocapNameTF.text = caocap.name
             self.colorBTNpressed(self.colorBTNs[caocap.color])
             
@@ -52,7 +50,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
                     self.caocapIMG.image = returnedImage
                 }
             }
-            
             self.publishedStatus = caocap.isPublished
             if self.publishedStatus {
                 self.publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
@@ -65,10 +62,9 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
                 self.publishingSwitchBTN.setTitle("Publish", for: .normal)
                 self.publishingSwitchBTN.setTitleColor(#colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), for: .normal)
             }
-            
-            
             self.loadCaocap(caocap)
         }
+        
     }
     
     

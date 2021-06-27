@@ -25,7 +25,7 @@ class Caocap {
     private var _type: CaocapType
     private var _link: String?
     private var _code: [String: String]?
-    private var _templates: [[String: String]]? // this should be of type Template
+    private var _templates: [Template]? // this should be of type Template
     
     var key: String {
         return _key
@@ -57,7 +57,7 @@ class Caocap {
     var code: [String: String]? {
         return _code
     }
-    var templates: [[String: String]]? {
+    var templates: [Template]? {
         return _templates
     }
     
@@ -80,7 +80,7 @@ class Caocap {
             self._code = dictionary["code"] as? [String: String] ?? ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]
         case "template":
             _type = .template
-            self._templates = dictionary["templates"] as? [[String: String]] ?? [["name": "blog", "title" : "failed to load templates", "description" : "this is the blog description"]]
+            self._templates = dictionary["templates"] as? [Template] ?? [Template(key: "blog", dictionary: ["title" : "failed to load templates", "description" : "this is the blog description"])]
         default:
             _type = .code
             self._code = ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]

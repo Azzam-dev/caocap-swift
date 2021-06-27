@@ -229,6 +229,19 @@ class DataService {
         }
     }
     
+    func getCaocap(withKey key: String, handler: @escaping (_ caocap: Caocap) -> ()) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            DataService.instance.REF_CAOCAPS.child(key).observe(.value) { caocapSnapshot in
+                guard let dictionary = caocapSnapshot.value as? [String : Any] else { return }
+                let caocap = Caocap(key: caocapSnapshot.key, dictionary: dictionary)
+                DispatchQueue.main.async {
+                    handler(caocap)
+                }
+            }
+        }
+    }
+    
+    
     func getAllCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
             self.REF_CAOCAPS.observeSingleEvent(of: .value) { (caocapsSnapshot) in

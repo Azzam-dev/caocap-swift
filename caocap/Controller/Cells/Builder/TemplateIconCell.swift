@@ -12,8 +12,14 @@ class TemplateIconCell: UICollectionViewCell {
     
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    func configure(type: TemplateType) {
-        titleLabel.text = type.rawValue
+    func configure(template: Template) {
+        titleLabel.text = template.key
+        
+        if let iconURL = URL(string: template.iconURL ) {
+            ImageService.getImage(withURL: iconURL) { returnedImage in
+                self.icon.image = returnedImage?.withRenderingMode(.alwaysTemplate)
+            }
+        }
     }
     
 }

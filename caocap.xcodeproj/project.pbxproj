@@ -72,6 +72,7 @@
 		EC8E195E2159E02C000E4EE6 /* caocapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E195D2159E02C000E4EE6 /* caocapTests.swift */; };
 		EC8E19692159E02C000E4EE6 /* caocapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E19682159E02C000E4EE6 /* caocapUITests.swift */; };
 		EC8E1978215A00D5000E4EE6 /* MainExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E1977215A00D5000E4EE6 /* MainExtensions.swift */; };
+		ECA08F562688FF1400C0A3EB /* TemplateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA08F552688FF1400C0A3EB /* TemplateService.swift */; };
 		ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */; };
 		ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479A21C79156000E16DC /* ContactChatVC.swift */; };
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
@@ -183,6 +184,7 @@
 		EC8E19682159E02C000E4EE6 /* caocapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caocapUITests.swift; sourceTree = "<group>"; };
 		EC8E196A2159E02C000E4EE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC8E1977215A00D5000E4EE6 /* MainExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainExtensions.swift; sourceTree = "<group>"; };
+		ECA08F552688FF1400C0A3EB /* TemplateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateService.swift; sourceTree = "<group>"; };
 		ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderVC.swift; sourceTree = "<group>"; };
 		ECAD479A21C79156000E16DC /* ContactChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactChatVC.swift; sourceTree = "<group>"; };
 		ECAD479C21CA97C4000E16DC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -445,8 +447,9 @@
 		EC70ACF7215D8856004C16D2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				EC6AB851215D8F4B00C276E3 /* DataService.swift */,
 				ECF2054A216102C200C48F2A /* AuthService.swift */,
+				EC6AB851215D8F4B00C276E3 /* DataService.swift */,
+				ECA08F552688FF1400C0A3EB /* TemplateService.swift */,
 				ECF63E6B21BA33E900E491FE /* ImageService.swift */,
 			);
 			path = Services;
@@ -884,6 +887,7 @@
 				EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */,
 				EC6109C92645FE1800E760CD /* AddTemplateCell.swift in Sources */,
 				EC6109E02646DB7000E760CD /* AppReducer.swift in Sources */,
+				ECA08F562688FF1400C0A3EB /* TemplateService.swift in Sources */,
 				EC6109B426432EF200E760CD /* TemplateIconCell.swift in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,
 				4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */,

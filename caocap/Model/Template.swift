@@ -8,37 +8,34 @@
 
 import UIKit
 
-enum TemplateType: String, CaseIterable{
-    case blog
-}
+
 
 class Template {
-    private var _type: TemplateType
-    private var _content: [String: String]
+    private var _key: String
+    private var _dictionary: [String: Any]
     
-    var type: TemplateType {
-        return _type
+    var key: String {
+        return _key
     }
     
-    var content: [String: String] {
-        return _content
+    var dictionary: [String: Any] {
+        return _dictionary
     }
     
-    init(type: TemplateType, content: [String: String]) {
-        self._type = type
-        self._content = content
+    var iconURL: String {
+        return dictionary["icon"] as? String ?? ""
     }
     
-    func build() -> String {
-        switch type {
-        case .blog:
-            let title = "<h1>\(content["title"] ?? "")</h1>"
-            let description = "<p>\(content["description"] ?? "")</p>"
-            return """
-            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"></head><body>\(title)\(description)</body></html>
-            """
-        }
+    var code: String {
+        return dictionary["code"] as? String ?? ""
     }
+    
+    
+    init(key: String, dictionary: [String: Any]) {
+        self._key = key
+        self._dictionary = dictionary
+    }
+    
+    
 }
 

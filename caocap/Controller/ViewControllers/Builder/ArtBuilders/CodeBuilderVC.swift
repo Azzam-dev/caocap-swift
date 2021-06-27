@@ -28,9 +28,7 @@ class CodeBuilderVC: ArtBuilderVC {
     
     func getCaocapData() {
         guard let openedCaocapKey = openedCaocap?.key else { return }
-        DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
-            guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
-            let caocap = Caocap(key: openedCaocapKey, dictionary: caocapSnapshot)
+        DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
             if let code = caocap.code { self.caocapCode = code }
         }
     }

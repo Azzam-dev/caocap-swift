@@ -1899,14 +1899,18 @@
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvm-ax-WRI" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="107" height="137"/>
                                                                                     <subviews>
-                                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dkk-EN-rHw">
-                                                                                            <rect key="frame" x="5" y="5" width="97" height="127"/>
+                                                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dkk-EN-rHw">
+                                                                                            <rect key="frame" x="5" y="15" width="97" height="107"/>
                                                                                             <subviews>
-                                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-content" translatesAutoresizingMaskIntoConstraints="NO" id="Kbi-Gf-wUC">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="105"/>
+                                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scribble.variable" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Kbi-Gf-wUC">
+                                                                                                    <rect key="frame" x="18.5" y="-0.5" width="60" height="59.5"/>
+                                                                                                    <constraints>
+                                                                                                        <constraint firstAttribute="width" constant="60" id="SVY-mi-0Mp"/>
+                                                                                                        <constraint firstAttribute="width" secondItem="Kbi-Gf-wUC" secondAttribute="height" multiplier="1:1" id="eFq-aM-PxQ"/>
+                                                                                                    </constraints>
                                                                                                 </imageView>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFJ-mG-JTS">
-                                                                                                    <rect key="frame" x="0.0" y="105" width="97" height="22"/>
+                                                                                                    <rect key="frame" x="28" y="85" width="41.5" height="22"/>
                                                                                                     <constraints>
                                                                                                         <constraint firstAttribute="height" constant="22" id="fSb-qQ-kHj"/>
                                                                                                     </constraints>
@@ -1920,7 +1924,7 @@
                                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                                     <constraints>
                                                                                         <constraint firstItem="Dkk-EN-rHw" firstAttribute="leading" secondItem="dvm-ax-WRI" secondAttribute="leading" constant="5" id="5ZC-vO-thd"/>
-                                                                                        <constraint firstItem="Dkk-EN-rHw" firstAttribute="top" secondItem="dvm-ax-WRI" secondAttribute="top" constant="5" id="KEf-Tx-eBq"/>
+                                                                                        <constraint firstItem="Dkk-EN-rHw" firstAttribute="top" secondItem="dvm-ax-WRI" secondAttribute="top" constant="15" id="KEf-Tx-eBq"/>
                                                                                         <constraint firstItem="Dkk-EN-rHw" firstAttribute="centerX" secondItem="dvm-ax-WRI" secondAttribute="centerX" id="bnd-dQ-PYP"/>
                                                                                         <constraint firstItem="Dkk-EN-rHw" firstAttribute="centerY" secondItem="dvm-ax-WRI" secondAttribute="centerY" id="lsz-0a-D0w"/>
                                                                                     </constraints>
@@ -1934,9 +1938,11 @@
                                                                             <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                                             <constraints>
                                                                                 <constraint firstItem="dvm-ax-WRI" firstAttribute="top" secondItem="MBe-5M-Jb9" secondAttribute="top" id="45G-nM-2L9"/>
+                                                                                <constraint firstAttribute="height" constant="140" id="KSx-rw-dAo"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="dvm-ax-WRI" secondAttribute="trailing" constant="3" id="Rfg-b8-2CH"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="dvm-ax-WRI" secondAttribute="bottom" constant="3" id="cKa-Pl-evD"/>
                                                                                 <constraint firstItem="dvm-ax-WRI" firstAttribute="leading" secondItem="MBe-5M-Jb9" secondAttribute="leading" id="eF0-L9-QdC"/>
+                                                                                <constraint firstAttribute="width" constant="110" id="ppL-YQ-TJw"/>
                                                                             </constraints>
                                                                             <userDefinedRuntimeAttributes>
                                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2123,7 +2129,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="POe-hc-n4e">
-            <size key="intrinsicContentSize" width="62" height="38"/>
+            <size key="intrinsicContentSize" width="61" height="35"/>
         </designable>
         <designable name="TW2-z0-Qjf">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -2135,10 +2141,10 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="ikp-83-eNU">
-            <size key="intrinsicContentSize" width="73" height="38"/>
+            <size key="intrinsicContentSize" width="71" height="35"/>
         </designable>
         <designable name="lIv-W9-58g">
-            <size key="intrinsicContentSize" width="105" height="32"/>
+            <size key="intrinsicContentSize" width="103" height="30"/>
         </designable>
         <designable name="moR-Mz-hl5">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -2159,7 +2165,6 @@
         <image name="cosmos" width="96" height="80"/>
         <image name="createBG" width="1661" height="2214"/>
         <image name="icons8-accounting-1" width="294" height="300"/>
-        <image name="icons8-content" width="100" height="100"/>
         <image name="icons8-email-1" width="287" height="300"/>
         <image name="icons8-flow_chart" width="240" height="231"/>
         <image name="icons8-layers" width="264" height="228"/>
@@ -2170,6 +2175,7 @@
         <image name="icons8-pictures_folder" width="264" height="222"/>
         <image name="loading mask" width="226" height="162"/>
         <image name="redo" width="100" height="100"/>
+        <image name="scribble.variable" catalog="system" width="128" height="118"/>
         <image name="testLab" width="72" height="72"/>
         <image name="undo" width="100" height="100"/>
         <systemColor name="systemBackgroundColor">

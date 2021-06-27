@@ -11,17 +11,21 @@ import WebKit
 import Firebase
 
 class TemplateBuilderVC: ArtBuilderVC {
+    
     @IBOutlet weak var previewTableView: UITableView!
     
     @IBOutlet weak var stylesTableView: UITableView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
     @IBOutlet weak var structureTableView: UITableView!
     
+    var caocapTemplates = [Template]() //TODO: NT - rename
     
-    var caocapTemplates = [Template]()
+    var templatesArray = [Template]()
     var editingTemplate: Template?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getAllTemplates()
         getCaocapData()
         registerdUINib()
     }
@@ -29,10 +33,15 @@ class TemplateBuilderVC: ArtBuilderVC {
     
     func getCaocapData() {
         guard let openedCaocapKey = openedCaocap?.key else { return }
-        DataService.instance.REF_CAOCAPS.child(openedCaocapKey).observe(.value) { (caocapSnapshot) in
-            guard let caocapSnapshot = caocapSnapshot.value as? [String : Any] else { return }
-            let caocap = Caocap(key: openedCaocapKey, dictionary: caocapSnapshot)
-//            if let templates = caocap.templates { self.caocapTemplates = templates }
+        DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
+            if let templates = caocap.templates { self.caocapTemplates = templates }
+        }
+    }
+    
+    func getAllTemplates() {
+        TemplateService.instance.getAllTemplates { (templates) in
+            self.templatesArray = templates
+            self.templatesCollectionView.reloadData()
         }
     }
     
@@ -82,7 +91,7 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
         case structureTableView:
             return caocapTemplates.count
         case stylesTableView:
-            return editingTemplate?.content.count ?? 0
+            return editingTemplate?.dictionary.count ?? 0 //TODO: NT
         default:
             return 0
         }
@@ -105,7 +114,7 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
             }
         case structureTableView:
             let cell = UITableViewCell()
-            cell.textLabel?.text = caocapTemplates[indexPath.row].type.rawValue
+            cell.textLabel?.text = caocapTemplates[indexPath.row].key
             return cell
         case stylesTableView:
             return getStyleCell(with: indexPath)
@@ -117,23 +126,24 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
     private func getStyleCell(with indexPath: IndexPath) -> UITableViewCell {
         guard let editingTemplate = editingTemplate else { return UITableViewCell() }
-        switch editingTemplate.type {
-        case .blog:
-            switch indexPath.row {
-            case 0:
-                guard let cell = stylesTableView.dequeueReusableCell(withIdentifier: "editTitleStylesCell", for: indexPath) as? EditTitleStylesCell else { return UITableViewCell() }
-                cell.configure(title: editingTemplate.content["title"] ?? "")
-                return cell
-            case 1:
-                guard let cell = stylesTableView.dequeueReusableCell(withIdentifier: "editDescriptionStylesCell", for: indexPath) as? EditDescriptionStylesCell else { return UITableViewCell() }
-                cell.configure(description: editingTemplate.content["description"] ?? "")
-                return cell
-            default:
-                break
-            }
-        default:
-            break
-        }
+        //TODO: NT
+//        switch editingTemplate.type {
+//        case .blog:
+//            switch indexPath.row {
+//            case 0:
+//                guard let cell = stylesTableView.dequeueReusableCell(withIdentifier: "editTitleStylesCell", for: indexPath) as? EditTitleStylesCell else { return UITableViewCell() }
+//                cell.configure(title: editingTemplate.content["title"] ?? "")
+//                return cell
+//            case 1:
+//                guard let cell = stylesTableView.dequeueReusableCell(withIdentifier: "editDescriptionStylesCell", for: indexPath) as? EditDescriptionStylesCell else { return UITableViewCell() }
+//                cell.configure(description: editingTemplate.content["description"] ?? "")
+//                return cell
+//            default:
+//                break
+//            }
+//        default:
+//            break
+//        }
         return UITableViewCell()
     }
     
@@ -169,17 +179,19 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
 extension TemplateBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return TemplateType.allCases.count
+        return templatesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateIconCell", for: indexPath) as? TemplateIconCell else { return UICollectionViewCell() }
-        cell.configure(type: TemplateType.allCases[indexPath.row])
+        cell.configure(template: templatesArray[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didPressAddTemplate()
+        caocapTemplates.append(templatesArray[indexPath.row])
+        previewTableView.reloadData()
+        structureTableView.reloadData()
     }
     
    
@@ -189,7 +201,7 @@ extension TemplateBuilderVC: UICollectionViewDelegate, UICollectionViewDataSourc
 extension TemplateBuilderVC: AddTemplateDelegate {
     
     func didPressAddTemplate() {
-        let newTemplate = Template(type: .blog, content: ["title" : "Blog Title", "description" : "this is the blog description"])
+        let newTemplate = Template(key: "blog", dictionary: ["title" : "Blog Title", "description" : "this is the blog description"])
         caocapTemplates.append(newTemplate)
         previewTableView.reloadData()
         structureTableView.reloadData()
