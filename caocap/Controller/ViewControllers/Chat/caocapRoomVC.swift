@@ -16,7 +16,7 @@ class CaocapRoomVC: UIViewController {
     var openedCaocap: Caocap?
     var messagesArray = [Message]()
     let colorArray = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.6391159892, blue: 0, alpha: 1), #colorLiteral(red: 0.3846503198, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), #colorLiteral(red: 0.8861780167, green: 0, blue: 1, alpha: 1), #colorLiteral(red: 0.9175696969, green: 0.9176983237, blue: 0.9175290465, alpha: 1)]
-
+    
     @IBOutlet weak var roomNameLBL: UILabel!
     @IBOutlet weak var roomIMG: DesignableImage!
     @IBOutlet weak var roomIMGview: DesignableView!
@@ -46,20 +46,15 @@ class CaocapRoomVC: UIViewController {
     
     //this gets the room messages and inputs them to the messages array and relouds the messages TableView
     func getRoomData() {
-        if let caocapKey = openedCaocap?.key {
-            DataService.instance.getCaocapRoomMessages(forCaocapKey: caocapKey) { (returnedMessagesArray) in
-                self.messagesArray = returnedMessagesArray
-                self.messagesTableView.reloadData()
-            }
-            
-            roomNameLBL.text = openedCaocap?.name
-            roomIMGview.borderColor = colorArray[openedCaocap?.color ?? 3]
-            //this gets the caocap UIimage from the url
-            if let imageURL = URL(string: openedCaocap?.imageURL ?? "" ) {
-                ImageService.getImage(withURL: imageURL) { (returnedImage) in
-                    self.roomIMG.image = returnedImage
-                }
-            }
+        guard let caocap = openedCaocap else { return }
+        DataService.instance.getCaocapRoomMessages(forCaocapKey: caocap.key) { (returnedMessagesArray) in
+            self.messagesArray = returnedMessagesArray
+            self.messagesTableView.reloadData()
+        }
+        roomNameLBL.text = caocap.name
+        roomIMGview.borderColor = colorArray[caocap.color]
+        if let imageURL = URL(string: caocap.imageURL ?? "" ) {
+            roomIMG.af.setImage(withURL: imageURL)
         }
     }
     
@@ -78,7 +73,7 @@ class CaocapRoomVC: UIViewController {
                                            "username" : sender.username,
                                            "time": "10:44 am",
                                            "message": self.messageTF.text!
-                                           ] as [String : Any]
+                        ] as [String : Any]
                         
                         DataService.instance.sendRoomMessage(forCaocapKey: caocapKey, messageData: messageData, handler: { (messageSent) in
                             if messageSent {

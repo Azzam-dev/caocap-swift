@@ -60,7 +60,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         
         // search in group Members Array
         if groupMembersSearchTF.text == "" {
-            DataService.instance.getAllUsernames(handler: { (returnedGroupMembersArray) in
+            DataService.instance.getAllUsers(handler: { (returnedGroupMembersArray) in
                 self.groupMembersSearchArray = returnedGroupMembersArray
                 self.groupMembersTableView.reloadData()
             })
@@ -73,7 +73,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         
         // search in contact Array
         if contactSearchTF.text == "" {
-            DataService.instance.getAllUsernames(handler: { (returnedContactsArray) in
+            DataService.instance.getAllUsers(handler: { (returnedContactsArray) in
                 self.contactSearchArray = returnedContactsArray
                 self.contactTableView.reloadData()
             })
@@ -321,14 +321,13 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                         // Get user value
                         if let userData = userDataSnapshot.value as? [String : Any] {
                             let user = User(uid: currentUserUID , dictionary: userData)
+                            cell.configureCell(imageURL: user.imageURL ?? "",
+                                               color: user.color,
+                                               chatName: user.username,
+                                               lastMessage: chat.messages.last!,
+                                               numberOfMessages: chat.messages.count,
+                                               lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
                             
-                            if let url = URL(string: user.imageURL ?? "" ) {
-                                ImageService.getImage(withURL: url) { (returnedImage) in
-                                    cell.configureCell(chatIMG: returnedImage!, chatColor: user.color, chatName: user.username, lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                                }
-                            } else {
-                                cell.configureCell(chatIMG: #imageLiteral(resourceName: "caocap app icon"), chatColor: user.color, chatName: user.username, lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                            }
                         }
                         
                     }) { (error) in
@@ -339,91 +338,39 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                 
             } else if chat.type == "group" {
                 guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "chatGroupCell", for: indexPath) as? ChatGroupCell else { return UITableViewCell() }
-                //This takes the image URL returnes the image
-                if let url = URL(string: chat.imageURL ?? "" ) {
-                    ImageService.getImage(withURL: url) { (returnedImage) in
-                        
-                        cell.configureCell(chatIMG: returnedImage!, chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                    }
-                } else {
-                    //this is used if the image did not return
-                    cell.configureCell(chatIMG: #imageLiteral(resourceName: "IMG_2235"), chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                }
+                
+                cell.configureCell(imageURL: chat.imageURL ?? "",
+                                   color: chat.color,
+                                   chatName: chat.name,
+                                   lastSender: "itsNoOne",
+                                   lastMessage: chat.messages.last!,
+                                   numberOfMessages: chat.messages.count,
+                                   lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
                 return cell
                 
             } else {
                 guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "caocapGroupCell", for: indexPath) as? CaocapGroupCell else { return UITableViewCell() }
+                cell.configureCell(imageURL: chat.imageURL ?? "",
+                                   color: chat.color,
+                                   chatName: chat.name,
+                                   lastSender: "itsNoOne",
+                                   lastMessage: chat.messages.last!,
+                                   numberOfMessages: chat.messages.count,
+                                   lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
                 
-                //This takes the image URL returnes the image
-                if let url = URL(string: chat.imageURL ?? "" ) {
-                    ImageService.getImage(withURL: url) { (returnedImage) in
-                        
-                        cell.configureCell(chatIMG: returnedImage!, chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                    }
-                } else {
-                    //this is used if the image did not return
-                    cell.configureCell(chatIMG: #imageLiteral(resourceName: "IMG_2235"), chatColor: chat.color, chatName: chat.name, lastSender: "itsNoOne", lastMessage: chat.messages.last! , numberOfMessages: chat.messages.count , lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
-                }
                 return cell
             }
         } else if tableView == groupMembersTableView {
-            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "addUserCell") as? AddUserCell else { return UITableViewCell() }
             
-            if let url = URL(string: groupMembersSearchArray[indexPath.row].imageURL ?? "" ) {
-                ImageService.getImage(withURL: url) { (returnedImage) in
-                    if self.groupSelectedMembersArray.contains(self.groupMembersSearchArray[indexPath.row].username) {
-                        
-                        cell.configureCell(profileIMG:  returnedImage!,
-                                           profileColor: self.groupMembersSearchArray[indexPath.row].color,
-                                           username: self.groupMembersSearchArray[indexPath.row].username,
-                                           name: self.groupMembersSearchArray[indexPath.row].name,
-                                           isSelected: true)
-                    } else {
-                        cell.configureCell(profileIMG:  returnedImage!,
-                                           profileColor: self.groupMembersSearchArray[indexPath.row].color,
-                                           username: self.groupMembersSearchArray[indexPath.row].username,
-                                           name: self.groupMembersSearchArray[indexPath.row].name,
-                                           isSelected: false)
-                    }
-                }
-            } else {
-                if self.groupSelectedMembersArray.contains(self.groupMembersSearchArray[indexPath.row].username) {
-                    
-                    cell.configureCell(profileIMG:  #imageLiteral(resourceName: "caocap app icon"),
-                                       profileColor: self.groupMembersSearchArray[indexPath.row].color,
-                                       username: self.groupMembersSearchArray[indexPath.row].username,
-                                       name: self.groupMembersSearchArray[indexPath.row].name,
-                                       isSelected: true)
-                } else {
-                    cell.configureCell(profileIMG:  #imageLiteral(resourceName: "caocap app icon"),
-                                       profileColor: self.groupMembersSearchArray[indexPath.row].color,
-                                       username: self.groupMembersSearchArray[indexPath.row].username,
-                                       name: self.groupMembersSearchArray[indexPath.row].name,
-                                       isSelected: false)
-                }
-            }
+            let isSelected = groupSelectedMembersArray.contains(self.groupMembersSearchArray[indexPath.row].username)
+            cell.configureCell(user: groupMembersSearchArray[indexPath.row], isSelected: isSelected)
             
             return cell
             
         } else {
-            
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "contactUserCell") as? ContactUserCell else { return UITableViewCell() }
-            
-            if let url = URL(string: contactSearchArray[indexPath.row].imageURL ?? "" ) {
-                ImageService.getImage(withURL: url) { (returnedImage) in
-                    cell.configureCell(profileIMG: returnedImage!,
-                                       profileColor: self.contactSearchArray[indexPath.row].color,
-                                       username: self.contactSearchArray[indexPath.row].username,
-                                       name: self.contactSearchArray[indexPath.row].name)
-                }
-            } else {
-                cell.configureCell(profileIMG: #imageLiteral(resourceName: "caocap app icon"),
-                                   profileColor: self.contactSearchArray[indexPath.row].color,
-                                   username: self.contactSearchArray[indexPath.row].username,
-                                   name: self.contactSearchArray[indexPath.row].name)
-            }
-            
+            cell.configureCell(user: contactSearchArray[indexPath.row])
             return cell
         }
     }

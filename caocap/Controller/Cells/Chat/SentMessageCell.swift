@@ -21,20 +21,19 @@ class SentMessageCell: UITableViewCell {
     func configureCell(message: Message) {
         
         if let imageURL = URL(string: message.imageURL ?? "" ) {
-            ImageService.getImage(withURL: imageURL) { (returnedImage) in
-                self.profileIMG.image = returnedImage
-            }
+            profileIMG.af.setImage(withURL: imageURL)
         }
+        
         if case 0...5 = message.color {
-            self.pofileIMGview.borderColor = colorArray[message.color]
+            pofileIMGview.borderColor = colorArray[message.color]
         } else {
-            self.pofileIMGview.borderColor = colorArray[3]
+            pofileIMGview.borderColor = colorArray[3]
         }
-        self.usernameLBL.text = message.username
+        usernameLBL.text = message.username
         //This is not important because it is from the sender himself
         //self.usernameLBL.textColor = colorArray[message.color]
-        self.timeLBL.text = message.time
-        self.messageLBL.text = message.message
+        timeLBL.text = message.time
+        messageLBL.text = message.message
         
     }
     

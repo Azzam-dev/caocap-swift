@@ -1979,7 +1979,7 @@
                                                             <outlet property="delegate" destination="hvg-5A-cLk" id="nOZ-ly-D43"/>
                                                         </connections>
                                                     </collectionView>
-                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lHx-vh-B0M">
+                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lHx-vh-B0M">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="215"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <connections>
@@ -2129,7 +2129,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="POe-hc-n4e">
-            <size key="intrinsicContentSize" width="61" height="35"/>
+            <size key="intrinsicContentSize" width="62" height="38"/>
         </designable>
         <designable name="TW2-z0-Qjf">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -2141,10 +2141,10 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="ikp-83-eNU">
-            <size key="intrinsicContentSize" width="71" height="35"/>
+            <size key="intrinsicContentSize" width="73" height="38"/>
         </designable>
         <designable name="lIv-W9-58g">
-            <size key="intrinsicContentSize" width="103" height="30"/>
+            <size key="intrinsicContentSize" width="105" height="32"/>
         </designable>
         <designable name="moR-Mz-hl5">
             <size key="intrinsicContentSize" width="30" height="30"/>

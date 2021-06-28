@@ -73,6 +73,8 @@
 		EC8E19692159E02C000E4EE6 /* caocapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E19682159E02C000E4EE6 /* caocapUITests.swift */; };
 		EC8E1978215A00D5000E4EE6 /* MainExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E1977215A00D5000E4EE6 /* MainExtensions.swift */; };
 		ECA08F562688FF1400C0A3EB /* TemplateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA08F552688FF1400C0A3EB /* TemplateService.swift */; };
+		ECA08F5F2689337E00C0A3EB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = ECA08F5E2689337E00C0A3EB /* Alamofire */; };
+		ECA08F65268933C000C0A3EB /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = ECA08F64268933C000C0A3EB /* AlamofireImage */; };
 		ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */; };
 		ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479A21C79156000E16DC /* ContactChatVC.swift */; };
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
@@ -87,7 +89,6 @@
 		ECF205492160ED6D00C48F2A /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF205482160ED6D00C48F2A /* AuthVC.swift */; };
 		ECF2054B216102C200C48F2A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2054A216102C200C48F2A /* AuthService.swift */; };
 		ECF2055121624C9400C48F2A /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF2055021624C9400C48F2A /* MenuVC.swift */; };
-		ECF63E6C21BA33E900E491FE /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF63E6B21BA33E900E491FE /* ImageService.swift */; };
 		ECF63E8521BD6C6D00E491FE /* CaocapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF63E8321BD6C6D00E491FE /* CaocapCell.swift */; };
 		ECF63E9221C0D9DF00E491FE /* Caocap.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF63E9121C0D9DF00E491FE /* Caocap.swift */; };
 /* End PBXBuildFile section */
@@ -200,7 +201,6 @@
 		ECF205482160ED6D00C48F2A /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		ECF2054A216102C200C48F2A /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		ECF2055021624C9400C48F2A /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
-		ECF63E6B21BA33E900E491FE /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		ECF63E8321BD6C6D00E491FE /* CaocapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapCell.swift; sourceTree = "<group>"; };
 		ECF63E8421BD6C6D00E491FE /* CaocapCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaocapCell.xib; sourceTree = "<group>"; };
 		ECF63E9121C0D9DF00E491FE /* Caocap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Caocap.swift; sourceTree = "<group>"; };
@@ -212,6 +212,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC6109D22646D56300E760CD /* ReSwift in Frameworks */,
+				ECA08F5F2689337E00C0A3EB /* Alamofire in Frameworks */,
+				ECA08F65268933C000C0A3EB /* AlamofireImage in Frameworks */,
 				16290DFCDF33CCE321A3DCA9 /* Pods_caocap.framework in Frameworks */,
 				EC03B1D42450610C00274B1D /* SwiftUICharts in Frameworks */,
 			);
@@ -450,7 +452,6 @@
 				ECF2054A216102C200C48F2A /* AuthService.swift */,
 				EC6AB851215D8F4B00C276E3 /* DataService.swift */,
 				ECA08F552688FF1400C0A3EB /* TemplateService.swift */,
-				ECF63E6B21BA33E900E491FE /* ImageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -621,6 +622,8 @@
 			packageProductDependencies = (
 				EC03B1D32450610C00274B1D /* SwiftUICharts */,
 				EC6109D12646D56300E760CD /* ReSwift */,
+				ECA08F5E2689337E00C0A3EB /* Alamofire */,
+				ECA08F64268933C000C0A3EB /* AlamofireImage */,
 			);
 			productName = caocap;
 			productReference = EC8E19422159E02A000E4EE6 /* CAOCAPx.app */;
@@ -702,6 +705,8 @@
 			packageReferences = (
 				EC03B1D22450610C00274B1D /* XCRemoteSwiftPackageReference "ChartView" */,
 				EC6109D02646D56300E760CD /* XCRemoteSwiftPackageReference "ReSwift" */,
+				ECA08F5D2689337E00C0A3EB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				ECA08F63268933C000C0A3EB /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 			);
 			productRefGroup = EC8E19432159E02A000E4EE6 /* Products */;
 			projectDirPath = "";
@@ -862,7 +867,6 @@
 				EC3C86C6263C94E00005DBAB /* TemplateCell.swift in Sources */,
 				EC5238DA219082F100D966F3 /* ChatGroupCell.swift in Sources */,
 				EC2B26C1226A12DC00779486 /* CaocapVC.swift in Sources */,
-				ECF63E6C21BA33E900E491FE /* ImageService.swift in Sources */,
 				EC368421225AFE8C00ABC9C6 /* CaocapCellAnimation.swift in Sources */,
 				EC8E1978215A00D5000E4EE6 /* MainExtensions.swift in Sources */,
 				EC339BE322520D1F00FDC14A /* CaocapLayout.swift in Sources */,
@@ -1259,6 +1263,22 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		ECA08F5D2689337E00C0A3EB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		ECA08F63268933C000C0A3EB /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1271,6 +1291,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC6109D02646D56300E760CD /* XCRemoteSwiftPackageReference "ReSwift" */;
 			productName = ReSwift;
+		};
+		ECA08F5E2689337E00C0A3EB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECA08F5D2689337E00C0A3EB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		ECA08F64268933C000C0A3EB /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECA08F63268933C000C0A3EB /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 

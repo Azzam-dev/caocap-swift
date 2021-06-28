@@ -16,9 +16,7 @@ class TemplateIconCell: UICollectionViewCell {
         titleLabel.text = template.key
         
         if let iconURL = URL(string: template.iconURL ) {
-            ImageService.getImage(withURL: iconURL) { returnedImage in
-                self.icon.image = returnedImage?.withRenderingMode(.alwaysTemplate)
-            }
+            icon.af.setImage(withURL: iconURL)
         }
     }
     

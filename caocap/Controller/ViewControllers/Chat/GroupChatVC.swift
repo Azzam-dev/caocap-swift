@@ -45,19 +45,15 @@ class GroupChatVC: UIViewController {
     
     //this gets the chat messages and inputs them to the messages array and relouds the messages TableView
     func getChatData() {
-        if let chatKey = opendChat?.key {
-            DataService.instance.getChatMessages(forChatKey: chatKey) { (returnedMessagesArray) in
-                self.messagesArray = returnedMessagesArray
-                self.messagesTableView.reloadData()
-            }
-            groupNameLBL.text = opendChat?.name
-            groupIMGview.borderColor = colorArray[opendChat?.color ?? 3]
-            //this gets the caocap UIimage from the url
-            if let imageURL = URL(string: opendChat?.imageURL ?? "" ) {
-                ImageService.getImage(withURL: imageURL) { (returnedImage) in
-                    self.groupIMG.image = returnedImage
-                }
-            }
+        guard let chat = opendChat else { return }
+        DataService.instance.getChatMessages(forChatKey: chat.key) { (returnedMessagesArray) in
+            self.messagesArray = returnedMessagesArray
+            self.messagesTableView.reloadData()
+        }
+        groupNameLBL.text = chat.name
+        groupIMGview.borderColor = colorArray[chat.color]
+        if let imageURL = URL(string: chat.imageURL ?? "") {
+            groupIMG.af.setImage(withURL: imageURL)
         }
     }
     

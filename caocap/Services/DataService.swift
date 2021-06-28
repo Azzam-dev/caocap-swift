@@ -8,6 +8,8 @@
 
 import Foundation
 import Firebase
+import Alamofire
+import AlamofireImage
 
 let DB_BASE = Database.database().reference()
 let STORAGE_BASE = Storage.storage().reference()
@@ -280,15 +282,14 @@ class DataService {
     
     func getCaocapsQuery(forSearchQuery query: String, handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         // This goes over all the caocaps and gets the query
-        REF_CAOCAPS.observe(.value) { (caocapsSnapshot) in
+        let searchQuery = REF_CAOCAPS.queryOrdered(byChild: "name").queryStarting(atValue: query).queryEnding(atValue: (query+"\u{f8ff}"))
+        
+        searchQuery.observe(.value) { (caocapsSnapshot) in
             guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
             var caocapsArray = [Caocap]()
             for caocap in caocapsSnapshot {
-                let caocapname = caocap.childSnapshot(forPath: "name").value as! String
-                if caocapname.contains(query) {
-                    let dictionary = caocap.value
-                    let caocap = Caocap(key: caocap.key, dictionary: dictionary as! [String : Any] )
-                    caocapsArray.append(caocap)
+                if let dictionary = caocap.value as? [String : Any] {
+                    caocapsArray.append(Caocap(key: caocap.key, dictionary: dictionary))
                 }
             }
             handler(caocapsArray)
@@ -300,10 +301,10 @@ class DataService {
         REF_CAOCAPS.child(key).child("room").observe(.value) { (messagesSnapshot) in
             guard let messagesSnapshot = messagesSnapshot.children.allObjects as? [DataSnapshot] else { return }
             var messagesArray = [Message]()
-            for theMessage in messagesSnapshot {
-                let messageDict = theMessage.value
-                let message = Message(key: theMessage.key, dictionary: messageDict as! [String : Any])
-                messagesArray.append(message)
+            for message in messagesSnapshot {
+                if let dictionary = message.value as? [String : Any] {
+                    messagesArray.append(Message(key: message.key, dictionary: dictionary))
+                }
             }
             handler(messagesArray)
         }
@@ -314,10 +315,10 @@ class DataService {
         REF_CHATS.child(key).child("messages").observe(.value) { (messagesSnapshot) in
             guard let messagesSnapshot = messagesSnapshot.children.allObjects as? [DataSnapshot] else { return }
             var messagesArray = [Message]()
-            for theMessage in messagesSnapshot {
-                let messageDict = theMessage.value
-                let message = Message(key: theMessage.key, dictionary: messageDict as! [String : Any])
-                messagesArray.append(message)
+            for message in messagesSnapshot {
+                if let dictionary = message.value as? [String : Any] {
+                messagesArray.append(Message(key: message.key, dictionary: dictionary))
+                }
             }
             handler(messagesArray)
         }
@@ -331,35 +332,33 @@ class DataService {
         }
     }
     
-    func getAllUsernames( handler: @escaping (_ usernameArray: [User]) -> ()) {
-        let currentUserID = Auth.auth().currentUser?.uid
-        // This goes over all the usernames and gets the query without the currentUser username
-        REF_USERS.observe(.value) { (userSnapshot) in
-            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
-            var userArray = [User]()
-            for user in userSnapshot {
-                if user.key != currentUserID {
-                    let userDict = user.value as? [String : AnyObject] ?? [:]
-                    let thisUser = User(uid: user.key, dictionary: userDict)
-                    userArray.append(thisUser)
+    func getAllUsers( handler: @escaping (_ usersArray: [User]) -> ()) {
+        let currentUserUID = Auth.auth().currentUser?.uid
+        // get all users without the current User
+        REF_USERS.observe(.value) { (usersSnapshot) in
+            guard let usersSnapshot = usersSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            var usersArray = [User]()
+            for user in usersSnapshot {
+                if user.key == currentUserUID { continue }
+                if let dictionary = user.value as? [String : Any] {
+                    usersArray.append(User(uid: user.key, dictionary: dictionary))
                 }
             }
-            handler(userArray)
+            handler(usersArray)
         }
     }
     
     func getUsernameQuery(forSearchQuery query: String, handler: @escaping (_ usernameArray: [User]) -> ()) {
         let currentUserUID = Auth.auth().currentUser?.uid
-        // This goes over all the usernames and gets the query without the currentUser username
-        REF_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
-            guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
+        let searchQuery = REF_USERS.queryOrdered(byChild: "username").queryStarting(atValue: query).queryEnding(atValue: (query+"\u{f8ff}"))
+        
+        searchQuery.observeSingleEvent(of: .value) { (searchSnapshot) in
+            guard let usersSnapshot = searchSnapshot.children.allObjects as? [DataSnapshot] else { return }
             var userArray = [User]()
-            for user in userSnapshot {
-                let username = user.childSnapshot(forPath: "username").value as! String
-                if username.contains(query) && user.key != currentUserUID {
-                    let userDict = user.value as? [String : AnyObject] ?? [:]
-                    let thisUser = User(uid: user.key, dictionary: userDict)
-                    userArray.append(thisUser)
+            for user in usersSnapshot {
+                if user.key == currentUserUID { continue }
+                if let dictionary = user.value as? [String : Any] {
+                    userArray.append(User(uid: user.key, dictionary: dictionary))
                 }
             }
             handler(userArray)

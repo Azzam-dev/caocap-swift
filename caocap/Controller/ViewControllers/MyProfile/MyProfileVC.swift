@@ -68,10 +68,8 @@ class MyProfileVC: UIViewController {
                 self.caocapsCountLBL.text = String(user.caocaps.count)
                 self.friendsCountLBL.text = String(user.followers.count)
                 
-                if let url = URL(string: user.imageURL ?? "" ) {
-                    ImageService.getImage(withURL: url) { (returnedImage) in
-                        self.userIMG.image = returnedImage
-                    }
+                if let imageURL = URL(string: user.imageURL ?? "" ) {
+                    self.userIMG.af.setImage(withURL: imageURL)
                 }
             }
         }

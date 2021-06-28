@@ -57,30 +57,18 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
     
     //This makes sure the user is logged-in, then pulls his data from firebase and insert it in the appropriate place
     func getUserData() {
-        if Auth.auth().currentUser != nil {
-           guard let currentUserUID = Auth.auth().currentUser?.uid else { return }
-            DataService.instance.REF_USERS.child(currentUserUID).observeSingleEvent(of: .value, with: { (userDataSnapshot) in
-                // Get user value
-                if let userData = userDataSnapshot.value as? [String : Any] {
-                  let user = User(uid: currentUserUID , dictionary: userData)
-                     
-                    self.colorBTNpressed(self.colorBTNs[user.color])
-                    self.usernameTF.text = user.username
-                    self.nameTF.text = user.name
-                    self.bioTextView.text = user.bio
-                    self.websiteTF.text = user.website
-                    self.emailTF.text = user.email
-                    self.phoneNumTF.text = user.phoneNumber
-                    
-                    if let url = URL(string: user.imageURL ?? "" ) {
-                        ImageService.getImage(withURL: url) { (returnedImage) in
-                            self.userIMG.image = returnedImage
-                        }
-                    }
+        DataService.instance.getUserData { (theUser) in
+            if let user = theUser {
+                self.colorBTNpressed(self.colorBTNs[user.color])
+                self.usernameTF.text = user.username
+                self.nameTF.text = user.name
+                self.bioTextView.text = user.bio
+                self.websiteTF.text = user.website
+                self.emailTF.text = user.email
+                self.phoneNumTF.text = user.phoneNumber
+                if let imageURL = URL(string: user.imageURL ?? "" ) {
+                    self.userIMG.af.setImage(withURL: imageURL)
                 }
-                
-            }) { (error) in
-                print(error.localizedDescription)
             }
         }
     }

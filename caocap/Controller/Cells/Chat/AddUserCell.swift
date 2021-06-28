@@ -9,7 +9,7 @@
 import UIKit
 
 class AddUserCell: UITableViewCell {
-
+    
     
     @IBOutlet weak var profileIMG: DesignableImage!
     @IBOutlet weak var pofileIMGview: DesignableView!
@@ -20,23 +20,27 @@ class AddUserCell: UITableViewCell {
     let colorArray = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.6391159892, blue: 0, alpha: 1), #colorLiteral(red: 0.3846503198, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), #colorLiteral(red: 0.8861780167, green: 0, blue: 1, alpha: 1), #colorLiteral(red: 0.9175696969, green: 0.9176983237, blue: 0.9175290465, alpha: 1)]
     
     
-    func configureCell(profileIMG image: UIImage , profileColor: Int , username: String , name: String , isSelected: Bool) {
-        self.profileIMG.image = image
-        if case 0...5 = profileColor {
-            self.pofileIMGview.borderColor = colorArray[profileColor]
-        } else {
-            self.pofileIMGview.borderColor = colorArray[3]
+    func configureCell(user: User, isSelected: Bool) {
+        
+        if let imageURL = URL(string: user.imageURL ?? "") {
+            profileIMG.af.setImage(withURL: imageURL)
         }
-        self.usernameLBL.text = username
-        self.nameLBL.text = name
-        if isSelected {
-            self.checkIMG.isHidden = false
-            self.checkView.borderWidth = 0
-            self.checkView.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+        
+        if case 0...5 = user.color {
+            pofileIMGview.borderColor = colorArray[user.color]
         } else {
-            self.checkIMG.isHidden = true
-            self.checkView.borderWidth = 1
-            self.checkView.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0)
+            pofileIMGview.borderColor = colorArray[3]
+        }
+        usernameLBL.text = user.username
+        nameLBL.text = user.name
+        if isSelected {
+            checkIMG.isHidden = false
+            checkView.borderWidth = 0
+            checkView.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+        } else {
+            checkIMG.isHidden = true
+            checkView.borderWidth = 1
+            checkView.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0)
         }
     }
     
@@ -44,15 +48,15 @@ class AddUserCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         if selected {
             if checkIMG.isHidden {
-                self.checkIMG.isHidden = false
-                self.checkView.borderWidth = 0
-                self.checkView.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+                checkIMG.isHidden = false
+                checkView.borderWidth = 0
+                checkView.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
             } else {
-                self.checkIMG.isHidden = true
-                self.checkView.borderWidth = 1
-                self.checkView.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0)
+                checkIMG.isHidden = true
+                checkView.borderWidth = 1
+                checkView.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0)
             }
         }
     }
-
+    
 }

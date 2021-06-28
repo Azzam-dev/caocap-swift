@@ -173,6 +173,13 @@ extension TemplateBuilderVC: UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        if tableView == structureTableView {
+            let movedTemplate = caocapTemplates[sourceIndexPath.row]
+            caocapTemplates.remove(at: sourceIndexPath.row)
+            caocapTemplates.insert(movedTemplate, at: destinationIndexPath.row)
+        }
+    }
     
 }
 

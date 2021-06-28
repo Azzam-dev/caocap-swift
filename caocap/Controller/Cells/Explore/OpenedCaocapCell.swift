@@ -71,11 +71,8 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
             self.caocapIMGview.borderColor = colorArray[3]
         }
         
-        //this gets the caocap UIimage from the url
         if let imageURL = URL(string: caocap.imageURL ?? "" ) {
-            ImageService.getImage(withURL: imageURL) { (returnedImage) in
-                self.caocapIMG.image = returnedImage
-            }
+            caocapIMG.af.setImage(withURL: imageURL)
         }
         
         if isReleased {

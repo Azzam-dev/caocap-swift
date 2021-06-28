@@ -48,11 +48,9 @@ class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
             theView.isHidden = true
             caocapIMG.isHidden = false
             webView.stopLoading()
-            //this gets the caocap UIimage from the url
+            
             if let imageURL = URL(string: caocap.imageURL ?? "" ) {
-                ImageService.getImage(withURL: imageURL) { (returnedImage) in
-                    self.caocapIMG.image = returnedImage
-                }
+                caocapIMG.af.setImage(withURL: imageURL)
             }
         }
     }

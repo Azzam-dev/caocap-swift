@@ -30,7 +30,7 @@ class ContactChatVC: UIViewController {
         messagesTableView.delegate = self
         messagesTableView.dataSource = self
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -44,20 +44,17 @@ class ContactChatVC: UIViewController {
     
     //this gets the chat messages and inputs them to the messages array and relouds the messages TableView
     func getChatData() {
-        if let chatKey = opendChat?.key {
-            DataService.instance.getChatMessages(forChatKey: chatKey) { (returnedMessagesArray) in
-                self.messagesArray = returnedMessagesArray
-                self.messagesTableView.reloadData()
-            }
-            contactNameLBL.text = opendChat?.name
-            contactIMGview.borderColor = colorArray[opendChat?.color ?? 3]
-            //this gets the caocap UIimage from the url
-            if let imageURL = URL(string: opendChat?.imageURL ?? "" ) {
-                ImageService.getImage(withURL: imageURL) { (returnedImage) in
-                    self.contactIMG.image = returnedImage
-                }
-            }
+        guard let chat = opendChat else { return }
+        DataService.instance.getChatMessages(forChatKey: chat.key) { (returnedMessagesArray) in
+            self.messagesArray = returnedMessagesArray
+            self.messagesTableView.reloadData()
         }
+        contactNameLBL.text = chat.name
+        contactIMGview.borderColor = colorArray[chat.color]
+        if let imageURL = URL(string: chat.imageURL ?? "" ) {
+            contactIMG.af.setImage(withURL: imageURL)
+        }
+        
     }
     
     
@@ -72,7 +69,7 @@ class ContactChatVC: UIViewController {
                         let messageData = ["senderUid": sender.uid,
                                            "time": "10:44 am",
                                            "message": self.messageTF.text!
-                                            ] as [String : Any]
+                        ] as [String : Any]
                         
                         DataService.instance.sendChatMessage(forChatKey: chatKey, messageData: messageData, handler: { (messageSent) in
                             if messageSent {

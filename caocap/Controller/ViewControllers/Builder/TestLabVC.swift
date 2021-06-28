@@ -45,11 +45,10 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
             self.caocapNameTF.text = caocap.name
             self.colorBTNpressed(self.colorBTNs[caocap.color])
             
-            if let url = URL(string: caocap.imageURL ?? "" ) {
-                ImageService.getImage(withURL: url) { (returnedImage) in
-                    self.caocapIMG.image = returnedImage
-                }
+            if let imageURL = URL(string: caocap.imageURL ?? "" ) {
+                self.caocapIMG.af.setImage(withURL: imageURL)
             }
+            
             self.publishedStatus = caocap.isPublished
             if self.publishedStatus {
                 self.publishingSwitchBTN.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
