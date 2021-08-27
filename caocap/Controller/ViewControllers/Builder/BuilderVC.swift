@@ -56,6 +56,8 @@ class BuilderVC: UIViewController {
             artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "codeBuilder") as? CodeBuilderVC
         case .template:
             artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "templateBuilder") as? TemplateBuilderVC
+        case .block:
+            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "blockBuilder") as? BlockBuilderVC
         }
         
         cosmosBaseSubVC?.openedCaocap = openedCaocap

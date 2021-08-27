@@ -12,6 +12,7 @@ enum CaocapType: String {
     case link
     case template
     case code
+    case block
 }
 
 class Caocap {
@@ -25,7 +26,8 @@ class Caocap {
     private var _type: CaocapType
     private var _link: String?
     private var _code: [String: String]?
-    private var _templates: [Template]? // this should be of type Template
+    private var _templates: [Template]?
+    private var _blocks: [String: String]? //TODO: this should be of type Block
     
     var key: String {
         return _key
@@ -57,8 +59,13 @@ class Caocap {
     var code: [String: String]? {
         return _code
     }
+    
     var templates: [Template]? {
         return _templates
+    }
+    
+    var blocks: [String: String]? {
+        return _blocks
     }
     
     init(key: String, dictionary: [String: Any]) {
@@ -81,6 +88,9 @@ class Caocap {
         case "template":
             _type = .template
             self._templates = dictionary["templates"] as? [Template] ?? [Template(key: "blog", dictionary: ["title" : "failed to load templates", "description" : "this is the blog description"])]
+        case "block":
+            _type = .block
+            self._blocks = dictionary["block"] as? [String : String] ?? ["logic":"put somthing here","art": "the ui shuold be here"]
         default:
             _type = .code
             self._code = ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]

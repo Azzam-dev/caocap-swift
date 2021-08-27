@@ -10,6 +10,9 @@ import UIKit
 import ReSwift
 
 class ArtBuilderVC: UIViewController {
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     

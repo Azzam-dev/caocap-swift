@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -969,8 +969,8 @@ Please visit the app tomorrow and everything will be done
         <image name="W-chat" width="106" height="100"/>
         <image name="caocap circle" width="1000" height="1000"/>
         <image name="icons8-astronaut_helmet" width="96" height="92"/>
-        <image name="icons8-email" width="88" height="92"/>
-        <image name="icons8-password" width="80" height="98"/>
+        <image name="icons8-email" width="287" height="300"/>
+        <image name="icons8-password" width="245" height="300"/>
         <image name="rocket launch" width="1000" height="404"/>
         <image name="w-launched_rocket" width="67" height="100"/>
         <image name="w-planet_filled" width="99" height="72"/>

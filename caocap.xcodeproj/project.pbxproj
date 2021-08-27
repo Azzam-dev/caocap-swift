@@ -38,6 +38,7 @@
 		EC5107AB266BB334000DB190 /* EditTitleStylesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5107A9266BB334000DB190 /* EditTitleStylesCell.xib */; };
 		EC5107B1266BBB46000DB190 /* EditDescriptionStylesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5107AF266BBB46000DB190 /* EditDescriptionStylesCell.swift */; };
 		EC5107B2266BBB46000DB190 /* EditDescriptionStylesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC5107B0266BBB46000DB190 /* EditDescriptionStylesCell.xib */; };
+		EC51461C26D6D51A001BB016 /* BlockBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC51461B26D6D51A001BB016 /* BlockBuilderVC.swift */; };
 		EC5238DA219082F100D966F3 /* ChatGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5238D9219082F100D966F3 /* ChatGroupCell.swift */; };
 		EC5238DC2190834200D966F3 /* ContactChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5238DB2190834200D966F3 /* ContactChatCell.swift */; };
 		EC5238DE2190836200D966F3 /* CaocapGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5238DD2190836200D966F3 /* CaocapGroupCell.swift */; };
@@ -146,6 +147,7 @@
 		EC5107A9266BB334000DB190 /* EditTitleStylesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditTitleStylesCell.xib; sourceTree = "<group>"; };
 		EC5107AF266BBB46000DB190 /* EditDescriptionStylesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDescriptionStylesCell.swift; sourceTree = "<group>"; };
 		EC5107B0266BBB46000DB190 /* EditDescriptionStylesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditDescriptionStylesCell.xib; sourceTree = "<group>"; };
+		EC51461B26D6D51A001BB016 /* BlockBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockBuilderVC.swift; sourceTree = "<group>"; };
 		EC5238D9219082F100D966F3 /* ChatGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGroupCell.swift; sourceTree = "<group>"; };
 		EC5238DB2190834200D966F3 /* ContactChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactChatCell.swift; sourceTree = "<group>"; };
 		EC5238DD2190836200D966F3 /* CaocapGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapGroupCell.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				EC697411261D899A00EB71F4 /* LinkBuilderVC.swift */,
 				ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */,
 				EC697409261D889700EB71F4 /* TemplateBuilderVC.swift */,
+				EC51461B26D6D51A001BB016 /* BlockBuilderVC.swift */,
 			);
 			path = ArtBuilders;
 			sourceTree = "<group>";
@@ -856,6 +859,7 @@
 				EC16EE7A21A5AE1F009A46B8 /* User.swift in Sources */,
 				EC5C0DE1216F895100ED508F /* AddUserCell.swift in Sources */,
 				4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */,
+				EC51461C26D6D51A001BB016 /* BlockBuilderVC.swift in Sources */,
 				EC3C86BE263C89430005DBAB /* ArtBuilderVC.swift in Sources */,
 				EC6109DB2646DB0100E760CD /* Actions.swift in Sources */,
 				EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */,
