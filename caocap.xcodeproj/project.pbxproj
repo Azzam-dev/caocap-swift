@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16290DFCDF33CCE321A3DCA9 /* Pods_caocap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32E37161B259C040EE5C0FA9 /* Pods_caocap.framework */; };
 		4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E42D424651F9A00522B2F /* TestLabVC.swift */; };
 		4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E182A4425D84C5A00DB37C4 /* MenuItem.swift */; };
 		4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AEF8A2404FA92004B4F37 /* Reachability.swift */; };
 		4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */; };
 		4ECAEA1325DDC7E200972415 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA1225DDC7E200972415 /* Builder.swift */; };
-		7FCE5A9124FDF3CB7984E1DA /* Pods_caocapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E7F4AE818B44B5884B4A27 /* Pods_caocapTests.framework */; };
-		DD4B6A04445A93D97079AFF5 /* Pods_caocapUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22022B945CCAD5D75ED8F168 /* Pods_caocapUITests.framework */; };
+		CC3538D426E7AEF90074275F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538D326E7AEF90074275F /* FirebaseAnalytics */; };
+		CC3538D626E7AEF90074275F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538D526E7AEF90074275F /* FirebaseStorage */; };
+		CC3538D826E7AEF90074275F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538D726E7AEF90074275F /* FirebaseAuth */; };
+		CC3538DA26E7AEF90074275F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538D926E7AEF90074275F /* FirebaseDatabase */; };
+		CC3538DD26E7AF7A0074275F /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538DC26E7AF7A0074275F /* IQKeyboardManagerSwift */; };
 		EC03B1D42450610C00274B1D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = EC03B1D32450610C00274B1D /* SwiftUICharts */; };
 		EC16EE7A21A5AE1F009A46B8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC16EE7921A5AE1F009A46B8 /* User.swift */; };
 		EC1C8B7B25D6C38C00CC8A0E /* CaocapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECF63E8421BD6C6D00E491FE /* CaocapCell.xib */; };
@@ -112,20 +114,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17FA7F64BF2AC8C18310DCB2 /* Pods-caocapUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocapUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-caocapUITests/Pods-caocapUITests.release.xcconfig"; sourceTree = "<group>"; };
-		1AEA2C73F244E205E9533BB8 /* Pods-caocapTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocapTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-caocapTests/Pods-caocapTests.debug.xcconfig"; sourceTree = "<group>"; };
-		22022B945CCAD5D75ED8F168 /* Pods_caocapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_caocapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32E37161B259C040EE5C0FA9 /* Pods_caocap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_caocap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E0E42D424651F9A00522B2F /* TestLabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabVC.swift; sourceTree = "<group>"; };
 		4E182A4425D84C5A00DB37C4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		4E8AEF8A2404FA92004B4F37 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTypeCell.swift; sourceTree = "<group>"; };
 		4ECAEA1225DDC7E200972415 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
-		81DD89228B8151C0A4A3C914 /* Pods-caocap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocap.release.xcconfig"; path = "Pods/Target Support Files/Pods-caocap/Pods-caocap.release.xcconfig"; sourceTree = "<group>"; };
-		8DE1543AA5E33412EF08C933 /* Pods-caocapUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocapUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-caocapUITests/Pods-caocapUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		B8E7F4AE818B44B5884B4A27 /* Pods_caocapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_caocapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D1808BFFAF766882BD21C196 /* Pods-caocap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-caocap/Pods-caocap.debug.xcconfig"; sourceTree = "<group>"; };
-		E33433C91972EAC63C3991AD /* Pods-caocapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-caocapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-caocapTests/Pods-caocapTests.release.xcconfig"; sourceTree = "<group>"; };
 		EC16EE7921A5AE1F009A46B8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EC1C8B9525D6DCB700CC8A0E /* CodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCell.swift; sourceTree = "<group>"; };
 		EC2B26B622692B2C00779486 /* OpenedCaocapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenedCaocapCell.swift; sourceTree = "<group>"; };
@@ -216,8 +209,12 @@
 				EC6109D22646D56300E760CD /* ReSwift in Frameworks */,
 				ECA08F5F2689337E00C0A3EB /* Alamofire in Frameworks */,
 				ECA08F65268933C000C0A3EB /* AlamofireImage in Frameworks */,
-				16290DFCDF33CCE321A3DCA9 /* Pods_caocap.framework in Frameworks */,
+				CC3538D426E7AEF90074275F /* FirebaseAnalytics in Frameworks */,
 				EC03B1D42450610C00274B1D /* SwiftUICharts in Frameworks */,
+				CC3538DD26E7AF7A0074275F /* IQKeyboardManagerSwift in Frameworks */,
+				CC3538D826E7AEF90074275F /* FirebaseAuth in Frameworks */,
+				CC3538DA26E7AEF90074275F /* FirebaseDatabase in Frameworks */,
+				CC3538D626E7AEF90074275F /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +222,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FCE5A9124FDF3CB7984E1DA /* Pods_caocapTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,36 +229,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD4B6A04445A93D97079AFF5 /* Pods_caocapUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A8D091CD806A616594E68A2E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D1808BFFAF766882BD21C196 /* Pods-caocap.debug.xcconfig */,
-				81DD89228B8151C0A4A3C914 /* Pods-caocap.release.xcconfig */,
-				1AEA2C73F244E205E9533BB8 /* Pods-caocapTests.debug.xcconfig */,
-				E33433C91972EAC63C3991AD /* Pods-caocapTests.release.xcconfig */,
-				8DE1543AA5E33412EF08C933 /* Pods-caocapUITests.debug.xcconfig */,
-				17FA7F64BF2AC8C18310DCB2 /* Pods-caocapUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		D83A5B170BF51EA698B4ACF1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				32E37161B259C040EE5C0FA9 /* Pods_caocap.framework */,
-				B8E7F4AE818B44B5884B4A27 /* Pods_caocapTests.framework */,
-				22022B945CCAD5D75ED8F168 /* Pods_caocapUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		EC1C8B0925D6BBBD00CC8A0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,8 +451,6 @@
 				EC8E195C2159E02C000E4EE6 /* caocapTests */,
 				EC8E19672159E02C000E4EE6 /* caocapUITests */,
 				EC8E19432159E02A000E4EE6 /* Products */,
-				A8D091CD806A616594E68A2E /* Pods */,
-				D83A5B170BF51EA698B4ACF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -611,11 +581,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC8E196D2159E02C000E4EE6 /* Build configuration list for PBXNativeTarget "caocap" */;
 			buildPhases = (
-				1D13143571FE82F67DD7A353 /* [CP] Check Pods Manifest.lock */,
 				EC8E193E2159E02A000E4EE6 /* Sources */,
 				EC8E193F2159E02A000E4EE6 /* Frameworks */,
 				EC8E19402159E02A000E4EE6 /* Resources */,
-				9695FBD8ECECA3230007A251 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -627,6 +595,11 @@
 				EC6109D12646D56300E760CD /* ReSwift */,
 				ECA08F5E2689337E00C0A3EB /* Alamofire */,
 				ECA08F64268933C000C0A3EB /* AlamofireImage */,
+				CC3538D326E7AEF90074275F /* FirebaseAnalytics */,
+				CC3538D526E7AEF90074275F /* FirebaseStorage */,
+				CC3538D726E7AEF90074275F /* FirebaseAuth */,
+				CC3538D926E7AEF90074275F /* FirebaseDatabase */,
+				CC3538DC26E7AF7A0074275F /* IQKeyboardManagerSwift */,
 			);
 			productName = caocap;
 			productReference = EC8E19422159E02A000E4EE6 /* CAOCAPx.app */;
@@ -636,7 +609,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC8E19702159E02C000E4EE6 /* Build configuration list for PBXNativeTarget "caocapTests" */;
 			buildPhases = (
-				F820B01F4433CFB2C1EE9C55 /* [CP] Check Pods Manifest.lock */,
 				EC8E19552159E02C000E4EE6 /* Sources */,
 				EC8E19562159E02C000E4EE6 /* Frameworks */,
 				EC8E19572159E02C000E4EE6 /* Resources */,
@@ -655,7 +627,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC8E19732159E02C000E4EE6 /* Build configuration list for PBXNativeTarget "caocapUITests" */;
 			buildPhases = (
-				344366ED40647DEBA4E246F8 /* [CP] Check Pods Manifest.lock */,
 				EC8E19602159E02C000E4EE6 /* Sources */,
 				EC8E19612159E02C000E4EE6 /* Frameworks */,
 				EC8E19622159E02C000E4EE6 /* Resources */,
@@ -710,6 +681,8 @@
 				EC6109D02646D56300E760CD /* XCRemoteSwiftPackageReference "ReSwift" */,
 				ECA08F5D2689337E00C0A3EB /* XCRemoteSwiftPackageReference "Alamofire" */,
 				ECA08F63268933C000C0A3EB /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				CC3538D226E7AEF90074275F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CC3538DB26E7AF7A0074275F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = EC8E19432159E02A000E4EE6 /* Products */;
 			projectDirPath = "";
@@ -758,80 +731,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1D13143571FE82F67DD7A353 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-caocap-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		344366ED40647DEBA4E246F8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-caocapUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9695FBD8ECECA3230007A251 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-caocap/Pods-caocap-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-caocap/Pods-caocap-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-caocap/Pods-caocap-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F820B01F4433CFB2C1EE9C55 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-caocapTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EC8E193E2159E02A000E4EE6 /* Sources */ = {
@@ -1073,7 +972,6 @@
 		};
 		EC8E196E2159E02C000E4EE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1808BFFAF766882BD21C196 /* Pods-caocap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
@@ -1099,7 +997,6 @@
 		};
 		EC8E196F2159E02C000E4EE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81DD89228B8151C0A4A3C914 /* Pods-caocap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
@@ -1125,7 +1022,6 @@
 		};
 		EC8E19712159E02C000E4EE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AEA2C73F244E205E9533BB8 /* Pods-caocapTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1147,7 +1043,6 @@
 		};
 		EC8E19722159E02C000E4EE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E33433C91972EAC63C3991AD /* Pods-caocapTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1169,7 +1064,6 @@
 		};
 		EC8E19742159E02C000E4EE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DE1543AA5E33412EF08C933 /* Pods-caocapUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1190,7 +1084,6 @@
 		};
 		EC8E19752159E02C000E4EE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FA7F64BF2AC8C18310DCB2 /* Pods-caocapUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1251,6 +1144,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CC3538D226E7AEF90074275F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.1;
+			};
+		};
+		CC3538DB26E7AF7A0074275F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
 		EC03B1D22450610C00274B1D /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
@@ -1286,6 +1195,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CC3538D326E7AEF90074275F /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC3538D226E7AEF90074275F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CC3538D526E7AEF90074275F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC3538D226E7AEF90074275F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		CC3538D726E7AEF90074275F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC3538D226E7AEF90074275F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		CC3538D926E7AEF90074275F /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC3538D226E7AEF90074275F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		CC3538DC26E7AF7A0074275F /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC3538DB26E7AF7A0074275F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		EC03B1D32450610C00274B1D /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EC03B1D22450610C00274B1D /* XCRemoteSwiftPackageReference "ChartView" */;

@@ -81,9 +81,9 @@ class DataService {
     func createCaocap(caocapData: Dictionary<String, Any> , handler: @escaping (_ createdCaocap: Caocap?) -> ()) {
         if let userUID = Auth.auth().currentUser?.uid {
             let caocapKey = REF_CAOCAPS.childByAutoId().key
-            REF_CAOCAPS.child(caocapKey).updateChildValues(caocapData)
+            REF_CAOCAPS.child(caocapKey!).updateChildValues(caocapData)
             REF_USERS.child(userUID).child("caocaps").updateChildValues([caocapKey : caocapKey])
-            handler(Caocap(key: caocapKey, dictionary: caocapData))
+            handler(Caocap(key: caocapKey!, dictionary: caocapData))
         } else {
             handler(nil)
         }
