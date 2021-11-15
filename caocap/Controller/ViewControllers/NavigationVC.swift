@@ -9,7 +9,6 @@
 import UIKit
 import ReSwift
 import Firebase
-//import RevealingSplashView
 
 
 class NavigationVC: UIViewController , UINavigationControllerDelegate {
@@ -22,7 +21,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     var navSelectedIndex: Int = 0
     
     //this is used for the revealing splash animtion
-//    let revealingSplashView = RevealingSplashView(iconImage: UIImage(named : "caocap app icon" )!, iconInitialSize: CGSize(width: 120, height: 120) , backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) )
+    let revealingSplashView = RevealingSplashView(iconImage: UIImage(named : "caocap app icon" )!, iconInitialSize: CGSize(width: 120, height: 120) , backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) )
     
     
     override func viewDidLoad() {
@@ -32,7 +31,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         checkNetworkStatus()
         addNavCircleGestures()
         setupSubNavigationControllers()
-       // showSplashAnimation()
+        showSplashAnimation()
         setupBuilderCells()
         
         NotificationCenter.default.addObserver(self, selector: #selector(openExplore), name: Notification.Name("openExplore"), object: nil)
@@ -65,12 +64,12 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         navBTNpressed(navBTNs[navSelectedIndex])
     }
     
-//    func showSplashAnimation() {
-//        //this is the revealing splash animation
-//        self.view.addSubview(revealingSplashView)
-//        revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
-//        revealingSplashView.startAnimation()
-//    }
+    func showSplashAnimation() {
+        //this is the revealing splash animation
+        self.view.addSubview(revealingSplashView)
+        revealingSplashView.animationType = SplashAnimationType.popAndZoomOut
+        revealingSplashView.startAnimation()
+    }
     
     @IBOutlet weak var contentView: UIView!
     @IBOutlet var navBTNs: [UIButton]!
@@ -310,14 +309,8 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         
         linkBuilderCell.configure(builder: Builder(type: .link, title: "Link", image: #imageLiteral(resourceName: "Create Link"), description: ""))
         templateBuilderCell.configure(builder: Builder(type: .template, title: "Template", image: #imageLiteral(resourceName: "Create Template"), description: ""))
-       
         codeBuilderCell.configure(builder: Builder(type: .code, title: "Code", image: #imageLiteral(resourceName: "Create Code"),description: ""))
-        
-        
-        
-        
-//        blockBuilderCell.configure(builder: Builder(type: .block, title: "Block", image: #imageLiteral(resourceName: "Create Soon"), description: ""))
-//
+        blockBuilderCell.configure(builder: Builder(type: .block, title: "Block", image: #imageLiteral(resourceName: "Create Soon"), description: ""))
         builderItemCells = [linkBuilderCell, templateBuilderCell, codeBuilderCell, blockBuilderCell]
 
         builderCollectionView.reloadData()
