@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KjF-rf-QBS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KjF-rf-QBS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +26,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="contactChatCell" rowHeight="70" id="AwU-jB-4U7" customClass="ContactChatCell" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AwU-jB-4U7" id="PXL-ro-NTe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -205,7 +205,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="chatGroupCell" id="KWW-3c-cJ1" customClass="ChatGroupCell" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="98" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="114.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KWW-3c-cJ1" id="hJw-dU-qZl">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -397,7 +397,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="caocapGroupCell" id="dEW-Hd-UmI" customClass="CaocapGroupCell" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="178" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="194.5" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dEW-Hd-UmI" id="Keg-Ic-U9h">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -854,7 +854,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="addUserCell" rowHeight="60" id="BUw-HK-mvQ" customClass="AddUserCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="350" height="60"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="350" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BUw-HK-mvQ" id="19d-YQ-Dce">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
@@ -1096,7 +1096,7 @@
                                         <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="100"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="contactUserCell" rowHeight="60" id="uJP-fP-T0Y" customClass="ContactUserCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="350" height="60"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="350" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uJP-fP-T0Y" id="JFB-Rz-QNx">
                                                     <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
@@ -1313,7 +1313,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1W-3Y-d04">
-                                        <rect key="frame" x="45" y="10.5" width="284" height="24"/>
+                                        <rect key="frame" x="45" y="10" width="284" height="25"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -1563,7 +1563,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sentMessageCell" rowHeight="80" id="nug-im-fCU" customClass="SentMessageCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nug-im-fCU" id="1P2-5Q-hXI">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -1690,7 +1690,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="arrivedMessageCell" rowHeight="80" id="hfm-0m-ecN" customClass="ArrivedMessageCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="108" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="124.5" width="414" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hfm-0m-ecN" id="8eH-ZQ-SgY">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -2129,7 +2129,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sentMessageCell" rowHeight="80" id="gKe-vZ-Nan" customClass="SentMessageCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gKe-vZ-Nan" id="MvR-Mj-PVi">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -2256,7 +2256,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="arrivedMessageCell" rowHeight="80" id="R5d-JY-EGV" customClass="ArrivedMessageCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="108" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="124.5" width="414" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R5d-JY-EGV" id="gYi-cG-X7r">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -2695,7 +2695,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sentMessageCell" rowHeight="80" id="qN0-Ks-93a" customClass="SentMessageCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qN0-Ks-93a" id="WLP-TV-mrW">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
@@ -2822,7 +2822,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="arrivedMessageCell" rowHeight="80" id="RoA-5G-R66" customClass="ArrivedMessageCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="108" width="414" height="80"/>
+                                                <rect key="frame" x="0.0" y="124.5" width="414" height="80"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RoA-5G-R66" id="zol-jY-crp">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>

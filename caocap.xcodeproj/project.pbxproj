@@ -478,9 +478,9 @@
 				EC2F25002168FFD400D14733 /* fonts */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
-				EC8E19542159E02C000E4EE6 /* Info.plist */,
 				ECDABBF2238348170029B026 /* caocap.entitlements */,
 				EC8E194C2159E02A000E4EE6 /* caocap.xcdatamodeld */,
+				EC8E19542159E02C000E4EE6 /* Info.plist */,
 				EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */,
 			);
 			path = caocap;
