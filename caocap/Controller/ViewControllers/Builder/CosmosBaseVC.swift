@@ -86,22 +86,12 @@ class CosmosBaseVC: UIViewController {
     
     @IBOutlet var topToolBarBTNs: [UIButton]!
     @IBAction func topToolBarBTNs(_ sender: UIButton) {
-        topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-pictures_folder"), for: .normal)
-        topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-accounting"), for: .normal)
-        topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-flow_chart"), for: .normal)
-        switch sender.tag {
-        case 0:
-            toolsSelectedIndex = 0
-            topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-pictures_folder-1"), for: .normal)
-        case 1:
-            toolsSelectedIndex = 1
-            topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-accounting-1"), for: .normal)
-        case 2:
-            toolsSelectedIndex = 2
-            topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-flow_chart-1"), for: .normal)
-        default:
-            break
-        }
+        topToolBarBTNs[0].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        topToolBarBTNs[1].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        topToolBarBTNs[2].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        
+        toolsSelectedIndex = sender.tag
+        topToolBarBTNs[sender.tag].tintColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
     }
     
     func presentSelectedView(_ selectedView: UIView) {

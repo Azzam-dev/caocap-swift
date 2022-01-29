@@ -62,6 +62,17 @@ class ArtBuilderVC: UIViewController {
             }
         }
     }
+    
+    @IBOutlet var topToolBarBTNs: [UIButton]!
+    @IBAction func topToolBarBTNs(_ sender: UIButton) {
+        topToolBarBTNs[0].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        topToolBarBTNs[1].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        topToolBarBTNs[2].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+        
+        toolsSelectedIndex = sender.tag
+        topToolBarBTNs[sender.tag].tintColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+    }
+    
 }
 
 extension ArtBuilderVC: StoreSubscriber {

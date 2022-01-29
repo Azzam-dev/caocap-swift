@@ -45,28 +45,6 @@ class TemplateBuilderVC: ArtBuilderVC {
         }
     }
     
-    @IBOutlet var topToolBarBTNs: [UIButton]!
-    @IBAction func topToolBarBTNs(_ sender: UIButton) {
-        topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-layers"), for: .normal)
-        topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-module"), for: .normal)
-        topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-pen"), for: .normal)
-        switch sender.tag {
-        case 0:
-            toolsSelectedIndex = 0
-            topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "icons8-layers-1"), for: .normal)
-            presentSelectedView(structureTableView)
-        case 1:
-            toolsSelectedIndex = 1
-            topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "icons8-module-1"), for: .normal)
-            presentSelectedView(templatesCollectionView)
-        case 2:
-            toolsSelectedIndex = 2
-            topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "icons8-pen-1"), for: .normal)
-            presentSelectedView(stylesTableView)
-        default:
-            break
-        }
-    }
     
     func presentSelectedView(_ selectedView: UIView) {
         structureTableView.isHidden = true

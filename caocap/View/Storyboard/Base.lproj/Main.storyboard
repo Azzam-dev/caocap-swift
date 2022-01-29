@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -83,8 +83,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
-                                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-email" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-Zs-FFd">
+                                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-Zs-FFd">
                                                         <rect key="frame" x="0.0" y="7.3333333333333712" width="20" height="20"/>
+                                                        <color key="tintColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Uud-YX-z0A"/>
                                                             <constraint firstAttribute="width" constant="20" id="aTd-Ff-Oei"/>
@@ -126,8 +127,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
-                                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-password" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-Zt-YWS">
+                                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-Zt-YWS">
                                                         <rect key="frame" x="0.0" y="7.3333333333332575" width="20" height="20"/>
+                                                        <color key="tintColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="KRC-aJ-bt6"/>
                                                             <constraint firstAttribute="height" constant="20" id="VW5-IP-Be4"/>
@@ -968,9 +970,9 @@ Please visit the app tomorrow and everything will be done
     <resources>
         <image name="W-chat" width="106" height="100"/>
         <image name="caocap circle" width="1000" height="1000"/>
+        <image name="email" width="287" height="300"/>
         <image name="icons8-astronaut_helmet" width="96" height="92"/>
-        <image name="icons8-email" width="287" height="300"/>
-        <image name="icons8-password" width="245" height="300"/>
+        <image name="password" width="245" height="300"/>
         <image name="rocket launch" width="1000" height="404"/>
         <image name="w-launched_rocket" width="67" height="100"/>
         <image name="w-planet_filled" width="99" height="72"/>

@@ -33,28 +33,6 @@ class CodeBuilderVC: ArtBuilderVC {
         }
     }
     
-    @IBOutlet var topToolBarBTNs: [UIButton]!
-    @IBAction func topToolBarBTNs(_ sender: UIButton) {
-        topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "JS"), for: .normal)
-        topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "HTML"), for: .normal)
-        topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "CSS"), for: .normal)
-        switch sender.tag {
-        case 0:
-            toolsSelectedIndex = 0
-            topToolBarBTNs[0].setImage(#imageLiteral(resourceName: "JS-1"), for: .normal)
-            codeCollectionView.scrollToItem(at:IndexPath(item: 0, section: 0), at: .right, animated: true)
-        case 1:
-            toolsSelectedIndex = 1
-            topToolBarBTNs[1].setImage(#imageLiteral(resourceName: "HTML-1"), for: .normal)
-            codeCollectionView.scrollToItem(at:IndexPath(item: 1, section: 0), at: .right, animated: true)
-        case 2:
-            toolsSelectedIndex = 2
-            topToolBarBTNs[2].setImage(#imageLiteral(resourceName: "CSS-1"), for: .normal)
-            codeCollectionView.scrollToItem(at:IndexPath(item: 2, section: 0), at: .right, animated: true)
-        default:
-            break
-        }
-    }
     
     @IBAction func didSwipeCollectionView(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
