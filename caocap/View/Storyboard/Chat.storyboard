@@ -906,8 +906,9 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXg-Zs-WbS" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                                     <rect key="frame" x="285" y="12.5" width="25" height="25"/>
                                                                     <subviews>
-                                                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-check" translatesAutoresizingMaskIntoConstraints="NO" id="KIP-cp-9EZ">
+                                                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check" translatesAutoresizingMaskIntoConstraints="NO" id="KIP-cp-9EZ">
                                                                             <rect key="frame" x="5" y="5" width="15" height="15"/>
+                                                                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         </imageView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1867,8 +1868,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jm8-TX-XOW" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="40"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-attach" translatesAutoresizingMaskIntoConstraints="NO" id="Byb-FP-FUk">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attachments" translatesAutoresizingMaskIntoConstraints="NO" id="Byb-FP-FUk">
                                                         <rect key="frame" x="68.5" y="10" width="20" height="20"/>
+                                                        <color key="tintColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Byb-FP-FUk" secondAttribute="height" multiplier="1:1" id="bai-XV-kwo"/>
                                                             <constraint firstAttribute="width" constant="20" id="f3c-yu-Jvh"/>
@@ -2433,8 +2435,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wVG-en-ld2" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="40"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-attach" translatesAutoresizingMaskIntoConstraints="NO" id="akH-sd-eg9">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attachments" translatesAutoresizingMaskIntoConstraints="NO" id="akH-sd-eg9">
                                                         <rect key="frame" x="68.5" y="10" width="20" height="20"/>
+                                                        <color key="tintColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="akH-sd-eg9" secondAttribute="height" multiplier="1:1" id="JjH-C8-f7h"/>
                                                             <constraint firstAttribute="width" constant="20" id="Zuv-P2-WHS"/>
@@ -2999,8 +3002,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rSx-vy-7wY" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="40"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-attach" translatesAutoresizingMaskIntoConstraints="NO" id="kPJ-xu-fdp">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attachments" translatesAutoresizingMaskIntoConstraints="NO" id="kPJ-xu-fdp">
                                                         <rect key="frame" x="68.5" y="10" width="20" height="20"/>
+                                                        <color key="tintColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="Bjm-jc-XAV"/>
                                                             <constraint firstAttribute="width" secondItem="kPJ-xu-fdp" secondAttribute="height" multiplier="1:1" id="M5X-1x-XC4"/>
@@ -3181,11 +3185,11 @@
         <image name="B-sorting_options" width="92" height="72"/>
         <image name="IMG_2235" width="100" height="101"/>
         <image name="W-plus_math" width="100" height="100"/>
-        <image name="arrow right" width="128" height="128"/>
+        <image name="arrow right" width="49" height="90"/>
+        <image name="attachments" width="72" height="78"/>
         <image name="caocap app icon 2" width="512" height="512"/>
         <image name="caocap circle " width="1000" height="1000"/>
-        <image name="icons8-attach" width="72" height="78"/>
-        <image name="icons8-check" width="81" height="78"/>
+        <image name="check" width="81" height="78"/>
         <image name="icons8-menu_2" width="12" height="60"/>
         <image name="icons8-mute0" width="90" height="89"/>
         <image name="icons8-paper_plane_filled0" width="100" height="100"/>

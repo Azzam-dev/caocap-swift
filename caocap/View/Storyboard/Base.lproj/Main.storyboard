@@ -40,8 +40,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="nickname"/>
                                                     </textField>
-                                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-astronaut_helmet" translatesAutoresizingMaskIntoConstraints="NO" id="WPs-rY-L2S">
+                                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronaut" translatesAutoresizingMaskIntoConstraints="NO" id="WPs-rY-L2S">
                                                         <rect key="frame" x="0.0" y="7.3333333333333712" width="20" height="20"/>
+                                                        <color key="tintColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="7XE-ll-Hg8"/>
                                                             <constraint firstAttribute="width" constant="20" id="Ll8-gr-n4h"/>
@@ -969,9 +970,9 @@ Please visit the app tomorrow and everything will be done
     </designables>
     <resources>
         <image name="W-chat" width="106" height="100"/>
+        <image name="astronaut" width="96" height="92"/>
         <image name="caocap circle" width="1000" height="1000"/>
         <image name="email" width="287" height="300"/>
-        <image name="icons8-astronaut_helmet" width="96" height="92"/>
         <image name="password" width="245" height="300"/>
         <image name="rocket launch" width="1000" height="404"/>
         <image name="w-launched_rocket" width="67" height="100"/>
