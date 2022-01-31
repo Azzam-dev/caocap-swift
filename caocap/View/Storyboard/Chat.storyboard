@@ -87,8 +87,9 @@
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-mute0" translatesAutoresizingMaskIntoConstraints="NO" id="SJz-5v-hmA">
-                                                                    <rect key="frame" x="0.0" y="5" width="10" height="10"/>
+                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speaker.slash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SJz-5v-hmA">
+                                                                    <rect key="frame" x="0.0" y="6.5" width="10" height="8"/>
+                                                                    <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="10" id="KF2-Sv-Htf"/>
                                                                         <constraint firstAttribute="width" secondItem="SJz-5v-hmA" secondAttribute="height" multiplier="1:1" id="ucx-xx-gfx"/>
@@ -266,8 +267,9 @@
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-mute0" translatesAutoresizingMaskIntoConstraints="NO" id="LKw-NC-gw5">
+                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speaker.slash.fill" translatesAutoresizingMaskIntoConstraints="NO" id="LKw-NC-gw5">
                                                                     <rect key="frame" x="0.0" y="4" width="10" height="10"/>
+                                                                    <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="10" id="TYP-hc-R9e"/>
                                                                         <constraint firstAttribute="width" secondItem="LKw-NC-gw5" secondAttribute="height" multiplier="1:1" id="lKc-aq-Vwu"/>
@@ -458,8 +460,9 @@
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-mute0" translatesAutoresizingMaskIntoConstraints="NO" id="eFz-34-M5h">
+                                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speaker.slash.fill" translatesAutoresizingMaskIntoConstraints="NO" id="eFz-34-M5h">
                                                                     <rect key="frame" x="0.0" y="4" width="10" height="10"/>
+                                                                    <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="eFz-34-M5h" secondAttribute="height" multiplier="1:1" id="0cG-Ko-mCB"/>
                                                                         <constraint firstAttribute="width" constant="10" id="QIb-z3-Ln7"/>
@@ -1484,8 +1487,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0dy-Bx-1LQ" userLabel="more">
                                         <rect key="frame" x="371" y="10" width="35" height="35"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-menu_2" translatesAutoresizingMaskIntoConstraints="NO" id="zlW-Dw-cul">
-                                                <rect key="frame" x="5" y="5" width="25" height="25"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipsis" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zlW-Dw-cul">
+                                                <rect key="frame" x="5" y="12" width="25" height="10.5"/>
+                                                <color key="tintColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zlW-Dw-cul" secondAttribute="height" multiplier="1:1" id="OnB-jK-1bv"/>
                                                     <constraint firstAttribute="width" constant="25" id="UgK-E6-dMT"/>
@@ -1509,7 +1513,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pD9-nF-46h" userLabel="QRcode">
                                         <rect key="frame" x="336" y="10" width="35" height="35"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-qr_code" translatesAutoresizingMaskIntoConstraints="NO" id="ikw-qI-tj5">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qrcode.viewfinder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ikw-qI-tj5">
                                                 <rect key="frame" x="5" y="5" width="25" height="25"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="25" id="Os5-td-dgP"/>
@@ -1898,8 +1902,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqf-D6-vtc" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                 <rect key="frame" x="237" y="0.0" width="157" height="40"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-paper_plane_filled0" translatesAutoresizingMaskIntoConstraints="NO" id="abf-70-L4P">
-                                                        <rect key="frame" x="69.5" y="11" width="18" height="18"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="abf-70-L4P">
+                                                        <rect key="frame" x="69.5" y="11.5" width="18" height="17.5"/>
+                                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="18" id="pa4-eJ-OCS"/>
                                                             <constraint firstAttribute="width" secondItem="abf-70-L4P" secondAttribute="height" multiplier="1:1" id="wLo-u0-JXh"/>
@@ -2051,8 +2056,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFe-bU-0PU" userLabel="more">
                                         <rect key="frame" x="371" y="10" width="35" height="35"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-menu_2" translatesAutoresizingMaskIntoConstraints="NO" id="1jR-ft-eHT">
-                                                <rect key="frame" x="5" y="5" width="25" height="25"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipsis" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1jR-ft-eHT">
+                                                <rect key="frame" x="5" y="12" width="25" height="10.5"/>
+                                                <color key="tintColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="1jR-ft-eHT" secondAttribute="height" multiplier="1:1" id="GJ2-G5-HyR"/>
                                                     <constraint firstAttribute="width" constant="25" id="aQL-8q-ETj"/>
@@ -2465,8 +2471,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qca-qo-QS4" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                 <rect key="frame" x="237" y="0.0" width="157" height="40"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-paper_plane_filled0" translatesAutoresizingMaskIntoConstraints="NO" id="KUE-ld-fif">
-                                                        <rect key="frame" x="69.5" y="11" width="18" height="18"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KUE-ld-fif">
+                                                        <rect key="frame" x="69.5" y="11.5" width="18" height="17.5"/>
+                                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="18" id="BCm-9j-5EZ"/>
                                                             <constraint firstAttribute="width" secondItem="KUE-ld-fif" secondAttribute="height" multiplier="1:1" id="vXG-w2-voA"/>
@@ -2618,8 +2625,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lu-Pj-QfW" userLabel="more">
                                         <rect key="frame" x="371" y="10" width="35" height="35"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-menu_2" translatesAutoresizingMaskIntoConstraints="NO" id="gG6-Kz-XQr">
-                                                <rect key="frame" x="5" y="5" width="25" height="25"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipsis" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gG6-Kz-XQr">
+                                                <rect key="frame" x="5" y="12" width="25" height="10.5"/>
+                                                <color key="tintColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gG6-Kz-XQr" secondAttribute="height" multiplier="1:1" id="RbK-tA-v3h"/>
                                                     <constraint firstAttribute="width" constant="25" id="vjf-P5-nW9"/>
@@ -3032,8 +3040,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rYB-Hs-eT5" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                 <rect key="frame" x="237" y="0.0" width="157" height="40"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-paper_plane_filled0" translatesAutoresizingMaskIntoConstraints="NO" id="DBB-t6-imx">
-                                                        <rect key="frame" x="69.5" y="11" width="18" height="18"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="DBB-t6-imx">
+                                                        <rect key="frame" x="69.5" y="11.5" width="18" height="17.5"/>
+                                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="DBB-t6-imx" secondAttribute="height" multiplier="1:1" id="9uj-W0-CId"/>
                                                             <constraint firstAttribute="width" constant="18" id="eI1-S3-QKL"/>
@@ -3190,9 +3199,11 @@
         <image name="caocap app icon 2" width="512" height="512"/>
         <image name="caocap circle " width="1000" height="1000"/>
         <image name="check" width="81" height="78"/>
-        <image name="icons8-menu_2" width="12" height="60"/>
-        <image name="icons8-mute0" width="90" height="89"/>
-        <image name="icons8-paper_plane_filled0" width="100" height="100"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="icons8-qr_code" width="96" height="96"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
+        <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="speaker.slash.fill" catalog="system" width="124" height="128"/>
+        <image name="speaker.slash.fill" width="128" height="128"/>
     </resources>
 </document>

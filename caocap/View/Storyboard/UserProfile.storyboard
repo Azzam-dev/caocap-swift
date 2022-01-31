@@ -406,8 +406,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhX-jW-Kfx" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="344" y="44" width="50" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-menu0" translatesAutoresizingMaskIntoConstraints="NO" id="cC8-Wf-itf">
-                                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list.bullet" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cC8-Wf-itf">
+                                        <rect key="frame" x="10" y="12.5" width="30" height="24.5"/>
+                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="cC8-Wf-itf" secondAttribute="height" multiplier="1:1" id="6I9-No-7hL"/>
                                         </constraints>
@@ -773,8 +774,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TG4-qA-lJd" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="344" y="44" width="50" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-menu0" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-xT-msH">
-                                        <rect key="frame" x="10" y="10" width="30" height="30"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list.bullet" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-xT-msH">
+                                        <rect key="frame" x="10" y="12.5" width="30" height="24.5"/>
+                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ccp-xT-msH" secondAttribute="height" multiplier="1:1" id="34U-Xr-UR3"/>
                                         </constraints>
@@ -1495,7 +1497,7 @@
         <image name="IMG_2235" width="100" height="101"/>
         <image name="W-chat" width="106" height="100"/>
         <image name="audio wave" width="104" height="85"/>
-        <image name="icons8-menu0" width="100" height="64"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="w-astronaut_helmet" width="100" height="100"/>
     </resources>
 </document>

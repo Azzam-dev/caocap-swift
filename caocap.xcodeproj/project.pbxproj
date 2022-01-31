@@ -18,6 +18,7 @@
 		CC3538D826E7AEF90074275F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538D726E7AEF90074275F /* FirebaseAuth */; };
 		CC3538DA26E7AEF90074275F /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538D926E7AEF90074275F /* FirebaseDatabase */; };
 		CC3538DD26E7AF7A0074275F /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538DC26E7AF7A0074275F /* IQKeyboardManagerSwift */; };
+		DB859CD227A80E3400150CBA /* CaocapRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB859CD127A80E3400150CBA /* CaocapRoomVC.swift */; };
 		EC03B1D42450610C00274B1D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = EC03B1D32450610C00274B1D /* SwiftUICharts */; };
 		EC16EE7A21A5AE1F009A46B8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC16EE7921A5AE1F009A46B8 /* User.swift */; };
 		EC1C8B7B25D6C38C00CC8A0E /* CaocapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECF63E8421BD6C6D00E491FE /* CaocapCell.xib */; };
@@ -34,7 +35,6 @@
 		EC3C86C6263C94E00005DBAB /* TemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86C5263C94E00005DBAB /* TemplateCell.swift */; };
 		EC3C86CE263C95960005DBAB /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86CD263C95960005DBAB /* Template.swift */; };
 		EC3F6D93234F81DF007DD028 /* GroupChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */; };
-		EC501674234E121900021D70 /* CaocapRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501673234E121900021D70 /* CaocapRoomVC.swift */; };
 		EC501676234E610200021D70 /* SentMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501675234E610200021D70 /* SentMessageCell.swift */; };
 		EC501679234E62B900021D70 /* ArrivedMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501678234E62B900021D70 /* ArrivedMessageCell.swift */; };
 		EC5107AA266BB334000DB190 /* EditTitleStylesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5107A8266BB334000DB190 /* EditTitleStylesCell.swift */; };
@@ -121,6 +121,7 @@
 		4E8AEF8A2404FA92004B4F37 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTypeCell.swift; sourceTree = "<group>"; };
 		4ECAEA1225DDC7E200972415 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		DB859CD127A80E3400150CBA /* CaocapRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapRoomVC.swift; sourceTree = "<group>"; };
 		EC16EE7921A5AE1F009A46B8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EC1C8B9525D6DCB700CC8A0E /* CodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCell.swift; sourceTree = "<group>"; };
 		EC2B26B622692B2C00779486 /* OpenedCaocapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenedCaocapCell.swift; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		EC3C86C5263C94E00005DBAB /* TemplateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateCell.swift; sourceTree = "<group>"; };
 		EC3C86CD263C95960005DBAB /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
 		EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatVC.swift; sourceTree = "<group>"; };
-		EC501673234E121900021D70 /* CaocapRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapRoomVC.swift; sourceTree = "<group>"; };
 		EC501675234E610200021D70 /* SentMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMessageCell.swift; sourceTree = "<group>"; };
 		EC501678234E62B900021D70 /* ArrivedMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedMessageCell.swift; sourceTree = "<group>"; };
 		EC5107A8266BB334000DB190 /* EditTitleStylesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTitleStylesCell.swift; sourceTree = "<group>"; };
@@ -541,8 +541,8 @@
 			isa = PBXGroup;
 			children = (
 				EC70ACEF215D69A6004C16D2 /* ChatVC.swift */,
-				EC501673234E121900021D70 /* CaocapRoomVC.swift */,
 				ECAD479A21C79156000E16DC /* ContactChatVC.swift */,
+				DB859CD127A80E3400150CBA /* CaocapRoomVC.swift */,
 				EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */,
 			);
 			path = Chat;
@@ -742,7 +742,6 @@
 			files = (
 				ECF63E8521BD6C6D00E491FE /* CaocapCell.swift in Sources */,
 				EC70ACEC215D6954004C16D2 /* ExploreVC.swift in Sources */,
-				EC501674234E121900021D70 /* CaocapRoomVC.swift in Sources */,
 				EC501676234E610200021D70 /* SentMessageCell.swift in Sources */,
 				EC6EE2842323D3180069F488 /* MenuCell.swift in Sources */,
 				EC8E194E2159E02A000E4EE6 /* caocap.xcdatamodeld in Sources */,
@@ -783,6 +782,7 @@
 				ECE2A00325208E2100EFF8B4 /* FullScreenChartUI.swift in Sources */,
 				EC5238E221916E3A00D966F3 /* ContactUserCell.swift in Sources */,
 				ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */,
+				DB859CD227A80E3400150CBA /* CaocapRoomVC.swift in Sources */,
 				ECE9E8E926478D4E00ACB575 /* DisplayAlertMessage.swift in Sources */,
 				EC2B26B722692B2C00779486 /* OpenedCaocapCell.swift in Sources */,
 				EC3F6D93234F81DF007DD028 /* GroupChatVC.swift in Sources */,
