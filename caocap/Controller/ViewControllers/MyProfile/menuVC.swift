@@ -31,7 +31,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
             ]
         case .setting:
             menuItems = [MenuItem(image: #imageLiteral(resourceName: "w-launched_rocket"), label: .yourActivity),
-                         MenuItem(image: #imageLiteral(resourceName: "w-comments"), label: .notification),
+                         MenuItem(image: #imageLiteral(resourceName: "comments"), label: .notification),
                          MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .privacy),
                          MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .security),
                          MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .ads),

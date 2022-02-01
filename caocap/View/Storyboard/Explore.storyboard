@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="saw-FO-J6K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="saw-FO-J6K">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -265,7 +265,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-S9-ekQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w-share" translatesAutoresizingMaskIntoConstraints="NO" id="WCk-G4-bhu">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share" translatesAutoresizingMaskIntoConstraints="NO" id="WCk-G4-bhu">
                                                                     <rect key="frame" x="2" y="2" width="21" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="WCk-G4-bhu" secondAttribute="height" multiplier="1:1" id="imv-dr-X1s"/>
@@ -292,7 +292,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atQ-cN-CcS">
                                                             <rect key="frame" x="35" y="0.0" width="25" height="25"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w-comments" translatesAutoresizingMaskIntoConstraints="NO" id="U5S-zZ-wfz">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comments" translatesAutoresizingMaskIntoConstraints="NO" id="U5S-zZ-wfz">
                                                                     <rect key="frame" x="2" y="2" width="21" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="U5S-zZ-wfz" secondAttribute="height" multiplier="1:1" id="jCH-tn-1Yv"/>
@@ -319,8 +319,9 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cUy-Ms-cj2">
                                                             <rect key="frame" x="70" y="0.0" width="25" height="25"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w-more" translatesAutoresizingMaskIntoConstraints="NO" id="Hxe-vd-ZpI">
-                                                                    <rect key="frame" x="2" y="2" width="21" height="21"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipsis" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Hxe-vd-ZpI">
+                                                                    <rect key="frame" x="2" y="9" width="21" height="6.5"/>
+                                                                    <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="Hxe-vd-ZpI" secondAttribute="height" multiplier="1:1" id="lIK-Ix-H2B"/>
                                                                     </constraints>
@@ -622,10 +623,10 @@
         <image name="B-full_screen_filled" width="100" height="106"/>
         <image name="B-sorting_options" width="92" height="72"/>
         <image name="caocap app icon 2" width="512" height="512"/>
+        <image name="comments" width="45" height="40"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="loading mask" width="226" height="162"/>
-        <image name="w-comments" width="45" height="40"/>
-        <image name="w-more" width="37.5" height="8.5"/>
+        <image name="share" width="49" height="42"/>
         <image name="w-planet_filled" width="99" height="72"/>
-        <image name="w-share" width="49" height="42"/>
     </resources>
 </document>
