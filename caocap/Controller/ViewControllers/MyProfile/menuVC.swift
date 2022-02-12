@@ -10,34 +10,48 @@ import UIKit
 import Firebase
 
 enum MenuType {
-    case account
+    case mainAccount
     case setting
+    case account
+    case about
 }
 
 class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
-    var menuType: MenuType = .account
+    var menuType: MenuType = .mainAccount
     var menuItems = [MenuItem]()
     
     
     @IBOutlet weak var menuTableView: UITableView!
     
     override func viewDidLoad() {
+        
+        DataService.instance.checkOfLanguage(language: "en")
+        
         super.viewDidLoad()
         switch menuType {
-        case .account:
-            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-settings"), label: .settings),
+        case .mainAccount:
+            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-settings_filled"), label: .settings),
                          MenuItem(image: #imageLiteral(resourceName: "icons8-logout_rounded_up_filled"), label: .logout)
             ]
         case .setting:
-            menuItems = [MenuItem(image: #imageLiteral(resourceName: "w-launched_rocket"), label: .yourActivity),
-                         MenuItem(image: #imageLiteral(resourceName: "comments"), label: .notification),
-                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .privacy),
-                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .security),
-                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .ads),
-                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .account),
-                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .help),
-                         MenuItem(image: #imageLiteral(resourceName: "W-search_filled"), label: .about)
+            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-circled_menu"), label: .yourActivity),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-remove_ads"), label: .notification),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-keyhole_shield_filled"), label: .privacy),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-security_pass_filled"), label: .security),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-remove_ads"), label: .ads),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-group_filled"), label: .account),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-online_support_filled"), label: .help),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-help"), label: .about)
+            ]
+        case .account:
+            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-language_filled"), label: .changeLanguage),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-re_enter_pincode_filled"), label: .resetPassword)
+            ]
+        case .about:
+            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-list_view"), label: .dataPolicy),
+                         MenuItem(image: #imageLiteral(resourceName: "accounting"), label: .termsOfUse),
+                         MenuItem(image: #imageLiteral(resourceName: "mesh"), label: .openSourceLibraries)
             ]
         }
         
@@ -70,6 +84,34 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         self.present(logoutPopup, animated: true , completion: nil)
         
     }
+    func menuCAOCAP(template: MenuType) {
+        let storyboardSettings = UIStoryboard(name: "UserProfile", bundle: nil)
+        let settingsVC = storyboardSettings.instantiateViewController(withIdentifier: "menu") as! MenuVC
+        settingsVC.menuType = template
+        navigationController?.pushViewController(settingsVC, animated: true)
+    }
+
+    func goToCAOCAPPolitics() {
+        let storyboardSettings = UIStoryboard(name: "UserProfile", bundle: nil)
+        let settingsVC = storyboardSettings.instantiateViewController(withIdentifier: "CAOCAPPolitics") as! CaocapPoliticsVC
+        navigationController?.pushViewController(settingsVC, animated: true)
+    }
+
+    func sendMessageToEmail() {
+        let userEmail = Auth.auth().currentUser?.email
+        let alert = UIAlertController(title: "are you shore?", message: "If you press yes, a message will be sent to your email to change the password", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "yes", style: .default, handler: { action in
+            AuthService.instance.resetPassword(withEmail: userEmail!) { status, error in
+                if status {
+                    print("successful")
+                } else {
+                    print("error")
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "no", style: .cancel, handler: nil))
+            present(alert, animated: true)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -81,7 +123,11 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell" , for: indexPath ) as! MenuCell
-        cell.configure(menuItem: menuItems[indexPath.row])
+        if menuItems[indexPath.row].label == .changeLanguage {
+            cell.configure(menuItem: menuItems[indexPath.row], isHidden: false)
+        } else {
+            cell.configure(menuItem: menuItems[indexPath.row], isHidden: true)
+        }
         return cell
     }
     
@@ -89,10 +135,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         
         switch menuItems[indexPath.row].label {
         case .settings:
-            let storyboardSettings = UIStoryboard(name: "UserProfile", bundle: nil)
-            let settingsVC = storyboardSettings.instantiateViewController(withIdentifier: "menu") as! MenuVC
-            settingsVC.menuType = .setting
-            navigationController?.pushViewController(settingsVC, animated: true)
+            menuCAOCAP(template: .setting)
         case .logout:
             logoutAct()
         case .yourActivity:
@@ -106,11 +149,21 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         case .ads:
             print("")
         case .account:
+            menuCAOCAP(template: .account)
+        case .changeLanguage:
             print("")
+        case .resetPassword:
+            sendMessageToEmail()
         case .help:
             print("")
         case .about:
-            print("")
+            menuCAOCAP(template: .about)
+        case .dataPolicy:
+            goToCAOCAPPolitics()
+        case .termsOfUse:
+            goToCAOCAPPolitics()
+        case .openSourceLibraries:
+            goToCAOCAPPolitics()
         }
         
     }

@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  caocap
+
+  Created by omar alzhrani on 10/07/1443 AH.
+  Copyright © 1443 Ficruty. All rights reserved.
+*/
+
+"settings" = "settings";
+ "logout" = "logout";
+ "your activity" = "your activity";
+ "notification" = "notification";
+ "privacy" = "privacy";
+ "security" = "security";
+ "ads" = "ads";
+ "account" = "account";
+ "change language" = "change language";
+ "reset password" = "reset password";
+ "help" = "help";
+ "about" = "about";
+"data policy" = "data policy";
+"terms of use" = "terms of use";
+"open source libraries" = "open source libraries";

@@ -19,16 +19,23 @@ class AuthVC: UIViewController {
     @IBOutlet weak var passwordTF: UITextField!
     
     override func viewDidLoad() {
+        
+        DataService.instance.checkOfLanguage(language: "en")
+
         super.viewDidLoad()
         self.view.bindToKeyBoard()
         self.hideKeyboardWhenTappedAround()
-        resetSignBTN("sign up")
     }
     
+    let currentLang = Locale.current.languageCode
     @IBOutlet weak var signBTN: UIButton!
     @IBAction func signBTN(_ sender: Any) {
         signBTN.isEnabled = false
-        signBTN.setTitle("loading...",for: .normal)
+        if currentLang == "en" {
+            signBTN.setTitle("loading...",for: .normal)
+        } else {
+            signBTN.setTitle("تحميل...",for: .normal)
+        }
         signBTN.alpha = 0.5
         signSwitchBTN.isEnabled = false
         signSwitchBTN.alpha = 0.5

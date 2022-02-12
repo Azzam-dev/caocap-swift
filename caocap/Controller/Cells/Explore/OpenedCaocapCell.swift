@@ -37,6 +37,9 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+
+        
         DataService.instance.REF_RELEASED.observe(DataEventType.value, with: { snap in
             self.isReleased = snap.value! as! Bool
             if self.isReleased {
@@ -145,7 +148,8 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
         self.delegate?.moreBTNpressed(cell: self, didTappedshow: button)
     }
     
-    
+    let currentLang = Locale.current.languageCode
+
     @IBOutlet weak var orbitsNum: UILabel!
     @IBOutlet weak var orbitBTN_background: DesignableView!
     @IBOutlet weak var orbitBTN: UIButton!
@@ -154,13 +158,21 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
             caocapIsOrbited = false
             orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 0)
             DataService.instance.addAndReomveFromOrbit(caocapKey: caocapKey, remove: true)
-            orbitsNum.text = "ADD TO ORBIT"
+            if currentLang == "en" {
+                orbitsNum.text = "ADD TO ORBIT"
+            } else {
+                orbitsNum.text = "اضافة الكوكب"
+            }
         } else {
             caocapIsOrbited = true
             print(caocapKey)
             orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
             DataService.instance.addAndReomveFromOrbit(caocapKey: caocapKey, remove: false)
-            orbitsNum.text = "Added"
+            if currentLang == "en" {
+                orbitsNum.text = "Added"
+            } else {
+                orbitsNum.text = "مضاف"
+            }
         }
     }
     

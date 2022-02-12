@@ -19,6 +19,9 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+
+        
         chatsTableView.contentInset.top = 45
         groupMembersSearchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         groupIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeGroupImage)))

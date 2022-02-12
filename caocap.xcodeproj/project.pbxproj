@@ -11,6 +11,11 @@
 		4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E42D424651F9A00522B2F /* TestLabVC.swift */; };
 		4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E182A4425D84C5A00DB37C4 /* MenuItem.swift */; };
 		4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AEF8A2404FA92004B4F37 /* Reachability.swift */; };
+		4E9FCE5227B6DEC30091BD33 /* CaocapPoliticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FCE5127B6DEC30091BD33 /* CaocapPoliticsVC.swift */; };
+		4E9FCE5727B6DF830091BD33 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE5927B6DF830091BD33 /* Explore.storyboard */; settings = {ASSET_TAGS = (Localizable, ); }; };
+		4E9FCE5E27B6DFEA0091BD33 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE6027B6DFEA0091BD33 /* Chat.storyboard */; };
+		4E9FCE6527B6E08A0091BD33 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE6727B6E08A0091BD33 /* UserProfile.storyboard */; };
+		4E9FCE6F27B6E16A0091BD33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE7127B6E16A0091BD33 /* Localizable.strings */; };
 		4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */; };
 		4ECAEA1325DDC7E200972415 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA1225DDC7E200972415 /* Builder.swift */; };
 		CC3538D426E7AEF90074275F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538D326E7AEF90074275F /* FirebaseAnalytics */; };
@@ -64,9 +69,6 @@
 		EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */; };
 		EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */; };
 		EC84070624680C2200223FB1 /* Builder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC84070524680C2200223FB1 /* Builder.storyboard */; };
-		EC8407082468134600223FB1 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8407072468134600223FB1 /* Explore.storyboard */; };
-		EC84070A2468147800223FB1 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8407092468147800223FB1 /* Chat.storyboard */; };
-		EC84070C24681A0800223FB1 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC84070B24681A0800223FB1 /* UserProfile.storyboard */; };
 		EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E19452159E02A000E4EE6 /* AppDelegate.swift */; };
 		EC8E19482159E02A000E4EE6 /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8E19472159E02A000E4EE6 /* NavigationVC.swift */; };
 		EC8E194B2159E02A000E4EE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC8E19492159E02A000E4EE6 /* Main.storyboard */; };
@@ -119,6 +121,21 @@
 		4E0E42D424651F9A00522B2F /* TestLabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabVC.swift; sourceTree = "<group>"; };
 		4E182A4425D84C5A00DB37C4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		4E8AEF8A2404FA92004B4F37 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		4E9FCE5127B6DEC30091BD33 /* CaocapPoliticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapPoliticsVC.swift; sourceTree = "<group>"; };
+		4E9FCE5327B6DF3B0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4E9FCE5427B6DF3B0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		4E9FCE5627B6DF450091BD33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		4E9FCE5827B6DF830091BD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Explore.storyboard; sourceTree = "<group>"; };
+		4E9FCE5B27B6DF880091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Explore.strings; sourceTree = "<group>"; };
+		4E9FCE5D27B6DFBA0091BD33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Explore.strings; sourceTree = "<group>"; };
+		4E9FCE5F27B6DFEA0091BD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
+		4E9FCE6227B6E01F0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Chat.strings; sourceTree = "<group>"; };
+		4E9FCE6427B6E0510091BD33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Chat.strings; sourceTree = "<group>"; };
+		4E9FCE6627B6E08A0091BD33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserProfile.storyboard; sourceTree = "<group>"; };
+		4E9FCE6927B6E0BC0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/UserProfile.strings; sourceTree = "<group>"; };
+		4E9FCE6B27B6E0C80091BD33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UserProfile.strings; sourceTree = "<group>"; };
+		4E9FCE7027B6E16A0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E9FCE7227B6E16C0091BD33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTypeCell.swift; sourceTree = "<group>"; };
 		4ECAEA1225DDC7E200972415 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		DB859CD127A80E3400150CBA /* CaocapRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapRoomVC.swift; sourceTree = "<group>"; };
@@ -164,9 +181,6 @@
 		EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC84070524680C2200223FB1 /* Builder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Builder.storyboard; sourceTree = "<group>"; };
-		EC8407072468134600223FB1 /* Explore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Explore.storyboard; sourceTree = "<group>"; };
-		EC8407092468147800223FB1 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
-		EC84070B24681A0800223FB1 /* UserProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProfile.storyboard; sourceTree = "<group>"; };
 		EC8E19422159E02A000E4EE6 /* CAOCAPx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAOCAPx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC8E19452159E02A000E4EE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC8E19472159E02A000E4EE6 /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
@@ -237,6 +251,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E9FCE6C27B6E1170091BD33 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				4E9FCE7127B6E16A0091BD33 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		EC1C8B0925D6BBBD00CC8A0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,9 +460,9 @@
 			children = (
 				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
 				EC8E19492159E02A000E4EE6 /* Main.storyboard */,
-				EC8407072468134600223FB1 /* Explore.storyboard */,
-				EC8407092468147800223FB1 /* Chat.storyboard */,
-				EC84070B24681A0800223FB1 /* UserProfile.storyboard */,
+				4E9FCE5927B6DF830091BD33 /* Explore.storyboard */,
+				4E9FCE6027B6DFEA0091BD33 /* Chat.storyboard */,
+				4E9FCE6727B6E08A0091BD33 /* UserProfile.storyboard */,
 				EC84070524680C2200223FB1 /* Builder.storyboard */,
 			);
 			path = Storyboard;
@@ -475,6 +497,7 @@
 				EC1C8B0925D6BBBD00CC8A0E /* Controller */,
 				EC70ACF7215D8856004C16D2 /* Services */,
 				EC8E1976215A00A8000E4EE6 /* Extensions */,
+				4E9FCE6C27B6E1170091BD33 /* Localizable */,
 				EC2F25002168FFD400D14733 /* fonts */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
@@ -554,6 +577,7 @@
 				EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */,
 				ECF2055021624C9400C48F2A /* MenuVC.swift */,
 				EC2F25062169C47F00D14733 /* EditProfileVC.swift */,
+				4E9FCE5127B6DEC30091BD33 /* CaocapPoliticsVC.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -650,6 +674,9 @@
 		EC8E193A2159E02A000E4EE6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					Localizable,
+				);
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Ficruty;
@@ -677,6 +704,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = EC8E19392159E02A000E4EE6;
 			packageReferences = (
@@ -706,11 +734,12 @@
 				EC1C8B7B25D6C38C00CC8A0E /* CaocapCell.xib in Resources */,
 				EC5107B2266BBB46000DB190 /* EditDescriptionStylesCell.xib in Resources */,
 				EC84070624680C2200223FB1 /* Builder.storyboard in Resources */,
+				4E9FCE6F27B6E16A0091BD33 /* Localizable.strings in Resources */,
 				EC8E19532159E02C000E4EE6 /* LaunchScreen.storyboard in Resources */,
-				EC8407082468134600223FB1 /* Explore.storyboard in Resources */,
+				4E9FCE5727B6DF830091BD33 /* Explore.storyboard in Resources */,
 				EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */,
-				EC84070A2468147800223FB1 /* Chat.storyboard in Resources */,
-				EC84070C24681A0800223FB1 /* UserProfile.storyboard in Resources */,
+				4E9FCE5E27B6DFEA0091BD33 /* Chat.storyboard in Resources */,
+				4E9FCE6527B6E08A0091BD33 /* UserProfile.storyboard in Resources */,
 				EC8E19502159E02C000E4EE6 /* Assets.xcassets in Resources */,
 				EC5107AB266BB334000DB190 /* EditTitleStylesCell.xib in Resources */,
 				EC2F25022168FFE800D14733 /* earthorbiter.ttf in Resources */,
@@ -751,6 +780,7 @@
 				EC2B26C3226B2E2700779486 /* SwipeNavigationController.swift in Sources */,
 				ECF205492160ED6D00C48F2A /* AuthVC.swift in Sources */,
 				ECF2054B216102C200C48F2A /* AuthService.swift in Sources */,
+				4E9FCE5227B6DEC30091BD33 /* CaocapPoliticsVC.swift in Sources */,
 				EC5107AA266BB334000DB190 /* EditTitleStylesCell.swift in Sources */,
 				EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */,
 				EC69740A261D889700EB71F4 /* TemplateBuilderVC.swift in Sources */,
@@ -839,10 +869,51 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4E9FCE5927B6DF830091BD33 /* Explore.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E9FCE5827B6DF830091BD33 /* Base */,
+				4E9FCE5B27B6DF880091BD33 /* ar */,
+				4E9FCE5D27B6DFBA0091BD33 /* en */,
+			);
+			name = Explore.storyboard;
+			sourceTree = "<group>";
+		};
+		4E9FCE6027B6DFEA0091BD33 /* Chat.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E9FCE5F27B6DFEA0091BD33 /* Base */,
+				4E9FCE6227B6E01F0091BD33 /* ar */,
+				4E9FCE6427B6E0510091BD33 /* en */,
+			);
+			name = Chat.storyboard;
+			sourceTree = "<group>";
+		};
+		4E9FCE6727B6E08A0091BD33 /* UserProfile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E9FCE6627B6E08A0091BD33 /* Base */,
+				4E9FCE6927B6E0BC0091BD33 /* ar */,
+				4E9FCE6B27B6E0C80091BD33 /* en */,
+			);
+			name = UserProfile.storyboard;
+			sourceTree = "<group>";
+		};
+		4E9FCE7127B6E16A0091BD33 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E9FCE7027B6E16A0091BD33 /* ar */,
+				4E9FCE7227B6E16C0091BD33 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EC8E19492159E02A000E4EE6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EC8E194A2159E02A000E4EE6 /* Base */,
+				4E9FCE5427B6DF3B0091BD33 /* ar */,
+				4E9FCE5627B6DF450091BD33 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -851,6 +922,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				EC8E19522159E02C000E4EE6 /* Base */,
+				4E9FCE5327B6DF3B0091BD33 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -862,6 +934,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -923,6 +996,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

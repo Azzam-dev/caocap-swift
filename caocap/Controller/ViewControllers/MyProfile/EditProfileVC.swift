@@ -45,11 +45,12 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        DataService.instance.checkOfLanguage(language: "en")
+        
         getUserData()
         userIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeImage)))
         
         saveBTN.isEnabled = true
-        saveBTN.setTitle("save",for: .normal)
         saveBTN.alpha = 1
         
         // Do any additional setup after loading the view.
@@ -97,11 +98,17 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
         dismiss(animated: true, completion: nil)
     }
     
+    let currentLang = Locale.current.languageCode
+    
     @IBOutlet weak var saveBTN: DesignableButton!
     @IBAction func saveBTN(_ sender: Any) {
         
         saveBTN.isEnabled = false
-        saveBTN.setTitle("loading...",for: .normal)
+        if currentLang == "en" {
+            saveBTN.setTitle("loading...",for: .normal)
+                } else {
+                    saveBTN.setTitle("تحميل...",for: .normal)
+                }
         saveBTN.alpha = 0.5
 
         if let currentUser = Auth.auth().currentUser?.uid {

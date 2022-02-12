@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Firebase
 import Alamofire
 import AlamofireImage
@@ -387,6 +388,15 @@ class DataService {
                 handler(user)
             }
         }
+    }
+    
+    func checkOfLanguage(language: String) {
+    let currentLang = Locale.current.languageCode
+    if currentLang == language {
+                UIView.appearance().semanticContentAttribute = .forceLeftToRight
+            } else {
+                UIView.appearance().semanticContentAttribute = .forceRightToLeft
+            }
     }
 }
 

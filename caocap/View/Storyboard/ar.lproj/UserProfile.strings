@@ -1,0 +1,104 @@
+/* Class = "UILabel"; text = "menuCell"; ObjectID = "05c-Bo-UGe"; */
+"05c-Bo-UGe.text" = "menuCell";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "0be-lo-7Ae"; */
+"0be-lo-7Ae.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "2P2-ba-OSX"; */
+"2P2-ba-OSX.text" = "0";
+
+/* Class = "UITextField"; placeholder = "name"; ObjectID = "96k-bI-yth"; */
+"96k-bI-yth.placeholder" = "الاسم";
+
+/* Class = "UILabel"; text = "caocaps"; ObjectID = "Im0-I1-vKi"; */
+"Im0-I1-vKi.text" = "كواكبي";
+
+/* Class = "UILabel"; text = "user name "; ObjectID = "J9F-mF-dDM"; */
+"J9F-mF-dDM.text" = "اسم المستخدم ";
+
+/* Class = "UILabel"; text = "+"; ObjectID = "Jeu-AW-uQy"; */
+"Jeu-AW-uQy.text" = "+";
+
+/* Class = "UILabel"; text = "Bio"; ObjectID = "KLi-2W-jnG"; */
+"KLi-2W-jnG.text" = "البايو";
+
+/* Class = "UILabel"; text = "orbiting"; ObjectID = "Osr-ah-Exi"; */
+"Osr-ah-Exi.text" = "الكواكب";
+
+/* Class = "UILabel"; text = "Website"; ObjectID = "QYK-OH-hNh"; */
+"QYK-OH-hNh.text" = "الموقع";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "Yqx-Fj-rkg"; */
+"Yqx-Fj-rkg.text" = "اسم المستخدم";
+
+/* Class = "UILabel"; text = "orbiting"; ObjectID = "YsY-w5-7fC"; */
+"YsY-w5-7fC.text" = "الكواكب";
+
+/* Class = "UILabel"; text = "friends"; ObjectID = "Z06-GK-fd3"; */
+"Z06-GK-fd3.text" = "الاصدقاء";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "Zof-Q4-RS6"; */
+"Zof-Q4-RS6.text" = "الايميل";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "bB1-Es-Ffz"; */
+"bB1-Es-Ffz.text" = "0";
+
+/* Class = "UILabel"; text = "Edit Profile"; ObjectID = "bI4-3o-UdN"; */
+"bI4-3o-UdN.text" = "تعديل الملف";
+
+/* Class = "UISegmentedControl"; bty-rk-ReT.segmentTitles[0] = "English"; ObjectID = "bty-rk-ReT"; */
+"w2Z-K0-Utm.segmentTitles[0]" = "انجليزي";
+
+/* Class = "UISegmentedControl"; bty-rk-ReT.segmentTitles[1] = "Arabic"; ObjectID = "bty-rk-ReT"; */
+"w2Z-K0-Utm.segmentTitles[1]" = "عربي";
+
+/* Class = "UILabel"; text = "CAOCAP is a galaxy filled with ideas in which you can navigate your way through a wide range of worlds that shares your interest ,passion and ambition."; ObjectID = "cka-YU-1OT"; */
+"cka-YU-1OT.text" = "CAOCAP is a galaxy filled with ideas in which you can navigate your way through a wide range of worlds that shares your interest ,passion and ambition.";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "faz-ot-cBd"; */
+"faz-ot-cBd.text" = "رقم الجوال";
+
+/* Class = "UIButton"; normalTitle = "save"; ObjectID = "gcU-mh-FCc"; */
+"gcU-mh-FCc.normalTitle" = "حفظ";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "hld-bd-2e1"; */
+"hld-bd-2e1.text" = "الاسم";
+
+/* Class = "UITextField"; placeholder = "+966123456789"; ObjectID = "i0E-yz-9Os"; */
+"i0E-yz-9Os.placeholder" = "+966123456789";
+
+/* Class = "UILabel"; text = "CAOCAP is a galaxy filled with ideas in which you can navigate your way through a wide range of worlds that shares your interest ,passion and ambition."; ObjectID = "jjh-FY-632"; */
+"jjh-FY-632.text" = "CAOCAP is a galaxy filled with ideas in which you can navigate your way through a wide range of worlds that shares your interest ,passion and ambition.";
+
+/* Class = "UITextField"; placeholder = "https://caocapWebbsite.com"; ObjectID = "k5v-Z1-Pcd"; */
+"k5v-Z1-Pcd.placeholder" = "https://caocapWebbsite.com";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "lMY-1s-1f4"; */
+"lMY-1s-1f4.text" = "0";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "lz9-gs-2IO"; */
+"lz9-gs-2IO.text" = "0";
+
+/* Class = "UITextView"; text = "Hi i'm ..."; ObjectID = "nCN-hK-Sqi"; */
+"nCN-hK-Sqi.text" = "مرحبا انا ...";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "pdt-q7-4aT"; */
+"pdt-q7-4aT.text" = "0";
+
+/* Class = "UILabel"; text = "@username "; ObjectID = "qIN-46-dJQ"; */
+"qIN-46-dJQ.text" = "@username ";
+
+/* Class = "UILabel"; text = "friends"; ObjectID = "u4l-3v-13K"; */
+"u4l-3v-13K.text" = "الاصدقاء";
+
+/* Class = "UITextField"; placeholder = "your@email.com"; ObjectID = "x7N-np-nGx"; */
+"x7N-np-nGx.placeholder" = "your@email.com";
+
+/* Class = "UILabel"; text = "user name "; ObjectID = "xhc-TT-klq"; */
+"xhc-TT-klq.text" = "اسم المستخدم";
+
+/* Class = "UILabel"; text = "caocaps"; ObjectID = "y6e-jI-jFm"; */
+"y6e-jI-jFm.text" = "الكواكب";
+
+/* Class = "UITextField"; placeholder = "@username"; ObjectID = "y8j-WU-EeF"; */
+"y8j-WU-EeF.placeholder" = "@username";

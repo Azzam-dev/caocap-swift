@@ -28,6 +28,8 @@ class MyProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+
         getUserData()
         getMyCaocapsData()
         
@@ -40,6 +42,8 @@ class MyProfileVC: UIViewController {
     var isReleased = Bool()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+
         DataService.instance.REF_RELEASED.observe(DataEventType.value, with: { snap in
             self.isReleased = snap.value! as! Bool
             self.profileCollectionView.reloadData()

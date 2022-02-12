@@ -10,15 +10,24 @@ import UIKit
 
 enum MenuItemType: String {
     case settings
+    
     case logout
     case yourActivity = "your activity"
     case notification
     case privacy
     case security
     case ads
+    
     case account
+    case changeLanguage = "change language"
+    case resetPassword = "reset password"
+
     case help
+    
     case about
+    case dataPolicy = "data policy"
+    case termsOfUse = "terms of use"
+    case openSourceLibraries = "open source libraries"
 }
 
 struct MenuItem {

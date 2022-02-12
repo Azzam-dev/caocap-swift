@@ -1,0 +1,23 @@
+/* Class = "UILabel"; text = "Already have an account?"; ObjectID = "LlL-II-jEr"; */
+"LlL-II-jEr.text" = "هل لديك حساب؟";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "Miw-wp-yQP"; */
+"Miw-wp-yQP.placeholder" = "الرقم السري";
+
+/* Class = "UITextField"; placeholder = "email"; ObjectID = "UeS-ig-Xu4"; */
+"UeS-ig-Xu4.placeholder" = "الايميل";
+
+/* Class = "UIButton"; normalTitle = "sign in"; ObjectID = "X1Y-bB-ySX"; */
+"X1Y-bB-ySX.normalTitle" = "تسجيل الدخول";
+
+/* Class = "UILabel"; text = "We are sorry you cannot use the app right now because we are doing some repairs... \n\nPlease visit the app tomorrow and everything will be done\n\n #thanks"; ObjectID = "erZ-Sb-9NF"; */
+"erZ-Sb-9NF.text" = "We are sorry you cannot use the app right now because we are doing some repairs... \n\nPlease visit the app tomorrow and everything will be done\n\n #thanks";
+
+/* Class = "UILabel"; text = "Please update the app to the latest version "; ObjectID = "u8I-ED-lj1"; */
+"u8I-ED-lj1.text" = "يرجى تحديث التطبيق إلى أحدث إصدار";
+
+/* Class = "UIButton"; normalTitle = "sign up"; ObjectID = "xu4-hs-qgV"; */
+"xu4-hs-qgV.normalTitle" = "حساب جديد";
+
+/* Class = "UITextField"; placeholder = "username"; ObjectID = "zfa-pJ-DEw"; */
+"zfa-pJ-DEw.placeholder" = "اسم المستخدم";
