@@ -56,7 +56,7 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
         getCaocapsData()
     }
     
-    //FIXME: fix searchTF and show the search bar 
+    //FIXME: fix searchTF and show the search bar
     @objc func textFieldDidChange() {
         if searchTF.text == "" {
             DataService.instance.getAllCaocaps(handler: { (returnedExploreArray) in
@@ -89,7 +89,7 @@ extension ExploreVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? CaocapCell else { return UICollectionViewCell() }
-        
+        cell.caocapCellDelegate = self
         cell.configure(caocap: caocapsArray[indexPath.row], released: isReleased)
         return cell
         
@@ -112,5 +112,39 @@ extension ExploreVC: CaocapLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView,heightForPhotoAtIndexPath indexPath:IndexPath) -> CGFloat {
         let randomHeight = [350 , 450 , 500].shuffled()
         return CGFloat(randomHeight[0])
+    }
+}
+
+
+extension ExploreVC: CaocapCellDelegate {
+    
+    func moreBTNpressed(caocapKey: String) {
+        
+        let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let reportAction = UIAlertAction(title: "report",style: .destructive ) { (buttonTapped) in
+           print("did report caocap")
+        }
+        let aAction = UIAlertAction(title: "report",style: .destructive ) { (buttonTapped) in
+           print("did report caocap")
+        }
+        let bAction = UIAlertAction(title: "report",style: .destructive ) { (buttonTapped) in
+           print("did report caocap")
+        }
+        
+        let cancel = UIAlertAction(title: "cancel", style: .default, handler: nil)
+        
+        moreInfoPopup.addAction(reportAction)
+        moreInfoPopup.addAction(aAction)
+        moreInfoPopup.addAction(bAction)
+        moreInfoPopup.addAction(cancel)
+        
+        if let popoverController = moreInfoPopup.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        
+        self.present(moreInfoPopup, animated: true , completion: nil)
+        
     }
 }
