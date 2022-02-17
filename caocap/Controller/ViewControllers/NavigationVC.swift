@@ -27,6 +27,8 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        LuaService.instance.runLuaCode() // pleas remove this line if you see it  ^-^
+        
         self.hideKeyboardWhenTappedAround()
         checkNetworkStatus()
         addNavCircleGestures()
