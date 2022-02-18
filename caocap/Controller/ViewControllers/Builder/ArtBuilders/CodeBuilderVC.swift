@@ -23,14 +23,14 @@ class CodeBuilderVC: ArtBuilderVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topToolBarBTNs(topToolBarBTNs[1])
+        topToolBarBTNs(topToolBarBTNs[0])
         getCaocapData()
     }
     
     //this is to make the second cell visible
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        codeCollectionView.scrollToItem(at:IndexPath(item: 1, section: 0), at: .right, animated: false)
+        codeCollectionView.scrollToItem(at:IndexPath(item: fileIndex, section: 0), at: .right, animated: false)
     }
     
     func getCaocapData() {
@@ -40,30 +40,18 @@ class CodeBuilderVC: ArtBuilderVC {
         }
     }
     
-    
+    var fileIndex = 1
     @IBAction func didSwipeCollectionView(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
-        case .left:
-            switch toolsSelectedIndex {
-            case 0:
-                topToolBarBTNs(topToolBarBTNs[1])
-            case 1:
-                topToolBarBTNs(topToolBarBTNs[2])
-            default:
-                break
-            }
-        case .right:
-            switch toolsSelectedIndex {
-            case 1:
-                topToolBarBTNs(topToolBarBTNs[0])
-            case 2:
-                topToolBarBTNs(topToolBarBTNs[1])
-            default:
-                break
-            }
+        case .left where fileIndex < (caocapCode.count - 1) :
+            fileIndex += 1
+            
+        case .right where fileIndex > 0 :
+            fileIndex -= 1
         default:
             break
         }
+        codeCollectionView.scrollToItem(at:IndexPath(item: fileIndex, section: 0), at: .right, animated: true)
     }
 }
 
