@@ -14,13 +14,20 @@ class CodeBuilderVC: ArtBuilderVC {
 
     @IBOutlet weak var codeCollectionView: UICollectionView!
 
-    var caocapCode = ["html":"<h1> failed to load.. </h1>", "js":"// failed to load..", "css":"/* failed to load.. */"]
+    var caocapCode: [(fileName: String, code: String)] = [
+        ("main", #"print("hello capcap")"#),
+        ("file2", #"print(1+2)"#),
+        ("file3", #"print(-200)"#)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCaocapData()
+        
         topToolBarBTNs(topToolBarBTNs[1])
+        getCaocapData()
     }
     
+    //this is to make the second cell visible
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         codeCollectionView.scrollToItem(at:IndexPath(item: 1, section: 0), at: .right, animated: false)
@@ -29,7 +36,7 @@ class CodeBuilderVC: ArtBuilderVC {
     func getCaocapData() {
         guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
-            if let code = caocap.code { self.caocapCode = code }
+//            if let code = caocap.code { self.caocapCode = code }
         }
     }
     
@@ -70,16 +77,9 @@ extension CodeBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, U
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "codeCell", for: indexPath) as? CodeCell, let openedCaocapKey = openedCaocap?.key else { return UICollectionViewCell() }
         
-        switch indexPath.row {
-        case 0:
-            cell.configure(code: caocapCode["js"]!, type: .js, key: openedCaocapKey)
-        case 1:
-            cell.configure(code: caocapCode["html"]!, type: .html, key: openedCaocapKey)
-        case 2:
-            cell.configure(code: caocapCode["css"]!, type: .css, key: openedCaocapKey)
-        default:
-            break
-        }
+        let codeFile = caocapCode[indexPath.row]
+        cell.configure(fileName: codeFile.fileName, code: codeFile.code, key: openedCaocapKey)
+        
         
         return cell
     }

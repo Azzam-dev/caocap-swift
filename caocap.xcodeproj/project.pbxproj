@@ -447,7 +447,12 @@
 			children = (
 				EC1C8B0B25D6BC2300CC8A0E /* xib */,
 				ECE29FF525208E2100EFF8B4 /* SwiftUI */,
-				EC84070424680A4F00223FB1 /* Storyboard */,
+				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
+				EC8E19492159E02A000E4EE6 /* Main.storyboard */,
+				4E9FCE5927B6DF830091BD33 /* Explore.storyboard */,
+				4E9FCE6027B6DFEA0091BD33 /* Chat.storyboard */,
+				4E9FCE6727B6E08A0091BD33 /* UserProfile.storyboard */,
+				EC84070524680C2200223FB1 /* Builder.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -627,19 +632,6 @@
 				25E50F6627BE46DD00906E4A /* LuaService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		EC84070424680A4F00223FB1 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				EC8E19512159E02C000E4EE6 /* LaunchScreen.storyboard */,
-				EC8E19492159E02A000E4EE6 /* Main.storyboard */,
-				4E9FCE5927B6DF830091BD33 /* Explore.storyboard */,
-				4E9FCE6027B6DFEA0091BD33 /* Chat.storyboard */,
-				4E9FCE6727B6E08A0091BD33 /* UserProfile.storyboard */,
-				EC84070524680C2200223FB1 /* Builder.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		EC8E19392159E02A000E4EE6 = {

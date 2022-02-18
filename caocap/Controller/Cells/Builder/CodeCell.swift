@@ -7,28 +7,24 @@
 //
 
 import UIKit
-enum CodeType: String {
-    case js
-    case html
-    case css
-}
 
 class CodeCell: UICollectionViewCell, UITextViewDelegate {
     
     var key: String?
-    var type: CodeType?
+    var fileName: String?
     @IBOutlet weak var textView: UITextView!
-    func configure(code: String, type: CodeType, key: String) {
+    func configure(fileName: String, code: String, key: String) {
         textView.text = code
         self.key = key
-        self.type = type
+        self.fileName = fileName
     }
 
     
     func textViewDidChange(_ textView: UITextView) {
         guard let key = key else { return }
-        guard let type = type?.rawValue else { return }
-        guard let text = textView.text else { return }
-        DataService.instance.REF_CAOCAPS.child(key).child("code").updateChildValues([type: text])
+        guard let fileName = fileName else { return }
+        guard let luaCode = textView.text else { return }
+        LuaService.instance.runLua(code: luaCode)
+//        DataService.instance.REF_CAOCAPS.child(key).child("code").updateChildValues([fileName: luaCode])
     }
 }
