@@ -26,7 +26,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         
-        DataService.instance.checkOfLanguage(language: "en")
+        LocalizationManager.shared.checkOfLanguage(language: "en")
         
         super.viewDidLoad()
         switch menuType {
@@ -49,17 +49,17 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                          MenuItem(image: #imageLiteral(resourceName: "icons8-re_enter_pincode_filled"), label: .resetPassword)
             ]
         case .about:
-            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-list_view"), label: .dataPolicy),
-                         MenuItem(image: #imageLiteral(resourceName: "accounting"), label: .termsOfUse),
-                         MenuItem(image: #imageLiteral(resourceName: "mesh"), label: .openSourceLibraries)
+            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-secured_file"), label: .dataPolicy),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-geography"), label: .termsOfUse),
+                         MenuItem(image: #imageLiteral(resourceName: "icons8-copy"), label: .openSourceLibraries)
             ]
         }
         
     }
     
     func logoutAct() {
-        let logoutPopup = UIAlertController(title: "تسجيل الخروج", message: "هل تريد تسجيل الخروج ؟", preferredStyle: .actionSheet)
-        let logoutAction = UIAlertAction(title: "نعم", style: .destructive ) { (buttonTapped) in
+        let logoutPopup = UIAlertController(title: "تسجيل الخروج".localized(), message: "هل تريد تسجيل الخروج ؟".localized(), preferredStyle: .actionSheet)
+        let logoutAction = UIAlertAction(title: "yes".localized(), style: .destructive ) { (buttonTapped) in
             do {
                 try Auth.auth().signOut()
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -70,7 +70,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                 displayAlertMessage(error.localizedDescription, in: self)
             }
         }
-        let cancel = UIAlertAction(title: "لا", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "no".localized(), style: .cancel, handler: nil)
         logoutPopup.addAction(logoutAction)
         logoutPopup.addAction(cancel)
         
@@ -99,8 +99,8 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
 
     func sendMessageToEmail() {
         let userEmail = Auth.auth().currentUser?.email
-        let alert = UIAlertController(title: "are you shore?", message: "If you press yes, a message will be sent to your email to change the password", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "yes", style: .default, handler: { action in
+        let alert = UIAlertController(title: "are you sure?".localized(), message: "If you press yes, a message will be sent to your email to change the password".localized(), preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "yes".localized(), style: .default, handler: { action in
             AuthService.instance.resetPassword(withEmail: userEmail!) { status, error in
                 if status {
                     print("successful")
@@ -109,7 +109,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }))
-        alert.addAction(UIAlertAction(title: "no", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "no".localized(), style: .cancel, handler: nil))
             present(alert, animated: true)
     }
     

@@ -12,6 +12,7 @@ import Firebase
 import Alamofire
 import AlamofireImage
 
+
 let DB_BASE = Database.database().reference()
 let STORAGE_BASE = Storage.storage().reference()
 
@@ -244,6 +245,26 @@ class DataService {
         }
     }
     
+//    func getMyOrbitingCaocap(handler: @escaping (_ caocap: [Caocap]) -> ()) {
+//        DispatchQueue.global(qos: .userInteractive).async {
+//            if let userUID = Auth.auth().currentUser?.uid {
+//                self.REF_USERS.child(userUID).child("orbiting").observeSingleEvent(of: .value){ (orbitingSnapshot) in
+//                    guard let orbitingSnapshot = orbitingSnapshot.children.allObjects as? [DataSnapshot] else { return }
+//                    var caocapsArray = [Caocap]()
+//                        for orbit in orbitingSnapshot {
+//                            self.getCaocap(withKey: orbit.key) { caocap in
+//                                caocapsArray.append(caocap)
+//                                print(caocap.name)
+//                            }
+//                        }
+//                        DispatchQueue.main.async {
+//                            print(caocapsArray)
+//                            handler(caocapsArray)
+//                        }
+//                }
+//            }
+//        }
+//    }
     
     func getAllCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
@@ -261,6 +282,8 @@ class DataService {
             }
         }
     }
+    
+    
     
     func getAllPublishedCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
@@ -390,13 +413,6 @@ class DataService {
         }
     }
     
-    func checkOfLanguage(language: String) {
-    let currentLang = Locale.current.languageCode
-    if currentLang == language {
-                UIView.appearance().semanticContentAttribute = .forceLeftToRight
-            } else {
-                UIView.appearance().semanticContentAttribute = .forceRightToLeft
-            }
-    }
+
 }
 

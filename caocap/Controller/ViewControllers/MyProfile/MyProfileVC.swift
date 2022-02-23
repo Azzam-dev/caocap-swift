@@ -2,9 +2,10 @@
 //  MyProfileVC.swift
 //  caocap
 //
-//  Created by Azzam AL-Rashed on 17/01/1440 AH.
+//  Created by CAOCAP teem on 17/01/1440 AH.
+//  Azzam AL-Rashed
+//  Omar AL-zhrani
 //  Copyright © 1440 Ficruty. All rights reserved.
-//
 
 import UIKit
 import SwiftUI
@@ -49,7 +50,6 @@ class MyProfileVC: UIViewController {
             self.profileCollectionView.reloadData()
         })
     }
-    
     
     //This pulls all the current user caocaps from firebase and insert them to the caocap array
     func getMyCaocapsData() {
@@ -134,10 +134,10 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 extension MyProfileVC: CaocapCellDelegate {
     func moreBTNpressed(caocapKey: String) {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let deleteAction = UIAlertAction(title: "delete",style: .destructive ) { (buttonTapped) in
+        let deleteAction = UIAlertAction(title: "delete".localized(),style: .destructive ) { (buttonTapped) in
             DataService.instance.removeCaocap(caocapKey)
         }
-        let cancel = UIAlertAction(title: "cancel", style: .default, handler: nil)
+        let cancel = UIAlertAction(title: "cancel".localized(), style: .default, handler: nil)
         moreInfoPopup.addAction(deleteAction)
         moreInfoPopup.addAction(cancel)
         

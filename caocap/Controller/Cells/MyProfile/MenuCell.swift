@@ -10,6 +10,7 @@ import UIKit
 
 class MenuCell: UITableViewCell {
     
+    weak var viewController: UIViewController?
     let currentLang = Locale.current.languageCode
     
     @IBOutlet weak var segmentedOutlet: UISegmentedControl!
@@ -18,14 +19,13 @@ class MenuCell: UITableViewCell {
         case 0:
             let newLang = currentLang == "ar" ? "en":"ar"
             UserDefaults.standard.setValue([newLang], forKey: "AppleLanguages")
-            exit(0)
         case 1:
             let newLang = currentLang == "en" ? "ar":"en"
             UserDefaults.standard.setValue([newLang], forKey: "AppleLanguages")
-            exit(0)
         default:
             print("h")
         }
+        LocalizationManager.shared.resetApp()
     }
     
     @IBOutlet weak var itemImage: UIImageView!
@@ -35,16 +35,14 @@ class MenuCell: UITableViewCell {
 
         
         if currentLang == "en" {
-            self.itemlabel.text = menuItem.label.rawValue
             segmentedOutlet.selectedSegmentIndex = 0
         } else {
-            itemlabel.text = NSLocalizedString(menuItem.label.rawValue, comment: "")
             segmentedOutlet.selectedSegmentIndex = 1
         }
+        itemlabel.text = menuItem.label.rawValue.localized()
         self.itemImage.image = menuItem.image
         self.segmentedOutlet.isHidden = isHidden
     }
-    
-    
+
     
 }

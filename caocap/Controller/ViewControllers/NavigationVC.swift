@@ -330,7 +330,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     func checkNetworkStatus() {
         //check if the Network is available if not present a message requesting a network connection
         if !Reachability()!.isReachable {
-            displayAlertMessage("لا يوجد اتصال بالانترنت", in: self)
+            displayAlertMessage("No internet connection".localized(), in: self)
         } else {
             print("كل شي تمام")
         }

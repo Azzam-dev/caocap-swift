@@ -158,21 +158,13 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
             caocapIsOrbited = false
             orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 0)
             DataService.instance.addAndReomveFromOrbit(caocapKey: caocapKey, remove: true)
-            if currentLang == "en" {
-                orbitsNum.text = "ADD TO ORBIT"
-            } else {
-                orbitsNum.text = "اضافة الكوكب"
-            }
+            orbitsNum.text = "ADD TO ORBIT".localized()
         } else {
             caocapIsOrbited = true
             print(caocapKey)
             orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
             DataService.instance.addAndReomveFromOrbit(caocapKey: caocapKey, remove: false)
-            if currentLang == "en" {
-                orbitsNum.text = "Added"
-            } else {
-                orbitsNum.text = "مضاف"
-            }
+            orbitsNum.text = "Added".localized()
         }
     }
     

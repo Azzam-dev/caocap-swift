@@ -45,7 +45,7 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataService.instance.checkOfLanguage(language: "en")
+        LocalizationManager.shared.checkOfLanguage(language: "en")
         
         getUserData()
         userIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeImage)))
@@ -102,13 +102,8 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
     
     @IBOutlet weak var saveBTN: DesignableButton!
     @IBAction func saveBTN(_ sender: Any) {
-        
+        saveBTN.setTitle("loading...".localized(),for: .normal)
         saveBTN.isEnabled = false
-        if currentLang == "en" {
-            saveBTN.setTitle("loading...",for: .normal)
-                } else {
-                    saveBTN.setTitle("تحميل...",for: .normal)
-                }
         saveBTN.alpha = 0.5
 
         if let currentUser = Auth.auth().currentUser?.uid {
@@ -143,16 +138,16 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
                     }
                 } else {
                     //"Email address is not valid
-                    displayAlertMessage("الرجاء التحقق من البريد الالكتروني", in: self)
+                    displayAlertMessage("الرجاء التحقق من البريد الالكتروني".localized(), in: self)
                     self.saveBTN.isEnabled = true
-                    self.saveBTN.setTitle("save",for: .normal)
+                    self.saveBTN.setTitle("save".localized(),for: .normal)
                     self.saveBTN.alpha = 1
                 }
                 
             } else {
-                displayAlertMessage("فضلا ادخل اسم المستخدم", in: self)
+                displayAlertMessage("فضلا ادخل اسم المستخدم".localized(), in: self)
                 self.saveBTN.isEnabled = true
-                self.saveBTN.setTitle("save",for: .normal)
+                self.saveBTN.setTitle("save".localized(),for: .normal)
                 self.saveBTN.alpha = 1
             }
         }
