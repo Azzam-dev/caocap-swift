@@ -1,11 +1,11 @@
-/* 
+/*
   Localizable.strings
   caocap
 
   Created by omar alzhrani on 10/07/1443 AH.
   Copyright © 1443 Ficruty. All rights reserved.
 */
-
+////MenuVC
 "settings" = "settings";
  "logout" = "logout";
  "your activity" = "your activity";
@@ -21,3 +21,49 @@
 "data policy" = "data policy";
 "terms of use" = "terms of use";
 "open source libraries" = "open source libraries";
+"sign out" = "sign out";
+"Do you want to logOut?" = "Do you want to logOut?";
+"yes" = "yes";
+"no" = "no";
+"are you sure?" = "are you sure?";
+"If you press yes, a message will be sent to your email to change the password" = "If you press yes, a message will be sent to your email to change the password";
+
+////EditProfileVC
+"loading..." = "loading...";
+"save" = "save";
+"Please check your email" = "Please check your email";
+"Please enter your username" = "Please enter your username";
+
+////AuthVC
+"sign in" = "sign in";
+"sign up" = "sign up";
+"Please enter the password" = "Please enter the password";
+//I did this because I already wrote in \\EditProfileVC
+//"Please check your email" = "Please check your email";
+//"Please enter your username" = "Please enter your username";
+"Already have an account?" = "Already have an account?";
+"Don't have an account?" = "Don't have an account?";
+
+//NavigationVC
+"No internet connection" = "No internet connection";
+
+//ChatVC
+"What do you want to create?" = "What do you want to create?";
+"create" = "create";
+"group" = "group";
+"contact" = "contact";
+"cancel" = "cancel";
+"Please choose a name for the group" = "Please choose a name for the group";
+
+//MyProfileVC
+"delete" = "delete";
+//I did this because I already wrote in \\ChatVC
+//"cancel" = "cancel";
+
+//OpenedCaocapCell
+"ADD TO ORBIT" = "ADD TO ORBIT";
+"Added" = "Added";
+
+//DisplayAlertMessage
+"sorry" = "sorry";
+"OK" = "OK";

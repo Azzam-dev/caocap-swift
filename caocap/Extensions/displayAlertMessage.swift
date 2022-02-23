@@ -9,8 +9,8 @@
 import UIKit
 
 func displayAlertMessage(_ message: String, in viewController: UIViewController) {
-    let alertController = UIAlertController(title: "عذراً", message: message, preferredStyle: .alert)
-    let OKAction = UIAlertAction(title: "حسناً", style: .default)
+    let alertController = UIAlertController(title: "sorry".localized(), message: message, preferredStyle: .alert)
+    let OKAction = UIAlertAction(title: "OK".localized(), style: .default)
     alertController.addAction(OKAction)
     viewController.present(alertController, animated: true, completion: nil)
 }

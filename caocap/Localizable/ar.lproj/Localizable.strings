@@ -4,19 +4,67 @@
 
   Created by omar alzhrani on 10/07/1443 AH.
   Copyright © 1443 Ficruty. All rights reserved.
-*/
+ */
+//MenuVC
 "settings" = "الاعدادات";
- "logout" = "تسجيل الخروج";
- "your activity" = "فعالياتك";
- "notification" = "الاشعارات";
- "privacy" = "الخصوصية";
- "security" = "الامان";
- "ads" = "الاعلانات";
- "account" = "الحساب";
- "change language" = "تغيير اللغة";
- "reset password" = "إعادة تعيين كلمة المرور";
- "help" = "المساعدة";
- "about" = "عننا";
+"logout" = "تسجيل الخروج";
+"your activity" = "فعالياتك";
+"notification" = "الاشعارات";
+"privacy" = "الخصوصية";
+"security" = "الامان";
+"ads" = "الاعلانات";
+"account" = "الحساب";
+"change language" = "تغيير اللغة";
+"reset password" = "إعادة تعيين كلمة المرور";
+"help" = "المساعدة";
+"about" = "عننا";
 "data policy" = "سياسة البيانات";
 "terms of use" = "تعليمات الاستخدام";
 "open source libraries" = "مكتبات مفتوحة المصدر";
+"sign out" = "تسجيل الخروج";
+"Do you want to logOut?" = "هل ترغب بالخروج؟";
+"yes" = "نعم";
+"no" = "لا";
+"are you sure?" = "هل انت متأكد؟";
+"If you press yes, a message will be sent to your email to change the password" = "إذا ضغطت على نعم، فسيتم إرسال رسالة إلى بريدك الإلكتروني لتغيير كلمة المرور";
+
+//EditProfileVC
+"loading..." = "تحميل...";
+"save" = "حفظ";
+"Please check your email" = "من فضلك تفقد بريدك الالكتروني";
+"Please enter your username" = "الرجاء إدخال اسم المستخدم";
+
+//AuthVC
+"sign in" = "تسجيل الدخول";
+"sign up" = "التسجيل";
+"Please enter the password" = "الرجاء إدخال كلمة المرور";
+//I did this because I already wrote in //EditProfileVC
+//"Please check your email" = "Please check your email";
+//"Please enter your username" = "Please enter your username";
+"Already have an account?" = "هل لديك حساب؟";
+"Don't have an account?" = "ليس لديك حساب؟";
+
+//NavigationVC
+"No internet connection" = "لا يوجد اتصال بالإنترنت";
+
+//ChatVC
+"What do you want to create?" = "ماذا تريد أن تنشئ؟";
+"create" = "انشآء";
+"group" = "مجموعة";
+"contact" = "اتصل";
+"cancel" = "الغاء";
+"Please choose a name for the group" = "الرجاء اختيار اسم للمجموعة";
+
+//MyProfileVC
+"delete" = "حذف";
+//I did this because I already wrote in //ChatVC
+//"cancel" = "cancel";
+
+//OpenedCaocapCell
+"ADD TO ORBIT" = "اضافة الكوكب";
+"Added" = "مضاف";
+
+//DisplayAlertMessage
+"sorry" = "عذرا";
+"OK" = "حسنا";
+
