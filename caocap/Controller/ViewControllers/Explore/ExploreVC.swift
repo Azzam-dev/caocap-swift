@@ -123,20 +123,20 @@ extension ExploreVC: CaocapCellDelegate {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let reportAction = UIAlertAction(title: "report",style: .destructive ) { (buttonTapped) in
-           print("did report caocap")
+           print("reported caocap")
         }
-        let aAction = UIAlertAction(title: "report",style: .destructive ) { (buttonTapped) in
-           print("did report caocap")
+        let removeAction = UIAlertAction(title: "remove from orbit",style: .destructive ) { (buttonTapped) in
+           print("removed orbit")
         }
-        let bAction = UIAlertAction(title: "report",style: .destructive ) { (buttonTapped) in
-           print("did report caocap")
+        let aboutAction = UIAlertAction(title: "about this account",style: .default ) { (buttonTapped) in
+           print("prisent caocap info")
         }
         
-        let cancel = UIAlertAction(title: "cancel", style: .default, handler: nil)
+        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
         
+        moreInfoPopup.addAction(aboutAction)
         moreInfoPopup.addAction(reportAction)
-        moreInfoPopup.addAction(aAction)
-        moreInfoPopup.addAction(bAction)
+        moreInfoPopup.addAction(removeAction)
         moreInfoPopup.addAction(cancel)
         
         if let popoverController = moreInfoPopup.popoverPresentationController {
