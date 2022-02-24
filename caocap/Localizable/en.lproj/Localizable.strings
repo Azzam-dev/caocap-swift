@@ -38,6 +38,8 @@
 "sign in" = "sign in";
 "sign up" = "sign up";
 "Please enter the password" = "Please enter the password";
+"forget password ?" = "forget password ?";
+"send" = "send";
 //I did this because I already wrote in \\EditProfileVC
 //"Please check your email" = "Please check your email";
 //"Please enter your username" = "Please enter your username";

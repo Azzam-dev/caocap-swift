@@ -38,6 +38,8 @@
 "sign in" = "تسجيل الدخول";
 "sign up" = "التسجيل";
 "Please enter the password" = "الرجاء إدخال كلمة المرور";
+"forget password ?" = "استرجاع كلمة المرور ؟";
+"send" = "ارسال";
 //I did this because I already wrote in //EditProfileVC
 //"Please check your email" = "Please check your email";
 //"Please enter your username" = "Please enter your username";
