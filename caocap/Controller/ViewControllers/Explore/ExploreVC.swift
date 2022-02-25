@@ -14,6 +14,7 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var caocapsCollectionView: UICollectionView!
     var caocapsArray = [Caocap]()
     
+    
     @IBOutlet weak var searchTF: UITextField!
     
     override func viewDidLoad() {
@@ -117,24 +118,23 @@ extension ExploreVC: CaocapLayoutDelegate {
 
 
 extension ExploreVC: CaocapCellDelegate {
-    
-    func moreBTNpressed(caocapKey: String) {
+    func moreBTNpressed(key: String, name: String) {
         
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        let reportAction = UIAlertAction(title: "report",style: .destructive ) { (buttonTapped) in
+        let reportAction = UIAlertAction(title: "report", style: .destructive ) { (buttonTapped) in
            print("reported caocap")
         }
-        let removeAction = UIAlertAction(title: "remove from orbit",style: .destructive ) { (buttonTapped) in
+        let removeAction = UIAlertAction(title: "remove from orbit", style: .destructive ) { (buttonTapped) in
            print("removed orbit")
         }
-        let aboutAction = UIAlertAction(title: "about this account",style: .default ) { (buttonTapped) in
-           print("prisent caocap info")
+        let visitOwnerACT = UIAlertAction(title: name, style: .default ) { (buttonTapped) in
+           print("visitOwnerACT")
         }
         
         let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
         
-        moreInfoPopup.addAction(aboutAction)
+        moreInfoPopup.addAction(visitOwnerACT)
         moreInfoPopup.addAction(reportAction)
         moreInfoPopup.addAction(removeAction)
         moreInfoPopup.addAction(cancel)
@@ -147,4 +147,5 @@ extension ExploreVC: CaocapCellDelegate {
         self.present(moreInfoPopup, animated: true , completion: nil)
         
     }
+    
 }
