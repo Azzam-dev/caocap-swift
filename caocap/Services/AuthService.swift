@@ -37,6 +37,8 @@ class AuthService {
             
         }
     }
+    
+    
     func resetPassword(withEmail email: String ,completion: @escaping (_ status: Bool , _ error: Error?) -> ()) {
         
         Auth.auth().sendPasswordReset(withEmail: email, completion: { error in
@@ -44,8 +46,8 @@ class AuthService {
                 completion(false, error)
                 return
             }
-                completion(true, nil)
+            completion(true, nil)
         })
-            
-        }
+        
+    }
 }
