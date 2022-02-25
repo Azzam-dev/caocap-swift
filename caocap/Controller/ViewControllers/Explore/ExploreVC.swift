@@ -123,7 +123,7 @@ extension ExploreVC: CaocapCellDelegate {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let reportAction = UIAlertAction(title: "report", style: .destructive ) { (buttonTapped) in
-           print("reported caocap")
+            self.prisentReportAlert()
         }
         let removeAction = UIAlertAction(title: "remove from orbit", style: .destructive ) { (buttonTapped) in
            print("removed orbit")
@@ -144,8 +144,31 @@ extension ExploreVC: CaocapCellDelegate {
             popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
         
-        self.present(moreInfoPopup, animated: true , completion: nil)
+        self.present(moreInfoPopup, animated: true)
         
+    }
+    
+    
+    func prisentReportAlert() {
+        
+        let reportAlertConroller = UIAlertController(title: "report", message: "Why are you reporting this caocap ?", preferredStyle: .actionSheet)
+        
+        let action = UIAlertAction(title: "action 1", style: .default) { UIAlertAction in
+            print("nothing")
+            
+        }
+        
+        let cencelAction = UIAlertAction(title: "cencel", style: .cancel)
+        
+        reportAlertConroller.addAction(action)
+        reportAlertConroller.addAction(cencelAction)
+
+        if let popoverController = reportAlertConroller.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        
+        self.present(reportAlertConroller, animated: true)
     }
     
 }
