@@ -37,13 +37,16 @@ class AuthVC: UIViewController {
         signBTN.alpha = 0.5
         signSwitchBTN.isEnabled = false
         signSwitchBTN.alpha = 0.5
-//        usernameView.isHidden ? signIn() : signUp()
-        if signBTN.titleLabel?.text == "send".localized() {
+        
+        if usernameView.isHidden && passwordView.isHidden {
+            // user is on forgot password
             send()
-        } else if signBTN.titleLabel?.text == "sign up".localized() {
-            signUp()
-        } else {
+        } else if usernameView.isHidden {
+            // user is on sign in
             signIn()
+        } else {
+            // user is on sign up
+            signUp()
         }
     }
     
