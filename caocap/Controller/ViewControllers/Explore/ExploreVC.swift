@@ -153,15 +153,34 @@ extension ExploreVC: CaocapCellDelegate {
         
         let reportAlertConroller = UIAlertController(title: "report", message: "Why are you reporting this caocap ?", preferredStyle: .actionSheet)
         
-        let action = UIAlertAction(title: "action 1", style: .default) { UIAlertAction in
-            print("nothing")
+        let spamAction = UIAlertAction(title: "it's spam", style: .default) { UIAlertAction in
+            print("he's spamming his caocap")
+            
+        }
+        
+        let DosenNotWorkAction = UIAlertAction(title: "it's Dosen't work well", style: .default) { UIAlertAction in
+            print("it has a problem in it")
+            
+        }
+        
+        let falseAction = UIAlertAction(title: "false information", style: .default) { UIAlertAction in
+            print("The information is not right ")
+            
+        }
+        
+        let deslikeAction = UIAlertAction(title: "I Just don't like it", style: .default) { UIAlertAction in
+            print("I don't like it")
             
         }
         
         let cencelAction = UIAlertAction(title: "cencel", style: .cancel)
         
-        reportAlertConroller.addAction(action)
+        reportAlertConroller.addAction(spamAction)
+        reportAlertConroller.addAction(falseAction)
+        reportAlertConroller.addAction(DosenNotWorkAction)
+        reportAlertConroller.addAction(deslikeAction)
         reportAlertConroller.addAction(cencelAction)
+
 
         if let popoverController = reportAlertConroller.popoverPresentationController {
             popoverController.sourceView = self.view
