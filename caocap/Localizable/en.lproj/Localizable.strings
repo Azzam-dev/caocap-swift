@@ -39,6 +39,10 @@
 "sign up" = "sign up";
 "Please enter the password" = "Please enter the password";
 "forget password ?" = "forget password ?";
+"This email does not exist" = "This email does not exist";
+"will be sent message to your email to retrieve your password." = "will be sent message to your email to retrieve your password.";
+"We have sent a password recover instructions to your email." = "We have sent a password recover instructions to your email.";
+"Check Your Mail" = "Check Your Mail";
 "send" = "send";
 //I did this because I already wrote in \\EditProfileVC
 //"Please check your email" = "Please check your email";

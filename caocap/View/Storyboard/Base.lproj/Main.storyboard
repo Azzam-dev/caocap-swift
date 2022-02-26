@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,10 +28,7 @@
                                 <rect key="frame" x="0.0" y="370" width="414" height="412"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="will be sent message to your email to retrieve your password." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpb-iy-pxg">
-                                        <rect key="frame" x="67" y="199.66666666666663" width="300" height="26.333333333333343"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="5Z4-Mb-HkT"/>
-                                        </constraints>
+                                        <rect key="frame" x="60" y="199.66666666666663" width="294" height="26.333333333333343"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="13"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -200,13 +198,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="wpb-iy-pxg" firstAttribute="leading" secondItem="GtC-Xb-Bnn" secondAttribute="leading" id="3Xe-N8-mos"/>
                                     <constraint firstAttribute="trailing" secondItem="Ypd-zb-tMA" secondAttribute="trailing" constant="60" id="65w-83-sOv"/>
                                     <constraint firstItem="Ypd-zb-tMA" firstAttribute="centerX" secondItem="ydA-f3-9H2" secondAttribute="centerX" id="868-rQ-HUc"/>
                                     <constraint firstItem="Ypd-zb-tMA" firstAttribute="centerY" secondItem="ydA-f3-9H2" secondAttribute="centerY" id="96U-Hq-xnC"/>
                                     <constraint firstItem="aLN-gg-RAf" firstAttribute="leading" secondItem="Esa-AV-ZCi" secondAttribute="leading" id="Pgh-If-ZMz"/>
                                     <constraint firstItem="Ypd-zb-tMA" firstAttribute="top" secondItem="wpb-iy-pxg" secondAttribute="bottom" constant="-80" id="XlA-Fe-2A4"/>
+                                    <constraint firstItem="wpb-iy-pxg" firstAttribute="trailing" secondItem="GtC-Xb-Bnn" secondAttribute="trailing" id="eui-lA-MKf"/>
                                     <constraint firstItem="aLN-gg-RAf" firstAttribute="top" secondItem="Ypd-zb-tMA" secondAttribute="bottom" constant="10" id="oyU-BF-LIm"/>
-                                    <constraint firstItem="wpb-iy-pxg" firstAttribute="centerX" secondItem="Ypd-zb-tMA" secondAttribute="centerX" constant="10" id="zMq-7t-a1A"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="YI8-5v-pW8" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
@@ -240,7 +239,43 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-E0-OzD">
                                                 <rect key="frame" x="0.0" y="155.66666666666657" width="414" height="740.33333333333348"/>
+                                                <subviews>
+                                                    <stackView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cS6-UJ-Ocg">
+                                                        <rect key="frame" x="57" y="45" width="300" height="450"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check email" translatesAutoresizingMaskIntoConstraints="NO" id="v1f-vi-965">
+                                                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="300" id="mX2-TM-rEb"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja4-Ly-l5d">
+                                                                <rect key="frame" x="47.333333333333329" y="277.00000000000011" width="205.66666666666669" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="BPu-zD-2T4"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="30"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have sent a password recover instructions to your email." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHW-3t-NKy" userLabel="We have sent a password recover instructions to your email">
+                                                                <rect key="frame" x="32.333333333333329" y="287.33333333333337" width="235.66666666666669" height="162.66666666666663"/>
+                                                                <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="16"/>
+                                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="450" id="9iu-Uv-GtG"/>
+                                                            <constraint firstAttribute="width" constant="300" id="d8B-ff-Aer"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstItem="cS6-UJ-Ocg" firstAttribute="centerY" secondItem="WTx-E0-OzD" secondAttribute="centerY" constant="-100" id="IFn-mq-mr0"/>
+                                                    <constraint firstItem="cS6-UJ-Ocg" firstAttribute="centerX" secondItem="WTx-E0-OzD" secondAttribute="centerX" id="QGr-Tf-hhw"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -302,14 +337,14 @@
                                         <rect key="frame" x="107" y="-10" width="200" height="40"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="23"/>
                                         <state key="normal" title="sign up">
-                                            <color key="titleColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" red="0.0" green="0.65490196078431373" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="signBTN:" destination="mNu-3p-QYD" eventType="touchUpInside" id="ASe-m0-MSE"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hiE-uO-Nha">
-                                        <rect key="frame" x="104.66666666666667" y="33" width="204.66666666666663" height="27"/>
+                                        <rect key="frame" x="104.66666666666669" y="33" width="204.66666666666663" height="27"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlL-II-jEr">
                                                 <rect key="frame" x="0.0" y="6.3333333333333721" width="155.66666666666666" height="14.333333333333336"/>
@@ -367,12 +402,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkContentMessage" destination="SHW-3t-NKy" id="fl8-tB-AUj"/>
+                        <outlet property="checkYourMail" destination="Ja4-Ly-l5d" id="Tgo-mI-PrM"/>
                         <outlet property="emailTF" destination="UeS-ig-Xu4" id="MO3-Se-wae"/>
                         <outlet property="explainLabel" destination="wpb-iy-pxg" id="dLt-pZ-PwH"/>
                         <outlet property="forgetPassword" destination="qZp-J8-dyy" id="kss-Sd-Xa8"/>
                         <outlet property="passwordTF" destination="Miw-wp-yQP" id="RXk-ox-RXT"/>
                         <outlet property="passwordView" destination="Esa-AV-ZCi" id="KUC-My-gTp"/>
                         <outlet property="rocketLaunchView" destination="HlO-Ew-VSZ" id="dN9-bT-Akx"/>
+                        <outlet property="sendToEmailView" destination="cS6-UJ-Ocg" id="UBZ-QN-TPH"/>
                         <outlet property="signBTN" destination="xu4-hs-qgV" id="0Eu-DE-Mt2"/>
                         <outlet property="signSwitchBTN" destination="X1Y-bB-ySX" id="W6W-p0-kRH"/>
                         <outlet property="switchLBL" destination="LlL-II-jEr" id="TNB-N8-OwW"/>
@@ -832,6 +870,21 @@
             </objects>
             <point key="canvasLocation" x="784" y="-1468"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="PxR-32-K7s">
+            <objects>
+                <viewController id="MYB-aF-0GY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hxe-fj-chb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="koa-Si-dMy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="shi-3W-Ra5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1780" y="-1342"/>
+        </scene>
         <!--RepairsVC-->
         <scene sceneID="TEE-Tc-omH">
             <objects>
@@ -1010,10 +1063,14 @@ Please visit the app tomorrow and everything will be done
         <image name="W-chat" width="106" height="100"/>
         <image name="astronaut" width="96" height="92"/>
         <image name="caocap circle" width="1000" height="1000"/>
+        <image name="check email" width="884" height="607.5"/>
         <image name="email" width="287" height="300"/>
         <image name="password" width="245" height="300"/>
         <image name="rocket launch" width="1000" height="404"/>
         <image name="w-launched_rocket" width="67" height="100"/>
         <image name="w-planet_filled" width="99" height="72"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

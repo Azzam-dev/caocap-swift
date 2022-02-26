@@ -19,11 +19,18 @@ class AuthVC: UIViewController {
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var explainLabel: UILabel!
+    @IBOutlet weak var checkYourMail: UILabel!
+    @IBOutlet weak var checkContentMessage: UILabel!
+    @IBOutlet weak var sendToEmailView: UIStackView!
     
     override func viewDidLoad() {
         
         LocalizationManager.shared.checkOfLanguage(language: "en")
 
+        explainLabel.text = "will be sent message to your email to retrieve your password.".localized()
+        checkYourMail.text = "Check Your Mail".localized()
+        checkContentMessage.text = "We have sent a password recover instructions to your email.".localized()
+        
         super.viewDidLoad()
         self.view.bindToKeyBoard()
         self.hideKeyboardWhenTappedAround()
@@ -95,7 +102,7 @@ class AuthVC: UIViewController {
             forgetPassworded()
         } else {
             displayAlertMessage("Please check your email".localized(), in: self)
-            resetSignBTN("sign in".localized())
+            resetSignBTN("send".localized())
         }
     }
     
@@ -136,9 +143,16 @@ class AuthVC: UIViewController {
         AuthService.instance.resetPassword(withEmail: emailTF.text!) { status, error in
             if status {
                 print("successful")
-                self.rocketLaunchAnimation()
+                self.rocketLaunchAnimationForFP()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                    self.resetSignBTN("sign in".localized())
+                    self.forgetPassword.isHidden = false
+                    self.passwordView.isHidden = false
+                    self.explainLabel.isHidden = true
+                }
             } else {
                 print("error")
+                displayAlertMessage(String(describing: "This email does not exist".localized()), in: self)
                 self.resetSignBTN("send".localized())
             }
         }
@@ -160,6 +174,29 @@ class AuthVC: UIViewController {
             self.switchLBL.alpha = 1
             
         })
+        
+    }
+//    FP is means Forget Password
+    func rocketLaunchAnimationForFP() {
+        rocketLaunchView.isHidden = false
+        sendToEmailView.isHidden = false
+        UIView.animate(withDuration: 0.8,delay: 0,options: .curveEaseInOut, animations: {
+            self.sendToEmailView.alpha = 1
+            self.signBTN.alpha = 0
+            self.signSwitchBTN.alpha = 0
+            self.switchLBL.alpha = 0
+            self.rocketLaunchView.frame.origin.y = ( 270 - self.view.frame.size.height )
+            self.view.layoutIfNeeded()
+        },completion: { finished in
+            UIView.animate(withDuration: 0.8,delay: 5, animations: {
+                self.signBTN.alpha = 1
+                self.signSwitchBTN.alpha = 1
+                self.switchLBL.alpha = 1
+                self.rocketLaunchView.frame.origin.y = ( 270 + self.view.frame.size.height )
+                self.view.layoutIfNeeded()
+            })
+        }
+        )
     }
     
 
