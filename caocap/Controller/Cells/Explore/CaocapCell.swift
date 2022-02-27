@@ -12,7 +12,7 @@ import WebKit
 
 /* Declare a Delegate Protocol method */
 protocol CaocapCellDelegate {
-    func moreBTNpressed(caocapKey: String)
+    func moreBTNpressed(key: String, name: String )
 }
 
 class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
@@ -83,7 +83,7 @@ class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
     }
     
     @IBAction func moreBTN(_ sender: Any) {
-        caocapCellDelegate?.moreBTNpressed(caocapKey: caocapKey)
+        caocapCellDelegate?.moreBTNpressed(key: caocapKey, name: caocapName.text ?? "")
     }
     
 }

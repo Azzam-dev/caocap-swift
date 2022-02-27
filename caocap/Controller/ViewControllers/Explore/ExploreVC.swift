@@ -14,6 +14,7 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var caocapsCollectionView: UICollectionView!
     var caocapsArray = [Caocap]()
     
+    
     @IBOutlet weak var searchTF: UITextField!
     
     override func viewDidLoad() {
@@ -56,7 +57,7 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
         getCaocapsData()
     }
     
-    //FIXME: fix searchTF and show the search bar 
+    //FIXME: fix searchTF and show the search bar
     @objc func textFieldDidChange() {
         if searchTF.text == "" {
             DataService.instance.getAllCaocaps(handler: { (returnedExploreArray) in
@@ -89,7 +90,7 @@ extension ExploreVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? CaocapCell else { return UICollectionViewCell() }
-        
+        cell.caocapCellDelegate = self
         cell.configure(caocap: caocapsArray[indexPath.row], released: isReleased)
         return cell
         
@@ -113,4 +114,80 @@ extension ExploreVC: CaocapLayoutDelegate {
         let randomHeight = [350 , 450 , 500].shuffled()
         return CGFloat(randomHeight[0])
     }
+}
+
+
+extension ExploreVC: CaocapCellDelegate {
+    func moreBTNpressed(key: String, name: String) {
+        
+        let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let reportAction = UIAlertAction(title: "report", style: .destructive ) { (buttonTapped) in
+            self.prisentReportAlert()
+        }
+        let removeAction = UIAlertAction(title: "remove from orbit", style: .destructive ) { (buttonTapped) in
+           print("removed orbit")
+        }
+        let visitOwnerACT = UIAlertAction(title: name, style: .default ) { (buttonTapped) in
+           print("visitOwnerACT")
+        }
+        
+        let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
+        
+        moreInfoPopup.addAction(visitOwnerACT)
+        moreInfoPopup.addAction(reportAction)
+        moreInfoPopup.addAction(removeAction)
+        moreInfoPopup.addAction(cancel)
+        
+        if let popoverController = moreInfoPopup.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        
+        self.present(moreInfoPopup, animated: true)
+        
+    }
+    
+    
+    func prisentReportAlert() {
+        
+        let reportAlertConroller = UIAlertController(title: "report", message: "Why are you reporting this caocap ?", preferredStyle: .actionSheet)
+        
+        let spamAction = UIAlertAction(title: "it's spam", style: .default) { UIAlertAction in
+            print("he's spamming his caocap")
+            
+        }
+        
+        let DosenNotWorkAction = UIAlertAction(title: "it's Dosen't work well", style: .default) { UIAlertAction in
+            print("it has a problem in it")
+            
+        }
+        
+        let falseAction = UIAlertAction(title: "false information", style: .default) { UIAlertAction in
+            print("The information is not right ")
+            
+        }
+        
+        let deslikeAction = UIAlertAction(title: "I Just don't like it", style: .default) { UIAlertAction in
+            print("I don't like it")
+            
+        }
+        
+        let cencelAction = UIAlertAction(title: "cencel", style: .cancel)
+        
+        reportAlertConroller.addAction(spamAction)
+        reportAlertConroller.addAction(falseAction)
+        reportAlertConroller.addAction(DosenNotWorkAction)
+        reportAlertConroller.addAction(deslikeAction)
+        reportAlertConroller.addAction(cencelAction)
+
+
+        if let popoverController = reportAlertConroller.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        }
+        
+        self.present(reportAlertConroller, animated: true)
+    }
+    
 }
