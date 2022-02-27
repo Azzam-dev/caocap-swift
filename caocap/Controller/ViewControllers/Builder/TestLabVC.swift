@@ -58,11 +58,9 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         
     }
     
-    
     private func loadCaocap(_ caocap: Caocap) {
     //TODO: - loadCaocap
     }
-    
     
     func gestureRecognizerSetup() {
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
@@ -102,7 +100,6 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
             self.view.layoutIfNeeded()
         })
     }
-    
     
     
     //-----Settings-----

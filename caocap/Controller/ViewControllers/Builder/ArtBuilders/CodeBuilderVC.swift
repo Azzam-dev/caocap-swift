@@ -26,25 +26,19 @@ class CodeBuilderVC: ArtBuilderVC {
         getCaocapData()
     }
     
-    //this is to make the second cell visible
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        codeCollectionView.scrollToItem(at:IndexPath(item: fileIndex, section: 0), at: .right, animated: false)
-    }
     
     func getCaocapData() {
         guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
-//            if let code = caocap.code { self.caocapCode = code }
+            //TODO: - loud caocap Data
         }
     }
     
-    var fileIndex = 1
+    var fileIndex = 0
     @IBAction func didSwipeCollectionView(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
         case .left where fileIndex < (caocapCode.count - 1) :
             fileIndex += 1
-            
         case .right where fileIndex > 0 :
             fileIndex -= 1
         default:
