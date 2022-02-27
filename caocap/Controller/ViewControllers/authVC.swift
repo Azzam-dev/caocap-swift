@@ -119,7 +119,7 @@ class AuthVC: UIViewController {
             if success {
                 self.rocketLaunchAnimation()
             } else {
-                displayAlertMessage(String(describing: loginError?.localizedDescription), in: self)
+                displayAlertMessage(String(describing: loginError!.localizedDescription), in: self)
                 self.resetSignBTN("sign in".localized())
             }
         })
@@ -133,7 +133,7 @@ class AuthVC: UIViewController {
                     self.rocketLaunchAnimation()
                 })
             } else {
-                displayAlertMessage(String(describing: registrationError?.localizedDescription), in: self)
+                displayAlertMessage(String(describing: registrationError!.localizedDescription), in: self)
                 self.resetSignBTN("sign up".localized())
             }
         })
@@ -160,6 +160,7 @@ class AuthVC: UIViewController {
     
     @IBOutlet weak var rocketLaunchView: UIView!
     func rocketLaunchAnimation() {
+        sendToEmailView.isHidden = true
         rocketLaunchView.isHidden = false
         UIView.animate(withDuration: 0.8 , animations: {
             self.signBTN.alpha = 0
