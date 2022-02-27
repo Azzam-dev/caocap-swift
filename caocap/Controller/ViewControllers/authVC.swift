@@ -20,7 +20,7 @@ class AuthVC: UIViewController {
     
     override func viewDidLoad() {
         
-        DataService.instance.checkOfLanguage(language: "en")
+        LocalizationManager.shared.checkOfLanguage(language: "en")
 
         super.viewDidLoad()
         self.view.bindToKeyBoard()
@@ -31,11 +31,7 @@ class AuthVC: UIViewController {
     @IBOutlet weak var signBTN: UIButton!
     @IBAction func signBTN(_ sender: Any) {
         signBTN.isEnabled = false
-        if currentLang == "en" {
-            signBTN.setTitle("loading...",for: .normal)
-        } else {
-            signBTN.setTitle("تحميل...",for: .normal)
-        }
+        signBTN.setTitle("loading...".localized(),for: .normal)
         signBTN.alpha = 0.5
         signSwitchBTN.isEnabled = false
         signSwitchBTN.alpha = 0.5
@@ -49,13 +45,13 @@ class AuthVC: UIViewController {
             if passwordTF.text != "" {
                 loginUser()
             } else {
-                displayAlertMessage("فضلا ادخل كلمة السر", in: self)
-                resetSignBTN("sign in")
+                displayAlertMessage("فضلا ادخل كلمة السر".localized(), in: self)
+                resetSignBTN("sign in".localized())
             }
         } else {
             //Email address is not valid
-            displayAlertMessage("الرجاء التحقق من البريد الالكتروني", in: self)
-            resetSignBTN("sign in")
+            displayAlertMessage("الرجاء التحقق من البريد الالكتروني".localized(), in: self)
+            resetSignBTN("sign in".localized())
         }
     }
     
@@ -67,17 +63,17 @@ class AuthVC: UIViewController {
                 if passwordTF.text != "" {
                     registerUser()
                 } else {
-                    displayAlertMessage("فضلا ادخل كلمة السر", in: self)
-                    resetSignBTN("sign up")
+                    displayAlertMessage("فضلا ادخل كلمة السر".localized(), in: self)
+                    resetSignBTN("sign up".localized())
                 }
             } else {
                 //Email address is not valid
-                displayAlertMessage("الرجاء التحقق من البريد الالكتروني", in: self)
-                resetSignBTN("sign up")
+                displayAlertMessage("الرجاء التحقق من البريد الالكتروني".localized(), in: self)
+                resetSignBTN("sign up".localized())
             }
         } else {
-            displayAlertMessage("فضلا ادخل اسم المستخدم", in: self)
-            resetSignBTN("sign up")
+            displayAlertMessage("فضلا ادخل اسم المستخدم".localized(), in: self)
+            resetSignBTN("sign up".localized())
         }
     }
     
@@ -95,7 +91,7 @@ class AuthVC: UIViewController {
                 self.rocketLaunchAnimation()
             } else {
                 displayAlertMessage(String(describing: loginError?.localizedDescription), in: self)
-                self.resetSignBTN("sign in")
+                self.resetSignBTN("sign in".localized())
             }
         })
     }
@@ -109,7 +105,7 @@ class AuthVC: UIViewController {
                 })
             } else {
                 displayAlertMessage(String(describing: registrationError?.localizedDescription), in: self)
-                self.resetSignBTN("sign up")
+                self.resetSignBTN("sign up".localized())
             }
         })
     }
@@ -137,15 +133,15 @@ class AuthVC: UIViewController {
     @IBAction func signSwitchBTN(_ sender: Any) {
         if usernameView.isHidden {
             usernameView.isHidden = false
-            signBTN.setTitle("sign up", for: .normal)
-            switchLBL.text = "Already have an account?"
-            signSwitchBTN.setTitle("sign in", for: .normal)
+            signBTN.setTitle("sign up".localized(), for: .normal)
+            switchLBL.text = "Already have an account?".localized()
+            signSwitchBTN.setTitle("sign in".localized(), for: .normal)
             
         } else {
             usernameView.isHidden = true
-            signBTN.setTitle("sign in", for: .normal)
-            switchLBL.text = "Don't have an account?"
-            signSwitchBTN.setTitle("sign up", for: .normal)
+            signBTN.setTitle("sign in".localized(), for: .normal)
+            switchLBL.text = "Don't have an account?".localized()
+            signSwitchBTN.setTitle("sign up".localized(), for: .normal)
             
         }
     }
