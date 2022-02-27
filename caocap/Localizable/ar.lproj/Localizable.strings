@@ -38,6 +38,12 @@
 "sign in" = "تسجيل الدخول";
 "sign up" = "التسجيل";
 "Please enter the password" = "الرجاء إدخال كلمة المرور";
+"forget password ?" = "استرجاع كلمة المرور ؟";
+"This email does not exist" = "هذا البريد الإلكتروني غير موجود";
+"will be sent message to your email to retrieve your password." = "سوف يتم إرسال رسالة إلى بريدك الإلكتروني لاسترداد كلمة المرور الخاصة بك.";
+"Check Your Mail" = "تحقق من بريدك";
+"We have sent a password recover instructions to your email." = "لقد أرسلنا تعليمات استعادة كلمة المرور إلى بريدك الإلكتروني.";
+"send" = "ارسال";
 //I did this because I already wrote in //EditProfileVC
 //"Please check your email" = "Please check your email";
 //"Please enter your username" = "Please enter your username";

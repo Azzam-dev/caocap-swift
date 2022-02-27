@@ -22,7 +22,7 @@
 "terms of use" = "terms of use";
 "open source libraries" = "open source libraries";
 "sign out" = "sign out";
-"Do you want to logOut?" = "Do you want to logOut?";
+"Do you want to logout?" = "Do you want to logout?";
 "yes" = "yes";
 "no" = "no";
 "are you sure?" = "are you sure?";
@@ -38,6 +38,12 @@
 "sign in" = "sign in";
 "sign up" = "sign up";
 "Please enter the password" = "Please enter the password";
+"forget password ?" = "forget password ?";
+"This email does not exist" = "This email does not exist";
+"will be sent message to your email to retrieve your password." = "will be sent message to your email to retrieve your password.";
+"We have sent a password recover instructions to your email." = "We have sent a password recover instructions to your email.";
+"Check Your Mail" = "Check Your Mail";
+"send" = "send";
 //I did this because I already wrote in \\EditProfileVC
 //"Please check your email" = "Please check your email";
 //"Please enter your username" = "Please enter your username";

@@ -14,14 +14,23 @@ class AuthVC: UIViewController {
     override var prefersStatusBarHidden: Bool {  return true }
     
     @IBOutlet weak var usernameView: UIView!
+    @IBOutlet weak var passwordView: UIView!
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
+    @IBOutlet weak var explainLabel: UILabel!
+    @IBOutlet weak var checkYourMail: UILabel!
+    @IBOutlet weak var checkContentMessage: UILabel!
+    @IBOutlet weak var sendToEmailView: UIStackView!
     
     override func viewDidLoad() {
         
         LocalizationManager.shared.checkOfLanguage(language: "en")
 
+        explainLabel.text = "will be sent message to your email to retrieve your password.".localized()
+        checkYourMail.text = "Check Your Mail".localized()
+        checkContentMessage.text = "We have sent a password recover instructions to your email.".localized()
+        
         super.viewDidLoad()
         self.view.bindToKeyBoard()
         self.hideKeyboardWhenTappedAround()
@@ -35,7 +44,17 @@ class AuthVC: UIViewController {
         signBTN.alpha = 0.5
         signSwitchBTN.isEnabled = false
         signSwitchBTN.alpha = 0.5
-        usernameView.isHidden ? signIn() : signUp()
+        
+        if usernameView.isHidden && passwordView.isHidden {
+            // user is on forgot password
+            send()
+        } else if usernameView.isHidden {
+            // user is on sign in
+            signIn()
+        } else {
+            // user is on sign up
+            signUp()
+        }
     }
     
     func signIn() {
@@ -45,12 +64,12 @@ class AuthVC: UIViewController {
             if passwordTF.text != "" {
                 loginUser()
             } else {
-                displayAlertMessage("فضلا ادخل كلمة السر".localized(), in: self)
+                displayAlertMessage("Please enter the password".localized(), in: self)
                 resetSignBTN("sign in".localized())
             }
         } else {
             //Email address is not valid
-            displayAlertMessage("الرجاء التحقق من البريد الالكتروني".localized(), in: self)
+            displayAlertMessage("Please check your email".localized(), in: self)
             resetSignBTN("sign in".localized())
         }
     }
@@ -63,17 +82,27 @@ class AuthVC: UIViewController {
                 if passwordTF.text != "" {
                     registerUser()
                 } else {
-                    displayAlertMessage("فضلا ادخل كلمة السر".localized(), in: self)
+                    displayAlertMessage("Please enter the password".localized(), in: self)
                     resetSignBTN("sign up".localized())
                 }
             } else {
                 //Email address is not valid
-                displayAlertMessage("الرجاء التحقق من البريد الالكتروني".localized(), in: self)
+                displayAlertMessage("Please check your email".localized(), in: self)
                 resetSignBTN("sign up".localized())
             }
         } else {
-            displayAlertMessage("فضلا ادخل اسم المستخدم".localized(), in: self)
+            displayAlertMessage("Please enter your username".localized(), in: self)
             resetSignBTN("sign up".localized())
+        }
+    }
+    
+    func send() {
+        let isEmailAddressValid = isValidEmailAddress(emailAddressString: emailTF.text!)
+        if isEmailAddressValid {
+            forgetPassworded()
+        } else {
+            displayAlertMessage("Please check your email".localized(), in: self)
+            resetSignBTN("send".localized())
         }
     }
     
@@ -90,7 +119,7 @@ class AuthVC: UIViewController {
             if success {
                 self.rocketLaunchAnimation()
             } else {
-                displayAlertMessage(String(describing: loginError?.localizedDescription), in: self)
+                displayAlertMessage(String(describing: loginError!.localizedDescription), in: self)
                 self.resetSignBTN("sign in".localized())
             }
         })
@@ -104,14 +133,34 @@ class AuthVC: UIViewController {
                     self.rocketLaunchAnimation()
                 })
             } else {
-                displayAlertMessage(String(describing: registrationError?.localizedDescription), in: self)
+                displayAlertMessage(String(describing: registrationError!.localizedDescription), in: self)
                 self.resetSignBTN("sign up".localized())
             }
         })
     }
     
+    func forgetPassworded() {
+        AuthService.instance.resetPassword(withEmail: emailTF.text!) { status, error in
+            if status {
+                print("successful")
+                self.rocketLaunchAnimationForFP()
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                    self.resetSignBTN("sign in".localized())
+                    self.forgetPassword.isHidden = false
+                    self.passwordView.isHidden = false
+                    self.explainLabel.isHidden = true
+                }
+            } else {
+                print("error")
+                displayAlertMessage(String(describing: "This email does not exist".localized()), in: self)
+                self.resetSignBTN("send".localized())
+            }
+        }
+    }
+    
     @IBOutlet weak var rocketLaunchView: UIView!
     func rocketLaunchAnimation() {
+        sendToEmailView.isHidden = true
         rocketLaunchView.isHidden = false
         UIView.animate(withDuration: 0.8 , animations: {
             self.signBTN.alpha = 0
@@ -126,19 +175,62 @@ class AuthVC: UIViewController {
             self.switchLBL.alpha = 1
             
         })
+        
+    }
+//    FP is means Forget Password
+    func rocketLaunchAnimationForFP() {
+        rocketLaunchView.isHidden = false
+        sendToEmailView.isHidden = false
+        UIView.animate(withDuration: 0.8,delay: 0,options: .curveEaseInOut, animations: {
+            self.sendToEmailView.alpha = 1
+            self.signBTN.alpha = 0
+            self.signSwitchBTN.alpha = 0
+            self.switchLBL.alpha = 0
+            self.rocketLaunchView.frame.origin.y = ( 270 - self.view.frame.size.height )
+            self.view.layoutIfNeeded()
+        },completion: { finished in
+            UIView.animate(withDuration: 0.8,delay: 5, animations: {
+                self.signBTN.alpha = 1
+                self.signSwitchBTN.alpha = 1
+                self.switchLBL.alpha = 1
+                self.rocketLaunchView.frame.origin.y = ( 270 + self.view.frame.size.height )
+                self.view.layoutIfNeeded()
+            })
+        }
+        )
+    }
+    
+
+    @IBOutlet weak var forgetPassword: UIButton!
+    @IBAction func forgetPassword(_ sender: Any) {
+        forgetPassword.isHidden = true
+        usernameView.isHidden = true
+        passwordView.isHidden = true
+        explainLabel.isHidden = false
+        forgetPassword.setTitle("forget password ?".localized(), for: .normal)
+        signBTN.setTitle("send".localized(), for: .normal)
+        switchLBL.text = "Don't have an account?".localized()
+        signSwitchBTN.setTitle("sign up".localized(), for: .normal)
     }
     
     @IBOutlet weak var switchLBL: UILabel!
     @IBOutlet weak var signSwitchBTN: UIButton!
     @IBAction func signSwitchBTN(_ sender: Any) {
         if usernameView.isHidden {
+            forgetPassword.isHidden = true
             usernameView.isHidden = false
+            explainLabel.isHidden = true
+            passwordView.isHidden = false
             signBTN.setTitle("sign up".localized(), for: .normal)
             switchLBL.text = "Already have an account?".localized()
             signSwitchBTN.setTitle("sign in".localized(), for: .normal)
             
         } else {
+            forgetPassword.isHidden = false
             usernameView.isHidden = true
+            explainLabel.isHidden = true
+            passwordView.isHidden = false
+            forgetPassword.setTitle("forget password ?".localized(), for: .normal)
             signBTN.setTitle("sign in".localized(), for: .normal)
             switchLBL.text = "Don't have an account?".localized()
             signSwitchBTN.setTitle("sign up".localized(), for: .normal)

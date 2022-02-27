@@ -1506,7 +1506,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="-51" translatesAutoresizingMaskIntoConstraints="NO" id="k1h-zq-aoQ">
-                                <rect key="frame" x="42" y="111.5" width="330" height="673"/>
+                                <rect key="frame" x="42" y="141.5" width="330" height="673"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vud-mU-4OY">
                                         <rect key="frame" x="44" y="0.0" width="286" height="24"/>
@@ -1522,13 +1522,13 @@
                                             <constraint firstAttribute="width" constant="330" id="ymE-rB-uO2"/>
                                             <constraint firstAttribute="height" constant="700" id="ymq-Fq-QKi"/>
                                         </constraints>
-                                        <mutableString key="text">
+                                        <string key="text">
 تستخدم Apple البيانات الشخصية لتشغيل خدماتنا، ولمعالجة معاملاتك، وللتواصل معك، ولأغراض الأمان ومنع الاحتيال، وللامتثال للقانون. ويجوز لنا أيضًا استخدام البيانات الشخصية لأغراضٍ أخرى بموافقتك لأغراضٍ أخرى بموافقتك.
  لا تستخدم Apple بياناتك الشخصية إلا عندما يكون لدينا أساس قانوني صحيح للقيام بذلك. ووفقًا للظروف، يجوز لـ Apple الاعتماد على موافقتك أو على حقيقة أن المعالجة ضرورية للوفاء بعقد معك، أو حماية مصالحك الحيوية أو مصالح الأشخاص الآخرين، أو الامتثال للقانون. ويجوز لنا أيضًا معالجة بياناتك الشخصية عندما نعتقد أن هذا يخدم مصالحنا المشروعة أو مصالح الآخرين المشروعة، مع مراعاة مصالحك، وحقوقك، وتوقعاتك. وإذا كان لديك أي أسئلة بخصوص الأساس القانوني، يمكنك التواصل مع مسؤول حماية البيانات على apple.com/ae-ar/privacy/contact.
 لأغراضٍ أخرى بموافقتك لأغراضٍ أخرى بموافقتك
 تشغيل خدماتنا. تجمع Apple البيانات الشخصية اللازمة لتشغيل خدماتنا، التي قد تشتمل على بيانات شخصية تم جمعها لتحسين عروضنا، أو لأغراضٍ داخلية، مثل التدقيق أو تحليل البيانات، أو لاستكشاف الأخطاء وإصلاحها. على سبيل المثال: إذا كنت ترغب في الوصول إلى أغنية من خلال اشتراك Apple Music، فإننا نجمع بيانات عن الأغاني التي تشغلها، وذلك من أجل إمدادك بالمحتوى الذي طلبته ولأغراض الملكية الفكرية.
 
-</mutableString>
+</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1542,7 +1542,7 @@
                             <constraint firstItem="WWW-lX-SIV" firstAttribute="leading" secondItem="lFS-1P-Eyn" secondAttribute="leading" id="IbV-P2-7Yn"/>
                             <constraint firstItem="WWW-lX-SIV" firstAttribute="trailing" secondItem="lFS-1P-Eyn" secondAttribute="trailing" id="K9s-AV-Ib5"/>
                             <constraint firstItem="k1h-zq-aoQ" firstAttribute="centerX" secondItem="yn5-5K-qb3" secondAttribute="centerX" id="mGr-dr-yOh"/>
-                            <constraint firstItem="k1h-zq-aoQ" firstAttribute="centerY" secondItem="yn5-5K-qb3" secondAttribute="centerY" id="nZJ-02-D8u"/>
+                            <constraint firstItem="k1h-zq-aoQ" firstAttribute="centerY" secondItem="yn5-5K-qb3" secondAttribute="centerY" constant="30" id="nZJ-02-D8u"/>
                             <constraint firstItem="WWW-lX-SIV" firstAttribute="top" secondItem="yn5-5K-qb3" secondAttribute="top" id="rQ2-VW-ZtO"/>
                         </constraints>
                     </view>
