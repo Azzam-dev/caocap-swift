@@ -118,25 +118,38 @@ extension ExploreVC: CaocapLayoutDelegate {
 
 
 extension ExploreVC: CaocapCellDelegate {
-    func moreBTNpressed(key: String, name: String) {
+    
+    func moreBTNpressed(key: String, name: String, isOrbiting: Bool) {
         
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let visitOwnerACT = UIAlertAction(title: name, style: .default ) { (buttonTapped) in
+           print("visitOwnerACT")
+        }
         
         let reportAction = UIAlertAction(title: "report", style: .destructive ) { (buttonTapped) in
             self.prisentReportAlert()
         }
-        let removeAction = UIAlertAction(title: "remove from orbit", style: .destructive ) { (buttonTapped) in
-           print("removed orbit")
+        
+        var orbitingAction = UIAlertAction()
+        
+        
+        if isOrbiting {
+            orbitingAction = UIAlertAction(title: "remove from orbit", style: .destructive ) { (buttonTapped) in
+                DataService.instance.addAndReomveFromOrbit(caocapKey: key, remove: true)
+            }
+        } else {
+            orbitingAction = UIAlertAction(title: "add to orbit", style: .destructive ) { (buttonTapped) in
+                DataService.instance.addAndReomveFromOrbit(caocapKey: key, remove: false)
+            }
         }
-        let visitOwnerACT = UIAlertAction(title: name, style: .default ) { (buttonTapped) in
-           print("visitOwnerACT")
-        }
+        
         
         let cancel = UIAlertAction(title: "cancel", style: .cancel, handler: nil)
         
         moreInfoPopup.addAction(visitOwnerACT)
         moreInfoPopup.addAction(reportAction)
-        moreInfoPopup.addAction(removeAction)
+        moreInfoPopup.addAction(orbitingAction)
         moreInfoPopup.addAction(cancel)
         
         if let popoverController = moreInfoPopup.popoverPresentationController {

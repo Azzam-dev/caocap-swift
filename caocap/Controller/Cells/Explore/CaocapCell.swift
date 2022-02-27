@@ -12,11 +12,11 @@ import WebKit
 
 /* Declare a Delegate Protocol method */
 protocol CaocapCellDelegate {
-    func moreBTNpressed(key: String, name: String )
+    func moreBTNpressed(key: String, name: String, isOrbiting: Bool)
 }
 
 class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
-
+    
     var caocapCellDelegate: CaocapCellDelegate?
     
     @IBOutlet weak var webView: WKWebView!
@@ -26,6 +26,7 @@ class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
     @IBOutlet weak var caocapIMG: UIImageView!
     
     var caocapKey = ""
+    var isOrbiting = false
     
     func configure(caocap: Caocap ,released: Bool) {
         caocapKey = caocap.key
@@ -52,6 +53,10 @@ class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
             if let imageURL = URL(string: caocap.imageURL ?? "" ) {
                 caocapIMG.af.setImage(withURL: imageURL)
             }
+        }
+        
+        DataService.instance.checkOrbiteStatus(caocapKey: caocapKey) { status in
+            self.isOrbiting = status
         }
     }
     
@@ -83,7 +88,7 @@ class CaocapCell: UICollectionViewCell, WKNavigationDelegate {
     }
     
     @IBAction func moreBTN(_ sender: Any) {
-        caocapCellDelegate?.moreBTNpressed(key: caocapKey, name: caocapName.text ?? "")
+        caocapCellDelegate?.moreBTNpressed(key: caocapKey, name: caocapName.text ?? "", isOrbiting: isOrbiting)
     }
     
 }

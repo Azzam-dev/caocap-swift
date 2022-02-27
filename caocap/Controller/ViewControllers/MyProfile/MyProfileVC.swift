@@ -132,7 +132,8 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 
 
 extension MyProfileVC: CaocapCellDelegate {
-    func moreBTNpressed(key: String, name: String) {
+
+    func moreBTNpressed(key: String, name: String, isOrbiting: Bool) {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "delete",style: .destructive ) { (buttonTapped) in
             DataService.instance.removeCaocap(key)

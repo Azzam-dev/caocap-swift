@@ -119,6 +119,13 @@ class DataService {
         }
     }
     
+    func checkOrbiteStatus(caocapKey: String, handler: @escaping (_ status: Bool) -> ()) {
+        if let userUID = Auth.auth().currentUser?.uid { REF_USERS.child(userUID).child("orbiting").child(caocapKey).child("key").observeSingleEvent(of: .value) { (key) in
+                handler(key.exists())
+            }
+        }
+    }
+    
     
     //This sends a new message for the caocap room, You must provide the caocap key and the message data
     func sendRoomMessage(forCaocapKey key: String, messageData: Dictionary<String, Any> , handler: @escaping (_ sendtMessage: Bool) -> ()) {

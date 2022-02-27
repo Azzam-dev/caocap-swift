@@ -64,7 +64,15 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
         
         loadingAnimation(image: loadingIcon)
         
-        checkOrbiteStatus()
+        DataService.instance.checkOrbiteStatus(caocapKey: caocapKey) { status in
+            if status {
+                self.caocapIsOrbited = true
+                self.orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+            } else {
+                self.caocapIsOrbited = false
+                self.orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 0)
+            }
+        }
         
         self.webView.navigationDelegate = self
         self.caocapName.text = caocap.name
@@ -118,19 +126,6 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
         
     }
     
-    func checkOrbiteStatus() {
-        if let userUID = Auth.auth().currentUser?.uid { DataService.instance.REF_USERS.child(userUID).child("orbiting").child(caocapKey).child("key").observeSingleEvent(of: .value) { (key) in
-                if key.exists() {
-                    self.caocapIsOrbited = true
-                    self.orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
-                } else {
-                    self.caocapIsOrbited = false
-                    self.orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 0)
-                }
-            }
-        }
-    }
-    
     @IBAction func shareBTN(_ sender: Any) {
         let button = sender as! UIButton
         self.delegate?.shareBTNpressed(cell: self, didTappedshow: button)
@@ -161,7 +156,6 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
             orbitsNum.text = "ADD TO ORBIT".localized()
         } else {
             caocapIsOrbited = true
-            print(caocapKey)
             orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
             DataService.instance.addAndReomveFromOrbit(caocapKey: caocapKey, remove: false)
             orbitsNum.text = "Added".localized()
