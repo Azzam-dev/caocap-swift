@@ -7,15 +7,13 @@
 //
 
 import UIKit
-import WebKit
 import ReSwift
 import Firebase
 
-class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var theView: DesignableView!
     @IBOutlet weak var loadingIcon: UIImageView!
-    @IBOutlet weak var webView: WKWebView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
@@ -25,22 +23,16 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: hide the caocapLinkTF if the caocap is not of type link
-        
         loadingAnimation(image: loadingIcon)
         getCaocapData()
         gestureRecognizerSetup()
-        
-        //This hides the webView until the download finishes
-        self.webView.isHidden = true
-        self.webView.navigationDelegate = self
     }
     
     
     func getCaocapData() {
         // we are useing the observe method to make the changes in real-time and to allow "Multi device changes"
         guard let openedCaocap = openedCaocap else { return }
-        if openedCaocap.type == .link { caocapLinkTF.isHidden = false }
+        
         DataService.instance.getCaocap(withKey: openedCaocap.key) { caocap in
             self.caocapNameTF.text = caocap.name
             self.colorBTNpressed(self.colorBTNs[caocap.color])
@@ -68,26 +60,7 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
     
     
     private func loadCaocap(_ caocap: Caocap) {
-        switch caocap.type {
-        case .code:
-            let caocapCode = """
-            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(caocap.code!["css"] ?? "")</style></head><body>\(caocap.code!["html"] ?? "" )<script>\(caocap.code!["js"] ?? "")</script></body></html>
-            """
-            
-            self.webView.loadHTMLString(caocapCode , baseURL: nil)
-            
-        case .link:
-            caocapLinkTF.text = caocap.link
-            let caocapURL = URL(string: caocap.link!)!
-            var urlRequest = URLRequest(url: caocapURL)
-            urlRequest.cachePolicy = .returnCacheDataElseLoad
-            self.webView.load(urlRequest)
-            
-        default:
-            print("unexpected caocap type")
-        }
-        
+    //TODO: - loadCaocap
     }
     
     
@@ -130,10 +103,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
         })
     }
     
-    //This shows the webView after the download finishes
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.webView.isHidden = false
-    }
     
     
     //-----Settings-----
@@ -141,7 +110,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
     @IBOutlet weak var caocapIMG: DesignableImage!
     @IBOutlet weak var caocapIMGview: DesignableView!
     @IBOutlet weak var caocapNameTF: UITextField!
-    @IBOutlet weak var caocapLinkTF: UITextField!
     @IBOutlet weak var publishingSwitchBTN: UIButton!
     
     var publishedStatus = false
@@ -228,12 +196,6 @@ class TestLabVC: UIViewController, WKNavigationDelegate, UITextViewDelegate, UII
             guard let openedCaocap = openedCaocap else { return }
             DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["name": caocapNameTF.text!])
         }
-    }
-    
-    @IBAction func caocapLinkTFDidEndEditing(_ sender: Any) {
-        guard let openedCaocap = openedCaocap else { return }
-        guard let text = caocapLinkTF.text else { return }
-        DataService.instance.REF_CAOCAPS.child(openedCaocap.key).updateChildValues(["link": text])
     }
     
 }

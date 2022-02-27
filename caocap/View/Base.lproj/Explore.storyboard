@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="saw-FO-J6K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="saw-FO-J6K">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -196,33 +196,9 @@
                                                                 <constraint firstAttribute="width" constant="220" id="xtk-tp-WlN"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XNV-2r-9br">
+                                                        <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWR-ag-3aS" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="378" height="540"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="20"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </imageView>
-                                                        <view hidden="YES" clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWR-ag-3aS" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="378" height="540"/>
-                                                            <subviews>
-                                                                <wkWebView tag="2" contentMode="scaleAspectFit" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwa-gg-2mg">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="540"/>
-                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
-                                                                        <wkPreferences key="preferences"/>
-                                                                    </wkWebViewConfiguration>
-                                                                </wkWebView>
-                                                            </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="mwa-gg-2mg" secondAttribute="bottom" id="34O-pX-9pG"/>
-                                                                <constraint firstAttribute="trailing" secondItem="mwa-gg-2mg" secondAttribute="trailing" id="IEJ-fw-MgV"/>
-                                                                <constraint firstItem="mwa-gg-2mg" firstAttribute="leading" secondItem="ZWR-ag-3aS" secondAttribute="leading" id="aSP-bW-dxI"/>
-                                                                <constraint firstItem="mwa-gg-2mg" firstAttribute="top" secondItem="ZWR-ag-3aS" secondAttribute="top" id="pp9-2W-313"/>
-                                                            </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                     <real key="value" value="20"/>
@@ -233,14 +209,10 @@
                                                     <color key="backgroundColor" red="0.99607843137254903" green="0.9882352941176471" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="Arw-EZ-71B" firstAttribute="width" secondItem="Arw-EZ-71B" secondAttribute="height" multiplier="145:162" id="22r-Dw-JD0"/>
-                                                        <constraint firstItem="XNV-2r-9br" firstAttribute="leading" secondItem="Cxi-QP-QPj" secondAttribute="leading" id="7j8-lR-qjn"/>
                                                         <constraint firstItem="Arw-EZ-71B" firstAttribute="centerX" secondItem="Cxi-QP-QPj" secondAttribute="centerX" id="FX6-F4-cVc"/>
                                                         <constraint firstAttribute="trailing" secondItem="ZWR-ag-3aS" secondAttribute="trailing" id="FkE-g3-fbh"/>
                                                         <constraint firstAttribute="bottom" secondItem="ZWR-ag-3aS" secondAttribute="bottom" id="JgL-38-Uwc"/>
                                                         <constraint firstItem="Arw-EZ-71B" firstAttribute="centerY" secondItem="Cxi-QP-QPj" secondAttribute="centerY" id="WHh-3a-kaL"/>
-                                                        <constraint firstAttribute="bottom" secondItem="XNV-2r-9br" secondAttribute="bottom" id="dpq-N5-qvq"/>
-                                                        <constraint firstItem="XNV-2r-9br" firstAttribute="top" secondItem="Cxi-QP-QPj" secondAttribute="top" id="fZV-Hq-Zfh"/>
-                                                        <constraint firstAttribute="trailing" secondItem="XNV-2r-9br" secondAttribute="trailing" id="hf1-d7-H5q"/>
                                                         <constraint firstItem="ZWR-ag-3aS" firstAttribute="top" secondItem="Cxi-QP-QPj" secondAttribute="top" id="iFY-TU-81i"/>
                                                         <constraint firstItem="ZWR-ag-3aS" firstAttribute="leading" secondItem="Cxi-QP-QPj" secondAttribute="leading" id="kfG-IN-UGK"/>
                                                     </constraints>
@@ -259,7 +231,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KI-fY-Z5j">
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KI-fY-Z5j">
                                                     <rect key="frame" x="291" y="558" width="95" height="25"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-S9-ekQ">
@@ -479,7 +451,6 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="Cxi-QP-QPj" secondAttribute="trailing" id="Kmt-Ez-riO"/>
                                             <constraint firstItem="ASz-na-8fL" firstAttribute="leading" secondItem="5RM-wD-ssu" secondAttribute="leadingMargin" constant="10" id="Oco-pN-Ef6"/>
                                             <constraint firstItem="AkM-gP-9sH" firstAttribute="leading" secondItem="wWC-HK-FX1" secondAttribute="leading" id="Ugl-sn-ltm"/>
-                                            <constraint firstItem="9KI-fY-Z5j" firstAttribute="trailing" secondItem="mwa-gg-2mg" secondAttribute="trailing" id="V4g-27-UZf"/>
                                             <constraint firstItem="b2i-mg-qaD" firstAttribute="leading" secondItem="ASz-na-8fL" secondAttribute="trailing" constant="10" id="WkS-QD-rhr"/>
                                             <constraint firstItem="wWC-HK-FX1" firstAttribute="top" secondItem="AkM-gP-9sH" secondAttribute="bottom" constant="5" id="fPX-z3-O2g"/>
                                             <constraint firstItem="Cxi-QP-QPj" firstAttribute="leading" secondItem="5RM-wD-ssu" secondAttribute="leadingMargin" id="gRc-3q-hux"/>
@@ -493,7 +464,6 @@
                                         </constraints>
                                         <size key="customSize" width="394" height="700"/>
                                         <connections>
-                                            <outlet property="caocapBackgroundIMG" destination="XNV-2r-9br" id="Lek-Dc-2DU"/>
                                             <outlet property="caocapDescription" destination="wWC-HK-FX1" id="Uhq-ee-fke"/>
                                             <outlet property="caocapIMG" destination="qYe-uA-82c" id="hVX-07-VMb"/>
                                             <outlet property="caocapIMGview" destination="ASz-na-8fL" id="iCH-wu-SB7"/>
@@ -503,7 +473,6 @@
                                             <outlet property="orbitBTN_background" destination="AkM-gP-9sH" id="aQE-Jn-6c3"/>
                                             <outlet property="orbitsNum" destination="64w-Nb-QrP" id="wHc-Zp-6C3"/>
                                             <outlet property="theView" destination="ZWR-ag-3aS" id="khm-ng-PuQ"/>
-                                            <outlet property="webView" destination="mwa-gg-2mg" id="fbz-pT-9wo"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

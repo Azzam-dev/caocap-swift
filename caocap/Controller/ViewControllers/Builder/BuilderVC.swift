@@ -50,9 +50,7 @@ class BuilderVC: UIViewController {
         cosmosBaseSubVC = storyboard.instantiateViewController(withIdentifier: "cosmosBase") as? CosmosBaseVC
         testLabSubVC = storyboard.instantiateViewController(withIdentifier: "testLab") as? TestLabVC
         switch openedCaocap?.type  {
-        case .link, .none:
-            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "linkBuilder") as? LinkBuilderVC
-        case .code:
+        case .code, .none:
             artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "codeBuilder") as? CodeBuilderVC
         case .template:
             artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "templateBuilder") as? TemplateBuilderVC

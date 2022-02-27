@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WebKit
 import Firebase
 
 class TemplateBuilderVC: ArtBuilderVC {

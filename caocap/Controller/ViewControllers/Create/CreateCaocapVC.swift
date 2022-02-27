@@ -11,19 +11,19 @@ import Firebase
 
 class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var type: CaocapType = .link
+    var type: CaocapType = .code
     
     @IBOutlet weak var caocapIMG: DesignableImage!
     @IBOutlet weak var caocapIMGview: DesignableView!
     @IBOutlet weak var caocapNameTF: UITextField!
-    @IBOutlet weak var caocapLinkTF: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         caocapIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeImage)))
         createButtonSetup(withTitle: "create")
-        if type != .link { caocapLinkTF.isHidden = true }
+        
     }
     
     var colorSelectedIndex = 3
@@ -81,9 +81,6 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
         if caocapNameTF.text == "" {
             displayAlertMessage("please enter the caocap's name", in: self)
             createButtonSetup(withTitle: "create")
-        } else if type == .link && caocapLinkTF.text == "" {
-            displayAlertMessage("please enter the caocap's link", in: self)
-            createButtonSetup(withTitle: "create")
         } else {
             uploudCaocap()
         }
@@ -104,8 +101,6 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
                         
                         var content = [String:Any]()
                         switch self.type {
-                        case .link:
-                            content[self.type.rawValue] = self.caocapLinkTF.text!
                         case .code:
                             content[self.type.rawValue] = ["html":"<h1> write your code here </h1>",
                                                            "js": "//write your JS code here",
