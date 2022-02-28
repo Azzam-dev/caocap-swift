@@ -1,5 +1,5 @@
 //
-//  CaocapPoliticsVC.swift
+//  PolicyVC.swift
 //  caocap
 //
 //  Created by omar alzhrani on 10/07/1443 AH.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CaocapPoliticsVC: UIViewController {
+class PolicyVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

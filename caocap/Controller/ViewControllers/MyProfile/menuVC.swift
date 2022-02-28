@@ -93,7 +93,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
 
     func goToCAOCAPPolitics() {
         let storyboardSettings = UIStoryboard(name: "UserProfile", bundle: nil)
-        let settingsVC = storyboardSettings.instantiateViewController(withIdentifier: "CAOCAPPolitics") as! CaocapPoliticsVC
+        let settingsVC = storyboardSettings.instantiateViewController(withIdentifier: "Policy") as! PolicyVC
         navigationController?.pushViewController(settingsVC, animated: true)
     }
 

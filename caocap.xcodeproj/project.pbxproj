@@ -11,7 +11,7 @@
 		4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E42D424651F9A00522B2F /* TestLabVC.swift */; };
 		4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E182A4425D84C5A00DB37C4 /* MenuItem.swift */; };
 		4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AEF8A2404FA92004B4F37 /* Reachability.swift */; };
-		4E9FCE5227B6DEC30091BD33 /* CaocapPoliticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FCE5127B6DEC30091BD33 /* CaocapPoliticsVC.swift */; };
+		4E9FCE5227B6DEC30091BD33 /* PolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FCE5127B6DEC30091BD33 /* PolicyVC.swift */; };
 		4E9FCE5727B6DF830091BD33 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE5927B6DF830091BD33 /* Explore.storyboard */; settings = {ASSET_TAGS = (Localizable, ); }; };
 		4E9FCE5E27B6DFEA0091BD33 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE6027B6DFEA0091BD33 /* Chat.storyboard */; };
 		4E9FCE6527B6E08A0091BD33 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE6727B6E08A0091BD33 /* UserProfile.storyboard */; };
@@ -122,7 +122,7 @@
 		4E0E42D424651F9A00522B2F /* TestLabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabVC.swift; sourceTree = "<group>"; };
 		4E182A4425D84C5A00DB37C4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		4E8AEF8A2404FA92004B4F37 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		4E9FCE5127B6DEC30091BD33 /* CaocapPoliticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapPoliticsVC.swift; sourceTree = "<group>"; };
+		4E9FCE5127B6DEC30091BD33 /* PolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolicyVC.swift; sourceTree = "<group>"; };
 		4E9FCE5327B6DF3B0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4E9FCE5427B6DF3B0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		4E9FCE5627B6DF450091BD33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -580,7 +580,7 @@
 				EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */,
 				ECF2055021624C9400C48F2A /* MenuVC.swift */,
 				EC2F25062169C47F00D14733 /* EditProfileVC.swift */,
-				4E9FCE5127B6DEC30091BD33 /* CaocapPoliticsVC.swift */,
+				4E9FCE5127B6DEC30091BD33 /* PolicyVC.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -783,7 +783,7 @@
 				EC2B26C3226B2E2700779486 /* SwipeNavigationController.swift in Sources */,
 				ECF205492160ED6D00C48F2A /* AuthVC.swift in Sources */,
 				ECF2054B216102C200C48F2A /* AuthService.swift in Sources */,
-				4E9FCE5227B6DEC30091BD33 /* CaocapPoliticsVC.swift in Sources */,
+				4E9FCE5227B6DEC30091BD33 /* PolicyVC.swift in Sources */,
 				EC5107AA266BB334000DB190 /* EditTitleStylesCell.swift in Sources */,
 				EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */,
 				EC69740A261D889700EB71F4 /* TemplateBuilderVC.swift in Sources */,
