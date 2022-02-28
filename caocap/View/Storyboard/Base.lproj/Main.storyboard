@@ -45,7 +45,7 @@
                                                             <constraint firstAttribute="height" constant="25" id="E9G-v4-Xg6"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="username"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" enablesReturnKeyAutomatically="YES" textContentType="username"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="astronaut" translatesAutoresizingMaskIntoConstraints="NO" id="WPs-rY-L2S">
                                                         <rect key="frame" x="0.0" y="7.3333333333333712" width="20" height="20"/>
@@ -89,7 +89,7 @@
                                                             <constraint firstAttribute="height" constant="25" id="f93-Zf-Lv6"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-Zs-FFd">
                                                         <rect key="frame" x="0.0" y="7.3333333333333712" width="20" height="20"/>
@@ -133,7 +133,7 @@
                                                             <constraint firstAttribute="height" constant="25" id="onT-tN-ewD"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="password" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-Zt-YWS">
                                                         <rect key="frame" x="0.0" y="7.3333333333332575" width="20" height="20"/>
