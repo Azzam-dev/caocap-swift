@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2147CCEA27D0A39B0008AD4C /* OWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCE927D0A39B0008AD4C /* OWrapper.m */; };
-		2147CCEC27D0A8F40008AD4C /* O.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCEB27D0A8F40008AD4C /* O.swift */; };
+		2147CCEC27D0A8F40008AD4C /* OService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCEB27D0A8F40008AD4C /* OService.swift */; };
 		25E50F6727BE46DD00906E4A /* LuaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E50F6627BE46DD00906E4A /* LuaService.swift */; };
 		25E50FA927BE498400906E4A /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 25E50F6A27BE498400906E4A /* lauxlib.c */; };
 		25E50FAA27BE498400906E4A /* liolib.c in Sources */ = {isa = PBXBuildFile; fileRef = 25E50F7027BE498400906E4A /* liolib.c */; };
@@ -154,7 +154,7 @@
 /* Begin PBXFileReference section */
 		2147CCE827D0A3620008AD4C /* OWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OWrapper.h; sourceTree = "<group>"; };
 		2147CCE927D0A39B0008AD4C /* OWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OWrapper.m; sourceTree = "<group>"; };
-		2147CCEB27D0A8F40008AD4C /* O.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = O.swift; sourceTree = "<group>"; };
+		2147CCEB27D0A8F40008AD4C /* OService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OService.swift; sourceTree = "<group>"; };
 		25E50F6627BE46DD00906E4A /* LuaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuaService.swift; sourceTree = "<group>"; };
 		25E50F6A27BE498400906E4A /* lauxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lauxlib.c; sourceTree = "<group>"; };
 		25E50F6B27BE498400906E4A /* lmem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lmem.h; sourceTree = "<group>"; };
@@ -630,6 +630,7 @@
 				EC6AB851215D8F4B00C276E3 /* DataService.swift */,
 				ECA08F552688FF1400C0A3EB /* TemplateService.swift */,
 				25E50F6627BE46DD00906E4A /* LuaService.swift */,
+				2147CCEB27D0A8F40008AD4C /* OService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -668,7 +669,6 @@
 				25E50F6927BE498400906E4A /* src */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
-				2147CCEB27D0A8F40008AD4C /* O.swift */,
 				2147CCE927D0A39B0008AD4C /* OWrapper.m */,
 				25E50FCD27BE4D6300906E4A /* LuaWrapper.m */,
 				2147CCE827D0A3620008AD4C /* OWrapper.h */,
@@ -987,7 +987,7 @@
 				EC6109EB2646E0F900E760CD /* Store.swift in Sources */,
 				EC3C86C6263C94E00005DBAB /* TemplateCell.swift in Sources */,
 				25E50FB327BE498400906E4A /* Makefile in Sources */,
-				2147CCEC27D0A8F40008AD4C /* O.swift in Sources */,
+				2147CCEC27D0A8F40008AD4C /* OService.swift in Sources */,
 				25E50FB127BE498400906E4A /* lfunc.c in Sources */,
 				25E50FBD27BE498400906E4A /* lgc.c in Sources */,
 				25E50FAA27BE498400906E4A /* liolib.c in Sources */,

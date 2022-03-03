@@ -12,24 +12,34 @@
 
 import Foundation
 
-class LuaService {
-    static let instance = LuaService()
-    
-    func runLua(code: String) {
-            let lua = Lua()
-            lua.setup()
-            
-            let ptrScript = strdup(code)
-            lua.script(ptrScript)
-            free(ptrScript)
 
-            lua.destruct()
-    }
+@objc class LuaService: NSObject {
+    static let instance = LuaService(script: "")
     
-    
-    func runFactorial(code: String) {
-        let fac = Factorial(script: code)
+    var lua : Lua
+
+    @objc
+    init(script: String) { // Objective-C: initWithScript
+        lua = Lua()
+        lua.setup()
         
+        let funcName = strdup("sayHelloFromSwift")
+        lua.register(sayHelloFromSwift, withName: funcName)
+        free(funcName)
+        
+        let funcName2 = strdup("sayHelloToIbrahim")
+        lua.register(sayHelloToIbrahim, withName: funcName2)
+        free(funcName2)
+
+        let ptrScript = strdup(script)
+        lua.script(ptrScript)
+        free(ptrScript)
+
     }
+
+    deinit {
+        lua.destruct()
+    }
+    
     
 }

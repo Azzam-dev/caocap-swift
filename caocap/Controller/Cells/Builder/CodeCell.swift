@@ -24,7 +24,7 @@ class CodeCell: UICollectionViewCell, UITextViewDelegate {
         guard let key = key else { return }
         guard let fileName = fileName else { return }
         guard let luaCode = textView.text else { return }
-        LuaService.instance.runFactorial(code: luaCode)
+        LuaService(script: luaCode)
         //TODO: - save the code changes to firebase
         //DataService.instance.REF_CAOCAPS.child(key).child("code").updateChildValues([fileName: luaCode])
     }

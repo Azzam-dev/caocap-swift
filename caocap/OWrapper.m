@@ -9,23 +9,28 @@
 #import <Foundation/Foundation.h>
 
 #import "OWrapper.h"
-#import "CAOCAPx-Swift.h" // << ADJUST ME
+#import "CAOCAPx-Swift.h"
 
-Factorial * factorial;
+LuaService * luaService;
 
-int factorialExternal(lua_State *luaState) {
-    if (factorial == Nil) {
-        factorial = [[Factorial alloc] initWithScript: @""];
+int sayHelloFromSwift(lua_State *luaState) {
+    if (luaService == Nil) {
+        luaService = [[LuaService alloc] initWithScript: @""];
     }
 
-    NSLog(@"Hello CAOCAP from swift");
-    UInt64 n = lua_tointeger(luaState, -1L);
-    lua_pop(luaState, 1);
+    OService * obj = [[OService alloc] init];
+    [obj sayHelloFromSwift];
+    
+    return 1;
+}
 
-//    lua_Number res = [factorial
-//                      callFactorialWithState:luaState
-//                      value:n];
-//    lua_pushnumber(luaState, res);
+int sayHelloToIbrahim(lua_State *luaState) {
+    if (luaService == Nil) {
+        luaService = [[LuaService alloc] initWithScript: @""];
+    }
 
+    OService * obj = [[OService alloc] init];
+    [obj sayHelloToIbrahim];
+    
     return 1;
 }
