@@ -27,6 +27,9 @@
             methode: (const char *) methode
               value: (LUA_NUMBER) value;
 
+- (void) registerFunction: (lua_CFunction)function
+                 withName: (const char *)name;
+
 @end
 
 #endif /* LuaWrapper_h */

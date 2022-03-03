@@ -12,5 +12,6 @@
 #define caocap_Bridging_Header_h
 
 #include "LuaWrapper.h"
+#import "OWrapper.h"
 
 #endif /* caocap_Bridging_Header_h */

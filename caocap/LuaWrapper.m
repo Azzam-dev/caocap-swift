@@ -74,4 +74,9 @@ void print_error(lua_State* state) {
     return result;
 }
 
+- (void) registerFunction: (lua_CFunction)function
+                 withName: (const char *)name {
+    lua_register(luaState, name, function);
+}
+
 @end
