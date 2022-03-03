@@ -19,4 +19,6 @@ struct CreateCaocapAction: Action {
 struct OpenBuilderAction: Action {
     let caocap: Caocap
 }
-struct CloseBuilderAction: Action {}
+struct CloseBuilderAction: Action {
+    
+}

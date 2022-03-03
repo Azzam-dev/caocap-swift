@@ -28,6 +28,7 @@
 "are you sure?" = "هل انت متأكد؟";
 "If you press yes, a message will be sent to your email to change the password" = "إذا ضغطت على نعم، فسيتم إرسال رسالة إلى بريدك الإلكتروني لتغيير كلمة المرور";
 
+
 //EditProfileVC
 "loading..." = "تحميل...";
 "save" = "حفظ";

@@ -31,18 +31,30 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemlabel: UILabel!
     
-    func configure(menuItem: MenuItem, isHidden: Bool) {
-
+    @IBOutlet weak var changeLanguageIMG: UIImageView!
+    @IBOutlet weak var changeLanguageLBL: UILabel!
+    
+    
+    func configure(menuItem: MenuItem) {
         
-        if currentLang == "en" {
-            segmentedOutlet.selectedSegmentIndex = 0
-        } else {
-            segmentedOutlet.selectedSegmentIndex = 1
-        }
         itemlabel.text = menuItem.label.rawValue.localized()
         self.itemImage.image = menuItem.image
-        self.segmentedOutlet.isHidden = isHidden
     }
-
     
+    func configure() {
+        
+        changeLanguageIMG.image = UIImage(named: "icons8-language_filled") 
+        changeLanguageLBL.text = "change language".localized()
+        
+//        if currentLang == "en" {
+//            segmentedOutlet.selectedSegmentIndex = 0
+//        } else {
+//            segmentedOutlet.selectedSegmentIndex = 1
+//        }
+         currentLang == "en" ? selectOfSegmentIndex(0):selectOfSegmentIndex(1)
+        
+    }
+    func selectOfSegmentIndex(_ SegmentIndex: Int) {
+        segmentedOutlet.selectedSegmentIndex = SegmentIndex
+    }
 }

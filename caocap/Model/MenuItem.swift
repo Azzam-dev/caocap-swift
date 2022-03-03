@@ -17,7 +17,7 @@ enum MenuItemType: String {
     case security
     case ads
     case account
-    case changeLanguage = "change language"
+//    case changeLanguage = "change language"
     case resetPassword = "reset password"
     case help
     case about

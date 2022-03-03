@@ -45,7 +45,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                          MenuItem(image: #imageLiteral(resourceName: "icons8-help"), label: .about)
             ]
         case .account:
-            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-language_filled"), label: .changeLanguage),
+            menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-re_enter_pincode_filled"), label: .resetPassword),
                          MenuItem(image: #imageLiteral(resourceName: "icons8-re_enter_pincode_filled"), label: .resetPassword)
             ]
         case .about:
@@ -123,10 +123,18 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell" , for: indexPath ) as! MenuCell
-        if menuItems[indexPath.row].label == .changeLanguage {
-            cell.configure(menuItem: menuItems[indexPath.row], isHidden: false)
-        } else {
-            cell.configure(menuItem: menuItems[indexPath.row], isHidden: true)
+        let cell2 = menuTableView.dequeueReusableCell(withIdentifier: "menuCell2" , for: indexPath ) as! MenuCell
+        cell.configure(menuItem: menuItems[indexPath.row])
+        if menuType == .account {
+            switch indexPath.row {
+            case 0:
+                cell2.configure()
+                return cell2
+            case 1:
+                return cell
+            default:
+                print("gkk")
+            }
         }
         return cell
     }
@@ -150,8 +158,6 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
             print("")
         case .account:
             menuCAOCAP(template: .account)
-        case .changeLanguage:
-            print("")
         case .resetPassword:
             sendMessageToEmail()
         case .help:

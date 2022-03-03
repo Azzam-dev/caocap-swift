@@ -46,23 +46,11 @@
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="w2Z-K0-Utm">
-                                                    <rect key="frame" x="267" y="6.5" width="127" height="32"/>
-                                                    <segments>
-                                                        <segment title="English"/>
-                                                        <segment title="Arabic"/>
-                                                    </segments>
-                                                    <connections>
-                                                        <action selector="SelectedLanguage:" destination="fC8-jD-6eh" eventType="valueChanged" id="xcF-W5-1cF"/>
-                                                    </connections>
-                                                </segmentedControl>
                                             </subviews>
                                             <color key="backgroundColor" red="0.17346543073654175" green="0.22139126062393188" blue="0.26790127158164978" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="05c-Bo-UGe" firstAttribute="leading" secondItem="Kc5-6h-g8t" secondAttribute="trailing" constant="10" id="Evh-YW-xES"/>
-                                                <constraint firstItem="w2Z-K0-Utm" firstAttribute="centerY" secondItem="ZVU-K6-Mdm" secondAttribute="centerY" id="IqS-y3-0MM"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="05c-Bo-UGe" secondAttribute="trailing" constant="30" id="VzE-Ed-hwv"/>
-                                                <constraint firstAttribute="trailing" secondItem="w2Z-K0-Utm" secondAttribute="trailing" constant="20" symbolic="YES" id="bfl-Fa-cHH"/>
                                                 <constraint firstItem="Kc5-6h-g8t" firstAttribute="centerY" secondItem="05c-Bo-UGe" secondAttribute="centerY" id="cqF-Q0-HMQ"/>
                                                 <constraint firstItem="Kc5-6h-g8t" firstAttribute="leading" secondItem="ZVU-K6-Mdm" secondAttribute="leading" constant="20" id="eA3-s5-9l4"/>
                                                 <constraint firstItem="05c-Bo-UGe" firstAttribute="centerY" secondItem="ZVU-K6-Mdm" secondAttribute="centerY" id="wl0-k4-vN3"/>
@@ -71,7 +59,54 @@
                                         <connections>
                                             <outlet property="itemImage" destination="Kc5-6h-g8t" id="vIJ-JO-fq2"/>
                                             <outlet property="itemlabel" destination="05c-Bo-UGe" id="Jzv-Ob-Atx"/>
-                                            <outlet property="segmentedOutlet" destination="w2Z-K0-Utm" id="Kh8-0r-A5E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell2" id="Jw8-Db-2jZ" customClass="MenuCell" customModule="CAOCAPx" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jw8-Db-2jZ" id="vlV-BF-g20">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uei-Bm-ZdB">
+                                                    <rect key="frame" x="20" y="9.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="uei-Bm-ZdB" secondAttribute="height" multiplier="1:1" id="aN2-yi-kEN"/>
+                                                        <constraint firstAttribute="width" constant="25" id="sVg-IX-9Y2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="change language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HB7-FN-L2Q">
+                                                    <rect key="frame" x="55" y="11.5" width="309" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jrz-YU-gBN">
+                                                    <rect key="frame" x="267" y="6.5" width="127" height="32"/>
+                                                    <segments>
+                                                        <segment title="English"/>
+                                                        <segment title="Arabic"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="SelectedLanguage:" destination="Jw8-Db-2jZ" eventType="valueChanged" id="XAD-CK-zsA"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.17346543070000001" green="0.2213912606" blue="0.26790127159999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="HB7-FN-L2Q" firstAttribute="centerY" secondItem="vlV-BF-g20" secondAttribute="centerY" id="7HZ-Tg-vyP"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HB7-FN-L2Q" secondAttribute="trailing" constant="30" id="Qev-bf-cNc"/>
+                                                <constraint firstAttribute="trailing" secondItem="jrz-YU-gBN" secondAttribute="trailing" constant="20" symbolic="YES" id="cJP-sz-k1Z"/>
+                                                <constraint firstItem="uei-Bm-ZdB" firstAttribute="centerY" secondItem="HB7-FN-L2Q" secondAttribute="centerY" id="liq-SG-iTq"/>
+                                                <constraint firstItem="HB7-FN-L2Q" firstAttribute="leading" secondItem="uei-Bm-ZdB" secondAttribute="trailing" constant="10" id="uNB-Ef-uJ8"/>
+                                                <constraint firstItem="uei-Bm-ZdB" firstAttribute="leading" secondItem="vlV-BF-g20" secondAttribute="leading" constant="20" id="wHM-iD-12L"/>
+                                                <constraint firstItem="jrz-YU-gBN" firstAttribute="centerY" secondItem="vlV-BF-g20" secondAttribute="centerY" id="yUI-Sl-HMo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="changeLanguageIMG" destination="uei-Bm-ZdB" id="eHd-xs-pyZ"/>
+                                            <outlet property="changeLanguageLBL" destination="HB7-FN-L2Q" id="TdL-hi-1Fl"/>
+                                            <outlet property="segmentedOutlet" destination="jrz-YU-gBN" id="ZXW-0u-9RE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1575,7 +1610,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="gcU-mh-FCc">
-            <size key="intrinsicContentSize" width="45" height="35"/>
+            <size key="intrinsicContentSize" width="46" height="38"/>
         </designable>
         <designable name="hbC-St-JDk">
             <size key="intrinsicContentSize" width="30" height="30"/>
