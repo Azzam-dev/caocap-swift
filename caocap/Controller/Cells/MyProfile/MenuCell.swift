@@ -11,50 +11,12 @@ import UIKit
 class MenuCell: UITableViewCell {
     
     weak var viewController: UIViewController?
-    let currentLang = Locale.current.languageCode
-    
-    @IBOutlet weak var segmentedOutlet: UISegmentedControl!
-    @IBAction func SelectedLanguage(_ sender: Any) {
-        switch segmentedOutlet.selectedSegmentIndex {
-        case 0:
-            let newLang = currentLang == "ar" ? "en":"ar"
-            UserDefaults.standard.setValue([newLang], forKey: "AppleLanguages")
-        case 1:
-            let newLang = currentLang == "en" ? "ar":"en"
-            UserDefaults.standard.setValue([newLang], forKey: "AppleLanguages")
-        default:
-            print("h")
-        }
-        LocalizationManager.shared.resetApp()
-    }
     
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemlabel: UILabel!
     
-    @IBOutlet weak var changeLanguageIMG: UIImageView!
-    @IBOutlet weak var changeLanguageLBL: UILabel!
-    
-    
     func configure(menuItem: MenuItem) {
-        
         itemlabel.text = menuItem.label.rawValue.localized()
         self.itemImage.image = menuItem.image
-    }
-    
-    func configure() {
-        
-        changeLanguageIMG.image = UIImage(named: "icons8-language_filled") 
-        changeLanguageLBL.text = "change language".localized()
-        
-//        if currentLang == "en" {
-//            segmentedOutlet.selectedSegmentIndex = 0
-//        } else {
-//            segmentedOutlet.selectedSegmentIndex = 1
-//        }
-         currentLang == "en" ? selectOfSegmentIndex(0):selectOfSegmentIndex(1)
-        
-    }
-    func selectOfSegmentIndex(_ SegmentIndex: Int) {
-        segmentedOutlet.selectedSegmentIndex = SegmentIndex
     }
 }
