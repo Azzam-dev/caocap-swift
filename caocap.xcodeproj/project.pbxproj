@@ -11,12 +11,14 @@
 		25E6308C2742E3C300A27836 /* RevealingSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E630862742E3C300A27836 /* RevealingSplashView.swift */; };
 		4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E42D424651F9A00522B2F /* TestLabVC.swift */; };
 		4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E182A4425D84C5A00DB37C4 /* MenuItem.swift */; };
+		4E6ED7CA27D3242200768378 /* OrbitingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6ED7C927D3242200768378 /* OrbitingVC.swift */; };
 		4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AEF8A2404FA92004B4F37 /* Reachability.swift */; };
 		4E9FCE5227B6DEC30091BD33 /* CaocapPoliticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9FCE5127B6DEC30091BD33 /* CaocapPoliticsVC.swift */; };
 		4E9FCE5727B6DF830091BD33 /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE5927B6DF830091BD33 /* Explore.storyboard */; settings = {ASSET_TAGS = (Localizable, ); }; };
 		4E9FCE5E27B6DFEA0091BD33 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE6027B6DFEA0091BD33 /* Chat.storyboard */; };
 		4E9FCE6527B6E08A0091BD33 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE6727B6E08A0091BD33 /* UserProfile.storyboard */; };
 		4E9FCE6F27B6E16A0091BD33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE7127B6E16A0091BD33 /* Localizable.strings */; };
+		4EA606EE27D17E4700658B88 /* OrbitingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA606ED27D17E4600658B88 /* OrbitingService.swift */; };
 		4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */; };
 		4ECAEA1325DDC7E200972415 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA1225DDC7E200972415 /* Builder.swift */; };
 		4ECE143727BAA12C0055627E /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE143627BAA12C0055627E /* LocalizationManager.swift */; };
@@ -123,6 +125,7 @@
 		25E630862742E3C300A27836 /* RevealingSplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevealingSplashView.swift; sourceTree = "<group>"; };
 		4E0E42D424651F9A00522B2F /* TestLabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLabVC.swift; sourceTree = "<group>"; };
 		4E182A4425D84C5A00DB37C4 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		4E6ED7C927D3242200768378 /* OrbitingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingVC.swift; sourceTree = "<group>"; };
 		4E8AEF8A2404FA92004B4F37 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		4E9FCE5127B6DEC30091BD33 /* CaocapPoliticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapPoliticsVC.swift; sourceTree = "<group>"; };
 		4E9FCE5327B6DF3B0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -139,6 +142,7 @@
 		4E9FCE6B27B6E0C80091BD33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UserProfile.strings; sourceTree = "<group>"; };
 		4E9FCE7027B6E16A0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E9FCE7227B6E16C0091BD33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4EA606ED27D17E4600658B88 /* OrbitingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingService.swift; sourceTree = "<group>"; };
 		4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTypeCell.swift; sourceTree = "<group>"; };
 		4ECAEA1225DDC7E200972415 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		4ECE143627BAA12C0055627E /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
@@ -457,6 +461,7 @@
 				ECF2054A216102C200C48F2A /* AuthService.swift */,
 				EC6AB851215D8F4B00C276E3 /* DataService.swift */,
 				ECA08F552688FF1400C0A3EB /* TemplateService.swift */,
+				4EA606ED27D17E4600658B88 /* OrbitingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -583,6 +588,7 @@
 				EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */,
 				ECF2055021624C9400C48F2A /* MenuVC.swift */,
 				EC2F25062169C47F00D14733 /* EditProfileVC.swift */,
+				4E6ED7C927D3242200768378 /* OrbitingVC.swift */,
 				4E9FCE5127B6DEC30091BD33 /* CaocapPoliticsVC.swift */,
 			);
 			path = MyProfile;
@@ -813,6 +819,7 @@
 				EC2B26C1226A12DC00779486 /* CaocapVC.swift in Sources */,
 				EC368421225AFE8C00ABC9C6 /* CaocapCellAnimation.swift in Sources */,
 				EC8E1978215A00D5000E4EE6 /* MainExtensions.swift in Sources */,
+				4E6ED7CA27D3242200768378 /* OrbitingVC.swift in Sources */,
 				EC339BE322520D1F00FDC14A /* CaocapLayout.swift in Sources */,
 				EC3C86CE263C95960005DBAB /* Template.swift in Sources */,
 				ECCE4AE725B1E0080065EB0A /* CreateCaocapVC.swift in Sources */,
@@ -838,6 +845,7 @@
 				EC6109E02646DB7000E760CD /* AppReducer.swift in Sources */,
 				ECA08F562688FF1400C0A3EB /* TemplateService.swift in Sources */,
 				EC6109B426432EF200E760CD /* TemplateIconCell.swift in Sources */,
+				4EA606EE27D17E4700658B88 /* OrbitingService.swift in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,
 				4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */,
 				ECF2055121624C9400C48F2A /* MenuVC.swift in Sources */,

@@ -59,7 +59,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     }
     
     func logoutAct() {
-        let logoutPopup = UIAlertController(title: "تسجيل الخروج".localized(), message: "هل تريد تسجيل الخروج ؟".localized(), preferredStyle: .actionSheet)
+        let logoutPopup = UIAlertController(title: "sign out".localized(), message: "Do you want to logout ?".localized(), preferredStyle: .actionSheet)
         let logoutAction = UIAlertAction(title: "yes".localized(), style: .destructive ) { (buttonTapped) in
             do {
                 try Auth.auth().signOut()

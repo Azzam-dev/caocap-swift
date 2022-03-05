@@ -52,6 +52,7 @@ class ExploreVC: UIViewController, UITextFieldDelegate {
             self.caocapsCollectionView.reloadData()
         })
     }
+
     
     @objc func reloadExplore() {
         getCaocapsData()
