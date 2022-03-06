@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vsP-E9-uMm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vsP-E9-uMm">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1509,78 +1509,202 @@
             </objects>
             <point key="canvasLocation" x="3201" y="740"/>
         </scene>
-        <!--Caocap PoliticsVC-->
+        <!--PolicyVC-->
         <scene sceneID="POd-CM-0Ww">
             <objects>
-                <viewController storyboardIdentifier="CAOCAPPolitics" id="cN0-sw-VvI" customClass="CaocapPoliticsVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Policy" modalPresentationStyle="overCurrentContext" id="cN0-sw-VvI" customClass="PolicyVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yn5-5K-qb3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WWW-lX-SIV">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAOCAP Politics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1B9-lA-lMU">
-                                        <rect key="frame" x="130" y="44" width="154" height="22.5"/>
-                                        <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap app icon 2" translatesAutoresizingMaskIntoConstraints="NO" id="0JK-KL-lnm">
-                                        <rect key="frame" x="30" y="30" width="50" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fVU-4l-G5D">
+                                        <rect key="frame" x="120.5" y="64" width="173" height="30"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap app icon 2" translatesAutoresizingMaskIntoConstraints="NO" id="0JK-KL-lnm">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="0JK-KL-lnm" secondAttribute="height" multiplier="1:1" id="6B7-Ui-vtA"/>
+                                                    <constraint firstAttribute="height" constant="30" id="CsV-th-U0h"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1B9-lA-lMU">
+                                                <rect key="frame" x="40" y="0.0" width="133" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="gUx-wC-QKp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="0wO-U0-Q3F"/>
-                                            <constraint firstAttribute="height" constant="50" id="CsV-th-U0h"/>
+                                            <constraint firstAttribute="height" constant="30" id="EsO-6Z-5dz"/>
                                         </constraints>
-                                    </imageView>
+                                    </stackView>
                                 </subviews>
+                                <viewLayoutGuide key="safeArea" id="9aw-EG-gSf"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="RUo-FZ-HKe"/>
-                                    <constraint firstItem="1B9-lA-lMU" firstAttribute="centerY" secondItem="WWW-lX-SIV" secondAttribute="centerY" constant="15" id="cN1-1u-n1G"/>
-                                    <constraint firstItem="1B9-lA-lMU" firstAttribute="centerX" secondItem="WWW-lX-SIV" secondAttribute="centerX" id="kyE-ka-us5"/>
-                                    <constraint firstItem="0JK-KL-lnm" firstAttribute="top" secondItem="WWW-lX-SIV" secondAttribute="top" constant="30" id="mOU-n6-3aX"/>
-                                    <constraint firstItem="0JK-KL-lnm" firstAttribute="leading" secondItem="WWW-lX-SIV" secondAttribute="leading" constant="30" id="oM4-Kb-DHU"/>
+                                    <constraint firstItem="fVU-4l-G5D" firstAttribute="top" secondItem="9aw-EG-gSf" secondAttribute="top" constant="20" id="Keo-Jn-fLS"/>
+                                    <constraint firstItem="fVU-4l-G5D" firstAttribute="centerX" secondItem="WWW-lX-SIV" secondAttribute="centerX" id="jOA-d6-N7Z"/>
+                                    <constraint firstItem="9aw-EG-gSf" firstAttribute="bottom" secondItem="fVU-4l-G5D" secondAttribute="bottom" constant="10" id="pDN-Jj-n7B"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="-51" translatesAutoresizingMaskIntoConstraints="NO" id="k1h-zq-aoQ">
-                                <rect key="frame" x="42" y="141.5" width="330" height="673"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vud-mU-4OY">
-                                        <rect key="frame" x="44" y="0.0" width="286" height="24"/>
-                                        <string key="text">استخدام Apple للبيانات الشخصية
-</string>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oea-PP-DDw">
-                                        <rect key="frame" x="0.0" y="-27" width="330" height="700"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="330" id="ymE-rB-uO2"/>
-                                            <constraint firstAttribute="height" constant="700" id="ymq-Fq-QKi"/>
-                                        </constraints>
-                                        <string key="text">
-تستخدم Apple البيانات الشخصية لتشغيل خدماتنا، ولمعالجة معاملاتك، وللتواصل معك، ولأغراض الأمان ومنع الاحتيال، وللامتثال للقانون. ويجوز لنا أيضًا استخدام البيانات الشخصية لأغراضٍ أخرى بموافقتك لأغراضٍ أخرى بموافقتك.
- لا تستخدم Apple بياناتك الشخصية إلا عندما يكون لدينا أساس قانوني صحيح للقيام بذلك. ووفقًا للظروف، يجوز لـ Apple الاعتماد على موافقتك أو على حقيقة أن المعالجة ضرورية للوفاء بعقد معك، أو حماية مصالحك الحيوية أو مصالح الأشخاص الآخرين، أو الامتثال للقانون. ويجوز لنا أيضًا معالجة بياناتك الشخصية عندما نعتقد أن هذا يخدم مصالحنا المشروعة أو مصالح الآخرين المشروعة، مع مراعاة مصالحك، وحقوقك، وتوقعاتك. وإذا كان لديك أي أسئلة بخصوص الأساس القانوني، يمكنك التواصل مع مسؤول حماية البيانات على apple.com/ae-ar/privacy/contact.
-لأغراضٍ أخرى بموافقتك لأغراضٍ أخرى بموافقتك
-تشغيل خدماتنا. تجمع Apple البيانات الشخصية اللازمة لتشغيل خدماتنا، التي قد تشتمل على بيانات شخصية تم جمعها لتحسين عروضنا، أو لأغراضٍ داخلية، مثل التدقيق أو تحليل البيانات، أو لاستكشاف الأخطاء وإصلاحها. على سبيل المثال: إذا كنت ترغب في الوصول إلى أغنية من خلال اشتراك Apple Music، فإننا نجمع بيانات عن الأغاني التي تشغلها، وذلك من أجل إمدادك بالمحتوى الذي طلبته ولأغراض الملكية الفكرية.
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVg-Dg-zbS">
+                                <rect key="frame" x="10" y="114" width="394" height="782"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">Privacy Policy
+Effective date: December 24, 2018
 
-</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
+caocap ("us", "we", or "our") operates the caocap mobile application (hereinafter referred to as the "Service").
+
+This page informs you of our policies regarding the collection, use and disclosure of personal data when you use our Service and the choices you have associated with that data. This Privacy Policy is managed by Privacy Policy Generator.
+
+We use your data to provide and improve the Service. By using the Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used in this Privacy Policy have the same meanings as in our Terms and Conditions.
+
+Definitions
+
+Service
+
+Service is the caocap mobile application operated by caocap
+
+Personal Data
+
+Personal Data means data about a living individual who can be identified from those data (or from those and other information either in our possession or likely to come into our possession).
+
+Usage Data
+
+Usage Data is data collected automatically either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).
+
+Cookies
+
+Cookies are small files stored on your device (computer or mobile device).
+
+Information Collection and Use
+
+We collect several different types of information for various purposes to provide and improve our Service to you.
+
+Types of Data Collected
+
+Personal Data
+
+While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:
+
+Email address
+
+Cookies and Usage Data
+
+Usage Data
+
+When you access the Service with a mobile device, we may collect certain information automatically, including, but not limited to, the type of mobile device you use, your mobile device unique ID, the IP address of your mobile device, your mobile operating system, the type of mobile Internet browser you use, unique device identifiers and other diagnostic data ("Usage Data").
+
+Tracking &amp; Cookies Data
+
+We use cookies and similar tracking technologies to track the activity on our Service and we hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier. Cookies are sent to your browser from a website and stored on your device. Other tracking technologies are also used such as beacons, tags and scripts to collect and track information and to improve and analyse our Service. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service. Examples of Cookies we use:
+
+Session Cookies. We use Session Cookies to operate our Service.
+Preference Cookies. We use Preference Cookies to remember your preferences and various settings.
+Security Cookies. We use Security Cookies for security purposes.
+Use of Data
+
+caocap uses the collected data for various purposes:
+
+To provide and maintain our Service
+To notify you about changes to our Service
+To allow you to participate in interactive features of our Service when you choose to do so
+To provide customer support
+To gather analysis or valuable information so that we can improve our Service
+To monitor the usage of our Service
+To detect, prevent and address technical issues
+Transfer of Data
+
+Your information, including Personal Data, may be transferred to - and maintained on - computers located outside of your state, province, country or other governmental jurisdiction where the data protection laws may differ from those of your jurisdiction.
+
+If you are located outside and choose to provide information to us, please note that we transfer the data, including Personal Data, to and process it there.
+
+Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.
+
+caocap will take all the steps reasonably necessary to ensure that your data is treated securely and in accordance with this Privacy Policy and no transfer of your Personal Data will take place to an organisation or a country unless there are adequate controls in place including the security of your data and other personal information.
+
+Disclosure of Data
+
+Legal Requirements
+
+caocap may disclose your Personal Data in the good faith belief that such action is necessary to:
+
+To comply with a legal obligation
+To protect and defend the rights or property of caocap
+To prevent or investigate possible wrongdoing in connection with the Service
+To protect the personal safety of users of the Service or the public
+To protect against legal liability
+Security of Data
+
+The security of your data is important to us but remember that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
+
+Service Providers
+
+We may employ third party companies and individuals to facilitate our Service ("Service Providers"), provide the Service on our behalf, perform Service-related services or assist us in analysing how our Service is used. These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+
+Analytics
+
+We may use third-party Service Providers to monitor and analyse the use of our Service.
+
+Firebase
+
+Firebase is an analytics service provided by Google Inc.
+
+You may opt-out of certain Firebase features through your mobile device settings, such as your device advertising settings or by following the instructions provided by Google in their Privacy Policy: https://policies.google.com/privacy
+
+We also encourage you to review the Google's policy for safeguarding your data: https://support.google.com/analytics/answer/6004245
+
+For more information on what type of information Firebase collects, please visit the Google Privacy &amp; Terms web page: https://policies.google.com/privacy
+
+Links to Other Sites
+
+Our Service may contain links to other sites that are not operated by us. If you click a third party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+
+Children's Privacy
+
+Our Service does not address anyone under the age of 18 ("Children").
+
+We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your Child has provided us with Personal Data, please contact us. If we become aware that we have collected Personal Data from children without verification of parental consent, we take steps to remove that information from our servers.
+
+Changes to This Privacy Policy
+
+We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. We will let you know via email and/or a prominent notice on our Service, prior to the change becoming effective and update the "effective date" at the top of this Privacy Policy.
+
+You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+
+Contact Us
+
+If you have any questions about this Privacy Policy, please contact us:
+
+By email: ficruty@gmail.com
+
+
+
+
+
+
+
+</mutableString>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lFS-1P-Eyn"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
+                            <constraint firstItem="BVg-Dg-zbS" firstAttribute="leading" secondItem="lFS-1P-Eyn" secondAttribute="leading" constant="10" id="5Vu-KK-CzJ"/>
+                            <constraint firstItem="BVg-Dg-zbS" firstAttribute="top" secondItem="WWW-lX-SIV" secondAttribute="bottom" constant="10" id="Ccf-zO-U0a"/>
+                            <constraint firstItem="BVg-Dg-zbS" firstAttribute="centerX" secondItem="yn5-5K-qb3" secondAttribute="centerX" id="Ex4-wT-z25"/>
                             <constraint firstItem="WWW-lX-SIV" firstAttribute="leading" secondItem="lFS-1P-Eyn" secondAttribute="leading" id="IbV-P2-7Yn"/>
                             <constraint firstItem="WWW-lX-SIV" firstAttribute="trailing" secondItem="lFS-1P-Eyn" secondAttribute="trailing" id="K9s-AV-Ib5"/>
-                            <constraint firstItem="k1h-zq-aoQ" firstAttribute="centerX" secondItem="yn5-5K-qb3" secondAttribute="centerX" id="mGr-dr-yOh"/>
-                            <constraint firstItem="k1h-zq-aoQ" firstAttribute="centerY" secondItem="yn5-5K-qb3" secondAttribute="centerY" constant="30" id="nZJ-02-D8u"/>
+                            <constraint firstAttribute="bottom" secondItem="BVg-Dg-zbS" secondAttribute="bottom" id="N9z-Tf-rM1"/>
                             <constraint firstItem="WWW-lX-SIV" firstAttribute="top" secondItem="yn5-5K-qb3" secondAttribute="top" id="rQ2-VW-ZtO"/>
                         </constraints>
                     </view>
@@ -1780,6 +1904,9 @@
         <image name="audio wave" width="104" height="85"/>
         <image name="caocap app icon 2" width="512" height="512"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
