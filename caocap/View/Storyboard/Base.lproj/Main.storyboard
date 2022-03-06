@@ -241,7 +241,7 @@
                                                 <rect key="frame" x="0.0" y="155.66666666666657" width="414" height="740.33333333333348"/>
                                                 <subviews>
                                                     <stackView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cS6-UJ-Ocg">
-                                                        <rect key="frame" x="57" y="45" width="300" height="450"/>
+                                                        <rect key="frame" x="57" y="70" width="300" height="400"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check email" translatesAutoresizingMaskIntoConstraints="NO" id="v1f-vi-965">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -259,14 +259,14 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have sent a password recover instructions to your email." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHW-3t-NKy" userLabel="We have sent a password recover instructions to your email">
-                                                                <rect key="frame" x="32.333333333333329" y="287.33333333333337" width="235.66666666666669" height="162.66666666666663"/>
+                                                                <rect key="frame" x="32.333333333333329" y="287.33333333333337" width="235.66666666666669" height="112.66666666666669"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="16"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="450" id="9iu-Uv-GtG"/>
+                                                            <constraint firstAttribute="height" constant="400" id="9iu-Uv-GtG"/>
                                                             <constraint firstAttribute="width" constant="300" id="d8B-ff-Aer"/>
                                                         </constraints>
                                                     </stackView>

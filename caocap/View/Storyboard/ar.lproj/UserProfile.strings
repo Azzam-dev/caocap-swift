@@ -47,10 +47,10 @@
 "bI4-3o-UdN.text" = "تعديل الملف";
 
 /* Class = "UISegmentedControl"; bty-rk-ReT.segmentTitles[0] = "English"; ObjectID = "bty-rk-ReT"; */
-"w2Z-K0-Utm.segmentTitles[0]" = "انجليزي";
+"jrz-YU-gBN.segmentTitles[0]" = "انجليزي";
 
 /* Class = "UISegmentedControl"; bty-rk-ReT.segmentTitles[1] = "Arabic"; ObjectID = "bty-rk-ReT"; */
-"w2Z-K0-Utm.segmentTitles[1]" = "عربي";
+"jrz-YU-gBN.segmentTitles[1]" = "عربي";
 
 /* Class = "UILabel"; text = "CAOCAP is a galaxy filled with ideas in which you can navigate your way through a wide range of worlds that shares your interest ,passion and ambition."; ObjectID = "cka-YU-1OT"; */
 "cka-YU-1OT.text" = "CAOCAP is a galaxy filled with ideas in which you can navigate your way through a wide range of worlds that shares your interest ,passion and ambition.";

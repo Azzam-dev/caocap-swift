@@ -269,7 +269,31 @@ class DataService {
             }
         }
     }
-    
+
+    func getMyOrbitingCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            if let userUID = Auth.auth().currentUser?.uid {
+                self.REF_USERS.child(userUID).child("orbiting").observe(.value) { (orbitSnapshot) in
+                    guard let orbitSnapshot = orbitSnapshot.children.allObjects as? [DataSnapshot] else { return }
+                    var orbitArray = [Caocap]()
+                    for orbit in orbitSnapshot {
+                        self.getCaocap(withKey: orbit.key) { caocap in
+                            orbitArray.append(caocap)
+                        }
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1) {
+                        handler(orbitArray)
+                   }
+                    
+                }
+            }
+            
+        }
+        
+    }
+
+
+                                                                                   
     
     
     func getAllPublishedCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {

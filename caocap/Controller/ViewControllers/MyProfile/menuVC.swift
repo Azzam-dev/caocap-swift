@@ -47,6 +47,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         case .account:
             menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-language_filled"), label: .changeLanguage),
                          MenuItem(image: #imageLiteral(resourceName: "icons8-re_enter_pincode_filled"), label: .resetPassword)
+                         
             ]
         case .about:
             menuItems = [MenuItem(image: #imageLiteral(resourceName: "icons8-secured_file"), label: .dataPolicy),
@@ -58,7 +59,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     }
     
     func logoutAct() {
-        let logoutPopup = UIAlertController(title: "تسجيل الخروج".localized(), message: "هل تريد تسجيل الخروج ؟".localized(), preferredStyle: .actionSheet)
+        let logoutPopup = UIAlertController(title: "sign out".localized(), message: "Do you want to logout ?".localized(), preferredStyle: .actionSheet)
         let logoutAction = UIAlertAction(title: "yes".localized(), style: .destructive ) { (buttonTapped) in
             do {
                 try Auth.auth().signOut()
@@ -122,12 +123,16 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell" , for: indexPath ) as! MenuCell
+        
+        let cell: MenuCell
         if menuItems[indexPath.row].label == .changeLanguage {
-            cell.configure(menuItem: menuItems[indexPath.row], isHidden: false)
+            cell = menuTableView.dequeueReusableCell(withIdentifier: "changeLanguageCell" , for: indexPath ) as! ChangeLanguageCell
         } else {
-            cell.configure(menuItem: menuItems[indexPath.row], isHidden: true)
+            cell = menuTableView.dequeueReusableCell(withIdentifier: "menuCell" , for: indexPath ) as! MenuCell
         }
+        
+        cell.configure(menuItem: menuItems[indexPath.row])
+        
         return cell
     }
     
@@ -151,7 +156,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         case .account:
             menuCAOCAP(template: .account)
         case .changeLanguage:
-            print("")
+            print("did press change language")
         case .resetPassword:
             sendMessageToEmail()
         case .help:

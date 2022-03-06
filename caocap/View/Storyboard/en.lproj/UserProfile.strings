@@ -87,10 +87,10 @@
 "u4l-3v-13K.text" = "friends";
 
 /* Class = "UISegmentedControl"; w2Z-K0-Utm.segmentTitles[0] = "English"; ObjectID = "w2Z-K0-Utm"; */
-"w2Z-K0-Utm.segmentTitles[0]" = "English";
+"jrz-YU-gBN.segmentTitles[0]" = "English";
 
 /* Class = "UISegmentedControl"; w2Z-K0-Utm.segmentTitles[1] = "Arabic"; ObjectID = "w2Z-K0-Utm"; */
-"w2Z-K0-Utm.segmentTitles[1]" = "Arabic";
+"jrz-YU-gBN.segmentTitles[1]" = "Arabic";
 
 /* Class = "UITextField"; placeholder = "your@email.com"; ObjectID = "x7N-np-nGx"; */
 "x7N-np-nGx.placeholder" = "your@email.com";

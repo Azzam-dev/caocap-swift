@@ -22,11 +22,12 @@
 "terms of use" = "تعليمات الاستخدام";
 "open source libraries" = "مكتبات مفتوحة المصدر";
 "sign out" = "تسجيل الخروج";
-"Do you want to logOut?" = "هل ترغب بالخروج؟";
+"Do you want to logout ?" = "هل ترغب بالخروج ؟";
 "yes" = "نعم";
 "no" = "لا";
-"are you sure?" = "هل انت متأكد؟";
+"are you sure?" = "هل انت متأكد ؟";
 "If you press yes, a message will be sent to your email to change the password" = "إذا ضغطت على نعم، فسيتم إرسال رسالة إلى بريدك الإلكتروني لتغيير كلمة المرور";
+
 
 //EditProfileVC
 "loading..." = "تحميل...";
