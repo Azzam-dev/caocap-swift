@@ -26,8 +26,6 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         
-        LocalizationManager.shared.checkOfLanguage(language: "en")
-        
         super.viewDidLoad()
         switch menuType {
         case .mainAccount:
@@ -59,8 +57,8 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     }
     
     func logoutAct() {
-        let logoutPopup = UIAlertController(title: "sign out".localized(), message: "Do you want to logout ?".localized(), preferredStyle: .actionSheet)
-        let logoutAction = UIAlertAction(title: "yes".localized(), style: .destructive ) { (buttonTapped) in
+        let logoutPopup = UIAlertController(title: "sign out".localized, message: "Do you want to logout ?".localized, preferredStyle: .actionSheet)
+        let logoutAction = UIAlertAction(title: "yes".localized, style: .destructive ) { (buttonTapped) in
             do {
                 try Auth.auth().signOut()
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -71,7 +69,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                 displayAlertMessage(error.localizedDescription, in: self)
             }
         }
-        let cancel = UIAlertAction(title: "no".localized(), style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: "no".localized, style: .cancel, handler: nil)
         logoutPopup.addAction(logoutAction)
         logoutPopup.addAction(cancel)
         
@@ -100,8 +98,8 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
 
     func sendMessageToEmail() {
         let userEmail = Auth.auth().currentUser?.email
-        let alert = UIAlertController(title: "are you sure?".localized(), message: "If you press yes, a message will be sent to your email to change the password".localized(), preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "yes".localized(), style: .default, handler: { action in
+        let alert = UIAlertController(title: "are you sure?".localized, message: "If you press yes, a message will be sent to your email to change the password".localized, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "yes".localized, style: .default, handler: { action in
             AuthService.instance.resetPassword(withEmail: userEmail!) { status, error in
                 if status {
                     print("successful")
@@ -110,7 +108,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
                 }
             }
         }))
-        alert.addAction(UIAlertAction(title: "no".localized(), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "no".localized, style: .cancel, handler: nil))
             present(alert, animated: true)
     }
     

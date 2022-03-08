@@ -138,7 +138,7 @@ extension MyProfileVC: CaocapCellDelegate {
         let deleteAction = UIAlertAction(title: "delete",style: .destructive ) { (buttonTapped) in
             DataService.instance.removeCaocap(key)
         }
-        let cancel = UIAlertAction(title: "cancel".localized(), style: .default, handler: nil)
+        let cancel = UIAlertAction(title: "cancel".localized, style: .default, handler: nil)
         moreInfoPopup.addAction(deleteAction)
         moreInfoPopup.addAction(cancel)
         

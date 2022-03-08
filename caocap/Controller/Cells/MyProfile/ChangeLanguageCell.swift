@@ -19,9 +19,8 @@ class ChangeLanguageCell: MenuCell {
 
     @IBOutlet weak var languageSegmentedControl: UISegmentedControl!
     @IBAction func didChangeLanguage(_ sender: UISegmentedControl) {
-        let language = sender.selectedSegmentIndex == 0 ? "en":"ar"
-        UserDefaults.standard.setValue([language], forKey: "AppleLanguages")
-        LocalizationManager.shared.resetApp() //TODO: - fix reset app is not changing the language
+        Language.language = sender.selectedSegmentIndex == 0 ? .english:.arabic
+
     }
 
 }

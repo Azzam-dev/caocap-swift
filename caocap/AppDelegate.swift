@@ -12,13 +12,13 @@ import Firebase
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, LocalizationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
    
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        LocalizationManager.shared.delegate = self
+        
         // IQKeyboardManagerSwift : a great Keyboard Manager
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
@@ -152,17 +152,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LocalizationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
-    }
-    
-    func resetApp() {
-        
-        guard let window = window else { return }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "navigation")
-        window.rootViewController = vc
-        let options: UIView.AnimationOptions = .transitionCrossDissolve
-        let duration: TimeInterval = 0.3
-        UIView.transition(with: window, duration: duration, options: options, animations: nil, completion: nil)
     }
 
 }

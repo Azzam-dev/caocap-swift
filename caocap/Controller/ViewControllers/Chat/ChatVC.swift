@@ -91,14 +91,14 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     
     
     @IBAction func addChatBTN(_ sender: Any) {
-        let createNewPopup = UIAlertController(title: "create".localized(), message: "What do you want to create?".localized(), preferredStyle: .actionSheet)
-        let newGroupAct = UIAlertAction(title: "group".localized(), style: .default) { (buttonTapped) in
+        let createNewPopup = UIAlertController(title: "create".localized, message: "What do you want to create?".localized, preferredStyle: .actionSheet)
+        let newGroupAct = UIAlertAction(title: "group".localized, style: .default) { (buttonTapped) in
             self.groupPopupViewACTs(self)
         }
-        let newContactAct = UIAlertAction(title: "contact".localized(), style: .default) { (buttonTapped) in
+        let newContactAct = UIAlertAction(title: "contact".localized, style: .default) { (buttonTapped) in
             self.contactPopupViewACTs(self)
         }
-        let cancel = UIAlertAction(title: "cancel".localized(), style: .destructive , handler: nil)
+        let cancel = UIAlertAction(title: "cancel".localized, style: .destructive , handler: nil)
         
         createNewPopup.addAction(newContactAct)
         createNewPopup.addAction(newGroupAct)
@@ -226,7 +226,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     @IBOutlet weak var createGroupBTN: UIButton!
     @IBAction func createGroupBTN(_ sender: Any) {
         if groupNameTF.text == "" {
-            displayAlertMessage("فضلا حدد اسم للمجموعة".localized(), in: self)
+            displayAlertMessage("فضلا حدد اسم للمجموعة".localized, in: self)
         } else {
             DataService.instance.getUIDs(forUsername: groupSelectedMembersArray) { (idsArray) in
                 var members = idsArray

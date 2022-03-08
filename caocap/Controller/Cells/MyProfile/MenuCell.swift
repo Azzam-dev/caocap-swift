@@ -16,7 +16,7 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var itemlabel: UILabel!
     
     func configure(menuItem: MenuItem) {
-        itemlabel.text = menuItem.label.rawValue.localized()
+        itemlabel.text = menuItem.label.rawValue.localized
         self.itemImage.image = menuItem.image
     }
 }
