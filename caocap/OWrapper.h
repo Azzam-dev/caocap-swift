@@ -12,6 +12,6 @@
 #include "lua.h"
 
 int sayHelloFromSwift(lua_State *luaState);
-int changeBackgroundColor(lua_State *luaState, NSString *hex);
+int changeBackgroundColor(lua_State *luaState);
 
 #endif /* OWrapper_h */
