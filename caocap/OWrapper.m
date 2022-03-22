@@ -23,14 +23,3 @@ int sayHelloFromSwift(lua_State *luaState) {
     
     return 1;
 }
-
-int sayHelloToIbrahim(lua_State *luaState) {
-    if (luaService == Nil) {
-        luaService = [[LuaService alloc] initWithScript: @""];
-    }
-
-    OService * obj = [[OService alloc] init];
-    [obj sayHelloToIbrahim];
-    
-    return 1;
-}

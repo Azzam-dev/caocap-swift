@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import SwiftUI
 import ReSwift
 import Firebase
+import MapKit
 
 class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var theView: DesignableView!
     @IBOutlet weak var loadingIcon: UIImageView!
+    @IBOutlet weak var caocapView: DesignableView!
+    var caocapHC = UIHostingController(rootView: ContentView())
+    
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
@@ -60,7 +64,78 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     
     private func loadCaocap(_ caocap: Caocap) {
     //TODO: - loadCaocap
+        
+        caocapHC = UIHostingController(rootView: ContentView())
+        
+        addChild(caocapHC)
+        caocapHC.view.frame = caocapView.frame
+        caocapView.addSubview(caocapHC.view)
+        caocapHC.didMove(toParent: self)
     }
+    
+    //TODO: - remove this test code {
+    struct ContentView: View {
+        var body: some View {
+            VStack {
+                MapView()
+                    .ignoresSafeArea(edges: .top)
+                    .frame(height: 300)
+
+                CircleImage()
+                    .offset(y: -130)
+                    .padding(.bottom, -130)
+
+                VStack(alignment: .leading) {
+                    Text("Turtle Rock")
+                        .font(.title)
+
+                    HStack {
+                        Text("Joshua Tree National Park")
+                        Spacer()
+                        Text("California")
+                    }
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+
+                    Divider()
+
+                    Text("About Turtle Rock")
+                        .font(.title2)
+                    Text("Descriptive text goes here.")
+                }
+                .padding()
+
+                Spacer()
+            }
+        }
+    }
+    
+    struct CircleImage: View {
+        var body: some View {
+            Image("turtlerock")
+                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                .overlay {
+                    Circle().stroke(.white, lineWidth: 4)
+                }
+                .shadow(radius: 7)
+        }
+    }
+    
+    struct MapView: View {
+        @State private var region = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868),
+            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        )
+
+        var body: some View {
+            Map(coordinateRegion: $region)
+        }
+    }
+    
+    //---------------- }
+    
+    
+    
     
     func gestureRecognizerSetup() {
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))

@@ -14,8 +14,6 @@ import Foundation
             print("Hello CAOCAP from swift")
     }
     
-    @objc func sayHelloToIbrahim() {
-            print("Hello Abo Saad")
-    }
+    
 }
 

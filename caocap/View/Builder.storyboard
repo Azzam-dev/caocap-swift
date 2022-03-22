@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -634,10 +634,10 @@
                         <outlet property="caocapIMG" destination="7TN-aE-wAG" id="LVB-ii-rMW"/>
                         <outlet property="caocapIMGview" destination="by2-ku-nxP" id="tOh-vu-Zkj"/>
                         <outlet property="caocapNameTF" destination="kvh-II-SM8" id="UGC-gM-dUr"/>
+                        <outlet property="caocapView" destination="VeI-Nr-pzv" id="hvW-Ef-BxN"/>
                         <outlet property="gestureRecognizerView" destination="zKL-Gi-M90" id="WbS-E0-bwS"/>
                         <outlet property="loadingIcon" destination="Xvg-w9-2WO" id="laV-Je-nfi"/>
                         <outlet property="publishingSwitchBTN" destination="ikp-83-eNU" id="X6S-B4-QxS"/>
-                        <outlet property="theView" destination="VeI-Nr-pzv" id="X69-9u-m0w"/>
                         <outlet property="toolsViewHeightConstraint" destination="bfw-Sh-Wh9" id="FE4-Sf-YoP"/>
                         <outletCollection property="colorBTNs" destination="Jq2-x9-1Hf" collectionClass="NSMutableArray" id="PBu-W1-Oje"/>
                         <outletCollection property="colorBTNs" destination="7YU-bU-cas" collectionClass="NSMutableArray" id="QUL-yJ-8lg"/>
