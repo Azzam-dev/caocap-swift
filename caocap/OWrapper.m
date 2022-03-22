@@ -12,6 +12,7 @@
 #import "CAOCAPx-Swift.h"
 
 LuaService * luaService;
+NSString * hex;
 
 int sayHelloFromSwift(lua_State *luaState) {
     if (luaService == Nil) {
@@ -20,6 +21,18 @@ int sayHelloFromSwift(lua_State *luaState) {
 
     OService * obj = [[OService alloc] init];
     [obj sayHelloFromSwift];
+    
+    return 1;
+}
+
+
+int changeBackgroundColor(lua_State *luaState, NSString *hex) {
+    if (luaService == Nil) {
+        luaService = [[LuaService alloc] initWithScript: @""];
+    }
+
+    OService * obj = [[OService alloc] init];
+    [obj changeBackgroundColorWithHex:hex];
     
     return 1;
 }

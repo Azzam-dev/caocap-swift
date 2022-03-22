@@ -27,6 +27,10 @@ import Foundation
         lua.register(sayHelloFromSwift, withName: funcName)
         free(funcName)
         
+        let funcName2 = strdup("changeBackgroundColor(hex: )")
+        lua.register(changeBackgroundColor, withName: funcName2)
+        free(funcName2)
+        
 
         let ptrScript = strdup(script)
         lua.script(ptrScript)
