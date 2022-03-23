@@ -16,10 +16,12 @@ class ArtBuilderVC: UIViewController {
     @IBOutlet weak var userInterfaceView: DesignableView!
     @IBOutlet weak var logicView: DesignableView!
     
+    @IBOutlet weak var userInterfaceTableView: UITableView!
+    @IBOutlet weak var logicTableView: UITableView!
+    
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
-    @IBOutlet weak var previewTableView: UITableView!
     @IBOutlet weak var stylesTableView: UITableView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
     @IBOutlet weak var structureTableView: UITableView!
@@ -162,12 +164,14 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
-        case previewTableView:
+        case userInterfaceTableView:
             return caocapTemplates.count + 1
         case structureTableView:
             return caocapTemplates.count
         case stylesTableView:
             return editingTemplate?.dictionary.count ?? 0 //TODO: NT
+        case logicTableView:
+            return 3
         default:
             return 0
         }
@@ -177,13 +181,13 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
-        case previewTableView:
+        case userInterfaceTableView:
             if indexPath.row == caocapTemplates.count { // if it was the last cell then show add template
-                guard let cell = previewTableView.dequeueReusableCell(withIdentifier: "addTemplateCell", for: indexPath) as? AddTemplateCell else { return UITableViewCell() }
+                guard let cell = userInterfaceTableView.dequeueReusableCell(withIdentifier: "addTemplateCell", for: indexPath) as? AddTemplateCell else { return UITableViewCell() }
                 cell.delegate = self
                 return cell
             } else {
-                guard let cell = previewTableView.dequeueReusableCell(withIdentifier: "templateCell", for: indexPath) as? TemplateCell else { return UITableViewCell() }
+                guard let cell = userInterfaceTableView.dequeueReusableCell(withIdentifier: "templateCell", for: indexPath) as? TemplateCell else { return UITableViewCell() }
                 
                 cell.configure(template: caocapTemplates[indexPath.row])
                 return cell
@@ -194,6 +198,9 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         case stylesTableView:
             return getStyleCell(with: indexPath)
+        case logicTableView:
+            let cell = logicTableView.dequeueReusableCell(withIdentifier: "logicCell", for: indexPath)
+            return cell
         default:
             return UITableViewCell()
         }
@@ -225,7 +232,7 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView {
-        case previewTableView, structureTableView:
+        case userInterfaceTableView, structureTableView:
             editingTemplate = caocapTemplates[indexPath.row]
             stylesTableView.reloadData()
         default:
@@ -237,7 +244,7 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == structureTableView {
             let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
                 self.caocapTemplates.remove(at: indexPath.row)
-                self.previewTableView.reloadData()
+                self.userInterfaceTableView.reloadData()
                 self.structureTableView.reloadData()
             }
 
@@ -274,7 +281,7 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         caocapTemplates.append(templatesArray[indexPath.row])
-        previewTableView.reloadData()
+        userInterfaceTableView.reloadData()
         structureTableView.reloadData()
     }
     
@@ -287,7 +294,7 @@ extension ArtBuilderVC: AddTemplateDelegate {
     func didPressAddTemplate() {
         let newTemplate = Template(key: "blog", dictionary: ["title" : "Blog Title", "description" : "this is the blog description"])
         caocapTemplates.append(newTemplate)
-        previewTableView.reloadData()
+        userInterfaceTableView.reloadData()
         structureTableView.reloadData()
     }
     

@@ -2746,11 +2746,11 @@
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8l-r9-lbi" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="18" y="84" width="378" height="728"/>
                                 <subviews>
-                                    <tableView hidden="YES" clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t9G-we-5VI">
+                                    <tableView clipsSubviews="YES" alpha="0.75" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t9G-we-5VI">
                                         <rect key="frame" x="0.0" y="0.0" width="378" height="728"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pSY-hF-nQT">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logicCell" id="pSY-hF-nQT">
                                                 <rect key="frame" x="0.0" y="44.666666030883789" width="378" height="444.33334350585938"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pSY-hF-nQT" id="PzF-sc-fwv">
@@ -2958,6 +2958,10 @@
                                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="h8k-y8-wqa" id="Gs2-CW-RPH"/>
+                                            <outlet property="delegate" destination="h8k-y8-wqa" id="lnW-dD-AR0"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3276,12 +3280,13 @@
                     <connections>
                         <outlet property="backgroundImage" destination="Wsd-Cf-kox" id="h1o-hG-TvK"/>
                         <outlet property="gestureRecognizerView" destination="DgA-7M-ru4" id="4io-O4-cRP"/>
+                        <outlet property="logicTableView" destination="t9G-we-5VI" id="vwu-qW-8gD"/>
                         <outlet property="logicView" destination="j8l-r9-lbi" id="tDB-6k-mbE"/>
-                        <outlet property="previewTableView" destination="1Co-K9-Pqg" id="5Df-3y-QIU"/>
                         <outlet property="structureTableView" destination="VKh-a2-Fnr" id="NJE-5l-99f"/>
                         <outlet property="stylesTableView" destination="3gO-ig-Jd9" id="4Nm-Tc-1r9"/>
                         <outlet property="templatesCollectionView" destination="TdY-uk-FNi" id="I7k-0D-oW4"/>
                         <outlet property="toolsViewHeightConstraint" destination="nBV-55-HhT" id="zra-oc-KxM"/>
+                        <outlet property="userInterfaceTableView" destination="1Co-K9-Pqg" id="5Df-3y-QIU"/>
                         <outlet property="userInterfaceView" destination="Myb-IS-1rV" id="oR5-ez-P7e"/>
                         <outletCollection property="topToolBarBTNs" destination="G5h-DB-AKZ" collectionClass="NSMutableArray" id="ghz-Nz-rN9"/>
                         <outletCollection property="topToolBarBTNs" destination="iel-JY-FpI" collectionClass="NSMutableArray" id="hxD-Ej-8cI"/>
