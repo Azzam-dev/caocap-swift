@@ -629,6 +629,7 @@
                             <constraint firstItem="w0p-Dv-uRs" firstAttribute="trailing" secondItem="zMx-Qs-0ja" secondAttribute="trailing" id="wJ2-Om-Kjw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="xgN-dh-ZQj"/>
                     <connections>
                         <outlet property="caocapIMG" destination="7TN-aE-wAG" id="LVB-ii-rMW"/>
                         <outlet property="caocapIMGview" destination="by2-ku-nxP" id="tOh-vu-Zkj"/>
@@ -2196,7 +2197,7 @@
         <!--Folder SystemVC-->
         <scene sceneID="XYX-Vh-Jzi">
             <objects>
-                <viewController storyboardIdentifier="templateBuilder" id="g8u-Ug-las" customClass="FolderSystemVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="folderSystem" id="g8u-Ug-las" customClass="FolderSystemVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rav-zw-UaE"/>
                         <viewControllerLayoutGuide type="bottom" id="eEL-ym-NMl"/>
@@ -2561,7 +2562,7 @@
         <!--Swipe Navigation Controller-->
         <scene sceneID="G6S-SW-uWn">
             <objects>
-                <navigationController storyboardIdentifier="exploreNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="FJk-zW-37L" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="artNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="FJk-zW-37L" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BZE-hQ-BKY">
                         <autoresizingMask key="autoresizingMask"/>
@@ -2573,26 +2574,29 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AnE-bQ-5WD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5486" y="1439"/>
+            <point key="canvasLocation" x="5486" y="1430"/>
         </scene>
         <!--Swipe Navigation Controller-->
         <scene sceneID="Nxj-dM-Dj8">
             <objects>
-                <navigationController storyboardIdentifier="exploreNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Zt3-Rb-OfB" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="cosmosNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Zt3-Rb-OfB" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cwo-v5-FTd">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lXp-GY-5Wp" kind="relationship" relationship="rootViewController" id="6P0-Mh-blo"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5pe-MC-N8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5486" y="1439"/>
+            <point key="canvasLocation" x="4458" y="1431"/>
         </scene>
         <!--Art BuilderVC-->
         <scene sceneID="OLP-25-IOm">
             <objects>
-                <viewController storyboardIdentifier="templateBuilder" id="h8k-y8-wqa" customClass="ArtBuilderVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="artBuilder" id="h8k-y8-wqa" customClass="ArtBuilderVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R7O-10-x6z"/>
                         <viewControllerLayoutGuide type="bottom" id="WDk-kE-9mK"/>
@@ -3277,6 +3281,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xl-SF-mlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5485.507246376812" y="2808.4821428571427"/>
+        </scene>
+        <!--Swipe Navigation Controller-->
+        <scene sceneID="JLC-Qd-SZI">
+            <objects>
+                <navigationController storyboardIdentifier="testNav" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jg5-9j-FcB" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BTn-T0-b28">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X7I-1V-xE8" kind="relationship" relationship="rootViewController" id="UkB-hF-eDo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WEm-fH-8dU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6409" y="1430"/>
         </scene>
     </scenes>
     <designables>

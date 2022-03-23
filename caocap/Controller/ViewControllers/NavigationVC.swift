@@ -234,10 +234,10 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         let previousNavIndex = navSelectedIndex
         navSelectedIndex = sender.tag
         
-        let previousVC = navigationControllers[previousNavIndex]
-        previousVC.willMove(toParent: nil)
-        previousVC.view.removeFromSuperview()
-        previousVC.removeFromParent()
+        let previousNav = navigationControllers[previousNavIndex]
+        previousNav.willMove(toParent: nil)
+        previousNav.view.removeFromSuperview()
+        previousNav.removeFromParent()
         
         switch navSelectedIndex {
         case 0:
@@ -257,12 +257,12 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
             orbitICON.image = #imageLiteral(resourceName: "w-planet_filled")
             chatICON.image = #imageLiteral(resourceName: "W-chat")
         }
-        let vc = navigationControllers[navSelectedIndex]
-        addChild(vc)
+        let nav = navigationControllers[navSelectedIndex]
+        addChild(nav)
         
-        vc.view.frame = contentView.bounds
-        contentView.addSubview(vc.view)
-        vc.didMove(toParent: self)
+        nav.view.frame = contentView.bounds
+        contentView.addSubview(nav.view)
+        nav.didMove(toParent: self)
         
     }
     

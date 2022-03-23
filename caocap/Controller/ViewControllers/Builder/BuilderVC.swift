@@ -9,15 +9,15 @@
 import UIKit
 import ReSwift
 
-class BuilderVC: UIViewController {
+class BuilderVC: UIViewController, UINavigationControllerDelegate {
     
     var openedCaocap: Caocap?
     
-    var cosmosBaseSubVC: CosmosBaseVC!
-    var artBuilderSubVC: ArtBuilderVC!
-    var testLabSubVC: TestLabVC!
+    var cosmosNav: UINavigationController!
+    var artNav: UINavigationController!
+    var testNav: UINavigationController!
     
-    var viewControllers: [UIViewController]!
+    var navigationControllers: [UINavigationController]!
     var navSelectedIndex: Int = 2
     
     override func viewDidLoad() {
@@ -47,22 +47,10 @@ class BuilderVC: UIViewController {
     
     func setupSubViewControllers() {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        cosmosBaseSubVC = storyboard.instantiateViewController(withIdentifier: "cosmosBase") as? CosmosBaseVC
-        testLabSubVC = storyboard.instantiateViewController(withIdentifier: "testLab") as? TestLabVC
-        switch openedCaocap?.type  {
-        case .code, .none:
-            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "codeBuilder") as? CodeBuilderVC
-        case .template:
-            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "templateBuilder") as? TemplateBuilderVC
-        case .block:
-            artBuilderSubVC = storyboard.instantiateViewController(withIdentifier: "blockBuilder") as? BlockBuilderVC
-        }
-        
-        cosmosBaseSubVC?.openedCaocap = openedCaocap
-        artBuilderSubVC?.openedCaocap = openedCaocap
-        testLabSubVC?.openedCaocap = openedCaocap
-        
-        viewControllers = [cosmosBaseSubVC!, artBuilderSubVC!, testLabSubVC!]
+        cosmosNav = storyboard.instantiateViewController(withIdentifier: "cosmosNav") as? UINavigationController
+        artNav = storyboard.instantiateViewController(withIdentifier: "artNav") as? UINavigationController
+        testNav = storyboard.instantiateViewController(withIdentifier: "testNav") as? UINavigationController
+        navigationControllers = [cosmosNav!, artNav!, testNav!]
         navBTNpressed(navBTNs[navSelectedIndex])
     }
     
@@ -206,10 +194,10 @@ class BuilderVC: UIViewController {
         let previousNavIndex = navSelectedIndex
         navSelectedIndex = sender.tag
         
-        let previousVC = viewControllers[previousNavIndex]
-        previousVC.willMove(toParent: nil)
-        previousVC.view.removeFromSuperview()
-        previousVC.removeFromParent()
+        let previousNav = navigationControllers[previousNavIndex]
+        previousNav.willMove(toParent: nil)
+        previousNav.view.removeFromSuperview()
+        previousNav.removeFromParent()
         
         switch navSelectedIndex {
         case 0:
@@ -230,12 +218,12 @@ class BuilderVC: UIViewController {
             testLabICON.image = #imageLiteral(resourceName: "testLab")
         }
         
-        let vc = viewControllers[navSelectedIndex]
-        addChild(vc)
+        let nav = navigationControllers[navSelectedIndex]
+        addChild(nav)
         
-        vc.view.frame = contentView.bounds
-        contentView.addSubview(vc.view)
-        vc.didMove(toParent: self)
+        nav.view.frame = contentView.bounds
+        contentView.addSubview(nav.view)
+        nav.didMove(toParent: self)
         
     }
     
