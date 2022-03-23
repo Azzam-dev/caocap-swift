@@ -22,8 +22,11 @@ class ArtBuilderVC: UIViewController {
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
     
-    @IBOutlet weak var stylesTableView: UITableView!
+    
     @IBOutlet weak var templatesCollectionView: UICollectionView!
+    @IBOutlet weak var logicNodesCollectionView: UICollectionView!
+    
+    @IBOutlet weak var stylesTableView: UITableView!
     @IBOutlet weak var structureTableView: UITableView!
     
     var toolsSelectedIndex = 0
@@ -31,14 +34,15 @@ class ArtBuilderVC: UIViewController {
     
     var caocapTemplates = [Template]() //TODO: NT - rename
     
-    var templatesArray = [Template]()
+    var templatesArray = TemplateService.instance.templates
+    var logicNodesArray = LogicNodeService.instance.logicNodes
+    
     var editingTemplate: Template?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         gestureRecognizerSetup()
-        getAllTemplates()
         getCaocapData()
         registerdUINib()
         
@@ -49,13 +53,6 @@ class ArtBuilderVC: UIViewController {
         guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
             if let templates = caocap.templates { self.caocapTemplates = templates }
-        }
-    }
-    
-    func getAllTemplates() {
-        TemplateService.instance.getAllTemplates { (templates) in
-            self.templatesArray = templates
-            self.templatesCollectionView.reloadData()
         }
     }
     
@@ -124,7 +121,10 @@ class ArtBuilderVC: UIViewController {
                 self.backgroundImage.tintColor = .black
                 
                 self.userInterfaceView.isHidden = false
+                self.templatesCollectionView.isHidden = false
+                
                 self.logicView.isHidden = true
+                self.logicNodesCollectionView.isHidden = true
             } else {
                 self.topToolBarBTNs[0].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
                 self.topToolBarBTNs[1].tintColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
@@ -134,7 +134,10 @@ class ArtBuilderVC: UIViewController {
                 self.backgroundImage.tintColor = .white
                 
                 self.logicView.isHidden = false
+                self.logicNodesCollectionView.isHidden = false
+                
                 self.userInterfaceView.isHidden = true
+                self.templatesCollectionView.isHidden = true
             }
         }
     }
@@ -169,9 +172,9 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
         case structureTableView:
             return caocapTemplates.count
         case stylesTableView:
-            return editingTemplate?.dictionary.count ?? 0 //TODO: NT
+            return 0 //TODO: - fix stylesTableView count
         case logicTableView:
-            return 3
+            return 3 //TODO: - fix logicTableView count
         default:
             return 0
         }
@@ -194,40 +197,16 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
             }
         case structureTableView:
             let cell = UITableViewCell()
-            cell.textLabel?.text = caocapTemplates[indexPath.row].key
+            cell.textLabel?.text = caocapTemplates[indexPath.row].type.rawValue
             return cell
         case stylesTableView:
-            return getStyleCell(with: indexPath)
+            return UITableViewCell() //TODO: - getStyleCell
         case logicTableView:
             let cell = logicTableView.dequeueReusableCell(withIdentifier: "logicCell", for: indexPath)
             return cell
         default:
             return UITableViewCell()
         }
-    }
-    
-    
-    private func getStyleCell(with indexPath: IndexPath) -> UITableViewCell {
-        guard let editingTemplate = editingTemplate else { return UITableViewCell() }
-        //TODO: NT
-//        switch editingTemplate.type {
-//        case .blog:
-//            switch indexPath.row {
-//            case 0:
-//                guard let cell = stylesTableView.dequeueReusableCell(withIdentifier: "editTitleStylesCell", for: indexPath) as? EditTitleStylesCell else { return UITableViewCell() }
-//                cell.configure(title: editingTemplate.content["title"] ?? "")
-//                return cell
-//            case 1:
-//                guard let cell = stylesTableView.dequeueReusableCell(withIdentifier: "editDescriptionStylesCell", for: indexPath) as? EditDescriptionStylesCell else { return UITableViewCell() }
-//                cell.configure(description: editingTemplate.content["description"] ?? "")
-//                return cell
-//            default:
-//                break
-//            }
-//        default:
-//            break
-//        }
-        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -270,13 +249,32 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
 extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return templatesArray.count
+        switch collectionView {
+        case templatesCollectionView:
+            return templatesArray.count
+        case logicNodesCollectionView:
+            return logicNodesArray.count
+        default:
+            return 0
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateIconCell", for: indexPath) as? TemplateIconCell else { return UICollectionViewCell() }
-        cell.configure(template: templatesArray[indexPath.row])
-        return cell
+        switch collectionView {
+        case templatesCollectionView:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateTypeCell", for: indexPath) as? TemplateIconCell else { return UICollectionViewCell() }
+            cell.configure(template: templatesArray[indexPath.row])
+            return cell
+        case logicNodesCollectionView:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "logicNodeTypeCell", for: indexPath) as? LogicNodeTypeCell else { return UICollectionViewCell() }
+            cell.configure(logicNode: logicNodesArray[indexPath.row])
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -292,7 +290,7 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
 extension ArtBuilderVC: AddTemplateDelegate {
     
     func didPressAddTemplate() {
-        let newTemplate = Template(key: "blog", dictionary: ["title" : "Blog Title", "description" : "this is the blog description"])
+        let newTemplate = TemplateService.instance.templates.first!
         caocapTemplates.append(newTemplate)
         userInterfaceTableView.reloadData()
         structureTableView.reloadData()

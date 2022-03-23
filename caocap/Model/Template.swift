@@ -8,34 +8,14 @@
 
 import UIKit
 
+enum TemplateType: String {
+    case blank
+}
 
-
-class Template {
-    private var _key: String
-    private var _dictionary: [String: Any]
-    
-    var key: String {
-        return _key
-    }
-    
-    var dictionary: [String: Any] {
-        return _dictionary
-    }
-    
-    var iconURL: String {
-        return dictionary["icon"] as? String ?? ""
-    }
-    
-    var code: String {
-        return dictionary["code"] as? String ?? ""
-    }
-    
-    
-    init(key: String, dictionary: [String: Any]) {
-        self._key = key
-        self._dictionary = dictionary
-    }
-    
-    
+struct Template {
+    let type: TemplateType
+    let description: String
+    let code: String
+    let icon: UIImage
 }
 

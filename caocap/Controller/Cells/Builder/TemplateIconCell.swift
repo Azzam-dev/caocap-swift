@@ -13,11 +13,8 @@ class TemplateIconCell: UICollectionViewCell {
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     func configure(template: Template) {
-        titleLabel.text = template.key
-        
-        if let iconURL = URL(string: template.iconURL ) {
-            icon.af.setImage(withURL: iconURL)
-        }
+        titleLabel.text = template.type.rawValue
+        icon.image = template.icon
     }
     
 }

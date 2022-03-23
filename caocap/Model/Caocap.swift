@@ -80,16 +80,12 @@ class Caocap {
         switch type {
         case "code":
             _type = .code
-            self._code = dictionary["code"] as? [String: String] ?? ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]
         case "template":
             _type = .template
-            self._templates = dictionary["templates"] as? [Template] ?? [Template(key: "blog", dictionary: ["title" : "failed to load templates", "description" : "this is the blog description"])]
         case "block":
             _type = .block
-            self._blocks = dictionary["block"] as? [String : String] ?? ["logic":"put somthing here","art": "the ui shuold be here"]
         default:
-            _type = .code
-            self._code = ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]
+            _type = .template
         }
         
         
