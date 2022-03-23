@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2147CCEE27D1F6720008AD4C /* ChangeLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCED27D1F6720008AD4C /* ChangeLanguageCell.swift */; };
 		2147CCEA27D0A39B0008AD4C /* OWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCE927D0A39B0008AD4C /* OWrapper.m */; };
 		2147CCEC27D0A8F40008AD4C /* OService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCEB27D0A8F40008AD4C /* OService.swift */; };
+		2147CCEE27D1F6720008AD4C /* ChangeLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCED27D1F6720008AD4C /* ChangeLanguageCell.swift */; };
 		2526AFB727EA8B8E0075AA32 /* FolderSystemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526AFB627EA8B8E0075AA32 /* FolderSystemVC.swift */; };
 		25E50F6727BE46DD00906E4A /* LuaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E50F6627BE46DD00906E4A /* LuaService.swift */; };
 		25E50FA927BE498400906E4A /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 25E50F6A27BE498400906E4A /* lauxlib.c */; };
@@ -157,10 +157,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2147CCED27D1F6720008AD4C /* ChangeLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageCell.swift; sourceTree = "<group>"; };
 		2147CCE827D0A3620008AD4C /* OWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OWrapper.h; sourceTree = "<group>"; };
 		2147CCE927D0A39B0008AD4C /* OWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OWrapper.m; sourceTree = "<group>"; };
 		2147CCEB27D0A8F40008AD4C /* OService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OService.swift; sourceTree = "<group>"; };
+		2147CCED27D1F6720008AD4C /* ChangeLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageCell.swift; sourceTree = "<group>"; };
 		2526AFB627EA8B8E0075AA32 /* FolderSystemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSystemVC.swift; sourceTree = "<group>"; };
 		25E50F6627BE46DD00906E4A /* LuaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuaService.swift; sourceTree = "<group>"; };
 		25E50F6A27BE498400906E4A /* lauxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lauxlib.c; sourceTree = "<group>"; };
@@ -975,7 +975,7 @@
 				4E9FCE5227B6DEC30091BD33 /* PolicyVC.swift in Sources */,
 				25E50FAB27BE498400906E4A /* lopcodes.c in Sources */,
 				25E50FAD27BE498400906E4A /* lobject.c in Sources */,
-				4E9FCE5227B6DEC30091BD33 /* CaocapPoliticsVC.swift in Sources */,
+				4E9FCE5227B6DEC30091BD33 /* PolicyVC.swift in Sources */,
 				25E50FC927BE498400906E4A /* llex.c in Sources */,
 				EC5107AA266BB334000DB190 /* EditTitleStylesCell.swift in Sources */,
 				EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */,
@@ -1284,7 +1284,7 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;
@@ -1293,7 +1293,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.4;
+				MARKETING_VERSION = 4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ficruty.caocap;
 				PRODUCT_NAME = CAOCAPx;
 				SUPPORTS_MACCATALYST = NO;
@@ -1310,7 +1310,7 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;
@@ -1319,7 +1319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.4;
+				MARKETING_VERSION = 4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ficruty.caocap;
 				PRODUCT_NAME = CAOCAPx;
 				SUPPORTS_MACCATALYST = NO;
