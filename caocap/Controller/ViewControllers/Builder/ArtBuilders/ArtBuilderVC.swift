@@ -13,15 +13,18 @@ class ArtBuilderVC: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
+    @IBOutlet weak var userInterfaceView: DesignableView!
+    @IBOutlet weak var logicView: DesignableView!
+    
+    @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var gestureRecognizerView: UIView!
+    
     @IBOutlet weak var previewTableView: UITableView!
     @IBOutlet weak var stylesTableView: UITableView!
     @IBOutlet weak var templatesCollectionView: UICollectionView!
     @IBOutlet weak var structureTableView: UITableView!
     
-    @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var gestureRecognizerView: UIView!
-    
-    var toolsSelectedIndex = 1
+    var toolsSelectedIndex = 0
     var openedCaocap: Caocap?
     
     var caocapTemplates = [Template]() //TODO: NT - rename
@@ -108,12 +111,30 @@ class ArtBuilderVC: UIViewController {
     
     @IBOutlet var topToolBarBTNs: [UIButton]!
     @IBAction func topToolBarBTNs(_ sender: UIButton) {
-        topToolBarBTNs[0].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        topToolBarBTNs[1].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        topToolBarBTNs[2].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
-        
         toolsSelectedIndex = sender.tag
-        topToolBarBTNs[sender.tag].tintColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+        
+        UIView.animate(withDuration: 0.5) {
+            if self.toolsSelectedIndex == 0 {
+                self.topToolBarBTNs[1].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+                self.topToolBarBTNs[0].tintColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+                
+                self.view.backgroundColor = .white
+                self.backgroundImage.tintColor = .black
+                
+                self.userInterfaceView.isHidden = false
+                self.logicView.isHidden = true
+            } else {
+                self.topToolBarBTNs[0].tintColor = #colorLiteral(red: 0.9215686275, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
+                self.topToolBarBTNs[1].tintColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
+                
+                
+                self.view.backgroundColor = #colorLiteral(red: 0.1294117647, green: 0.1294117647, blue: 0.1294117647, alpha: 1)
+                self.backgroundImage.tintColor = .white
+                
+                self.logicView.isHidden = false
+                self.userInterfaceView.isHidden = true
+            }
+        }
     }
     
 }
