@@ -9,7 +9,6 @@
 import UIKit
 
 enum CaocapType: String {
-    case link
     case template
     case code
     case block
@@ -79,9 +78,6 @@ class Caocap {
         
         let type = dictionary["type"] as? String ?? ""
         switch type {
-        case "link":
-            _type = .link
-            self._link = dictionary["link"] as? String ?? "https://caocap.app"
         case "code":
             _type = .code
             self._code = dictionary["code"] as? [String: String] ?? ["html":"<h1> failed to load.. </h1>", "js":"", "css":""]

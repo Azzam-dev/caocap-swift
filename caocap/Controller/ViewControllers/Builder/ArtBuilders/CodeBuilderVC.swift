@@ -7,56 +7,44 @@
 //
 
 import UIKit
-import WebKit
 import Firebase
 
 class CodeBuilderVC: ArtBuilderVC {
 
     @IBOutlet weak var codeCollectionView: UICollectionView!
 
-    var caocapCode = ["html":"<h1> failed to load.. </h1>", "js":"// failed to load..", "css":"/* failed to load.. */"]
+    var caocapCode: [(fileName: String, code: String)] = [
+        ("main", #"print("hello capcap")"#),
+        ("file2", #"print(1+2)"#),
+        ("file3", #"print(-200)"#)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        topToolBarBTNs(topToolBarBTNs[0])
         getCaocapData()
-        topToolBarBTNs(topToolBarBTNs[1])
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        codeCollectionView.scrollToItem(at:IndexPath(item: 1, section: 0), at: .right, animated: false)
-    }
     
     func getCaocapData() {
         guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
-            if let code = caocap.code { self.caocapCode = code }
+            //TODO: - loud caocap Data
         }
     }
     
-    
+    var fileIndex = 0
     @IBAction func didSwipeCollectionView(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
-        case .left:
-            switch toolsSelectedIndex {
-            case 0:
-                topToolBarBTNs(topToolBarBTNs[1])
-            case 1:
-                topToolBarBTNs(topToolBarBTNs[2])
-            default:
-                break
-            }
-        case .right:
-            switch toolsSelectedIndex {
-            case 1:
-                topToolBarBTNs(topToolBarBTNs[0])
-            case 2:
-                topToolBarBTNs(topToolBarBTNs[1])
-            default:
-                break
-            }
+        case .left where fileIndex < (caocapCode.count - 1) :
+            fileIndex += 1
+        case .right where fileIndex > 0 :
+            fileIndex -= 1
         default:
             break
         }
+        codeCollectionView.scrollToItem(at:IndexPath(item: fileIndex, section: 0), at: .right, animated: true)
     }
 }
 
@@ -70,16 +58,9 @@ extension CodeBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, U
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "codeCell", for: indexPath) as? CodeCell, let openedCaocapKey = openedCaocap?.key else { return UICollectionViewCell() }
         
-        switch indexPath.row {
-        case 0:
-            cell.configure(code: caocapCode["js"]!, type: .js, key: openedCaocapKey)
-        case 1:
-            cell.configure(code: caocapCode["html"]!, type: .html, key: openedCaocapKey)
-        case 2:
-            cell.configure(code: caocapCode["css"]!, type: .css, key: openedCaocapKey)
-        default:
-            break
-        }
+        let codeFile = caocapCode[indexPath.row]
+        cell.configure(fileName: codeFile.fileName, code: codeFile.code, key: openedCaocapKey)
+        
         
         return cell
     }

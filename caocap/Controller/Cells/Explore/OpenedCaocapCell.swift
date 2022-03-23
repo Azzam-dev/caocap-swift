@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WebKit
 import Firebase
 
 /* Declare a Delegate Protocol method */
@@ -17,16 +16,14 @@ protocol OpenedCaocapCellDelegate: class {
     func roomBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
 }
 
-class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
+class OpenedCaocapCell: UICollectionViewCell {
     
     //Define delegate variable
     weak var delegate: OpenedCaocapCellDelegate?
     
-    @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loadingIcon: UIImageView!
     @IBOutlet weak var theView: DesignableView!
     @IBOutlet weak var caocapName: UILabel!
-    @IBOutlet weak var caocapBackgroundIMG: UIImageView!
     @IBOutlet weak var caocapIMG: DesignableImage!
     @IBOutlet weak var caocapIMGview: DesignableView!
     @IBOutlet weak var caocapDescription: UILabel!
@@ -38,18 +35,7 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
         super.awakeFromNib()
         
         UIView.appearance().semanticContentAttribute = .forceLeftToRight
-
         
-        DataService.instance.REF_RELEASED.observe(DataEventType.value, with: { snap in
-            self.isReleased = snap.value! as! Bool
-            if self.isReleased {
-                self.theView.isHidden = false
-                self.caocapBackgroundIMG.isHidden = true
-            } else {
-                self.theView.isHidden = true
-                self.caocapBackgroundIMG.isHidden = false
-            }
-        })
     }
     
     var caocapKey = ""
@@ -58,9 +44,8 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
     func configureCell(caocap: Caocap ,released: Bool) {
         caocapKey = caocap.key
         
-        //this stops the image and the Url from duplicating
+        //this stops the image from duplicating
         self.caocapIMG.image = nil
-        self.webView.stopLoading()
         
         loadingAnimation(image: loadingIcon)
         
@@ -74,7 +59,6 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
             }
         }
         
-        self.webView.navigationDelegate = self
         self.caocapName.text = caocap.name
         if case 0...5 = caocap.color {
             self.caocapIMGview.borderColor = colorArray[caocap.color]
@@ -86,44 +70,12 @@ class OpenedCaocapCell: UICollectionViewCell, WKNavigationDelegate {
             caocapIMG.af.setImage(withURL: imageURL)
         }
         
-        if isReleased {
-            self.theView.isHidden = false
-            self.caocapBackgroundIMG.isHidden = true
-            self.caocapBackgroundIMG.image = nil
-            loadCaocap(caocap)
-        } else {
-            self.theView.isHidden = true
-            self.caocapBackgroundIMG.isHidden = false
-            self.webView.stopLoading()
-            self.caocapBackgroundIMG.image = caocapIMG.image
-        }
+        loadCaocap(caocap)
     }
     
-    //This shows the webView after the download finishes
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        self.webView.isHidden = false
-    }
     
     private func loadCaocap(_ caocap: Caocap) {
-        switch caocap.type {
-        case .code:
-            let caocapCode = """
-            <!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta charset="utf-8"><title>CAOCAP</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"><style>\(caocap.code!["css"] ?? "")</style></head><body>\(caocap.code!["html"] ?? "" )<script>\(caocap.code!["js"] ?? "")</script></body></html>
-            """
-            
-            self.webView.loadHTMLString(caocapCode , baseURL: nil)
-            
-        case .link:
-            let caocapURL = URL(string: caocap.link!)!
-            var urlRequest = URLRequest(url: caocapURL)
-            urlRequest.cachePolicy = .returnCacheDataElseLoad
-            self.webView.load(urlRequest)
-            
-        default:
-            print("unexpected caocap type")
-        }
-        
+        //TODO: - loadCaocap
     }
     
     @IBAction func shareBTN(_ sender: Any) {

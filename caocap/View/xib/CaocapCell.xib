@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,29 +33,9 @@
                                     <constraint firstAttribute="width" secondItem="Rly-tJ-gWC" secondAttribute="height" multiplier="145:162" id="p2x-qD-uw9"/>
                                 </constraints>
                             </imageView>
-                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="umX-rd-VAy">
+                            <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rv-Pa-iiF" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="225" height="360"/>
-                                <color key="backgroundColor" red="0.14326721429824829" green="0.17714107036590576" blue="0.19831734895706177" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <view hidden="YES" clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rv-Pa-iiF" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="225" height="360"/>
-                                <subviews>
-                                    <wkWebView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2m-5f-OGt">
-                                        <rect key="frame" x="0.0" y="0.0" width="225" height="360"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <wkWebViewConfiguration key="configuration">
-                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
-                                            <wkPreferences key="preferences"/>
-                                        </wkWebViewConfiguration>
-                                    </wkWebView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="z2m-5f-OGt" firstAttribute="trailing" secondItem="1Rv-Pa-iiF" secondAttribute="trailing" id="HbN-Vt-bQ0"/>
-                                    <constraint firstItem="z2m-5f-OGt" firstAttribute="leading" secondItem="1Rv-Pa-iiF" secondAttribute="leading" id="iQD-bd-Yg2"/>
-                                    <constraint firstItem="z2m-5f-OGt" firstAttribute="bottom" secondItem="1Rv-Pa-iiF" secondAttribute="bottom" id="y4n-KJ-AYw"/>
-                                    <constraint firstItem="z2m-5f-OGt" firstAttribute="top" secondItem="1Rv-Pa-iiF" secondAttribute="top" id="ybv-m7-crK"/>
-                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -67,12 +47,8 @@
                         <constraints>
                             <constraint firstItem="Rly-tJ-gWC" firstAttribute="centerY" secondItem="Z5b-Ms-Xw9" secondAttribute="centerY" id="972-Gy-Og7"/>
                             <constraint firstItem="1Rv-Pa-iiF" firstAttribute="leading" secondItem="Z5b-Ms-Xw9" secondAttribute="leading" id="MZ2-C2-Snb"/>
-                            <constraint firstAttribute="trailing" secondItem="umX-rd-VAy" secondAttribute="trailing" id="NRR-Iq-b2R"/>
                             <constraint firstItem="Rly-tJ-gWC" firstAttribute="centerX" secondItem="Z5b-Ms-Xw9" secondAttribute="centerX" id="NkI-wK-epH"/>
                             <constraint firstItem="1Rv-Pa-iiF" firstAttribute="trailing" secondItem="Z5b-Ms-Xw9" secondAttribute="trailing" id="cze-QU-HdG"/>
-                            <constraint firstAttribute="bottom" secondItem="umX-rd-VAy" secondAttribute="bottom" id="fRj-4a-QJx"/>
-                            <constraint firstItem="umX-rd-VAy" firstAttribute="top" secondItem="Z5b-Ms-Xw9" secondAttribute="top" id="gHN-A2-qWO"/>
-                            <constraint firstItem="umX-rd-VAy" firstAttribute="leading" secondItem="Z5b-Ms-Xw9" secondAttribute="leading" id="n96-7N-sBH"/>
                             <constraint firstItem="1Rv-Pa-iiF" firstAttribute="bottom" secondItem="Z5b-Ms-Xw9" secondAttribute="bottom" id="v6i-ND-Iu2"/>
                             <constraint firstItem="1Rv-Pa-iiF" firstAttribute="top" secondItem="Z5b-Ms-Xw9" secondAttribute="top" id="wg6-eW-T7H"/>
                         </constraints>
@@ -124,11 +100,9 @@
             </constraints>
             <size key="customSize" width="225" height="380"/>
             <connections>
-                <outlet property="caocapIMG" destination="umX-rd-VAy" id="l33-ND-0Y5"/>
                 <outlet property="caocapName" destination="9Xd-9R-uRJ" id="jAw-rL-fvj"/>
                 <outlet property="loadingIcon" destination="Rly-tJ-gWC" id="i1K-R4-RnX"/>
                 <outlet property="theView" destination="1Rv-Pa-iiF" id="Dtc-34-8J5"/>
-                <outlet property="webView" destination="z2m-5f-OGt" id="cJ2-oL-DdL"/>
             </connections>
             <point key="canvasLocation" x="72.799999999999997" y="154.72263868065968"/>
         </collectionViewCell>
