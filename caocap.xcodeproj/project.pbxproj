@@ -599,6 +599,7 @@
 		EC697408261D87F300EB71F4 /* ArtBuilders */ = {
 			isa = PBXGroup;
 			children = (
+				2526AFB627EA8B8E0075AA32 /* FolderSystemVC.swift */,
 				EC3C86BD263C89430005DBAB /* ArtBuilderVC.swift */,
 				ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */,
 				EC697409261D889700EB71F4 /* TemplateBuilderVC.swift */,
@@ -730,7 +731,6 @@
 			isa = PBXGroup;
 			children = (
 				ECA3F3A023DBFD8A00BAB6AF /* BuilderVC.swift */,
-				2526AFB627EA8B8E0075AA32 /* FolderSystemVC.swift */,
 				4E0E42D424651F9A00522B2F /* TestLabVC.swift */,
 				EC697408261D87F300EB71F4 /* ArtBuilders */,
 				ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */,

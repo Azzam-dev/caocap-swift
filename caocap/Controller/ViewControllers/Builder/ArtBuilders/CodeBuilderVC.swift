@@ -27,7 +27,7 @@ class CodeBuilderVC: ArtBuilderVC {
     }
     
     
-    func getCaocapData() {
+    override func getCaocapData() {
         guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
             //TODO: - loud caocap Data
@@ -46,15 +46,12 @@ class CodeBuilderVC: ArtBuilderVC {
         }
         codeCollectionView.scrollToItem(at:IndexPath(item: fileIndex, section: 0), at: .right, animated: true)
     }
-}
-
-extension CodeBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return caocapCode.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "codeCell", for: indexPath) as? CodeCell, let openedCaocapKey = openedCaocap?.key else { return UICollectionViewCell() }
         
@@ -72,4 +69,6 @@ extension CodeBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, U
         return CGSize(width: width , height: height)
     }
 }
+
+
 

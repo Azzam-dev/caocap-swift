@@ -100,6 +100,8 @@ extension FolderSystemVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("did press the page cell")
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        let artBuilderVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as! ArtBuilderVC
+        navigationController?.pushViewController(artBuilderVC, animated: true)
     }
 }
