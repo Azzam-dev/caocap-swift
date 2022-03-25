@@ -72,7 +72,7 @@ class OrbitingVC: UIViewController {
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             
             let storyboard = UIStoryboard(name: "Explore", bundle: nil)
-            let caocap = storyboard.instantiateViewController(withIdentifier: "caocap") as! CaocapVC
+            let caocap = storyboard.instantiateViewController(withIdentifier: "openedCaocapVC") as! OpenedCaocapVC
             caocap.openedCaocap = caocapsArray[indexPath.row]
             navigationController?.pushViewController(caocap, animated: true)
             

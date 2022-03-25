@@ -1,5 +1,5 @@
 //
-//  CaocapVC.swift
+//  OpenedCaocapVC.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 14/08/1440 AH.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class CaocapVC: UIViewController, UITextFieldDelegate {
+class OpenedCaocapVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var caocapsCollectionView: UICollectionView!
     var openedCaocap: Caocap?
@@ -62,7 +62,7 @@ class CaocapVC: UIViewController, UITextFieldDelegate {
     
 }
 
-extension CaocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout , OpenedCaocapCellDelegate {
+extension OpenedCaocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout , OpenedCaocapCellDelegate {
     
     //this is the share function, when the shareBTN in the opendCaocapVC is pressed it will show the share Viewc Controller
     func shareBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton) {
@@ -145,7 +145,7 @@ extension CaocapVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.row != 0 {
             let storyboard = UIStoryboard(name: "Explore", bundle: nil)
-            let caocap = storyboard.instantiateViewController(withIdentifier: "caocap") as! CaocapVC
+            let caocap = storyboard.instantiateViewController(withIdentifier: "openedCaocapVC") as! OpenedCaocapVC
             caocap.openedCaocap = caocapsArray[indexPath.row - 1]
             navigationController?.pushViewController(caocap, animated: true)
             let cell = collectionView.cellForItem(at: indexPath)

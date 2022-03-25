@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReSwift
 
 class FolderSystemVC: UIViewController {
 
@@ -104,4 +105,26 @@ extension FolderSystemVC: UICollectionViewDelegate, UICollectionViewDataSource, 
         let artBuilderVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as! ArtBuilderVC
         navigationController?.pushViewController(artBuilderVC, animated: true)
     }
+}
+
+
+
+extension FolderSystemVC: StoreSubscriber {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+//        TODO: - set up the folder system state
+//        openedCaocap = state.openedCaocap
+//        getCaocapData()
+    }
+    
 }

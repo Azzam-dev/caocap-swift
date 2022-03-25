@@ -15,8 +15,7 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     
     @IBOutlet weak var loadingIcon: UIImageView!
     @IBOutlet weak var caocapView: DesignableView!
-    var caocapHC = UIHostingController(rootView: ZStack{Color.blue})
-    
+    var caocapVC: CaocapVC?
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
@@ -27,7 +26,6 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         super.viewDidLoad()
         
         loadingAnimation(image: loadingIcon)
-        getCaocapData()
         gestureRecognizerSetup()
     }
     
@@ -63,15 +61,13 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     
     private func loadCaocap(_ caocap: Caocap) {
     //TODO: - loadCaocap
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        caocapVC = storyboard.instantiateViewController(withIdentifier: "caocapVC") as? CaocapVC
         
-        caocapHC = UIHostingController(rootView: ZStack{
-            Color.red
-        })
-        
-        addChild(caocapHC)
-        caocapHC.view.frame = caocapView.frame
-        caocapView.addSubview(caocapHC.view)
-        caocapHC.didMove(toParent: self)
+        addChild(caocapVC!)
+        caocapVC!.view.frame = caocapView.frame
+        caocapView.addSubview(caocapVC!.view)
+        caocapVC!.didMove(toParent: self)
     }
     
     
@@ -226,6 +222,7 @@ extension TestLabVC: StoreSubscriber {
     
     func newState(state: AppState) {
         openedCaocap = state.openedCaocap
+        getCaocapData()
     }
     
 }
