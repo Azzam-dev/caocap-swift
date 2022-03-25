@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import ReSwift
 import Firebase
 
-class CodeBuilderVC: ArtBuilderVC {
+class CodeBuilderVC: UIViewController {
 
+    @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var gestureRecognizerView: UIView!
+    
     @IBOutlet weak var codeCollectionView: UICollectionView!
 
+    var toolsSelectedIndex = 0
+    var openedCaocap: Caocap?
+    
     var caocapCode: [(fileName: String, code: String)] = [
         ("main", #"print("hello capcap")"#),
         ("file2", #"print(1+2)"#),
@@ -27,7 +34,7 @@ class CodeBuilderVC: ArtBuilderVC {
     }
     
     
-    override func getCaocapData() {
+    func getCaocapData() {
         guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
             //TODO: - loud caocap Data
@@ -47,11 +54,62 @@ class CodeBuilderVC: ArtBuilderVC {
         codeCollectionView.scrollToItem(at:IndexPath(item: fileIndex, section: 0), at: .right, animated: true)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func gestureRecognizerSetup() {
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        upSwipe.direction = .up
+        
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
+        downSwipe.direction = .down
+        
+        gestureRecognizerView.addGestureRecognizer(upSwipe)
+        gestureRecognizerView.addGestureRecognizer(downSwipe)
+    }
+    
+    func toolsViewAnimation(_ hight: Int) {
+        UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
+            self.toolsViewHeightConstraint.constant = CGFloat(hight)
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
+        if sender.state == .ended {
+            switch sender.direction {
+            case .up:
+                if self.toolsViewHeightConstraint.constant == 75 {
+                    toolsViewAnimation(135)
+                } else {
+                    toolsViewAnimation(350)
+                }
+            case .down:
+                if self.toolsViewHeightConstraint.constant == 135 {
+                    toolsViewAnimation(75)
+                } else {
+                    toolsViewAnimation(135)
+                }
+            default:
+                break
+            }
+        }
+    }
+    
+    @IBOutlet var topToolBarBTNs: [UIButton]!
+    @IBAction func topToolBarBTNs(_ sender: UIButton) {
+        toolsSelectedIndex = sender.tag
+        // TODO: - setup codeBuilder topToolBarBTNs
+    }
+
+}
+
+
+extension CodeBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return caocapCode.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "codeCell", for: indexPath) as? CodeCell, let openedCaocapKey = openedCaocap?.key else { return UICollectionViewCell() }
         
@@ -70,4 +128,22 @@ class CodeBuilderVC: ArtBuilderVC {
     }
 }
 
+
+extension CodeBuilderVC: StoreSubscriber {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        openedCaocap = state.openedCaocap
+    }
+    
+}
 

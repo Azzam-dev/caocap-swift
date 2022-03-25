@@ -16,6 +16,7 @@ class FolderSystemVC: UIViewController {
     @IBOutlet weak var gestureRecognizerView: UIView!
     @IBOutlet weak var pagesCollectionView: UICollectionView!
     
+    var openedCaocap: Caocap?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,9 +102,21 @@ extension FolderSystemVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let openedCaocap = openedCaocap else { return }
+        
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        let artBuilderVC = storyboard.instantiateViewController(withIdentifier: "artBuilder") as! ArtBuilderVC
-        navigationController?.pushViewController(artBuilderVC, animated: true)
+        let vc: UIViewController
+        
+        switch openedCaocap.type {
+        case .template:
+            vc = storyboard.instantiateViewController(withIdentifier: "artBuilder") as! ArtBuilderVC
+        case .code:
+            vc = storyboard.instantiateViewController(withIdentifier: "codeBuilder") as! CodeBuilderVC
+        case .block:
+            vc = storyboard.instantiateViewController(withIdentifier: "blockBuilder") as! BlockBuilderVC
+        }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -123,8 +136,8 @@ extension FolderSystemVC: StoreSubscriber {
     
     func newState(state: AppState) {
 //        TODO: - set up the folder system state
-//        openedCaocap = state.openedCaocap
-//        getCaocapData()
+        openedCaocap = state.openedCaocap
+        getCaocapData()
     }
     
 }

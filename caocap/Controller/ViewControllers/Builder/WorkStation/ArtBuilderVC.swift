@@ -144,24 +144,6 @@ class ArtBuilderVC: UIViewController {
     
 }
 
-extension ArtBuilderVC: StoreSubscriber {
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        store.subscribe(self)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        store.unsubscribe(self)
-    }
-    
-    func newState(state: AppState) {
-        openedCaocap = state.openedCaocap
-    }
-    
-}
-
 
 extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
@@ -286,6 +268,23 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
    
 }
 
+extension ArtBuilderVC: StoreSubscriber {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        openedCaocap = state.openedCaocap
+    }
+    
+}
 
 extension ArtBuilderVC: AddTemplateDelegate {
     

@@ -79,7 +79,7 @@ class BuilderVC: UIViewController, UINavigationControllerDelegate {
                 self.dismiss(animated: true, completion: nil)
                 store.dispatch(CloseBuilderAction())
             } else {
-                navigationController.popViewController(animated: true)
+                navigationController.popViewController(animated: false)
             }
             
         } else if cancelPopupsBTN.isHidden == false {
