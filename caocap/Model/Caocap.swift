@@ -24,7 +24,7 @@ class Caocap {
     private var _owners: [String]
     private var _type: CaocapType
     private var _link: String?
-    private var _code: [String: String]?
+    private var _code: [String : [String: String]]?
     private var _blocks: [Block]?
     
     var key: String {
@@ -54,8 +54,17 @@ class Caocap {
     var link: String? {
         return _link
     }
-    var code: [String: String]? {
-        return _code
+    var code: [String : [CodeFile]]? {
+        var code = [String : [CodeFile]]()
+        for (key, value) in _code! {
+            code[key] = [
+                CodeFile(type: .load, code: value["load"] ?? "error!"),
+                CodeFile(type: .update, code: value["update"] ?? "error!"),
+                CodeFile(type: .draw, code: value["draw"] ?? "error!")
+                ]
+        }
+        
+        return code
     }
     
     var blocks: [Block]? {
@@ -75,6 +84,12 @@ class Caocap {
         switch type {
         case "code":
             _type = .code
+            _code = dictionary["code"] as? [String : [String: String]] ?? [
+                "main":[
+                    "load": "error!",
+                    "update" : "error!",
+                    "draw" : "error!"
+                ]]
         case "art":
             _type = .art
         case "block":

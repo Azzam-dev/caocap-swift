@@ -20,10 +20,10 @@ class CodeBuilderVC: UIViewController {
     var toolsSelectedIndex = 0
     var openedCaocap: Caocap?
     
-    var caocapCode: [(fileName: String, code: String)] = [
-        ("main", #"print("hello capcap")"#),
-        ("file2", #"print(1+2)"#),
-        ("file3", #"print(-200)"#)
+    var codeFile = [
+            CodeFile(type: .load, code: "louding..."),
+            CodeFile(type: .update, code: "louding..."),
+            CodeFile(type: .draw, code: "louding..."),
     ]
     
     override func viewDidLoad() {
@@ -44,7 +44,7 @@ class CodeBuilderVC: UIViewController {
     var fileIndex = 0
     @IBAction func didSwipeCollectionView(_ sender: UISwipeGestureRecognizer) {
         switch sender.direction {
-        case .left where fileIndex < (caocapCode.count - 1) :
+        case .left where fileIndex < (codeFile.count - 1) :
             fileIndex += 1
         case .right where fileIndex > 0 :
             fileIndex -= 1
@@ -106,16 +106,15 @@ class CodeBuilderVC: UIViewController {
 extension CodeBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return caocapCode.count
+        return codeFile.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "codeCell", for: indexPath) as? CodeCell, let openedCaocapKey = openedCaocap?.key else { return UICollectionViewCell() }
         
-        let codeFile = caocapCode[indexPath.row]
-        cell.configure(fileName: codeFile.fileName, code: codeFile.code, key: openedCaocapKey)
-        
+        let codeFile = codeFile[indexPath.row]
+        cell.configure(fileName: codeFile.type.rawValue, code: codeFile.code, key: openedCaocapKey)
         
         return cell
     }
@@ -143,6 +142,9 @@ extension CodeBuilderVC: StoreSubscriber {
     
     func newState(state: AppState) {
         openedCaocap = state.openedCaocap
+        if let code = openedCaocap?.code?["main"] {
+            codeFile = code
+        }
     }
     
 }

@@ -102,9 +102,11 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
                         var content = [String:Any]()
                         switch self.type {
                         case .code:
-                            content[self.type.rawValue] = ["html":"<h1> write your code here </h1>",
-                                                           "js": "//write your JS code here",
-                                                           "css": "h1 { color: blue; }"]
+                            content[self.type.rawValue] = ["main":[
+                                "load": #"print("hello capcap")"#,
+                                "update" : #"print(1+2)"#,
+                                "draw" : #"print(-200)"#
+                            ]]
                         case .art:
                             content[self.type.rawValue] = ["logic":"put somthing here",
                                                            "art": "the ui shuold be here",]

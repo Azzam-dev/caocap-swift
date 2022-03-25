@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReSwift
 
 class CodeCell: UICollectionViewCell, UITextViewDelegate {
     
@@ -24,8 +25,8 @@ class CodeCell: UICollectionViewCell, UITextViewDelegate {
         guard let key = key else { return }
         guard let fileName = fileName else { return }
         guard let luaCode = textView.text else { return }
-        LuaService(script: luaCode)
+//        LuaService(script: luaCode)
         //TODO: - save the code changes to firebase
-        //DataService.instance.REF_CAOCAPS.child(key).child("code").updateChildValues([fileName: luaCode])
+        DataService.instance.REF_CAOCAPS.child(key).child("code").updateChildValues([fileName: luaCode])
     }
 }
