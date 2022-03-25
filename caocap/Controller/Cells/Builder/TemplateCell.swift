@@ -16,7 +16,7 @@ class TemplateCell: UITableViewCell {
         selectedEffectView.isHidden = !selected 
     }
 
-    func configure(template: Template) {
+    func configure(template: Block) {
         var code = template.code
     }
     

@@ -303,15 +303,15 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     var builderItemCells = [BuilderTypeCell]()
     func setupBuilderCells() {
         
-        let templateBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 1, section: 0)) as! BuilderTypeCell
+        let blockBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 1, section: 0)) as! BuilderTypeCell
         let codeBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 2, section: 0)) as! BuilderTypeCell
-        let blockBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 3, section: 0)) as! BuilderTypeCell
+        let artBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 3, section: 0)) as! BuilderTypeCell
         
         
-        templateBuilderCell.configure(builder: Builder(type: .template, title: "Template", image: #imageLiteral(resourceName: "Create Template"), description: ""))
+        blockBuilderCell.configure(builder: Builder(type: .block, title: "Block", image: #imageLiteral(resourceName: "Create Block"), description: ""))
         codeBuilderCell.configure(builder: Builder(type: .code, title: "Code", image: #imageLiteral(resourceName: "Create Code"),description: ""))
-        blockBuilderCell.configure(builder: Builder(type: .block, title: "Block", image: #imageLiteral(resourceName: "Create Soon"), description: ""))
-        builderItemCells = [templateBuilderCell, codeBuilderCell, blockBuilderCell]
+        artBuilderCell.configure(builder: Builder(type: .art, title: "Art", image: #imageLiteral(resourceName: "Create Soon"), description: ""))
+        builderItemCells = [blockBuilderCell, codeBuilderCell, artBuilderCell]
 
         builderCollectionView.reloadData()
     }

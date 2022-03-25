@@ -109,7 +109,7 @@ extension FolderSystemVC: UICollectionViewDelegate, UICollectionViewDataSource, 
         let vc: UIViewController
         
         switch openedCaocap.type {
-        case .template:
+        case .art:
             vc = storyboard.instantiateViewController(withIdentifier: "artBuilder") as! ArtBuilderVC
         case .code:
             vc = storyboard.instantiateViewController(withIdentifier: "codeBuilder") as! CodeBuilderVC

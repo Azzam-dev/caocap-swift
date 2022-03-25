@@ -13,18 +13,15 @@ class ArtBuilderVC: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
-    @IBOutlet weak var userInterfaceView: DesignableView!
-    @IBOutlet weak var logicView: DesignableView!
+    @IBOutlet weak var artView: DesignableView!
+    @IBOutlet weak var artsObjectsCollectionView: UICollectionView!
     
-    @IBOutlet weak var userInterfaceTableView: UITableView!
+    @IBOutlet weak var logicView: DesignableView!
     @IBOutlet weak var logicTableView: UITableView!
+    @IBOutlet weak var logicNodesCollectionView: UICollectionView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
-    
-    
-    @IBOutlet weak var templatesCollectionView: UICollectionView!
-    @IBOutlet weak var logicNodesCollectionView: UICollectionView!
     
     @IBOutlet weak var stylesTableView: UITableView!
     @IBOutlet weak var structureTableView: UITableView!
@@ -32,12 +29,7 @@ class ArtBuilderVC: UIViewController {
     var toolsSelectedIndex = 0
     var openedCaocap: Caocap?
     
-    var caocapTemplates = [Template]() //TODO: NT - rename
-    
-    var templatesArray = TemplateService.instance.templates
     var logicNodesArray = LogicNodeService.instance.logicNodes
-    
-    var editingTemplate: Template?
     
     
     override func viewDidLoad() {
@@ -52,14 +44,14 @@ class ArtBuilderVC: UIViewController {
     func getCaocapData() {
         guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
-            if let templates = caocap.templates { self.caocapTemplates = templates }
+            // TODO: - getCaocapData
         }
     }
     
     
     func presentSelectedView(_ selectedView: UIView) {
         structureTableView.isHidden = true
-        templatesCollectionView.isHidden = true
+        artsObjectsCollectionView.isHidden = true
         stylesTableView.isHidden = true
         selectedView.isHidden = false
     }
@@ -120,8 +112,8 @@ class ArtBuilderVC: UIViewController {
                 self.view.backgroundColor = .white
                 self.backgroundImage.tintColor = .black
                 
-                self.userInterfaceView.isHidden = false
-                self.templatesCollectionView.isHidden = false
+                self.artView.isHidden = false
+                self.artsObjectsCollectionView.isHidden = false
                 
                 self.logicView.isHidden = true
                 self.logicNodesCollectionView.isHidden = true
@@ -136,8 +128,8 @@ class ArtBuilderVC: UIViewController {
                 self.logicView.isHidden = false
                 self.logicNodesCollectionView.isHidden = false
                 
-                self.userInterfaceView.isHidden = true
-                self.templatesCollectionView.isHidden = true
+                self.artView.isHidden = true
+                self.artsObjectsCollectionView.isHidden = true
             }
         }
     }
@@ -149,10 +141,8 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
-        case userInterfaceTableView:
-            return caocapTemplates.count + 1
         case structureTableView:
-            return caocapTemplates.count
+            return 0 //TODO: - fix structureTableView count
         case stylesTableView:
             return 0 //TODO: - fix stylesTableView count
         case logicTableView:
@@ -166,20 +156,9 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
-        case userInterfaceTableView:
-            if indexPath.row == caocapTemplates.count { // if it was the last cell then show add template
-                guard let cell = userInterfaceTableView.dequeueReusableCell(withIdentifier: "addTemplateCell", for: indexPath) as? AddTemplateCell else { return UITableViewCell() }
-                cell.delegate = self
-                return cell
-            } else {
-                guard let cell = userInterfaceTableView.dequeueReusableCell(withIdentifier: "templateCell", for: indexPath) as? TemplateCell else { return UITableViewCell() }
-                
-                cell.configure(template: caocapTemplates[indexPath.row])
-                return cell
-            }
         case structureTableView:
             let cell = UITableViewCell()
-            cell.textLabel?.text = caocapTemplates[indexPath.row].type.rawValue
+            cell.textLabel?.text = "artObject" //TODO: - setup art Object names
             return cell
         case stylesTableView:
             return UITableViewCell() //TODO: - getStyleCell
@@ -191,40 +170,6 @@ extension ArtBuilderVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch tableView {
-        case userInterfaceTableView, structureTableView:
-            editingTemplate = caocapTemplates[indexPath.row]
-            stylesTableView.reloadData()
-        default:
-            break
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        if tableView == structureTableView {
-            let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
-                self.caocapTemplates.remove(at: indexPath.row)
-                self.userInterfaceTableView.reloadData()
-                self.structureTableView.reloadData()
-            }
-
-            let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
-            swipeActionConfig.performsFirstActionWithFullSwipe = false
-            return swipeActionConfig
-        }
-        
-        return nil
-    }
-    
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        if tableView == structureTableView {
-            let movedTemplate = caocapTemplates[sourceIndexPath.row]
-            caocapTemplates.remove(at: sourceIndexPath.row)
-            caocapTemplates.insert(movedTemplate, at: destinationIndexPath.row)
-        }
-    }
-    
 }
 
 
@@ -232,8 +177,8 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
-        case templatesCollectionView:
-            return templatesArray.count
+        case artsObjectsCollectionView:
+            return 0 //TODO: - artsObjectsCells count
         case logicNodesCollectionView:
             return logicNodesArray.count
         default:
@@ -244,9 +189,9 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
-        case templatesCollectionView:
+        case artsObjectsCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateTypeCell", for: indexPath) as? TemplateIconCell else { return UICollectionViewCell() }
-            cell.configure(template: templatesArray[indexPath.row])
+            // TODO: - setup cell.configure
             return cell
         case logicNodesCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "logicNodeTypeCell", for: indexPath) as? LogicNodeTypeCell else { return UICollectionViewCell() }
@@ -260,9 +205,7 @@ extension ArtBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        caocapTemplates.append(templatesArray[indexPath.row])
-        userInterfaceTableView.reloadData()
-        structureTableView.reloadData()
+        //TODO: - didSelectItemAt
     }
     
    
@@ -286,15 +229,3 @@ extension ArtBuilderVC: StoreSubscriber {
     
 }
 
-extension ArtBuilderVC: AddTemplateDelegate {
-    
-    func didPressAddTemplate() {
-        let newTemplate = TemplateService.instance.templates.first!
-        caocapTemplates.append(newTemplate)
-        userInterfaceTableView.reloadData()
-        structureTableView.reloadData()
-    }
-    
-    
-    
-}

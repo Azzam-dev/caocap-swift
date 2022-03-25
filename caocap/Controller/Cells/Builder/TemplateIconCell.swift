@@ -12,7 +12,7 @@ class TemplateIconCell: UICollectionViewCell {
     
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    func configure(template: Template) {
+    func configure(template: Block) {
         titleLabel.text = template.type.rawValue
         icon.image = template.icon
     }

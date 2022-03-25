@@ -9,7 +9,7 @@
 import UIKit
 
 enum CaocapType: String {
-    case template
+    case art
     case code
     case block
 }
@@ -25,8 +25,7 @@ class Caocap {
     private var _type: CaocapType
     private var _link: String?
     private var _code: [String: String]?
-    private var _templates: [Template]?
-    private var _blocks: [String: String]? //TODO: this should be of type Block
+    private var _blocks: [Block]?
     
     var key: String {
         return _key
@@ -59,11 +58,7 @@ class Caocap {
         return _code
     }
     
-    var templates: [Template]? {
-        return _templates
-    }
-    
-    var blocks: [String: String]? {
+    var blocks: [Block]? {
         return _blocks
     }
     
@@ -80,12 +75,12 @@ class Caocap {
         switch type {
         case "code":
             _type = .code
-        case "template":
-            _type = .template
+        case "art":
+            _type = .art
         case "block":
             _type = .block
         default:
-            _type = .template
+            _type = .art
         }
         
         

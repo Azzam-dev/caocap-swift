@@ -1,5 +1,5 @@
 //
-//  Template.swift
+//  Block.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 30/04/2021.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-enum TemplateType: String {
+enum BlocksType: String {
     case blank
 }
 
-struct Template {
-    let type: TemplateType
+struct Block {
+    let type: BlocksType
     let description: String
     let code: String
     let icon: UIImage
