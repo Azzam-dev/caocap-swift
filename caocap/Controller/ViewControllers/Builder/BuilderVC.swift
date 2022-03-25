@@ -73,8 +73,15 @@ class BuilderVC: UIViewController, UINavigationControllerDelegate {
             circleViewScaleDownAnimation()
             blurredViewHideAnimation()
         } else if self.navCircleViewHeightConstraint.constant == 65 && blurredView.isHidden {
-            self.dismiss(animated: true, completion: nil)
-            store.dispatch(CloseBuilderAction())
+            let navigationController = navigationControllers[navSelectedIndex]
+            
+            if navigationController.viewControllers.count == 1 {
+                self.dismiss(animated: true, completion: nil)
+                store.dispatch(CloseBuilderAction())
+            } else {
+                navigationController.popViewController(animated: true)
+            }
+            
         } else if cancelPopupsBTN.isHidden == false {
             self.popupACT(self)
         }
