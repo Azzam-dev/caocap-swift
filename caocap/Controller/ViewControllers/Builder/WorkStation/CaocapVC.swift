@@ -10,8 +10,6 @@ import UIKit
 import ReSwift
 
 class CaocapVC: UIViewController {
-
-    var openedCaocap: Caocap?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +18,10 @@ class CaocapVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func load(caocap: Caocap) {
+        print(caocap.name)
+    }
+    
 }
 
 
@@ -36,7 +38,10 @@ extension CaocapVC: StoreSubscriber {
     }
     
     func newState(state: AppState) {
-        openedCaocap = state.openedCaocap
+        if let openedCaocap = state.openedCaocap {
+            load(caocap: openedCaocap)
+        }
+        
     }
     
 }

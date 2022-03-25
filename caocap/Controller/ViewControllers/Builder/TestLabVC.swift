@@ -54,13 +54,14 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
                 self.publishingSwitchBTN.setTitle("Publish", for: .normal)
                 self.publishingSwitchBTN.setTitleColor(#colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), for: .normal)
             }
-            self.loadCaocap(caocap)
+            
+            self.presentCaocapVC()
         }
         
     }
     
-    private func loadCaocap(_ caocap: Caocap) {
-    //TODO: - loadCaocap
+    private func presentCaocapVC() {
+    //TODO: - presentCaocapVC
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
         caocapVC = storyboard.instantiateViewController(withIdentifier: "caocapVC") as? CaocapVC
         
