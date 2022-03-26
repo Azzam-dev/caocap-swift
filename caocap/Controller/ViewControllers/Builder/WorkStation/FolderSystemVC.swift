@@ -116,7 +116,7 @@ extension FolderSystemVC: UICollectionViewDelegate, UICollectionViewDataSource, 
         case .block:
             vc = storyboard.instantiateViewController(withIdentifier: "blockBuilder") as! BlockBuilderVC
         }
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: false)
     }
 }
 
