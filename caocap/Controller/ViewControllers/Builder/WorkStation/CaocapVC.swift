@@ -11,6 +11,8 @@ import ReSwift
 
 class CaocapVC: UIViewController {
     
+    var openedCaocap: Caocap?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,7 +26,7 @@ class CaocapVC: UIViewController {
             guard let updateFile = liveCaocap.code?["main"]?[1] else { return }
             guard let drawFile = liveCaocap.code?["main"]?[2] else { return }
             
-            LuaService(script: loudFile.code) //TODO: - fix duplicate execution
+            LuaService(script: loudFile.code)
             LuaService(script: updateFile.code) //TODO: - update Caocap work every frame
             LuaService(script: drawFile.code) //TODO: - redraw Caocap work every frame
         }
@@ -46,8 +48,9 @@ extension CaocapVC: StoreSubscriber {
     }
     
     func newState(state: AppState) {
-        if let openedCaocap = state.openedCaocap {
-            load(caocap: openedCaocap)
+        if openedCaocap ==  nil { // MARK: - fixed duplicate execution
+            openedCaocap = state.openedCaocap
+            load(caocap: openedCaocap!)
         }
         
     }
