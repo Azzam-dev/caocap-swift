@@ -24,12 +24,11 @@ class CaocapVC: UIViewController {
             guard let updateFile = liveCaocap.code?["main"]?[1] else { return }
             guard let drawFile = liveCaocap.code?["main"]?[2] else { return }
             
-            LuaService(script: loudFile.code)
-            
+            LuaService(script: loudFile.code) //TODO: - fix duplicate execution
+            LuaService(script: updateFile.code) //TODO: - update Caocap work every frame
+            LuaService(script: drawFile.code) //TODO: - redraw Caocap work every frame
         }
     }
-    
-    
     
 }
 
