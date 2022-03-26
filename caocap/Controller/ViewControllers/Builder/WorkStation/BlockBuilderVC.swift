@@ -43,6 +43,8 @@ class BlockBuilderVC: UIViewController {
         getCaocapData()
         registerdUINib()
         
+        logicTableView.contentInset.bottom = 400
+        
     }
     
     func getCaocapData() {
