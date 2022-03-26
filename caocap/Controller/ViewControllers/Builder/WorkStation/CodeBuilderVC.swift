@@ -30,6 +30,7 @@ class CodeBuilderVC: UIViewController {
         super.viewDidLoad()
         
         topToolBarBTNs(topToolBarBTNs[0])
+        gestureRecognizerSetup()
         getCaocapData()
     }
     
