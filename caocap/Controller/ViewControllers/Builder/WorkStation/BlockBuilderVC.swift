@@ -197,8 +197,25 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == logicTableView && indexPath.row < caocapLogicNodes.count {
+            //TODO: - logicTableView didSelectRowAt
+        } else if tableView == blocksTableView && indexPath.row < caocapBlocks.count {
+            //TODO: - blocksTableView didSelectRowAt
+        }
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        if tableView == structureTableView {
+        if tableView == logicTableView && indexPath.row < caocapLogicNodes.count {
+            let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
+                self.caocapLogicNodes.remove(at: indexPath.row)
+                self.logicTableView.reloadData()
+            }
+
+            let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
+            swipeActionConfig.performsFirstActionWithFullSwipe = false
+            return swipeActionConfig
+        } else if tableView == structureTableView {
             let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
                 self.caocapBlocks.remove(at: indexPath.row)
                 self.blocksTableView.reloadData()
