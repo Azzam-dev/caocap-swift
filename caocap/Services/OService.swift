@@ -6,7 +6,8 @@
 //  Copyright © 1443 Ficruty. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import ReSwift
 
 
 @objc class OService: NSObject {
@@ -18,7 +19,7 @@ import Foundation
     
     @objc func changeBackgroundColor(hex: String) {
         //TODO: - change background color
-        print("change background color to \(hex)")
+        store.dispatch(UpdateBackGroundColorForCaocapVCAction(color: UIColor(hex: hex) ?? .black))
     }
     
 }

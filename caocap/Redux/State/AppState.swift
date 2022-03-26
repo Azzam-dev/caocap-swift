@@ -13,4 +13,5 @@ import ReSwift
 */
 struct AppState: StateType {
     var openedCaocap: Caocap?
+    var caocapVC: CaocapVC?
 }

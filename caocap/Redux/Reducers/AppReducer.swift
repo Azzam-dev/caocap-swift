@@ -23,10 +23,18 @@ func appReducer(action: Action, state: AppState?) -> AppState {
     switch action {
     case let createCaocapAction as CreateCaocapAction:
         state.openedCaocap = createCaocapAction.caocap
+        
     case let openBuilderAction as OpenBuilderAction:
         state.openedCaocap = openBuilderAction.caocap
     case _ as CloseBuilderAction:
         state.openedCaocap = nil
+        
+    case let loudCaocapVCAction as LoudCaocapVCAction:
+        state.caocapVC = loudCaocapVCAction.caocapVC
+        
+    case let updateBackGroundColorForCaocapVCAction as UpdateBackGroundColorForCaocapVCAction:
+        state.caocapVC?.view.backgroundColor = updateBackGroundColorForCaocapVCAction.color
+        
     default:
         break
     }

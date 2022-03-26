@@ -7,6 +7,7 @@
 //
 
 import ReSwift
+import UIKit
 
 /*
  Actions: Initiate a state change in the app. An Action is handled by a Reducer.
@@ -23,3 +24,11 @@ struct OpenBuilderAction: Action {
 }
 
 struct CloseBuilderAction: Action {}
+
+struct LoudCaocapVCAction: Action {
+    let caocapVC: CaocapVC
+}
+
+struct UpdateBackGroundColorForCaocapVCAction: Action {
+    let color: UIColor
+}

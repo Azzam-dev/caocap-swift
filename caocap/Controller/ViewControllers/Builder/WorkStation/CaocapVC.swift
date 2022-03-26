@@ -16,11 +16,12 @@ class CaocapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("caocap did load")
+        
         // Do any additional setup after loading the view.
     }
 
     func load(caocap: Caocap) {
+        store.dispatch(LoudCaocapVCAction(caocapVC: self))
         DataService.instance.getCaocap(withKey: caocap.key) { liveCaocap in
             guard let loudFile = liveCaocap.code?["main"]?[0] else { return }
             guard let updateFile = liveCaocap.code?["main"]?[1] else { return }
