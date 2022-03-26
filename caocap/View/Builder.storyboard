@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -2232,7 +2232,7 @@
                                                             <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="templateTypeCell" id="iUC-3A-Adm" customClass="TemplateIconCell" customModule="CAOCAPx" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="templateTypeCell" id="iUC-3A-Adm" customClass="BlockTypeCell" customModule="CAOCAPx" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="32.666666666666664" width="120" height="150"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aLP-F5-3LI">
@@ -2605,7 +2605,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="378" height="540"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="templateCell" rowHeight="200" id="ugH-vS-H31" customClass="TemplateCell" customModule="CAOCAPx" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="blockCell" rowHeight="200" id="ugH-vS-H31" customClass="BlockCell" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="378" height="200"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ugH-vS-H31" id="ulm-bW-kPJ">
@@ -2730,7 +2730,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="378" height="728"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logicCell" id="src-Sz-hXO">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="logicNodeCell" id="src-Sz-hXO">
                                                 <rect key="frame" x="0.0" y="44.666666030883789" width="378" height="444.33334350585938"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="src-Sz-hXO" id="epE-4h-tKn">
@@ -2937,6 +2937,51 @@
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                             </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addLogicCell" rowHeight="100" id="p9x-we-Sf3" customClass="AddLogicCell" customModule="CAOCAPx" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="489.00000953674316" width="378" height="100"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p9x-we-Sf3" id="EkY-mM-WGq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g93-Ba-Zwh" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
+                                                            <rect key="frame" x="40" y="25" width="298" height="50"/>
+                                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="30x-1U-sfX"/>
+                                                                <constraint firstAttribute="height" constant="50" id="sJ0-yj-epp"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="17"/>
+                                                            <state key="normal" title="add block">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                    <real key="value" value="3"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                    <real key="value" value="0.10000000000000001"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                    <size key="value" width="2" height="2"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="addLogicNodeBTN:" destination="p9x-we-Sf3" eventType="touchUpInside" id="43f-8G-lBZ"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="g93-Ba-Zwh" firstAttribute="top" secondItem="EkY-mM-WGq" secondAttribute="top" constant="25" id="Q8F-Si-uj8"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="g93-Ba-Zwh" secondAttribute="trailing" constant="20" id="Zns-4r-Gd0"/>
+                                                        <constraint firstItem="g93-Ba-Zwh" firstAttribute="centerX" secondItem="EkY-mM-WGq" secondAttribute="centerX" id="eCc-oE-ddi"/>
+                                                        <constraint firstItem="g93-Ba-Zwh" firstAttribute="centerY" secondItem="EkY-mM-WGq" secondAttribute="centerY" id="g1a-vs-g9j"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
                                         </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="Ybe-nR-w0y" id="wHx-Lu-ZxQ"/>
@@ -3053,7 +3098,7 @@
                                                             <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="templateTypeCell" id="vYT-bV-Yne" customClass="TemplateIconCell" customModule="CAOCAPx" customModuleProvider="target">
+                                                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="templateTypeCell" id="vYT-bV-Yne" customClass="BlockTypeCell" customModule="CAOCAPx" customModuleProvider="target">
                                                                 <rect key="frame" x="20" y="32.666666666666664" width="120" height="150"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hkv-FR-iF5">
@@ -3427,6 +3472,9 @@
         </designable>
         <designable name="aG9-Ak-FMb">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="g93-Ba-Zwh">
+            <size key="intrinsicContentSize" width="71" height="30"/>
         </designable>
         <designable name="ikp-83-eNU">
             <size key="intrinsicContentSize" width="71" height="35"/>

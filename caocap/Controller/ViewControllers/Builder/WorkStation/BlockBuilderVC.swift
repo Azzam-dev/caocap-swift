@@ -31,6 +31,7 @@ class BlockBuilderVC: UIViewController {
     var openedCaocap: Caocap?
     
     var caocapBlocks = [Block]()
+    var caocapLogicNodes = [LogicNode]()
     
     var blocksArray = BlockService.instance.blocks
     var logicNodesArray = LogicNodeService.instance.logicNodes
@@ -47,7 +48,7 @@ class BlockBuilderVC: UIViewController {
     func getCaocapData() {
         guard let openedCaocapKey = openedCaocap?.key else { return }
         DataService.instance.getCaocap(withKey: openedCaocapKey) { caocap in
-            if let templates = caocap.blocks { self.caocapBlocks = templates }
+            //TODO: - get caocapBlocks and caocapLogicNodes
         }
     }
     
@@ -145,12 +146,13 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case blocksTableView:
             return caocapBlocks.count + 1
+        case logicTableView:
+            return caocapLogicNodes.count + 1 //TODO: - fix logicTableView count
         case structureTableView:
             return caocapBlocks.count
         case stylesTableView:
             return 0 //TODO: - fix stylesTableView count
-        case logicTableView:
-            return 3 //TODO: - fix logicTableView count
+        
         default:
             return 0
         }
@@ -166,9 +168,20 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
                 cell.delegate = self
                 return cell
             } else {
-                guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "templateCell", for: indexPath) as? TemplateCell else { return UITableViewCell() }
+                guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "blockCell", for: indexPath) as? BlockCell else { return UITableViewCell() }
                 
-                cell.configure(template: caocapBlocks[indexPath.row])
+                cell.configure(block: caocapBlocks[indexPath.row])
+                return cell
+            }
+        case logicTableView:
+            if indexPath.row == caocapLogicNodes.count { // if it was the last cell then show add template
+                guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "addLogicCell", for: indexPath) as? AddLogicCell else { return UITableViewCell() }
+                cell.delegate = self
+                return cell
+            } else {
+                guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "logicNodeCell", for: indexPath) as? LogicNodeCell else { return UITableViewCell() }
+                
+                cell.configure(node: caocapLogicNodes[indexPath.row])
                 return cell
             }
         case structureTableView:
@@ -177,9 +190,6 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         case stylesTableView:
             return UITableViewCell() //TODO: - getStyleCell
-        case logicTableView:
-            let cell = logicTableView.dequeueReusableCell(withIdentifier: "logicCell", for: indexPath)
-            return cell
         default:
             return UITableViewCell()
         }
@@ -229,7 +239,7 @@ extension BlockBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case blocksCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateTypeCell", for: indexPath) as? TemplateIconCell else { return UICollectionViewCell() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateTypeCell", for: indexPath) as? BlockTypeCell else { return UICollectionViewCell() }
             cell.configure(template: blocksArray[indexPath.row])
             return cell
         case logicNodesCollectionView:
@@ -270,7 +280,7 @@ extension BlockBuilderVC: StoreSubscriber {
     
 }
 
-extension BlockBuilderVC: AddBlockDelegate {
+extension BlockBuilderVC: AddBlockDelegate, AddLogicNodeDelegate {
     
     func didPressAddBlock() {
         let newBlock = BlockService.instance.blocks.first!
@@ -280,6 +290,11 @@ extension BlockBuilderVC: AddBlockDelegate {
     }
     
     
+    func didPressAddLogicNode() {
+        let newNode = LogicNodeService.instance.logicNodes.first!
+        caocapLogicNodes.append(newNode)
+        logicTableView.reloadData()
+    }
     
 }
 

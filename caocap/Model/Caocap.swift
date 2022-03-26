@@ -54,16 +54,18 @@ class Caocap {
     var link: String? {
         return _link
     }
+    
     var code: [String : [CodeFile]]? {
         var code = [String : [CodeFile]]()
-        for (key, value) in _code! {
-            code[key] = [
-                CodeFile(type: .load, code: value["load"] ?? "error!"),
-                CodeFile(type: .update, code: value["update"] ?? "error!"),
-                CodeFile(type: .draw, code: value["draw"] ?? "error!")
-                ]
+        if let _code = _code {
+            for (key, value) in _code {
+                code[key] = [
+                    CodeFile(type: .load, code: value["load"] ?? "error!"),
+                    CodeFile(type: .update, code: value["update"] ?? "error!"),
+                    CodeFile(type: .draw, code: value["draw"] ?? "error!")
+                    ]
+            }
         }
-        
         return code
     }
     

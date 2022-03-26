@@ -1,5 +1,5 @@
 //
-//  TemplateCell.swift
+//  BlockCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 30/04/2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TemplateCell: UITableViewCell {
+class BlockCell: UITableViewCell {
 
     @IBOutlet weak var selectedEffectView: UIView!
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -16,8 +16,8 @@ class TemplateCell: UITableViewCell {
         selectedEffectView.isHidden = !selected 
     }
 
-    func configure(template: Block) {
-        var code = template.code
+    func configure(block: Block) {
+        var code = block.code
     }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 
 enum LogicNodeType: String {
     case event
-    case controlFlow = "control flow"
+    case condition
     case action
     case value
 }
