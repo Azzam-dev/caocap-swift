@@ -26,6 +26,7 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         super.viewDidLoad()
         
         loadingAnimation(image: loadingIcon)
+        presentCaocapVC()
         gestureRecognizerSetup()
     }
     
@@ -55,7 +56,7 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
                 self.publishingSwitchBTN.setTitleColor(#colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), for: .normal)
             }
             
-            self.presentCaocapVC()
+            
         }
         
     }
