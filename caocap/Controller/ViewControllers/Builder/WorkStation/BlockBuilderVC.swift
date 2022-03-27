@@ -36,7 +36,7 @@ class BlockBuilderVC: UIViewController {
     
     
     var blocksArray = BlockService.instance.blocks
-    var logicNodesArray = LogicNodeService.instance.logicNodes
+    var logicNodesArray = [LogicNode]()
     
     
     override func viewDidLoad() {
@@ -146,7 +146,7 @@ class BlockBuilderVC: UIViewController {
 
 extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
-    func getNumberOfLogicNodes() -> Int{
+    func getNumberOfLogicNodes() -> Int {
         switch logicTreeClimber.count {
         case 0:
             return caocapLogicNodes.count
@@ -241,10 +241,13 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == logicTableView && indexPath.row < caocapLogicNodes.count {
-            //TODO: - logicTableView didSelectRowAt
+        if tableView == logicTableView && indexPath.row < getNumberOfLogicNodes() && logicTreeClimber.count < 4 {
+            // enter the logic node ( E - C - F - A )
             logicTreeClimber.append(indexPath.row)
             logicTableView.reloadData()
+        } else if tableView == logicTableView && indexPath.row < getNumberOfLogicNodes() {
+            // Select a logic mode ( E - C - F - A - V )
+            
         } else if tableView == blocksTableView && indexPath.row < caocapBlocks.count {
             //TODO: - blocksTableView didSelectRowAt
         }
@@ -373,7 +376,21 @@ extension BlockBuilderVC: AddBlockDelegate, AddLogicNodeDelegate {
     }
     
     func didPressAddLogicNode() {
-        let newNode = LogicNodeService.instance.logicNodes.first!
+        let newNode: LogicNode
+        switch logicTreeClimber.count {
+        case 0:
+            newNode = LogicNodeService.logicNodes.events.first!
+        case 1:
+            newNode = LogicNodeService.logicNodes.conditions.first!
+        case 2:
+            newNode = LogicNodeService.logicNodes.flows.first!
+        case 3:
+            newNode = LogicNodeService.logicNodes.actions.first!
+        case 4:
+            newNode = LogicNodeService.logicNodes.values.first!
+        default:
+            return
+        }
         addLogic(node: newNode)
         logicTableView.reloadData()
     }

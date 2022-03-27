@@ -18,8 +18,8 @@ enum LogicNodeType: String {
 
 struct LogicNode {
     let type: LogicNodeType
+    let title: String
     let description: String
     var content: [LogicNode]
-    let icon: UIImage
 }
 

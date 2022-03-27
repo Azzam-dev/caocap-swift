@@ -29,7 +29,7 @@ class ArtBuilderVC: UIViewController {
     var toolsSelectedIndex = 0
     var openedCaocap: Caocap?
     
-    var logicNodesArray = LogicNodeService.instance.logicNodes
+    var logicNodesArray = [LogicNode]()
     
     
     override func viewDidLoad() {
