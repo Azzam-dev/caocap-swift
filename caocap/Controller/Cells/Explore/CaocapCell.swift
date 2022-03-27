@@ -11,8 +11,9 @@ import UIKit
 
 /* Declare a Delegate Protocol method */
 protocol CaocapCellDelegate {
-    func moreBTNpressed(key: String, name: String, isOrbiting: Bool)
     func loadCaocapVC(with vc: CaocapVC, on view: UIView)
+    func moreBTNpressed(key: String, name: String, isOrbiting: Bool)
+    
 }
 
 class CaocapCell: UICollectionViewCell {
@@ -21,14 +22,14 @@ class CaocapCell: UICollectionViewCell {
     
     @IBOutlet weak var loadingIcon: UIImageView!
     @IBOutlet weak var caocapView: DesignableView!
-    var caocapVC: CaocapVC?
     
     @IBOutlet weak var caocapName: UILabel!
     
     var caocapKey = ""
     var isOrbiting = false
     
-    func configure(caocap: Caocap ,released: Bool) {
+    func configure(caocap: Caocap) {
+        caocapView.subviews.forEach({ $0.removeFromSuperview() })
         caocapKey = caocap.key
         
         loadingAnimation(image: loadingIcon)

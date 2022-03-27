@@ -92,7 +92,7 @@ extension ExploreVC: UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = caocapsCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? CaocapCell else { return UICollectionViewCell() }
         cell.caocapCellDelegate = self
-        cell.configure(caocap: caocapsArray[indexPath.row], released: isReleased)
+        cell.configure(caocap: caocapsArray[indexPath.row])
         return cell
         
     }

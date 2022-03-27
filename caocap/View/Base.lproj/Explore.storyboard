@@ -467,11 +467,11 @@
                                             <outlet property="caocapIMG" destination="qYe-uA-82c" id="hVX-07-VMb"/>
                                             <outlet property="caocapIMGview" destination="ASz-na-8fL" id="iCH-wu-SB7"/>
                                             <outlet property="caocapName" destination="25b-cw-8qm" id="6Dp-3e-TKN"/>
+                                            <outlet property="caocapView" destination="ZWR-ag-3aS" id="wJd-6p-Oum"/>
                                             <outlet property="loadingIcon" destination="Arw-EZ-71B" id="baF-BA-y0t"/>
                                             <outlet property="orbitBTN" destination="thB-Ze-TUj" id="FXK-QR-UQ4"/>
                                             <outlet property="orbitBTN_background" destination="AkM-gP-9sH" id="aQE-Jn-6c3"/>
                                             <outlet property="orbitsNum" destination="64w-Nb-QrP" id="wHc-Zp-6C3"/>
-                                            <outlet property="theView" destination="ZWR-ag-3aS" id="khm-ng-PuQ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

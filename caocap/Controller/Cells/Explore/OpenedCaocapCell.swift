@@ -11,6 +11,7 @@ import Firebase
 
 /* Declare a Delegate Protocol method */
 protocol OpenedCaocapCellDelegate: class {
+    func loadCaocapVC(for cell: OpenedCaocapCell, with vc: CaocapVC, on view: UIView)
     func shareBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
     func moreBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
     func roomBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
@@ -22,7 +23,10 @@ class OpenedCaocapCell: UICollectionViewCell {
     weak var delegate: OpenedCaocapCellDelegate?
     
     @IBOutlet weak var loadingIcon: UIImageView!
-    @IBOutlet weak var theView: DesignableView!
+    @IBOutlet weak var caocapView: DesignableView!
+    var caocapVC: CaocapVC?
+    
+    
     @IBOutlet weak var caocapName: UILabel!
     @IBOutlet weak var caocapIMG: DesignableImage!
     @IBOutlet weak var caocapIMGview: DesignableView!
@@ -30,7 +34,6 @@ class OpenedCaocapCell: UICollectionViewCell {
     
     let colorArray = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.6391159892, blue: 0, alpha: 1), #colorLiteral(red: 0.3846503198, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), #colorLiteral(red: 0.8861780167, green: 0, blue: 1, alpha: 1), #colorLiteral(red: 0.9175696969, green: 0.9176983237, blue: 0.9175290465, alpha: 1)]
     
-    var isReleased = Bool()
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -41,7 +44,7 @@ class OpenedCaocapCell: UICollectionViewCell {
     var caocapKey = ""
     var caocapIsOrbited = false
     
-    func configureCell(caocap: Caocap ,released: Bool) {
+    func configureCell(caocap: Caocap) {
         caocapKey = caocap.key
         
         //this stops the image from duplicating
@@ -70,23 +73,23 @@ class OpenedCaocapCell: UICollectionViewCell {
             caocapIMG.af.setImage(withURL: imageURL)
         }
         
-        loadCaocap(caocap)
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        guard let caocapVC = storyboard.instantiateViewController(withIdentifier: "caocapVC") as? CaocapVC else { return }
+        caocapVC.openedCaocap = caocap
+        
+        delegate?.loadCaocapVC(for: self, with: caocapVC, on: caocapView)
     }
     
-    
-    private func loadCaocap(_ caocap: Caocap) {
-        //TODO: - loadCaocap
-    }
     
     @IBAction func shareBTN(_ sender: Any) {
         let button = sender as! UIButton
-        self.delegate?.shareBTNpressed(cell: self, didTappedshow: button)
+        delegate?.shareBTNpressed(cell: self, didTappedshow: button)
     }
     
     
     @IBAction func roomBTN(_ sender: Any) {
         let button = sender as! UIButton
-        self.delegate?.roomBTNpressed(cell: self, didTappedshow: button)
+        delegate?.roomBTNpressed(cell: self, didTappedshow: button)
     }
     
     

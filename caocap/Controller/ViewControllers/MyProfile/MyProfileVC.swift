@@ -112,8 +112,8 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         
         guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? CaocapCell else { return UICollectionViewCell() }
         
-        cell.configure(caocap: caocapsArray[indexPath.row], released: isReleased)
         cell.caocapCellDelegate = self
+        cell.configure(caocap: caocapsArray[indexPath.row])
         return cell
     }
     
