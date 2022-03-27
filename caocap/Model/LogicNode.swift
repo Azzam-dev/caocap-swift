@@ -11,6 +11,7 @@ import UIKit
 enum LogicNodeType: String {
     case event
     case condition
+    case flow
     case action
     case value
 }
@@ -18,6 +19,7 @@ enum LogicNodeType: String {
 struct LogicNode {
     let type: LogicNodeType
     let description: String
-    let code: String
-    let color: UIColor
+    var content: [LogicNode]
+    let icon: UIImage
 }
+

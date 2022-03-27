@@ -2803,44 +2803,83 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="378" height="100"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g93-Ba-Zwh" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
-                                                            <rect key="frame" x="40" y="25" width="298" height="50"/>
-                                                            <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="30x-1U-sfX"/>
-                                                                <constraint firstAttribute="height" constant="50" id="sJ0-yj-epp"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="17"/>
-                                                            <state key="normal" title="add block">
-                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </state>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="10"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="3"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                    <real key="value" value="0.10000000000000001"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                                    <size key="value" width="2" height="2"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="addLogicNodeBTN:" destination="p9x-we-Sf3" eventType="touchUpInside" id="43f-8G-lBZ"/>
-                                                            </connections>
-                                                        </button>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FCH-Rd-YXu">
+                                                            <rect key="frame" x="20" y="25" width="338" height="50"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08Y-Q4-7xI" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
+                                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="80" id="F4O-Qy-ocE"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="Skq-pl-f6e"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="17"/>
+                                                                    <state key="normal" title="back">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.10000000000000001"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                            <size key="value" width="2" height="2"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="addLogicNodeBTN:" destination="p9x-we-Sf3" eventType="touchUpInside" id="qEQ-Vb-SKb"/>
+                                                                        <action selector="didPressbackButton:" destination="p9x-we-Sf3" eventType="touchUpInside" id="Sr5-dr-elq"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVa-ds-Ij6" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
+                                                                    <rect key="frame" x="90" y="0.0" width="248" height="50"/>
+                                                                    <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="7DU-O6-F1i"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="Gm7-jV-p9f"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="17"/>
+                                                                    <state key="normal" title="add block">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="10"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="3"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.10000000000000001"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                                                            <size key="value" width="2" height="2"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                    <connections>
+                                                                        <action selector="addLogicNodeBTN:" destination="p9x-we-Sf3" eventType="touchUpInside" id="BJz-6k-Sow"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="g93-Ba-Zwh" firstAttribute="top" secondItem="EkY-mM-WGq" secondAttribute="top" constant="25" id="Q8F-Si-uj8"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="g93-Ba-Zwh" secondAttribute="trailing" constant="20" id="Zns-4r-Gd0"/>
-                                                        <constraint firstItem="g93-Ba-Zwh" firstAttribute="centerX" secondItem="EkY-mM-WGq" secondAttribute="centerX" id="eCc-oE-ddi"/>
-                                                        <constraint firstItem="g93-Ba-Zwh" firstAttribute="centerY" secondItem="EkY-mM-WGq" secondAttribute="centerY" id="g1a-vs-g9j"/>
+                                                        <constraint firstAttribute="trailing" secondItem="FCH-Rd-YXu" secondAttribute="trailing" constant="20" id="L2E-nZ-QvY"/>
+                                                        <constraint firstItem="FCH-Rd-YXu" firstAttribute="top" secondItem="EkY-mM-WGq" secondAttribute="top" constant="25" id="MN0-qr-15W"/>
+                                                        <constraint firstItem="FCH-Rd-YXu" firstAttribute="centerY" secondItem="EkY-mM-WGq" secondAttribute="centerY" id="SbH-Iu-gAh"/>
+                                                        <constraint firstItem="FCH-Rd-YXu" firstAttribute="centerX" secondItem="EkY-mM-WGq" secondAttribute="centerX" id="dSG-uA-EgR"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <outletCollection property="buttons" destination="08Y-Q4-7xI" collectionClass="NSMutableArray" id="jam-Ws-Zo4"/>
+                                                    <outletCollection property="buttons" destination="jVa-ds-Ij6" collectionClass="NSMutableArray" id="XSq-5B-OKu"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -3291,6 +3330,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="08Y-Q4-7xI">
+            <size key="intrinsicContentSize" width="35" height="30"/>
+        </designable>
         <designable name="0E6-8w-4m5">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
@@ -3333,11 +3375,11 @@
         <designable name="aG9-Ak-FMb">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
-        <designable name="g93-Ba-Zwh">
-            <size key="intrinsicContentSize" width="71" height="30"/>
-        </designable>
         <designable name="ikp-83-eNU">
             <size key="intrinsicContentSize" width="71" height="35"/>
+        </designable>
+        <designable name="jVa-ds-Ij6">
+            <size key="intrinsicContentSize" width="71" height="30"/>
         </designable>
         <designable name="moR-Mz-hl5">
             <size key="intrinsicContentSize" width="30" height="30"/>

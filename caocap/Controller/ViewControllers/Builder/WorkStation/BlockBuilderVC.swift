@@ -32,6 +32,8 @@ class BlockBuilderVC: UIViewController {
     
     var caocapBlocks = [Block]()
     var caocapLogicNodes = [LogicNode]()
+    var logicTreeClimber = [Int]()
+    
     
     var blocksArray = BlockService.instance.blocks
     var logicNodesArray = LogicNodeService.instance.logicNodes
@@ -144,12 +146,48 @@ class BlockBuilderVC: UIViewController {
 
 extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
+    func getNumberOfLogicNodes() -> Int{
+        switch logicTreeClimber.count {
+        case 0:
+            return caocapLogicNodes.count
+        case 1:
+            return caocapLogicNodes[logicTreeClimber[0]].content.count
+        case 2:
+            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content.count
+        case 3:
+            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content.count
+        case 4:
+            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content[logicTreeClimber[3]].content.count
+        default:
+            return 0
+        }
+    }
+    
+    func getLogicNodeFor(index: Int) -> LogicNode? {
+        switch logicTreeClimber.count {
+        case 0:
+            return caocapLogicNodes[index]
+        case 1:
+            return caocapLogicNodes[logicTreeClimber[0]].content[index]
+        case 2:
+            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[index]
+        case 3:
+            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content[index]
+        case 4:
+            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content[logicTreeClimber[3]].content[index]
+        default:
+            return nil
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case blocksTableView:
             return caocapBlocks.count + 1
         case logicTableView:
-            return caocapLogicNodes.count + 1 //TODO: - fix logicTableView count
+            return getNumberOfLogicNodes() + 1
+            
+             //TODO: - fix logicTableView count
         case structureTableView:
             return caocapBlocks.count
         case stylesTableView:
@@ -162,12 +200,14 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
         case blocksTableView:
             if indexPath.row == caocapBlocks.count { // if it was the last cell then show add template
                 guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "addBlockCell", for: indexPath) as? AddBlockCell else { return UITableViewCell() }
                 cell.delegate = self
+                
                 return cell
             } else {
                 guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "blockCell", for: indexPath) as? BlockCell else { return UITableViewCell() }
@@ -176,14 +216,17 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         case logicTableView:
-            if indexPath.row == caocapLogicNodes.count { // if it was the last cell then show add template
+            
+            if indexPath.row == getNumberOfLogicNodes() {
                 guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "addLogicCell", for: indexPath) as? AddLogicCell else { return UITableViewCell() }
                 cell.delegate = self
+                cell.configure(nodeTreeDepth: logicTreeClimber.count)
                 return cell
             } else {
                 guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "logicNodeCell", for: indexPath) as? LogicNodeCell else { return UITableViewCell() }
-                
-                cell.configure(node: caocapLogicNodes[indexPath.row])
+                if let logicNode = getLogicNodeFor(index: indexPath.row) {
+                    cell.configure(node: logicNode)
+                }
                 return cell
             }
         case structureTableView:
@@ -200,6 +243,8 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == logicTableView && indexPath.row < caocapLogicNodes.count {
             //TODO: - logicTableView didSelectRowAt
+            logicTreeClimber.append(indexPath.row)
+            logicTableView.reloadData()
         } else if tableView == blocksTableView && indexPath.row < caocapBlocks.count {
             //TODO: - blocksTableView didSelectRowAt
         }
@@ -301,6 +346,8 @@ extension BlockBuilderVC: StoreSubscriber {
 
 extension BlockBuilderVC: AddBlockDelegate, AddLogicNodeDelegate {
     
+    
+    
     func didPressAddBlock() {
         let newBlock = BlockService.instance.blocks.first!
         caocapBlocks.append(newBlock)
@@ -308,10 +355,31 @@ extension BlockBuilderVC: AddBlockDelegate, AddLogicNodeDelegate {
         structureTableView.reloadData()
     }
     
+    func addLogic(node: LogicNode) {
+        switch logicTreeClimber.count {
+        case 0:
+            return caocapLogicNodes.append(node)
+        case 1:
+            return caocapLogicNodes[logicTreeClimber[0]].content.append(node)
+        case 2:
+            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content.append(node)
+        case 3:
+            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content.append(node)
+        case 4:
+            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content[logicTreeClimber[3]].content.append(node)
+        default:
+            return
+        }
+    }
     
     func didPressAddLogicNode() {
         let newNode = LogicNodeService.instance.logicNodes.first!
-        caocapLogicNodes.append(newNode)
+        addLogic(node: newNode)
+        logicTableView.reloadData()
+    }
+    
+    func didPressBackButton() {
+        logicTreeClimber.removeLast()
         logicTableView.reloadData()
     }
     

@@ -13,7 +13,6 @@ class LogicNodeTypeCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     func configure(logicNode: LogicNode) {
         symbol.text = logicNode.type.rawValue.first?.uppercased()
-        symbol.textColor = logicNode.color
         titleLabel.text = logicNode.type.rawValue
         
     }

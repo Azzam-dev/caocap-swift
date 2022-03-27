@@ -17,10 +17,22 @@ import ReSwift
         print("Hello CAOCAP from swift")
     }
     
+    //MARK: - change background color
     @objc func changeBackgroundColor(hex: String) {
-        //TODO: - change background color
         store.dispatch(UpdateBackGroundColorForCaocapVCAction(color: UIColor(hex: hex) ?? .black))
     }
+    
+    //TODO: - add label
+    
+    //TODO: - change label color
+    
+    //TODO: - change label font
+    
+    //TODO: - add image
+    
+    //TODO: - change image
+    
+    //TODO: - add button
     
 }
 
