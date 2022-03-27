@@ -62,10 +62,8 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     }
     
     private func presentCaocapVC() {
-    //TODO: - presentCaocapVC
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
         caocapVC = storyboard.instantiateViewController(withIdentifier: "caocapVC") as? CaocapVC
-        
         addChild(caocapVC!)
         caocapVC!.view.frame = caocapView.frame
         caocapView.addSubview(caocapVC!.view)

@@ -12,6 +12,7 @@ import UIKit
 /* Declare a Delegate Protocol method */
 protocol CaocapCellDelegate {
     func moreBTNpressed(key: String, name: String, isOrbiting: Bool)
+    func loadCaocapVC(with vc: CaocapVC, on view: UIView)
 }
 
 class CaocapCell: UICollectionViewCell {
@@ -19,7 +20,9 @@ class CaocapCell: UICollectionViewCell {
     var caocapCellDelegate: CaocapCellDelegate?
     
     @IBOutlet weak var loadingIcon: UIImageView!
-    @IBOutlet weak var theView: DesignableView!
+    @IBOutlet weak var caocapView: DesignableView!
+    var caocapVC: CaocapVC?
+    
     @IBOutlet weak var caocapName: UILabel!
     
     var caocapKey = ""
@@ -31,11 +34,11 @@ class CaocapCell: UICollectionViewCell {
         loadingAnimation(image: loadingIcon)
         caocapName.text = caocap.name
         
-        loadCaocap(caocap)
-    }
-    
-    fileprivate func loadCaocap(_ caocap: Caocap) {
-        //TODO: - loadCaocap
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        guard let caocapVC = storyboard.instantiateViewController(withIdentifier: "caocapVC") as? CaocapVC else { return }
+        caocapVC.openedCaocap = caocap
+        
+        caocapCellDelegate?.loadCaocapVC(with: caocapVC, on: caocapView)
     }
     
     @IBAction func moreBTN(_ sender: Any) {

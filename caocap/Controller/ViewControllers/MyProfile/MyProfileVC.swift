@@ -132,6 +132,15 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
 
 
 extension MyProfileVC: CaocapCellDelegate {
+    
+    func loadCaocapVC(with vc: CaocapVC, on view: UIView) {
+        addChild(vc)
+        vc.view.frame = view.frame
+        view.addSubview(vc.view)
+        vc.didMove(toParent: self)
+    }
+    
+    
 
     func moreBTNpressed(key: String, name: String, isOrbiting: Bool) {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)

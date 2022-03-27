@@ -16,7 +16,9 @@ class CaocapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        if let openedCaocap = openedCaocap {
+            load(caocap: openedCaocap)
+        }
         // Do any additional setup after loading the view.
     }
 
