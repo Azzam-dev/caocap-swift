@@ -32,6 +32,8 @@ class CodeBuilderVC: UIViewController {
         topToolBarBTNs(topToolBarBTNs[0])
         gestureRecognizerSetup()
         getCaocapData()
+        addSubViews()
+        
     }
     
     
@@ -67,11 +69,101 @@ class CodeBuilderVC: UIViewController {
         gestureRecognizerView.addGestureRecognizer(downSwipe)
     }
     
+    func addSubViews() {
+        view.addSubview(controlsViewContainer)
+        view.addSubview(leftViewContainer)
+        view.addSubview(rightViewContainer)
+        controlsViewContainer.frame = view.frame
+        leftViewContainer.frame = view.frame
+        rightViewContainer.frame = view.frame
+        controlsViewContainer.alpha = 0
+        leftViewContainer.alpha = 0
+        rightViewContainer.alpha = 0
+        controlsViewTopConstraint.constant = -200
+        leftViewLeadingConstraint.constant = -view.frame.width
+        rightViewTrailingConstraint.constant = -view.frame.width
+    }
+    
     func toolsViewAnimation(_ hight: Int) {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
             self.toolsViewHeightConstraint.constant = CGFloat(hight)
             self.view.layoutIfNeeded()
         })
+    }
+    
+    @IBAction func didPressShowHideBottomViewButton(_ sender: UIButton) {
+        if self.toolsViewHeightConstraint.constant < 350 {
+            toolsViewAnimation(350)
+        } else {
+            toolsViewAnimation(135)
+        }
+    }
+    
+    @IBOutlet var controlsViewContainer: DesignableView!
+    @IBOutlet weak var controlsViewTopConstraint: NSLayoutConstraint!
+    
+    @IBAction func didPressShowHideTopViewButton(_ sender: Any) {
+        if self.controlsViewContainer.isHidden {
+            self.controlsViewContainer.isHidden = false
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.controlsViewContainer.alpha = 1
+                self.controlsViewTopConstraint.constant = -20
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.controlsViewContainer.alpha = 0
+                self.controlsViewTopConstraint.constant = -200
+                self.view.layoutIfNeeded()
+            } completion: { _ in
+                self.controlsViewContainer.isHidden = true
+            }
+        }
+    }
+    
+    
+    @IBOutlet var leftViewContainer: DesignableView!
+    @IBOutlet weak var leftViewLeadingConstraint: NSLayoutConstraint!
+    
+    @IBAction func didPressShowHideLeftViewButton(_ sender: Any) {
+        if self.leftViewContainer.isHidden {
+            self.leftViewContainer.isHidden = false
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.leftViewContainer.alpha = 1
+                self.leftViewLeadingConstraint.constant = -20
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.leftViewContainer.alpha = 0
+                self.leftViewLeadingConstraint.constant = -self.view.frame.width
+                self.view.layoutIfNeeded()
+            } completion: { _ in
+                self.leftViewContainer.isHidden = true
+            }
+        }
+    }
+    
+    @IBOutlet var rightViewContainer: DesignableView!
+    @IBOutlet weak var rightViewTrailingConstraint: NSLayoutConstraint!
+    
+    @IBAction func didPressShowHideRightViewButton(_ sender: Any) {
+        if self.rightViewContainer.isHidden {
+            self.rightViewContainer.isHidden = false
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.rightViewContainer.alpha = 1
+                self.rightViewTrailingConstraint.constant = -20
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.rightViewContainer.alpha = 0
+                self.rightViewTrailingConstraint.constant = -self.view.frame.width
+                self.view.layoutIfNeeded()
+            } completion: { _ in
+                self.rightViewContainer.isHidden = true
+            }
+        }
     }
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
