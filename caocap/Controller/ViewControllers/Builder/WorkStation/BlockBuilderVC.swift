@@ -354,7 +354,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
             let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
             swipeActionConfig.performsFirstActionWithFullSwipe = false
             return swipeActionConfig
-        } else if tableView == structureTableView {
+        } else if tableView == structureTableView || tableView == blocksTableView {
             let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
                 self.caocapBlocks.remove(at: indexPath.row)
                 self.blocksTableView.reloadData()
@@ -371,9 +371,9 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         if tableView == structureTableView {
-            let movedTemplate = caocapBlocks[sourceIndexPath.row]
+            let movedBlock = caocapBlocks[sourceIndexPath.row]
             caocapBlocks.remove(at: sourceIndexPath.row)
-            caocapBlocks.insert(movedTemplate, at: destinationIndexPath.row)
+            caocapBlocks.insert(movedBlock, at: destinationIndexPath.row)
         }
     }
     

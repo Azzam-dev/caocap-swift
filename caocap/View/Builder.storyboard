@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -2337,7 +2337,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="7562" y="3448"/>
+            <point key="canvasLocation" x="7561" y="4163"/>
         </scene>
         <!--Folder SystemVC-->
         <scene sceneID="XYX-Vh-Jzi">
@@ -4052,7 +4052,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="3404" y="3448"/>
+            <point key="canvasLocation" x="3403" y="4163"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JLC-Qd-SZI">
@@ -4104,16 +4104,9 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="378" height="200"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ne5-0H-AYl" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
+                                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ne5-0H-AYl">
                                                                     <rect key="frame" x="0.0" y="0.0" width="378" height="200"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="topGradientColor">
-                                                                            <color key="value" red="0.0" green="0.65446996690000003" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                        <userDefinedRuntimeAttribute type="color" keyPath="bottomGradientColor">
-                                                                            <color key="value" red="0.0" green="0.65446996690000003" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
+                                                                    <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </view>
                                                             </subviews>
                                                             <constraints>
@@ -4476,14 +4469,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ds9-AK-ggT">
                                                 <rect key="frame" x="0.0" y="60" width="374" height="215"/>
                                                 <subviews>
-                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EIb-S0-ksD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="215"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <connections>
-                                                            <outlet property="dataSource" destination="Ybe-nR-w0y" id="1xw-KQ-gjZ"/>
-                                                            <outlet property="delegate" destination="Ybe-nR-w0y" id="MbL-hX-hOi"/>
-                                                        </connections>
-                                                    </tableView>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EGp-Uh-cMb">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="215"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4691,31 +4676,15 @@
                                                             <outlet property="delegate" destination="Ybe-nR-w0y" id="Thc-iA-9bk"/>
                                                         </connections>
                                                     </collectionView>
-                                                    <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yhv-BY-CXp">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="215"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <connections>
-                                                            <outlet property="dataSource" destination="Ybe-nR-w0y" id="oOs-9q-Gtn"/>
-                                                            <outlet property="delegate" destination="Ybe-nR-w0y" id="PlC-KM-6LY"/>
-                                                        </connections>
-                                                    </tableView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="yhv-BY-CXp" secondAttribute="bottom" id="1zW-kU-y0X"/>
-                                                    <constraint firstItem="EIb-S0-ksD" firstAttribute="leading" secondItem="Ds9-AK-ggT" secondAttribute="leading" id="30W-DN-s3V"/>
-                                                    <constraint firstItem="yhv-BY-CXp" firstAttribute="top" secondItem="Ds9-AK-ggT" secondAttribute="top" id="3kE-C8-02f"/>
-                                                    <constraint firstItem="yhv-BY-CXp" firstAttribute="leading" secondItem="Ds9-AK-ggT" secondAttribute="leading" id="CxB-lo-CP2"/>
                                                     <constraint firstItem="Hjf-4Z-aLD" firstAttribute="top" secondItem="EGp-Uh-cMb" secondAttribute="top" id="DNP-1h-qLZ"/>
                                                     <constraint firstAttribute="bottom" secondItem="EGp-Uh-cMb" secondAttribute="bottom" id="Q7u-4Y-Hka"/>
                                                     <constraint firstItem="Hjf-4Z-aLD" firstAttribute="leading" secondItem="EGp-Uh-cMb" secondAttribute="leading" id="RBd-WG-zBA"/>
                                                     <constraint firstItem="EGp-Uh-cMb" firstAttribute="leading" secondItem="Ds9-AK-ggT" secondAttribute="leading" id="Rlw-MN-fuS"/>
-                                                    <constraint firstAttribute="bottom" secondItem="EIb-S0-ksD" secondAttribute="bottom" id="TyL-U8-qyE"/>
                                                     <constraint firstItem="EGp-Uh-cMb" firstAttribute="top" secondItem="Ds9-AK-ggT" secondAttribute="top" id="W8p-OS-UTT"/>
-                                                    <constraint firstAttribute="trailing" secondItem="EIb-S0-ksD" secondAttribute="trailing" id="XUr-I2-TbI"/>
-                                                    <constraint firstItem="EIb-S0-ksD" firstAttribute="top" secondItem="Ds9-AK-ggT" secondAttribute="top" id="ZLV-Qs-zgj"/>
                                                     <constraint firstItem="Hjf-4Z-aLD" firstAttribute="trailing" secondItem="EGp-Uh-cMb" secondAttribute="trailing" id="bsh-Ke-99l"/>
-                                                    <constraint firstAttribute="trailing" secondItem="yhv-BY-CXp" secondAttribute="trailing" id="h4e-tl-V67"/>
                                                     <constraint firstItem="Hjf-4Z-aLD" firstAttribute="bottom" secondItem="EGp-Uh-cMb" secondAttribute="bottom" id="lUJ-os-tzh"/>
                                                     <constraint firstAttribute="trailing" secondItem="EGp-Uh-cMb" secondAttribute="trailing" id="yew-P3-V4X"/>
                                                 </constraints>
@@ -4858,8 +4827,8 @@
                         <outlet property="logicView" destination="WbF-nz-PTH" id="ZZN-pc-WRc"/>
                         <outlet property="rightViewContainer" destination="8ff-bn-QS7" id="AAE-uZ-6Ex"/>
                         <outlet property="rightViewTrailingConstraint" destination="M76-SN-Gdn" id="mvM-t1-B8O"/>
-                        <outlet property="structureTableView" destination="yhv-BY-CXp" id="vHi-7o-1Ha"/>
-                        <outlet property="stylesTableView" destination="EIb-S0-ksD" id="1RB-Lb-0E8"/>
+                        <outlet property="structureTableView" destination="gjQ-0i-6g1" id="Q6I-Sl-mnl"/>
+                        <outlet property="stylesTableView" destination="VCi-O9-aUd" id="pNf-X6-zvX"/>
                         <outlet property="toolsViewHeightConstraint" destination="l1N-tP-opx" id="al4-ML-vDo"/>
                         <outletCollection property="topToolBarBTNs" destination="2rG-Rk-WhY" collectionClass="NSMutableArray" id="QuZ-8T-1DK"/>
                         <outletCollection property="topToolBarBTNs" destination="Yr4-15-hNo" collectionClass="NSMutableArray" id="3zt-Pa-g0S"/>
@@ -5113,7 +5082,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
             </objects>
-            <point key="canvasLocation" x="5486" y="3448"/>
+            <point key="canvasLocation" x="5486" y="4163"/>
         </scene>
     </scenes>
     <designables>
