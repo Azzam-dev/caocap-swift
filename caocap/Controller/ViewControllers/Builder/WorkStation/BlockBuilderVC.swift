@@ -81,9 +81,18 @@ class BlockBuilderVC: UIViewController {
     }
     
     func addSubViews() {
+        view.addSubview(controlsViewContainer)
         view.addSubview(leftViewContainer)
+        view.addSubview(rightViewContainer)
+        controlsViewContainer.frame = view.frame
+        leftViewContainer.frame = view.frame
+        rightViewContainer.frame = view.frame
+        controlsViewContainer.alpha = 0
         leftViewContainer.alpha = 0
+        rightViewContainer.alpha = 0
+        controlsViewTopConstraint.constant = -200
         leftViewLeadingConstraint.constant = -view.frame.width
+        rightViewTrailingConstraint.constant = -view.frame.width
     }
     
     func toolsViewAnimation(_ hight: Int) {
@@ -101,13 +110,31 @@ class BlockBuilderVC: UIViewController {
         }
     }
     
+    @IBOutlet var controlsViewContainer: DesignableView!
+    @IBOutlet weak var controlsViewTopConstraint: NSLayoutConstraint!
+    
     @IBAction func didPressShowHideTopViewButton(_ sender: Any) {
+        if self.controlsViewContainer.isHidden {
+            self.controlsViewContainer.isHidden = false
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.controlsViewContainer.alpha = 1
+                self.controlsViewTopConstraint.constant = -20
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.controlsViewContainer.alpha = 0
+                self.controlsViewTopConstraint.constant = -200
+                self.view.layoutIfNeeded()
+            } completion: { _ in
+                self.controlsViewContainer.isHidden = true
+            }
+        }
     }
     
     
     @IBOutlet var leftViewContainer: DesignableView!
     @IBOutlet weak var leftViewLeadingConstraint: NSLayoutConstraint!
-    
     
     @IBAction func didPressShowHideLeftViewButton(_ sender: Any) {
         if self.leftViewContainer.isHidden {
@@ -128,7 +155,26 @@ class BlockBuilderVC: UIViewController {
         }
     }
     
+    @IBOutlet var rightViewContainer: DesignableView!
+    @IBOutlet weak var rightViewTrailingConstraint: NSLayoutConstraint!
+    
     @IBAction func didPressShowHideRightViewButton(_ sender: Any) {
+        if self.rightViewContainer.isHidden {
+            self.rightViewContainer.isHidden = false
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.rightViewContainer.alpha = 1
+                self.rightViewTrailingConstraint.constant = -20
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.rightViewContainer.alpha = 0
+                self.rightViewTrailingConstraint.constant = -self.view.frame.width
+                self.view.layoutIfNeeded()
+            } completion: { _ in
+                self.rightViewContainer.isHidden = true
+            }
+        }
     }
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {

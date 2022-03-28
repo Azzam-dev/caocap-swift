@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -3504,12 +3504,16 @@
                         <outlet property="blocksCollectionView" destination="EGp-Uh-cMb" id="VeV-B2-5jN"/>
                         <outlet property="blocksTableView" destination="eHP-SU-KMo" id="7vF-90-E16"/>
                         <outlet property="blocksView" destination="YB6-zW-idx" id="4wy-4U-3n2"/>
+                        <outlet property="controlsViewContainer" destination="ZzF-2T-dKB" id="saC-Zp-hJW"/>
+                        <outlet property="controlsViewTopConstraint" destination="gQ9-cC-HUG" id="2v4-ZZ-8Mj"/>
                         <outlet property="gestureRecognizerView" destination="1PU-70-JrS" id="pWn-IY-cXg"/>
                         <outlet property="leftViewContainer" destination="Udy-S0-MEw" id="Fnb-Vu-jx9"/>
                         <outlet property="leftViewLeadingConstraint" destination="SxJ-Zv-ora" id="Auf-b9-Azq"/>
                         <outlet property="logicNodesCollectionView" destination="Hjf-4Z-aLD" id="bxV-pA-8nk"/>
                         <outlet property="logicTableView" destination="zF8-ch-rgB" id="51a-A5-INo"/>
                         <outlet property="logicView" destination="WbF-nz-PTH" id="ZZN-pc-WRc"/>
+                        <outlet property="rightViewContainer" destination="8ff-bn-QS7" id="AAE-uZ-6Ex"/>
+                        <outlet property="rightViewTrailingConstraint" destination="M76-SN-Gdn" id="mvM-t1-B8O"/>
                         <outlet property="structureTableView" destination="yhv-BY-CXp" id="vHi-7o-1Ha"/>
                         <outlet property="stylesTableView" destination="EIb-S0-ksD" id="1RB-Lb-0E8"/>
                         <outlet property="toolsViewHeightConstraint" destination="l1N-tP-opx" id="al4-ML-vDo"/>
@@ -3598,7 +3602,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
-                                            <action selector="didPressShowHideLeftViewButton:" destination="Ybe-nR-w0y" eventType="touchUpInside" id="VHs-7L-41a"/>
+                                            <action selector="didPressShowHideTopViewButton:" destination="Ybe-nR-w0y" eventType="touchUpInside" id="kOz-Zt-IkV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3626,9 +3630,6 @@
                                             <state key="normal" image="gobackward" catalog="system">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                             </state>
-                                            <connections>
-                                                <action selector="didPressShowHideLeftViewButton:" destination="Ybe-nR-w0y" eventType="touchUpInside" id="gjS-Cf-7AE"/>
-                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gea-6n-8uT">
                                             <rect key="frame" x="67.333333333333329" y="0.0" width="25" height="25"/>
@@ -3636,9 +3637,6 @@
                                             <state key="normal" image="flame" catalog="system">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                             </state>
-                                            <connections>
-                                                <action selector="didPressShowHideTopViewButton:" destination="Ybe-nR-w0y" eventType="touchUpInside" id="L7F-2W-4Zz"/>
-                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaG-aC-Wkf">
                                             <rect key="frame" x="134.66666666666666" y="0.0" width="25" height="25"/>
@@ -3646,9 +3644,6 @@
                                             <state key="normal" image="play.fill" catalog="system">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                             </state>
-                                            <connections>
-                                                <action selector="didPressShowHideTopViewButton:" destination="Ybe-nR-w0y" eventType="touchUpInside" id="tlT-dH-Ewe"/>
-                                            </connections>
                                         </button>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54M-1f-BJU">
                                             <rect key="frame" x="201.66666666666669" y="0.0" width="25" height="25"/>
@@ -3666,9 +3661,6 @@
                                             <state key="normal" image="goforward" catalog="system">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                             </state>
-                                            <connections>
-                                                <action selector="didPressShowHideRightViewButton:" destination="Ybe-nR-w0y" eventType="touchUpInside" id="60f-Uj-Y1L"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -3724,7 +3716,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <connections>
-                                            <action selector="didPressShowHideLeftViewButton:" destination="Ybe-nR-w0y" eventType="touchUpInside" id="GRf-es-LSk"/>
+                                            <action selector="didPressShowHideRightViewButton:" destination="Ybe-nR-w0y" eventType="touchUpInside" id="Qem-03-TKu"/>
                                         </connections>
                                     </button>
                                 </subviews>
