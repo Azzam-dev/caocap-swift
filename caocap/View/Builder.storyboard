@@ -549,25 +549,57 @@
                                                     <constraint firstItem="SlM-Xo-fpr" firstAttribute="centerY" secondItem="K8N-lA-J06" secondAttribute="centerY" id="myv-aV-8lG"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Rg-Td-3kB">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Rg-Td-3kB">
                                                 <rect key="frame" x="20" y="295" width="334" height="35"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72R-Jm-BEz">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioI-AR-C3u">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="72R-Jm-BEz" secondAttribute="height" multiplier="1:1" id="C1r-G2-0Fj"/>
-                                                            <constraint firstAttribute="width" constant="35" id="ppp-T7-QQl"/>
+                                                            <constraint firstAttribute="width" secondItem="ioI-AR-C3u" secondAttribute="height" multiplier="1:1" id="gKN-ad-YR2"/>
                                                         </constraints>
-                                                        <state key="normal" image="undo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.lefthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fy-nm-CoF">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1H-TY-pdC">
+                                                        <rect key="frame" x="60" y="0.0" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Q1H-TY-pdC" secondAttribute="height" multiplier="1:1" id="uH8-TO-JNQ"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.tophalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqL-YR-G86">
+                                                        <rect key="frame" x="120" y="0.0" width="94" height="35"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ogp-lK-Ygg">
+                                                        <rect key="frame" x="239" y="0.0" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="ogp-lK-Ygg" secondAttribute="height" multiplier="1:1" id="MTh-Dz-YLT"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.bottomhalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WM9-4E-g8M">
                                                         <rect key="frame" x="299" y="0.0" width="35" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="5fy-nm-CoF" secondAttribute="height" multiplier="1:1" id="yYk-SY-Q4e"/>
+                                                            <constraint firstAttribute="width" secondItem="WM9-4E-g8M" secondAttribute="height" multiplier="1:1" id="Plg-u5-kBZ"/>
                                                         </constraints>
-                                                        <state key="normal" image="redo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.righthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="qbT-Tu-Jtb"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1081,26 +1113,57 @@
                                                 <rect key="frame" x="0.0" y="60" width="374" height="215"/>
                                                 <color key="backgroundColor" red="0.92156862745098034" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jp0-RZ-Hq3">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jp0-RZ-Hq3">
                                                 <rect key="frame" x="20" y="295" width="334" height="35"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-Sw-nMo">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyz-tg-CdP">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="gvb-Sw-nMo" secondAttribute="height" multiplier="1:1" id="R5L-L2-G0i"/>
-                                                            <constraint firstAttribute="width" constant="35" id="nbu-mP-wzv"/>
+                                                            <constraint firstAttribute="width" secondItem="hyz-tg-CdP" secondAttribute="height" multiplier="1:1" id="7ql-WX-pqo"/>
                                                         </constraints>
-                                                        <state key="normal" image="undo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.lefthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33O-es-imj">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Na1-aY-ueh">
+                                                        <rect key="frame" x="60" y="0.0" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Na1-aY-ueh" secondAttribute="height" multiplier="1:1" id="ISF-gm-yrB"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.tophalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFC-y0-odY">
+                                                        <rect key="frame" x="120" y="0.0" width="94" height="35"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqR-mw-vGx">
+                                                        <rect key="frame" x="239" y="0.0" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="SqR-mw-vGx" secondAttribute="height" multiplier="1:1" id="iIb-Om-Eoa"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.bottomhalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bso-kf-7gP">
                                                         <rect key="frame" x="299" y="0.0" width="35" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="2OF-aO-QvC"/>
-                                                            <constraint firstAttribute="width" secondItem="33O-es-imj" secondAttribute="height" multiplier="1:1" id="oxJ-kN-1pu"/>
+                                                            <constraint firstAttribute="width" secondItem="Bso-kf-7gP" secondAttribute="height" multiplier="1:1" id="GQD-ra-Q9B"/>
                                                         </constraints>
-                                                        <state key="normal" image="redo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.righthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="dXE-qk-PUt"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.75294117647058822" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1341,26 +1404,49 @@
                                                 <rect key="frame" x="0.0" y="60" width="374" height="215"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Igu-ad-X5g">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Igu-ad-X5g">
                                                 <rect key="frame" x="20" y="295" width="334" height="35"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wso-II-fjp">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DX3-Rg-dKO">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="Wso-II-fjp" secondAttribute="height" multiplier="1:1" id="0n4-j9-nPD"/>
-                                                            <constraint firstAttribute="width" constant="35" id="cN6-1b-3Jc"/>
-                                                        </constraints>
-                                                        <state key="normal" image="undo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.lefthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xd-JD-ik2">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUq-nM-taK">
+                                                        <rect key="frame" x="60" y="0.0" width="35" height="35"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.tophalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Apw-Zf-KW2">
+                                                        <rect key="frame" x="120" y="0.0" width="94" height="35"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZQ-01-9bI">
+                                                        <rect key="frame" x="239" y="0.0" width="35" height="35"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.bottomhalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUR-pK-W6i">
                                                         <rect key="frame" x="299" y="0.0" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="GRb-xy-J47"/>
-                                                            <constraint firstAttribute="width" secondItem="6xd-JD-ik2" secondAttribute="height" multiplier="1:1" id="Wwd-zt-VEp"/>
-                                                        </constraints>
-                                                        <state key="normal" image="redo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.righthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="eUR-pK-W6i" firstAttribute="width" secondItem="eUR-pK-W6i" secondAttribute="height" multiplier="1:1" id="711-oV-ujb"/>
+                                                    <constraint firstAttribute="height" constant="35" id="KG3-Mn-p1V"/>
+                                                    <constraint firstItem="DX3-Rg-dKO" firstAttribute="width" secondItem="DX3-Rg-dKO" secondAttribute="height" multiplier="1:1" id="WeE-U5-TgH"/>
+                                                    <constraint firstItem="hZQ-01-9bI" firstAttribute="width" secondItem="hZQ-01-9bI" secondAttribute="height" multiplier="1:1" id="mRY-fU-Kf5"/>
+                                                    <constraint firstItem="kUq-nM-taK" firstAttribute="width" secondItem="kUq-nM-taK" secondAttribute="height" multiplier="1:1" id="u2g-kQ-Sd3"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1724,26 +1810,57 @@
                                                 <rect key="frame" x="0.0" y="60" width="374" height="215"/>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-ez-8M9">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QiD-ez-8M9">
                                                 <rect key="frame" x="20" y="295" width="334" height="35"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nO4-El-S7w">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Asi-Na-YVH">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="02S-ua-nsK"/>
-                                                            <constraint firstAttribute="width" secondItem="nO4-El-S7w" secondAttribute="height" multiplier="1:1" id="1Dc-31-DfM"/>
+                                                            <constraint firstAttribute="width" secondItem="Asi-Na-YVH" secondAttribute="height" multiplier="1:1" id="eDB-gc-6xg"/>
                                                         </constraints>
-                                                        <state key="normal" image="undo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.lefthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oA-jz-AvD">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1d-je-BPV">
+                                                        <rect key="frame" x="60" y="0.0" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="K1d-je-BPV" secondAttribute="height" multiplier="1:1" id="HOb-rx-W8y"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.tophalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOj-Ns-3wM">
+                                                        <rect key="frame" x="120" y="0.0" width="94" height="35"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMx-49-1Q7">
+                                                        <rect key="frame" x="239" y="0.0" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="cMx-49-1Q7" secondAttribute="height" multiplier="1:1" id="laB-A3-oXQ"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.bottomhalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOZ-pF-bu3">
                                                         <rect key="frame" x="299" y="0.0" width="35" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="EAX-45-YsE"/>
-                                                            <constraint firstAttribute="width" secondItem="7oA-jz-AvD" secondAttribute="height" multiplier="1:1" id="m3J-iU-ooo"/>
+                                                            <constraint firstAttribute="width" secondItem="kOZ-pF-bu3" secondAttribute="height" multiplier="1:1" id="lel-ri-FTy"/>
                                                         </constraints>
-                                                        <state key="normal" image="redo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.righthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="kkO-l4-kGN"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2457,26 +2574,57 @@
                                                     <constraint firstAttribute="bottom" secondItem="VKh-a2-Fnr" secondAttribute="bottom" id="t4n-d0-PF1"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zSn-cf-WsU">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zSn-cf-WsU">
                                                 <rect key="frame" x="20" y="295" width="334" height="35"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nl-ag-Hp9">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bSD-mg-Avt">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="3A9-aG-S3e"/>
-                                                            <constraint firstAttribute="width" secondItem="2Nl-ag-Hp9" secondAttribute="height" multiplier="1:1" id="DU7-oR-J1I"/>
+                                                            <constraint firstAttribute="width" secondItem="bSD-mg-Avt" secondAttribute="height" multiplier="1:1" id="k13-Nk-Ia0"/>
                                                         </constraints>
-                                                        <state key="normal" image="undo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.lefthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0s-2b-hrc">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrr-4z-3He">
+                                                        <rect key="frame" x="60" y="0.0" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="Jrr-4z-3He" secondAttribute="height" multiplier="1:1" id="ZlS-Y4-zDL"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.tophalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWr-Cw-wdo">
+                                                        <rect key="frame" x="120" y="0.0" width="94" height="35"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEz-ht-sdk">
+                                                        <rect key="frame" x="239" y="0.0" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="MEz-ht-sdk" secondAttribute="height" multiplier="1:1" id="dyw-bb-c0f"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.bottomhalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZw-bK-Tsh">
                                                         <rect key="frame" x="299" y="0.0" width="35" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="T0s-2b-hrc" secondAttribute="height" multiplier="1:1" id="Ojo-zb-xj5"/>
-                                                            <constraint firstAttribute="width" constant="35" id="gJF-Un-EQw"/>
+                                                            <constraint firstAttribute="width" secondItem="GZw-bK-Tsh" secondAttribute="height" multiplier="1:1" id="pgZ-8U-Rhr"/>
                                                         </constraints>
-                                                        <state key="normal" image="redo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.righthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="2vb-Bt-jhs"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3222,26 +3370,51 @@
                                                     <constraint firstAttribute="trailing" secondItem="EGp-Uh-cMb" secondAttribute="trailing" id="yew-P3-V4X"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bW-Lo-yGO">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bW-Lo-yGO">
                                                 <rect key="frame" x="20" y="295" width="334" height="35"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DqD-6W-HTz">
                                                         <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="Shl-8G-6Ak"/>
                                                             <constraint firstAttribute="width" secondItem="DqD-6W-HTz" secondAttribute="height" multiplier="1:1" id="j4w-G0-EO1"/>
                                                         </constraints>
-                                                        <state key="normal" image="undo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.lefthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYQ-Cq-UDk">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x71-N4-5mX">
+                                                        <rect key="frame" x="60" y="0.0" width="35" height="35"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.tophalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bks-Sd-fRC">
+                                                        <rect key="frame" x="120" y="0.0" width="94" height="35"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inE-lY-cfv">
+                                                        <rect key="frame" x="239" y="0.0" width="35" height="35"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.bottomhalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ts6-T3-M3C">
                                                         <rect key="frame" x="299" y="0.0" width="35" height="35"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="35" id="qBm-zr-Qwh"/>
-                                                            <constraint firstAttribute="width" secondItem="BYQ-Cq-UDk" secondAttribute="height" multiplier="1:1" id="vmk-w2-Wc0"/>
-                                                        </constraints>
-                                                        <state key="normal" image="redo"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="rectangle.righthalf.inset.filled" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                                        </state>
                                                     </button>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Ts6-T3-M3C" firstAttribute="width" secondItem="Ts6-T3-M3C" secondAttribute="height" multiplier="1:1" id="2A4-WT-vfb"/>
+                                                    <constraint firstItem="x71-N4-5mX" firstAttribute="width" secondItem="x71-N4-5mX" secondAttribute="height" multiplier="1:1" id="cMN-Z5-5ET"/>
+                                                    <constraint firstAttribute="height" constant="35" id="m8N-rj-HUL"/>
+                                                    <constraint firstItem="inE-lY-cfv" firstAttribute="width" secondItem="inE-lY-cfv" secondAttribute="height" multiplier="1:1" id="mOe-Qw-9ng"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3406,11 +3579,13 @@
         <image name="pen" width="276" height="270"/>
         <image name="pictures folder" width="264" height="222"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <image name="redo" width="100" height="100"/>
+        <image name="rectangle.bottomhalf.inset.filled" catalog="system" width="128" height="93"/>
+        <image name="rectangle.lefthalf.inset.filled" catalog="system" width="128" height="93"/>
+        <image name="rectangle.righthalf.inset.filled" catalog="system" width="128" height="93"/>
+        <image name="rectangle.tophalf.inset.filled" catalog="system" width="128" height="93"/>
         <image name="scribble.variable" catalog="system" width="128" height="118"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="testLab" width="72" height="72"/>
-        <image name="undo" width="100" height="100"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
