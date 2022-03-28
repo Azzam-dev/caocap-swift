@@ -47,7 +47,7 @@ class BlockBuilderVC: UIViewController {
         addSubViews()
         
         logicTableView.contentInset.bottom = 400
-        
+        structureTableView.setEditing(true, animated: false)
     }
     
     func getCaocapData() {
@@ -321,7 +321,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         case structureTableView:
-            let cell = UITableViewCell()
+            let cell = structureTableView.dequeueReusableCell(withIdentifier: "structureCell", for: indexPath)
             cell.textLabel?.text = caocapBlocks[indexPath.row].type.rawValue
             return cell
         case stylesTableView:
