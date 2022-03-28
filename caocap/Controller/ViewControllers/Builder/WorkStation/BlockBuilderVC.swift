@@ -44,6 +44,7 @@ class BlockBuilderVC: UIViewController {
         gestureRecognizerSetup()
         getCaocapData()
         registerdUINib()
+        addSubViews()
         
         logicTableView.contentInset.bottom = 400
         
@@ -79,11 +80,55 @@ class BlockBuilderVC: UIViewController {
         gestureRecognizerView.addGestureRecognizer(downSwipe)
     }
     
+    func addSubViews() {
+        view.addSubview(leftViewContainer)
+        leftViewContainer.alpha = 0
+        leftViewLeadingConstraint.constant = -view.frame.width
+    }
+    
     func toolsViewAnimation(_ hight: Int) {
         UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear, animations: {
             self.toolsViewHeightConstraint.constant = CGFloat(hight)
             self.view.layoutIfNeeded()
         })
+    }
+    
+    @IBAction func didPressShowHideBottomViewButton(_ sender: UIButton) {
+        if self.toolsViewHeightConstraint.constant < 350 {
+            toolsViewAnimation(350)
+        } else {
+            toolsViewAnimation(135)
+        }
+    }
+    
+    @IBAction func didPressShowHideTopViewButton(_ sender: Any) {
+    }
+    
+    
+    @IBOutlet var leftViewContainer: DesignableView!
+    @IBOutlet weak var leftViewLeadingConstraint: NSLayoutConstraint!
+    
+    
+    @IBAction func didPressShowHideLeftViewButton(_ sender: Any) {
+        if self.leftViewContainer.isHidden {
+            self.leftViewContainer.isHidden = false
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.leftViewContainer.alpha = 1
+                self.leftViewLeadingConstraint.constant = -20
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 3, options: .curveLinear) {
+                self.leftViewContainer.alpha = 0
+                self.leftViewLeadingConstraint.constant = -self.view.frame.width
+                self.view.layoutIfNeeded()
+            } completion: { _ in
+                self.leftViewContainer.isHidden = true
+            }
+        }
+    }
+    
+    @IBAction func didPressShowHideRightViewButton(_ sender: Any) {
     }
     
     @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
@@ -187,12 +232,12 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         case logicTableView:
             return getNumberOfLogicNodes() + 1
             
-             //TODO: - fix logicTableView count
+            //TODO: - fix logicTableView count
         case structureTableView:
             return caocapBlocks.count
         case stylesTableView:
             return 0 //TODO: - fix stylesTableView count
-        
+            
         default:
             return 0
         }
@@ -259,7 +304,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
                 self.caocapLogicNodes.remove(at: indexPath.row)
                 self.logicTableView.reloadData()
             }
-
+            
             let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
             swipeActionConfig.performsFirstActionWithFullSwipe = false
             return swipeActionConfig
@@ -269,7 +314,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
                 self.blocksTableView.reloadData()
                 self.structureTableView.reloadData()
             }
-
+            
             let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
             swipeActionConfig.performsFirstActionWithFullSwipe = false
             return swipeActionConfig
@@ -326,7 +371,7 @@ extension BlockBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
         structureTableView.reloadData()
     }
     
-   
+    
 }
 
 extension BlockBuilderVC: StoreSubscriber {
