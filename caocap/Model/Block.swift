@@ -15,7 +15,18 @@ enum BlocksType: String {
 struct Block {
     let type: BlocksType
     let description: String
-    let code: String
+    let styles: [String: BlockStyle]
     let icon: UIImage
 }
 
+
+enum BlockStyleType {
+    case color
+}
+
+struct BlockStyle {
+    let title: String
+    let description: String
+    let type: BlockStyleType
+    let value: Any
+}

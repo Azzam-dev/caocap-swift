@@ -17,7 +17,7 @@ class BlockCell: UITableViewCell {
     }
 
     func configure(block: Block) {
-        var code = block.code
+        backgroundColor = UIColor(hex: block.styles["backgroundColor"]?.value as? String ?? "#000000ff")
     }
     
 }

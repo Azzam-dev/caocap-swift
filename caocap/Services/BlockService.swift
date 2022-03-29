@@ -12,6 +12,9 @@ class BlockService {
     static let instance = BlockService()
     
     let blocks = [
-        Block(type: .blank, description: "a blank template", code: "", icon: UIImage(systemName: "doc")!)
+        Block(type: .blank,
+              description: "a blank template",
+              styles: ["backgroundColor" : BlockStyle(title: "background color", description: "the back ground color for the blank block", type: .color, value: "#ffffffff")],
+              icon: UIImage(systemName: "doc")!)
     ]
 }

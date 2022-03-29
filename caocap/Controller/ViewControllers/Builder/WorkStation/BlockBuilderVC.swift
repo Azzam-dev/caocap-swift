@@ -34,10 +34,10 @@ class BlockBuilderVC: UIViewController {
     var caocapLogicNodes = [LogicNode]()
     var logicTreeClimber = [Int]()
     
-    
     var blocksArray = BlockService.instance.blocks
     var logicNodesArray = [LogicNode]()
     
+    var editingBlock: Block?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -235,6 +235,7 @@ class BlockBuilderVC: UIViewController {
 }
 
 
+// MARK: - UITableViewDelegate UITableViewDataSource
 extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
     
     func getNumberOfLogicNodes() -> Int {
@@ -282,7 +283,8 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         case structureTableView:
             return caocapBlocks.count
         case stylesTableView:
-            return 0 //TODO: - fix stylesTableView count
+            guard let editingBlock = editingBlock else { return 0 }
+            return editingBlock.styles.count
             
         default:
             return 0
@@ -325,7 +327,15 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = caocapBlocks[indexPath.row].type.rawValue
             return cell
         case stylesTableView:
-            return UITableViewCell() //TODO: - getStyleCell
+            let cell = UITableViewCell() //TODO: - getStyleCell
+            switch indexPath.row {
+            case 0:
+                cell.textLabel?.text = editingBlock?.styles["backgroundColor"]?.title
+            default:
+                cell.textLabel?.text = "-***-"
+            }
+            
+            return cell
         default:
             return UITableViewCell()
         }
@@ -341,6 +351,8 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
             
         } else if tableView == blocksTableView && indexPath.row < caocapBlocks.count {
             //TODO: - blocksTableView didSelectRowAt
+            editingBlock = caocapBlocks[indexPath.row]
+            stylesTableView.reloadData()
         }
     }
     
@@ -369,6 +381,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         return nil
     }
     
+    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         if tableView == structureTableView {
             let movedBlock = caocapBlocks[sourceIndexPath.row]
@@ -380,6 +393,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 
+// MARK: - UICollectionViewDelegate UICollectionViewDataSource
 extension BlockBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
