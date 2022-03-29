@@ -35,7 +35,7 @@ class BlockBuilderVC: UIViewController {
     var logicTreeClimber = [Int]()
     
     var blocksArray = BlockService.instance.blocks
-    var logicNodesArray = [LogicNode]()
+    var logicNodesArray = LogicNodeService.logicNodes.events
     
     var editingBlock: Block?
     
@@ -272,14 +272,31 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func updateLogicNodesArray() {
+        switch logicTreeClimber.count {
+        case 0:
+            logicNodesArray = LogicNodeService.logicNodes.events
+        case 1:
+            logicNodesArray = LogicNodeService.logicNodes.conditions
+        case 2:
+            logicNodesArray = LogicNodeService.logicNodes.flows
+        case 3:
+            logicNodesArray = LogicNodeService.logicNodes.actions
+        case 4:
+            logicNodesArray = LogicNodeService.logicNodes.values
+        default:
+            logicNodesArray = [LogicNode]()
+        }
+        logicNodesCollectionView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case blocksTableView:
             return caocapBlocks.count + 1
         case logicTableView:
+            updateLogicNodesArray()
             return getNumberOfLogicNodes() + 1
-            
-            //TODO: - fix logicTableView count
         case structureTableView:
             return caocapBlocks.count
         case stylesTableView:
