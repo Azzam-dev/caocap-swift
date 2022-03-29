@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Firebase configuration
         FirebaseApp.configure()
         checkCurrentUserStatus()
+        checkIntroStatus()
         checkMinimumVersionStatus()
         checkRepairStatus()
         
@@ -82,6 +83,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
             window?.rootViewController?.present(authVC, animated: true , completion: nil)
         }
+    }
+    
+    fileprivate func checkIntroStatus() {
+        
+        let status = UserDefaults.standard.didUserCompleteIntro()
+        
+        if status == false {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let inroVC = storyboard.instantiateViewController(withIdentifier: "IntroVC")
+            
+            inroVC.modalPresentationStyle = .fullScreen
+            self.window?.makeKeyAndVisible()
+            self.window?.rootViewController?.present(inroVC, animated: true, completion: nil)
+            
+        }
+        
     }
     
 
