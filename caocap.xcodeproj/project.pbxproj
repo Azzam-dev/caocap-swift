@@ -18,6 +18,7 @@
 		2526AFB727EA8B8E0075AA32 /* FolderSystemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526AFB627EA8B8E0075AA32 /* FolderSystemVC.swift */; };
 		25291AA927F390BD00840055 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25291AA827F390BD00840055 /* IntroVC.swift */; };
 		25291AAB27F3976600840055 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25291AAA27F3976600840055 /* UserDefaults.swift */; };
+		2533C9E327F48C85008B1F44 /* TitleBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2533C9E227F48C85008B1F44 /* TitleBlockCell.swift */; };
 		2574AEA227EDFBAD002C29B6 /* CaocapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AEA127EDFBAD002C29B6 /* CaocapVC.swift */; };
 		2574AEA427EF1260002C29B6 /* LogicNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AEA327EF1260002C29B6 /* LogicNodeCell.swift */; };
 		2574AEA627EF1278002C29B6 /* AddLogicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AEA527EF1278002C29B6 /* AddLogicCell.swift */; };
@@ -88,7 +89,7 @@
 		EC339BE322520D1F00FDC14A /* CaocapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE222520D1F00FDC14A /* CaocapLayout.swift */; };
 		EC368421225AFE8C00ABC9C6 /* CaocapCellAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368420225AFE8C00ABC9C6 /* CaocapCellAnimation.swift */; };
 		EC3C86BE263C89430005DBAB /* ArtBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86BD263C89430005DBAB /* ArtBuilderVC.swift */; };
-		EC3C86C6263C94E00005DBAB /* BlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86C5263C94E00005DBAB /* BlockCell.swift */; };
+		EC3C86C6263C94E00005DBAB /* BlankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86C5263C94E00005DBAB /* BlankCell.swift */; };
 		EC3C86CE263C95960005DBAB /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86CD263C95960005DBAB /* Block.swift */; };
 		EC3F6D93234F81DF007DD028 /* GroupChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */; };
 		EC501676234E610200021D70 /* SentMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501675234E610200021D70 /* SentMessageCell.swift */; };
@@ -178,6 +179,7 @@
 		2526AFB627EA8B8E0075AA32 /* FolderSystemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSystemVC.swift; sourceTree = "<group>"; };
 		25291AA827F390BD00840055 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		25291AAA27F3976600840055 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		2533C9E227F48C85008B1F44 /* TitleBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBlockCell.swift; sourceTree = "<group>"; };
 		2574AEA127EDFBAD002C29B6 /* CaocapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapVC.swift; sourceTree = "<group>"; };
 		2574AEA327EF1260002C29B6 /* LogicNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicNodeCell.swift; sourceTree = "<group>"; };
 		2574AEA527EF1278002C29B6 /* AddLogicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogicCell.swift; sourceTree = "<group>"; };
@@ -284,7 +286,7 @@
 		EC339BE222520D1F00FDC14A /* CaocapLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapLayout.swift; sourceTree = "<group>"; };
 		EC368420225AFE8C00ABC9C6 /* CaocapCellAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapCellAnimation.swift; sourceTree = "<group>"; };
 		EC3C86BD263C89430005DBAB /* ArtBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBuilderVC.swift; sourceTree = "<group>"; };
-		EC3C86C5263C94E00005DBAB /* BlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCell.swift; sourceTree = "<group>"; };
+		EC3C86C5263C94E00005DBAB /* BlankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankCell.swift; sourceTree = "<group>"; };
 		EC3C86CD263C95960005DBAB /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatVC.swift; sourceTree = "<group>"; };
 		EC501675234E610200021D70 /* SentMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMessageCell.swift; sourceTree = "<group>"; };
@@ -383,6 +385,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2533C9E127F48C3C008B1F44 /* BlockCells */ = {
+			isa = PBXGroup;
+			children = (
+				EC3C86C5263C94E00005DBAB /* BlankCell.swift */,
+				2533C9E227F48C85008B1F44 /* TitleBlockCell.swift */,
+			);
+			path = BlockCells;
+			sourceTree = "<group>";
+		};
 		25E50F6927BE498400906E4A /* src */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,7 +553,7 @@
 			children = (
 				4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */,
 				EC1C8B9525D6DCB700CC8A0E /* CodeCell.swift */,
-				EC3C86C5263C94E00005DBAB /* BlockCell.swift */,
+				2533C9E127F48C3C008B1F44 /* BlockCells */,
 				EC6109B326432EF200E760CD /* BlockTypeCell.swift */,
 				EC6109C82645FE1800E760CD /* AddBlockCell.swift */,
 				2574AEA327EF1260002C29B6 /* LogicNodeCell.swift */,
@@ -1033,7 +1044,7 @@
 				ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */,
 				EC6109E52646DC0A00E760CD /* AppState.swift in Sources */,
 				EC6109EB2646E0F900E760CD /* Store.swift in Sources */,
-				EC3C86C6263C94E00005DBAB /* BlockCell.swift in Sources */,
+				EC3C86C6263C94E00005DBAB /* BlankCell.swift in Sources */,
 				25E50FB327BE498400906E4A /* Makefile in Sources */,
 				2574AEA427EF1260002C29B6 /* LogicNodeCell.swift in Sources */,
 				2147CCEC27D0A8F40008AD4C /* OService.swift in Sources */,
@@ -1080,6 +1091,7 @@
 				EC6109C92645FE1800E760CD /* AddBlockCell.swift in Sources */,
 				EC6109E02646DB7000E760CD /* AppReducer.swift in Sources */,
 				ECA08F562688FF1400C0A3EB /* BlockService.swift in Sources */,
+				2533C9E327F48C85008B1F44 /* TitleBlockCell.swift in Sources */,
 				25E50FAE27BE498400906E4A /* lmathlib.c in Sources */,
 				25E50FBE27BE498400906E4A /* lzio.c in Sources */,
 				25E50FB827BE498400906E4A /* lctype.c in Sources */,
@@ -1320,7 +1332,7 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;
@@ -1346,7 +1358,7 @@
 				CODE_SIGN_ENTITLEMENTS = caocap/caocap.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6QYT6GJB4Z;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				INFOPLIST_FILE = caocap/Info.plist;

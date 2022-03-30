@@ -10,6 +10,9 @@ import UIKit
 
 enum BlocksType: String {
     case blank
+    case title
+    case image
+    case video
 }
 
 struct Block {
@@ -22,6 +25,9 @@ struct Block {
 
 enum BlockStyleType {
     case color
+    case text
+    case image
+    case video
 }
 
 struct BlockStyle {

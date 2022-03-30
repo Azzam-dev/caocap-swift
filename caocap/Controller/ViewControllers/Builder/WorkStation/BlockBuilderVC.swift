@@ -320,7 +320,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
                 
                 return cell
             } else {
-                guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "blockCell", for: indexPath) as? BlockCell else { return UITableViewCell() }
+                guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "blockCell", for: indexPath) as? BlankCell else { return UITableViewCell() }
                 
                 cell.configure(block: caocapBlocks[indexPath.row])
                 return cell

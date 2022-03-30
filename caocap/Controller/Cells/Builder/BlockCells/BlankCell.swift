@@ -1,5 +1,5 @@
 //
-//  BlockCell.swift
+//  BlankCell.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 30/04/2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BlockCell: UITableViewCell {
+class BlankCell: UITableViewCell {
 
     @IBOutlet weak var selectedEffectView: UIView!
     override func setSelected(_ selected: Bool, animated: Bool) {
