@@ -4097,7 +4097,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="378" height="540"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="blockCell" id="ugH-vS-H31" customClass="BlankCell" customModule="CAOCAPx" customModuleProvider="target">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="blankCell" id="ugH-vS-H31" customClass="BlankCell" customModule="CAOCAPx" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44.666666030883789" width="378" height="43.666667938232422"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ugH-vS-H31" id="ulm-bW-kPJ">
@@ -4120,45 +4120,95 @@
                                                             <outlet property="selectedEffectView" destination="ne5-0H-AYl" id="tXE-ih-RHw"/>
                                                         </connections>
                                                     </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoCell" id="eQH-IE-a1O" customClass="VideoBlockCell" customModule="CAOCAPx" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="88.333333969116211" width="378" height="43.666667938232422"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eQH-IE-a1O" id="a7e-FP-hxM">
+                                                            <rect key="frame" x="0.0" y="0.0" width="378" height="43.666667938232422"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CdH-WS-Vv2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="43.666666666666664"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="CdH-WS-Vv2" secondAttribute="trailing" id="4bW-KK-X4i"/>
+                                                                <constraint firstAttribute="bottom" secondItem="CdH-WS-Vv2" secondAttribute="bottom" id="fHL-3G-yik"/>
+                                                                <constraint firstItem="CdH-WS-Vv2" firstAttribute="leading" secondItem="a7e-FP-hxM" secondAttribute="leading" id="n4T-FO-tdV"/>
+                                                                <constraint firstItem="CdH-WS-Vv2" firstAttribute="top" secondItem="a7e-FP-hxM" secondAttribute="top" id="nG2-4A-Sb9"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="selectedEffectView" destination="CdH-WS-Vv2" id="8DB-5w-I9o"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="imageCell" id="fGP-mw-0MV" customClass="ImageBlockCell" customModule="CAOCAPx" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="132.00000190734863" width="378" height="20.666666030883789"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fGP-mw-0MV" id="z7J-tx-2Fw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="378" height="20.666666030883789"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ZXx-2f-tJI">
+                                                                    <rect key="frame" x="0.0" y="1.6666666666666643" width="378" height="17.666666666666671"/>
+                                                                </imageView>
+                                                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p44-A6-CRp">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="20.666666666666668"/>
+                                                                    <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="p44-A6-CRp" firstAttribute="top" secondItem="z7J-tx-2Fw" secondAttribute="top" id="ELx-sm-aYY"/>
+                                                                <constraint firstItem="ZXx-2f-tJI" firstAttribute="top" secondItem="z7J-tx-2Fw" secondAttribute="top" id="HnG-8L-W5Z"/>
+                                                                <constraint firstItem="p44-A6-CRp" firstAttribute="leading" secondItem="z7J-tx-2Fw" secondAttribute="leading" id="Krz-7D-ZQl"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ZXx-2f-tJI" secondAttribute="trailing" id="UAU-aO-02e"/>
+                                                                <constraint firstAttribute="bottom" secondItem="ZXx-2f-tJI" secondAttribute="bottom" id="V9Q-2s-j6M"/>
+                                                                <constraint firstAttribute="trailing" secondItem="p44-A6-CRp" secondAttribute="trailing" id="Wqe-fn-7Db"/>
+                                                                <constraint firstAttribute="bottom" secondItem="p44-A6-CRp" secondAttribute="bottom" id="f1n-8a-3Sz"/>
+                                                                <constraint firstItem="ZXx-2f-tJI" firstAttribute="leading" secondItem="z7J-tx-2Fw" secondAttribute="leading" id="sNY-tT-wWi"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="selectedEffectView" destination="p44-A6-CRp" id="eEY-qq-Ob0"/>
+                                                        </connections>
+                                                    </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="titleCell" id="Sh3-4w-p9Z" customClass="TitleBlockCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="88.333333969116211" width="378" height="20.666666030883789"/>
+                                                        <rect key="frame" x="0.0" y="152.66666793823242" width="378" height="20.666666030883789"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Sh3-4w-p9Z" id="7ul-cJ-mD7">
                                                             <rect key="frame" x="0.0" y="0.0" width="378" height="20.666666030883789"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Caocap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZs-Sw-yh3">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="378" height="20.666666666666668"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0X-h0-f1Q">
                                                                     <rect key="frame" x="0.0" y="0.0" width="378" height="20.666666666666668"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Caocap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZs-Sw-yh3">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="378" height="20.666666666666668"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
                                                                     <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="trailing" secondItem="SZs-Sw-yh3" secondAttribute="trailing" id="iGN-mr-YGw"/>
-                                                                        <constraint firstItem="SZs-Sw-yh3" firstAttribute="leading" secondItem="q0X-h0-f1Q" secondAttribute="leading" id="jLf-fx-K6B"/>
-                                                                        <constraint firstItem="SZs-Sw-yh3" firstAttribute="top" secondItem="q0X-h0-f1Q" secondAttribute="top" id="kTj-gg-axn"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="SZs-Sw-yh3" secondAttribute="bottom" id="zgt-Sx-UxC"/>
-                                                                    </constraints>
                                                                 </view>
                                                             </subviews>
                                                             <constraints>
+                                                                <constraint firstItem="SZs-Sw-yh3" firstAttribute="top" secondItem="7ul-cJ-mD7" secondAttribute="top" id="0At-8A-ETR"/>
+                                                                <constraint firstAttribute="bottom" secondItem="SZs-Sw-yh3" secondAttribute="bottom" id="BIh-5S-IwQ"/>
                                                                 <constraint firstAttribute="trailing" secondItem="q0X-h0-f1Q" secondAttribute="trailing" id="Exn-j8-CVS"/>
                                                                 <constraint firstItem="q0X-h0-f1Q" firstAttribute="leading" secondItem="7ul-cJ-mD7" secondAttribute="leading" id="Rfb-GR-ck6"/>
                                                                 <constraint firstItem="q0X-h0-f1Q" firstAttribute="top" secondItem="7ul-cJ-mD7" secondAttribute="top" id="ejn-0x-tp7"/>
                                                                 <constraint firstAttribute="bottom" secondItem="q0X-h0-f1Q" secondAttribute="bottom" id="nh0-tr-hT8"/>
+                                                                <constraint firstAttribute="trailing" secondItem="SZs-Sw-yh3" secondAttribute="trailing" id="u9W-zK-4Sg"/>
+                                                                <constraint firstItem="SZs-Sw-yh3" firstAttribute="leading" secondItem="7ul-cJ-mD7" secondAttribute="leading" id="yh9-CE-CP9"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
                                                             <outlet property="selectedEffectView" destination="q0X-h0-f1Q" id="1aG-Vu-40H"/>
+                                                            <outlet property="title" destination="SZs-Sw-yh3" id="0w0-lC-CuL"/>
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="addBlockCell" rowHeight="100" id="gi8-dz-Vsw" customClass="AddBlockCell" customModule="CAOCAPx" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="109" width="378" height="100"/>
+                                                        <rect key="frame" x="0.0" y="173.33333396911621" width="378" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gi8-dz-Vsw" id="vme-8e-CX8">
                                                             <rect key="frame" x="0.0" y="0.0" width="378" height="100"/>
@@ -5237,6 +5287,7 @@
         <image name="loading mask" width="226" height="162"/>
         <image name="module" width="279" height="276"/>
         <image name="pen" width="276" height="270"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="pictures folder" width="264" height="222"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>

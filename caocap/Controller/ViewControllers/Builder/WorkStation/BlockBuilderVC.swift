@@ -320,9 +320,21 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
                 
                 return cell
             } else {
-                guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "blockCell", for: indexPath) as? BlankCell else { return UITableViewCell() }
+                let cell: BlankCell
+                let block = caocapBlocks[indexPath.row]
+                switch block.type {
+                case .blank:
+                    cell = blocksTableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath) as! BlankCell
+                case .title:
+                    cell = blocksTableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! TitleBlockCell
+                case .image:
+                    cell = blocksTableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageBlockCell
+                case .video:
+                    cell = blocksTableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoBlockCell
+                }
                 
-                cell.configure(block: caocapBlocks[indexPath.row])
+                
+                cell.configure(block: block)
                 return cell
             }
         case logicTableView:
@@ -404,6 +416,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
             let movedBlock = caocapBlocks[sourceIndexPath.row]
             caocapBlocks.remove(at: sourceIndexPath.row)
             caocapBlocks.insert(movedBlock, at: destinationIndexPath.row)
+            blocksTableView.reloadData()
         }
     }
     

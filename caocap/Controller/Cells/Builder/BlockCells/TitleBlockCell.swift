@@ -10,6 +10,10 @@ import UIKit
 
 class TitleBlockCell: BlankCell  {
 
-    
+    @IBOutlet weak var title: UILabel!
+    override func configure(block: Block) {
+        super.configure(block: block)
+        title.text = block.styles["title"]?.value as? String
+    }
 
 }
