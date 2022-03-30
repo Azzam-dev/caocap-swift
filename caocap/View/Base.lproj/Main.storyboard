@@ -1014,7 +1014,7 @@ Please visit the app tomorrow and everything will be done
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rok-TE-nJK" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="47.666666666666657" y="192" width="280" height="360"/>
+                                <rect key="frame" x="37.666666666666657" y="152" width="300" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGC-G9-RGS">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="64"/>
@@ -1025,7 +1025,7 @@ Please visit the app tomorrow and everything will be done
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wu0-Av-5Ni">
-                                        <rect key="frame" x="0.0" y="148" width="120" height="64"/>
+                                        <rect key="frame" x="0.0" y="168" width="120" height="64"/>
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="Pmh-HK-rSe"/>
@@ -1033,15 +1033,15 @@ Please visit the app tomorrow and everything will be done
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSZ-E9-7ZF">
-                                        <rect key="frame" x="160" y="30" width="120" height="64"/>
+                                        <rect key="frame" x="180" y="30" width="120" height="64"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="7MJ-0f-gFt"/>
                                             <constraint firstAttribute="width" secondItem="SSZ-E9-7ZF" secondAttribute="height" multiplier="15:8" id="lpf-x9-sGH"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3wd-71-DY7">
-                                        <rect key="frame" x="160" y="166" width="120" height="64"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3wd-71-DY7">
+                                        <rect key="frame" x="180" y="166" width="120" height="64"/>
                                         <color key="backgroundColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="3wd-71-DY7" secondAttribute="height" multiplier="15:8" id="ASh-TT-f4G"/>
@@ -1049,71 +1049,34 @@ Please visit the app tomorrow and everything will be done
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JT6-oD-xeh">
-                                        <rect key="frame" x="50" y="296" width="120" height="64"/>
+                                        <rect key="frame" x="60" y="336" width="120" height="64"/>
                                         <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="zst-26-iF3"/>
                                         </constraints>
                                     </view>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mnc-pi-dzV">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="360"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="x9m-yN-8Kf">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="360"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="500"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                         <blurEffect style="regular"/>
                                     </visualEffectView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uRv-7q-dIb">
-                                        <rect key="frame" x="10" y="230" width="260" height="100"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAOCAP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJd-9I-PJL">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="VkW-1I-zgg"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJp-0V-7Al">
-                                                <rect key="frame" x="0.0" y="38" width="260" height="62"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="XD3-XQ-asI"/>
-                                        </constraints>
-                                    </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="B-launched_rocket" translatesAutoresizingMaskIntoConstraints="NO" id="TeU-0e-lU8">
-                                        <rect key="frame" x="90" y="100" width="100" height="100"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="TeU-0e-lU8" secondAttribute="height" multiplier="1:1" id="ANY-4e-eA1"/>
-                                            <constraint firstAttribute="width" constant="100" id="LTB-h4-RZA"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="KGC-G9-RGS" firstAttribute="top" secondItem="rok-TE-nJK" secondAttribute="top" id="0bR-W8-p9z"/>
                                     <constraint firstAttribute="trailing" secondItem="3wd-71-DY7" secondAttribute="trailing" id="AeL-Tc-c9j"/>
                                     <constraint firstItem="mnc-pi-dzV" firstAttribute="leading" secondItem="rok-TE-nJK" secondAttribute="leading" id="CD6-CY-3tF"/>
-                                    <constraint firstItem="uRv-7q-dIb" firstAttribute="top" secondItem="3wd-71-DY7" secondAttribute="bottom" id="EfJ-Lg-efD"/>
-                                    <constraint firstItem="uRv-7q-dIb" firstAttribute="centerX" secondItem="rok-TE-nJK" secondAttribute="centerX" id="FYR-hO-gEi"/>
-                                    <constraint firstAttribute="width" constant="280" id="GOM-Yx-lzc"/>
+                                    <constraint firstAttribute="bottom" secondItem="mnc-pi-dzV" secondAttribute="bottom" constant="-100" id="CMm-GI-CJl"/>
+                                    <constraint firstAttribute="width" constant="300" id="GOM-Yx-lzc"/>
                                     <constraint firstItem="JT6-oD-xeh" firstAttribute="width" secondItem="JT6-oD-xeh" secondAttribute="height" multiplier="15:8" id="Mk3-sf-tGT"/>
-                                    <constraint firstAttribute="height" constant="360" id="Rld-jr-wQe"/>
-                                    <constraint firstItem="TeU-0e-lU8" firstAttribute="centerY" secondItem="rok-TE-nJK" secondAttribute="centerY" constant="-30" id="SCF-hi-2tQ"/>
+                                    <constraint firstAttribute="height" constant="400" id="Rld-jr-wQe"/>
                                     <constraint firstItem="mnc-pi-dzV" firstAttribute="top" secondItem="rok-TE-nJK" secondAttribute="top" id="Tg1-W0-W5l"/>
                                     <constraint firstItem="Wu0-Av-5Ni" firstAttribute="centerY" secondItem="rok-TE-nJK" secondAttribute="centerY" id="XWB-wI-OOE"/>
-                                    <constraint firstAttribute="trailing" secondItem="mnc-pi-dzV" secondAttribute="trailing" id="Y4c-h0-fsw"/>
-                                    <constraint firstAttribute="bottom" secondItem="uRv-7q-dIb" secondAttribute="bottom" constant="30" id="a0u-vK-j7o"/>
-                                    <constraint firstItem="uRv-7q-dIb" firstAttribute="leading" secondItem="rok-TE-nJK" secondAttribute="leading" constant="10" id="aqz-aN-sEA"/>
                                     <constraint firstAttribute="bottom" secondItem="JT6-oD-xeh" secondAttribute="bottom" id="crM-jY-cfo"/>
-                                    <constraint firstItem="TeU-0e-lU8" firstAttribute="centerX" secondItem="rok-TE-nJK" secondAttribute="centerX" id="g65-Wz-FqD"/>
-                                    <constraint firstAttribute="bottom" secondItem="mnc-pi-dzV" secondAttribute="bottom" id="hs5-ge-dfq"/>
+                                    <constraint firstAttribute="trailing" secondItem="mnc-pi-dzV" secondAttribute="trailing" constant="-100" id="h4e-B8-n8b"/>
                                     <constraint firstItem="SSZ-E9-7ZF" firstAttribute="top" secondItem="rok-TE-nJK" secondAttribute="top" constant="30" id="m8t-Ed-rgP"/>
                                     <constraint firstItem="KGC-G9-RGS" firstAttribute="leading" secondItem="rok-TE-nJK" secondAttribute="leading" id="mF7-TX-GIm"/>
                                     <constraint firstAttribute="trailing" secondItem="SSZ-E9-7ZF" secondAttribute="trailing" id="mak-Af-8fE"/>
@@ -1137,7 +1100,7 @@ Please visit the app tomorrow and everything will be done
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxL-ql-q8d" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666657" y="172" width="300" height="400"/>
+                                <rect key="frame" x="37.666666666666657" y="152" width="300" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-YE-ReU">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="64"/>
@@ -1260,13 +1223,13 @@ Please visit the app tomorrow and everything will be done
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0mg-BM-5Tm">
-                                <rect key="frame" x="47.666666666666657" y="652" width="280" height="96"/>
+                                <rect key="frame" x="37.666666666666657" y="652" width="300" height="96"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UX2-KP-k3p" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="31"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-0M-xlH">
-                                                <rect key="frame" x="80" y="0.0" width="120" height="20"/>
+                                                <rect key="frame" x="90" y="0.0" width="120" height="20"/>
                                                 <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="XP0-jC-qoE"/>
@@ -1274,15 +1237,15 @@ Please visit the app tomorrow and everything will be done
                                                 </constraints>
                                             </view>
                                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DxE-rq-pNY">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="31"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="guo-7h-Hgp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </view>
                                                 <blurEffect style="regular"/>
                                             </visualEffectView>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="I6L-ee-LIf">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="32"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="fiX-29-yKE"/>
                                                 </constraints>
@@ -1291,6 +1254,9 @@ Please visit the app tomorrow and everything will be done
                                                     <segment title="2"/>
                                                     <segment title="3"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="didChangeCardSegmentedControl:" destination="q10-6j-mFr" eventType="valueChanged" id="dkv-qg-l8O"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1313,18 +1279,18 @@ Please visit the app tomorrow and everything will be done
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oTf-Dl-XhX" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="51" width="280" height="45"/>
+                                        <rect key="frame" x="0.0" y="51" width="300" height="45"/>
                                         <subviews>
                                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="le5-7H-XIN">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uiG-sr-UZd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </view>
                                                 <blurEffect style="regular"/>
                                             </visualEffectView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U3-o8-Gk5">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="rIj-xO-bFa"/>
                                                 </constraints>
@@ -1379,9 +1345,12 @@ Please visit the app tomorrow and everything will be done
                         </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
-                        <outlet property="FrontCard" destination="zxL-ql-q8d" id="IKp-b6-PW9"/>
                         <outlet property="backCard" destination="rok-TE-nJK" id="SiT-au-eSL"/>
                         <outlet property="cardSegmentedControl" destination="I6L-ee-LIf" id="FF7-6L-kLd"/>
+                        <outlet property="frontCard" destination="zxL-ql-q8d" id="IKp-b6-PW9"/>
+                        <outlet property="frontDescription" destination="1pd-Qa-0EP" id="7DZ-1N-2ER"/>
+                        <outlet property="frontImage" destination="wSH-15-bOo" id="MnC-d5-zCq"/>
+                        <outlet property="frontTitle" destination="ekd-Rr-Avl" id="Yy4-Nl-77S"/>
                         <outlet property="progressionButton" destination="3U3-o8-Gk5" id="Fk0-CJ-7y6"/>
                     </connections>
                 </viewController>
