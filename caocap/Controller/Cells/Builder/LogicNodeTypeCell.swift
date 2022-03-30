@@ -14,6 +14,17 @@ class LogicNodeTypeCell: UICollectionViewCell {
     func configure(logicNode: LogicNode) {
         symbol.text = logicNode.type.rawValue.first?.uppercased()
         titleLabel.text = logicNode.type.rawValue
-        
+        switch logicNode.type {
+        case .event:
+            symbol.textColor = .systemGreen
+        case .condition:
+            symbol.textColor = .systemYellow
+        case .flow:
+            symbol.textColor = .systemOrange
+        case .action:
+            symbol.textColor = .systemBlue
+        case .value:
+            symbol.textColor = .systemRed
+        }
     }
 }
