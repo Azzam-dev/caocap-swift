@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Firebase configuration
         FirebaseApp.configure()
-        checkCurrentUserStatus()
+        checkIntroStatus()
         checkMinimumVersionStatus()
         checkRepairStatus()
         
@@ -73,7 +73,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
     
-    fileprivate func checkCurrentUserStatus() {
+    fileprivate func checkIntroStatus() {
+        
+        let status = UserDefaults.standard.didUserCompleteIntro()
+        
+        if status == false {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let inroVC = storyboard.instantiateViewController(withIdentifier: "IntroVC")
+            inroVC.modalPresentationStyle = .fullScreen
+            self.window?.makeKeyAndVisible()
+            self.window?.rootViewController?.present(inroVC, animated: true, completion: nil)
+            
+        } else {
+            checkCurrentUserStatus()
+        }
+    }
+    
+    func checkCurrentUserStatus() {
         //check if the user is logged in or not if not send them to the login/ register VC
         if Auth.auth().currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

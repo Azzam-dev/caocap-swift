@@ -16,6 +16,8 @@
 		21C2FA2027EB7EA6005630B2 /* LogicNodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2FA1F27EB7EA6005630B2 /* LogicNodeService.swift */; };
 		21C2FA2227EB7EF8005630B2 /* LogicNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2FA2127EB7EF8005630B2 /* LogicNode.swift */; };
 		2526AFB727EA8B8E0075AA32 /* FolderSystemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2526AFB627EA8B8E0075AA32 /* FolderSystemVC.swift */; };
+		25291AA927F390BD00840055 /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25291AA827F390BD00840055 /* IntroVC.swift */; };
+		25291AAB27F3976600840055 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25291AAA27F3976600840055 /* UserDefaults.swift */; };
 		2574AEA227EDFBAD002C29B6 /* CaocapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AEA127EDFBAD002C29B6 /* CaocapVC.swift */; };
 		2574AEA427EF1260002C29B6 /* LogicNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AEA327EF1260002C29B6 /* LogicNodeCell.swift */; };
 		2574AEA627EF1278002C29B6 /* AddLogicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AEA527EF1278002C29B6 /* AddLogicCell.swift */; };
@@ -174,6 +176,8 @@
 		21C2FA1F27EB7EA6005630B2 /* LogicNodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicNodeService.swift; sourceTree = "<group>"; };
 		21C2FA2127EB7EF8005630B2 /* LogicNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicNode.swift; sourceTree = "<group>"; };
 		2526AFB627EA8B8E0075AA32 /* FolderSystemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderSystemVC.swift; sourceTree = "<group>"; };
+		25291AA827F390BD00840055 /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
+		25291AAA27F3976600840055 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		2574AEA127EDFBAD002C29B6 /* CaocapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapVC.swift; sourceTree = "<group>"; };
 		2574AEA327EF1260002C29B6 /* LogicNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicNodeCell.swift; sourceTree = "<group>"; };
 		2574AEA527EF1278002C29B6 /* AddLogicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogicCell.swift; sourceTree = "<group>"; };
@@ -628,6 +632,7 @@
 		EC70ACEA215D6918004C16D2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				25291AA827F390BD00840055 /* IntroVC.swift */,
 				ECF205482160ED6D00C48F2A /* AuthVC.swift */,
 				EC8E19472159E02A000E4EE6 /* NavigationVC.swift */,
 				EC8FFC062463BDC9004F37F0 /* Explore */,
@@ -703,6 +708,7 @@
 				25E50F6927BE498400906E4A /* src */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
+				25291AAA27F3976600840055 /* UserDefaults.swift */,
 				2147CCE927D0A39B0008AD4C /* OWrapper.m */,
 				25E50FCD27BE4D6300906E4A /* LuaWrapper.m */,
 				2147CCE827D0A3620008AD4C /* OWrapper.h */,
@@ -1007,6 +1013,7 @@
 				ECF63E9221C0D9DF00E491FE /* Caocap.swift in Sources */,
 				EC16EE7A21A5AE1F009A46B8 /* User.swift in Sources */,
 				25E50FC227BE498400906E4A /* lcorolib.c in Sources */,
+				25291AA927F390BD00840055 /* IntroVC.swift in Sources */,
 				EC5C0DE1216F895100ED508F /* AddUserCell.swift in Sources */,
 				4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */,
 				EC51461C26D6D51A001BB016 /* BlockBuilderVC.swift in Sources */,
@@ -1083,6 +1090,7 @@
 				25E50FAF27BE498400906E4A /* loadlib.c in Sources */,
 				25E50FC027BE498400906E4A /* lutf8lib.c in Sources */,
 				25E50FA927BE498400906E4A /* lauxlib.c in Sources */,
+				25291AAB27F3976600840055 /* UserDefaults.swift in Sources */,
 				25E50FB227BE498400906E4A /* lstrlib.c in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,
 				25E50FB727BE498400906E4A /* lundump.c in Sources */,
