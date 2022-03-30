@@ -456,9 +456,17 @@ extension BlockBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        caocapBlocks.append(blocksArray[indexPath.row])
-        blocksTableView.reloadData()
-        structureTableView.reloadData()
+        switch collectionView {
+        case blocksCollectionView:
+            caocapBlocks.append(blocksArray[indexPath.row])
+            blocksTableView.reloadData()
+            structureTableView.reloadData()
+        case logicNodesCollectionView:
+            addLogic(node: logicNodesArray[indexPath.row])
+            logicTableView.reloadData()
+        default:
+            return
+        }
     }
     
     
