@@ -33,7 +33,7 @@ class BlockService {
                        "backgroundColor" : backgroundColorStyle],
               icon: UIImage(systemName: "photo")!),
         
-        Block(type: .image,
+        Block(type: .video,
               description: "a video view",
               styles: ["video": videoStyle,
                        "backgroundColor" : backgroundColorStyle],
