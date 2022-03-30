@@ -29,7 +29,11 @@ class IntroVC: UIViewController {
             cardSegmentedControl.selectedSegmentIndex = 2
             progressionButton.setTitle("Start", for: .normal)
         default:
+            UserDefaults.standard.introCompleted()
             self.dismiss(animated: false, completion: nil)
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                appDelegate.checkCurrentUserStatus()
+            }
         }
     }
 }

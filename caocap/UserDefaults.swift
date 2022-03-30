@@ -12,6 +12,11 @@ extension UserDefaults {
     
     
     func didUserCompleteIntro() -> Bool {
-        return false
+        return bool(forKey: "introCompleted")
     }
+    
+    func introCompleted() {
+        set(true, forKey: "introCompleted")
+    }
+    
 }
