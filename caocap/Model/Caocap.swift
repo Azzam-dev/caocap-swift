@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum CaocapType: String {
-    case art
-    case code
-    case block
-}
-
 class Caocap {
     private var _key: String
     private var _imageURL: String?
@@ -22,9 +16,6 @@ class Caocap {
     private var _bio: String
     private var _isPublished: Bool
     private var _owners: [String]
-    private var _type: CaocapType
-    private var _link: String?
-    private var _code: [String : [String: String]]?
     private var _blocks: [Block]?
     
     var key: String {
@@ -48,26 +39,6 @@ class Caocap {
     var owners: [String] {
         return _owners
     }
-    var type: CaocapType {
-        return _type
-    }
-    var link: String? {
-        return _link
-    }
-    
-    var code: [String : [CodeFile]]? {
-        var code = [String : [CodeFile]]()
-        if let _code = _code {
-            for (key, value) in _code {
-                code[key] = [
-                    CodeFile(type: .load, code: value["load"] ?? "error!"),
-                    CodeFile(type: .update, code: value["update"] ?? "error!"),
-                    CodeFile(type: .draw, code: value["draw"] ?? "error!")
-                    ]
-            }
-        }
-        return code
-    }
     
     var blocks: [Block]? {
         return _blocks
@@ -81,24 +52,6 @@ class Caocap {
         self._bio = dictionary["bio"] as? String ?? ""
         self._isPublished = dictionary["published"] as? Bool ?? false
         self._owners = dictionary["owners"] as? [String] ?? [""]
-        
-        let type = dictionary["type"] as? String ?? ""
-        switch type {
-        case "code":
-            _type = .code
-            _code = dictionary["code"] as? [String : [String: String]] ?? [
-                "main":[
-                    "load": "error!",
-                    "update" : "error!",
-                    "draw" : "error!"
-                ]]
-        case "art":
-            _type = .art
-        case "block":
-            _type = .block
-        default:
-            _type = .art
-        }
         
         
     }

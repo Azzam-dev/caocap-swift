@@ -32,9 +32,9 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         addNavCircleGestures()
         setupSubNavigationControllers()
         showSplashAnimation()
-        setupBuilderCells()
         
         NotificationCenter.default.addObserver(self, selector: #selector(openExplore), name: Notification.Name("openExplore"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(presentCreateCaocapVC), name: Notification.Name("presentCreateCaocapVC"), object: nil)
         
     }
     
@@ -266,56 +266,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         
     }
     
-    var builderItemSelectedIndex = 0
-    var builderItemPreviousIndex: Int?
-    @IBAction func didSwipeCollectionView(_ sender: UISwipeGestureRecognizer) {
-        switch sender.direction {
-        case .left where builderItemSelectedIndex < 2:
-            builderItemPreviousIndex = builderItemSelectedIndex
-            builderItemSelectedIndex += 1
-            transitionAnimtion(fram: builderItemPreviousIndex!, to: builderItemSelectedIndex)
-        case .right where builderItemSelectedIndex > 0 :
-            builderItemPreviousIndex = builderItemSelectedIndex
-            builderItemSelectedIndex -= 1
-            transitionAnimtion(fram: builderItemPreviousIndex!, to: builderItemSelectedIndex)
-        default:
-            break
-        }
-    }
-    
-    func transitionAnimtion(fram previousIndex: Int, to selectedIndex: Int) {
-        builderCollectionView.scrollToItem(at:IndexPath(item: selectedIndex, section: 0), at: .right, animated: true)
-        UIView.animate(withDuration: 0.1) {
-            
-            self.builderItemCells[previousIndex].frame.size.height = 310 - 50
-            self.builderItemCells[previousIndex].frame.size.width = 220 - 50
-            self.builderItemCells[previousIndex].titleLabel.font = UIFont.systemFont(ofSize: 25.0)
-        
-            self.builderItemCells[selectedIndex].frame.size.height = 310
-            self.builderItemCells[selectedIndex].frame.size.width = 220
-            self.builderItemCells[selectedIndex].titleLabel.font = UIFont.systemFont(ofSize: 30.0)
-            
-        }
-    }
-    
-    @IBOutlet weak var builderCollectionView: UICollectionView!
-    
-    var builderItemCells = [BuilderTypeCell]()
-    func setupBuilderCells() {
-        
-        let blockBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 1, section: 0)) as! BuilderTypeCell
-        let codeBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 2, section: 0)) as! BuilderTypeCell
-        let artBuilderCell = builderCollectionView.dequeueReusableCell(withReuseIdentifier: "builderTypeCell", for: IndexPath(row: 3, section: 0)) as! BuilderTypeCell
-        
-        
-        blockBuilderCell.configure(builder: Builder(type: .block, title: "Block", image: #imageLiteral(resourceName: "Create Block"), description: ""))
-        codeBuilderCell.configure(builder: Builder(type: .code, title: "Code", image: #imageLiteral(resourceName: "Create Code"),description: ""))
-        artBuilderCell.configure(builder: Builder(type: .art, title: "Art", image: #imageLiteral(resourceName: "Create Soon"), description: ""))
-        builderItemCells = [blockBuilderCell, codeBuilderCell, artBuilderCell]
-
-        builderCollectionView.reloadData()
-    }
-    
     
     @IBOutlet weak var blurredView: UIVisualEffectView!
     @IBOutlet weak var cancelPopupsBTN: UIButton!
@@ -335,26 +285,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
             print("كل شي تمام")
         }
     }
-    
-}
-
-extension NavigationVC: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return builderItemCells.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return builderItemCells[indexPath.row]
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let type = builderItemCells[indexPath.row].builder?.type  else { return }
-        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap") as! CreateCaocapVC
-        createCaocapVC.type = type
-        self.present(createCaocapVC, animated: true)
-    }
-    
     
 }
 
@@ -382,6 +312,12 @@ extension NavigationVC: StoreSubscriber {
         builderVC.openedCaocap = caocap
         builderVC.modalPresentationStyle = .fullScreen
         self.present(builderVC, animated: true)
+    }
+    
+    @objc func presentCreateCaocapVC() {
+        let storyboard = UIStoryboard(name: "Builder", bundle: nil)
+        let createCaocapVC = storyboard.instantiateViewController(withIdentifier: "createCaocap")
+        self.present(createCaocapVC, animated: true)
     }
     
 }

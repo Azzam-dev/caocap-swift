@@ -201,16 +201,7 @@ extension FolderSystemVC: UICollectionViewDelegate, UICollectionViewDataSource, 
         guard let openedCaocap = openedCaocap else { return }
         
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        let vc: UIViewController
-        
-        switch openedCaocap.type {
-        case .art:
-            vc = storyboard.instantiateViewController(withIdentifier: "artBuilder") as! ArtBuilderVC
-        case .code:
-            vc = storyboard.instantiateViewController(withIdentifier: "codeBuilder") as! CodeBuilderVC
-        case .block:
-            vc = storyboard.instantiateViewController(withIdentifier: "blockBuilder") as! BlockBuilderVC
-        }
+        let vc = storyboard.instantiateViewController(withIdentifier: "blockBuilder") as! BlockBuilderVC
         navigationController?.pushViewController(vc, animated: false)
     }
 }

@@ -25,13 +25,10 @@ class CaocapVC: UIViewController {
     func load(caocap: Caocap) {
         store.dispatch(LoudCaocapVCAction(caocapVC: self))
         DataService.instance.getCaocap(withKey: caocap.key) { liveCaocap in
-            guard let loudFile = liveCaocap.code?["main"]?[0] else { return }
-            guard let updateFile = liveCaocap.code?["main"]?[1] else { return }
-            guard let drawFile = liveCaocap.code?["main"]?[2] else { return }
             
-            LuaService(script: loudFile.code)
-            LuaService(script: updateFile.code) //TODO: - update Caocap work every frame
-            LuaService(script: drawFile.code) //TODO: - redraw Caocap work every frame
+//            LuaService(script: )
+//TODO: - update Caocap work every frame
+//TODO: - redraw Caocap work every frame
         }
     }
     
