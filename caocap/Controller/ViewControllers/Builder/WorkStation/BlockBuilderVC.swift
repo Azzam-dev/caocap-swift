@@ -309,48 +309,53 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    fileprivate func getBlockTableViewCell(for indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == caocapBlocks.count { // if it was the last cell then show add template
+            guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "addBlockCell", for: indexPath) as? AddBlockCell else { return UITableViewCell() }
+            cell.delegate = self
+            
+            return cell
+        } else {
+            let cell: BlankCell
+            let block = caocapBlocks[indexPath.row]
+            switch block.type {
+            case .blank:
+                cell = blocksTableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath) as! BlankCell
+            case .title:
+                cell = blocksTableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! TitleBlockCell
+            case .image:
+                cell = blocksTableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageBlockCell
+            case .video:
+                cell = blocksTableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoBlockCell
+            }
+            
+            
+            cell.configure(block: block)
+            return cell
+        }
+    }
     
+    fileprivate func getLogicTableViewCell(for indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == getNumberOfLogicNodes() {
+            guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "addLogicCell", for: indexPath) as? AddLogicCell else { return UITableViewCell() }
+            cell.delegate = self
+            cell.configure(nodeTreeDepth: logicTreeClimber.count)
+            return cell
+        } else {
+            guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "logicNodeCell", for: indexPath) as? LogicNodeCell else { return UITableViewCell() }
+            if let logicNode = getLogicNodeFor(index: indexPath.row) {
+                cell.configure(node: logicNode)
+            }
+            return cell
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
         case blocksTableView:
-            if indexPath.row == caocapBlocks.count { // if it was the last cell then show add template
-                guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "addBlockCell", for: indexPath) as? AddBlockCell else { return UITableViewCell() }
-                cell.delegate = self
-                
-                return cell
-            } else {
-                let cell: BlankCell
-                let block = caocapBlocks[indexPath.row]
-                switch block.type {
-                case .blank:
-                    cell = blocksTableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath) as! BlankCell
-                case .title:
-                    cell = blocksTableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! TitleBlockCell
-                case .image:
-                    cell = blocksTableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageBlockCell
-                case .video:
-                    cell = blocksTableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoBlockCell
-                }
-                
-                
-                cell.configure(block: block)
-                return cell
-            }
+            return getBlockTableViewCell(for: indexPath)
         case logicTableView:
-            
-            if indexPath.row == getNumberOfLogicNodes() {
-                guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "addLogicCell", for: indexPath) as? AddLogicCell else { return UITableViewCell() }
-                cell.delegate = self
-                cell.configure(nodeTreeDepth: logicTreeClimber.count)
-                return cell
-            } else {
-                guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "logicNodeCell", for: indexPath) as? LogicNodeCell else { return UITableViewCell() }
-                if let logicNode = getLogicNodeFor(index: indexPath.row) {
-                    cell.configure(node: logicNode)
-                }
-                return cell
-            }
+            return getLogicTableViewCell(for: indexPath)
         case structureTableView:
             let cell = structureTableView.dequeueReusableCell(withIdentifier: "structureCell", for: indexPath)
             cell.textLabel?.text = caocapBlocks[indexPath.row].type.rawValue
@@ -381,6 +386,13 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    fileprivate func reloadBlockTableViews() {
+        self.editingBlock = nil
+        self.blocksTableView.reloadData()
+        self.structureTableView.reloadData()
+        self.stylesTableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if tableView == logicTableView && indexPath.row < caocapLogicNodes.count {
             let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
@@ -394,8 +406,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         } else if tableView == structureTableView || tableView == blocksTableView {
             let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
                 self.caocapBlocks.remove(at: indexPath.row)
-                self.blocksTableView.reloadData()
-                self.structureTableView.reloadData()
+                self.reloadBlockTableViews()
             }
             
             let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
@@ -412,7 +423,7 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
             let movedBlock = caocapBlocks[sourceIndexPath.row]
             caocapBlocks.remove(at: sourceIndexPath.row)
             caocapBlocks.insert(movedBlock, at: destinationIndexPath.row)
-            blocksTableView.reloadData()
+            reloadBlockTableViews()
         }
     }
     
@@ -455,8 +466,7 @@ extension BlockBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
         switch collectionView {
         case blocksCollectionView:
             caocapBlocks.append(blocksArray[indexPath.row])
-            blocksTableView.reloadData()
-            structureTableView.reloadData()
+            reloadBlockTableViews()
         case logicNodesCollectionView:
             addLogic(node: logicNodesArray[indexPath.row])
             logicTableView.reloadData()
@@ -493,8 +503,7 @@ extension BlockBuilderVC: AddBlockDelegate, AddLogicNodeDelegate {
     func didPressAddBlock() {
         let newBlock = BlockService.instance.blocks.first!
         caocapBlocks.append(newBlock)
-        blocksTableView.reloadData()
-        structureTableView.reloadData()
+        reloadBlockTableViews()
     }
     
     func addLogic(node: LogicNode) {
