@@ -99,16 +99,22 @@ class MyProfileVC: UIViewController {
 extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return caocapsArray.count
+        return caocapsArray.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.row == caocapsArray.count {
+            //TODO: show the create new caocap cell
+            let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "createCell", for: indexPath)
+            return cell
+        } else {
+            guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? CaocapCell else { return UICollectionViewCell() }
+            
+            cell.caocapCellDelegate = self
+            cell.configure(caocap: caocapsArray[indexPath.row])
+            return cell
+        }
         
-        guard let cell = profileCollectionView.dequeueReusableCell(withReuseIdentifier: "caocapCell", for: indexPath) as? CaocapCell else { return UICollectionViewCell() }
-        
-        cell.caocapCellDelegate = self
-        cell.configure(caocap: caocapsArray[indexPath.row])
-        return cell
     }
     
     
@@ -119,7 +125,12 @@ extension MyProfileVC: UICollectionViewDelegate, UICollectionViewDataSource, UIC
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        store.dispatch(OpenBuilderAction(caocap: caocapsArray[indexPath.row]))
+        if indexPath.row == caocapsArray.count {
+            NotificationCenter.default.post(name: Notification.Name("presentCreateCaocapVC"), object: nil)
+        } else {
+            store.dispatch(OpenBuilderAction(caocap: caocapsArray[indexPath.row]))
+        }
+        
     }
 }
 

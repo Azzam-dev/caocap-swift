@@ -70,8 +70,6 @@
 		4E9FCE6527B6E08A0091BD33 /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE6727B6E08A0091BD33 /* UserProfile.storyboard */; };
 		4E9FCE6F27B6E16A0091BD33 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E9FCE7127B6E16A0091BD33 /* Localizable.strings */; };
 		4EA606EE27D17E4700658B88 /* OrbitingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA606ED27D17E4600658B88 /* OrbitingService.swift */; };
-		4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */; };
-		4ECAEA1325DDC7E200972415 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECAEA1225DDC7E200972415 /* Builder.swift */; };
 		4ECE143727BAA12C0055627E /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE143627BAA12C0055627E /* LocalizationManager.swift */; };
 		CC3538D426E7AEF90074275F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538D326E7AEF90074275F /* FirebaseAnalytics */; };
 		CC3538D626E7AEF90074275F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CC3538D526E7AEF90074275F /* FirebaseStorage */; };
@@ -91,7 +89,6 @@
 		EC2F25072169C47F00D14733 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC2F25062169C47F00D14733 /* EditProfileVC.swift */; };
 		EC339BE322520D1F00FDC14A /* CaocapLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC339BE222520D1F00FDC14A /* CaocapLayout.swift */; };
 		EC368421225AFE8C00ABC9C6 /* CaocapCellAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC368420225AFE8C00ABC9C6 /* CaocapCellAnimation.swift */; };
-		EC3C86BE263C89430005DBAB /* ArtBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86BD263C89430005DBAB /* ArtBuilderVC.swift */; };
 		EC3C86C6263C94E00005DBAB /* BlankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86C5263C94E00005DBAB /* BlankCell.swift */; };
 		EC3C86CE263C95960005DBAB /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C86CD263C95960005DBAB /* Block.swift */; };
 		EC3F6D93234F81DF007DD028 /* GroupChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */; };
@@ -138,7 +135,6 @@
 		ECAD479B21C79156000E16DC /* ContactChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479A21C79156000E16DC /* ContactChatVC.swift */; };
 		ECAD479D21CA97C4000E16DC /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAD479C21CA97C4000E16DC /* Message.swift */; };
 		ECCE4AE725B1E0080065EB0A /* CreateCaocapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCE4AE625B1E0080065EB0A /* CreateCaocapVC.swift */; };
-		ECE29FD82520852B00EFF8B4 /* CodeBuilderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */; };
 		ECE29FE225208C7400EFF8B4 /* CosmosBaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */; };
 		ECE29FFE25208E2100EFF8B4 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF725208E2100EFF8B4 /* CircleImage.swift */; };
 		ECE29FFF25208E2100EFF8B4 /* ExploreUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE29FF825208E2100EFF8B4 /* ExploreUI.swift */; };
@@ -277,8 +273,6 @@
 		4E9FCE7027B6E16A0091BD33 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E9FCE7227B6E16C0091BD33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4EA606ED27D17E4600658B88 /* OrbitingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitingService.swift; sourceTree = "<group>"; };
-		4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderTypeCell.swift; sourceTree = "<group>"; };
-		4ECAEA1225DDC7E200972415 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		4ECE143627BAA12C0055627E /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		DB859CD127A80E3400150CBA /* CaocapRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapRoomVC.swift; sourceTree = "<group>"; };
 		EC16EE7921A5AE1F009A46B8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -291,7 +285,6 @@
 		EC2F25062169C47F00D14733 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		EC339BE222520D1F00FDC14A /* CaocapLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapLayout.swift; sourceTree = "<group>"; };
 		EC368420225AFE8C00ABC9C6 /* CaocapCellAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapCellAnimation.swift; sourceTree = "<group>"; };
-		EC3C86BD263C89430005DBAB /* ArtBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtBuilderVC.swift; sourceTree = "<group>"; };
 		EC3C86C5263C94E00005DBAB /* BlankCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankCell.swift; sourceTree = "<group>"; };
 		EC3C86CD263C95960005DBAB /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupChatVC.swift; sourceTree = "<group>"; };
@@ -342,7 +335,6 @@
 		ECAD479C21CA97C4000E16DC /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		ECCE4AE625B1E0080065EB0A /* CreateCaocapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaocapVC.swift; sourceTree = "<group>"; };
 		ECDABBF2238348170029B026 /* caocap.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = caocap.entitlements; sourceTree = "<group>"; };
-		ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBuilderVC.swift; sourceTree = "<group>"; };
 		ECE29FE125208C7400EFF8B4 /* CosmosBaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosBaseVC.swift; sourceTree = "<group>"; };
 		ECE29FF725208E2100EFF8B4 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		ECE29FF825208E2100EFF8B4 /* ExploreUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreUI.swift; sourceTree = "<group>"; };
@@ -568,7 +560,6 @@
 		EC6109BC2643445700E760CD /* Builder */ = {
 			isa = PBXGroup;
 			children = (
-				4ECAEA0D25DDBE2E00972415 /* BuilderTypeCell.swift */,
 				EC1C8B9525D6DCB700CC8A0E /* CodeCell.swift */,
 				2533C9E127F48C3C008B1F44 /* BlockCells */,
 				EC6109B326432EF200E760CD /* BlockTypeCell.swift */,
@@ -649,8 +640,6 @@
 			isa = PBXGroup;
 			children = (
 				2526AFB627EA8B8E0075AA32 /* FolderSystemVC.swift */,
-				EC3C86BD263C89430005DBAB /* ArtBuilderVC.swift */,
-				ECE29FD72520852B00EFF8B4 /* CodeBuilderVC.swift */,
 				EC51461B26D6D51A001BB016 /* BlockBuilderVC.swift */,
 				2574AEA127EDFBAD002C29B6 /* CaocapVC.swift */,
 			);
@@ -677,7 +666,6 @@
 			children = (
 				EC16EE7921A5AE1F009A46B8 /* User.swift */,
 				ECF63E9121C0D9DF00E491FE /* Caocap.swift */,
-				4ECAEA1225DDC7E200972415 /* Builder.swift */,
 				EC3C86CD263C95960005DBAB /* Block.swift */,
 				21C2FA2127EB7EF8005630B2 /* LogicNode.swift */,
 				210BC57627EE429D0049211D /* CodeFile.swift */,
@@ -1043,13 +1031,11 @@
 				25E50FC227BE498400906E4A /* lcorolib.c in Sources */,
 				25291AA927F390BD00840055 /* IntroVC.swift in Sources */,
 				EC5C0DE1216F895100ED508F /* AddUserCell.swift in Sources */,
-				4ECAEA0E25DDBE2E00972415 /* BuilderTypeCell.swift in Sources */,
 				EC51461C26D6D51A001BB016 /* BlockBuilderVC.swift in Sources */,
 				4ECE143727BAA12C0055627E /* LocalizationManager.swift in Sources */,
 				25E50FC327BE498400906E4A /* lcode.c in Sources */,
 				210BC57727EE429D0049211D /* CodeFile.swift in Sources */,
 				25E50FC127BE498400906E4A /* lmem.c in Sources */,
-				EC3C86BE263C89430005DBAB /* ArtBuilderVC.swift in Sources */,
 				25E6308C2742E3C300A27836 /* RevealingSplashView.swift in Sources */,
 				25E50FB027BE498400906E4A /* lvm.c in Sources */,
 				EC6109DB2646DB0100E760CD /* Actions.swift in Sources */,
@@ -1098,9 +1084,7 @@
 				EC5238E02190B4CD00D966F3 /* Chat.swift in Sources */,
 				EC501679234E62B900021D70 /* ArrivedMessageCell.swift in Sources */,
 				25E50FCA27BE498400906E4A /* ltm.c in Sources */,
-				ECE29FD82520852B00EFF8B4 /* CodeBuilderVC.swift in Sources */,
 				2526AFB727EA8B8E0075AA32 /* FolderSystemVC.swift in Sources */,
-				4ECAEA1325DDC7E200972415 /* Builder.swift in Sources */,
 				2574AEA627EF1278002C29B6 /* AddLogicCell.swift in Sources */,
 				ECE29FFE25208E2100EFF8B4 /* CircleImage.swift in Sources */,
 				EC2F25072169C47F00D14733 /* EditProfileVC.swift in Sources */,

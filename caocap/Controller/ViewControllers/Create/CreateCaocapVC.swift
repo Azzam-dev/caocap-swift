@@ -11,8 +11,6 @@ import Firebase
 
 class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var type: CaocapType = .code
-    
     @IBOutlet weak var caocapIMG: DesignableImage!
     @IBOutlet weak var caocapIMGview: DesignableView!
     @IBOutlet weak var caocapNameTF: UITextField!
@@ -99,26 +97,12 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
                         // Here you can get the download URL
                         guard let imageURL = url?.absoluteString else { return }
                         
-                        var content = [String:Any]()
-                        switch self.type {
-                        case .code:
-                            content[self.type.rawValue] = ["main":[
-                                "load": #"print("hello capcap")"#,
-                                "update" : #"print(1+2)"#,
-                                "draw" : #"print(-200)"#
-                            ]]
-                        case .art:
-                            content[self.type.rawValue] = ["logic":"put somthing here",
-                                                           "art": "the ui shuold be here",]
-                        case .block:
-                            content[self.type.rawValue] = [["name": "blog", "title" : "Blog Title", "description" : "this is the blog description"]]
-                            
-                        }
+                        var content = ["logic":"put somthing here",
+                                       "art": "the ui shuold be here"]
                         let caocapData = ["imageURL": imageURL,
                                           "color": self.colorSelectedIndex,
                                           "name" : self.caocapNameTF.text!,
-                                          "type": self.type.rawValue,
-                                          content.keys.first: content.values.first as Any,
+                                          "content": content,
                                           "published": false,
                                           "owners": [currentUserUID],
                         ] as! [String : Any]
