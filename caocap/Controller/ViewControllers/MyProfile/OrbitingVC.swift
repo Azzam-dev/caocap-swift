@@ -31,15 +31,6 @@ class OrbitingVC: UIViewController {
         
     }
     
-    var isReleased = Bool()
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        DataService.instance.REF_RELEASED.observe(DataEventType.value, with: { snap in
-            self.isReleased = snap.value! as! Bool
-            self.orbitingCollectionView.reloadData()
-        })
-    }
-    
     
     //This pulls all the caocaps from firebase and insert them to the caocap array
     func getCaocapsData() {

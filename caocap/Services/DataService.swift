@@ -24,13 +24,11 @@ class DataService {
     private var _REF_APPDATA = DB_BASE.child("appData")
     private var _REF_MINIMUM_VERSION = DB_BASE.child("appData").child("minimumVersion-ios")
     private var _REF_REPAIRING = DB_BASE.child("appData").child("repairing")
-    private var _REF_RELEASED = DB_BASE.child("appData").child("released")
     
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_CAOCAPS = DB_BASE.child("caocap")
     
     private var _REF_CHATS = DB_BASE.child("chats")
-    //private var _REF_ROOMS = DB_BASE.child("rooms")
     
     
     // Storage references
@@ -48,7 +46,6 @@ class DataService {
     var REF_APPDATA : DatabaseReference { return _REF_APPDATA }
     var REF_MINIMUM_VERSION : DatabaseReference { return _REF_MINIMUM_VERSION }
     var REF_REPAIRING : DatabaseReference { return _REF_REPAIRING }
-    var REF_RELEASED : DatabaseReference { return _REF_RELEASED }
     
     var REF_USERS: DatabaseReference { return _REF_USERS }
     var REF_CAOCAPS: DatabaseReference { return _REF_CAOCAPS }

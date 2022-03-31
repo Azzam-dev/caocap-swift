@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Boz-cG-Oew">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -5266,7 +5266,7 @@
     </scenes>
     <designables>
         <designable name="08Y-Q4-7xI">
-            <size key="intrinsicContentSize" width="35" height="30"/>
+            <size key="intrinsicContentSize" width="38" height="32"/>
         </designable>
         <designable name="0E6-8w-4m5">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -5284,7 +5284,7 @@
             <size key="intrinsicContentSize" width="500" height="500"/>
         </designable>
         <designable name="FXw-3a-ffL">
-            <size key="intrinsicContentSize" width="71" height="30"/>
+            <size key="intrinsicContentSize" width="76" height="32"/>
         </designable>
         <designable name="I6f-Ys-ur9">
             <size key="intrinsicContentSize" width="22" height="20.333333333333336"/>
@@ -5299,7 +5299,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="POe-hc-n4e">
-            <size key="intrinsicContentSize" width="61" height="35"/>
+            <size key="intrinsicContentSize" width="62" height="38"/>
         </designable>
         <designable name="TW2-z0-Qjf">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -5311,10 +5311,10 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="ikp-83-eNU">
-            <size key="intrinsicContentSize" width="71" height="35"/>
+            <size key="intrinsicContentSize" width="73" height="38"/>
         </designable>
         <designable name="jVa-ds-Ij6">
-            <size key="intrinsicContentSize" width="71" height="30"/>
+            <size key="intrinsicContentSize" width="76" height="32"/>
         </designable>
         <designable name="moR-Mz-hl5">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -5323,6 +5323,9 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="w0j-dg-IfW">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="yBY-SD-GY5">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
     </designables>
