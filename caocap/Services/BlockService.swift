@@ -19,24 +19,24 @@ class BlockService {
     let blocks = [
         Block(type: .blank,
               description: "a blank view",
-              styles: ["backgroundColor" : backgroundColorStyle],
+              styles: [backgroundColorStyle],
               icon: UIImage(systemName: "doc")!),
         Block(type: .title,
               description: "a title view",
-              styles: ["title": titleStyle,
-                       "backgroundColor" : backgroundColorStyle],
+              styles: [titleStyle,
+                       backgroundColorStyle],
               icon: UIImage(systemName: "textformat")!),
         
         Block(type: .image,
               description: "a image view",
-              styles: ["image": imageStyle,
-                       "backgroundColor" : backgroundColorStyle],
+              styles: [imageStyle,
+                       backgroundColorStyle],
               icon: UIImage(systemName: "photo")!),
         
         Block(type: .video,
               description: "a video view",
-              styles: ["video": videoStyle,
-                       "backgroundColor" : backgroundColorStyle],
+              styles: [videoStyle,
+                       backgroundColorStyle],
               icon: UIImage(systemName: "play.rectangle")!),
     ]
 }

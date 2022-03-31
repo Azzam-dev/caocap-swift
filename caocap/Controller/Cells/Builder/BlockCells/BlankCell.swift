@@ -17,7 +17,14 @@ class BlankCell: UITableViewCell {
     }
 
     func configure(block: Block) {
-        backgroundColor = UIColor(hex: block.styles["backgroundColor"]?.value as? String ?? "#000000ff")
+        for blockStyle in block.styles {
+            switch blockStyle.type {
+            case .color:
+                backgroundColor = UIColor(hex: blockStyle.value as? String ?? "#000000ff")
+            default:
+                continue
+            }
+        }
     }
     
 }

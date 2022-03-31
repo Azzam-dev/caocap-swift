@@ -357,12 +357,8 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         case stylesTableView:
             let cell = UITableViewCell() //TODO: - getStyleCell
-            switch indexPath.row {
-            case 0:
-                cell.textLabel?.text = editingBlock?.styles["backgroundColor"]?.title
-            default:
-                cell.textLabel?.text = "-***-"
-            }
+            
+            cell.textLabel?.text = editingBlock?.styles[indexPath.row].title
             
             return cell
         default:

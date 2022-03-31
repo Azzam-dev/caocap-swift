@@ -5163,6 +5163,66 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <prototypes>
+                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="backgroundStyleCell" id="Jgv-Zc-MQx" customClass="BackgroundStyleCell">
+                                            <rect key="frame" x="0.0" y="88.666666030883789" width="269.66666666666669" height="40.333332061767578"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jgv-Zc-MQx" id="1Lk-Ul-RKt">
+                                                <rect key="frame" x="0.0" y="0.0" width="269.66666666666669" height="40.333332061767578"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BgH-N5-gDd">
+                                                        <rect key="frame" x="5" y="4.9999999999999982" width="259.66666666666669" height="30.333333333333329"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="background" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyt-Ri-8GF">
+                                                                <rect key="frame" x="0.0" y="0.0" width="91" height="30.333333333333332"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="fQL-sn-9pR"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5va-8c-EeC">
+                                                                <rect key="frame" x="98.999999999999986" y="0.0" width="160.66666666666663" height="30.333333333333332"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBY-SD-GY5" customClass="DesignableButton" customModule="CAOCAPx" customModuleProvider="target">
+                                                                        <rect key="frame" x="10" y="5" width="140.66666666666666" height="20.333333333333332"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" systemColor="labelColor"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="0.5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="yBY-SD-GY5" firstAttribute="centerY" secondItem="5va-8c-EeC" secondAttribute="centerY" id="7yY-fi-xn9"/>
+                                                                    <constraint firstItem="yBY-SD-GY5" firstAttribute="leading" secondItem="5va-8c-EeC" secondAttribute="leading" constant="10" id="UG6-g3-iGq"/>
+                                                                    <constraint firstItem="yBY-SD-GY5" firstAttribute="top" secondItem="5va-8c-EeC" secondAttribute="top" constant="5" id="dDb-Py-kBs"/>
+                                                                    <constraint firstItem="yBY-SD-GY5" firstAttribute="centerX" secondItem="5va-8c-EeC" secondAttribute="centerX" id="rNe-gr-fH5"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="BgH-N5-gDd" firstAttribute="top" secondItem="1Lk-Ul-RKt" secondAttribute="top" constant="5" id="1sA-YE-HqR"/>
+                                                    <constraint firstItem="BgH-N5-gDd" firstAttribute="leading" secondItem="1Lk-Ul-RKt" secondAttribute="leading" constant="5" id="EM5-az-daD"/>
+                                                    <constraint firstItem="BgH-N5-gDd" firstAttribute="centerX" secondItem="1Lk-Ul-RKt" secondAttribute="centerX" id="VRk-TD-3It"/>
+                                                    <constraint firstItem="BgH-N5-gDd" firstAttribute="centerY" secondItem="1Lk-Ul-RKt" secondAttribute="centerY" id="aRL-IL-BeY"/>
+                                                </constraints>
+                                            </tableViewCellContentView>
+                                        </tableViewCell>
+                                    </prototypes>
                                     <connections>
                                         <outlet property="dataSource" destination="Ybe-nR-w0y" id="6NF-WI-9PC"/>
                                         <outlet property="delegate" destination="Ybe-nR-w0y" id="rup-vS-cMR"/>
@@ -5296,6 +5356,9 @@
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

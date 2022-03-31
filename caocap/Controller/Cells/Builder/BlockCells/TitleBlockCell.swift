@@ -12,8 +12,16 @@ class TitleBlockCell: BlankCell  {
 
     @IBOutlet weak var title: UILabel!
     override func configure(block: Block) {
-        super.configure(block: block)
-        title.text = block.styles["title"]?.value as? String
+        for blockStyle in block.styles {
+            switch blockStyle.type {
+            case .text:
+                title.text = blockStyle.value as? String
+            case .color:
+                backgroundColor = UIColor(hex: blockStyle.value as? String ?? "#000000ff")
+            default:
+                continue
+            }
+        }
     }
 
 }
