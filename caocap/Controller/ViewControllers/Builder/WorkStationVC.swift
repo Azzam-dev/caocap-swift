@@ -31,10 +31,6 @@ class WorkStationVC: UIViewController {
     var logicMindMapVC: LogicMindMapVC?
     var artCanvasVC: ArtCanvasVC?
     
-    var caocapBlocks = [Block]()
-    var blocksArray = BlockService.instance.blocks
-    var editingBlock: Block?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         gestureRecognizerSetup()

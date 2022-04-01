@@ -9,6 +9,11 @@
 import UIKit
 
 class ArtCanvasVC: UIViewController {
+    
+    
+    var caocapBlocks = [Block]()
+    var blocksArray = BlockService.instance.blocks
+    var editingBlock: Block?
 
     var workStationVC: WorkStationVC?
     
