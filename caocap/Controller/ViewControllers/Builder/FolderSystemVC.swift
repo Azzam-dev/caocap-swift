@@ -197,11 +197,12 @@ extension FolderSystemVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        guard let openedCaocap = openedCaocap else { return }
-        
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "blockBuilder") as! BlockBuilderVC
+        let vc = storyboard.instantiateViewController(withIdentifier: "workStationVC") as! WorkStationVC
+        vc.logicMindMapVC = storyboard.instantiateViewController(withIdentifier: "logicMindMapVC") as? LogicMindMapVC
+        vc.artCanvasVC = storyboard.instantiateViewController(withIdentifier: "artCanvasVC") as? ArtCanvasVC
+        vc.logicMindMapVC?.workStationVC = vc
+        vc.artCanvasVC?.workStationVC = vc
         navigationController?.pushViewController(vc, animated: false)
     }
 }
