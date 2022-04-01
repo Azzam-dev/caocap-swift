@@ -1,5 +1,5 @@
 //
-//  BlockBuilderVC.swift
+//  WorkStationVC.swift
 //  caocap
 //
 //  Created by Azzam AL-Rashed on 25/08/2021.
@@ -9,16 +9,14 @@
 import UIKit
 import ReSwift
 
-class BlockBuilderVC: UIViewController {
+class WorkStationVC: UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
-    @IBOutlet weak var blocksView: DesignableView!
-    @IBOutlet weak var blocksTableView: UITableView!
-    @IBOutlet weak var blocksCollectionView: UICollectionView!
+    @IBOutlet weak var artView: UIView!
+    @IBOutlet weak var logicView: UIView!
     
-    @IBOutlet weak var logicView: DesignableView!
-    @IBOutlet weak var logicTableView: UITableView!
+    @IBOutlet weak var blocksCollectionView: UICollectionView!
     @IBOutlet weak var logicNodesCollectionView: UICollectionView!
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
@@ -30,13 +28,11 @@ class BlockBuilderVC: UIViewController {
     var toolsSelectedIndex = 0
     var openedCaocap: Caocap?
     
+    var logicMindMapVC: LogicMindMapVC?
+    var artCanvasVC: ArtCanvasVC?
+    
     var caocapBlocks = [Block]()
-    var caocapLogicNodes = [LogicNode]()
-    var logicTreeClimber = [Int]()
-    
     var blocksArray = BlockService.instance.blocks
-    var logicNodesArray = LogicNodeService.logicNodes.events
-    
     var editingBlock: Block?
     
     override func viewDidLoad() {
@@ -46,7 +42,6 @@ class BlockBuilderVC: UIViewController {
         registerdUINib()
         addSubViews()
         
-        logicTableView.contentInset.bottom = 400
         structureTableView.setEditing(true, animated: false)
     }
     
@@ -81,15 +76,30 @@ class BlockBuilderVC: UIViewController {
     }
     
     func addSubViews() {
+        addChild(logicMindMapVC!)
+        addChild(artCanvasVC!)
+        
+        logicMindMapVC!.view.frame = logicView.frame
+        artCanvasVC!.view.frame = artView.frame
+        
+        logicView.addSubview(logicMindMapVC!.view)
+        artView.addSubview(artCanvasVC!.view)
+        
+        logicMindMapVC!.didMove(toParent: self)
+        artCanvasVC!.didMove(toParent: self)
+        
         view.addSubview(controlsViewContainer)
         view.addSubview(leftViewContainer)
         view.addSubview(rightViewContainer)
+        
         controlsViewContainer.frame = view.frame
         leftViewContainer.frame = view.frame
         rightViewContainer.frame = view.frame
+        
         controlsViewContainer.alpha = 0
         leftViewContainer.alpha = 0
         rightViewContainer.alpha = 0
+        
         controlsViewTopConstraint.constant = -200
         leftViewLeadingConstraint.constant = -view.frame.width
         rightViewTrailingConstraint.constant = -view.frame.width
@@ -210,7 +220,7 @@ class BlockBuilderVC: UIViewController {
                 self.view.backgroundColor = .white
                 self.backgroundImage.tintColor = .black
                 
-                self.blocksView.isHidden = false
+                self.artView.isHidden = false
                 self.blocksCollectionView.isHidden = false
                 
                 self.logicView.isHidden = true
@@ -226,7 +236,7 @@ class BlockBuilderVC: UIViewController {
                 self.logicView.isHidden = false
                 self.logicNodesCollectionView.isHidden = false
                 
-                self.blocksView.isHidden = true
+                self.artView.isHidden = true
                 self.blocksCollectionView.isHidden = true
             }
         }
@@ -236,67 +246,10 @@ class BlockBuilderVC: UIViewController {
 
 
 // MARK: - UITableViewDelegate UITableViewDataSource
-extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
-    
-    func getNumberOfLogicNodes() -> Int {
-        switch logicTreeClimber.count {
-        case 0:
-            return caocapLogicNodes.count
-        case 1:
-            return caocapLogicNodes[logicTreeClimber[0]].content.count
-        case 2:
-            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content.count
-        case 3:
-            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content.count
-        case 4:
-            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content[logicTreeClimber[3]].content.count
-        default:
-            return 0
-        }
-    }
-    
-    func getLogicNodeFor(index: Int) -> LogicNode? {
-        switch logicTreeClimber.count {
-        case 0:
-            return caocapLogicNodes[index]
-        case 1:
-            return caocapLogicNodes[logicTreeClimber[0]].content[index]
-        case 2:
-            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[index]
-        case 3:
-            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content[index]
-        case 4:
-            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content[logicTreeClimber[3]].content[index]
-        default:
-            return nil
-        }
-    }
-    
-    func updateLogicNodesArray() {
-        switch logicTreeClimber.count {
-        case 0:
-            logicNodesArray = LogicNodeService.logicNodes.events
-        case 1:
-            logicNodesArray = LogicNodeService.logicNodes.conditions
-        case 2:
-            logicNodesArray = LogicNodeService.logicNodes.flows
-        case 3:
-            logicNodesArray = LogicNodeService.logicNodes.actions
-        case 4:
-            logicNodesArray = LogicNodeService.logicNodes.values
-        default:
-            logicNodesArray = [LogicNode]()
-        }
-        logicNodesCollectionView.reloadData()
-    }
+extension WorkStationVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
-        case blocksTableView:
-            return caocapBlocks.count + 1
-        case logicTableView:
-            updateLogicNodesArray()
-            return getNumberOfLogicNodes() + 1
         case structureTableView:
             return caocapBlocks.count
         case stylesTableView:
@@ -309,53 +262,8 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    fileprivate func getBlockTableViewCell(for indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == caocapBlocks.count { // if it was the last cell then show add template
-            guard let cell = blocksTableView.dequeueReusableCell(withIdentifier: "addBlockCell", for: indexPath) as? AddBlockCell else { return UITableViewCell() }
-            cell.delegate = self
-            
-            return cell
-        } else {
-            let cell: BlankCell
-            let block = caocapBlocks[indexPath.row]
-            switch block.type {
-            case .blank:
-                cell = blocksTableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath) as! BlankCell
-            case .title:
-                cell = blocksTableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath) as! TitleBlockCell
-            case .image:
-                cell = blocksTableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageBlockCell
-            case .video:
-                cell = blocksTableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoBlockCell
-            }
-            
-            
-            cell.configure(block: block)
-            return cell
-        }
-    }
-    
-    fileprivate func getLogicTableViewCell(for indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == getNumberOfLogicNodes() {
-            guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "addLogicCell", for: indexPath) as? AddLogicCell else { return UITableViewCell() }
-            cell.delegate = self
-            cell.configure(nodeTreeDepth: logicTreeClimber.count)
-            return cell
-        } else {
-            guard let cell = logicTableView.dequeueReusableCell(withIdentifier: "logicNodeCell", for: indexPath) as? LogicNodeCell else { return UITableViewCell() }
-            if let logicNode = getLogicNodeFor(index: indexPath.row) {
-                cell.configure(node: logicNode)
-            }
-            return cell
-        }
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch tableView {
-        case blocksTableView:
-            return getBlockTableViewCell(for: indexPath)
-        case logicTableView:
-            return getLogicTableViewCell(for: indexPath)
         case structureTableView:
             let cell = structureTableView.dequeueReusableCell(withIdentifier: "structureCell", for: indexPath)
             cell.textLabel?.text = caocapBlocks[indexPath.row].type.rawValue
@@ -371,39 +279,14 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == logicTableView && indexPath.row < getNumberOfLogicNodes() && logicTreeClimber.count < 4 {
-            // enter the logic node ( E - C - F - A )
-            logicTreeClimber.append(indexPath.row)
-            logicTableView.reloadData()
-        } else if tableView == logicTableView && indexPath.row < getNumberOfLogicNodes() {
-            // Select a logic mode ( E - C - F - A - V )
-            
-        } else if tableView == blocksTableView && indexPath.row < caocapBlocks.count {
-            //TODO: - blocksTableView didSelectRowAt
-            editingBlock = caocapBlocks[indexPath.row]
-            stylesTableView.reloadData()
-        }
-    }
-    
     fileprivate func reloadBlockTableViews() {
         self.editingBlock = nil
-        self.blocksTableView.reloadData()
         self.structureTableView.reloadData()
         self.stylesTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        if tableView == logicTableView && indexPath.row < caocapLogicNodes.count {
-            let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
-                self.caocapLogicNodes.remove(at: indexPath.row)
-                self.logicTableView.reloadData()
-            }
-            
-            let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
-            swipeActionConfig.performsFirstActionWithFullSwipe = false
-            return swipeActionConfig
-        } else if tableView == structureTableView || tableView == blocksTableView {
+        if tableView == structureTableView {
             let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
                 self.caocapBlocks.remove(at: indexPath.row)
                 self.reloadBlockTableViews()
@@ -431,14 +314,15 @@ extension BlockBuilderVC: UITableViewDelegate, UITableViewDataSource {
 
 
 // MARK: - UICollectionViewDelegate UICollectionViewDataSource
-extension BlockBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension WorkStationVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case blocksCollectionView:
             return blocksArray.count
         case logicNodesCollectionView:
-            return logicNodesArray.count
+            guard let logicMindMapVC = logicMindMapVC else { return 0 }
+            return logicMindMapVC.logicNodesArray.count
         default:
             return 0
         }
@@ -453,7 +337,8 @@ extension BlockBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
             return cell
         case logicNodesCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "logicNodeTypeCell", for: indexPath) as? LogicNodeTypeCell else { return UICollectionViewCell() }
-            cell.configure(logicNode: logicNodesArray[indexPath.row])
+            guard let logicMindMapVC = logicMindMapVC else { return UICollectionViewCell() }
+            cell.configure(logicNode: logicMindMapVC.logicNodesArray[indexPath.row])
             return cell
         default:
             return UICollectionViewCell()
@@ -468,8 +353,8 @@ extension BlockBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
             caocapBlocks.append(blocksArray[indexPath.row])
             reloadBlockTableViews()
         case logicNodesCollectionView:
-            addLogic(node: logicNodesArray[indexPath.row])
-            logicTableView.reloadData()
+            guard let logicMindMapVC = logicMindMapVC else { return }
+            logicMindMapVC.addLogic(node: logicMindMapVC.logicNodesArray[indexPath.row])
         default:
             return
         }
@@ -478,7 +363,7 @@ extension BlockBuilderVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
-extension BlockBuilderVC: StoreSubscriber {
+extension WorkStationVC: StoreSubscriber {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -496,7 +381,7 @@ extension BlockBuilderVC: StoreSubscriber {
     
 }
 
-extension BlockBuilderVC: AddBlockDelegate, AddLogicNodeDelegate {
+extension WorkStationVC: AddBlockDelegate {
     
     
     
@@ -504,48 +389,6 @@ extension BlockBuilderVC: AddBlockDelegate, AddLogicNodeDelegate {
         let newBlock = BlockService.instance.blocks.first!
         caocapBlocks.append(newBlock)
         reloadBlockTableViews()
-    }
-    
-    func addLogic(node: LogicNode) {
-        switch logicTreeClimber.count {
-        case 0:
-            return caocapLogicNodes.append(node)
-        case 1:
-            return caocapLogicNodes[logicTreeClimber[0]].content.append(node)
-        case 2:
-            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content.append(node)
-        case 3:
-            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content.append(node)
-        case 4:
-            return caocapLogicNodes[logicTreeClimber[0]].content[logicTreeClimber[1]].content[logicTreeClimber[2]].content[logicTreeClimber[3]].content.append(node)
-        default:
-            return
-        }
-    }
-    
-    func didPressAddLogicNode() {
-        let newNode: LogicNode
-        switch logicTreeClimber.count {
-        case 0:
-            newNode = LogicNodeService.logicNodes.events.first!
-        case 1:
-            newNode = LogicNodeService.logicNodes.conditions.first!
-        case 2:
-            newNode = LogicNodeService.logicNodes.flows.first!
-        case 3:
-            newNode = LogicNodeService.logicNodes.actions.first!
-        case 4:
-            newNode = LogicNodeService.logicNodes.values.first!
-        default:
-            return
-        }
-        addLogic(node: newNode)
-        logicTableView.reloadData()
-    }
-    
-    func didPressBackButton() {
-        logicTreeClimber.removeLast()
-        logicTableView.reloadData()
     }
     
 }
