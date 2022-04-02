@@ -31,7 +31,7 @@ class CaocapVC: UIViewController, WKNavigationDelegate {
             
         }
         
-        let caocapCode = Bundle.main.path(forResource: "2048-master/index", ofType: "html")
+        let caocapCode = Bundle.main.path(forResource: "hextris/index", ofType: "html")
         let url = URL(fileURLWithPath: caocapCode!)
         let request = URLRequest(url: url)
 
