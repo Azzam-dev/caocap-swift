@@ -247,9 +247,9 @@ extension WorkStationVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tableView {
         case structureTableView:
-            return caocapBlocks.count
+            return (artCanvasVC?.caocapBlocks.count)!
         case stylesTableView:
-            guard let editingBlock = editingBlock else { return 0 }
+            guard let editingBlock = artCanvasVC?.editingBlock else { return 0 }
             return editingBlock.styles.count
             
         default:
@@ -262,12 +262,12 @@ extension WorkStationVC: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case structureTableView:
             let cell = structureTableView.dequeueReusableCell(withIdentifier: "structureCell", for: indexPath)
-            cell.textLabel?.text = caocapBlocks[indexPath.row].type.rawValue
+            cell.textLabel?.text = artCanvasVC?.caocapBlocks[indexPath.row].type.rawValue
             return cell
         case stylesTableView:
             let cell = UITableViewCell() //TODO: - getStyleCell
             
-            cell.textLabel?.text = editingBlock?.styles[indexPath.row].title
+            cell.textLabel?.text = artCanvasVC?.editingBlock?.styles[indexPath.row].title
             
             return cell
         default:
@@ -276,7 +276,7 @@ extension WorkStationVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     fileprivate func reloadBlockTableViews() {
-        self.editingBlock = nil
+        artCanvasVC?.editingBlock = nil
         self.structureTableView.reloadData()
         self.stylesTableView.reloadData()
     }
@@ -284,7 +284,7 @@ extension WorkStationVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if tableView == structureTableView {
             let delete = UIContextualAction(style: .destructive, title: "remove") { (_, _, _) in
-                self.caocapBlocks.remove(at: indexPath.row)
+                self.artCanvasVC?.caocapBlocks.remove(at: indexPath.row)
                 self.reloadBlockTableViews()
             }
             
@@ -299,9 +299,9 @@ extension WorkStationVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         if tableView == structureTableView {
-            let movedBlock = caocapBlocks[sourceIndexPath.row]
-            caocapBlocks.remove(at: sourceIndexPath.row)
-            caocapBlocks.insert(movedBlock, at: destinationIndexPath.row)
+            guard let movedBlock = artCanvasVC?.caocapBlocks[sourceIndexPath.row] else { return }
+            artCanvasVC?.caocapBlocks.remove(at: sourceIndexPath.row)
+            artCanvasVC?.caocapBlocks.insert(movedBlock, at: destinationIndexPath.row)
             reloadBlockTableViews()
         }
     }
@@ -315,7 +315,7 @@ extension WorkStationVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case blocksCollectionView:
-            return blocksArray.count
+            return (artCanvasVC?.blocksArray.count)!
         case logicNodesCollectionView:
             guard let logicMindMapVC = logicMindMapVC else { return 0 }
             return logicMindMapVC.logicNodesArray.count
@@ -329,7 +329,7 @@ extension WorkStationVC: UICollectionViewDelegate, UICollectionViewDataSource {
         switch collectionView {
         case blocksCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "templateTypeCell", for: indexPath) as? BlockTypeCell else { return UICollectionViewCell() }
-            cell.configure(template: blocksArray[indexPath.row])
+            cell.configure(template: (artCanvasVC?.blocksArray[indexPath.row])!)
             return cell
         case logicNodesCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "logicNodeTypeCell", for: indexPath) as? LogicNodeTypeCell else { return UICollectionViewCell() }
@@ -346,7 +346,7 @@ extension WorkStationVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case blocksCollectionView:
-            caocapBlocks.append(blocksArray[indexPath.row])
+            artCanvasVC?.caocapBlocks.append((artCanvasVC?.blocksArray[indexPath.row])!)
             reloadBlockTableViews()
         case logicNodesCollectionView:
             guard let logicMindMapVC = logicMindMapVC else { return }
@@ -383,7 +383,7 @@ extension WorkStationVC: AddBlockDelegate {
     
     func didPressAddBlock() {
         let newBlock = BlockService.instance.blocks.first!
-        caocapBlocks.append(newBlock)
+        artCanvasVC?.caocapBlocks.append(newBlock)
         reloadBlockTableViews()
     }
     
