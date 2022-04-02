@@ -32,7 +32,7 @@
                                     <constraint firstAttribute="width" secondItem="Rly-tJ-gWC" secondAttribute="height" multiplier="145:162" id="p2x-qD-uw9"/>
                                 </constraints>
                             </imageView>
-                            <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rv-Pa-iiF" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
+                            <view clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rv-Pa-iiF" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="225" height="360"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>

@@ -230,7 +230,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KI-fY-Z5j">
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KI-fY-Z5j">
                                                     <rect key="frame" x="291" y="558" width="95" height="25"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0E-S9-ekQ">
@@ -456,6 +456,7 @@
                                             <constraint firstItem="b2i-mg-qaD" firstAttribute="top" secondItem="ASz-na-8fL" secondAttribute="top" id="h4u-SA-WPe"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="wWC-HK-FX1" secondAttribute="bottom" constant="5" id="hTN-ht-een"/>
                                             <constraint firstItem="wWC-HK-FX1" firstAttribute="trailing" secondItem="Cxi-QP-QPj" secondAttribute="trailing" constant="-10" id="hUC-wm-kgY"/>
+                                            <constraint firstItem="9KI-fY-Z5j" firstAttribute="trailing" secondItem="5RM-wD-ssu" secondAttribute="trailingMargin" id="hwm-KZ-wgT"/>
                                             <constraint firstItem="ASz-na-8fL" firstAttribute="top" secondItem="Cxi-QP-QPj" secondAttribute="bottom" constant="10" id="jUq-0c-VHD"/>
                                             <constraint firstItem="b2i-mg-qaD" firstAttribute="bottom" secondItem="ASz-na-8fL" secondAttribute="bottom" id="l6J-72-qC4"/>
                                             <constraint firstItem="AkM-gP-9sH" firstAttribute="top" secondItem="ASz-na-8fL" secondAttribute="bottom" constant="10" id="r5L-LF-d70"/>
