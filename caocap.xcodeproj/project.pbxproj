@@ -12,6 +12,7 @@
 		2147CCEE27D1F6720008AD4C /* ChangeLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCED27D1F6720008AD4C /* ChangeLanguageCell.swift */; };
 		21B4129327F21B5C00FB272C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B4129227F21B5C00FB272C /* GradientView.swift */; };
 		21B412AA27F4E8A600FB272C /* BackgroundStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B412A927F4E8A600FB272C /* BackgroundStyleCell.swift */; };
+		21B412AD27F93DBA00FB272C /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 21B412AC27F93DBA00FB272C /* SwiftSoup */; };
 		21C2FA1E27EB7DB9005630B2 /* LogicNodeTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2FA1D27EB7DB9005630B2 /* LogicNodeTypeCell.swift */; };
 		21C2FA2027EB7EA6005630B2 /* LogicNodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2FA1F27EB7EA6005630B2 /* LogicNodeService.swift */; };
 		21C2FA2227EB7EF8005630B2 /* LogicNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C2FA2127EB7EF8005630B2 /* LogicNode.swift */; };
@@ -369,6 +370,7 @@
 				CC3538D826E7AEF90074275F /* FirebaseAuth in Frameworks */,
 				CC3538DA26E7AEF90074275F /* FirebaseDatabase in Frameworks */,
 				CC3538D626E7AEF90074275F /* FirebaseStorage in Frameworks */,
+				21B412AD27F93DBA00FB272C /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -867,6 +869,7 @@
 				CC3538D726E7AEF90074275F /* FirebaseAuth */,
 				CC3538D926E7AEF90074275F /* FirebaseDatabase */,
 				CC3538DC26E7AF7A0074275F /* IQKeyboardManagerSwift */,
+				21B412AC27F93DBA00FB272C /* SwiftSoup */,
 			);
 			productName = caocap;
 			productReference = EC8E19422159E02A000E4EE6 /* CAOCAPx.app */;
@@ -954,6 +957,7 @@
 				ECA08F63268933C000C0A3EB /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				CC3538D226E7AEF90074275F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				CC3538DB26E7AF7A0074275F /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				21B412AB27F93DBA00FB272C /* XCRemoteSwiftPackageReference "SwiftSoup" */,
 			);
 			productRefGroup = EC8E19432159E02A000E4EE6 /* Products */;
 			projectDirPath = "";
@@ -1517,6 +1521,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		21B412AB27F93DBA00FB272C /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		CC3538D226E7AEF90074275F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1568,6 +1580,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		21B412AC27F93DBA00FB272C /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21B412AB27F93DBA00FB272C /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
 		CC3538D326E7AEF90074275F /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CC3538D226E7AEF90074275F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
