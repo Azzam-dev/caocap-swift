@@ -31,11 +31,9 @@ class CaocapVC: UIViewController, WKNavigationDelegate {
             
         }
         
-        let caocapCode = Bundle.main.path(forResource: "hextris/index", ofType: "html")
-        let url = URL(fileURLWithPath: caocapCode!)
-        let request = URLRequest(url: url)
+        let caocap = GravityService(atom: Atom(type: .h1, attributes: nil, children: nil))
 
-        webView.load(request)
+        webView.loadHTMLString(caocap.htmlCode, baseURL: nil)
 
     }
     
