@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftSoup
 
 enum AtomType {
     case h1
@@ -52,7 +53,7 @@ class GravityService {
   </head>
   <body>
     <div id="app">
-        
+        hello caocap
     </div>
 
     <script>
@@ -72,10 +73,23 @@ class GravityService {
 """
     
     init(atom: Atom) {
-        
+        makeblog()
     }
     
     func makeblog() -> Atom? {
+        do {
+            let doc: Document = try SwiftSoup.parse(htmlCode)
+            let body: Element = try doc.select("body").first()!
+            try body.attr("style", "background-color:red;")
+             htmlCode = try doc.outerHtml()
+        } catch Exception.Error(let type, let message) {
+            print(message)
+        } catch {
+            print("error")
+        }
+        
         return nil
     }
+    
+    
 }

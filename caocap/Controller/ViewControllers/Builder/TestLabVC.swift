@@ -15,7 +15,6 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     
     @IBOutlet weak var loadingIcon: UIImageView!
     @IBOutlet weak var caocapView: DesignableView!
-    var caocapVC: CaocapVC?
     
     @IBOutlet weak var toolsViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var gestureRecognizerView: UIView!
@@ -65,11 +64,12 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     
     private func presentCaocapVC() {
         let storyboard = UIStoryboard(name: "Builder", bundle: nil)
-        caocapVC = storyboard.instantiateViewController(withIdentifier: "caocapVC") as? CaocapVC
-        addChild(caocapVC!)
-        caocapVC!.view.frame = caocapView.frame
-        caocapView.addSubview(caocapVC!.view)
-        caocapVC!.didMove(toParent: self)
+        guard let caocapVC = storyboard.instantiateViewController(withIdentifier: "caocapVC") as? CaocapVC else { return }
+        caocapVC.openedCaocap = openedCaocap
+        addChild(caocapVC)
+        caocapVC.view.frame = caocapView.frame
+        caocapView.addSubview(caocapVC.view)
+        caocapVC.didMove(toParent: self)
     }
     
     
