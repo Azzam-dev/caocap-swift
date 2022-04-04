@@ -22,10 +22,9 @@
 		2533C9E327F48C85008B1F44 /* TitleBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2533C9E227F48C85008B1F44 /* TitleBlockCell.swift */; };
 		2533C9E527F4946F008B1F44 /* ImageBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2533C9E427F4946F008B1F44 /* ImageBlockCell.swift */; };
 		2533C9E727F4948C008B1F44 /* VideoBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2533C9E627F4948C008B1F44 /* VideoBlockCell.swift */; };
+		253A795A27FA6C3B006BC705 /* GravityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253A795927FA6C3B006BC705 /* GravityService.swift */; };
 		256C668D27F6CA5C003E7D93 /* LogicMindMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C668C27F6CA5C003E7D93 /* LogicMindMapVC.swift */; };
 		256C668F27F6DA18003E7D93 /* ArtCanvasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256C668E27F6DA18003E7D93 /* ArtCanvasVC.swift */; };
-		256C672427F8BB93003E7D93 /* 2048 in Resources */ = {isa = PBXBuildFile; fileRef = 256C672327F8BB93003E7D93 /* 2048 */; };
-		256C672827F91237003E7D93 /* hextris in Resources */ = {isa = PBXBuildFile; fileRef = 256C672727F91237003E7D93 /* hextris */; };
 		2574AEA227EDFBAD002C29B6 /* CaocapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AEA127EDFBAD002C29B6 /* CaocapVC.swift */; };
 		2574AEA427EF1260002C29B6 /* LogicNodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AEA327EF1260002C29B6 /* LogicNodeCell.swift */; };
 		2574AEA627EF1278002C29B6 /* AddLogicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AEA527EF1278002C29B6 /* AddLogicCell.swift */; };
@@ -185,10 +184,9 @@
 		2533C9E227F48C85008B1F44 /* TitleBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleBlockCell.swift; sourceTree = "<group>"; };
 		2533C9E427F4946F008B1F44 /* ImageBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBlockCell.swift; sourceTree = "<group>"; };
 		2533C9E627F4948C008B1F44 /* VideoBlockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoBlockCell.swift; sourceTree = "<group>"; };
+		253A795927FA6C3B006BC705 /* GravityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityService.swift; sourceTree = "<group>"; };
 		256C668C27F6CA5C003E7D93 /* LogicMindMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicMindMapVC.swift; sourceTree = "<group>"; };
 		256C668E27F6DA18003E7D93 /* ArtCanvasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCanvasVC.swift; sourceTree = "<group>"; };
-		256C672327F8BB93003E7D93 /* 2048 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 2048; sourceTree = "<group>"; };
-		256C672727F91237003E7D93 /* hextris */ = {isa = PBXFileReference; lastKnownFileType = folder; path = hextris; sourceTree = "<group>"; };
 		2574AEA127EDFBAD002C29B6 /* CaocapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaocapVC.swift; sourceTree = "<group>"; };
 		2574AEA327EF1260002C29B6 /* LogicNodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicNodeCell.swift; sourceTree = "<group>"; };
 		2574AEA527EF1278002C29B6 /* AddLogicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLogicCell.swift; sourceTree = "<group>"; };
@@ -409,15 +407,6 @@
 				2533C9E627F4948C008B1F44 /* VideoBlockCell.swift */,
 			);
 			path = BlockCells;
-			sourceTree = "<group>";
-		};
-		256C669027F8B474003E7D93 /* HTML5 */ = {
-			isa = PBXGroup;
-			children = (
-				256C672727F91237003E7D93 /* hextris */,
-				256C672327F8BB93003E7D93 /* 2048 */,
-			);
-			path = HTML5;
 			sourceTree = "<group>";
 		};
 		25E50F6927BE498400906E4A /* src */ = {
@@ -690,6 +679,7 @@
 				ECA08F552688FF1400C0A3EB /* BlockService.swift */,
 				21C2FA1F27EB7EA6005630B2 /* LogicNodeService.swift */,
 				4EA606ED27D17E4600658B88 /* OrbitingService.swift */,
+				253A795927FA6C3B006BC705 /* GravityService.swift */,
 				25E50F6627BE46DD00906E4A /* LuaService.swift */,
 				2147CCEB27D0A8F40008AD4C /* OService.swift */,
 			);
@@ -728,7 +718,6 @@
 				4E9FCE6C27B6E1170091BD33 /* Localizable */,
 				EC2F25002168FFD400D14733 /* fonts */,
 				25E50F6927BE498400906E4A /* src */,
-				256C669027F8B474003E7D93 /* HTML5 */,
 				EC8E194F2159E02C000E4EE6 /* Assets.xcassets */,
 				EC8E19452159E02A000E4EE6 /* AppDelegate.swift */,
 				25291AAA27F3976600840055 /* UserDefaults.swift */,
@@ -977,10 +966,8 @@
 			files = (
 				EC1C8B7B25D6C38C00CC8A0E /* CaocapCell.xib in Resources */,
 				EC5107B2266BBB46000DB190 /* EditDescriptionStylesCell.xib in Resources */,
-				256C672427F8BB93003E7D93 /* 2048 in Resources */,
 				EC84070624680C2200223FB1 /* Builder.storyboard in Resources */,
 				4E9FCE6F27B6E16A0091BD33 /* Localizable.strings in Resources */,
-				256C672827F91237003E7D93 /* hextris in Resources */,
 				EC8E19532159E02C000E4EE6 /* LaunchScreen.storyboard in Resources */,
 				4E9FCE5727B6DF830091BD33 /* Explore.storyboard in Resources */,
 				EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */,
@@ -1126,6 +1113,7 @@
 				25E50FB227BE498400906E4A /* lstrlib.c in Sources */,
 				ECAD479D21CA97C4000E16DC /* Message.swift in Sources */,
 				25E50FB727BE498400906E4A /* lundump.c in Sources */,
+				253A795A27FA6C3B006BC705 /* GravityService.swift in Sources */,
 				25E50FAC27BE498400906E4A /* lstate.c in Sources */,
 				25E50FC727BE498400906E4A /* ldebug.c in Sources */,
 				4E182A4525D84C5A00DB37C4 /* MenuItem.swift in Sources */,

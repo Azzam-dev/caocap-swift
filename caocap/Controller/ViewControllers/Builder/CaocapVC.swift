@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import ReSwift
 
 class CaocapVC: UIViewController, WKNavigationDelegate {
     
@@ -31,11 +32,9 @@ class CaocapVC: UIViewController, WKNavigationDelegate {
             
         }
         
-        let caocapCode = Bundle.main.path(forResource: "hextris/index", ofType: "html")
-        let url = URL(fileURLWithPath: caocapCode!)
-        let request = URLRequest(url: url)
+        let caocap = GravityService(atom: Atom(type: .h1, attributes: nil, children: nil))
 
-        webView.load(request)
+        webView.loadHTMLString(caocap.htmlCode, baseURL: nil)
 
     }
     
@@ -45,3 +44,24 @@ class CaocapVC: UIViewController, WKNavigationDelegate {
     
 }
 
+extension CaocapVC: StoreSubscriber {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        store.subscribe(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        store.unsubscribe(self)
+    }
+    
+    func newState(state: AppState) {
+        if openedCaocap == nil {
+            openedCaocap = state.openedCaocap
+            load(caocap: openedCaocap!)
+        }
+        
+    }
+    
+}
