@@ -141,9 +141,6 @@ class DataService {
         }
     }
     
-    func launchCaocap(caocapKey: String, code: [String: String]) {
-        REF_CAOCAPS.child(caocapKey).child("code").updateChildValues(code)
-    }
     
     // this function adds and removes caocaps from the user's orbit
     func addAndReomveFromOrbit(caocapKey: String , remove: Bool) {
