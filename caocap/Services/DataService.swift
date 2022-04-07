@@ -77,33 +77,70 @@ class DataService {
         handler(true)
     }
     
-    func createCaocap(caocapData: Dictionary<String, Any> , handler: @escaping (_ createdCaocap: Caocap?) -> ()) {
-        if let userUID = Auth.auth().currentUser?.uid {
-            let caocapKey = REF_CAOCAPS.childByAutoId().key
-            REF_CAOCAPS.child(caocapKey!).updateChildValues(caocapData)
-            REF_USERS.child(userUID).child("caocaps").updateChildValues([caocapKey : caocapKey])
-            handler(Caocap(key: caocapKey!, dictionary: caocapData))
-        } else {
-            handler(nil)
-        }
-    }
     
-    func removeCaocap(_ key: String) {
-        getUserData { (theUser) in
-            guard let user = theUser else { return }
-            if user.caocaps.values.contains(key) {
-                // this removes the caocap from user data
-                self.REF_USERS.child(user.uid).child("caocaps").child(key).removeValue()
-                // this removes the caocap entirely
-                self.REF_CAOCAPS.child(key).removeValue()
-            }
+    func createCaocap(withName name: String, image: UIImage, color: Int, handler: @escaping (_ createdCaocap: Caocap?) -> ()) {
+        guard let currentUserUID = Auth.auth().currentUser?.uid else {
+            handler(nil)
+            return
         }
         
+        let imageNameUID = NSUUID().uuidString
+        let storageRef = DataService.instance.REF_CAOCAP_IMAGES.child("\(imageNameUID).jpg")
+        if let uploadData = image.jpegData(compressionQuality: 0.2) {
+            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                
+                if error != nil {
+                    print(error!)
+                    handler(nil)
+                    return
+                }
+                storageRef.downloadURL(completion: { url, error in
+                    if error != nil {
+                        print(error!)
+                        handler(nil)
+                        return
+                    } else {
+                        // Here you can get the download URL
+                        guard let imageURL = url?.absoluteString else { return }
+                        
+                        let content = ["logic":"put somthing here",
+                                       "art": "the ui shuold be here"]
+                        let caocapData = ["imageURL": imageURL,
+                                          "color": color,
+                                          "name" : name,
+                                          "content": content,
+                                          "published": false,
+                                          "owners": [currentUserUID],
+                        ] as [String : Any]
+                        
+                        let caocapKey = self.REF_CAOCAPS.childByAutoId().key
+                        self.REF_CAOCAPS.child(caocapKey!).updateChildValues(caocapData)
+                        handler(Caocap(key: caocapKey!, dictionary: caocapData))
+                    }
+                })
+            })
+        }
     }
     
-    func launchCaocap(caocapKey: String,code: [String: String]) {
-        REF_CAOCAPS.child(caocapKey).child("code").updateChildValues(code)
+    
+    func removeCaocap(withKey key: String, handler: @escaping (_ status: Bool) -> ()) {
+        if let userUID = Auth.auth().currentUser?.uid {
+            REF_CAOCAPS.child(key).child("owners").observeSingleEvent(of: .value) { ownersSnapshot in
+                guard let ownersSnapshot = ownersSnapshot.children.allObjects as? [DataSnapshot] else { handler(false) ; return }
+                for owner in ownersSnapshot {
+                    let ownerUID = owner.value as! String
+                    if ownerUID == userUID {
+                        self.REF_CAOCAPS.child(key).removeValue()
+                        handler(true)
+                        return
+                    }
+                }
+            }
+        } else {
+            handler(false)
+        }
     }
+    
     
     // this function adds and removes caocaps from the user's orbit
     func addAndReomveFromOrbit(caocapKey: String , remove: Bool) {
