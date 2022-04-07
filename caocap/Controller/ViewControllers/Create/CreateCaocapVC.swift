@@ -85,7 +85,7 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func uploudCaocap() {
-        DataService.instance.createCaocap(with: caocapNameTF.text!, image: caocapIMG.image!, color: colorSelectedIndex) { createdCaocap in
+        DataService.instance.createCaocap(withName: caocapNameTF.text!, image: caocapIMG.image!, color: colorSelectedIndex) { createdCaocap in
             if let createdCaocap = createdCaocap {
                 self.dismiss(animated: true, completion: nil)
                 store.dispatch(CreateCaocapAction(caocap: createdCaocap))

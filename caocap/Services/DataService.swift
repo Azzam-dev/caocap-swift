@@ -78,7 +78,7 @@ class DataService {
     }
     
     
-    func createCaocap(with name: String, image: UIImage, color: Int, handler: @escaping (_ createdCaocap: Caocap?) -> ()) {
+    func createCaocap(withName name: String, image: UIImage, color: Int, handler: @escaping (_ createdCaocap: Caocap?) -> ()) {
         guard let currentUserUID = Auth.auth().currentUser?.uid else {
             handler(nil)
             return
@@ -122,20 +122,26 @@ class DataService {
         }
     }
     
-    func removeCaocap(_ key: String) {
-        getUserData { (theUser) in
-            guard let user = theUser else { return }
-            if user.caocaps.values.contains(key) {
-                // this removes the caocap from user data
-                self.REF_USERS.child(user.uid).child("caocaps").child(key).removeValue()
-                // this removes the caocap entirely
-                self.REF_CAOCAPS.child(key).removeValue()
+    
+    func removeCaocap(withKey key: String, handler: @escaping (_ status: Bool) -> ()) {
+        if let userUID = Auth.auth().currentUser?.uid {
+            REF_CAOCAPS.child(key).child("owners").observeSingleEvent(of: .value) { ownersSnapshot in
+                guard let ownersSnapshot = ownersSnapshot.children.allObjects as? [DataSnapshot] else { handler(false) ; return }
+                for owner in ownersSnapshot {
+                    let ownerUID = owner.value as! String
+                    if ownerUID == userUID {
+                        self.REF_CAOCAPS.child(key).removeValue()
+                        handler(true)
+                        return
+                    }
+                }
             }
+        } else {
+            handler(false)
         }
-        
     }
     
-    func launchCaocap(caocapKey: String,code: [String: String]) {
+    func launchCaocap(caocapKey: String, code: [String: String]) {
         REF_CAOCAPS.child(caocapKey).child("code").updateChildValues(code)
     }
     

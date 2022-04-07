@@ -48,6 +48,7 @@ class MyProfileVC: UIViewController {
     //This pulls all the current user caocaps from firebase and insert them to the caocap array
     func getMyCaocapsData() {
         DataService.instance.getCurrentUserCaocaps { (returnedCaocapsArray) in
+            self.caocapsCountLBL.text = String(returnedCaocapsArray.count)
             self.caocapsArray = returnedCaocapsArray
             self.profileCollectionView.reloadData()
         }
@@ -63,7 +64,6 @@ class MyProfileVC: UIViewController {
                 self.nameLBL.text = user.name
                 self.bioLBL.text = user.bio
                 self.orbitingCountLBL.text = String(user.orbiting.count)
-                self.caocapsCountLBL.text = String(user.caocaps.count)
                 self.friendsCountLBL.text = String(user.followers.count)
                 
                 if let imageURL = URL(string: user.imageURL ?? "" ) {
@@ -150,7 +150,13 @@ extension MyProfileVC: CaocapCellDelegate {
     func moreBTNpressed(key: String, name: String, isOrbiting: Bool) {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "delete",style: .destructive ) { (buttonTapped) in
-            DataService.instance.removeCaocap(key)
+            DataService.instance.removeCaocap(withKey: key) { status in
+                if status == false {
+                    print("error: could not delete caocap")
+                    displayAlertMessage("could not delete caocap", in: self)
+                }
+            }
+            
         }
         let cancel = UIAlertAction(title: "cancel".localized, style: .default, handler: nil)
         moreInfoPopup.addAction(deleteAction)
