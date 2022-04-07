@@ -105,6 +105,7 @@ class DataService {
                         
                         let content = ["logic":"put somthing here",
                                        "art": "the ui shuold be here"]
+                        
                         let caocapData = ["imageURL": imageURL,
                                           "color": color,
                                           "name" : name,

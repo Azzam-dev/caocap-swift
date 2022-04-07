@@ -29,12 +29,11 @@ class CaocapVC: UIViewController, WKNavigationDelegate {
 
     func load(caocap: Caocap) {
         DataService.instance.getCaocap(withKey: caocap.key) { liveCaocap in
-            
+            let caocap = GravityService(atom: Atom(type: .h1, attributes: nil, children: nil))
+            self.webView.loadHTMLString(caocap.htmlCode, baseURL: nil)
         }
         
-        let caocap = GravityService(atom: Atom(type: .h1, attributes: nil, children: nil))
-
-        webView.loadHTMLString(caocap.htmlCode, baseURL: nil)
+        
 
     }
     
