@@ -1349,7 +1349,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.5;
+				MARKETING_VERSION = 4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ficruty.caocap;
 				PRODUCT_NAME = CAOCAPx;
 				SUPPORTS_MACCATALYST = NO;
@@ -1375,7 +1375,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.5;
+				MARKETING_VERSION = 4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Ficruty.caocap;
 				PRODUCT_NAME = CAOCAPx;
 				SUPPORTS_MACCATALYST = NO;
