@@ -16,7 +16,8 @@ class Caocap {
     private var _bio: String
     private var _isPublished: Bool
     private var _owners: [String]
-    private var _blocks: [Block]?
+    private var _atom: String
+    private var _logic: String
     
     var key: String {
         return _key
@@ -40,8 +41,17 @@ class Caocap {
         return _owners
     }
     
-    var blocks: [Block]? {
-        return _blocks
+    var atom: Atom {
+        //TODO: string -> Atom
+        
+        return Atom(type: .view, attributes: [(key: .color,value: "red")], children: [Atom]())
+    }
+    
+    var logic: Logic {
+        //TODO: string -> Logic
+
+
+        return Logic(type: .event, attributes: [(key: .script, value: "")], children: [Logic]())
     }
     
     init(key: String, dictionary: [String: Any]) {
@@ -52,6 +62,9 @@ class Caocap {
         self._bio = dictionary["bio"] as? String ?? ""
         self._isPublished = dictionary["published"] as? Bool ?? false
         self._owners = dictionary["owners"] as? [String] ?? [""]
+        
+        self._atom = dictionary["atom"] as? String ?? ""
+        self._logic = dictionary["logic"] as? String ?? ""
         
         
     }

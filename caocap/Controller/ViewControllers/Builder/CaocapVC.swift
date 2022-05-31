@@ -12,15 +12,12 @@ import ReSwift
 
 class CaocapVC: UIViewController, WKNavigationDelegate {
     
-    @IBOutlet weak var webView: WKWebView!
+    
+    @IBOutlet weak var caocapView: UICaocap!
     var openedCaocap: Caocap?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        webView.isHidden = true
-        webView.stopLoading()
-        self.webView.navigationDelegate = self
         
         if let openedCaocap = openedCaocap {
             load(caocap: openedCaocap)
@@ -29,12 +26,11 @@ class CaocapVC: UIViewController, WKNavigationDelegate {
 
     func load(caocap: Caocap) {
         DataService.instance.getCaocap(withKey: caocap.key) { liveCaocap in
-            
+            let gravity = GravityService(atom: caocap.atom, logic: caocap.logic)
+            self.caocapView = gravity.caocapView
         }
         
-        let caocap = GravityService(atom: Atom(type: .h1, attributes: nil, children: nil))
 
-        webView.loadHTMLString(caocap.htmlCode, baseURL: nil)
 
     }
     
