@@ -239,7 +239,7 @@ class DataService {
     
     func getCaocap(withKey key: String, handler: @escaping (_ caocap: Caocap) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
-            DataService.instance.REF_CAOCAPS.child(key).observe(.value) { caocapSnapshot in
+            self.REF_CAOCAPS.child(key).observe(.value) { caocapSnapshot in
                 guard let dictionary = caocapSnapshot.value as? [String : Any] else { return }
                 let caocap = Caocap(key: caocapSnapshot.key, dictionary: dictionary)
                 DispatchQueue.main.async {
@@ -295,15 +295,14 @@ class DataService {
     
     func getAllPublishedCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
-            self.REF_CAOCAPS.observeSingleEvent(of: .value) { (caocapsSnapshot) in
+            let publishedCaocaps = self.REF_CAOCAPS.queryOrdered(byChild: "published").queryEqual(toValue: true)
+            publishedCaocaps.observeSingleEvent(of: .value) { (caocapsSnapshot) in
                 guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
                 var caocapsArray = [Caocap]()
                 for caocap in caocapsSnapshot {
                     let dictionary = caocap.value
                     let theCaocap = Caocap(key: caocap.key, dictionary: dictionary as! [String : Any] )
-                    if theCaocap.isPublished {
-                        caocapsArray.append(theCaocap)
-                    }
+                    caocapsArray.append(theCaocap)
                 }
                 DispatchQueue.main.async {
                     handler(caocapsArray)
