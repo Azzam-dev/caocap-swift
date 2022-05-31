@@ -10,23 +10,23 @@ import UIKit
 
 @IBDesignable
 class DesignableView: UIView {
-
+    
     let gradientLayer = CAGradientLayer()
-
+    
     @IBInspectable
     var topGradientColor: UIColor? {
         didSet {
             setGradient(topGradientColor: topGradientColor, bottomGradientColor: bottomGradientColor)
         }
     }
-
+    
     @IBInspectable
     var bottomGradientColor: UIColor? {
         didSet {
             setGradient(topGradientColor: topGradientColor, bottomGradientColor: bottomGradientColor)
         }
     }
-
+    
     private func setGradient(topGradientColor: UIColor?, bottomGradientColor: UIColor?) {
         if let topGradientColor = topGradientColor, let bottomGradientColor = bottomGradientColor {
             gradientLayer.frame = bounds
@@ -43,23 +43,23 @@ class DesignableView: UIView {
 
 @IBDesignable
 class DesignableButton: UIButton {
-
+    
     let gradientLayer = CAGradientLayer()
-
+    
     @IBInspectable
     var topGradientColor: UIColor? {
         didSet {
             setGradient(topGradientColor: topGradientColor, bottomGradientColor: bottomGradientColor)
         }
     }
-
+    
     @IBInspectable
     var bottomGradientColor: UIColor? {
         didSet {
             setGradient(topGradientColor: topGradientColor, bottomGradientColor: bottomGradientColor)
         }
     }
-
+    
     private func setGradient(topGradientColor: UIColor?, bottomGradientColor: UIColor?) {
         if let topGradientColor = topGradientColor, let bottomGradientColor = bottomGradientColor {
             gradientLayer.frame = bounds
@@ -89,11 +89,11 @@ class DesignableTextField: UITextField {
 extension UIView {
     func bindToKeyBoard() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)) , name: UIResponder.keyboardWillChangeFrameNotification , object: nil)
-
+        
     }
-
+    
     @objc func keyboardWillChange(_ notification: NSNotification ) {
-
+        
         let duration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
         let curve = notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! UInt
         let beginningFrame = (notification.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
@@ -102,10 +102,10 @@ extension UIView {
         UIView.animateKeyframes(withDuration: duration, delay: 0.0, options: UIView.KeyframeAnimationOptions(rawValue: curve), animations: {
             self.frame.origin.y += deltaY
         }, completion: nil)
-
+        
     }
-
-
+    
+    
     @IBInspectable
     var cornerRadius: CGFloat {
         get {
@@ -115,7 +115,7 @@ extension UIView {
             layer.cornerRadius = newValue
         }
     }
-
+    
     @IBInspectable
     var rotation: Int {
         get {
@@ -125,7 +125,7 @@ extension UIView {
             self.transform = CGAffineTransform(rotationAngle: radians)
         }
     }
-
+    
     @IBInspectable
     var borderWidth: CGFloat {
         get {
@@ -135,7 +135,7 @@ extension UIView {
             layer.borderWidth = newValue
         }
     }
-
+    
     @IBInspectable
     var borderColor: UIColor? {
         get {
@@ -152,7 +152,7 @@ extension UIView {
             }
         }
     }
-
+    
     @IBInspectable
     var shadowRadius: CGFloat {
         get {
@@ -162,7 +162,7 @@ extension UIView {
             layer.shadowRadius = newValue
         }
     }
-
+    
     @IBInspectable
     var shadowOpacity: Float {
         get {
@@ -172,7 +172,7 @@ extension UIView {
             layer.shadowOpacity = newValue
         }
     }
-
+    
     @IBInspectable
     var shadowOffset: CGSize {
         get {
@@ -182,7 +182,7 @@ extension UIView {
             layer.shadowOffset = newValue
         }
     }
-
+    
     @IBInspectable
     var shadowColor: UIColor? {
         get {
@@ -206,7 +206,7 @@ class EdgeInsetLabel: UILabel {
     var textInsets = UIEdgeInsets.zero {
         didSet { invalidateIntrinsicContentSize() }
     }
-
+    
     override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         let insetRect = bounds.inset(by: textInsets)
         let textRect = super.textRect(forBounds: insetRect, limitedToNumberOfLines: numberOfLines)
@@ -216,7 +216,7 @@ class EdgeInsetLabel: UILabel {
                                           right: -textInsets.right)
         return textRect.inset(by: invertedInsets)
     }
-
+    
     override func drawText(in rect: CGRect) {
         super.drawText(in: rect.inset(by: textInsets))
     }
@@ -246,27 +246,27 @@ extension UITextField {
 extension UIColor {
     public convenience init?(hex: String) {
         let r, g, b, a: CGFloat
-
+        
         if hex.hasPrefix("#") {
             let start = hex.index(hex.startIndex, offsetBy: 1)
             let hexColor = String(hex[start...])
-
+            
             if hexColor.count == 8 {
                 let scanner = Scanner(string: hexColor)
                 var hexNumber: UInt64 = 0
-
+                
                 if scanner.scanHexInt64(&hexNumber) {
                     r = CGFloat((hexNumber & 0xff000000) >> 24) / 255
                     g = CGFloat((hexNumber & 0x00ff0000) >> 16) / 255
                     b = CGFloat((hexNumber & 0x0000ff00) >> 8) / 255
                     a = CGFloat(hexNumber & 0x000000ff) / 255
-
+                    
                     self.init(red: r, green: g, blue: b, alpha: a)
                     return
                 }
             }
         }
-
+        
         return nil
     }
 }
@@ -278,45 +278,52 @@ extension String {
         if (c.count <= n) { return self }
         return String( Array(c).prefix(upTo: n) )
     }
+    
+    func contains(find: String) -> Bool{
+        return self.range(of: find) != nil
+    }
+    func containsIgnoringCase(find: String) -> Bool{
+        return self.range(of: find, options: .caseInsensitive) != nil
+    }
 }
 
 //Get nth character of a string in Swift programming language (return's String)
 extension String {
-
-  var length: Int {
-    return count
-  }
-
-  subscript (i: Int) -> String {
-    return self[i ..< i + 1]
-  }
-
-  func substring(fromIndex: Int) -> String {
-    return self[min(fromIndex, length) ..< length]
-  }
-
-  func substring(toIndex: Int) -> String {
-    return self[0 ..< max(0, toIndex)]
-  }
-
-  subscript (r: Range<Int>) -> String {
-    let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
-                                        upper: min(length, max(0, r.upperBound))))
-    let start = index(startIndex, offsetBy: range.lowerBound)
-    let end = index(start, offsetBy: range.upperBound - range.lowerBound)
-    return String(self[start ..< end])
-  }
-
+    
+    var length: Int {
+        return count
+    }
+    
+    subscript (i: Int) -> String {
+        return self[i ..< i + 1]
+    }
+    
+    func substring(fromIndex: Int) -> String {
+        return self[min(fromIndex, length) ..< length]
+    }
+    
+    func substring(toIndex: Int) -> String {
+        return self[0 ..< max(0, toIndex)]
+    }
+    
+    subscript (r: Range<Int>) -> String {
+        let range = Range(uncheckedBounds: (lower: max(0, min(length, r.lowerBound)),
+                                            upper: min(length, max(0, r.upperBound))))
+        let start = index(startIndex, offsetBy: range.lowerBound)
+        let end = index(start, offsetBy: range.upperBound - range.lowerBound)
+        return String(self[start ..< end])
+    }
+    
 }
 
 // String Extension for grabbing a character at a specific position (return's Character)
 extension String {
-
+    
     func index(at position: Int, from start: Index? = nil) -> Index? {
         let startingIndex = start ?? startIndex
         return index(startingIndex, offsetBy: position, limitedBy: endIndex)
     }
-
+    
     func character(at position: Int) -> Character? {
         guard position >= 0, let indexPosition = index(at: position) else {
             return nil
@@ -331,19 +338,19 @@ extension EdgeInsetLabel {
         set { textInsets.left = newValue }
         get { return textInsets.left }
     }
-
+    
     @IBInspectable
     var rightTextInset: CGFloat {
         set { textInsets.right = newValue }
         get { return textInsets.right }
     }
-
+    
     @IBInspectable
     var topTextInset: CGFloat {
         set { textInsets.top = newValue }
         get { return textInsets.top }
     }
-
+    
     @IBInspectable
     var bottomTextInset: CGFloat {
         set { textInsets.bottom = newValue }
@@ -358,7 +365,7 @@ extension UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -371,7 +378,7 @@ extension CATransition {
         transition.duration = 0.2
         transition.type = CATransitionType.fade
         transition.subtype = CATransitionSubtype.fromRight
-
+        
         return transition
     }
 }

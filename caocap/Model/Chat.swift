@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum ChatType: String {
+    case contact
+    case group
+    case room
+}
+
 class Chat {
     private var _key: String
     private var _imageURL: String?
@@ -39,8 +45,8 @@ class Chat {
     var messages: [String] {
         return _messages
     }
-    var type: String {
-        return _type
+    var type: ChatType? {
+        return ChatType(rawValue: _type)
     }
     
   

@@ -313,7 +313,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == chatsTableView {
             let chat = chatsArray[indexPath.row]
-            if chat.type == "contact" {
+            if chat.type == .contact {
                 guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "contactChatCell", for: indexPath) as? ContactChatCell else { return UITableViewCell() }
                 
                 //This recognizes the contact UID by getting the current user UID and filtering it from the members array
@@ -339,7 +339,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                 }
                 return cell
                 
-            } else if chat.type == "group" {
+            } else if chat.type == .group {
                 guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "chatGroupCell", for: indexPath) as? ChatGroupCell else { return UITableViewCell() }
                 
                 cell.configureCell(imageURL: chat.imageURL ?? "",
@@ -382,16 +382,14 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
         if tableView == chatsTableView {
             let chat = chatsArray[indexPath.row]
             let storyboard = UIStoryboard(name: "Chat", bundle: nil)
-            if chat.type == "contact" {
+            if chat.type == .contact {
                 let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
                 contactChatVC.opendChat = chat
                 navigationController?.pushViewController(contactChatVC, animated: true)
-            } else if chat.type == "group" {
+            } else {
                 let groupChatVC = storyboard.instantiateViewController(withIdentifier: "GroupChatVC") as! GroupChatVC
                 groupChatVC.opendChat = chat
                 navigationController?.pushViewController(groupChatVC, animated: true)
-            } else {
-                
             }
         } else if tableView == groupMembersTableView {
             guard let cell = tableView.cellForRow(at: indexPath) as? AddUserCell else { return }

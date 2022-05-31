@@ -136,6 +136,8 @@ class DataService {
         handler(true)
     }
     
+    
+    //TODO: - add firebase filter for getCurrentUserChats
     func getCurrentUserChats(handler: @escaping (_ chatsArray: [Chat]) -> ()) {
         let currentUserUID = (Auth.auth().currentUser?.uid)!
         REF_CHATS.observe(.value) { (chatSnapshot) in
@@ -153,46 +155,28 @@ class DataService {
         }
     }
     
-    func getCurrentUserChatsQuery(forSearchQuery query: String, handler: @escaping (_ chatsArray: [Chat]) -> ()) {
-        REF_CHATS.observe(.value) { (chatSnapshot) in
-            guard let chatSnapshot = chatSnapshot.children.allObjects as? [DataSnapshot] else { return }
-            var chatsArray = [Chat]()
-            for chat in chatSnapshot {
-                let currentUserUID = (Auth.auth().currentUser?.uid)!
-                switch chat.childSnapshot(forPath: "type").value as! String {
-                case "contact":
-                    let membersArray = chat.childSnapshot(forPath: "members").value as! [String]
-//                    let contactUID = membersArray.filter({ $0 != currentUserUID })
-                    self.REF_USERS.observe(.value) { (userSnapshot) in
-                        guard let userSnapshot = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
-                        for user in userSnapshot {
-                            let username = user.childSnapshot(forPath: "username").value as! String
-                            if username.contains(query) && user.key != currentUserUID && membersArray.contains(currentUserUID) {
-                                let dictionary = chat.value
-                                let chat = Chat(key: chat.key, dictionary: dictionary as! [String : Any] )
-                                chatsArray.append(chat)
-                            }
+    //TODO: Refacter this function
+    func getCurrentUserChatsQuery(forSearchQuery query: String, handler: @escaping (_ chatsQueryArray: [Chat]) -> ()) {
+        var chatsQueryArray = [Chat]()
+        let currentUserUID = (Auth.auth().currentUser?.uid)!
+        getCurrentUserChats { chatsArray in
+            for chat in chatsArray {
+                switch chat.type {
+                case .contact:
+                    let contactUID = chat.members.filter({ $0 != currentUserUID })[0]
+                    self.getUsernameFromUID(forUID: contactUID) { username in
+                        if username.containsIgnoringCase(find: query) {
+                            chatsQueryArray.append(chat)
                         }
                     }
-                case "group":
-                    let membersArray = chat.childSnapshot(forPath: "members").value as! [String]
-                    let chatname = chat.childSnapshot(forPath: "name").value as! String
-                    if membersArray.contains(currentUserUID) && chatname.contains(query) {
-                        let dictionary = chat.value
-                        let chat = Chat(key: chat.key, dictionary: dictionary as! [String : Any] )
-                        chatsArray.append(chat)
-                    }
                 default:
-                    let membersArray = chat.childSnapshot(forPath: "members").value as! [String]
-                    let chatname = chat.childSnapshot(forPath: "name").value as! String
-                    if membersArray.contains(currentUserUID) && chatname.contains(query) {
-                        let dictionary = chat.value
-                        let chat = Chat(key: chat.key, dictionary: dictionary as! [String : Any] )
-                        chatsArray.append(chat)
+                    if chat.name.containsIgnoringCase(find: query) {
+                        chatsQueryArray.append(chat)
                     }
                 }
             }
-            handler(chatsArray)
+            
+            handler(chatsQueryArray)
         }
     }
     
