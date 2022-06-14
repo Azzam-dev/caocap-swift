@@ -85,40 +85,14 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func uploudCaocap() {
-        guard let currentUserUID = Auth.auth().currentUser?.uid else { return }
-        let imageNameUID = NSUUID().uuidString
-        let storageRef = DataService.instance.REF_CAOCAP_IMAGES.child("\(imageNameUID).jpg")
-        if let uploadData = self.caocapIMG.image?.jpegData(compressionQuality: 0.2) {
-            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
-                
-                if error != nil { print(error!) }
-                storageRef.downloadURL(completion: { url, error in
-                    if error != nil { print(error!) } else {
-                        // Here you can get the download URL
-                        guard let imageURL = url?.absoluteString else { return }
-                        
-                        var content = ["logic":"put somthing here",
-                                       "art": "the ui shuold be here"]
-                        let caocapData = ["imageURL": imageURL,
-                                          "color": self.colorSelectedIndex,
-                                          "name" : self.caocapNameTF.text!,
-                                          "content": content,
-                                          "published": false,
-                                          "owners": [currentUserUID],
-                        ] as! [String : Any]
-                        
-                        DataService.instance.createCaocap(caocapData: caocapData, handler: { (createdCaocap) in
-                            if let createdCaocap = createdCaocap {
-                                self.dismiss(animated: true, completion: nil)
-                                store.dispatch(CreateCaocapAction(caocap: createdCaocap))
-                            } else {
-                                print("error: could not create caocap")
-                                displayAlertMessage("could not create caocap", in: self)
-                            }
-                        })
-                    }
-                })
-            })
+        DataService.instance.createCaocap(withName: caocapNameTF.text!, image: caocapIMG.image!, color: colorSelectedIndex) { createdCaocap in
+            if let createdCaocap = createdCaocap {
+                self.dismiss(animated: true, completion: nil)
+                store.dispatch(CreateCaocapAction(caocap: createdCaocap))
+            } else {
+                print("error: could not create caocap")
+                displayAlertMessage("could not create caocap", in: self)
+            }
         }
     }
 }
