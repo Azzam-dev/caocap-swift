@@ -118,7 +118,7 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
                             storageRef.downloadURL(completion: { url, error in
                                 if error != nil { print(error!) } else {
                                     // Here you can get the download URL for 'simpleImage.jpg'
-                                    let userData = ["imageURL": url?.absoluteString,
+                                    let userData = ["imageURL": url?.absoluteString ?? "",
                                                     "color": self.colorSelectedIndex,
                                                     "username" : self.usernameTF.text!,
                                                     "name": self.nameTF.text!,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AddBlockDelegate: class {
+protocol AddBlockDelegate: AnyObject {
     func didPressAddBlock()
 }
 

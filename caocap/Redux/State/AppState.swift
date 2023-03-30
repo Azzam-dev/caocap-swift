@@ -11,7 +11,7 @@ import ReSwift
 /*
  
 */
-struct AppState: StateType {
+struct AppState {
     var openedCaocap: Caocap?
     var caocapVC: CaocapVC?
 }
