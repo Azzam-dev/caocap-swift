@@ -80,11 +80,11 @@ class CreateCaocapVC: UIViewController, UIImagePickerControllerDelegate, UINavig
             displayAlertMessage("please enter the caocap's name", in: self)
             createButtonSetup(withTitle: "create")
         } else {
-            uploudCaocap()
+            uploadCaocap()
         }
     }
     
-    func uploudCaocap() {
+    func uploadCaocap() {
         DataService.instance.createCaocap(withName: caocapNameTF.text!, image: caocapIMG.image!, color: colorSelectedIndex) { createdCaocap in
             if let createdCaocap = createdCaocap {
                 self.dismiss(animated: true, completion: nil)

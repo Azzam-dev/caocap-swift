@@ -124,7 +124,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     @IBOutlet weak var contactTableView: UITableView!
     @IBOutlet weak var contactSearchTF: UITextField!
     
-    //This shows and hides the new contact popuo view
+    //This shows and hides the new contact popup view
     @IBAction func contactPopupViewACTs(_ sender: Any) {
         if cancelPopupsBTN.isHidden {
             cancelPopupsBTN.isHidden = false
@@ -191,7 +191,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         
     }
     
-    //This shows and hides the new group popuo view
+    //This shows and hides the new group popup view
     @IBAction func groupPopupViewACTs(_ sender: Any) {
         if cancelPopupsBTN.isHidden {
             cancelPopupsBTN.isHidden = false
@@ -384,11 +384,11 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
             let storyboard = UIStoryboard(name: "Chat", bundle: nil)
             if chat.type == .contact {
                 let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
-                contactChatVC.opendChat = chat
+                contactChatVC.openedChat = chat
                 navigationController?.pushViewController(contactChatVC, animated: true)
             } else {
                 let groupChatVC = storyboard.instantiateViewController(withIdentifier: "GroupChatVC") as! GroupChatVC
-                groupChatVC.opendChat = chat
+                groupChatVC.openedChat = chat
                 navigationController?.pushViewController(groupChatVC, animated: true)
             }
         } else if tableView == groupMembersTableView {

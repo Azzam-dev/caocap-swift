@@ -13,7 +13,7 @@ import IQKeyboardManagerSwift
 class ContactChatVC: UIViewController {
     
     @IBOutlet weak var messagesTableView: UITableView!
-    var opendChat: Chat?
+    var openedChat: Chat?
     var messagesArray = [Message]()
     let colorArray = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.6391159892, blue: 0, alpha: 1), #colorLiteral(red: 0.3846503198, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), #colorLiteral(red: 0.8861780167, green: 0, blue: 1, alpha: 1), #colorLiteral(red: 0.9175696969, green: 0.9176983237, blue: 0.9175290465, alpha: 1)]
     
@@ -44,7 +44,7 @@ class ContactChatVC: UIViewController {
     
     //this gets the chat messages and inputs them to the messages array and relouds the messages TableView
     func getChatData() {
-        guard let chat = opendChat else { return }
+        guard let chat = openedChat else { return }
         DataService.instance.getChatMessages(forChatKey: chat.key) { (returnedMessagesArray) in
             self.messagesArray = returnedMessagesArray
             self.messagesTableView.reloadData()
@@ -65,7 +65,7 @@ class ContactChatVC: UIViewController {
             sendBTN.isEnabled = false
             DataService.instance.getUserData { (theUser) in
                 if let sender = theUser  {
-                    if let chatKey = self.opendChat?.key {
+                    if let chatKey = self.openedChat?.key {
                         let messageData = ["senderUid": sender.uid,
                                            "time": "10:44 am",
                                            "message": self.messageTF.text!

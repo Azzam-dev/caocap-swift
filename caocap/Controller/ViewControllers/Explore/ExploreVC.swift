@@ -135,11 +135,11 @@ extension ExploreVC: CaocapCellDelegate {
         
         if isOrbiting {
             orbitingAction = UIAlertAction(title: "remove from orbit", style: .destructive ) { (buttonTapped) in
-                DataService.instance.addAndReomveFromOrbit(caocapKey: key, remove: true)
+                DataService.instance.addAndRemoveFromOrbit(caocapKey: key, remove: true)
             }
         } else {
             orbitingAction = UIAlertAction(title: "add to orbit", style: .destructive ) { (buttonTapped) in
-                DataService.instance.addAndReomveFromOrbit(caocapKey: key, remove: false)
+                DataService.instance.addAndRemoveFromOrbit(caocapKey: key, remove: false)
             }
         }
         
@@ -163,14 +163,14 @@ extension ExploreVC: CaocapCellDelegate {
     
     func prisentReportAlert() {
         
-        let reportAlertConroller = UIAlertController(title: "report", message: "Why are you reporting this caocap ?", preferredStyle: .actionSheet)
+        let reportAlertController = UIAlertController(title: "report", message: "Why are you reporting this caocap ?", preferredStyle: .actionSheet)
         
         let spamAction = UIAlertAction(title: "it's spam", style: .default) { UIAlertAction in
             print("he's spamming his caocap")
             
         }
         
-        let DosenNotWorkAction = UIAlertAction(title: "it's Dosen't work well", style: .default) { UIAlertAction in
+        let doesNotWorkAction = UIAlertAction(title: "it doesn't work well", style: .default) { UIAlertAction in
             print("it has a problem in it")
             
         }
@@ -180,26 +180,26 @@ extension ExploreVC: CaocapCellDelegate {
             
         }
         
-        let deslikeAction = UIAlertAction(title: "I Just don't like it", style: .default) { UIAlertAction in
+        let dislikeAction = UIAlertAction(title: "I Just don't like it", style: .default) { UIAlertAction in
             print("I don't like it")
             
         }
         
-        let cencelAction = UIAlertAction(title: "cencel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel)
         
-        reportAlertConroller.addAction(spamAction)
-        reportAlertConroller.addAction(falseAction)
-        reportAlertConroller.addAction(DosenNotWorkAction)
-        reportAlertConroller.addAction(deslikeAction)
-        reportAlertConroller.addAction(cencelAction)
+        reportAlertController.addAction(spamAction)
+        reportAlertController.addAction(falseAction)
+        reportAlertController.addAction(doesNotWorkAction)
+        reportAlertController.addAction(dislikeAction)
+        reportAlertController.addAction(cancelAction)
 
 
-        if let popoverController = reportAlertConroller.popoverPresentationController {
+        if let popoverController = reportAlertController.popoverPresentationController {
             popoverController.sourceView = self.view
             popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
         
-        self.present(reportAlertConroller, animated: true)
+        self.present(reportAlertController, animated: true)
     }
     
 }

@@ -33,7 +33,7 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
     
     
     func getCaocapData() {
-        // we are useing the observe method to make the changes in real-time and to allow "Multi device changes"
+        // we are using the observe method to make the changes in real-time and to allow "Multi device changes"
         guard let openedCaocap = openedCaocap else { return }
         
         DataService.instance.getCaocap(withKey: openedCaocap.key) { caocap in
@@ -254,7 +254,7 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         }
         if let selectedImage = selectedImageFromPicker {
             caocapIMG.image = selectedImage
-            uploudNewCaocapImage()
+            uploadNewCaocapImage()
         }
         dismiss(animated: true, completion: nil)
     }
@@ -263,7 +263,7 @@ class TestLabVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDe
         dismiss(animated: true, completion: nil)
     }
     
-    func uploudNewCaocapImage() {
+    func uploadNewCaocapImage() {
         guard let openedCaocap = openedCaocap else { return }
         let imageNameUID = NSUUID().uuidString
         let storageRef = DataService.instance.REF_CAOCAP_IMAGES.child("\(imageNameUID).jpg")

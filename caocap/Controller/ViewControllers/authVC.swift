@@ -113,7 +113,7 @@ class AuthVC: UIViewController {
     }
     
     func loginUser() {
-        AuthService.instance.loginUser(withEmail: emailTF.text! , andPassword: passwordTF.text! , loginCompleat: { (success, loginError) in
+        AuthService.instance.loginUser(withEmail: emailTF.text! , andPassword: passwordTF.text! , loginComplete: { (success, loginError) in
             if success {
                 self.rocketLaunchAnimation()
             } else {
@@ -125,9 +125,9 @@ class AuthVC: UIViewController {
     
     
     func registerUser() {
-        AuthService.instance.registerUser(withUsername: usernameTF.text! , Email: emailTF.text! , andPassword: passwordTF.text! , userCreationCompleat: { (success, registrationError) in
+        AuthService.instance.registerUser(withUsername: usernameTF.text! , Email: emailTF.text! , andPassword: passwordTF.text! , userCreationComplete: { (success, registrationError) in
             if success {
-                AuthService.instance.loginUser(withEmail: self.emailTF.text! , andPassword: self.passwordTF.text! , loginCompleat: { (success, nil) in
+                AuthService.instance.loginUser(withEmail: self.emailTF.text! , andPassword: self.passwordTF.text! , loginComplete: { (success, nil) in
                     self.rocketLaunchAnimation()
                 })
             } else {

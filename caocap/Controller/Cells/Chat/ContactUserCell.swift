@@ -12,7 +12,7 @@ class ContactUserCell: UITableViewCell {
     
     
     @IBOutlet weak var profileIMG: DesignableImage!
-    @IBOutlet weak var pofileIMGview: DesignableView!
+    @IBOutlet weak var profileIMGview: DesignableView!
     @IBOutlet weak var usernameLBL: UILabel!
     @IBOutlet weak var nameLBL: UILabel!
     
@@ -25,9 +25,9 @@ class ContactUserCell: UITableViewCell {
         }
         
         if case 0...5 = user.color {
-            self.pofileIMGview.borderColor = colorArray[user.color]
+            self.profileIMGview.borderColor = colorArray[user.color]
         } else {
-            self.pofileIMGview.borderColor = colorArray[3]
+            self.profileIMGview.borderColor = colorArray[3]
         }
         self.usernameLBL.text = user.username
         self.nameLBL.text = user.name

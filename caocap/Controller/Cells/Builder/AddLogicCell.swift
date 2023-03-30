@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AddLogicNodeDelegate: class {
+protocol AddLogicNodeDelegate: AnyObject {
     func didPressAddLogicNode()
     func didPressBackButton()
 }

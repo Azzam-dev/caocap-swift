@@ -12,7 +12,7 @@ class AddUserCell: UITableViewCell {
     
     
     @IBOutlet weak var profileIMG: DesignableImage!
-    @IBOutlet weak var pofileIMGview: DesignableView!
+    @IBOutlet weak var profileIMGview: DesignableView!
     @IBOutlet weak var usernameLBL: UILabel!
     @IBOutlet weak var nameLBL: UILabel!
     @IBOutlet weak var checkView: DesignableView!
@@ -27,9 +27,9 @@ class AddUserCell: UITableViewCell {
         }
         
         if case 0...5 = user.color {
-            pofileIMGview.borderColor = colorArray[user.color]
+            profileIMGview.borderColor = colorArray[user.color]
         } else {
-            pofileIMGview.borderColor = colorArray[3]
+            profileIMGview.borderColor = colorArray[3]
         }
         usernameLBL.text = user.username
         nameLBL.text = user.name

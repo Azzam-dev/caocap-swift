@@ -62,7 +62,7 @@ enum Language: String {
             //initialize the app from scratch
             //show initial view controller
             //so it seems like the is restarted
-            //NOTE: do not localize storboards
+            //NOTE: do not localize storyboards
             //After the app restart all labels/images will be set
             //see extension String below
             UIApplication.shared.windows[0].rootViewController = UIStoryboard(

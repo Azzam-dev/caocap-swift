@@ -132,7 +132,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
     @IBOutlet weak var exploreIconView: UIView!
     @IBOutlet weak var chatIconView: UIView!
-    @IBOutlet weak var myprofileIconView: UIView!
+    @IBOutlet weak var myProfileIconView: UIView!
     @objc func navPan(_ sender: UIPanGestureRecognizer){
         let panView = sender.view!
         let translation = sender.translation(in: view)
@@ -151,7 +151,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
                 navBTNpressed(navBTNs[0])
             } else if panView.frame.intersects(chatIconView.frame) {
                 navBTNpressed(navBTNs[1])
-            } else if panView.frame.intersects(myprofileIconView.frame) {
+            } else if panView.frame.intersects(myProfileIconView.frame) {
                 navBTNpressed(navBTNs[2])
             }
             

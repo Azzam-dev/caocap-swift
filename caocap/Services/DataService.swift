@@ -103,8 +103,8 @@ class DataService {
                         // Here you can get the download URL
                         guard let imageURL = url?.absoluteString else { return }
                         
-                        let content = ["logic":"put somthing here",
-                                       "art": "the ui shuold be here"]
+                        let content = ["logic":"put something here",
+                                       "art": "the ui should be here"]
                         let caocapData = ["imageURL": imageURL,
                                           "color": color,
                                           "name" : name,
@@ -143,7 +143,7 @@ class DataService {
     
     
     // this function adds and removes caocaps from the user's orbit
-    func addAndReomveFromOrbit(caocapKey: String , remove: Bool) {
+    func addAndRemoveFromOrbit(caocapKey: String , remove: Bool) {
         if let userUID = Auth.auth().currentUser?.uid {
             if remove {
                 REF_USERS.child(userUID).child("orbiting").child(caocapKey).removeValue()
@@ -192,7 +192,7 @@ class DataService {
         }
     }
     
-    //TODO: Refacter this function
+    //TODO: Refactor this function
     func getCurrentUserChatsQuery(forSearchQuery query: String, handler: @escaping (_ chatsQueryArray: [Chat]) -> ()) {
         var chatsQueryArray = [Chat]()
         let currentUserUID = (Auth.auth().currentUser?.uid)!
@@ -217,7 +217,7 @@ class DataService {
         }
     }
     
-//TODO: Refacter this function
+//TODO: Refactor this function
     func getCurrentUserCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
         DispatchQueue.global(qos: .userInteractive).async {
             self.REF_CAOCAPS.observe(.value) { (caocapsSnapshot) in
@@ -245,10 +245,10 @@ class DataService {
             guard let caocapsSnapshot = caocapsSnapshot.children.allObjects as? [DataSnapshot] else { return }
             var caocapsArray = [Caocap]()
             for caocap in caocapsSnapshot {
-                let caocapname = caocap.childSnapshot(forPath: "name").value as! String
+                let caocapName = caocap.childSnapshot(forPath: "name").value as! String
                 let currentUserUID = (Auth.auth().currentUser?.uid)!
                 let ownersArray = caocap.childSnapshot(forPath: "owners").value as? [String] ?? [""]
-                if caocapname.contains(query) && ownersArray.contains(currentUserUID) {
+                if caocapName.contains(query) && ownersArray.contains(currentUserUID) {
                     let dictionary = caocap.value
                     let caocap = Caocap(key: caocap.key, dictionary: dictionary as! [String : Any] )
                     caocapsArray.append(caocap)

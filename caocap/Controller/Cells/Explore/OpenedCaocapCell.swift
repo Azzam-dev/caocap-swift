@@ -10,11 +10,11 @@ import UIKit
 import Firebase
 
 /* Declare a Delegate Protocol method */
-protocol OpenedCaocapCellDelegate: class {
+protocol OpenedCaocapCellDelegate: AnyObject {
     func loadCaocapVC(for cell: OpenedCaocapCell, with vc: CaocapVC, on view: UIView)
-    func shareBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
-    func moreBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
-    func roomBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton)
+    func shareBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton)
+    func moreBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton)
+    func roomBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton)
 }
 
 class OpenedCaocapCell: UICollectionViewCell {
@@ -83,19 +83,19 @@ class OpenedCaocapCell: UICollectionViewCell {
     
     @IBAction func shareBTN(_ sender: Any) {
         let button = sender as! UIButton
-        delegate?.shareBTNpressed(cell: self, didTappedshow: button)
+        delegate?.shareBTNpressed(cell: self, didTappedShow: button)
     }
     
     
     @IBAction func roomBTN(_ sender: Any) {
         let button = sender as! UIButton
-        delegate?.roomBTNpressed(cell: self, didTappedshow: button)
+        delegate?.roomBTNpressed(cell: self, didTappedShow: button)
     }
     
     
     @IBAction func moreBTN(_ sender: Any) {
         let button = sender as! UIButton
-        self.delegate?.moreBTNpressed(cell: self, didTappedshow: button)
+        self.delegate?.moreBTNpressed(cell: self, didTappedShow: button)
     }
     
     let currentLang = Locale.current.languageCode
@@ -107,12 +107,12 @@ class OpenedCaocapCell: UICollectionViewCell {
         if caocapIsOrbited {
             caocapIsOrbited = false
             orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 0)
-            DataService.instance.addAndReomveFromOrbit(caocapKey: caocapKey, remove: true)
+            DataService.instance.addAndRemoveFromOrbit(caocapKey: caocapKey, remove: true)
             orbitsNum.text = "ADD TO ORBIT".localized
         } else {
             caocapIsOrbited = true
             orbitBTN_background.backgroundColor = #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1)
-            DataService.instance.addAndReomveFromOrbit(caocapKey: caocapKey, remove: false)
+            DataService.instance.addAndRemoveFromOrbit(caocapKey: caocapKey, remove: false)
             orbitsNum.text = "Added".localized
         }
     }

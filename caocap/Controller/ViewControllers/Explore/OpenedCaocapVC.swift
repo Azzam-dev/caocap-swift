@@ -125,7 +125,7 @@ extension OpenedCaocapVC: CaocapCellDelegate {
         }
         
         let reportAction = UIAlertAction(title: "report", style: .destructive ) { (buttonTapped) in
-            self.prisentReportAlert()
+            self.presentReportAlert()
         }
         
         var orbitingAction = UIAlertAction()
@@ -133,11 +133,11 @@ extension OpenedCaocapVC: CaocapCellDelegate {
         
         if isOrbiting {
             orbitingAction = UIAlertAction(title: "remove from orbit", style: .destructive ) { (buttonTapped) in
-                DataService.instance.addAndReomveFromOrbit(caocapKey: key, remove: true)
+                DataService.instance.addAndRemoveFromOrbit(caocapKey: key, remove: true)
             }
         } else {
             orbitingAction = UIAlertAction(title: "add to orbit", style: .destructive ) { (buttonTapped) in
-                DataService.instance.addAndReomveFromOrbit(caocapKey: key, remove: false)
+                DataService.instance.addAndRemoveFromOrbit(caocapKey: key, remove: false)
             }
         }
         
@@ -159,16 +159,16 @@ extension OpenedCaocapVC: CaocapCellDelegate {
     }
     
     
-    func prisentReportAlert() {
+    func presentReportAlert() {
         
-        let reportAlertConroller = UIAlertController(title: "report", message: "Why are you reporting this caocap ?", preferredStyle: .actionSheet)
+        let reportAlertController = UIAlertController(title: "report", message: "Why are you reporting this caocap ?", preferredStyle: .actionSheet)
         
         let spamAction = UIAlertAction(title: "it's spam", style: .default) { UIAlertAction in
             print("he's spamming his caocap")
             
         }
         
-        let DosenNotWorkAction = UIAlertAction(title: "it's Dosen't work well", style: .default) { UIAlertAction in
+        let doesNotWorkAction = UIAlertAction(title: "it doesn't work well", style: .default) { UIAlertAction in
             print("it has a problem in it")
             
         }
@@ -178,26 +178,26 @@ extension OpenedCaocapVC: CaocapCellDelegate {
             
         }
         
-        let deslikeAction = UIAlertAction(title: "I Just don't like it", style: .default) { UIAlertAction in
+        let dislikeAction = UIAlertAction(title: "I Just don't like it", style: .default) { UIAlertAction in
             print("I don't like it")
             
         }
         
-        let cencelAction = UIAlertAction(title: "cencel", style: .cancel)
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel)
         
-        reportAlertConroller.addAction(spamAction)
-        reportAlertConroller.addAction(falseAction)
-        reportAlertConroller.addAction(DosenNotWorkAction)
-        reportAlertConroller.addAction(deslikeAction)
-        reportAlertConroller.addAction(cencelAction)
+        reportAlertController.addAction(spamAction)
+        reportAlertController.addAction(falseAction)
+        reportAlertController.addAction(doesNotWorkAction)
+        reportAlertController.addAction(dislikeAction)
+        reportAlertController.addAction(cancelAction)
 
 
-        if let popoverController = reportAlertConroller.popoverPresentationController {
+        if let popoverController = reportAlertController.popoverPresentationController {
             popoverController.sourceView = self.view
             popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
         }
         
-        self.present(reportAlertConroller, animated: true)
+        self.present(reportAlertController, animated: true)
     }
     
 }
@@ -213,8 +213,8 @@ extension OpenedCaocapVC: OpenedCaocapCellDelegate {
     }
     
     
-    //this is the share function, when the shareBTN in the opendCaocapVC is pressed it will show the share Viewc Controller
-    func shareBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton) {
+    //this is the share function, when the shareBTN in the openedCaocapVC is pressed it will show the share View Controller
+    func shareBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton) {
         let activityVC = UIActivityViewController(activityItems: ["https://caocap.app"], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
         
@@ -223,8 +223,8 @@ extension OpenedCaocapVC: OpenedCaocapCellDelegate {
     }
     
     
-    //this is the more info function, when the moreBTN in the opendCaocapCell is pressed it will display Alert controller with more functions
-    func moreBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton) {
+    //this is the more info function, when the moreBTN in the openedCaocapCell is pressed it will display Alert controller with more functions
+    func moreBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton) {
         let moreInfoPopup = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let visitOwnerACT = UIAlertAction(title: openedCaocap?.name, style: .default ) { (buttonTapped) in
             //FIXME: عند اختيار هذا الخيار يجب ارسال المستخدم الى صفحة صاحب الكوكب
@@ -243,8 +243,8 @@ extension OpenedCaocapVC: OpenedCaocapCellDelegate {
         
     }
     
-    //this is the room function, when the roomBTN in the opendCaocapVC is pressed it will
-    func roomBTNpressed(cell: OpenedCaocapCell, didTappedshow button: UIButton) {
+    //this is the room function, when the roomBTN in the openedCaocapVC is pressed it will
+    func roomBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton) {
         let storyboard = UIStoryboard(name: "Chat", bundle: nil)
         let caocapRoomVC = storyboard.instantiateViewController(withIdentifier: "caocapRoomVC") as! CaocapRoomVC
         caocapRoomVC.openedCaocap = openedCaocap

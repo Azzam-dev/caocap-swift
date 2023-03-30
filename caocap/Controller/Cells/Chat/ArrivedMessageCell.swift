@@ -12,7 +12,7 @@ class ArrivedMessageCell: UITableViewCell {
     
     
     @IBOutlet weak var profileIMG: DesignableImage!
-    @IBOutlet weak var pofileIMGview: DesignableView!
+    @IBOutlet weak var profileIMGview: DesignableView!
     @IBOutlet weak var usernameLBL: UILabel!
     @IBOutlet weak var timeLBL: UILabel!
     @IBOutlet weak var messageLBL: UILabel!
@@ -27,9 +27,9 @@ class ArrivedMessageCell: UITableViewCell {
         }
         
         if case 0...5 = message.color {
-            pofileIMGview.borderColor = colorArray[message.color]
+            profileIMGview.borderColor = colorArray[message.color]
         } else {
-            pofileIMGview.borderColor = colorArray[3]
+            profileIMGview.borderColor = colorArray[3]
         }
         usernameLBL.text = message.username
         usernameLBL.textColor = colorArray[message.color]
