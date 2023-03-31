@@ -160,7 +160,6 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     
     @IBOutlet weak var groupIMGview: DesignableView!
     @IBOutlet weak var groupIMG: DesignableImage!
-    let colorArray = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.6391159892, blue: 0, alpha: 1), #colorLiteral(red: 0.3846503198, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), #colorLiteral(red: 0.8861780167, green: 0, blue: 1, alpha: 1), #colorLiteral(red: 0.9175696969, green: 0.9176983237, blue: 0.9175290465, alpha: 1)]
     
     var groupMembersSearchArray = [User]()
     var groupSelectedMembersArray = [String]()
@@ -183,7 +182,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         UIView.animate(withDuration: 0.3 , animations: {
             previousConstraint.constant = 15
             selectedConstraint.constant = 20
-            self.groupIMGview.borderColor = self.colorArray[self.groupColorSelectedIndex]
+            self.groupIMGview.borderColor = colorArray[self.groupColorSelectedIndex]
             self.view.layoutIfNeeded()
         }, completion: {(finished:Bool) in
             

@@ -24,7 +24,6 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
     
     
     var colorSelectedIndex: Int = Int.random(in: 0 ... 5)
-    let colorArray = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.6391159892, blue: 0, alpha: 1), #colorLiteral(red: 0.3846503198, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), #colorLiteral(red: 0.8861780167, green: 0, blue: 1, alpha: 1), #colorLiteral(red: 0.9175696969, green: 0.9176983237, blue: 0.9175290465, alpha: 1)]
     @IBOutlet var constraintsArray: [NSLayoutConstraint]!
     @IBOutlet var colorBTNs: [UIButton]!
     @IBAction func colorBTNpressed(_ sender: UIButton) {
@@ -36,7 +35,7 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
         UIView.animate(withDuration: 0.3 , animations: {
             previousConstraint.constant = 15
             selectedConstraint.constant = 20
-            self.userIMGview.borderColor = self.colorArray[self.colorSelectedIndex]
+            self.userIMGview.borderColor = colorArray[self.colorSelectedIndex]
             self.view.layoutIfNeeded()
         })
     }
