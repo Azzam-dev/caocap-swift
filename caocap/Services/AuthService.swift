@@ -12,6 +12,11 @@ import Firebase
 class AuthService {
     static let instance = AuthService()
     
+    func currentUser() -> FirebaseAuth.User? {
+        return Auth.auth().currentUser
+    }
+    
+    
     func registerUser(withUsername username: String , Email email: String , andPassword password: String , userCreationComplete: @escaping (_ status: Bool , _ error: Error?) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             guard let user = authResult?.user else {
@@ -35,6 +40,14 @@ class AuthService {
             }
             loginComplete(true, nil)
             
+        }
+    }
+    
+    func logout() throws {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("error: failed to log out the user", error.localizedDescription)
         }
     }
     

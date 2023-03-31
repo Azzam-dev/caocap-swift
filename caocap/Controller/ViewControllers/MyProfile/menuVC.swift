@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 enum MenuType {
     case mainAccount
@@ -60,7 +59,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         let logoutPopup = UIAlertController(title: "sign out".localized, message: "Do you want to logout ?".localized, preferredStyle: .actionSheet)
         let logoutAction = UIAlertAction(title: "yes".localized, style: .destructive ) { (buttonTapped) in
             do {
-                try Auth.auth().signOut()
+                try AuthService.instance.logout()
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 let authVC = storyboard.instantiateViewController(withIdentifier: "auth") as? AuthVC
                 authVC!.modalPresentationStyle = .fullScreen
@@ -83,6 +82,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
         self.present(logoutPopup, animated: true , completion: nil)
         
     }
+    
     func menuCAOCAP(template: MenuType) {
         let storyboardSettings = UIStoryboard(name: "UserProfile", bundle: nil)
         let settingsVC = storyboardSettings.instantiateViewController(withIdentifier: "menu") as! MenuVC
@@ -97,7 +97,7 @@ class MenuVC: UIViewController , UITableViewDelegate, UITableViewDataSource {
     }
 
     func sendMessageToEmail() {
-        let userEmail = Auth.auth().currentUser?.email
+        let userEmail = AuthService.instance.currentUser()?.email
         let alert = UIAlertController(title: "are you sure?".localized, message: "If you press yes, a message will be sent to your email to change the password".localized, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "yes".localized, style: .default, handler: { action in
             AuthService.instance.resetPassword(withEmail: userEmail!) { status, error in

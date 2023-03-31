@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+import UIKit //TODO: Refactor { this is a network service file, it should not need to import UIKit }
 import Firebase
 import Alamofire
 import AlamofireImage
@@ -77,7 +77,7 @@ class DataService {
         handler(true)
     }
     
-    
+    //TODO: Refactor is needed here { the caocap creation and the image upload should not be coupled }
     func createCaocap(withName name: String, image: UIImage, color: Int, handler: @escaping (_ createdCaocap: Caocap?) -> ()) {
         guard let currentUserUID = Auth.auth().currentUser?.uid else {
             handler(nil)

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class AuthVC: UIViewController {
     
@@ -24,7 +23,7 @@ class AuthVC: UIViewController {
     @IBOutlet weak var sendToEmailView: UIStackView!
     
     override func viewDidLoad() {
-
+        
         explainLabel.text = "will be sent message to your email to retrieve your password.".localized
         checkYourMail.text = "Check Your Mail".localized
         checkContentMessage.text = "We have sent a password recover instructions to your email.".localized
@@ -56,8 +55,7 @@ class AuthVC: UIViewController {
     }
     
     func signIn() {
-        let isEmailAddressValid = isValidEmailAddress(emailAddressString: emailTF.text!)
-        if isEmailAddressValid {
+        if isValidEmailAddress(emailTF.text!) {
             //Email address is valid
             if passwordTF.text != "" {
                 loginUser()
@@ -74,8 +72,7 @@ class AuthVC: UIViewController {
     
     func signUp() {
         if usernameTF.text != "" {
-            let isEmailAddressValid = isValidEmailAddress(emailAddressString: emailTF.text!)
-            if isEmailAddressValid {
+            if isValidEmailAddress(emailTF.text!) {
                 //Email address is valid
                 if passwordTF.text != "" {
                     registerUser()
@@ -95,8 +92,7 @@ class AuthVC: UIViewController {
     }
     
     func send() {
-        let isEmailAddressValid = isValidEmailAddress(emailAddressString: emailTF.text!)
-        if isEmailAddressValid {
+        if isValidEmailAddress(emailTF.text!) {
             forgetPassworded()
         } else {
             displayAlertMessage("Please check your email".localized, in: self)
@@ -175,11 +171,12 @@ class AuthVC: UIViewController {
         })
         
     }
-//    FP is means Forget Password
+    
+    //TODO: Refactor { there is some repeated code }
     func rocketLaunchAnimationForFP() {
         rocketLaunchView.isHidden = false
         sendToEmailView.isHidden = false
-        UIView.animate(withDuration: 0.8,delay: 0,options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0, options: .curveEaseInOut, animations: {
             self.sendToEmailView.alpha = 1
             self.signBTN.alpha = 0
             self.signSwitchBTN.alpha = 0
@@ -187,7 +184,7 @@ class AuthVC: UIViewController {
             self.rocketLaunchView.frame.origin.y = ( 270 - self.view.frame.size.height )
             self.view.layoutIfNeeded()
         },completion: { finished in
-            UIView.animate(withDuration: 0.8,delay: 5, animations: {
+            UIView.animate(withDuration: 0.8, delay: 5, animations: {
                 self.signBTN.alpha = 1
                 self.signSwitchBTN.alpha = 1
                 self.switchLBL.alpha = 1
@@ -198,7 +195,7 @@ class AuthVC: UIViewController {
         )
     }
     
-
+    
     @IBOutlet weak var forgetPassword: UIButton!
     @IBAction func forgetPassword(_ sender: Any) {
         forgetPassword.isHidden = true
@@ -234,28 +231,6 @@ class AuthVC: UIViewController {
             signSwitchBTN.setTitle("sign up".localized, for: .normal)
             
         }
-    }
-    
-    func isValidEmailAddress(emailAddressString: String) -> Bool {
-        
-        var returnValue = true
-        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
-        
-        do {
-            let regex = try NSRegularExpression(pattern: emailRegEx)
-            let nsString = emailAddressString as NSString
-            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
-            
-            if results.count == 0 {
-                returnValue = false
-            }
-            
-        } catch let error as NSError {
-            print("invalid regex: \(error.localizedDescription)")
-            returnValue = false
-        }
-        
-        return  returnValue
     }
     
     private func dismissVC() {

@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Firebase
-import IQKeyboardManagerSwift
 
 class GroupChatVC: UIViewController {
     
@@ -20,8 +18,9 @@ class GroupChatVC: UIViewController {
     @IBOutlet weak var groupNameLBL: UILabel!
     @IBOutlet weak var groupIMG: DesignableImage!
     @IBOutlet weak var groupIMGview: DesignableView!
+    
     @IBAction func groupPageBTN(_ sender: Any) {
-        //send the user to the group profile page @_@
+        //TODO: send the user to the group profile page
     }
     
     override func viewDidLoad() {
@@ -37,13 +36,10 @@ class GroupChatVC: UIViewController {
         
         getChatData()
         
-        //keyboard issue:
-        //This triggers a keyboardWillShow
-        NotificationCenter.default.addObserver(self,selector: #selector(keyboardWillShow),name: UIResponder.keyboardWillShowNotification,object: nil)
     }
     
     
-    //this gets the chat messages and inputs them to the messages array and relouds the messages TableView
+    //this gets the chat messages and inputs them to the messages array and reloads the messages TableView
     func getChatData() {
         guard let chat = openedChat else { return }
         DataService.instance.getChatMessages(forChatKey: chat.key) { (returnedMessagesArray) in
@@ -87,21 +83,7 @@ class GroupChatVC: UIViewController {
     }
     
     
-    //keyboard issue:
-    //this solves the keyboard distance from the TextField issue in the ChatVC
-    //By checking the height of the keyboard and determining the distance between it and the text field
-    //that is because the height of the iPhone X keyboard is different from previous versions
-    @objc func keyboardWillShow(_ notification: Notification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            let keyboardRectangle = keyboardFrame.cgRectValue
-            let keyboardHeight = keyboardRectangle.height
-            if keyboardHeight > 300 {
-                IQKeyboardManager.shared.keyboardDistanceFromTextField = 26
-            } else {
-                IQKeyboardManager.shared.keyboardDistanceFromTextField = 60
-            }
-        }
-    }
+    
     
 }
 
@@ -118,7 +100,7 @@ extension GroupChatVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messagesArray[indexPath.row]
-        let currentUserUID = (Auth.auth().currentUser?.uid)!
+        let currentUserUID = AuthService.instance.currentUser()?.uid
         if message.senderUid == currentUserUID {
             guard let cell = messagesTableView.dequeueReusableCell(withIdentifier: "sentMessageCell", for: indexPath) as? SentMessageCell else { return UITableViewCell() }
             

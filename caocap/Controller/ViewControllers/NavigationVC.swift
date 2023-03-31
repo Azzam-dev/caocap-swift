@@ -8,7 +8,6 @@
 
 import UIKit
 import ReSwift
-import Firebase
 
 
 class NavigationVC: UIViewController , UINavigationControllerDelegate {
@@ -20,7 +19,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     var navigationControllers: [UINavigationController]!
     var navSelectedIndex: Int = 0
     
-    //this is used for the revealing splash animtion
+    //this is used for the revealing splash animation
     let revealingSplashView = RevealingSplashView(iconImage: UIImage(named : "caocap app icon" )!, iconInitialSize: CGSize(width: 120, height: 120) , backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) )
     
     
@@ -277,6 +276,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         }
     }
     
+    //TODO: I think there is more work to do here
     func checkNetworkStatus() {
         //check if the Network is available if not present a message requesting a network connection
         if Reachability()!.connection == .none {

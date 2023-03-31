@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 /* Declare a Delegate Protocol method */
 protocol OpenedCaocapCellDelegate: AnyObject {

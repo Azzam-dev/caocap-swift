@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+
 
 class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
@@ -20,7 +20,7 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
         super.viewDidLoad()
         
         UIView.appearance().semanticContentAttribute = .forceLeftToRight
-
+        
         
         chatsTableView.contentInset.top = 45
         groupMembersSearchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
@@ -225,12 +225,15 @@ class ChatVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDele
     
     @IBOutlet weak var createGroupBTN: UIButton!
     @IBAction func createGroupBTN(_ sender: Any) {
+        
         if groupNameTF.text == "" {
             displayAlertMessage("فضلا حدد اسم للمجموعة".localized, in: self)
         } else {
+            guard let currentUser = AuthService.instance.currentUser() else { return }
+            
             DataService.instance.getUIDs(forUsername: groupSelectedMembersArray) { (idsArray) in
                 var members = idsArray
-                members.append((Auth.auth().currentUser?.uid)!)
+                members.append(currentUser.uid)
                 let imageNameUID = NSUUID().uuidString
                 let storageRef = DataService.instance.REF_GROUP_IMAGES.child("\(imageNameUID).jpeg")
                 if let uploadData = self.groupIMG.image?.jpegData(compressionQuality: 0.2) {
@@ -318,7 +321,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
                 
                 //This recognizes the contact UID by getting the current user UID and filtering it from the members array
                 //than uses the contactUID to get his data to fill the cell
-                if let currentUserUID = Auth.auth().currentUser?.uid {
+                if let currentUserUID = AuthService.instance.currentUser()?.uid {
                     let contactUID = chat.members.filter({ $0 != currentUserUID })
                     DataService.instance.REF_USERS.child(contactUID[0]).observeSingleEvent(of: .value, with: { (userDataSnapshot) in
                         // Get user value
@@ -408,10 +411,11 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource {
             }
         } else {
             guard let cell = tableView.cellForRow(at: indexPath) as? ContactUserCell else { return }
+            guard let currentUser = AuthService.instance.currentUser() else { return }
             
             DataService.instance.getUIDs(forUsername: [cell.usernameLBL.text!]) { (idsArray) in
                 var userIds = idsArray
-                userIds.append((Auth.auth().currentUser?.uid)!)
+                userIds.append(currentUser.uid)
                 DataService.instance.createNewContact(withUserIDs: userIds, andChatType: "contact", handler: { (newContactCreated) in
                     if newContactCreated {
                         self.contactPopupViewACTs(self)

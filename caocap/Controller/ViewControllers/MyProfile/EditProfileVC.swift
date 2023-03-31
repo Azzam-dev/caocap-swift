@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
@@ -22,7 +21,7 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
     
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var phoneNumTF: UITextField!
-
+    
     
     var colorSelectedIndex: Int = Int.random(in: 0 ... 5)
     let colorArray = [#colorLiteral(red: 1, green: 0, blue: 0, alpha: 1), #colorLiteral(red: 1, green: 0.6391159892, blue: 0, alpha: 1), #colorLiteral(red: 0.3846503198, green: 1, blue: 0, alpha: 1), #colorLiteral(red: 0, green: 0.6544699669, blue: 1, alpha: 1), #colorLiteral(red: 0.8861780167, green: 0, blue: 1, alpha: 1), #colorLiteral(red: 0.9175696969, green: 0.9176983237, blue: 0.9175290465, alpha: 1)]
@@ -103,74 +102,51 @@ class EditProfileVC: UIViewController , UIImagePickerControllerDelegate , UINavi
         saveBTN.setTitle("loading...".localized,for: .normal)
         saveBTN.isEnabled = false
         saveBTN.alpha = 0.5
-
-        if let currentUser = Auth.auth().currentUser?.uid {
-            if usernameTF.text != "" {
-                let isEmailAddressValid = isValidEmailAddress(emailAddressString: emailTF.text!)
-                if isEmailAddressValid {
-                    
-                    let storageRef = DataService.instance.REF_PROFILE_IMAGES.child("\(currentUser).jpg")
-                    if let uploadData = self.userIMG.image?.jpegData(compressionQuality: 0.2) {
-                        storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
-                            
-                             if error != nil { print(error!) }
-                            
-                            storageRef.downloadURL(completion: { url, error in
-                                if error != nil { print(error!) } else {
-                                    // Here you can get the download URL for 'simpleImage.jpg'
-                                    let userData = ["imageURL": url?.absoluteString ?? "",
-                                                    "color": self.colorSelectedIndex,
-                                                    "username" : self.usernameTF.text!,
-                                                    "name": self.nameTF.text!,
-                                                    "bio": self.bioTextView.text!,
-                                                    "website": self.websiteTF.text!,
-                                                    "email" : self.emailTF.text!,
-                                                    "phoneNumber": self.phoneNumTF.text!,
-                                                    "gender": "Male" ] as [String : Any]
-                                    DataService.instance.updateUserData(uid: currentUser , userData: userData)
-                                    self.navigationController?.popViewController(animated: true)
-                                    
-                                }
-                            })
-                        })
-                    }
-                } else {
-                    //"Email address is not valid
-                    displayAlertMessage("الرجاء التحقق من البريد الالكتروني".localized, in: self)
-                    self.saveBTN.isEnabled = true
-                    self.saveBTN.setTitle("save".localized,for: .normal)
-                    self.saveBTN.alpha = 1
-                }
+        
+        guard let currentUser = AuthService.instance.currentUser() else { return }
+        if usernameTF.text != "" {
+            if isValidEmailAddress(emailTF.text!) {
                 
+                let storageRef = DataService.instance.REF_PROFILE_IMAGES.child("\(currentUser.uid).jpg")
+                if let uploadData = self.userIMG.image?.jpegData(compressionQuality: 0.2) {
+                    storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                        
+                        if error != nil { print(error!) }
+                        
+                        storageRef.downloadURL(completion: { url, error in
+                            if error != nil { print(error!) } else {
+                                // Here you can get the download URL for 'simpleImage.jpg'
+                                let userData = ["imageURL": url?.absoluteString ?? "",
+                                                "color": self.colorSelectedIndex,
+                                                "username" : self.usernameTF.text!,
+                                                "name": self.nameTF.text!,
+                                                "bio": self.bioTextView.text!,
+                                                "website": self.websiteTF.text!,
+                                                "email" : self.emailTF.text!,
+                                                "phoneNumber": self.phoneNumTF.text!,
+                                                "gender": "Male" ] as [String : Any]
+                                DataService.instance.updateUserData(uid: currentUser.uid , userData: userData)
+                                self.navigationController?.popViewController(animated: true)
+                                
+                            }
+                        })
+                    })
+                }
             } else {
-                displayAlertMessage("فضلا ادخل اسم المستخدم".localized, in: self)
+                //"Email address is not valid
+                displayAlertMessage("الرجاء التحقق من البريد الالكتروني".localized, in: self)
                 self.saveBTN.isEnabled = true
                 self.saveBTN.setTitle("save".localized,for: .normal)
                 self.saveBTN.alpha = 1
             }
-        }
-    }
-    
-    func isValidEmailAddress(emailAddressString: String) -> Bool {
-        var returnValue = true
-        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
-        
-        do {
-            let regex = try NSRegularExpression(pattern: emailRegEx)
-            let nsString = emailAddressString as NSString
-            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
             
-            if results.count == 0
-            {
-                returnValue = false
-            }
-            
-        } catch let error as NSError {
-            print("invalid regex: \(error.localizedDescription)")
-            returnValue = false
+        } else {
+            displayAlertMessage("فضلا ادخل اسم المستخدم".localized, in: self)
+            self.saveBTN.isEnabled = true
+            self.saveBTN.setTitle("save".localized,for: .normal)
+            self.saveBTN.alpha = 1
         }
         
-        return  returnValue
     }
     
 }

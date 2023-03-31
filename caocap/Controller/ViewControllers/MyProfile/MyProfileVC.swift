@@ -9,7 +9,6 @@
 
 import UIKit
 import SwiftUI
-import Firebase
 
 class MyProfileVC: UIViewController {
     @IBOutlet weak var profileCollectionView: UICollectionView!

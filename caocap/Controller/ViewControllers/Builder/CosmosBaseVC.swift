@@ -9,7 +9,6 @@
 import UIKit
 import SwiftUI
 import ReSwift
-import Firebase
 
 class CosmosBaseVC: UIViewController {
     
