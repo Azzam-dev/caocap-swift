@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KjF-rf-QBS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KjF-rf-QBS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,10 +13,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--ChatVC-->
+        <!--Chats ListVC-->
         <scene sceneID="gHP-8D-xZt">
             <objects>
-                <viewController storyboardIdentifier="chat" id="KjF-rf-QBS" customClass="ChatVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chat" id="KjF-rf-QBS" customClass="ChatsListVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1IP-4L-NdV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,7 +108,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:32 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoD-D0-cIJ">
-                                                            <rect key="frame" x="324" y="5" width="60" height="12.5"/>
+                                                            <rect key="frame" x="324" y="5" width="60" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="8I4-Y1-0Gg"/>
                                                             </constraints>
@@ -297,7 +297,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:32 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0C-GI-ii6">
-                                                            <rect key="frame" x="324" y="5" width="60" height="12.5"/>
+                                                            <rect key="frame" x="324" y="5" width="60" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="cEV-SO-H5e"/>
                                                             </constraints>
@@ -490,7 +490,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:32 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTR-uZ-gbR">
-                                                            <rect key="frame" x="324" y="5" width="60" height="12.5"/>
+                                                            <rect key="frame" x="324" y="5" width="60" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="UUb-Hu-RUa"/>
                                                             </constraints>
@@ -1150,16 +1150,16 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yEa-fu-u2F">
-                                                                    <rect key="frame" x="60" y="8" width="138" height="35"/>
+                                                                    <rect key="frame" x="60" y="8" width="138.5" height="39.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fxb-L0-q59">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="138" height="17.5"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="138.5" height="20"/>
                                                                             <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="17"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="the name of the user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qrm-WQ-Ta4">
-                                                                            <rect key="frame" x="0.0" y="19.5" width="138" height="15.5"/>
+                                                                            <rect key="frame" x="0.0" y="22" width="138.5" height="17.5"/>
                                                                             <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="15"/>
                                                                             <color key="textColor" white="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <nil key="highlightedColor"/>
@@ -1243,7 +1243,7 @@
                                 <rect key="frame" x="-493" y="0.0" width="1400" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCC-UN-Dye">
-                                        <rect key="frame" x="676.5" y="48" width="47.5" height="50"/>
+                                        <rect key="frame" x="675.5" y="48" width="49" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="NWR-ch-0eb"/>
                                         </constraints>
@@ -1317,7 +1317,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="search..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1W-3Y-d04">
-                                        <rect key="frame" x="45" y="11.5" width="284" height="22"/>
+                                        <rect key="frame" x="45" y="10" width="284" height="25"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -2514,7 +2514,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ec0-BF-TcU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="2247"/>
+            <point key="canvasLocation" x="691" y="1531"/>
         </scene>
         <!--Group ChatVC-->
         <scene sceneID="WjI-Ar-BDg">
@@ -3051,7 +3051,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iuF-IG-bCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="2985"/>
+            <point key="canvasLocation" x="1336" y="1531"/>
         </scene>
     </scenes>
     <designables>
@@ -3074,7 +3074,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="L7x-Ny-edp">
-            <size key="intrinsicContentSize" width="55" height="33"/>
+            <size key="intrinsicContentSize" width="56" height="36"/>
         </designable>
         <designable name="M6e-gp-zXn">
             <size key="intrinsicContentSize" width="1000" height="1000"/>
@@ -3138,7 +3138,7 @@
         <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
-        <image name="speaker.slash.fill" catalog="system" width="118" height="128"/>
         <image name="speaker.slash.fill" width="128" height="128"/>
+        <image name="speaker.slash.fill" catalog="system" width="118" height="128"/>
     </resources>
 </document>

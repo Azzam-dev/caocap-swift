@@ -8,27 +8,10 @@
 
 import UIKit
 
-class CaocapRoomVC: UIViewController {
-    
-    @IBOutlet weak var messagesTableView: UITableView!
-    var openedCaocap: Caocap?
-    var messagesArray = [Message]()
-    
-    @IBOutlet weak var roomNameLBL: UILabel!
-    @IBOutlet weak var roomIMG: DesignableImage!
-    @IBOutlet weak var roomIMGview: DesignableView!
-    
-    @IBAction func caocapBTN(_ sender: Any) {
-        //TODO: send the user to the caocap page
-    }
+class CaocapRoomVC: ChatVC {
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        messagesTableView.delegate = self
-        messagesTableView.dataSource = self
-    }
+    var openedCaocap: Caocap? //TODO: determine if we should use this or something else 
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,22 +22,21 @@ class CaocapRoomVC: UIViewController {
     
     
     //this gets the room messages and inputs them to the messages array and reloads the messages TableView
-    func getRoomData() {
+    func getRoomData() { //TODO: we should start using the chat object not the caocap
         guard let caocap = openedCaocap else { return }
         DataService.instance.getCaocapRoomMessages(forCaocapKey: caocap.key) { (returnedMessagesArray) in
             self.messagesArray = returnedMessagesArray
             self.messagesTableView.reloadData()
         }
-        roomNameLBL.text = caocap.name
-        roomIMGview.borderColor = colorArray[caocap.color]
+        chatTitle.text = caocap.name
+        chatImageView.borderColor = colorArray[caocap.color]
         if let imageURL = URL(string: caocap.imageURL ?? "" ) {
-            roomIMG.af.setImage(withURL: imageURL)
+            chatImage.af.setImage(withURL: imageURL)
         }
     }
     
     
-    @IBOutlet weak var messageTF: UITextField!
-    @IBOutlet weak var sendBTN: UIButton!
+    
     @IBAction func sendBTN(_ sender: Any) {
         if messageTF.text != "" {
             sendBTN.isEnabled = false
@@ -83,38 +65,5 @@ class CaocapRoomVC: UIViewController {
     
 }
 
-extension CaocapRoomVC: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messagesArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = messagesArray[indexPath.row]
-        let currentUserUID = AuthService.instance.currentUser()?.uid
-        if message.senderUid == currentUserUID {
-            guard let cell = messagesTableView.dequeueReusableCell(withIdentifier: "sentMessageCell", for: indexPath) as? SentMessageCell else { return UITableViewCell() }
-            
-            cell.configureCell(message: message)
-            
-            return cell
-        } else {
-            guard let cell = messagesTableView.dequeueReusableCell(withIdentifier: "arrivedMessageCell", for: indexPath) as? ArrivedMessageCell else { return UITableViewCell() }
-            
-            cell.configureCell(message: message)
-            
-            return cell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-    
-    
-}
+
 

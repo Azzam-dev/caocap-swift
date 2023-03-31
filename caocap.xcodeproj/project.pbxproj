@@ -10,6 +10,7 @@
 		2147CCEA27D0A39B0008AD4C /* OWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCE927D0A39B0008AD4C /* OWrapper.m */; };
 		2147CCEC27D0A8F40008AD4C /* OService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCEB27D0A8F40008AD4C /* OService.swift */; };
 		2147CCEE27D1F6720008AD4C /* ChangeLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147CCED27D1F6720008AD4C /* ChangeLanguageCell.swift */; };
+		219CF2B029D7852D0019F381 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219CF2AF29D7852D0019F381 /* ChatVC.swift */; };
 		21B4129327F21B5C00FB272C /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B4129227F21B5C00FB272C /* GradientView.swift */; };
 		21B412AA27F4E8A600FB272C /* BackgroundStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B412A927F4E8A600FB272C /* BackgroundStyleCell.swift */; };
 		21B412AD27F93DBA00FB272C /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 21B412AC27F93DBA00FB272C /* SwiftSoup */; };
@@ -120,7 +121,7 @@
 		EC6AB852215D8F4B00C276E3 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6AB851215D8F4B00C276E3 /* DataService.swift */; };
 		EC6EE2842323D3180069F488 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6EE2832323D3180069F488 /* MenuCell.swift */; };
 		EC70ACEC215D6954004C16D2 /* ExploreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACEB215D6954004C16D2 /* ExploreVC.swift */; };
-		EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACEF215D69A6004C16D2 /* ChatVC.swift */; };
+		EC70ACF0215D69A6004C16D2 /* ChatsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACEF215D69A6004C16D2 /* ChatsListVC.swift */; };
 		EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */; };
 		EC70ACF9215D8B9D004C16D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */; };
 		EC84070624680C2200223FB1 /* Builder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC84070524680C2200223FB1 /* Builder.storyboard */; };
@@ -175,6 +176,7 @@
 		2147CCE927D0A39B0008AD4C /* OWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OWrapper.m; sourceTree = "<group>"; };
 		2147CCEB27D0A8F40008AD4C /* OService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OService.swift; sourceTree = "<group>"; };
 		2147CCED27D1F6720008AD4C /* ChangeLanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageCell.swift; sourceTree = "<group>"; };
+		219CF2AF29D7852D0019F381 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		21B4129227F21B5C00FB272C /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		21B412A927F4E8A600FB272C /* BackgroundStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundStyleCell.swift; sourceTree = "<group>"; };
 		21C2FA1D27EB7DB9005630B2 /* LogicNodeTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogicNodeTypeCell.swift; sourceTree = "<group>"; };
@@ -319,7 +321,7 @@
 		EC6AB851215D8F4B00C276E3 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		EC6EE2832323D3180069F488 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		EC70ACEB215D6954004C16D2 /* ExploreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreVC.swift; sourceTree = "<group>"; };
-		EC70ACEF215D69A6004C16D2 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		EC70ACEF215D69A6004C16D2 /* ChatsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsListVC.swift; sourceTree = "<group>"; };
 		EC70ACF3215D69C4004C16D2 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		EC70ACF8215D8B9C004C16D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC84070524680C2200223FB1 /* Builder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Builder.storyboard; sourceTree = "<group>"; };
@@ -720,13 +722,13 @@
 		EC8E19442159E02A000E4EE6 /* caocap */ = {
 			isa = PBXGroup;
 			children = (
-				21D7092929D6A48C0056F3B0 /* Constance */,
 				EC6109D62646DAB500E760CD /* Redux */,
 				EC70ACF5215D87F9004C16D2 /* Model */,
 				EC1C8B0A25D6BBF200CC8A0E /* View */,
 				EC1C8B0925D6BBBD00CC8A0E /* Controller */,
 				EC70ACF7215D8856004C16D2 /* Services */,
 				EC8E1976215A00A8000E4EE6 /* Extensions */,
+				21D7092929D6A48C0056F3B0 /* Constance */,
 				4E9FCE6C27B6E1170091BD33 /* Localizable */,
 				EC2F25002168FFD400D14733 /* fonts */,
 				25E50F6927BE498400906E4A /* src */,
@@ -807,10 +809,11 @@
 		EC8FFC072463BDD6004F37F0 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				EC70ACEF215D69A6004C16D2 /* ChatVC.swift */,
+				EC70ACEF215D69A6004C16D2 /* ChatsListVC.swift */,
+				219CF2AF29D7852D0019F381 /* ChatVC.swift */,
 				ECAD479A21C79156000E16DC /* ContactChatVC.swift */,
-				DB859CD127A80E3400150CBA /* CaocapRoomVC.swift */,
 				EC3F6D92234F81DF007DD028 /* GroupChatVC.swift */,
+				DB859CD127A80E3400150CBA /* CaocapRoomVC.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1038,7 +1041,7 @@
 				21C2FA2027EB7EA6005630B2 /* LogicNodeService.swift in Sources */,
 				25E50FC927BE498400906E4A /* llex.c in Sources */,
 				EC5107AA266BB334000DB190 /* EditTitleStylesCell.swift in Sources */,
-				EC70ACF0215D69A6004C16D2 /* ChatVC.swift in Sources */,
+				EC70ACF0215D69A6004C16D2 /* ChatsListVC.swift in Sources */,
 				EC5238DC2190834200D966F3 /* ContactChatCell.swift in Sources */,
 				EC70ACF4215D69C4004C16D2 /* MyProfileVC.swift in Sources */,
 				ECF63E9221C0D9DF00E491FE /* Caocap.swift in Sources */,
@@ -1108,6 +1111,7 @@
 				ECE29FFE25208E2100EFF8B4 /* CircleImage.swift in Sources */,
 				EC2F25072169C47F00D14733 /* EditProfileVC.swift in Sources */,
 				4E8AEF8B2404FA92004B4F37 /* Reachability.swift in Sources */,
+				219CF2B029D7852D0019F381 /* ChatVC.swift in Sources */,
 				4E0E42D524651F9A00522B2F /* TestLabVC.swift in Sources */,
 				ECA3F3A123DBFD8A00BAB6AF /* BuilderVC.swift in Sources */,
 				EC8E19462159E02A000E4EE6 /* AppDelegate.swift in Sources */,

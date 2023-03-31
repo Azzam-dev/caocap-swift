@@ -1,0 +1,436 @@
+//
+//  ChatsListVC.swift
+//  caocap
+//
+//  Created by Azzam AL-Rashed on 17/01/1440 AH.
+//  Copyright © 1440 Ficruty. All rights reserved.
+//
+
+import UIKit
+
+class ChatsListVC: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+    
+    @IBOutlet weak var chatsTableView: UITableView!
+    @IBOutlet weak var searchTF: UITextField!
+    var chatsArray = [Chat]()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        UIView.appearance().semanticContentAttribute = .forceLeftToRight
+        
+        
+        chatsTableView.contentInset.top = 45
+        groupMembersSearchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+        groupIMG.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(changeGroupImage)))
+        
+        
+        contactSearchTF.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getChatsData()
+    }
+    
+    
+    //This pulls all the current user chats from firebase and insert them to the chats array
+    func getChatsData() {
+        DataService.instance.getCurrentUserChats(handler: { (returnedChatArray) in
+            self.chatsArray = returnedChatArray
+            self.chatsTableView.reloadData()
+        })
+    }
+    
+    
+    //this uses the textfield to search
+    @objc func  textFieldDidChange() {
+        // search current user chats
+        if searchTF.text == "" {
+            DataService.instance.getCurrentUserChats(handler: { (returnedChatArray) in
+                print("@@@ \(returnedChatArray)")
+                self.chatsArray = returnedChatArray
+                self.chatsTableView.reloadData()
+            })
+        } else {
+            DataService.instance.getCurrentUserChatsQuery(forSearchQuery: searchTF.text!) { (returnedChatArray) in
+                self.chatsArray = returnedChatArray
+                self.chatsTableView.reloadData()
+            }
+        }
+        
+        // search in group Members Array
+        if groupMembersSearchTF.text == "" {
+            DataService.instance.getAllUsers(handler: { (returnedGroupMembersArray) in
+                self.groupMembersSearchArray = returnedGroupMembersArray
+                self.groupMembersTableView.reloadData()
+            })
+        } else {
+            DataService.instance.getUsernameQuery(forSearchQuery: groupMembersSearchTF.text!) { (returnedGroupMembersArray) in
+                self.groupMembersSearchArray = returnedGroupMembersArray
+                self.groupMembersTableView.reloadData()
+            }
+        }
+        
+        // search in contact Array
+        if contactSearchTF.text == "" {
+            DataService.instance.getAllUsers(handler: { (returnedContactsArray) in
+                self.contactSearchArray = returnedContactsArray
+                self.contactTableView.reloadData()
+            })
+        } else {
+            DataService.instance.getUsernameQuery(forSearchQuery: contactSearchTF.text!) { (returnedContactsArray) in
+                self.contactSearchArray = returnedContactsArray
+                self.contactTableView.reloadData()
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func addChatBTN(_ sender: Any) {
+        let createNewPopup = UIAlertController(title: "create".localized, message: "What do you want to create?".localized, preferredStyle: .actionSheet)
+        let newGroupAct = UIAlertAction(title: "group".localized, style: .default) { (buttonTapped) in
+            self.groupPopupViewACTs(self)
+        }
+        let newContactAct = UIAlertAction(title: "contact".localized, style: .default) { (buttonTapped) in
+            self.contactPopupViewACTs(self)
+        }
+        let cancel = UIAlertAction(title: "cancel".localized, style: .destructive , handler: nil)
+        
+        createNewPopup.addAction(newContactAct)
+        createNewPopup.addAction(newGroupAct)
+        createNewPopup.addAction(cancel)
+        
+        if let popoverPresentationController = createNewPopup.popoverPresentationController {
+            popoverPresentationController.sourceView = self.view
+            popoverPresentationController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverPresentationController.permittedArrowDirections = []
+        }
+        self.present(createNewPopup, animated: true , completion: nil)
+        
+    }
+    
+    @IBOutlet weak var groupPopupView: DesignableView!
+    @IBOutlet weak var contactPopupView: DesignableView!
+    @IBOutlet weak var blurredView: UIVisualEffectView!
+    @IBOutlet weak var cancelPopupsBTN: UIButton!
+    
+    // contact
+    var contactSearchArray = [User]()
+    
+    @IBOutlet weak var contactTableView: UITableView!
+    @IBOutlet weak var contactSearchTF: UITextField!
+    
+    //This shows and hides the new contact popup view
+    @IBAction func contactPopupViewACTs(_ sender: Any) {
+        if cancelPopupsBTN.isHidden {
+            cancelPopupsBTN.isHidden = false
+            contactPopupView.isHidden = false
+            blurredView.isHidden = false
+            UIView.animate(withDuration: 0.3 , animations: {
+                self.blurredView.alpha = 1
+                self.view.layoutIfNeeded()
+            }, completion: {(finished:Bool) in
+                UIView.animate(withDuration: 0.3 , animations: {
+                    self.contactPopupView.alpha = 1
+                    self.view.layoutIfNeeded()
+                })
+            })
+        } else {
+            UIView.animate(withDuration: 0.3 , animations: {
+                self.blurredView.alpha = 0
+                self.view.layoutIfNeeded()
+            }, completion: {(finished:Bool) in
+                UIView.animate(withDuration: 0.3 , animations: {
+                    self.contactPopupView.alpha = 0
+                    self.view.layoutIfNeeded()
+                }, completion: {(finished:Bool) in
+                    self.cancelPopupsBTN.isHidden = true
+                    self.contactPopupView.isHidden = true
+                    self.blurredView.isHidden = true
+                })
+            })
+        }
+    }
+    
+    // group
+    
+    @IBOutlet weak var groupIMGview: DesignableView!
+    @IBOutlet weak var groupIMG: DesignableImage!
+    
+    var groupMembersSearchArray = [User]()
+    var groupSelectedMembersArray = [String]()
+    
+    @IBOutlet weak var groupMembersTableView: UITableView!
+    @IBOutlet weak var groupMembersSearchTF: UITextField!
+    //@IBOutlet weak var groupMembersLBL: UILabel!
+    @IBOutlet weak var groupNameTF: UITextField!
+    
+    var groupColorSelectedIndex: Int = Int.random(in: 0 ... 5)
+    
+    @IBOutlet var groupConstraintsArray: [NSLayoutConstraint]!
+    @IBOutlet var groupColorBTNs: [UIButton]!
+    @IBAction func groupColorBTNpressed(_ sender: UIButton) {
+        
+        let previousColorIndex = groupColorSelectedIndex
+        groupColorSelectedIndex = sender.tag
+        let previousConstraint = groupConstraintsArray[previousColorIndex]
+        let selectedConstraint = groupConstraintsArray[groupColorSelectedIndex]
+        UIView.animate(withDuration: 0.3 , animations: {
+            previousConstraint.constant = 15
+            selectedConstraint.constant = 20
+            self.groupIMGview.borderColor = colorArray[self.groupColorSelectedIndex]
+            self.view.layoutIfNeeded()
+        }, completion: {(finished:Bool) in
+            
+        })
+        
+    }
+    
+    //This shows and hides the new group popup view
+    @IBAction func groupPopupViewACTs(_ sender: Any) {
+        if cancelPopupsBTN.isHidden {
+            cancelPopupsBTN.isHidden = false
+            groupPopupView.isHidden = false
+            blurredView.isHidden = false
+            UIView.animate(withDuration: 0.3 , animations: {
+                self.blurredView.alpha = 1
+                self.view.layoutIfNeeded()
+            }, completion: {(finished:Bool) in
+                UIView.animate(withDuration: 0.3 , animations: {
+                    self.groupPopupView.alpha = 1
+                    self.view.layoutIfNeeded()
+                })
+            })
+        } else {
+            UIView.animate(withDuration: 0.3 , animations: {
+                self.blurredView.alpha = 0
+                self.view.layoutIfNeeded()
+            }, completion: {(finished:Bool) in
+                UIView.animate(withDuration: 0.3 , animations: {
+                    self.groupPopupView.alpha = 0
+                    self.view.layoutIfNeeded()
+                }, completion: {(finished:Bool) in
+                    self.cancelPopupsBTN.isHidden = true
+                    self.groupPopupView.isHidden = true
+                    self.blurredView.isHidden = true
+                })
+            })
+        }
+    }
+    
+    @IBOutlet weak var createGroupBTN: UIButton!
+    @IBAction func createGroupBTN(_ sender: Any) {
+        
+        if groupNameTF.text == "" {
+            displayAlertMessage("فضلا حدد اسم للمجموعة".localized, in: self)
+        } else {
+            guard let currentUser = AuthService.instance.currentUser() else { return }
+            
+            DataService.instance.getUIDs(forUsername: groupSelectedMembersArray) { (idsArray) in
+                var members = idsArray
+                members.append(currentUser.uid)
+                let imageNameUID = NSUUID().uuidString
+                let storageRef = DataService.instance.REF_GROUP_IMAGES.child("\(imageNameUID).jpeg")
+                if let uploadData = self.groupIMG.image?.jpegData(compressionQuality: 0.2) {
+                    
+                    storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                        
+                        if error != nil { print(error!) }
+                        
+                        storageRef.downloadURL(completion: { url, error in
+                            if error != nil { print(error!) } else {
+                                // Here you can get the download URL
+                                let groupData = ["imageURL": url?.absoluteString ?? "",
+                                                 "color": self.groupColorSelectedIndex,
+                                                 "name" : self.groupNameTF.text!,
+                                                 "members": members,
+                                                 "type" : "group" ] as [String : Any]
+                                
+                                DataService.instance.createChat(chatData: groupData , handler: { (chatCreated) in
+                                    if chatCreated {
+                                        self.groupPopupViewACTs(self)
+                                        //send the user to the new chat
+                                    }
+                                })
+                            }
+                        })
+                    })
+                }
+            }
+        }
+    }
+    
+    
+    //this code is for changing the group image
+    @objc func changeGroupImage() {
+        let picker = UIImagePickerController()
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var selectedImageFromPicker: UIImage?
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            selectedImageFromPicker = editedImage
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImageFromPicker = originalImage
+        }
+        if let selectedImage = selectedImageFromPicker {
+            groupIMG.image = selectedImage
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
+extension ChatsListVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch tableView {
+        case chatsTableView:
+            return chatsArray.count
+        case groupMembersTableView:
+            return groupMembersSearchArray.count
+        case contactTableView:
+            return contactSearchArray.count
+        default:
+            return 0
+        }
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == chatsTableView {
+            let chat = chatsArray[indexPath.row]
+            if chat.type == .contact {
+                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "contactChatCell", for: indexPath) as? ContactChatCell else { return UITableViewCell() }
+                
+                //This recognizes the contact UID by getting the current user UID and filtering it from the members array
+                //than uses the contactUID to get his data to fill the cell
+                if let currentUserUID = AuthService.instance.currentUser()?.uid {
+                    let contactUID = chat.members.filter({ $0 != currentUserUID })
+                    DataService.instance.REF_USERS.child(contactUID[0]).observeSingleEvent(of: .value, with: { (userDataSnapshot) in
+                        // Get user value
+                        if let userData = userDataSnapshot.value as? [String : Any] {
+                            let user = User(uid: currentUserUID , dictionary: userData)
+                            cell.configureCell(imageURL: user.imageURL ?? "",
+                                               color: user.color,
+                                               chatName: user.username,
+                                               lastMessage: chat.messages.last!,
+                                               numberOfMessages: chat.messages.count,
+                                               lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
+                            
+                        }
+                        
+                    }) { (error) in
+                        print(error.localizedDescription)
+                    }
+                }
+                return cell
+                
+            } else if chat.type == .group {
+                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "chatGroupCell", for: indexPath) as? ChatGroupCell else { return UITableViewCell() }
+                
+                cell.configureCell(imageURL: chat.imageURL ?? "",
+                                   color: chat.color,
+                                   chatName: chat.name,
+                                   lastSender: "itsNoOne",
+                                   lastMessage: chat.messages.last!,
+                                   numberOfMessages: chat.messages.count,
+                                   lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
+                return cell
+                
+            } else {
+                guard let cell = chatsTableView.dequeueReusableCell(withIdentifier: "caocapGroupCell", for: indexPath) as? CaocapGroupCell else { return UITableViewCell() }
+                cell.configureCell(imageURL: chat.imageURL ?? "",
+                                   color: chat.color,
+                                   chatName: chat.name,
+                                   lastSender: "itsNoOne",
+                                   lastMessage: chat.messages.last!,
+                                   numberOfMessages: chat.messages.count,
+                                   lastMessageTime: "\(Int.random(in: 1 ... 12)):\(Int.random(in: 10 ... 60)) AM")
+                
+                return cell
+            }
+        } else if tableView == groupMembersTableView {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "addUserCell") as? AddUserCell else { return UITableViewCell() }
+            
+            let isSelected = groupSelectedMembersArray.contains(self.groupMembersSearchArray[indexPath.row].username)
+            cell.configureCell(user: groupMembersSearchArray[indexPath.row], isSelected: isSelected)
+            
+            return cell
+            
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "contactUserCell") as? ContactUserCell else { return UITableViewCell() }
+            cell.configureCell(user: contactSearchArray[indexPath.row])
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == chatsTableView {
+            let chat = chatsArray[indexPath.row]
+            let storyboard = UIStoryboard(name: "Chat", bundle: nil)
+            if chat.type == .contact {
+                let contactChatVC = storyboard.instantiateViewController(withIdentifier: "ContactChatVC") as! ContactChatVC
+                contactChatVC.openedChat = chat
+                navigationController?.pushViewController(contactChatVC, animated: true)
+            } else {
+                let groupChatVC = storyboard.instantiateViewController(withIdentifier: "GroupChatVC") as! GroupChatVC
+                groupChatVC.openedChat = chat
+                navigationController?.pushViewController(groupChatVC, animated: true)
+            }
+        } else if tableView == groupMembersTableView {
+            guard let cell = tableView.cellForRow(at: indexPath) as? AddUserCell else { return }
+            if !groupSelectedMembersArray.contains(cell.usernameLBL.text!) {
+                groupSelectedMembersArray.append(cell.usernameLBL.text!)
+                //groupMembersLBL.text = groupSelectedMembersArray.joined(separator: ", ")
+                createGroupBTN.isHidden = false
+            } else {
+                groupSelectedMembersArray = groupSelectedMembersArray.filter({ $0 != cell.usernameLBL.text! })
+                if groupSelectedMembersArray.count >= 1 {
+                    //groupMembersLBL.text = groupSelectedMembersArray.joined(separator: ", ")
+                } else {
+                    //groupMembersLBL.text = "add users to group"
+                    createGroupBTN.isHidden = true
+                }
+            }
+        } else {
+            guard let cell = tableView.cellForRow(at: indexPath) as? ContactUserCell else { return }
+            guard let currentUser = AuthService.instance.currentUser() else { return }
+            
+            DataService.instance.getUIDs(forUsername: [cell.usernameLBL.text!]) { (idsArray) in
+                var userIds = idsArray
+                userIds.append(currentUser.uid)
+                DataService.instance.createNewContact(withUserIDs: userIds, andChatType: "contact", handler: { (newContactCreated) in
+                    if newContactCreated {
+                        self.contactPopupViewACTs(self)
+                        //send the user to the new chat
+                    }
+                })
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch tableView {
+        case chatsTableView:
+            return 80
+        default:
+            return 60
+        }
+    }
+    
+}
