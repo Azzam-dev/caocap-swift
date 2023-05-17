@@ -12,7 +12,6 @@ import ReSwift
 
 class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
-    var exploreSubNAV: UINavigationController!
     var myPageSubNAV: UINavigationController!
 
     var navigationControllers: [UINavigationController]!
@@ -55,9 +54,8 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
     func setupSubNavigationControllers() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        exploreSubNAV = storyboard.instantiateViewController(withIdentifier: "exploreNAV") as? UINavigationController
         myPageSubNAV = storyboard.instantiateViewController(withIdentifier: "myPageNAV") as? UINavigationController
-        navigationControllers = [exploreSubNAV, myPageSubNAV]
+        navigationControllers = [myPageSubNAV]
         navBTNpressed(navBTNs[navSelectedIndex])
     }
     
@@ -71,7 +69,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet var navBTNs: [UIButton]!
     
-    @IBOutlet weak var exploreICON: UIImageView!
     @IBOutlet weak var orbitICON: UIImageView!
     
     @IBOutlet weak var navCircleViewHeightConstraint: NSLayoutConstraint!
@@ -88,13 +85,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         } else if self.navCircleViewHeightConstraint.constant == 65 && blurredView.isHidden {
             switch navSelectedIndex {
             case 0:
-                if exploreSubNAV.viewControllers.count == 1 {
-                    //this calls the reload explore function 
-                    NotificationCenter.default.post(name: Notification.Name("reloadExplore"), object: nil)
-                } else {
-                exploreSubNAV?.popViewController(animated: true)
-                }
-            case 1:
                 if myPageSubNAV.viewControllers.count == 1 {
                     //this calls the reload myProfile function
                     NotificationCenter.default.post(name: Notification.Name("reloadMyProfile"), object: nil)
@@ -124,7 +114,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         }
     }
     
-    @IBOutlet weak var exploreIconView: UIView!
     @IBOutlet weak var myProfileIconView: UIView!
     @objc func navPan(_ sender: UIPanGestureRecognizer){
         let panView = sender.view!
@@ -140,10 +129,8 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
             sender.setTranslation(CGPoint.zero, in: view)
             
         case .ended:
-            if panView.frame.intersects(exploreIconView.frame) {
+            if panView.frame.intersects(myProfileIconView.frame) {
                 navBTNpressed(navBTNs[0])
-            } else if panView.frame.intersects(myProfileIconView.frame) {
-                navBTNpressed(navBTNs[2])
             }
             
             circleViewScaleDownAnimation()
@@ -232,13 +219,8 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         
         switch navSelectedIndex {
         case 0:
-            exploreICON.image = #imageLiteral(resourceName: "B-launched_rocket")
-            orbitICON.image = #imageLiteral(resourceName: "w-planet_filled")
-        case 1:
-            exploreICON.image = #imageLiteral(resourceName: "w-launched_rocket")
             orbitICON.image = #imageLiteral(resourceName: "B-planet_filled")
         default:
-            exploreICON.image = #imageLiteral(resourceName: "w-launched_rocket")
             orbitICON.image = #imageLiteral(resourceName: "w-planet_filled")
         }
         let nav = navigationControllers[navSelectedIndex]

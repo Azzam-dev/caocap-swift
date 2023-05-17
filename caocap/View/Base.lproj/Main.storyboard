@@ -458,37 +458,8 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDl-TK-izB" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                 <rect key="frame" x="86.666666666666686" y="684.66666666666663" width="220" height="220"/>
                                 <subviews>
-                                    <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRG-eG-26f">
-                                        <rect key="frame" x="25" y="45" width="50" height="50"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w-launched_rocket" translatesAutoresizingMaskIntoConstraints="NO" id="oR6-Gw-xRQ">
-                                                <rect key="frame" x="10" y="10" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="oR6-Gw-xRQ" secondAttribute="height" multiplier="1:1" id="Fz8-tV-z58"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z7c-aX-7ne">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <connections>
-                                                    <action selector="navBTNpressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZt-vy-bIL"/>
-                                                    <action selector="navBTNpressed:" destination="BYZ-38-t0r" eventType="touchDragInside" id="rNJ-MT-AJW"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="ZRG-eG-26f" secondAttribute="height" multiplier="1:1" id="6i9-Qo-XOA"/>
-                                            <constraint firstAttribute="bottom" secondItem="z7c-aX-7ne" secondAttribute="bottom" id="AzR-TK-KhU"/>
-                                            <constraint firstAttribute="trailing" secondItem="z7c-aX-7ne" secondAttribute="trailing" id="CWb-mL-Cwz"/>
-                                            <constraint firstItem="oR6-Gw-xRQ" firstAttribute="centerY" secondItem="ZRG-eG-26f" secondAttribute="centerY" id="KPK-f1-ftt"/>
-                                            <constraint firstAttribute="height" constant="50" id="OgF-f7-OJN"/>
-                                            <constraint firstItem="z7c-aX-7ne" firstAttribute="top" secondItem="ZRG-eG-26f" secondAttribute="top" id="cow-ZW-rEn"/>
-                                            <constraint firstItem="oR6-Gw-xRQ" firstAttribute="centerX" secondItem="ZRG-eG-26f" secondAttribute="centerX" id="gmq-dR-o1V"/>
-                                            <constraint firstItem="oR6-Gw-xRQ" firstAttribute="top" secondItem="ZRG-eG-26f" secondAttribute="top" constant="10" id="j8a-Zg-BK1"/>
-                                            <constraint firstItem="z7c-aX-7ne" firstAttribute="leading" secondItem="ZRG-eG-26f" secondAttribute="leading" id="ljc-AD-9m6"/>
-                                        </constraints>
-                                    </view>
                                     <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W8K-aa-pFd">
-                                        <rect key="frame" x="145" y="45" width="50" height="50"/>
+                                        <rect key="frame" x="84.999999999999986" y="10" width="50.000000000000014" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="w-planet_filled" translatesAutoresizingMaskIntoConstraints="NO" id="caS-FX-zLz">
                                                 <rect key="frame" x="10" y="10" width="30" height="30"/>
@@ -496,7 +467,7 @@
                                                     <constraint firstAttribute="width" secondItem="caS-FX-zLz" secondAttribute="height" multiplier="1:1" id="0DQ-Ys-b6M"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-4R-776">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHj-4R-776">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <connections>
                                                     <action selector="navBTNpressed:" destination="BYZ-38-t0r" eventType="touchDragInside" id="2h9-9B-Y7i"/>
@@ -531,13 +502,11 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="W8K-aa-pFd" firstAttribute="top" secondItem="fDl-TK-izB" secondAttribute="top" constant="45" id="4Cm-6s-yas"/>
+                                    <constraint firstItem="W8K-aa-pFd" firstAttribute="top" secondItem="fDl-TK-izB" secondAttribute="top" constant="10" id="4Cm-6s-yas"/>
                                     <constraint firstAttribute="height" constant="220" id="A6M-Ij-4Gj"/>
                                     <constraint firstAttribute="width" secondItem="fDl-TK-izB" secondAttribute="height" multiplier="1:1" id="Fzd-qh-L9l"/>
                                     <constraint firstItem="Ojj-eG-5T8" firstAttribute="centerY" secondItem="fDl-TK-izB" secondAttribute="centerY" id="clC-fY-yGV"/>
-                                    <constraint firstItem="ZRG-eG-26f" firstAttribute="top" secondItem="fDl-TK-izB" secondAttribute="top" constant="45" id="jSo-5K-A9e"/>
-                                    <constraint firstItem="ZRG-eG-26f" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" constant="-60" id="oAE-dT-M2N"/>
-                                    <constraint firstItem="W8K-aa-pFd" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" constant="60" id="pA9-YL-W7U"/>
+                                    <constraint firstItem="W8K-aa-pFd" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" id="pA9-YL-W7U"/>
                                     <constraint firstItem="Ojj-eG-5T8" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" id="woV-ku-vIh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -661,15 +630,12 @@
                         <outlet property="blurredView" destination="2Su-lZ-W2C" id="mhx-uN-nqd"/>
                         <outlet property="cancelPopupsBTN" destination="qdl-mY-shQ" id="gdZ-eM-ll2"/>
                         <outlet property="contentView" destination="2jF-Is-xmu" id="dML-Mi-8YN"/>
-                        <outlet property="exploreICON" destination="oR6-Gw-xRQ" id="ii0-Gw-fXK"/>
-                        <outlet property="exploreIconView" destination="ZRG-eG-26f" id="q0c-A0-jfn"/>
                         <outlet property="myProfileIconView" destination="W8K-aa-pFd" id="Dbf-eP-8CZ"/>
                         <outlet property="navCircleButtonHeightConstraint" destination="w8d-lN-V8i" id="nDI-3i-6R8"/>
                         <outlet property="navCircleView" destination="fDl-TK-izB" id="Bpt-5z-8gL"/>
                         <outlet property="navCircleViewHeightConstraint" destination="A6M-Ij-4Gj" id="avA-7w-Hzk"/>
                         <outlet property="navFingerTrackingView" destination="Ojj-eG-5T8" id="I7B-9a-t7n"/>
                         <outlet property="orbitICON" destination="caS-FX-zLz" id="Gvd-DA-uAG"/>
-                        <outletCollection property="navBTNs" destination="z7c-aX-7ne" collectionClass="NSMutableArray" id="csg-cQ-ytL"/>
                         <outletCollection property="navBTNs" destination="zHj-4R-776" collectionClass="NSMutableArray" id="D6J-bu-cNe"/>
                     </connections>
                 </viewController>
@@ -799,23 +765,6 @@ Please visit the app tomorrow and everything will be done
             <point key="canvasLocation" x="-658" y="-1468"/>
         </scene>
         <!--Swipe Navigation Controller-->
-        <scene sceneID="qg5-GA-HLA">
-            <objects>
-                <navigationController storyboardIdentifier="exploreNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pNd-CF-0cT" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uv3-2I-4nM">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="oEs-eV-qV4" kind="relationship" relationship="rootViewController" id="YqF-v4-IWd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LvI-as-07F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-657" y="-17"/>
-        </scene>
-        <!--Swipe Navigation Controller-->
         <scene sceneID="e4H-4L-y4B">
             <objects>
                 <navigationController storyboardIdentifier="myPageNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Zfg-gz-7oy" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
@@ -831,7 +780,7 @@ Please visit the app tomorrow and everything will be done
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OUk-Oh-R7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="-20"/>
+            <point key="canvasLocation" x="62" y="-8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bfd-fF-AMp">
@@ -1207,16 +1156,6 @@ Please visit the app tomorrow and everything will be done
             </objects>
             <point key="canvasLocation" x="62" y="-2230"/>
         </scene>
-        <!--explore-->
-        <scene sceneID="WnE-lw-bPh">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="explore" storyboardName="Explore" referencedIdentifier="explore" id="oEs-eV-qV4" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="ZlF-jk-Q6E"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b9j-M7-ty7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-656" y="454"/>
-        </scene>
         <!--myPage-->
         <scene sceneID="fYu-Z5-1zT">
             <objects>
@@ -1225,7 +1164,7 @@ Please visit the app tomorrow and everything will be done
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ie-6Z-y9Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="451"/>
+            <point key="canvasLocation" x="62" y="427"/>
         </scene>
     </scenes>
     <designables>
@@ -1248,7 +1187,6 @@ Please visit the app tomorrow and everything will be done
         <image name="email" width="287" height="300"/>
         <image name="password" width="245" height="300"/>
         <image name="rocket launch" width="1000" height="404"/>
-        <image name="w-launched_rocket" width="67" height="100"/>
         <image name="w-planet_filled" width="99" height="72"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

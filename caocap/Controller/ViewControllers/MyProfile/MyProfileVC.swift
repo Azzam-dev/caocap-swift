@@ -17,9 +17,7 @@ class MyProfileVC: UIViewController {
     @IBOutlet weak var userIMG: DesignableImage!
     @IBOutlet weak var userIMGview: DesignableView!
     
-    @IBOutlet weak var orbitingCountLBL: UILabel!
     @IBOutlet weak var caocapsCountLBL: UILabel!
-    @IBOutlet weak var friendsCountLBL: UILabel!
     
     @IBOutlet weak var usernameLBL: UILabel!
     @IBOutlet weak var nameLBL: UILabel!
@@ -61,8 +59,6 @@ class MyProfileVC: UIViewController {
                 self.usernameLBL.text = "@" + user.username
                 self.nameLBL.text = user.name
                 self.bioLBL.text = user.bio
-                self.orbitingCountLBL.text = String(user.orbiting.count)
-                self.friendsCountLBL.text = String(user.followers.count)
                 
                 if let imageURL = URL(string: user.imageURL ?? "" ) {
                     self.userIMG.af.setImage(withURL: imageURL)
