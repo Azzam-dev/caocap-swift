@@ -28,17 +28,13 @@ class DataService {
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_CAOCAPS = DB_BASE.child("caocap")
     
-    private var _REF_CHATS = DB_BASE.child("chats")
     
     
     // Storage references
     private var _REF_STORAGE_BASE = STORAGE_BASE
     
-    private var _REF_CHAT_STORAGE = STORAGE_BASE.child("chats")
-    
     private var _REF_PROFILE_IMAGES = STORAGE_BASE.child("profile-images")
     private var _REF_CAOCAP_IMAGES = STORAGE_BASE.child("caocap-images")
-    private var _REF_GROUP_IMAGES = STORAGE_BASE.child("group-images")
     
     
     //DatabaseReference
@@ -50,31 +46,15 @@ class DataService {
     var REF_USERS: DatabaseReference { return _REF_USERS }
     var REF_CAOCAPS: DatabaseReference { return _REF_CAOCAPS }
     
-    var REF_CHATS: DatabaseReference { return _REF_CHATS }
-    //var REF_ROOMS: DatabaseReference { return _REF_ROOMS }
-    
     //StorageReference
     var REF_STORAGE_BASE: StorageReference { return _REF_STORAGE_BASE }
     
-    var REF_CHAT_STORAGE: StorageReference { return _REF_CHAT_STORAGE }
-    
     var REF_PROFILE_IMAGES: StorageReference { return _REF_PROFILE_IMAGES }
     var REF_CAOCAP_IMAGES: StorageReference { return _REF_CAOCAP_IMAGES }
-    var REF_GROUP_IMAGES: StorageReference { return _REF_GROUP_IMAGES }
     
     
     func updateUserData(uid: String, userData: Dictionary<String, Any>) {
         REF_USERS.child(uid).updateChildValues(userData)
-    }
-    
-    func createNewContact(withUserIDs ids: [String], andChatType type: String ,  handler: @escaping (_ newContactCreated: Bool) -> ()) {
-        REF_CHATS.childByAutoId().updateChildValues(["members": ids, "type": type])
-        handler(true)
-    }
-    
-    func createChat(chatData: Dictionary<String, Any> , handler: @escaping (_ chatCreated: Bool) -> ()) {
-        REF_CHATS.childByAutoId().updateChildValues(chatData)
-        handler(true)
     }
     
     //TODO: Refactor is needed here { the caocap creation and the image upload should not be coupled }
@@ -161,61 +141,6 @@ class DataService {
     }
     
     
-    //This sends a new message for the caocap room, You must provide the caocap key and the message data
-    func sendRoomMessage(forCaocapKey key: String, messageData: Dictionary<String, Any> , handler: @escaping (_ sendtMessage: Bool) -> ()) {
-        REF_CAOCAPS.child(key).child("room").childByAutoId().updateChildValues(messageData)
-        handler(true)
-    }
-    
-    //This sends a new message for the caocap room, You must provide the caocap key and the message data
-    func sendChatMessage(forChatKey key: String, messageData: Dictionary<String, Any> , handler: @escaping (_ sendtMessage: Bool) -> ()) {
-        REF_CHATS.child(key).child("messages").childByAutoId().updateChildValues(messageData)
-        handler(true)
-    }
-    
-    
-    //TODO: - add firebase filter for getCurrentUserChats
-    func getCurrentUserChats(handler: @escaping (_ chatsArray: [Chat]) -> ()) {
-        let currentUserUID = (Auth.auth().currentUser?.uid)!
-        REF_CHATS.observe(.value) { (chatSnapshot) in
-            guard let chatSnapshot = chatSnapshot.children.allObjects as? [DataSnapshot] else { return }
-            var chatsArray = [Chat]()
-            for chat in chatSnapshot {
-                let membersArray = chat.childSnapshot(forPath: "members").value as! [String]
-                if membersArray.contains(currentUserUID) {
-                    let dictionary = chat.value
-                    let chat = Chat(key: chat.key, dictionary: dictionary as! [String : Any] )
-                    chatsArray.append(chat)
-                }
-            }
-            handler(chatsArray)
-        }
-    }
-    
-    //TODO: Refactor this function
-    func getCurrentUserChatsQuery(forSearchQuery query: String, handler: @escaping (_ chatsQueryArray: [Chat]) -> ()) {
-        var chatsQueryArray = [Chat]()
-        let currentUserUID = (Auth.auth().currentUser?.uid)!
-        getCurrentUserChats { chatsArray in
-            for chat in chatsArray {
-                switch chat.type {
-                case .contact:
-                    let contactUID = chat.members.filter({ $0 != currentUserUID })[0]
-                    self.getUsernameFromUID(forUID: contactUID) { username in
-                        if username.containsIgnoringCase(find: query) {
-                            chatsQueryArray.append(chat)
-                        }
-                    }
-                default:
-                    if chat.name.containsIgnoringCase(find: query) {
-                        chatsQueryArray.append(chat)
-                    }
-                }
-            }
-            
-            handler(chatsQueryArray)
-        }
-    }
     
 //TODO: Refactor this function
     func getCurrentUserCaocaps(handler: @escaping (_ caocapsArray: [Caocap]) -> ()) {
@@ -348,33 +273,6 @@ class DataService {
         }
     }
     
-    //this gets all the caocap room messages, You must provide the caocap key and you will get the messages array
-    func getCaocapRoomMessages(forCaocapKey key: String, handler: @escaping (_ messagesArray: [Message]) -> ()) {
-        REF_CAOCAPS.child(key).child("room").observe(.value) { (messagesSnapshot) in
-            guard let messagesSnapshot = messagesSnapshot.children.allObjects as? [DataSnapshot] else { return }
-            var messagesArray = [Message]()
-            for message in messagesSnapshot {
-                if let dictionary = message.value as? [String : Any] {
-                    messagesArray.append(Message(key: message.key, dictionary: dictionary))
-                }
-            }
-            handler(messagesArray)
-        }
-    }
-    
-    //this gets all the chat messages, You must provide the chat key and you will get the messages array
-    func getChatMessages(forChatKey key: String, handler: @escaping (_ messagesArray: [Message]) -> ()) {
-        REF_CHATS.child(key).child("messages").observe(.value) { (messagesSnapshot) in
-            guard let messagesSnapshot = messagesSnapshot.children.allObjects as? [DataSnapshot] else { return }
-            var messagesArray = [Message]()
-            for message in messagesSnapshot {
-                if let dictionary = message.value as? [String : Any] {
-                messagesArray.append(Message(key: message.key, dictionary: dictionary))
-                }
-            }
-            handler(messagesArray)
-        }
-    }
     
     
     func getUsernameFromUID(forUID uid: String, handler: @escaping (_ username: String) -> ()) {
@@ -384,6 +282,7 @@ class DataService {
         }
     }
     
+    //TODO: this is dangers, see how to replace it 
     func getAllUsers( handler: @escaping (_ usersArray: [User]) -> ()) {
         let currentUserUID = Auth.auth().currentUser?.uid
         // get all users without the current User

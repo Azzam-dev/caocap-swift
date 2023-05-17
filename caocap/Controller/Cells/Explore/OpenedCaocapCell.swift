@@ -13,7 +13,6 @@ protocol OpenedCaocapCellDelegate: AnyObject {
     func loadCaocapVC(for cell: OpenedCaocapCell, with vc: CaocapVC, on view: UIView)
     func shareBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton)
     func moreBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton)
-    func roomBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton)
 }
 
 class OpenedCaocapCell: UICollectionViewCell {
@@ -81,12 +80,6 @@ class OpenedCaocapCell: UICollectionViewCell {
     @IBAction func shareBTN(_ sender: Any) {
         let button = sender as! UIButton
         delegate?.shareBTNpressed(cell: self, didTappedShow: button)
-    }
-    
-    
-    @IBAction func roomBTN(_ sender: Any) {
-        let button = sender as! UIButton
-        delegate?.roomBTNpressed(cell: self, didTappedShow: button)
     }
     
     

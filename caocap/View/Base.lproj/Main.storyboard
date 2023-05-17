@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nH-DU-wGs">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,26 +20,26 @@
             <objects>
                 <viewController storyboardIdentifier="auth" id="mNu-3p-QYD" customClass="AuthVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="azy-Db-lFm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydA-f3-9H2">
-                                <rect key="frame" x="0.0" y="512" width="600" height="8"/>
+                                <rect key="frame" x="0.0" y="364" width="393" height="374"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="will be sent message to your email to retrieve your password." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpb-iy-pxg">
-                                        <rect key="frame" x="60" y="8.6666666666666288" width="480" height="15.333333333333343"/>
+                                        <rect key="frame" x="60" y="180.66666666666663" width="273" height="26.333333333333343"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="13"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ypd-zb-tMA">
-                                        <rect key="frame" x="60" y="-56" width="480" height="120"/>
+                                        <rect key="frame" x="60" y="127" width="273" height="120"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6NI-w6-FtF">
-                                                <rect key="frame" x="0.0" y="0.0" width="480" height="34.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="273" height="34.666666666666664"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zfa-pJ-DEw">
-                                                        <rect key="frame" x="30" y="4.6666666666666856" width="450" height="25"/>
+                                                        <rect key="frame" x="30" y="4.6666666666666856" width="243" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="E9G-v4-Xg6"/>
                                                         </constraints>
@@ -53,7 +55,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmc-o6-V0j" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="31.666666666666686" width="480" height="3"/>
+                                                        <rect key="frame" x="0.0" y="31.666666666666629" width="273" height="3"/>
                                                         <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="BEt-qL-UPP"/>
@@ -78,10 +80,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GtC-Xb-Bnn">
-                                                <rect key="frame" x="0.0" y="42.666666666666686" width="480" height="34.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="42.666666666666629" width="273" height="34.666666666666657"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UeS-ig-Xu4">
-                                                        <rect key="frame" x="30" y="4.6666666666666288" width="450" height="25"/>
+                                                        <rect key="frame" x="30" y="4.6666666666667425" width="243" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="f93-Zf-Lv6"/>
                                                         </constraints>
@@ -89,7 +91,7 @@
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="lgJ-Zs-FFd">
-                                                        <rect key="frame" x="0.0" y="7.3333333333333144" width="20" height="20"/>
+                                                        <rect key="frame" x="0.0" y="7.3333333333333712" width="20" height="20"/>
                                                         <color key="tintColor" red="0.0" green="0.65446996688842773" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="Uud-YX-z0A"/>
@@ -97,7 +99,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-b3-y11" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="31.666666666666686" width="480" height="3"/>
+                                                        <rect key="frame" x="0.0" y="31.666666666666742" width="273" height="3"/>
                                                         <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="Q7d-2Z-iku"/>
@@ -122,10 +124,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Esa-AV-ZCi">
-                                                <rect key="frame" x="0.0" y="85.333333333333371" width="480" height="34.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="85.333333333333371" width="273" height="34.666666666666657"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Miw-wp-yQP">
-                                                        <rect key="frame" x="30" y="4.6666666666666288" width="450" height="25"/>
+                                                        <rect key="frame" x="30" y="4.6666666666666288" width="243" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="onT-tN-ewD"/>
                                                         </constraints>
@@ -141,7 +143,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRz-CS-V6n" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="31.666666666666629" width="480" height="3"/>
+                                                        <rect key="frame" x="0.0" y="31.666666666666629" width="273" height="3"/>
                                                         <color key="backgroundColor" red="0.0" green="0.65446996690000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="3" id="YG8-Ws-DWK"/>
@@ -171,7 +173,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLN-gg-RAf">
-                                        <rect key="frame" x="60" y="74" width="109" height="30"/>
+                                        <rect key="frame" x="60" y="257" width="109" height="30"/>
                                         <subviews>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZp-J8-dyy">
                                                 <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
@@ -206,7 +208,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="YI8-5v-pW8" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="-30" y="-148" width="660" height="660"/>
+                                <rect key="frame" x="-30" y="-89" width="453" height="453"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YI8-5v-pW8" secondAttribute="height" multiplier="1:1" id="wqg-n1-ll4"/>
                                 </constraints>
@@ -223,22 +225,22 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9t-GU-HcH" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="530" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="748" width="393" height="70"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-Ew-VSZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocket launch" translatesAutoresizingMaskIntoConstraints="NO" id="5Z7-m4-OlD">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="157.33333333333334"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="5Z7-m4-OlD" secondAttribute="height" multiplier="10:4" id="E6d-uu-fsR"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-E0-OzD">
-                                                <rect key="frame" x="0.0" y="230" width="600" height="370"/>
+                                                <rect key="frame" x="0.0" y="147.33333333333337" width="393" height="704.66666666666663"/>
                                                 <subviews>
                                                     <stackView hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" axis="vertical" alignment="center" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cS6-UJ-Ocg">
-                                                        <rect key="frame" x="150" y="-115" width="300" height="400"/>
+                                                        <rect key="frame" x="46.666666666666657" y="52.333333333333258" width="300" height="400"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check email" translatesAutoresizingMaskIntoConstraints="NO" id="v1f-vi-965">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -247,7 +249,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja4-Ly-l5d">
-                                                                <rect key="frame" x="41.666666666666657" y="271.33333333333337" width="216.99999999999997" height="30"/>
+                                                                <rect key="frame" x="47.000000000000014" y="277.00000000000011" width="205.66666666666669" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="BPu-zD-2T4"/>
                                                                 </constraints>
@@ -256,7 +258,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We have sent a password recover instructions to your email." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHW-3t-NKy" userLabel="We have sent a password recover instructions to your email">
-                                                                <rect key="frame" x="27.333333333333357" y="279.66666666666663" width="245.66666666666663" height="120.33333333333331"/>
+                                                                <rect key="frame" x="32.000000000000014" y="287.33333333333337" width="235.66666666666669" height="112.66666666666669"/>
                                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="16"/>
                                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
@@ -287,7 +289,7 @@
                                         </constraints>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B0q-zz-2Z5" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="200" y="-10" width="200" height="40"/>
+                                        <rect key="frame" x="96.666666666666686" y="-10" width="200" height="40"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Pu9-GI-qZR"/>
@@ -321,17 +323,17 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n38-r2-waI">
-                                <rect key="frame" x="0.0" y="566" width="600" height="34"/>
+                                <rect key="frame" x="0.0" y="818" width="393" height="34"/>
                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="PgQ-el-8hZ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RG-B7-n3A">
-                                <rect key="frame" x="0.0" y="530" width="600" height="70"/>
+                                <rect key="frame" x="0.0" y="748" width="393" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xu4-hs-qgV">
-                                        <rect key="frame" x="200" y="-10" width="200" height="40"/>
+                                        <rect key="frame" x="96.666666666666686" y="-10" width="200" height="40"/>
                                         <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="23"/>
                                         <state key="normal" title="sign up">
                                             <color key="titleColor" red="0.0" green="0.65490196078431373" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -341,16 +343,16 @@
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hiE-uO-Nha">
-                                        <rect key="frame" x="194.33333333333331" y="31" width="211.33333333333331" height="29"/>
+                                        <rect key="frame" x="94.333333333333329" y="33" width="204.66666666666669" height="27"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlL-II-jEr">
-                                                <rect key="frame" x="0.0" y="6.3333333333333712" width="162.33333333333334" height="16.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="6.3333333333333721" width="155.66666666666666" height="14.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                 <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1Y-bB-ySX">
-                                                <rect key="frame" x="170.33333333333334" y="0.0" width="41" height="29"/>
+                                                <rect key="frame" x="163.66666666666669" y="0.0" width="41" height="27"/>
                                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="14"/>
                                                 <state key="normal" title="sign in">
                                                     <color key="titleColor" red="0.0" green="0.65490196078431373" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -424,21 +426,21 @@
             <objects>
                 <viewController storyboardIdentifier="navigation" id="BYZ-38-t0r" customClass="NavigationVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jF-Is-xmu">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <visualEffectView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Su-lZ-W2C">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="fGN-wV-0I1">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdl-mY-shQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                             <connections>
                                                 <action selector="popupACT:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y54-sD-oOR"/>
                                             </connections>
@@ -454,7 +456,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDl-TK-izB" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="190" y="447.66666666666674" width="220" height="220"/>
+                                <rect key="frame" x="86.666666666666686" y="684.66666666666663" width="220" height="220"/>
                                 <subviews>
                                     <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRG-eG-26f">
                                         <rect key="frame" x="25" y="45" width="50" height="50"/>
@@ -514,43 +516,8 @@
                                             <constraint firstAttribute="trailing" secondItem="zHj-4R-776" secondAttribute="trailing" id="wIb-lW-mbv"/>
                                         </constraints>
                                     </view>
-                                    <view clipsSubviews="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDp-Ih-1WN">
-                                        <rect key="frame" x="85" y="5" width="50" height="50"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="W-chat" translatesAutoresizingMaskIntoConstraints="NO" id="C4e-ii-pH7">
-                                                <rect key="frame" x="10" y="10" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="C4e-ii-pH7" secondAttribute="height" multiplier="1:1" id="LZ0-3m-tgU"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="od2-iV-hng">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="30"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="navBTNpressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KyG-be-7fm"/>
-                                                    <action selector="navBTNpressed:" destination="BYZ-38-t0r" eventType="touchDragInside" id="d3A-bt-wlT"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="od2-iV-hng" firstAttribute="leading" secondItem="SDp-Ih-1WN" secondAttribute="leading" id="4ho-cX-7ta"/>
-                                            <constraint firstAttribute="height" constant="50" id="Af9-nG-h1A"/>
-                                            <constraint firstAttribute="bottom" secondItem="C4e-ii-pH7" secondAttribute="bottom" constant="10" id="Fjb-Qi-fzG"/>
-                                            <constraint firstAttribute="trailing" secondItem="od2-iV-hng" secondAttribute="trailing" id="JsV-MS-M5f"/>
-                                            <constraint firstItem="C4e-ii-pH7" firstAttribute="centerY" secondItem="SDp-Ih-1WN" secondAttribute="centerY" id="PaW-cG-kAX"/>
-                                            <constraint firstAttribute="bottom" secondItem="od2-iV-hng" secondAttribute="bottom" id="gRt-tz-zac"/>
-                                            <constraint firstAttribute="width" secondItem="SDp-Ih-1WN" secondAttribute="height" multiplier="1:1" id="mOH-cz-efv"/>
-                                            <constraint firstItem="C4e-ii-pH7" firstAttribute="centerX" secondItem="SDp-Ih-1WN" secondAttribute="centerX" id="vSC-fR-4Ht"/>
-                                            <constraint firstItem="od2-iV-hng" firstAttribute="top" secondItem="SDp-Ih-1WN" secondAttribute="top" id="zFd-sX-mFy"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-eG-5T8" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                        <rect key="frame" x="85" y="84.999999999999943" width="50" height="50"/>
+                                        <rect key="frame" x="84.999999999999986" y="85" width="50.000000000000014" height="50"/>
                                         <color key="backgroundColor" red="0.0" green="0.65490196078431373" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ojj-eG-5T8" secondAttribute="height" multiplier="1:1" id="ffs-Lo-uv7"/>
@@ -564,11 +531,9 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="SDp-Ih-1WN" firstAttribute="top" secondItem="fDl-TK-izB" secondAttribute="top" constant="5" id="3kz-56-qat"/>
                                     <constraint firstItem="W8K-aa-pFd" firstAttribute="top" secondItem="fDl-TK-izB" secondAttribute="top" constant="45" id="4Cm-6s-yas"/>
                                     <constraint firstAttribute="height" constant="220" id="A6M-Ij-4Gj"/>
                                     <constraint firstAttribute="width" secondItem="fDl-TK-izB" secondAttribute="height" multiplier="1:1" id="Fzd-qh-L9l"/>
-                                    <constraint firstItem="SDp-Ih-1WN" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" id="I8z-Fe-w50"/>
                                     <constraint firstItem="Ojj-eG-5T8" firstAttribute="centerY" secondItem="fDl-TK-izB" secondAttribute="centerY" id="clC-fY-yGV"/>
                                     <constraint firstItem="ZRG-eG-26f" firstAttribute="top" secondItem="fDl-TK-izB" secondAttribute="top" constant="45" id="jSo-5K-A9e"/>
                                     <constraint firstItem="ZRG-eG-26f" firstAttribute="centerX" secondItem="fDl-TK-izB" secondAttribute="centerX" constant="-60" id="oAE-dT-M2N"/>
@@ -597,7 +562,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7k-Dl-d8S" userLabel="bottomNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="267.66666666666669" y="525" width="65" height="65"/>
+                                <rect key="frame" x="164" y="762" width="65" height="65"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMv-GT-7uj" userLabel="bottomNAV" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
@@ -695,8 +660,6 @@
                     <connections>
                         <outlet property="blurredView" destination="2Su-lZ-W2C" id="mhx-uN-nqd"/>
                         <outlet property="cancelPopupsBTN" destination="qdl-mY-shQ" id="gdZ-eM-ll2"/>
-                        <outlet property="chatICON" destination="C4e-ii-pH7" id="TuH-oJ-xJy"/>
-                        <outlet property="chatIconView" destination="SDp-Ih-1WN" id="3SA-4G-2PX"/>
                         <outlet property="contentView" destination="2jF-Is-xmu" id="dML-Mi-8YN"/>
                         <outlet property="exploreICON" destination="oR6-Gw-xRQ" id="ii0-Gw-fXK"/>
                         <outlet property="exploreIconView" destination="ZRG-eG-26f" id="q0c-A0-jfn"/>
@@ -707,7 +670,6 @@
                         <outlet property="navFingerTrackingView" destination="Ojj-eG-5T8" id="I7B-9a-t7n"/>
                         <outlet property="orbitICON" destination="caS-FX-zLz" id="Gvd-DA-uAG"/>
                         <outletCollection property="navBTNs" destination="z7c-aX-7ne" collectionClass="NSMutableArray" id="csg-cQ-ytL"/>
-                        <outletCollection property="navBTNs" destination="od2-iV-hng" collectionClass="NSMutableArray" id="epA-pX-AIV"/>
                         <outletCollection property="navBTNs" destination="zHj-4R-776" collectionClass="NSMutableArray" id="D6J-bu-cNe"/>
                     </connections>
                 </viewController>
@@ -720,17 +682,17 @@
             <objects>
                 <viewController storyboardIdentifier="update" id="QzK-zY-7gg" customClass="updateVC" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="3PO-QS-7vs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Please update the app to the latest version " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="u8I-ED-lj1">
-                                <rect key="frame" x="20" y="351" width="560" height="291"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please update the app to the latest version " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="u8I-ED-lj1">
+                                <rect key="frame" x="20" y="384" width="353" height="290.66666666666674"/>
                                 <fontDescription key="fontDescription" name="NeoSansArabic" family="Neo Sans Arabic" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-Xf-ia8" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="-30" y="-104" width="660" height="435"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-Xf-ia8" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
+                                <rect key="frame" x="-30" y="-89" width="453" height="453"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1hi-Xf-ia8" secondAttribute="height" multiplier="1:1" id="k0f-69-WYP"/>
                                 </constraints>
@@ -747,7 +709,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocket launch" translatesAutoresizingMaskIntoConstraints="NO" id="2C1-cy-zTB">
-                                <rect key="frame" x="0.0" y="360" width="600" height="240"/>
+                                <rect key="frame" x="0.0" y="694.66666666666663" width="393" height="157.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="2C1-cy-zTB" secondAttribute="height" multiplier="10:4" id="hte-hO-sLD"/>
                                 </constraints>
@@ -778,11 +740,11 @@
             <objects>
                 <viewController storyboardIdentifier="repairs" id="yIT-AS-KjV" customClass="repairsVC" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="X3e-wN-E8H">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-Sb-9NF">
-                                <rect key="frame" x="20" y="351" width="560" height="291"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="erZ-Sb-9NF">
+                                <rect key="frame" x="20" y="384" width="353" height="290.66666666666674"/>
                                 <string key="text">We are sorry you cannot use the app right now because we are doing some repairs... 
 
 Please visit the app tomorrow and everything will be done
@@ -792,8 +754,8 @@ Please visit the app tomorrow and everything will be done
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="3sl-Jd-nnK" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="-30" y="-104" width="660" height="435"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="caocap circle" translatesAutoresizingMaskIntoConstraints="NO" id="3sl-Jd-nnK" customClass="DesignableImage" customModule="CAOCAPx" customModuleProvider="target">
+                                <rect key="frame" x="-30" y="-89" width="453" height="453"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3sl-Jd-nnK" secondAttribute="height" multiplier="1:1" id="nhW-Uf-VVg"/>
                                 </constraints>
@@ -810,7 +772,7 @@ Please visit the app tomorrow and everything will be done
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rocket launch" translatesAutoresizingMaskIntoConstraints="NO" id="zVR-8k-Z6v">
-                                <rect key="frame" x="0.0" y="360" width="600" height="240"/>
+                                <rect key="frame" x="0.0" y="694.66666666666663" width="393" height="157.33333333333337"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zVR-8k-Z6v" secondAttribute="height" multiplier="10:4" id="XXA-l4-CU4"/>
                                 </constraints>
@@ -842,7 +804,6 @@ Please visit the app tomorrow and everything will be done
                 <navigationController storyboardIdentifier="exploreNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pNd-CF-0cT" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Uv3-2I-4nM">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -855,31 +816,12 @@ Please visit the app tomorrow and everything will be done
             <point key="canvasLocation" x="-657" y="-17"/>
         </scene>
         <!--Swipe Navigation Controller-->
-        <scene sceneID="H2M-sa-aPG">
-            <objects>
-                <navigationController storyboardIdentifier="chatNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="mWk-r7-rDp" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mIc-Na-kmU">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="JBR-Fi-sRK" kind="relationship" relationship="rootViewController" id="Ihl-MA-0MT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLL-7c-CXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="65" y="-17"/>
-        </scene>
-        <!--Swipe Navigation Controller-->
         <scene sceneID="e4H-4L-y4B">
             <objects>
                 <navigationController storyboardIdentifier="myPageNAV" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Zfg-gz-7oy" customClass="SwipeNavigationController" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="9uw-k3-Z3k">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -897,7 +839,6 @@ Please visit the app tomorrow and everything will be done
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="9nH-DU-wGs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GPW-SL-rBz">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -914,15 +855,15 @@ Please visit the app tomorrow and everything will be done
             <objects>
                 <viewController storyboardIdentifier="IntroVC" id="q10-6j-mFr" customClass="IntroVC" customModule="CAOCAPx" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBY-bS-GPF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="createBG" translatesAutoresizingMaskIntoConstraints="NO" id="SPQ-Im-nlT">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rok-TE-nJK" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="150" y="-26" width="300" height="400"/>
+                                <rect key="frame" x="46.666666666666657" y="192" width="300" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KGC-G9-RGS">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="64"/>
@@ -1008,7 +949,7 @@ Please visit the app tomorrow and everything will be done
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxL-ql-q8d" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
-                                <rect key="frame" x="150" y="-26" width="300" height="400"/>
+                                <rect key="frame" x="46.666666666666657" y="192" width="300" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TRn-YE-ReU">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="64"/>
@@ -1131,7 +1072,7 @@ Please visit the app tomorrow and everything will be done
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0mg-BM-5Tm">
-                                <rect key="frame" x="150" y="474" width="300" height="96"/>
+                                <rect key="frame" x="46.666666666666657" y="692" width="300" height="96"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UX2-KP-k3p" customClass="DesignableView" customModule="CAOCAPx" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="31"/>
@@ -1276,16 +1217,6 @@ Please visit the app tomorrow and everything will be done
             </objects>
             <point key="canvasLocation" x="-656" y="454"/>
         </scene>
-        <!--chat-->
-        <scene sceneID="F40-sd-gcG">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="chat" storyboardName="Chat" referencedIdentifier="chat" id="JBR-Fi-sRK" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="iPJ-JC-1zC"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="obi-Pf-oXN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="64" y="452"/>
-        </scene>
         <!--myPage-->
         <scene sceneID="fYu-Z5-1zT">
             <objects>
@@ -1297,9 +1228,19 @@ Please visit the app tomorrow and everything will be done
             <point key="canvasLocation" x="791" y="451"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="1hi-Xf-ia8">
+            <size key="intrinsicContentSize" width="1000" height="1000"/>
+        </designable>
+        <designable name="3sl-Jd-nnK">
+            <size key="intrinsicContentSize" width="1000" height="1000"/>
+        </designable>
+        <designable name="YI8-5v-pW8">
+            <size key="intrinsicContentSize" width="1000" height="1000"/>
+        </designable>
+    </designables>
     <resources>
         <image name="B-launched_rocket" width="67" height="100"/>
-        <image name="W-chat" width="106" height="100"/>
         <image name="astronaut" width="96" height="92"/>
         <image name="caocap circle" width="1000" height="1000"/>
         <image name="check email" width="884" height="607.5"/>

@@ -13,7 +13,6 @@ import ReSwift
 class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
     var exploreSubNAV: UINavigationController!
-    var chatSubNAV: UINavigationController!
     var myPageSubNAV: UINavigationController!
 
     var navigationControllers: [UINavigationController]!
@@ -58,8 +57,7 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         exploreSubNAV = storyboard.instantiateViewController(withIdentifier: "exploreNAV") as? UINavigationController
         myPageSubNAV = storyboard.instantiateViewController(withIdentifier: "myPageNAV") as? UINavigationController
-        chatSubNAV = storyboard.instantiateViewController(withIdentifier: "chatNAV") as? UINavigationController
-        navigationControllers = [exploreSubNAV, myPageSubNAV, chatSubNAV]
+        navigationControllers = [exploreSubNAV, myPageSubNAV]
         navBTNpressed(navBTNs[navSelectedIndex])
     }
     
@@ -75,7 +73,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     
     @IBOutlet weak var exploreICON: UIImageView!
     @IBOutlet weak var orbitICON: UIImageView!
-    @IBOutlet weak var chatICON: UIImageView!
     
     @IBOutlet weak var navCircleViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var navCircleButtonHeightConstraint: NSLayoutConstraint!
@@ -104,8 +101,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
                 } else {
                 myPageSubNAV?.popViewController(animated: true)
                 }
-            case 2:
-                chatSubNAV?.popViewController(animated: true)
             default:
                 break
             }
@@ -130,7 +125,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
     }
     
     @IBOutlet weak var exploreIconView: UIView!
-    @IBOutlet weak var chatIconView: UIView!
     @IBOutlet weak var myProfileIconView: UIView!
     @objc func navPan(_ sender: UIPanGestureRecognizer){
         let panView = sender.view!
@@ -148,8 +142,6 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         case .ended:
             if panView.frame.intersects(exploreIconView.frame) {
                 navBTNpressed(navBTNs[0])
-            } else if panView.frame.intersects(chatIconView.frame) {
-                navBTNpressed(navBTNs[1])
             } else if panView.frame.intersects(myProfileIconView.frame) {
                 navBTNpressed(navBTNs[2])
             }
@@ -242,19 +234,12 @@ class NavigationVC: UIViewController , UINavigationControllerDelegate {
         case 0:
             exploreICON.image = #imageLiteral(resourceName: "B-launched_rocket")
             orbitICON.image = #imageLiteral(resourceName: "w-planet_filled")
-            chatICON.image = #imageLiteral(resourceName: "W-chat")
         case 1:
             exploreICON.image = #imageLiteral(resourceName: "w-launched_rocket")
             orbitICON.image = #imageLiteral(resourceName: "B-planet_filled")
-            chatICON.image = #imageLiteral(resourceName: "W-chat")
-        case 2:
-            exploreICON.image = #imageLiteral(resourceName: "w-launched_rocket")
-            orbitICON.image = #imageLiteral(resourceName: "w-planet_filled")
-            chatICON.image = #imageLiteral(resourceName: "B-chat")
         default:
             exploreICON.image = #imageLiteral(resourceName: "w-launched_rocket")
             orbitICON.image = #imageLiteral(resourceName: "w-planet_filled")
-            chatICON.image = #imageLiteral(resourceName: "W-chat")
         }
         let nav = navigationControllers[navSelectedIndex]
         addChild(nav)

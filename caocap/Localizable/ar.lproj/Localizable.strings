@@ -54,18 +54,9 @@
 //NavigationVC
 "No internet connection" = "لا يوجد اتصال بالإنترنت";
 
-//ChatVC
-"What do you want to create?" = "ماذا تريد أن تنشئ؟";
-"create" = "انشآء";
-"group" = "مجموعة";
-"contact" = "اتصل";
-"cancel" = "الغاء";
-"Please choose a name for the group" = "الرجاء اختيار اسم للمجموعة";
-
 //MyProfileVC
 "delete" = "حذف";
-//I did this because I already wrote in //ChatVC
-//"cancel" = "cancel";
+"cancel" = "الغاء";
 
 //OpenedCaocapCell
 "ADD TO ORBIT" = "اضافة الكوكب";

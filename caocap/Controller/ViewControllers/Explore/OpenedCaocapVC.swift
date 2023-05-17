@@ -242,11 +242,4 @@ extension OpenedCaocapVC: OpenedCaocapCellDelegate {
         
     }
     
-    //this is the room function, when the roomBTN in the openedCaocapVC is pressed it will
-    func roomBTNpressed(cell: OpenedCaocapCell, didTappedShow button: UIButton) {
-        let storyboard = UIStoryboard(name: "Chat", bundle: nil)
-        let caocapRoomVC = storyboard.instantiateViewController(withIdentifier: "caocapRoomVC") as! CaocapRoomVC
-        caocapRoomVC.openedCaocap = openedCaocap
-        navigationController?.pushViewController(caocapRoomVC, animated: true)
-    }
 }
